@@ -1,6 +1,6 @@
 {
-  "signature": "AACT",
-  "name": "action",
+  "signature": "KYWD",
+  "name": "Keyword",
   "subrecords": [
     {
       "def": "edid",
@@ -8,6 +8,7 @@
     },
     {
       "def": "cnam_color",
+      "required": true
     }
   ]
 }
