@@ -1,13 +1,7 @@
 let defs = {};
 
 let addDef = def => defs[def.signature || def.name] = def;
-
-let getDef = function(key) {
-    let def = defs[key];
-    if (!def)
-        throw new Error(`Def ${key} not found.`);
-    return def;
-};
+let getDefs = () => defs;
 
 // data structures
 let record = (signature, name, def) =>
@@ -47,7 +41,7 @@ let ckFormId = (name, signatures) => ({ name, type: 'formId', signatures });
 let empty = name => ({ name, type: 'empty' });
 
 module.exports = {
-    generateRecordDef, addDef, getDef, req,
+    addDef, getDefs, req,
     record, subrecord, subrecordArray, multiArray, multiStruct,
     struct, array, union,
     bytes, unknown, zstring, lstring,
