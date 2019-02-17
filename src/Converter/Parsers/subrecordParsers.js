@@ -111,6 +111,10 @@ let subrecordParsers = [{
         addRequires('req', 'def');
         addLine(`req(def('${match[1]}')),`);
     }
+}, {
+    name: 'Comment',
+    expr: LineExpr(`{[^}]+}`),
+    process: () => {}
 }];
 
 module.exports = subrecordParsers;
