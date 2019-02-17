@@ -1,5 +1,5 @@
 let {
-    generateRecordDef,
+    addDef, record,
     subrecord, multiArray, struct, array,
     bytes, unknown, zstring, float, int32, formId
 } = require('../helpers');
@@ -12,8 +12,7 @@ module.exports = game => {
 
     let SSE = game === 'SSE';
 
-    generateRecordDef('TES4', game, {
-        name: 'File Header',
+    addDef(record('TES4', 'File Header', {
         flags: {
             0: 'ESM',           // 0x00000001
             7: 'Localized',     // 0x00000080
@@ -38,5 +37,5 @@ module.exports = game => {
             subrecord('INTV', unknown()),
             subrecord('INCC', unknown())
         ]
-    });
+    }));
 };

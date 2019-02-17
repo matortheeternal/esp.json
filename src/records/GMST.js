@@ -1,5 +1,5 @@
 let {
-    generateRecordDef,
+    addDef, record,
     req, subrecord, union,
     zstring, lstring, int32, float, enum32
 } = require('../helpers');
@@ -10,8 +10,7 @@ module.exports = game => {
     if (!supportedGames.includes(game))
         throw new Error(`GMST record definition not available for ${game}`);
 
-    generateRecordDef('GMST', game, {
-        name: 'Game Setting',
+    addDef(record('GMST', 'Game Setting', {
         elements: [
             req(subrecord('EDID', zstring('Editor ID'))),
             req(subrecord('DATA', union('Value', 'GMSTUnionDecider', [
@@ -21,5 +20,5 @@ module.exports = game => {
                 enum32('Bool', ['False', 'True'])
             ])))
         ]
-    });
+    }));
 };

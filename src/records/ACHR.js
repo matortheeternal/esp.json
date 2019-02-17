@@ -1,5 +1,5 @@
 let {
-    generateRecordDef,
+    addDef, record,
     req, subrecord, subrecordArray, multiStruct,
     int32, float, ckFormId, empty, flags8
 } = require('../helpers');
@@ -27,8 +27,7 @@ module.exports = game => {
         'PBAR', 'PBEA', 'PCON', 'PFLA'
     ];
 
-    generateRecordDef('ACHR', game, {
-        name: 'Placed NPC',
+    addDef(record('ACHR', 'Placed NPC', {
         additionalElements: ['Cell'],
         flags: {
             9: 'Starts Dead',           // 0x00000200
@@ -101,5 +100,5 @@ module.exports = game => {
             subrecord('XSCL'),
             subrecord('DATA', 'Position/Rotation')
         ]
-    });
+    }));
 };
