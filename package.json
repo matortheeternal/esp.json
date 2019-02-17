@@ -1,0 +1,33 @@
+{
+  "name": "esp.json",
+  "version": "1.0.0",
+  "description": "JSON definitions for parsing Bethesda Plugin Files (.esp, .esm, .esl)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matortheeternal/esp.json.git"
+  },
+  "keywords": [
+    "bethesda",
+    "plugin",
+    "file",
+    "parsing",
+    "definitions",
+    "json",
+    "esp",
+    "esl",
+    "esm"
+  ],
+  "author": "Mator",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matortheeternal/esp.json/issues"
+  },
+  "homepage": "https://github.com/matortheeternal/esp.json#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0"
+  }
+}
