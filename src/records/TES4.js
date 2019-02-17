@@ -1,5 +1,5 @@
 let {
-    addDef, record,
+    addDef, record, req,
     subrecord, multiArray, struct, array,
     bytes, unknown, zstring, float, int32, formId
 } = require('../helpers');

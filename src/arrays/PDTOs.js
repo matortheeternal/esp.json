@@ -1,5 +1,5 @@
 let {
-    addDef, subrecordArray, struct, union,
+    addDef, subrecordArray, subrecord, struct, union,
     ckFormId, enum32, zstring
 } = require('../helpers');
 

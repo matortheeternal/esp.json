@@ -1,4 +1,4 @@
-let { addDef, int8, bytes } = require('../helpers');
+let { addDef, struct, int8, bytes } = require('../helpers');
 
 let supportedGames = ['TES5', 'SSE'];
 

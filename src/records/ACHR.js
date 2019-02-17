@@ -1,7 +1,7 @@
 let {
     addDef, record,
-    req, subrecord, subrecordArray, multiStruct,
-    int32, float, ckFormId, empty, flags8
+    req, subrecord, subrecordArray, multiStruct, struct, array,
+    int32, float, ckFormId, empty, unknown, flags8
 } = require('../helpers');
 
 let supportedGames = ['TES5', 'SSE'];
