@@ -8,6 +8,7 @@ let record = (signature, name, def) =>
     ({ signature, type: 'record', name, def });
 let req = obj => (obj.required = true) && obj;
 
+let def = name => ({ name, type: 'def' });
 let subrecord = (signature, def) =>
     ({ signature, type: 'subrecord', def });
 let subrecordArray = (name, subrecord, sortKey) =>
@@ -33,17 +34,21 @@ let lstring = (name, maxSize = 0) => ({ name, type: 'lstring', maxSize });
 // fixed length data
 let float = (name, formatter = '') => ({ name, type: 'float', formatter });
 let int8 = name => ({ name, type: 'int8' });
+let uint8 = name => ({ name, type: 'uint8' });
 let flags8 = (name, flags) => ({ name, type: 'flags8', flags });
+let flags16 = (name, flags) => ({ name, type: 'flags16', flags });
 let int32 = name => ({ name, type: 'int32' });
+let flags32 = (name, flags) => ({ name, type: 'flags32', flags });
 let enum32 = (name, options) => ({ name, type: 'enum32', options });
 let formId = name => ({ name, type: 'formId' });
 let ckFormId = (name, signatures) => ({ name, type: 'formId', signatures });
 let empty = name => ({ name, type: 'empty' });
 
 module.exports = {
-    addDef, getDefs, req,
+    addDef, getDefs, req, def,
     record, subrecord, subrecordArray, multiArray, multiStruct,
     struct, array, union,
     bytes, unknown, zstring, lstring,
-    float, int8, flags8, int32, enum32, formId, ckFormId, empty
+    float, int8, uint8, flags8, flags16, int32, flags32,
+    enum32, formId, ckFormId, empty
 };

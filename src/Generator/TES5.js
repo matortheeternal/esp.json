@@ -11,11 +11,11 @@ let load = {
 
 Object.keys(load).forEach(folder => {
     load[folder].forEach(file => {
-        require(`./${folder}/${file}`)('TES5');
-    })
+        require(`./Definitions/${folder}/${file}`)('TES5');
+    });
 });
 
 let defs = getDefs();
 // TODO: verify defs
-let outputPath = path.resolve(__dirname, '..', 'data', 'TES5.json');
+let outputPath = path.resolve(__dirname, '..', '..', 'data', 'TES5.json');
 fs.writeFileSync(outputPath, JSON.stringify(defs));
