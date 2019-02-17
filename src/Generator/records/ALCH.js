@@ -7,7 +7,7 @@ let {
 module.exports = () => {
     addDef(record('ALCH', 'Ingestible', {
         flags: {
-            29: 'Medicine',                         // 0x20000000
+            29: 'Medicine',             // 0x20000000
         },
         elements: [
             subrecord('EDID'),
