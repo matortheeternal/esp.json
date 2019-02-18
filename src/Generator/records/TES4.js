@@ -12,7 +12,7 @@ module.exports = game => {
 
     let SSE = game === 'SSE';
 
-    addDef(record('TES4', 'File Header', {
+    addDef('TES4', record('TES4', 'File Header', {
         flags: {
             0: 'ESM',           // 0x00000001
             7: 'Localized',     // 0x00000080

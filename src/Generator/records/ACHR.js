@@ -1,6 +1,6 @@
 let {
-    addDef, record,
-    req, subrecord, subrecordArray, multiStruct, struct, array,
+    addDef, record, def, namedDef,
+    req, subrecord, arrayOfSubrecord, multiStruct, struct, array,
     int32, float, ckFormId, empty, unknown, flags8
 } = require('../helpers');
 
@@ -27,7 +27,7 @@ module.exports = game => {
         'PBAR', 'PBEA', 'PCON', 'PFLA'
     ];
 
-    addDef(record('ACHR', 'Placed NPC', {
+    addDef('ACHR', record('ACHR', 'Placed NPC', {
         additionalElements: ['Cell'],
         flags: {
             9: 'Starts Dead',           // 0x00000200
@@ -37,12 +37,12 @@ module.exports = game => {
             29: 'Don\'t Havok Settle'   // 0x20000000
         },
         elements: [
-            subrecord('EDID'),
-            subrecord('VMAD'),
+            def('EDID'),
+            def('VMAD'),
             req(subrecord('NAME', ckFormId('Base', ['NPC_']))),
             subrecord('XEZN', ckFormId('Encounter Zone', ['ECZN'])),
-            subrecord('XRGD'),
-            subrecord('XRGB'),
+            def('XRGD'),
+            def('XRGB'),
             multiStruct('Patrol Data', [
                 req(subrecord('XPRD', float('Idle Time'))),
                 req(subrecord('XPPA', empty('Patrol Script Marker'))),
@@ -54,34 +54,34 @@ module.exports = game => {
                     subrecord('QNAM', unknown()),
                     subrecord('SCRO', unknown())
                 ]),
-                subrecordArray('Topic', 'PDTOs'),
+                arrayOfSubrecord('Topic', 'PDTOs'),
                 subrecord('TNAM', ckFormId('Topic', ['DIAL', 'NULL']))
             ]),
-            subrecord('XLCM'), // Leveled Actor
+            def('XLCM'),
             req(subrecord('XMRC', ckFormId('Merchant Container', ['REFR']))),
             subrecord('XCNT', int32('Count')),
             subrecord('XRDS', float('Radius')),
             subrecord('XHLP', float('Health')),
-            subrecordArray('Linked References',
+            arrayOfSubrecord('Linked References', [0],
                 subrecord('XLKR', struct('Linked Reference', [
                     ckFormId('Keyword/Ref', keywordRefSigs),
                     ckFormId('Ref', refSigs)
-                ])), [0] // TODO: should probably be [0,1]?
+                ]))
             ),
             multiStruct('Activate Parents', [
                 req(subrecord('XAPD', flags8('Flags', [
                     'Parent Activate Only'
                 ]))),
-                subrecordArray('Activate Parent Refs',
+                arrayOfSubrecord('Activate Parent Refs', [0],
                     subrecord('XAPR', struct('Activate Parent Ref', [
                         ckFormId('Reference', refSigs),
                         float('Delay')
-                    ])), [0]
+                    ]))
                 )
             ]),
             subrecord('XCLP', struct('Linked Reference Color', [
-                struct('Link Start Color', 'ByteColors'),
-                struct('Link End Color', 'ByteColors')
+                namedDef('Link Start Color', 'ByteColors'),
+                namedDef('Link End Color', 'ByteColors')
             ])),
             subrecord('XLCN', ckFormId('Persistent Location', ['LCTN'])),
             subrecord('XLRL', ckFormId('Location Reference', locRefSigs)),
@@ -92,13 +92,13 @@ module.exports = game => {
             subrecord('XHOR', ckFormId('Horse', ['ACHR'])),
             subrecord('XHTW', float('Head-Tracking Weight')),
             subrecord('XFVC', float('Favor Cost')),
-            subrecord('XESP'),
-            multiStruct('Ownership'),
+            def('XESP'),
+            def('Ownership'),
             subrecord('XEMI', ckFormId('Emittance', ['LIGH', 'REGN'])),
             subrecord('XMBR', ckFormId('MultiBound Reference', mbRefSigs)),
             subrecord('XIBS', empty('Ignored By Sandbox')),
-            subrecord('XSCL'),
-            subrecord('DATA', 'Position/Rotation')
+            def('XSCL'),
+            def('DATAPosRot')
         ]
     }));
 };

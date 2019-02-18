@@ -1,10 +1,10 @@
 let {
-    addDef, record, subrecord, req, subrecordArray,
+    addDef, record, subrecord, req, def,
     struct, uint8, ckFormId, lstring, flags16
 } = require('../helpers');
 
 module.exports = () => {
-    addDef(record('ACTI', 'Activator', {
+    addDef('ACTI', record('ACTI', 'Activator', {
         flags: {
             6: 'Has Tree LOD',                          // 0x00000040
             8: 'Must Update Anims',                     // 0x00000100
@@ -21,14 +21,14 @@ module.exports = () => {
             30: 'NavMesh Generation - Ground',          // 0x40000000
         },
         elements: [
-            subrecord('EDID'),
-            subrecord('VMAD'),
-            req(subrecord('OBND')),
-            subrecord('FULL'),
-            subrecord('MODL'),
-            subrecord('DEST'),
-            subrecord('KSIZ'),
-            subrecordArray('KWDAs', 'KWDAs'),
+            def('EDID'),
+            def('VMAD'),
+            req(def('OBND')),
+            def('FULL'),
+            def('MODL'),
+            def('DEST'),
+            def('KSIZ'),
+            def('KWDAs'),
             subrecord('PNAM', struct('Marker Color', [
                 uint8('Red'),
                 uint8('Green'),

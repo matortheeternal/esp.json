@@ -1,5 +1,5 @@
 let {
-    addDef, subrecordArray, subrecord, struct, union,
+    addDef, arrayOfSubrecord, subrecord, struct, union,
     ckFormId, enum32, zstring
 } = require('../helpers');
 
@@ -9,7 +9,7 @@ module.exports = game => {
     if (!supportedGames.includes(game))
         throw new Error(`Ownership definition not available for ${game}`);
 
-    addDef(subrecordArray('PDTOs',
+    addDef('PDTOs', arrayOfSubrecord('Topic', [],
         subrecord('PDTO', struct('Topic Data', [
             enum32('Type', ['Topic Ref', 'Topic Subtype']),
             union('Data', 'PDTODecider', [

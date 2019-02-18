@@ -1,27 +1,27 @@
 let {
-    addDef, record, subrecord, req, subrecordArray,
+    addDef, record, subrecord, req,
     float, struct, int32, flags32, formId,
     ckFormId, def
 } = require('../helpers');
 
 module.exports = () => {
-    addDef(record('ALCH', 'Ingestible', {
+    addDef('ALCH', record('ALCH', 'Ingestible', {
         flags: {
             29: 'Medicine',             // 0x20000000
         },
         elements: [
-            subrecord('EDID'),
-            req(subrecord('OBND')),
-            subrecord('FULL'),
-            subrecord('KSIZ'),
-            subrecordArray('KWDAs', 'KWDAs'),
-            subrecord('DESC'),
-            subrecord('MODL'),
-            subrecord('DEST'),
-            subrecord('ICON'),
-            subrecord('YNAM'),
-            subrecord('ZNAM'),
-            subrecord('ETYP'),
+            def('EDID'),
+            req(def('OBND')),
+            def('FULL'),
+            def('KSIZ'),
+            def('KWDAs'),
+            def('DESC'),
+            def('MODL'),
+            def('DEST'),
+            def('ICON'),
+            def('YNAM'),
+            def('ZNAM'),
+            def('ETYP'),
             req(subrecord('DATA', float('Weight'))),
             subrecord('ENIT', struct('Effect Data', [
                 int32('Value'),

@@ -1,6 +1,6 @@
 let defs = {};
 
-let addDef = def => defs[def.signature || def.name] = def;
+let addDef = (id, def) => defs[id] = def;
 let getDefs = () => defs;
 
 // data structures
@@ -8,10 +8,11 @@ let record = (signature, name, def) =>
     ({ signature, type: 'record', name, def });
 let req = obj => (obj.required = true) && obj;
 
-let def = name => ({ name, type: 'def' });
+let def = def => ({ def });
+let namedDef = (name, def) => ({ name, def });
 let subrecord = (signature, def) =>
     ({ signature, type: 'subrecord', def });
-let subrecordArray = (name, subrecord, sortKey) =>
+let arrayOfSubrecord = (name, sortKey, subrecord) =>
     ({ name, type: 'sarray', subrecord, sortKey });
 let multiArray = (name, entryName, subrecords) =>
     ({ name, type: 'marray', entryName, subrecords });
@@ -45,8 +46,8 @@ let ckFormId = (name, signatures) => ({ name, type: 'formId', signatures });
 let empty = name => ({ name, type: 'empty' });
 
 module.exports = {
-    addDef, getDefs, req, def,
-    record, subrecord, subrecordArray, multiArray, multiStruct,
+    addDef, getDefs, req, def, namedDef,
+    record, subrecord, arrayOfSubrecord, multiArray, multiStruct,
     struct, array, union,
     bytes, unknown, zstring, lstring,
     float, int8, uint8, flags8, flags16, int32, flags32,
