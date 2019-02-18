@@ -1,9 +1,10 @@
-let fs = require('fs'),
-    recordParser = require('./Converters/recordConverter'),
-    variableParser = require('./Converters/variableConverter'),
-    commentParser = require('./Converters/commentConverters');
+let path = require('path'),
+    fs = require('fs'),
+    recordConverter = require('./Converters/recordConverter'),
+    variableConverter = require('./Converters/variableConverter'),
+    {commentConverter} = require('./Converters/sharedConverters');
 
-let fileParsers = [recordParser, variableParser, commentParser],
+let fileConverters = [recordConverter, variableConverter, commentConverter],
     pos = 0,
     fileCode;
 
@@ -27,37 +28,37 @@ let codeSnippet = function() {
     return `Line ${lineNumber + 1}:\n${line}\n${caret}`;
 };
 
-let convertAny = function(parsers, code) {
-    let parser = parsers.find(parser => parser.expr.test(code));
-    if (!parser) return code;
-    //console.log(`Converting ${parser.name}`);
-    code = convert(parser, code);
-    return convertAny(parsers, code);
+let convertAny = function(converters, code) {
+    let converter = converters.find(converter => converter.expr.test(code));
+    if (!converter) return code;
+    //console.log(`Converting ${converter.name}`);
+    code = convert(converter, code);
+    return convertAny(converters, code);
 };
 
-let convertEnd = function(parser, code) {
-    if (!parser.end.expr.test(code))
-        throw new Error(`Failed to convert ${parser.name},\n${codeSnippet()}`);
-    return convert(parser.end, code);
+let convertEnd = function(converter, code) {
+    if (!converter.end.expr.test(code))
+        throw new Error(`Failed to convert ${converter.name},\n${codeSnippet()}`);
+    return convert(converter.end, code);
 };
 
-let convert = function(parser, code) {
-    let match = code.match(parser.expr);
+let convert = function(converter, code) {
+    let match = code.match(converter.expr);
     if (!match) return;
     pos += match[0].length;
     code = code.slice(match[0].length);
-    parser.process(match);
-    if (parser.then) code = convertAny(parser.then, code);
-    if (parser.end) code = convertEnd(parser, code);
+    converter.process(match);
+    if (converter.then) code = convertAny(converter.then, code);
+    if (converter.end) code = convertEnd(converter, code);
     return code;
 };
 
 let convertFileCode = function(filename, code) {
-    let parser = fileParsers.find(parser => parser.expr.test(code));
-    if (!parser)
-        throw new Error(`No parser found for:\n${codeSnippet()}`);
-    console.log(`Converting ${parser.name}`);
-    code = convert(parser, code);
+    let converter = fileConverters.find(converter => converter.expr.test(code));
+    if (!converter)
+        throw new Error(`No converter found for:\n${codeSnippet()}`);
+    console.log(`Converting ${converter.name}`);
+    code = convert(converter, code);
     if (code === '')
         return console.log(`${filename} converted successfully`);
     convertFileCode(filename, code);

@@ -1,8 +1,11 @@
 let {
-    newOutput, saveOutput, addRequires, addLine, addBlankLine
+    newOutput, saveOutput, addRequires, addLine,
+    addBlankLine, addComment,
 } = require('../output');
 let {
-    LineExpr, convertStr, sigExpr, strExpr
+    LineExpr, convertStr,
+    sigExpr, strExpr, numExpr, boolExpr,
+    idExpr, numArrayExpr, offsetExpr
 } = require('../helpers');
 let memberParsers = require('./memberConverters');
 
@@ -29,21 +32,21 @@ let recordConverter = {
     },
     then: [{
         name: 'wbFlags',
-        expr: LineExpr(`wbFlags\\([A-Za-z]+, wbFlagsList\\(\\[`),
+        expr: LineExpr(`wbFlags\\(${idExpr}, wbFlagsList\\(\\[`),
         process: function() {
             addLine('flags: {', 1);
         },
         then: [{
             name: 'Flag',
-            expr: LineExpr(`\\{(0x[0-9A-F]+)\\}\\s+([0-9]+),\\s+${strExpr},?`),
+            expr: LineExpr(`${offsetExpr}\\s+(${numExpr}), ${strExpr},?(?:\\s+//[^\\n]+)?`),
             process: function(match) {
-                let flagName = match[3].replace(/''/g, "\\'");
+                let flagName = convertStr(match[3]);
                 addLine(`${match[2]}: '${flagName}',`);
                 addComment(match[1]);
             }
         }],
         end: {
-            expr: LineExpr(`\\]\\)(, \\[[0-9]+\\])?\\),`),
+            expr: LineExpr(`\\](?:, ${boolExpr}, ${boolExpr})?\\)(?:, ${numArrayExpr})?\\),`),
             process: function() {
                 addLine('},', -1);
             }
@@ -57,7 +60,7 @@ let recordConverter = {
         },
         then: memberParsers,
         end: {
-            expr: LineExpr(`\\], ([^;]+);`),
+            expr: LineExpr(`\\](?:, [^\\)]+)?\\);`),
             process: function() {
                 addLine(']', -1);
                 addLine('}));', -1);

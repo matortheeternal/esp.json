@@ -1,11 +1,15 @@
+let path = require('path'),
+    fs = require('fs');
+
 let { isTrue } = require('./helpers');
 
 const tab = '    ';
 
 let output;
-let depth = 0;
+let depth;
 
 let newOutput = function(filename) {
+    depth = 0;
     return output = {
         filename,
         require: [],
@@ -66,8 +70,10 @@ let addBlankLine = () => output.lines.push('');
 
 let getDepth = function(line) {
     let d = 0;
-    while (line.startsWith(tab) && d++)
+    while (line.startsWith(tab)) {
+        d++;
         line = line.slice(tab.length);
+    }
     return d;
 };
 
@@ -79,7 +85,8 @@ let reqPrevious = function() {
         if (getDepth(output.lines[f]) === depth) break;
     let trimmedLine = output.lines[f].slice(depth * tab.length);
     output.lines[f] = tab.repeat(depth) + `req(${trimmedLine}`;
-    output.lines[lastIndex].splice(-1, 1, '),');
+    let lastLine = output.lines[lastIndex];
+    output.lines[lastIndex] = lastLine.slice(0, -1) + '),';
 };
 
 module.exports = {

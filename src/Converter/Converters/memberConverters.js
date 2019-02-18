@@ -2,17 +2,17 @@ let {
     addRequires, addLine, addLineReq, reqPrevious
 } = require('../output');
 let {
-    LineExpr, processAllowedSigs, convertStr, isTrue,
-    sigExpr, strExpr, sigArrayExpr, uintExpr,
-    numExpr, boolExpr, idExpr
+    LineExpr, processAllowedSigs, convertStr, isTrue, resolveIntType,
+    sigExpr, strExpr, sigArrayExpr, uintExpr, intTypeExpr,
+    numExpr, boolExpr, idExpr, numArrayExpr
 } = require('../helpers');
-let fieldParsers = require('./fieldConverters');
-let { flagParser } = require('./sharedConverters');
+let fieldConverters = require('./fieldConverters'),
+    { flagConverter, commentConverter } = require('./sharedConverters');
 
 let memberConverters = [];
 memberConverters.push({
     name: 'wbFormIDCk Subrecord',
-    expr: LineExpr(`wbFormIDCk\\(${sigExpr}, ${strExpr}, ${sigArrayExpr}(?:, ${boolExpr}, ${idExpr}, ${boolExpr})?\\),?`),
+    expr: LineExpr(`wbFormIDC[Kk](?:NoReach)?\\(${sigExpr}, ${strExpr}, ${sigArrayExpr}(?:, ${boolExpr}(?:, ${idExpr}(?:, ${boolExpr})?)?)?\\),?`),
     process: function(match) {
         addRequires('subrecord', 'ckFormId');
         let allowedSigs = processAllowedSigs(match[3]),
@@ -22,7 +22,7 @@ memberConverters.push({
     }
 }, {
     name: 'wbLString Subrecord',
-    expr: LineExpr(`wbLString(?:KC)?\\(${sigExpr}, ${strExpr}, ${numExpr}, ${idExpr}(?:, ${boolExpr}(?:, [A-Za-z\\{\\}]+\\)?)?,?`),
+    expr: LineExpr(`wbLString(?:KC)?\\(${sigExpr}, ${strExpr}, ${numExpr}, ${idExpr}(?:, ${boolExpr}(?:, [A-Za-z\\{\\}]+?)?)?\\),?`),
     process: function(match) {
         addRequires('subrecord', 'lstring');
         let name = convertStr(match[2]),
@@ -39,34 +39,96 @@ memberConverters.push({
     },
     then: memberConverters,
     end: {
-        expr: LineExpr(`\\], [](?:, ${idExpr}, ${boolExpr}, ${idExpr})?`),
+        expr: LineExpr(`\\], \\[\\](?:, ${idExpr}(?:, ${boolExpr}(?:, ${idExpr}(?:, ${boolExpr})?)?)?)?\\),?`),
         process: function(match) {
-            addLine(`]),`);
+            addLine(`]),`, -1);
             if (isTrue(match[1])) reqPrevious();
         }
     }
 }, {
-    name: 'wbRArrayS wbStructSK',
-    expr: LineExpr(`wbRArrayS\\(${strExpr}, wbStructSK\\(${sigExpr}, ${numArrayExpr}, ${strExpr}, \\[`),
+    name: 'wbRArrayS',
+    expr: LineExpr(`wbRArrayS\\(${strExpr},`),
     process: function(match) {
-        let name = convertStr(match[1]),
-            structName = convertStr(match[4]);
-        addRequires('arrayOfSubrecord', 'subrecord', 'struct');
-        addLine(`arrayOfSubrecord('${name}', ${match[3]}`, 1);
-        addLine(`subrecord('${match[2]}', struct('${structName}', [`, 1);
+        let name = convertStr(match[1]);
+        addRequires('arrayOfSubrecord');
+        addLine(`arrayOfSubrecord('${name}', `, 1);
     },
     then: memberConverters,
     end: {
-        expr: LineExpr(`\\], ${idExpr}, ${boolExpr}, ${idExpr}, ${numExpr}\\)\\)`),
-        process: function(match) {
-            addLine(`]))`, -1);
+        expr: LineExpr(`\\),?`),
+        process: function() {
             addLine('),', -1);
+        }
+    }
+}, {
+    name: 'wbRArray Def',
+    expr: LineExpr(`wbRArray\\(${strExpr}, ${idExpr}, ${idExpr}, ${boolExpr}(?:, ${idExpr}, ${idExpr})?\\),?`),
+    process: function(match) {
+        let name = convertStr(match[1]),
+            refName = match[2].slice(2);
+        addLineReq(match[4], `arrayOfStruct('${name}', ref('${refName}'))`);
+    }
+}, {
+    name: 'wbRArray',
+    expr: LineExpr(`wbRArray\\(${strExpr},`),
+    process: function(match) {
+        let name = convertStr(match[1]);
+        addLine(`arrayOfStruct('${name}',`, 1);
+    },
+    then: memberConverters,
+    end: {
+        expr: LineExpr('\\),?'),
+        process: function() {
+            addLine('),', -1);
+        }
+    }
+}, {
+    name: 'wbRStructs',
+    expr: LineExpr(`wbRStructs\\(${strExpr}, ${strExpr}, \\[`),
+    process: function(match) {
+        let name = convertStr(match[1]),
+            entryName = convertStr(match[2]);
+        addLine(`arrayOfStruct('${name}', struct('${entryName}', [`, 1);
+    },
+    then: memberConverters,
+    end: {
+        expr: LineExpr(`\\], \\[\\], ${idExpr}, ${boolExpr}\\),?`),
+        process: function(match) {
+            addLine('])),', -1);
             if (isTrue(match[1])) reqPrevious();
+        }
+    }
+}, {
+    name: 'IsSSE',
+    expr: LineExpr(`IsSSE\\(`),
+    process: function() {
+        addLine('IsSSE([', 1);
+    },
+    then: memberConverters,
+    end: {
+        expr: LineExpr(`\\),?`),
+        process: function() {
+            addLine(']),', -1);
+        }
+    }
+}, {
+    name: 'wbArray Subrecord',
+    expr: LineExpr(`wbArray\\(${sigExpr}, ${strExpr},`),
+    process: function(match) {
+        addRequires('subrecord', 'array');
+        let name = convertStr(match[2]);
+        addLine(`subrecord('${match[1]}', array('${name}',`, 1);
+    },
+    then: fieldConverters,
+    end: {
+        expr: LineExpr(`\\),?`),
+        process: function() {
+            addLine(`)),`, -1);
         }
     }
 }, {
     name: 'wbString Subrecord',
-    expr: LineExpr(`wbString\\(${sigExpr}, ${strExpr}(?:, ${numExpr}, ${idExpr})\\),?`),
+    expr: LineExpr(`wbString\\(${sigExpr}, ${strExpr}(?:, ${numExpr}, ${idExpr}(?:, ${boolExpr})?)?\\),?`),
     process: function(match) {
         addRequires('subrecord', 'zstring');
         let name = convertStr(match[2]),
@@ -100,6 +162,15 @@ memberConverters.push({
         addLineReq(match[3], `subrecord('${match[1]}', ${def})`);
     }
 }, {
+    name: 'wbByteArray Subrecord',
+    expr: LineExpr(`wbByteArray\\(${sigExpr}, ${strExpr}(?:, ${numExpr}, ${idExpr}, ${boolExpr}, ${boolExpr}, ${idExpr})?\\),?`),
+    process: function(match) {
+        addRequires('subrecord', 'bytes');
+        let name = convertStr(match[2]),
+            def = `bytes('${name}')`;
+        addLineReq(match[3], `subrecord('${match[1]}', ${def})`);
+    }
+}, {
     name: 'wbStruct Subrecord',
     expr: LineExpr(`wbStruct\\(${sigExpr}, ${strExpr}, \\[`),
     process: function(match) {
@@ -107,13 +178,38 @@ memberConverters.push({
         let name = convertStr(match[2]);
         addLine(`subrecord('${match[1]}', struct('${name}', [`, 1);
     },
-    then: fieldParsers,
+    then: fieldConverters,
     end: {
-        expr: LineExpr(`\\](?:, ${idExpr}, ${boolExpr})?\\),?`),
+        expr: LineExpr(`\\](?:, ${idExpr}, ${boolExpr}(?:, ${idExpr}, ${numExpr})?)?\\),?`),
         process: function(match) {
             addLine('])),', -1);
             if (isTrue(match[1])) reqPrevious();
         }
+    }
+}, {
+    name: 'wbStructSK Subrecord',
+    expr: LineExpr(`wbStructSK\\(${sigExpr}, ${numArrayExpr}, ${strExpr}, \\[`),
+    process: function(match) {
+        addRequires('subrecord', 'sortKey', 'struct');
+        let name = convertStr(match[3]);
+        addLine(`subrecord('${match[1]}', sortKey(${match[2]}, struct('${name}', [`, 1);
+    },
+    then: fieldConverters,
+    end: {
+        expr: LineExpr(`\\](?:, ${idExpr}, ${boolExpr}, ${idExpr}, ${numExpr}(?:, ${idExpr})?)?\\),?`),
+        process: function(match) {
+            addLine(']))),', -1);
+            if (isTrue(match[1])) reqPrevious();
+        }
+    }
+}, {
+    name: 'wbInteger Subrecord',
+    expr: LineExpr(`wbInteger\\(${sigExpr}, ${strExpr}, ${intTypeExpr}(?:, (${idExpr}\\(${numExpr}\\)), ${idExpr}, ${boolExpr})?\\),?`),
+    process: function(match) {
+        let intType = resolveIntType(match[3], match[4]);
+        addRequires(intType);
+        let name = convertStr(match[2]);
+        addLine(`subrecord('${match[1]}', ${intType}('${name}')),`);
     }
 }, {
     name: 'wbInteger wbFlags Subrecord',
@@ -124,9 +220,9 @@ memberConverters.push({
         let name = convertStr(match[2]);
         addLine(`subrecord('${match[1]}', ${flagsType}('${name}', [`, 1);
     },
-    then: [flagParser],
+    then: [flagConverter],
     end: {
-        expr: LineExpr(`\\]\\)\\),?`),
+        expr: LineExpr(`\\](?:, ${boolExpr})?\\)\\),?`),
         process: function() {
             addLine(`])),`, -1);
         }
@@ -140,15 +236,11 @@ memberConverters.push({
     }
 }, {
     name: 'Def',
-    expr: LineExpr(`wb${idExpr},?`),
+    expr: LineExpr(`wb([A-Za-z0-9]+),?`),
     process: function(match) {
         addRequires('def');
         addLine(`def('${match[1]}'),`);
     }
-}, {
-    name: 'Comment',
-    expr: LineExpr(`{[^}]+}`),
-    process: () => {}
-});
+}, commentConverter);
 
 module.exports = memberConverters;

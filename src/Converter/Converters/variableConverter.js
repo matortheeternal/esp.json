@@ -1,15 +1,17 @@
 let {
-    newOutput, saveOutput, append, addLine, addBlankLine
+    newOutput, saveOutput, addLine, addBlankLine, addRequires
 } = require('../output');
 let { LineExpr } = require('../helpers');
-let memberParsers = require('./memberConverters'),
-    defParsers = require('./defConverters');
+let memberConverters = require('./memberConverters'),
+    {enumConverter} = require('./sharedConverters'),
+    fieldConverters = require('./fieldConverters');
 
 let newVarOutput = function(id) {
     newOutput(`${id}.js`);
+    addRequires('addDef');
     addBlankLine();
     addLine('module.exports = () => {', 1);
-    addLine(`addDef('${id}', `)
+    addLine(`addDef('${id}', `, 1);
 };
 
 let saveVarOutput = function() {
@@ -19,18 +21,19 @@ let saveVarOutput = function() {
 
 let variableConverter = {
     name: 'Variable',
-    expr: LineExpr(`wb([A-Za-z]+) := `),
+    expr: LineExpr(`wb([A-Za-z][A-Za-z0-9]+) :=`),
     process: function(match) {
-        newVarOutput(match[0]);
+        newVarOutput(match[1]);
     },
     then: Array.prototype.concat(
-        defParsers,
-        memberParsers
+        [enumConverter],
+        fieldConverters,
+        memberConverters
     ),
     end: {
         expr: LineExpr(';'),
         process: function() {
-            append(');');
+            addLine(');', -1);
             saveVarOutput();
         }
     }
