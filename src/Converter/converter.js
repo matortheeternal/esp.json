@@ -57,7 +57,7 @@ let convertFileCode = function(filename, code) {
     let converter = fileConverters.find(converter => converter.expr.test(code));
     if (!converter)
         throw new Error(`No converter found for:\n${codeSnippet()}`);
-    console.log(`Converting ${converter.name}`);
+    //console.log(`Converting ${converter.name}`);
     code = convert(converter, code);
     if (code === '')
         return console.log(`${filename} converted successfully`);
@@ -66,6 +66,7 @@ let convertFileCode = function(filename, code) {
 
 let convertFile = function(filename) {
     let filePath = path.resolve(__dirname, 'Input', filename);
+    pos = 0;
     console.log('Reading ' + filePath);
     fileCode = fs.readFileSync(filePath, 'utf8');
     // console.log(`--- Read ${fileCode.length} characters ---\n`, fileCode);

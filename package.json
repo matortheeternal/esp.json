@@ -4,7 +4,8 @@
   "description": "JSON definitions for parsing Bethesda Plugin Files (.esp, .esm, .esl)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "convertTES5":  "node ./tasks/convertTES5.js"
   },
   "repository": {
     "type": "git",
