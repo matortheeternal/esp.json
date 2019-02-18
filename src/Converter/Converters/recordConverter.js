@@ -1,15 +1,13 @@
 let {
-    newOutput, saveOutput,
-    addRequires, addLine, addBlankLine,
-    LineExpr, convertStr,
-    sigExpr, strExpr
+    newOutput, saveOutput, addRequires, addLine, addBlankLine
 } = require('../output');
-let subrecordParsers = require('./subrecordParsers');
-
-let recordOutput;
+let {
+    LineExpr, convertStr, sigExpr, strExpr
+} = require('../helpers');
+let memberParsers = require('./memberConverters');
 
 let newRecordOutput = function(signature, name) {
-    recordOutput = newOutput(`${signature}.js`);
+    newOutput(`${signature}.js`);
     addBlankLine();
     addLine('module.exports = () => {', 1);
     addRequires('addDef', 'record');
@@ -19,10 +17,9 @@ let newRecordOutput = function(signature, name) {
 let saveRecordOutput = function() {
     addLine('};', -1);
     saveOutput();
-    recordOutput = undefined;
 };
 
-let recordParser = {
+let recordConverter = {
     name: 'wbRecord',
     expr: LineExpr(`wbRecord\\(${sigExpr}, ${strExpr},`),
     process: function(match) {
@@ -40,10 +37,9 @@ let recordParser = {
             name: 'Flag',
             expr: LineExpr(`\\{(0x[0-9A-F]+)\\}\\s+([0-9]+),\\s+${strExpr},?`),
             process: function(match) {
-                let flagName = match[3].replace(/''/g, "\\'"),
-                    codeLine = `${match[2]}: '${flagName}',`,
-                    commentSpace = ' '.repeat(40 - codeLine.length);
-                addLine(`${codeLine + commentSpace}// ${match[1]}`);
+                let flagName = match[3].replace(/''/g, "\\'");
+                addLine(`${match[2]}: '${flagName}',`);
+                addComment(match[1]);
             }
         }],
         end: {
@@ -59,7 +55,7 @@ let recordParser = {
         process: function() {
             addLine(`elements: [`, 1);
         },
-        then: subrecordParsers,
+        then: memberParsers,
         end: {
             expr: LineExpr(`\\], ([^;]+);`),
             process: function() {
@@ -71,4 +67,4 @@ let recordParser = {
     }
 };
 
-module.exports = recordParser;
+module.exports = recordConverter;

@@ -1,3 +1,5 @@
+let { isTrue } = require('./helpers');
+
 const tab = '    ';
 
 let output;
@@ -34,34 +36,53 @@ let addRequires = function(...a) {
     });
 };
 
+let append = function(text, depthChange = 0) {
+    let lastIndex = output.lines.length - 1;
+    output.lines[lastIndex] += text;
+    depth += depthChange;
+};
+
 let addLine = function(line, depthChange = 0) {
     if (depthChange < 0) depth += depthChange;
     output.lines.push(tab.repeat(depth) + line);
     if (depthChange > 0) depth += depthChange;
 };
 
+let addComment = function(comment, targetWidth = 60) {
+    let lastIndex = output.lines.length - 1,
+        line = output.lines[lastIndex],
+        spaceWidth = Math.max(targetWidth - line.length, 0),
+        commentSpace = ' '.repeat(spaceWidth);
+    output.lines[lastIndex] += commentSpace + `// ${comment}`;
+};
+
 let addLineReq = function(req, line) {
-    req ? addLine(`req(${line}),`) : addLine(`${line},`);
+    if (!isTrue(req)) return addLine(`${line},`);
+    addRequires('req');
+    addLine(`req(${line}),`);
 };
 
 let addBlankLine = () => output.lines.push('');
 
-let LineExpr = expr => new RegExp(`^\\s*${expr}`);
-let convertStr = str => str.replace(/''/g, "\'");
-let processAllowedSigs = str => {
-    let sigStrs = str.split(',').map(s => `'${s.trim()}'`);
-    return `[${sigStrs.join(', ')}]`;
+let getDepth = function(line) {
+    let d = 0;
+    while (line.startsWith(tab) && d++)
+        line = line.slice(tab.length);
+    return d;
 };
 
-let sigExpr = `([A-Z]{4})`;
-let strExpr = `'([^']+|'')*'`;
-let sigArrayExpr = `\\[([^\\]]+)\\]`;
-let uintExpr = `itU(8|16|24|32|64)`;
-let intExpr = `itS(8|16|24|32|64)`;
+let reqPrevious = function() {
+    addRequires('req');
+    let lastIndex = output.lines.length - 1,
+        f = lastIndex - 1;
+    for (; f >= 0; f--)
+        if (getDepth(output.lines[f]) === depth) break;
+    let trimmedLine = output.lines[f].slice(depth * tab.length);
+    output.lines[f] = tab.repeat(depth) + `req(${trimmedLine}`;
+    output.lines[lastIndex].splice(-1, 1, '),');
+};
 
 module.exports = {
-    newOutput, saveOutput, addRequires,
-    addLine, addLineReq, addBlankLine,
-    LineExpr, convertStr, processAllowedSigs,
-    sigExpr, strExpr, sigArrayExpr, uintExpr, intExpr
+    newOutput, saveOutput, addRequires, append,
+    addLine, addComment, addLineReq, addBlankLine, reqPrevious
 };

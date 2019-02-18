@@ -1,11 +1,11 @@
+let { addRequires, addLine } = require('../output');
 let {
-    addRequires, addLine,
     LineExpr, convertStr, processAllowedSigs,
     strExpr, sigArrayExpr, uintExpr, intExpr
-} = require('../output');
-let { flagParser } = require('./sharedParsers');
+} = require('../helpers');
+let { flagParser } = require('./sharedConverters');
 
-let fieldParsers = [{
+let fieldConverters = [{
     name: 'Unsigned wbInteger Field',
     expr: LineExpr(`wbInteger\\(${strExpr}, ${uintExpr}\\),?`),
     process: function(match) {
@@ -66,4 +66,4 @@ let fieldParsers = [{
     }
 }];
 
-module.exports = fieldParsers;
+module.exports = fieldConverters;

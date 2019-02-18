@@ -1,7 +1,9 @@
 let fs = require('fs'),
-    recordParser = require('./Parsers/recordParser');
+    recordParser = require('./Converters/recordConverter'),
+    variableParser = require('./Converters/variableConverter'),
+    commentParser = require('./Converters/commentConverters');
 
-let fileParsers = [recordParser],
+let fileParsers = [recordParser, variableParser, commentParser],
     pos = 0,
     fileCode;
 
