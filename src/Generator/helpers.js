@@ -3,13 +3,15 @@ let defs = {};
 let addDef = (id, def) => defs[id] = def;
 let getDefs = () => defs;
 
+// meta
+let req = obj => (obj.required = true) && obj;
+let def = def => ({ def });
+let namedDef = (name, def) => ({ name, def });
+let sortKey = (sortKey, obj) => (obj.sortKey = sortKey) && obj;
+
 // data structures
 let record = (signature, name, def) =>
     ({ signature, type: 'record', name, def });
-let req = obj => (obj.required = true) && obj;
-
-let def = def => ({ def });
-let namedDef = (name, def) => ({ name, def });
 let subrecord = (signature, def) =>
     ({ signature, type: 'subrecord', def });
 let arrayOfSubrecord = (name, sortKey, subrecord) =>
@@ -46,7 +48,7 @@ let ckFormId = (name, signatures) => ({ name, type: 'formId', signatures });
 let empty = name => ({ name, type: 'empty' });
 
 module.exports = {
-    addDef, getDefs, req, def, namedDef,
+    addDef, getDefs, req, def, namedDef, sortKey,
     record, subrecord, arrayOfSubrecord, multiArray, multiStruct,
     struct, array, union,
     bytes, unknown, zstring, lstring,
