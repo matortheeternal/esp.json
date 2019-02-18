@@ -1,9 +1,9 @@
 let {
-    addDef
+    addDef, arrayOfStruct, def
 } = require('../helpers');
 
-module.exports = () => {
+module.exports = game => {
     addDef('CTDAsReq', 
-        arrayOfStruct('Conditions', ref('ue')),
+        arrayOfStruct('Conditions', def('ue')),
     );
 };

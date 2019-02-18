@@ -66,7 +66,8 @@ memberConverters.push({
     process: function(match) {
         let name = convertStr(match[1]),
             refName = match[2].slice(2);
-        addLineReq(match[4], `arrayOfStruct('${name}', ref('${refName}'))`);
+        addRequires('arrayOfStruct', 'def');
+        addLineReq(match[4], `arrayOfStruct('${name}', def('${refName}'))`);
     }
 }, {
     name: 'wbRArray',
@@ -102,7 +103,8 @@ memberConverters.push({
     name: 'IsSSE',
     expr: LineExpr(`IsSSE\\(`),
     process: function() {
-        addLine('IsSSE([', 1);
+        addRequires('IsSSE');
+        addLine('IsSSE(game, [', 1);
     },
     then: memberConverters,
     end: {

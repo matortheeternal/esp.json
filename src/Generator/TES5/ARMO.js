@@ -4,7 +4,7 @@ let {
     struct, int32, float
 } = require('../helpers');
 
-module.exports = () => {
+module.exports = game => {
     addDef(record('ARMO', 'Armor', {
         flags: {
             2: 'Non-Playable',                              // 0x00000004

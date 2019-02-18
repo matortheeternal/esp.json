@@ -2,7 +2,7 @@ let {
     addDef, record, def, subrecord, zstring
 } = require('../helpers');
 
-module.exports = () => {
+module.exports = game => {
     addDef(record('ANIO', 'Animated Object', {
         flags: {
             9: 'Unknown 9',                                 // 0x00000200

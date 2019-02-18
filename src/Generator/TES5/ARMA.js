@@ -4,7 +4,7 @@ let {
     req, multiStruct, zstring, arrayOfSubrecord
 } = require('../helpers');
 
-module.exports = () => {
+module.exports = game => {
     addDef(record('ARMA', 'Armor Addon', {
         elements: [
             def('EDID'),
@@ -21,9 +21,9 @@ module.exports = () => {
                     'Unknown 0',                            // 0x01
                     'Enabled',                              // 0x02
                 ]),
-                bytes('Unknown', 2),,
+                bytes('Unknown', 2),
                 uint8('Detection Sound Value'),
-                bytes('Unknown', 1),,
+                bytes('Unknown', 1),
                 float('Weapon Adjust'),
             ]))),
             multiStruct('Male world model', [

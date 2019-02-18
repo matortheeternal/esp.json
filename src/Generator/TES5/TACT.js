@@ -3,7 +3,7 @@ let {
     unknown, ckFormId
 } = require('../helpers');
 
-module.exports = () => {
+module.exports = game => {
     addDef(record('TACT', 'Talking Activator', {
         flags: {
             9: 'Hidden From Local Map',                     // 0x00000200

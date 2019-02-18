@@ -3,7 +3,7 @@ let {
     req, uint32
 } = require('../helpers');
 
-module.exports = () => {
+module.exports = game => {
     addDef('EFIT', 
         req(subrecord('EFIT', sortKey([3, 4], struct('', [
             req(float('Magnitude')),

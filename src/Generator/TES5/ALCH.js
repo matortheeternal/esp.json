@@ -4,7 +4,7 @@ let {
     ckFormId
 } = require('../helpers');
 
-module.exports = () => {
+module.exports = game => {
     addDef(record('ALCH', 'Ingestible', {
         flags: {
             29: 'Medicine',                                 // 0x20000000

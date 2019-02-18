@@ -1,11 +1,10 @@
 let {
     addDef, record, def, req, subrecord, 
     lstring, struct, flags8, enum8, bytes, 
-    union, enumS32, ref, ckFormId, uint32, 
-    float
+    union, enumS32, ckFormId, uint32, float
 } = require('../helpers');
 
-module.exports = () => {
+module.exports = game => {
     addDef(record('BOOK', 'Book', {
         elements: [
             def('EDID'),
@@ -37,9 +36,9 @@ module.exports = () => {
                         '255': 'Note/Scroll',
                     }
                 ]),
-                bytes('Unused', 2),,
+                bytes('Unused', 2),
                 union('Teaches', 'BOOKTeachesDecider', [
-                    enumS32('Skill', ref('SkillEnum')),
+                    enumS32('Skill', def('SkillEnum')),
                     ckFormId('Spell', ['SPEL', 'NULL']),
                 ]),
                 uint32('Value'),

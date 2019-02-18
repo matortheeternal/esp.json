@@ -2,7 +2,7 @@ let {
     addDef
 } = require('../helpers');
 
-module.exports = () => {
+module.exports = game => {
     addDef('ActorValueEnum', 
         {
             '0': 'Aggresion',

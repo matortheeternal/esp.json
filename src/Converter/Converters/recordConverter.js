@@ -12,7 +12,7 @@ let memberParsers = require('./memberConverters');
 let newRecordOutput = function(signature, name) {
     newOutput(`${signature}.js`);
     addBlankLine();
-    addLine('module.exports = () => {', 1);
+    addLine('module.exports = game => {', 1);
     addRequires('addDef', 'record');
     addLine(`addDef(record('${signature}', '${name}', {`, 1);
 };

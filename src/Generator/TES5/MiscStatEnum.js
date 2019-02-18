@@ -2,7 +2,7 @@ let {
     addDef
 } = require('../helpers');
 
-module.exports = () => {
+module.exports = game => {
     addDef('MiscStatEnum', 
         {
             '0xFCDD5011': 'Animals Killed',

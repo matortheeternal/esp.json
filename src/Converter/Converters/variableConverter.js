@@ -10,7 +10,7 @@ let newVarOutput = function(id) {
     newOutput(`${id}.js`);
     addRequires('addDef');
     addBlankLine();
-    addLine('module.exports = () => {', 1);
+    addLine('module.exports = game => {', 1);
     addLine(`addDef('${id}', `, 1);
 };
 

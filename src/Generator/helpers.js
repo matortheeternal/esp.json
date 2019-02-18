@@ -2,6 +2,7 @@ let defs = {};
 
 let addDef = (id, def) => defs[id] = def;
 let getDefs = () => defs;
+let IsSSE = (game, a, b) => game === 'SSE' ? a : b;
 
 // meta
 let req = obj => (obj.required = true) && obj;
@@ -15,11 +16,11 @@ let record = (signature, name, def) =>
 let subrecord = (signature, def) =>
     ({ signature, type: 'subrecord', def });
 let arrayOfSubrecord = (name, sortKey, subrecord) =>
-    ({ name, type: 'sarray', subrecord, sortKey });
-let multiArray = (name, entryName, subrecords) =>
-    ({ name, type: 'marray', entryName, subrecords });
+    ({ name, type: 'subrecordArray', subrecord, sortKey });
+let arrayOfStruct = (name, entryName, subrecords) =>
+    ({ name, type: 'structArray', entryName, subrecords });
 let multiStruct = (name, subrecords) =>
-    ({ name, type: 'mstruct', subrecords });
+    ({ name, type: 'multiStruct', subrecords });
 
 let struct = (name, fields) =>
     ({ name, type: 'struct', fields });
@@ -38,20 +39,25 @@ let lstring = (name, maxSize = 0) => ({ name, type: 'lstring', maxSize });
 let float = (name, formatter = '') => ({ name, type: 'float', formatter });
 let int8 = name => ({ name, type: 'int8' });
 let uint8 = name => ({ name, type: 'uint8' });
+let uint16 = name => ({ name, type: 'uint16' });
+let int32 = name => ({ name, type: 'int32' });
+let uint32 = name => ({ name, type: 'uint32' });
 let flags8 = (name, flags) => ({ name, type: 'flags8', flags });
 let flags16 = (name, flags) => ({ name, type: 'flags16', flags });
-let int32 = name => ({ name, type: 'int32' });
 let flags32 = (name, flags) => ({ name, type: 'flags32', flags });
+let enum8 = (name, options) => ({ name, type: 'enum8', options });
+let enumS32 = (name, options) => ({ name, type: 'enumS32', options });
 let enum32 = (name, options) => ({ name, type: 'enum32', options });
 let formId = name => ({ name, type: 'formId' });
 let ckFormId = (name, signatures) => ({ name, type: 'formId', signatures });
 let empty = name => ({ name, type: 'empty' });
 
 module.exports = {
-    addDef, getDefs, req, def, namedDef, sortKey,
-    record, subrecord, arrayOfSubrecord, multiArray, multiStruct,
+    addDef, getDefs, IsSSE, req, def, namedDef, sortKey,
+    record, subrecord, arrayOfSubrecord, arrayOfStruct, multiStruct,
     struct, array, union,
     bytes, unknown, zstring, lstring,
-    float, int8, uint8, flags8, flags16, int32, flags32,
-    enum32, formId, ckFormId, empty
+    float, int8, uint8, uint16, int32, uint32,
+    flags8, flags16, flags32, enum8, enumS32, enum32,
+    formId, ckFormId, empty
 };

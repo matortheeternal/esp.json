@@ -3,7 +3,7 @@ let {
     struct, uint8, ckFormId, lstring, flags16
 } = require('../helpers');
 
-module.exports = () => {
+module.exports = game => {
     addDef(record('ACTI', 'Activator', {
         flags: {
             6: 'Has Tree LOD',                              // 0x00000040

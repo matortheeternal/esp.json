@@ -31,8 +31,8 @@ fieldConverters.push({
     process: function(match) {
         let name = convertStr(match[1]),
             enumType = `enum${match[2] === 'S' ? 'S' : ''}${match[3]}`;
-        addRequires(enumType, 'ref');
-        addLine(`${enumType}('${name}', ref('${match[4]}')),`);
+        addRequires(enumType, 'def');
+        addLine(`${enumType}('${name}', def('${match[4]}')),`);
     }
 }, {
     name: 'wbInteger Field',
@@ -90,7 +90,7 @@ fieldConverters.push({
         addRequires('bytes');
         let name = convertStr(match[1]),
             secondArg = match[2] ? `, ${match[2]}` : '';
-        addLineReq(match[4], `bytes('${name}'${secondArg}),`);
+        addLineReq(match[4], `bytes('${name}'${secondArg})`);
     }
 }, {
     name: 'wbByteColors Field',

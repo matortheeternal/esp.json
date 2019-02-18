@@ -5,7 +5,7 @@ let {
     namedDef, array
 } = require('../helpers');
 
-module.exports = () => {
+module.exports = game => {
     addDef(record('ACHR', 'Placed NPC', {
         flags: {
             9: 'Starts Dead',                               // 0x00000200

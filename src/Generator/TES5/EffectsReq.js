@@ -2,7 +2,7 @@ let {
     addDef, def, req
 } = require('../helpers');
 
-module.exports = () => {
+module.exports = game => {
     addDef('EffectsReq', 
         req(arrayOfStruct('Effects', struct('Effect', [
             def('EFID'),

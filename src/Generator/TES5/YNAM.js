@@ -2,7 +2,7 @@ let {
     addDef, subrecord, ckFormId
 } = require('../helpers');
 
-module.exports = () => {
+module.exports = game => {
     addDef('YNAM', 
         subrecord('YNAM', ckFormId('Sound - Pick Up', ['SNDR'])),
     );

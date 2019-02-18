@@ -1,10 +1,10 @@
 let {
-    addDef, record, def, req, subrecord, 
-    struct, ckFormId, flags32, float, uint32, 
-    zstring
+    addDef, record, def, req, IsSSE, 
+    subrecord, struct, ckFormId, flags32, float, 
+    uint32, zstring
 } = require('../helpers');
 
-module.exports = () => {
+module.exports = game => {
     addDef(record('AMMO', 'Ammunition', {
         flags: {
             2: 'Non-Playable',                              // 0x00000004
@@ -21,7 +21,7 @@ module.exports = () => {
             def('DESC'),
             def('KSIZ'),
             def('KWDAs'),
-            IsSSE([
+            IsSSE(game, [
                 req(subrecord('DATA', struct('Data', [
                     ckFormId('Projectile', ['PROJ', 'NULL']),
                     flags32('Flags', [
