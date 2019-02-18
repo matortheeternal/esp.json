@@ -1,7 +1,7 @@
 let {
     addDef, record, def, req, uint16, 
     multiStruct, subrecord, zstring, bytes, ckFormId, 
-    struct, int32, float
+    arrayOfStruct, struct, int32, float
 } = require('../helpers');
 
 module.exports = game => {

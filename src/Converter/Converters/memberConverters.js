@@ -74,6 +74,7 @@ memberConverters.push({
     expr: LineExpr(`wbRArray\\(${strExpr},`),
     process: function(match) {
         let name = convertStr(match[1]);
+        addRequires('arrayOfStruct');
         addLine(`arrayOfStruct('${name}',`, 1);
     },
     then: memberConverters,
@@ -89,6 +90,7 @@ memberConverters.push({
     process: function(match) {
         let name = convertStr(match[1]),
             entryName = convertStr(match[2]);
+        addRequires('arrayOfStruct', 'struct');
         addLine(`arrayOfStruct('${name}', struct('${entryName}', [`, 1);
     },
     then: memberConverters,

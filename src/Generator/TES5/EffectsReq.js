@@ -1,5 +1,5 @@
 let {
-    addDef, def, req
+    addDef, arrayOfStruct, struct, def, req
 } = require('../helpers');
 
 module.exports = game => {
