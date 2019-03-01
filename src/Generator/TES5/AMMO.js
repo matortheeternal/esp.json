@@ -5,7 +5,7 @@ let {
 } = require('../helpers');
 
 module.exports = game => {
-    addDef(record('AMMO', 'Ammunition', {
+    addDef('AMMO', record('AMMO', 'Ammunition', {
         flags: {
             2: 'Non-Playable',                              // 0x00000004
         },

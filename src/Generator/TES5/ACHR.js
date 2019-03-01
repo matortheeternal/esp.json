@@ -6,7 +6,7 @@ let {
 } = require('../helpers');
 
 module.exports = game => {
-    addDef(record('ACHR', 'Placed NPC', {
+    addDef('ACHR', record('ACHR', 'Placed NPC', {
         flags: {
             9: 'Starts Dead',                               // 0x00000200
             10: 'Persistent',                               // 0x00000400

@@ -4,7 +4,7 @@ let {
 } = require('../helpers');
 
 module.exports = game => {
-    addDef(record('ACTI', 'Activator', {
+    addDef('ACTI', record('ACTI', 'Activator', {
         flags: {
             6: 'Has Tree LOD',                              // 0x00000040
             8: 'Must Update Anims',                         // 0x00000100

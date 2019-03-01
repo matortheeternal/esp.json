@@ -208,7 +208,7 @@ memberConverters.push({
     }
 }, {
     name: 'wbInteger Subrecord',
-    expr: LineExpr(`wbInteger\\(${sigExpr}, ${strExpr}, ${intTypeExpr}(?:, (${idExpr}\\(${numExpr}\\)), ${idExpr}, ${boolExpr})?\\),?`),
+    expr: LineExpr(`wbInteger\\(${sigExpr}, ${strExpr}, ${intTypeExpr}(?:, (${idExpr}\\(${numExpr}\\)|${idExpr}), ${idExpr}, (?:${boolExpr})?)?\\),?`),
     process: function(match) {
         let intType = resolveIntType(match[3], match[4]);
         addRequires(intType);

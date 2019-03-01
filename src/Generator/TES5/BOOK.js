@@ -5,7 +5,7 @@ let {
 } = require('../helpers');
 
 module.exports = game => {
-    addDef(record('BOOK', 'Book', {
+    addDef('BOOK', record('BOOK', 'Book', {
         elements: [
             def('EDID'),
             def('VMAD'),

@@ -5,7 +5,7 @@ let {
 } = require('../helpers');
 
 module.exports = game => {
-    addDef(record('ARMA', 'Armor Addon', {
+    addDef('ARMA', record('ARMA', 'Armor Addon', {
         elements: [
             def('EDID'),
             def('BODTBOD2'),

@@ -5,7 +5,7 @@ let {
 } = require('../helpers');
 
 module.exports = game => {
-    addDef(record('ALCH', 'Ingestible', {
+    addDef('ALCH', record('ALCH', 'Ingestible', {
         flags: {
             29: 'Medicine',                                 // 0x20000000
         },

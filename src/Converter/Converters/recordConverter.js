@@ -14,7 +14,7 @@ let newRecordOutput = function(signature, name) {
     addBlankLine();
     addLine('module.exports = game => {', 1);
     addRequires('addDef', 'record');
-    addLine(`addDef(record('${signature}', '${name}', {`, 1);
+    addLine(`addDef('${signature}', record('${signature}', '${name}', {`, 1);
 };
 
 let saveRecordOutput = function() {

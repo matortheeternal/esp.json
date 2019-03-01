@@ -3,7 +3,7 @@ let {
 } = require('../helpers');
 
 module.exports = game => {
-    addDef(record('AACT', 'Action', {
+    addDef('AACT', record('AACT', 'Action', {
         elements: [
             def('EDID'),
             def('CNAM'),

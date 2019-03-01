@@ -5,7 +5,7 @@ let {
 } = require('../helpers');
 
 module.exports = game => {
-    addDef(record('AVIF', 'Actor Value Information', {
+    addDef('AVIF', record('AVIF', 'Actor Value Information', {
         elements: [
             def('EDID'),
             def('FULL'),

@@ -4,7 +4,7 @@ let {
 } = require('../helpers');
 
 module.exports = game => {
-    addDef(record('TACT', 'Talking Activator', {
+    addDef('TACT', record('TACT', 'Talking Activator', {
         flags: {
             9: 'Hidden From Local Map',                     // 0x00000200
             16: 'Random Anim Start',                        // 0x00010000
