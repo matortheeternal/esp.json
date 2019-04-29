@@ -1,5 +1,5 @@
-let {addRequires, functionConverter} = require('../../converter'),
-    {arr} = require('../../helpers');
+let {addRequires, functionConverter} = require('../converter'),
+    {arr} = require('../helpers');
 
 functionConverter('IsSSE', [
     { type: 'member', name: 'm1' },

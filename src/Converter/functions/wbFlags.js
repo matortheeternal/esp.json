@@ -1,5 +1,5 @@
-let {functionConverter} = require('../../converter'),
-    {args} = require('../../helpers');
+let {functionConverter} = require('../converter'),
+    {args} = require('../helpers');
 
 let convertFlags = ({flags}) => {
     return JSON.stringify(flags, null, 2);

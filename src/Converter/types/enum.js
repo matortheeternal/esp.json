@@ -1,4 +1,4 @@
-let {typeConverter} = require('../../converter');
+let {typeConverter} = require('../converter');
 
 typeConverter('enum', {
     test: context => context.matchArray('number', 'string'),

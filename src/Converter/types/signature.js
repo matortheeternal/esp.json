@@ -1,4 +1,4 @@
-let {typeConverter} = require('../../converter');
+let {typeConverter} = require('../converter');
 
 let sigExpr = /^([A-Z]{1}[A-Z0-9]{3})/;
 

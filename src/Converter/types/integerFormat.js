@@ -1,4 +1,4 @@
-let {typeConverter} = require('../../converter');
+let {typeConverter} = require('../converter');
 
 let intFormatExpr = /^(wbDiv)\(([0-9]+)\)/;
 

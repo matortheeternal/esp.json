@@ -1,5 +1,5 @@
-let {addRequires, functionConverter} = require('../../converter'),
-    {obj, arr, args} = require('../../helpers');
+let {addRequires, functionConverter} = require('../converter'),
+    {obj, arr, args} = require('../helpers');
 
 functionConverter('wbRecord', [
     args.sig,

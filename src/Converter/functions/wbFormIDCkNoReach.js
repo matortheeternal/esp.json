@@ -1,5 +1,5 @@
-let {addRequires, functionConverter} = require('../../converter'),
-    {args} = require('../../helpers');
+let {addRequires, functionConverter} = require('../converter'),
+    {args} = require('../helpers');
 
 functionConverter('wbFormIDCkNoReach', [
 

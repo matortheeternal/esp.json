@@ -1,4 +1,4 @@
-let {typeConverter} = require('../../converter');
+let {typeConverter} = require('../converter');
 
 typeConverter('array of signature', {
     test: context => context.matchArray('signature'),

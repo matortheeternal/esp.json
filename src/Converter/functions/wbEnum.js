@@ -1,5 +1,5 @@
-let {functionConverter} = require('../../converter'),
-    {args} = require('../../helpers');
+let {functionConverter} = require('../converter'),
+    {args} = require('../helpers');
 
 functionConverter('wbEnum', [
     args.flags,

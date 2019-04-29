@@ -1,5 +1,5 @@
-let {addRequires, functionConverter} = require('../../converter'),
-    {reqLine, args} = require('../../helpers');
+let {addRequires, functionConverter} = require('../converter'),
+    {reqLine, args} = require('../helpers');
 
 functionConverter('wbEmpty', [
     args.sig,

@@ -1,5 +1,5 @@
-let {addRequires, functionConverter} = require('../../converter'),
-    {reqLine, arr, args} = require('../../helpers');
+let {addRequires, functionConverter} = require('../converter'),
+    {reqLine, arr, args} = require('../helpers');
 
 functionConverter('wbRStruct', [
     args.name,

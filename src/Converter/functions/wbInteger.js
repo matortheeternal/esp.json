@@ -1,5 +1,5 @@
-let {addRequires, functionConverter} = require('../../converter'),
-    {args, resolveIntFn} = require('../../helpers');
+let {addRequires, functionConverter} = require('../converter'),
+    {args, resolveIntFn} = require('../helpers');
 
 // subrecord
 functionConverter('wbInteger', [

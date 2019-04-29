@@ -1,5 +1,5 @@
-let {addRequires, functionConverter} = require('../../converter'),
-    {arr, args} = require('../../helpers');
+let {addRequires, functionConverter} = require('../converter'),
+    {arr, args} = require('../helpers');
 
 functionConverter('wbUnion', [
 

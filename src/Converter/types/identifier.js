@@ -1,4 +1,4 @@
-let {typeConverter} = require('../../converter');
+let {typeConverter} = require('../converter');
 
 let idExpr = /^[a-z][a-z0-9]*/i;
 

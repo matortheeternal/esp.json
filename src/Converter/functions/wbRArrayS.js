@@ -1,5 +1,5 @@
-let {addRequires, functionConverter} = require('../../converter'),
-    {indent, args} = require('../../helpers');
+let {addRequires, functionConverter} = require('../converter'),
+    {indent, args} = require('../helpers');
 
 functionConverter('wbRArrayS', [
     args.name,

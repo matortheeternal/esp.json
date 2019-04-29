@@ -1,4 +1,4 @@
-let {typeConverter} = require('../../converter');
+let {typeConverter} = require('../converter');
 
 let intTypeExpr = /^it[US](?:8|16|24|32|64)/;
 
