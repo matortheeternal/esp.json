@@ -1,5 +1,5 @@
 let { addLine, addComment } = require('../output');
-let { LineExpr, convertStr, strExpr } = require('../helpers');
+let { LineExpr, convertStr, strExpr } = require('../oldHelpers');
 
 let flagConverter = {
     name: 'Flag',

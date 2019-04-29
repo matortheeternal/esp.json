@@ -3,7 +3,7 @@ let {
     LineExpr, convertStr, processAllowedSigs, resolveIntType,
     strExpr, sigArrayExpr, uintExpr, intTypeExpr,
     idExpr, boolExpr, numExpr
-} = require('../helpers');
+} = require('../oldHelpers');
 let {
     flagConverter, enumConverter, commentConverter
 } = require('./sharedConverters');

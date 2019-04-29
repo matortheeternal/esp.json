@@ -1,7 +1,7 @@
 let path = require('path'),
     fs = require('fs');
 
-let { isTrue } = require('./helpers');
+let { isTrue } = require('./oldHelpers');
 
 const tab = '    ';
 

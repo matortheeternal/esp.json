@@ -6,7 +6,7 @@ let {
     LineExpr, convertStr,
     sigExpr, strExpr, numExpr, boolExpr,
     idExpr, numArrayExpr, offsetExpr
-} = require('../helpers');
+} = require('../oldHelpers');
 let memberParsers = require('./memberConverters');
 
 let newRecordOutput = function(signature, name) {

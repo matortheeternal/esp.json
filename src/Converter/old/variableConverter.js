@@ -1,7 +1,7 @@
 let {
     newOutput, saveOutput, addLine, addBlankLine, addRequires
 } = require('../output');
-let { LineExpr } = require('../helpers');
+let { LineExpr } = require('../oldHelpers');
 let memberConverters = require('./memberConverters'),
     {enumConverter} = require('./sharedConverters'),
     fieldConverters = require('./fieldConverters');

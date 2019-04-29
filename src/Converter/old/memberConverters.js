@@ -5,7 +5,7 @@ let {
     LineExpr, processAllowedSigs, convertStr, isTrue, resolveIntType,
     sigExpr, strExpr, sigArrayExpr, uintExpr, intTypeExpr,
     numExpr, boolExpr, idExpr, numArrayExpr
-} = require('../helpers');
+} = require('../oldHelpers');
 let fieldConverters = require('./fieldConverters'),
     { flagConverter, commentConverter } = require('./sharedConverters');
 
