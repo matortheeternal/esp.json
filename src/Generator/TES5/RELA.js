@@ -1,6 +1,6 @@
 let {
-    def, ckFormId, uint16, bytes, uint8, 
-    subrecord, struct, record
+    def, ckFormId, uint16, format, bytes, 
+    uint8, subrecord, struct, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -13,7 +13,7 @@ module.exports = () => {
             subrecord('DATA', struct('Data', [
                 ckFormId('Parent', ['NPC_', 'NULL']),
                 ckFormId('Child', ['NPC_', 'NULL']),
-                uint16('Rank', {
+                format(uint16('Rank'), {
                     "0": "Lover",
                     "1": "Ally",
                     "2": "Confidant",
@@ -25,7 +25,7 @@ module.exports = () => {
                     "8": "Archnemesis"
                 }),
                 bytes('Unknown', 1),
-                uint8('Flags', {
+                format(uint8('Flags'), {
                     "0": "Unknown 1",
                     "1": "Unknown 2",
                     "2": "Unknown 3",

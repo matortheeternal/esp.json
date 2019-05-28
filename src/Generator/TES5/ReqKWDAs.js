@@ -3,5 +3,5 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('ReqKWDAs', subrecord('KWDA', array('Keywords', ckFormId('Keyword', ['KYWD', 'NULL']), 0)));
+    addDef('ReqKWDAs', subrecord('KWDA', array('Keywords', ckFormId('Keyword', ['KYWD', 'NULL']))));
 };

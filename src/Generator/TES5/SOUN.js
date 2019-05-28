@@ -1,12 +1,13 @@
 let {
-    def, subrecord, unknown, ckFormId, record
+    def, req, subrecord, unknown, ckFormId, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
     record('SOUN', 'Sound Marker', {
         members: [
             def('EDID'),
-            def('OBNDReq'),
+            req(def('OBND')),
             subrecord('FNAM', unknown()),
             subrecord('SNDD', unknown()),
             subrecord('SDSC', ckFormId('Sound Descriptor', ['SNDR', 'NULL']))

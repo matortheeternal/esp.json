@@ -1,12 +1,12 @@
 let {
-    addDef, uint32, float, def, ckFormId, 
-    subrecord, struct, req
+    addDef, uint32, format, float, def, 
+    ckFormId, subrecord, struct, req
 } = require('../helpers');
 
 module.exports = () => {
     addDef('SPIT', req(subrecord('SPIT', struct('Data', [
         uint32('Base Cost'),
-        uint32('Flags', {
+        format(uint32('Flags'), {
             "0": "Manual Cost Calc",
             "1": "Unknown 2",
             "2": "Unknown 3",
@@ -40,7 +40,7 @@ module.exports = () => {
             "30": "Unknown 31",
             "31": "Unknown 32"
         }),
-        uint32('Type', {
+        format(uint32('Type'), {
             "0": "Spell",
             "1": "Disease",
             "2": "Power",
@@ -55,8 +55,8 @@ module.exports = () => {
             "11": "Voice"
         }),
         float('Charge Time'),
-        uint32('Cast Type', def('CastEnum')),
-        uint32('Target Type', def('TargetEnum')),
+        format(uint32('Cast Type'), def('CastEnum')),
+        format(uint32('Target Type'), def('TargetEnum')),
         float('Cast Duration'),
         float('Range'),
         ckFormId('Half-cost Perk', ['NULL', 'PERK'])

@@ -1,9 +1,9 @@
 let {
-    addDef, uint32
+    addDef, uint32, format
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('EyesMorphFlags01', uint32('Eye Morph Flags 1', {
+    addDef('EyesMorphFlags01', format(uint32('Eye Morph Flags 1'), {
         "0": "EyesType0",
         "1": "EyesType1",
         "2": "EyesType2",

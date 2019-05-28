@@ -1,8 +1,8 @@
 let {
     def, IsSSE, int16, ckFormId, struct, 
     array, opts, subrecord, arrayOfSubrecord, uint8, 
-    bytes, req, multiStruct, float, string, 
-    int32, record
+    format, bytes, req, multiStruct, float, 
+    cstring, int32, record
 } = require('../helpers');
 
 module.exports = game => {
@@ -13,9 +13,19 @@ module.exports = game => {
         members: [
             def('EDID'),
             arrayOfSubrecord('IsSSE(game, [
-                Large References,
-                Unused RNAM
-            ])', undefined),
+                'Large References',
+                'Unused RNAM'
+            ])', subrecord('RNAM', struct('Grid', [
+                int16('Y'),
+                int16('X'),
+                opts(array('References', struct('Reference', [
+                    ckFormId('Ref', ['REFR']),
+                    int16('Y'),
+                    int16('X')
+                ]), -1), {
+                    "includeFlag": "dfNotAlignable"
+                })
+            ]))),
             def('MaxHeightDataWRLD'),
             def('FULL'),
             subrecord('WCTR', struct('Fixed Dimensions Center Cell', [
@@ -25,10 +35,10 @@ module.exports = game => {
             subrecord('LTMP', ckFormId('Interior Lighting', ['LGTM'])),
             subrecord('XEZN', ckFormId('Encounter Zone', ['ECZN', 'NULL'])),
             subrecord('XLCN', ckFormId('Location', ['LCTN', 'NULL'])),
-            multiStruct(Parent, [
+            multiStruct('Parent', [
                 subrecord('WNAM', ckFormId('Worldspace', ['WRLD'])),
                 req(subrecord('PNAM', struct('', [
-                    uint8('Flags', {
+                    format(uint8('Flags'), {
                         "0": "Use Land Data",
                         "1": "Use LOD Data",
                         "2": "Don't Use Map Data",
@@ -48,8 +58,8 @@ module.exports = game => {
                 float('Default Land Height'),
                 float('Default Water Height')
             ])),
-            subrecord('ICON', string('Map Image')),
-            multiStruct(Cloud Model, [
+            subrecord('ICON', cstring('Map Image')),
+            multiStruct('Cloud Model', [
                 def('MODL')
             ]),
             req(subrecord('MNAM', struct('Map Data', [
@@ -80,7 +90,7 @@ module.exports = game => {
                 float('Cell Z Offset')
             ]))),
             subrecord('NAMA', float('Distant LOD Multiplier')),
-            subrecord('DATA', uint8('Flags', {
+            subrecord('DATA', format(uint8('Flags'), {
                 "0": "Small World",
                 "1": "Can't Fast Travel",
                 "2": "Unknown 3",
@@ -90,7 +100,7 @@ module.exports = game => {
                 "6": "Fixed Dimensions",
                 "7": "No Grass"
             })),
-            multiStruct(Object Bounds, [
+            multiStruct('Object Bounds', [
                 req(subrecord('NAM0', struct('Min', [
                     req(float('X')),
                     req(float('Y'))
@@ -101,11 +111,11 @@ module.exports = game => {
                 ])))
             ]),
             subrecord('ZNAM', ckFormId('Music', ['MUSC'])),
-            subrecord('NNAM', string('Canopy Shadow (unused)')),
-            subrecord('XNAM', string('Water Noise Texture')),
-            subrecord('TNAM', string('HD LOD Diffuse Texture')),
-            subrecord('UNAM', string('HD LOD Normal Texture')),
-            subrecord('XWEM', string('Water Environment Map (unused)')),
+            subrecord('NNAM', cstring('Canopy Shadow (unused)')),
+            subrecord('XNAM', cstring('Water Noise Texture')),
+            subrecord('TNAM', cstring('HD LOD Diffuse Texture')),
+            subrecord('UNAM', cstring('HD LOD Normal Texture')),
+            subrecord('XWEM', cstring('Water Environment Map (unused)')),
             def('OFST')
         ]
     })

@@ -1,19 +1,19 @@
 let {
-    def, subrecord, int32, ckFormId, uint16, 
-    struct, req, record
+    def, req, subrecord, int32, ckFormId, 
+    uint16, format, struct, record
 } = require('../helpers');
 
 module.exports = () => {
     record('ADDN', 'Addon Node', {
         members: [
             def('EDID'),
-            def('OBNDReq'),
+            req(def('OBND')),
             def('MODL'),
-            subrecord('DATA', int32('Node Index', null)),
+            subrecord('DATA', int32('Node Index')),
             subrecord('SNAM', ckFormId('Sound', ['SNDR', 'NULL'])),
             req(subrecord('DNAM', struct('Data', [
                 uint16('Master Particle System Cap'),
-                uint16('Flags', {
+                format(uint16('Flags'), {
                     "1": "Unknown 1",
                     "3": "Always Loaded"
                 })

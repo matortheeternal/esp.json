@@ -1,7 +1,7 @@
 let {
-    def, subrecord, lstringkc, req, uint8, 
-    bytes, int32, ckFormId, union, uint32, 
-    float, struct, lstring, record
+    def, req, subrecord, string, uint8, 
+    format, bytes, int32, ckFormId, union, 
+    uint32, float, struct, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -9,18 +9,18 @@ module.exports = () => {
         members: [
             def('EDID'),
             def('VMAD'),
-            def('OBNDReq'),
+            req(def('OBND')),
             def('FULL'),
             def('MODL'),
             def('ICON'),
-            req(subrecord('DESC', lstringkc(Book Text, 0))),
+            req(subrecord('DESC', string('Book Text'))),
             def('DEST'),
             def('YNAM'),
             def('ZNAM'),
             def('KSIZ'),
             def('KWDAs'),
             req(subrecord('DATA', struct('Data', [
-                uint8('Flags', {
+                format(uint8('Flags'), {
                     "0": "Teaches Skill",
                     "1": "Can't be Taken",
                     "2": "Teaches Spell",
@@ -30,20 +30,20 @@ module.exports = () => {
                     "6": "Unknown 7",
                     "7": "Unknown 8"
                 }),
-                uint8('Type', {
+                format(uint8('Type'), {
                     "0": "Book/Tome",
                     "255": "Note/Scroll"
                 }),
                 bytes('Unused', 2),
                 union('Teaches', [
-                    int32('Skill', def('SkillEnum')),
+                    format(int32('Skill'), def('SkillEnum')),
                     ckFormId('Spell', ['SPEL', 'NULL'])
                 ]),
                 uint32('Value'),
                 float('Weight')
             ]))),
             subrecord('INAM', ckFormId('Inventory Art', ['STAT'])),
-            subrecord('CNAM', lstring(Description))
+            subrecord('CNAM', string('Description'))
         ]
     })
 };

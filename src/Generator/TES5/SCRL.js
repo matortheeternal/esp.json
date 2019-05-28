@@ -1,13 +1,13 @@
 let {
-    def, uint32, float, subrecord, struct, 
-    req, record
+    def, req, uint32, float, subrecord, 
+    struct, record
 } = require('../helpers');
 
 module.exports = () => {
     record('SCRL', 'Scroll', {
         members: [
             def('EDID'),
-            def('OBNDReq'),
+            req(def('OBND')),
             def('FULL'),
             def('KSIZ'),
             def('KWDAs'),
@@ -23,7 +23,7 @@ module.exports = () => {
                 float('Weight')
             ]))),
             def('SPIT'),
-            def('EffectsReq')
+            req(def('Effects'))
         ]
     })
 };

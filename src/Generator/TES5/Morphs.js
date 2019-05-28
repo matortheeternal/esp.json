@@ -4,7 +4,7 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('Morphs', multiStruct(Available Morphs, [
+    addDef('Morphs', multiStruct('Available Morphs', [
         subrecord('MPAI', bytes('Unknown', 0)),
         subrecord('MPAV', struct('Nose Variants', [
             def('NoseMorphFlags'),

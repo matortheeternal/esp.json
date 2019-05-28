@@ -3,7 +3,7 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('Keywords', multiStruct(Keywords, [
+    addDef('Keywords', multiStruct('Keywords', [
         def('KSIZ'),
         def('ReqKWDAs')
     ]));

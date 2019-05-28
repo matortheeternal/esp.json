@@ -10,59 +10,77 @@ module.exports = () => {
             subrecord('ACPR', array('Actor Cell Persistent Reference', struct('', [
                 ckFormId('Actor', ['PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD', 'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON', 'PFLA']),
                 ckFormId('Location', ['WRLD', 'CELL']),
-                int16('Grid Y', null),
-                int16('Grid X', null)
-            ]), 0)),
+                int16('Grid Y'),
+                int16('Grid X')
+            ]))),
             subrecord('LCPR', array('Location Cell Persistent Reference', struct('', [
                 ckFormId('Actor', ['PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD', 'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON', 'PFLA']),
                 ckFormId('Location', ['WRLD', 'CELL']),
-                int16('Grid Y', null),
-                int16('Grid X', null)
-            ]), 0)),
-            subrecord('RCPR', array('Reference Cell Persistent Reference', ckFormId('Ref', ['ACHR', 'REFR']), undefined)),
+                int16('Grid Y'),
+                int16('Grid X')
+            ]))),
+            subrecord('RCPR', array('Reference Cell Persistent Reference', ckFormId('Ref', ['ACHR', 'REFR']))),
             subrecord('ACUN', array('Actor Cell Unique', struct('', [
                 ckFormId('Actor', ['NPC_']),
                 ckFormId('Ref', ['ACHR']),
                 ckFormId('Location', ['LCTN', 'NULL'])
-            ]), 0)),
+            ]))),
             subrecord('LCUN', array('Location Cell Unique', struct('', [
                 ckFormId('Actor', ['NPC_']),
                 ckFormId('Ref', ['ACHR']),
                 ckFormId('Location', ['LCTN', 'NULL'])
-            ]), 0)),
-            subrecord('RCUN', array('Reference Cell Unique', ckFormId('Actor', ['NPC_']), undefined)),
+            ]))),
+            subrecord('RCUN', array('Reference Cell Unique', ckFormId('Actor', ['NPC_']))),
             subrecord('ACSR', array('Actor Cell Static Reference', struct('', [
                 ckFormId('Loc Ref Type', ['LCRT']),
                 ckFormId('Marker', ['PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD', 'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON', 'PFLA']),
                 ckFormId('Location', ['WRLD', 'CELL']),
-                int16('Grid Y', null),
-                int16('Grid X', null)
-            ]), 0)),
+                int16('Grid Y'),
+                int16('Grid X')
+            ]))),
             subrecord('LCSR', array('Location Cell Static Reference', struct('', [
                 ckFormId('Loc Ref Type', ['LCRT']),
                 ckFormId('Marker', ['PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD', 'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON', 'PFLA']),
                 ckFormId('Location', ['WRLD', 'CELL']),
-                int16('Grid Y', null),
-                int16('Grid X', null)
-            ]), 0)),
-            subrecord('RCSR', array('Reference Cell Static Reference', ckFormId('Ref', ['ACHR', 'REFR']), undefined)),
-            arrayOfSubrecord('Actor Cell Encounter Cell', undefined),
-            arrayOfSubrecord('Location Cell Encounter Cell', undefined),
-            arrayOfSubrecord('Reference Cell Encounter Cell', undefined),
-            subrecord('ACID', array('Actor Cell Marker Reference', ckFormId('Ref', ['PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD', 'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON', 'PFLA']), undefined)),
-            subrecord('LCID', array('Location Cell Marker Reference', ckFormId('Ref', ['PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD', 'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON', 'PFLA']), undefined)),
+                int16('Grid Y'),
+                int16('Grid X')
+            ]))),
+            subrecord('RCSR', array('Reference Cell Static Reference', ckFormId('Ref', ['ACHR', 'REFR']))),
+            arrayOfSubrecord('Actor Cell Encounter Cell', subrecord('ACEC', struct('Unknown', [
+                ckFormId('Location', ['WRLD', 'CELL']),
+                array('Coordinates', struct('', [
+                    int16('Grid Y'),
+                    int16('Grid X')
+                ]))
+            ]))),
+            arrayOfSubrecord('Location Cell Encounter Cell', subrecord('LCEC', struct('Unknown', [
+                ckFormId('Location', ['WRLD', 'CELL']),
+                array('Coordinates', struct('', [
+                    int16('Grid Y'),
+                    int16('Grid X')
+                ]))
+            ]))),
+            arrayOfSubrecord('Reference Cell Encounter Cell', subrecord('RCEC', struct('Unknown', [
+                ckFormId('Location', ['WRLD', 'CELL']),
+                array('Coordinates', struct('', [
+                    int16('Grid Y'),
+                    int16('Grid X')
+                ]))
+            ]))),
+            subrecord('ACID', array('Actor Cell Marker Reference', ckFormId('Ref', ['PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD', 'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON', 'PFLA']))),
+            subrecord('LCID', array('Location Cell Marker Reference', ckFormId('Ref', ['PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD', 'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON', 'PFLA']))),
             subrecord('ACEP', array('Actor Cell Enable Point', struct('', [
                 ckFormId('Actor', ['PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD', 'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON', 'PFLA']),
                 ckFormId('Ref', ['PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD', 'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON', 'PFLA']),
-                int16('Grid Y', null),
-                int16('Grid X', null)
-            ]), undefined)),
+                int16('Grid Y'),
+                int16('Grid X')
+            ]))),
             subrecord('LCEP', array('Location Cell Enable Point', struct('', [
                 ckFormId('Actor', ['PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD', 'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON', 'PFLA']),
                 ckFormId('Ref', ['PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD', 'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON', 'PFLA']),
-                int16('Grid Y', null),
-                int16('Grid X', null)
-            ]), undefined)),
+                int16('Grid Y'),
+                int16('Grid X')
+            ]))),
             def('FULL'),
             def('KSIZ'),
             def('KWDAs'),

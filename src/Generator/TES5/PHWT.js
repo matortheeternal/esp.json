@@ -3,134 +3,134 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('PHWT', multiStruct(FaceFX Phonemes, [
-        multiStruct(IY, [
+    addDef('PHWT', multiStruct('FaceFX Phonemes', [
+        multiStruct('IY', [
             def('PhonemeTargets')
         ]),
-        multiStruct(IH, [
+        multiStruct('IH', [
             def('PhonemeTargets')
         ]),
-        multiStruct(EH, [
+        multiStruct('EH', [
             def('PhonemeTargets')
         ]),
-        multiStruct(EY, [
+        multiStruct('EY', [
             def('PhonemeTargets')
         ]),
-        multiStruct(AE, [
+        multiStruct('AE', [
             def('PhonemeTargets')
         ]),
-        multiStruct(AA, [
+        multiStruct('AA', [
             def('PhonemeTargets')
         ]),
-        multiStruct(AW, [
+        multiStruct('AW', [
             def('PhonemeTargets')
         ]),
-        multiStruct(AY, [
+        multiStruct('AY', [
             def('PhonemeTargets')
         ]),
-        multiStruct(AH, [
+        multiStruct('AH', [
             def('PhonemeTargets')
         ]),
-        multiStruct(AO, [
+        multiStruct('AO', [
             def('PhonemeTargets')
         ]),
-        multiStruct(OY, [
+        multiStruct('OY', [
             def('PhonemeTargets')
         ]),
-        multiStruct(OW, [
+        multiStruct('OW', [
             def('PhonemeTargets')
         ]),
-        multiStruct(UH, [
+        multiStruct('UH', [
             def('PhonemeTargets')
         ]),
-        multiStruct(UW, [
+        multiStruct('UW', [
             def('PhonemeTargets')
         ]),
-        multiStruct(ER, [
+        multiStruct('ER', [
             def('PhonemeTargets')
         ]),
-        multiStruct(AX, [
+        multiStruct('AX', [
             def('PhonemeTargets')
         ]),
-        multiStruct(S, [
+        multiStruct('S', [
             def('PhonemeTargets')
         ]),
-        multiStruct(SH, [
+        multiStruct('SH', [
             def('PhonemeTargets')
         ]),
-        multiStruct(Z, [
+        multiStruct('Z', [
             def('PhonemeTargets')
         ]),
-        multiStruct(ZH, [
+        multiStruct('ZH', [
             def('PhonemeTargets')
         ]),
-        multiStruct(F, [
+        multiStruct('F', [
             def('PhonemeTargets')
         ]),
-        multiStruct(TH, [
+        multiStruct('TH', [
             def('PhonemeTargets')
         ]),
-        multiStruct(V, [
+        multiStruct('V', [
             def('PhonemeTargets')
         ]),
-        multiStruct(DH, [
+        multiStruct('DH', [
             def('PhonemeTargets')
         ]),
-        multiStruct(M, [
+        multiStruct('M', [
             def('PhonemeTargets')
         ]),
-        multiStruct(N, [
+        multiStruct('N', [
             def('PhonemeTargets')
         ]),
-        multiStruct(NG, [
+        multiStruct('NG', [
             def('PhonemeTargets')
         ]),
-        multiStruct(L, [
+        multiStruct('L', [
             def('PhonemeTargets')
         ]),
-        multiStruct(R, [
+        multiStruct('R', [
             def('PhonemeTargets')
         ]),
-        multiStruct(W, [
+        multiStruct('W', [
             def('PhonemeTargets')
         ]),
-        multiStruct(Y, [
+        multiStruct('Y', [
             def('PhonemeTargets')
         ]),
-        multiStruct(HH, [
+        multiStruct('HH', [
             def('PhonemeTargets')
         ]),
-        multiStruct(B, [
+        multiStruct('B', [
             def('PhonemeTargets')
         ]),
-        multiStruct(D, [
+        multiStruct('D', [
             def('PhonemeTargets')
         ]),
-        multiStruct(JH, [
+        multiStruct('JH', [
             def('PhonemeTargets')
         ]),
-        multiStruct(G, [
+        multiStruct('G', [
             def('PhonemeTargets')
         ]),
-        multiStruct(P, [
+        multiStruct('P', [
             def('PhonemeTargets')
         ]),
-        multiStruct(T, [
+        multiStruct('T', [
             def('PhonemeTargets')
         ]),
-        multiStruct(K, [
+        multiStruct('K', [
             def('PhonemeTargets')
         ]),
-        multiStruct(CH, [
+        multiStruct('CH', [
             def('PhonemeTargets')
         ]),
-        multiStruct(SIL, [
+        multiStruct('SIL', [
             def('PhonemeTargets')
         ]),
-        multiStruct(SHOTSIL, [
+        multiStruct('SHOTSIL', [
             def('PhonemeTargets')
         ]),
-        multiStruct(FLAP, [
+        multiStruct('FLAP', [
             def('PhonemeTargets')
         ])
     ]));

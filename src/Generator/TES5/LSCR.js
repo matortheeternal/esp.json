@@ -1,6 +1,6 @@
 let {
-    def, subrecord, ckFormId, req, float, 
-    int16, struct, string, record
+    def, req, subrecord, ckFormId, float, 
+    int16, struct, cstring, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -11,7 +11,7 @@ module.exports = () => {
         members: [
             def('EDID'),
             def('ICON'),
-            def('DESCReq'),
+            req(def('DESC')),
             def('CTDAs'),
             req(subrecord('NNAM', ckFormId('Loading Screen NIF', ['STAT', 'NULL']))),
             subrecord('SNAM', float('Initial Scale')),
@@ -29,7 +29,7 @@ module.exports = () => {
                 float('Y'),
                 float('Z')
             ])),
-            req(subrecord('MOD2', string('Camera Path')))
+            req(subrecord('MOD2', cstring('Camera Path')))
         ]
     })
 };

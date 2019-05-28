@@ -14,9 +14,9 @@ functionConverter('wbRStructsSK', [
     args.identifier,
     args.identifier
 ], ({name, structName, sk, members, required}, converter) => {
-    converter.addRequires('arrayOfMultiStruct', 'sortKey', 'multiStruct');
-    let multiStructArg = `multiStruct(${structName}, ${members})`,
+    converter.addRequires('arrayOfStruct', 'sortKey', 'multiStruct');
+    let multiStructArg = `multiStruct('${structName}', ${members})`,
         skArg = `sortKey(${sk}, ${multiStructArg})`,
-        line = `arrayOfMultiStruct('${name}', ${skArg})`;
+        line = `arrayOfStruct('${name}', ${skArg})`;
     return reqLine(required, line, converter);
 });

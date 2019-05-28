@@ -9,6 +9,6 @@ subrecordAndField('wbLenString', [
     args.identifier,
     args.identifier
 ], ({name}, converter) => {
-    converter.addRequires('lenstring');
-    return `lenstring('${name}')`;
+    converter.addRequires('string');
+    return `string('${name}')`;
 });

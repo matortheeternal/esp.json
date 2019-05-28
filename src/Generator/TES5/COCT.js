@@ -3,5 +3,5 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('COCT', subrecord('COCT', uint32('Count', null)));
+    addDef('COCT', subrecord('COCT', uint32('Count')));
 };

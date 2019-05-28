@@ -1,8 +1,8 @@
 let {
     def, subrecord, unknown, formId, ckFormId, 
-    string, multiStruct, arrayOfSubrecord, lstring, bytes, 
-    uint8, struct, int8, div, uint16, 
-    record
+    cstring, multiStruct, arrayOfSubrecord, string, bytes, 
+    uint8, format, struct, int8, div, 
+    uint16, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -12,13 +12,15 @@ module.exports = () => {
             subrecord('CNAM', unknown()),
             subrecord('GNAM', formId('Category')),
             subrecord('SNAM', ckFormId('Alternate Sound For', ['SNDR', 'NULL'])),
-            arrayOfSubrecord('Sounds', undefined),
+            arrayOfSubrecord('Sounds', multiStruct('Sound Files', [
+                subrecord('ANAM', cstring('File Name'))
+            ])),
             subrecord('ONAM', ckFormId('Output Model', ['SOPM', 'NULL'])),
-            subrecord('FNAM', lstring(String)),
+            subrecord('FNAM', string('String')),
             def('CTDAs'),
             subrecord('LNAM', struct('Values', [
                 bytes('Unknown', 1),
-                uint8('Looping', {
+                format(uint8('Looping'), {
                     "0": "None",
                     "8": "Loop",
                     "16": "Envelope Fast",
@@ -32,7 +34,7 @@ module.exports = () => {
                 int8('% Frequency Variance'),
                 uint8('Priority'),
                 uint8('db Variance'),
-                uint16('Static Attenuation (db)', div(100))
+                format(uint16('Static Attenuation (db)'), div(100))
             ]))
         ]
     })

@@ -1,17 +1,17 @@
 let {
-    subrecord, string, req, lstring, int32, 
-    float, uint32, union, record
+    subrecord, cstring, req, string, int32, 
+    float, uint32, format, union, record
 } = require('../helpers');
 
 module.exports = () => {
     record('GMST', 'Game Setting', {
         members: [
-            req(subrecord('EDID', string('Editor ID'))),
+            req(subrecord('EDID', cstring('Editor ID'))),
             req(subrecord('DATA', union('Value', [
-                lstring(Name),
+                string('Name'),
                 int32('Int'),
                 float('Float'),
-                uint32('Bool', {
+                format(uint32('Bool'), {
                     "0": "False",
                     "1": "True"
                 })

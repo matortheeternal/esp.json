@@ -1,6 +1,6 @@
 let {
-    def, ckFormId, int8, uint8, subrecord, 
-    struct, req, record
+    def, ckFormId, int8, uint8, format, 
+    subrecord, struct, req, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -12,7 +12,7 @@ module.exports = () => {
                 ckFormId('Location', ['LCTN', 'NULL']),
                 int8('Rank'),
                 int8('Min Level'),
-                uint8('Flags', {
+                format(uint8('Flags'), {
                     "0": "Never Resets",
                     "1": "Match PC Below Minimum Level",
                     "2": "Disable Combat Boundary"

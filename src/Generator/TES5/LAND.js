@@ -1,8 +1,8 @@
 let {
-    subrecord, uint32, uint8, struct, array, 
-    float, bytes, ckFormId, def, int16, 
-    sortKey, uint16, subrecordUnion, arrayOfSubrecord, unknown, 
-    record
+    subrecord, uint32, format, uint8, struct, 
+    array, float, bytes, ckFormId, def, 
+    int16, sortKey, uint16, multiUnion, arrayOfSubrecord, 
+    unknown, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -11,7 +11,7 @@ module.exports = () => {
             "18": "Compressed"
         },
         members: [
-            subrecord('DATA', uint32('Flags', {
+            subrecord('DATA', format(uint32('Flags'), {
                 "0": "Vertex Normals / Height Map",
                 "1": "Vertex Colours",
                 "2": "Layers",
@@ -45,12 +45,31 @@ module.exports = () => {
                     uint8('Z')
                 ]), 33)
             ]), 33)),
-            arrayOfSubrecord('Layers', subrecordUnion('Layer', [
-                sortKey([0], multiStruct('Base Layer', undefined)),
-                sortKey([0], multiStruct('Alpha Layer', undefined))
+            arrayOfSubrecord('Layers', multiUnion('Layer', [
+                sortKey([0], multiStruct('Base Layer', [
+                    subrecord('BTXT', sortKey([1, 3], struct('Base Layer Header', [
+                        ckFormId('Texture', ['LTEX', 'NULL']),
+                        format(uint8('Quadrant'), def('QuadrantEnum')),
+                        bytes('Unused', 1),
+                        int16('Layer')
+                    ])))
+                ])),
+                sortKey([0], multiStruct('Alpha Layer', [
+                    subrecord('ATXT', sortKey([1, 3], struct('Alpha Layer Header', [
+                        ckFormId('Texture', ['LTEX', 'NULL']),
+                        format(uint8('Quadrant'), def('QuadrantEnum')),
+                        bytes('Unused', 1),
+                        int16('Layer')
+                    ]))),
+                    subrecord('VTXT', array('Alpha Layer Data', sortKey([0], struct('Cell', [
+                        format(uint16('Position'), def('AtxtPosition')),
+                        bytes('Unused', 2),
+                        float('Opacity')
+                    ]))))
+                ]))
             ])),
-            subrecord('VTEX', array('Textures', ckFormId('Texture', ['LTEX', 'NULL']), undefined)),
-            arrayOfSubrecord('Unknown', undefined)
+            subrecord('VTEX', array('Textures', ckFormId('Texture', ['LTEX', 'NULL']))),
+            arrayOfSubrecord('Unknown', subrecord('MPCD', unknown()))
         ]
     })
 };

@@ -13,9 +13,9 @@ functionConverter('wbRStructSK', [
     args.identifier,
     args.identifier,
     args.identifier
-], ({sk, name, fields, required}, converter) => {
+], ({sk, name, members, required}, converter) => {
     converter.addRequires('sortKey', 'multiStruct');
-    let structDef = `multiStruct('${name}', ${fields})`,
+    let structDef = `multiStruct('${name}', ${members})`,
         line = `sortKey(${sk}, ${structDef})`;
     return reqLine(required, line, converter);
 });

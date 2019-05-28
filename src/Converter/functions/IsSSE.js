@@ -14,5 +14,5 @@ functionConverter('IsSSE', [
     { type: 'string', name: 's2' }
 ], ({s1, s2}, converter) => {
     converter.addRequires('IsSSE');
-    return `IsSSE(game, ${arr([s1, s2])})`;
+    return `IsSSE(game, ${arr([`'${s1}'`, `'${s2}'`])})`;
 });

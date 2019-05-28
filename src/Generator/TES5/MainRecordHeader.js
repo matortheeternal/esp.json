@@ -1,12 +1,12 @@
 let {
-    addDef, string, uint32, def, formId, 
+    addDef, cstring, uint32, def, formId, 
     bytes, opts, union, uint16, struct
 } = require('../helpers');
 
 module.exports = () => {
     addDef('MainRecordHeader', struct('Record Header', [
-        string('Signature', 4),
-        uint32('Data Size', null),
+        cstring('Signature', 4),
+        uint32('Data Size'),
         def('RecordFlags'),
         formId('FormID'),
         union('Version Control Info 1', [
@@ -17,7 +17,7 @@ module.exports = () => {
                 "toStr": "VCI1ToStrAfterFO4"
             })
         ]),
-        uint16('Form Version', null),
+        uint16('Form Version'),
         bytes('Version Control Info 2', 2)
     ]));
 };

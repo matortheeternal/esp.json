@@ -1,6 +1,6 @@
 let {
-    def, uint32, float, struct, subrecord, 
-    req, ckFormId, record
+    def, uint32, format, float, struct, 
+    subrecord, req, ckFormId, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -9,25 +9,25 @@ module.exports = () => {
             def('EDID'),
             def('MODL'),
             req(subrecord('DATA', struct('Data', [
-                uint32('Action', {
+                format(uint32('Action'), {
                     "0": "Shoot",
                     "1": "Fly",
                     "2": "Hit",
                     "3": "Zoom"
                 }),
-                uint32('Location', {
+                format(uint32('Location'), {
                     "0": "Attacker",
                     "1": "Projectile",
                     "2": "Target",
                     "3": "Lead Actor"
                 }),
-                uint32('Target', {
+                format(uint32('Target'), {
                     "0": "Attacker",
                     "1": "Projectile",
                     "2": "Target",
                     "3": "Lead Actor"
                 }),
-                uint32('Flags', {
+                format(uint32('Flags'), {
                     "0": "Position Follows Location",
                     "1": "Rotation Follows Target",
                     "2": "Don't Follow Bone",

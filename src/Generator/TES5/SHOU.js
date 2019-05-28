@@ -13,7 +13,11 @@ module.exports = () => {
             def('FULL'),
             def('MDOB'),
             def('DESC'),
-            arrayOfSubrecord('Words of Power', undefined)
+            arrayOfSubrecord('Words of Power', subrecord('SNAM', struct('', [
+                ckFormId('Word', ['WOOP', 'NULL']),
+                ckFormId('Spell', ['SPEL', 'NULL']),
+                float('Recovery Time')
+            ])))
         ]
     })
 };

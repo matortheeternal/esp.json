@@ -1,13 +1,13 @@
 let {
-    def, subrecord, ckFormId, uint32, float, 
-    struct, record
+    def, req, subrecord, ckFormId, uint32, 
+    float, format, struct, record
 } = require('../helpers');
 
 module.exports = () => {
     record('HAZD', 'Hazard', {
         members: [
             def('EDID'),
-            def('OBNDReq'),
+            req(def('OBND')),
             def('FULL'),
             def('MODL'),
             subrecord('MNAM', ckFormId('Image Space Modifier', ['IMAD', 'NULL'])),
@@ -17,7 +17,7 @@ module.exports = () => {
                 float('Lifetime'),
                 float('Image Space Radius'),
                 float('Target Interval'),
-                uint32('Flags', {
+                format(uint32('Flags'), {
                     "0": "Affects Player Only",
                     "1": "Inherit Duration from Spawn Spell",
                     "2": "Align to Impact Normal",

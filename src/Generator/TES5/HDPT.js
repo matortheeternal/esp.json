@@ -1,6 +1,6 @@
 let {
-    def, subrecord, uint8, uint32, ckFormId, 
-    arrayOfSubrecord, string, req, arrayOfMultiStruct, sortKey, 
+    def, subrecord, uint8, format, uint32, 
+    ckFormId, arrayOfSubrecord, cstring, req, arrayOfStruct, 
     multiStruct, record
 } = require('../helpers');
 
@@ -13,14 +13,14 @@ module.exports = () => {
             def('EDID'),
             def('FULL'),
             def('MODL'),
-            subrecord('DATA', uint8('Flags', {
+            subrecord('DATA', format(uint8('Flags'), {
                 "0": "Playable",
                 "1": "Male",
                 "2": "Female",
                 "3": "Is Extra Part",
                 "4": "Use Solid Tint"
             })),
-            subrecord('PNAM', uint32('Type', {
+            subrecord('PNAM', format(uint32('Type'), {
                 "0": "Misc",
                 "1": "Face",
                 "2": "Eyes",
@@ -30,13 +30,13 @@ module.exports = () => {
                 "6": "Eyebrows"
             })),
             arrayOfSubrecord('Extra Parts', subrecord('HNAM', ckFormId('Part', ['HDPT']))),
-            arrayOfMultiStruct('Parts', multiStruct(Part, [
-                subrecord('NAM0', uint32('Part Type', {
+            arrayOfStruct('Parts', multiStruct('Part', [
+                subrecord('NAM0', format(uint32('Part Type'), {
                     "0": "Race Morph",
                     "1": "Tri",
                     "2": "Chargen Morph"
                 })),
-                req(subrecord('NAM1', string('FileName')))
+                req(subrecord('NAM1', cstring('FileName')))
             ])),
             subrecord('TNAM', ckFormId('Texture Set', ['TXST', 'NULL'])),
             subrecord('CNAM', ckFormId('Color', ['CLFM', 'NULL'])),

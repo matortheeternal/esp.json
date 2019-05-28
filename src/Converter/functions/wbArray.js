@@ -13,7 +13,8 @@ subrecordAndField('wbArray', [
     args.identifier
 ], ({name, element, size}, converter) => {
     converter.addRequires('array');
-    return `array('${name}', ${element}, ${size})`;
+    let sizeArg = size ? ', ' + size : '';
+    return `array('${name}', ${element}${sizeArg})`;
 });
 
 // TODO: use labels?

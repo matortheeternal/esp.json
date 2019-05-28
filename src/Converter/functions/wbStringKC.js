@@ -11,7 +11,8 @@ functionConverter('wbStringKC', [
     args.identifier,
     args.identifier
 ], ({name, sig, size, required}, converter) => {
-    converter.addRequires('subrecord', 'stringkc');
-    let line = `subrecord('${sig}', stringkc(${name}, ${size}))`;
+    converter.addRequires('subrecord', 'cstring');
+    let sizeArg = size ? ', ' + size : '',
+        line = `subrecord('${sig}', cstring('${name}'${sizeArg}))`;
     return reqLine(required, line, converter);
 });

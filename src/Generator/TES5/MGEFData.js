@@ -1,13 +1,13 @@
 let {
-    addDef, uint32, float, formId, ckFormId, 
-    union, req, def, int32, uint16, 
-    bytes, struct, subrecord, multiStruct
+    addDef, uint32, format, float, formId, 
+    ckFormId, union, req, def, int32, 
+    uint16, bytes, struct, subrecord, multiStruct
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('MGEFData', multiStruct(Magic Effect Data, [
+    addDef('MGEFData', multiStruct('Magic Effect Data', [
         req(subrecord('DATA', struct('Data', [
-            uint32('Flags', {
+            format(uint32('Flags'), {
                 "0": "Hostile",
                 "1": "Recover",
                 "2": "Detrimental",
@@ -53,8 +53,8 @@ module.exports = () => {
                 ckFormId('Assoc. Item', ['ENCH', 'NULL']),
                 ckFormId('Assoc. Item', ['KYWD', 'NULL'])
             ])),
-            int32('Magic Skill', def('ActorValueEnum')),
-            int32('Resist Value', def('ActorValueEnum')),
+            format(int32('Magic Skill'), def('ActorValueEnum')),
+            format(int32('Resist Value'), def('ActorValueEnum')),
             uint16('Counter Effect count'),
             bytes('Unused', 2),
             ckFormId('Casting Light', ['LIGH', 'NULL']),
@@ -73,9 +73,9 @@ module.exports = () => {
             def('ActorValue'),
             ckFormId('Projectile', ['PROJ', 'NULL']),
             ckFormId('Explosion', ['EXPL', 'NULL']),
-            uint32('Casting Type', def('CastEnum')),
-            uint32('Delivery', def('TargetEnum')),
-            int32('Second Actor Value', def('ActorValueEnum')),
+            format(uint32('Casting Type'), def('CastEnum')),
+            format(uint32('Delivery'), def('TargetEnum')),
+            format(int32('Second Actor Value'), def('ActorValueEnum')),
             ckFormId('Casting Art', ['ARTO', 'NULL']),
             ckFormId('Hit Effect Art', ['ARTO', 'NULL']),
             ckFormId('Impact Data', ['IPDS', 'NULL']),
@@ -90,7 +90,7 @@ module.exports = () => {
             ckFormId('Equip Ability', ['SPEL', 'NULL']),
             ckFormId('Image Space Modifier', ['IMAD', 'NULL']),
             ckFormId('Perk to Apply', ['PERK', 'NULL']),
-            uint32('Casting Sound Level', def('SoundLevelEnum')),
+            format(uint32('Casting Sound Level'), def('SoundLevelEnum')),
             struct('Script Effect AI', [
                 float('Score'),
                 float('Delay Time')

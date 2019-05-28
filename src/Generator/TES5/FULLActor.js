@@ -1,7 +1,7 @@
 let {
-    addDef, subrecord, lstringkc, req
+    addDef, subrecord, string, req
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('FULLActor', req(subrecord('FULL', lstringkc(Name, 0))));
+    addDef('FULLActor', req(subrecord('FULL', string('Name'))));
 };

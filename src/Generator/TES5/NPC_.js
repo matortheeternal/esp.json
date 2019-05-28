@@ -1,9 +1,9 @@
 let {
-    def, uint32, int16, div, union, 
-    req, uint16, subrecord, struct, ckFormId, 
-    int8, bytes, sortKey, arrayOfSubrecord, uint8, 
-    lstring, array, float, unknown, int32, 
-    record
+    def, req, uint32, format, int16, 
+    div, union, uint16, subrecord, struct, 
+    ckFormId, int8, bytes, sortKey, arrayOfSubrecord, 
+    uint8, string, array, float, unknown, 
+    int32, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -17,9 +17,9 @@ module.exports = () => {
         members: [
             def('EDID'),
             def('VMAD'),
-            def('OBNDReq'),
+            req(def('OBND')),
             req(subrecord('ACBS', struct('Configuration', [
-                uint32('Flags', {
+                format(uint32('Flags'), {
                     "0": "Female",
                     "1": "Essential",
                     "2": "Is CharGen Face Preset",
@@ -53,17 +53,17 @@ module.exports = () => {
                     "30": "Unknown 30",
                     "31": "Invulnerable"
                 }),
-                int16('Magicka Offset', null),
-                int16('Stamina Offset', null),
+                int16('Magicka Offset'),
+                int16('Stamina Offset'),
                 req(union('Level', [
-                    int16('Level', null),
-                    int16('Level Mult', div(1000))
+                    int16('Level'),
+                    format(int16('Level Mult'), div(1000))
                 ])),
-                uint16('Calc min level', null),
-                uint16('Calc max level', null),
-                uint16('Speed Multiplier', null),
-                int16('Disposition Base (unused)', null),
-                uint16('Template Flags', {
+                uint16('Calc min level'),
+                uint16('Calc max level'),
+                uint16('Speed Multiplier'),
+                int16('Disposition Base (unused)'),
+                format(uint16('Template Flags'), {
                     "0": "Use Traits",
                     "1": "Use Stats",
                     "2": "Use Factions",
@@ -78,8 +78,8 @@ module.exports = () => {
                     "11": "Use Attack Data",
                     "12": "Use Keywords"
                 }),
-                int16('Health Offset', null),
-                uint16('Bleedout Override', null)
+                int16('Health Offset'),
+                uint16('Bleedout Override')
             ]))),
             req(arrayOfSubrecord('Factions', subrecord('SNAM', sortKey([0], struct('Faction', [
                 ckFormId('Faction', ['FACT']),
@@ -101,7 +101,7 @@ module.exports = () => {
             req(subrecord('OCOR', ckFormId('Observe dead body override package list', ['FLST']))),
             req(subrecord('GWOR', ckFormId('Guard warn override package list', ['FLST']))),
             req(subrecord('ECOR', ckFormId('Combat override package list', ['FLST']))),
-            subrecord('PRKZ', uint32('Perk Count', null)),
+            subrecord('PRKZ', uint32('Perk Count')),
             req(arrayOfSubrecord('Perks', subrecord('PRKR', sortKey([0], struct('Perk', [
                 ckFormId('Perk', ['PERK']),
                 uint8('Rank'),
@@ -110,32 +110,36 @@ module.exports = () => {
             def('COCT'),
             def('CNTOs'),
             def('AIDT'),
-            arrayOfSubrecord('Packages', undefined),
+            arrayOfSubrecord('Packages', subrecord('PKID', ckFormId('Package', ['PACK']))),
             def('KSIZ'),
             def('KWDAs'),
             req(subrecord('CNAM', ckFormId('Class', ['CLAS']))),
             def('FULL'),
-            subrecord('SHRT', lstring(Short Name)),
+            subrecord('SHRT', string('Short Name')),
             subrecord('DATA', bytes('Marker', 0)),
-            req(subrecord('DNAM', struct('Player Skills', [
-                array('Skill Values', uint8('Skill')),
-                array('Skill Offsets', uint8('Skill')),
-                uint16('Health'),
-                uint16('Magicka'),
-                uint16('Stamina'),
-                bytes('Unused', 2),
-                float('Far away model distance'),
-                uint8('Geared up weapons'),
-                bytes('Unused', 3)
-            ]))),
-            req(arrayOfSubrecord('Head Parts', subrecord('PNAM', ckFormId('Head Part', ['HDPT'])))),
+            req(subrecord('DNAM',
+                struct('Player Skills', [
+                    array('Skill Values', uint8('Skill')),
+                    array('Skill Offsets', uint8('Skill')),
+                    uint16('Health'),
+                    uint16('Magicka'),
+                    uint16('Stamina'),
+                    bytes('Unused', 2),
+                    float('Far away model distance'),
+                    uint8('Geared up weapons'),
+                    bytes('Unused', 3)
+                ])
+            )),
+            req(arrayOfSubrecord('Head Parts', subrecord('PNAM',
+                ckFormId('Head Part', ['HDPT'])
+            ))),
             req(subrecord('HCLF', ckFormId('Hair Color', ['CLFM']))),
             req(subrecord('ZNAM', ckFormId('Combat Style', ['CSTY']))),
             req(subrecord('GNAM', ckFormId('Gift Filter', ['FLST']))),
             req(subrecord('NAM5', unknown())),
             req(subrecord('NAM6', float('Height'))),
             req(subrecord('NAM7', float('Weight'))),
-            subrecord('NAM8', uint32('Sound Level', def('SoundLevelEnum'))),
+            subrecord('NAM8', format(uint32('Sound Level'), def('SoundLevelEnum'))),
             def('CSDTs'),
             req(subrecord('CSCR', ckFormId('Inherits Sounds From', ['NPC_']))),
             req(subrecord('DOFT', ckFormId('Default outfit', ['OTFT']))),
@@ -175,7 +179,17 @@ module.exports = () => {
                 uint32('Eyes'),
                 uint32('Mouth')
             ])),
-            arrayOfSubrecord('Tint Layers', sortKey([0], multiStruct('Layer', undefined)))
+            arrayOfSubrecord('Tint Layers', sortKey([0], multiStruct('Layer', [
+                subrecord('TINI', format(uint16('Tint Index'), def('TintLayerToStr'))),
+                subrecord('TINC', struct('Tint Color', [
+                    uint8('Red'),
+                    uint8('Green'),
+                    uint8('Blue'),
+                    uint8('Alpha')
+                ])),
+                subrecord('TINV', format(uint32('Interpolation Value'), div(100))),
+                subrecord('TIAS', int16('Preset'))
+            ])))
         ]
     })
 };

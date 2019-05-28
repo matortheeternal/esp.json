@@ -1,7 +1,7 @@
 let {
-    def, float, ckFormId, uint8, bytes, 
-    subrecord, struct, req, IsSSE, string, 
-    array, record
+    def, req, float, ckFormId, uint8, 
+    format, bytes, subrecord, struct, IsSSE, 
+    cstring, array, record
 } = require('../helpers');
 
 module.exports = game => {
@@ -42,13 +42,13 @@ module.exports = game => {
         },
         members: [
             def('EDID'),
-            def('OBNDReq'),
+            req(def('OBND')),
             def('MODL'),
             IsSSE(game, [
                 req(subrecord('DNAM', struct('Direction Material', [
                     float('Max Angle (30-120)'),
                     ckFormId('Material', ['MATO', 'NULL']),
-                    uint8('Flags', {
+                    format(uint8('Flags'), {
                         "0": "Considered Snow"
                     }),
                     bytes('Unused', 3)
@@ -59,7 +59,7 @@ module.exports = game => {
                 ])))
             ]),
             subrecord('MNAM', array('Distant LOD', struct('LOD', [
-                string('Mesh', 260)
+                cstring('Mesh', 260)
             ])))
         ]
     })

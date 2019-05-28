@@ -1,5 +1,6 @@
 let {
-    def, subrecord, uint8, ckFormId, record
+    def, req, subrecord, uint8, format, 
+    ckFormId, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -17,11 +18,11 @@ module.exports = () => {
         },
         members: [
             def('EDID'),
-            def('OBNDReq'),
+            req(def('OBND')),
             def('FULL'),
             def('MODL'),
             def('DEST'),
-            subrecord('DATA', uint8('Flags', {
+            subrecord('DATA', format(uint8('Flags'), {
                 "0": "On Local Map",
                 "1": "Unknown 1",
                 "2": "Unknown 2"

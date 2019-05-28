@@ -1,25 +1,25 @@
 let {
-    def, int32, uint32, float, ckFormId, 
-    subrecord, struct, req, record
+    def, req, int32, uint32, format, 
+    float, ckFormId, subrecord, struct, record
 } = require('../helpers');
 
 module.exports = () => {
     record('ENCH', 'Object Effect', {
         members: [
             def('EDID'),
-            def('OBNDReq'),
+            req(def('OBND')),
             def('FULL'),
             req(subrecord('ENIT', struct('Effect Data', [
                 int32('Enchantment Cost'),
-                uint32('Flags', {
+                format(uint32('Flags'), {
                     "0": "No Auto-Calc",
                     "1": "",
                     "2": "Extend Duration On Recast"
                 }),
-                uint32('Cast Type', def('CastEnum')),
+                format(uint32('Cast Type'), def('CastEnum')),
                 int32('Enchantment Amount'),
-                uint32('Target Type', def('TargetEnum')),
-                uint32('Enchant Type', {
+                format(uint32('Target Type'), def('TargetEnum')),
+                format(uint32('Enchant Type'), {
                     "6": "Enchantment",
                     "12": "Staff Enchantment"
                 }),
@@ -27,7 +27,7 @@ module.exports = () => {
                 ckFormId('Base Enchantment', ['ENCH', 'NULL']),
                 ckFormId('Worn Restrictions', ['FLST', 'NULL'])
             ]))),
-            def('EffectsReq')
+            req(def('Effects'))
         ]
     })
 };

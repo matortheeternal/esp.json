@@ -1,6 +1,7 @@
 let {
-    def, subrecord, float, req, int32, 
-    uint32, formId, ckFormId, struct, record
+    def, req, subrecord, float, int32, 
+    uint32, format, formId, ckFormId, struct, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
@@ -10,7 +11,7 @@ module.exports = () => {
         },
         members: [
             def('EDID'),
-            def('OBNDReq'),
+            req(def('OBND')),
             def('FULL'),
             def('KSIZ'),
             def('KWDAs'),
@@ -24,7 +25,7 @@ module.exports = () => {
             req(subrecord('DATA', float('Weight'))),
             req(subrecord('ENIT', struct('Effect Data', [
                 int32('Value'),
-                uint32('Flags', {
+                format(uint32('Flags'), {
                     "0": "No Auto-Calc",
                     "1": "Food Item",
                     "2": "Unknown 3",
@@ -48,7 +49,7 @@ module.exports = () => {
                 float('Addiction Chance'),
                 ckFormId('Sound - Consume', ['SNDR', 'NULL'])
             ]))),
-            def('EffectsReq')
+            req(def('Effects'))
         ]
     })
 };

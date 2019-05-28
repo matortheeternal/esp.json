@@ -1,6 +1,7 @@
 let {
-    def, uint8, bytes, subrecord, struct, 
-    unknown, uint32, array, float, record
+    def, uint8, format, bytes, subrecord, 
+    struct, unknown, uint32, array, float, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
@@ -8,7 +9,7 @@ module.exports = () => {
         members: [
             def('EDID'),
             subrecord('NAM1', struct('Data', [
-                uint8('Flags', {
+                format(uint8('Flags'), {
                     "0": "Attenuates With Distance",
                     "1": "Allows Rumble"
                 }),
@@ -16,7 +17,7 @@ module.exports = () => {
                 uint8('Reverb Send %')
             ])),
             subrecord('FNAM', unknown()),
-            subrecord('MNAM', uint32('Type', {
+            subrecord('MNAM', format(uint32('Type'), {
                 "0": "Uses HRTF",
                 "1": "Defined Speaker Output"
             })),

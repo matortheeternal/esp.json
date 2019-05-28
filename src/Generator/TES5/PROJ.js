@@ -1,19 +1,19 @@
 let {
-    def, uint16, float, ckFormId, subrecord, 
-    struct, req, string, bytes, sortKey, 
-    multiStruct, uint32, record
+    def, req, uint16, format, float, 
+    ckFormId, subrecord, struct, cstring, bytes, 
+    sortKey, multiStruct, uint32, record
 } = require('../helpers');
 
 module.exports = () => {
     record('PROJ', 'Projectile', {
         members: [
             def('EDID'),
-            def('OBNDReq'),
+            req(def('OBND')),
             def('FULL'),
             def('MODL'),
             def('DEST'),
             req(subrecord('DATA', struct('Data', [
-                uint16('Flags', {
+                format(uint16('Flags'), {
                     "0": "Hitscan",
                     "1": "Explosion",
                     "2": "Alt. Trigger",
@@ -27,7 +27,7 @@ module.exports = () => {
                     "10": "Disable Combat Aim Correction",
                     "11": "Rotation"
                 }),
-                uint16('Type', {
+                format(uint16('Type'), {
                     "1": "Missile",
                     "2": "Lobber",
                     "4": "Beam",
@@ -59,8 +59,11 @@ module.exports = () => {
                 ckFormId('Decal Data', ['TXST', 'NULL']),
                 ckFormId('Collision Layer', ['COLL', 'NULL'])
             ]))),
-            req(sortKey([0], multiStruct('Muzzle Flash Model', undefined))),
-            subrecord('VNAM', uint32('Sound Level', def('SoundLevelEnum')))
+            req(sortKey([0], multiStruct('Muzzle Flash Model', [
+                subrecord('NAM1', cstring('Model FileName')),
+                subrecord('NAM2', bytes('Texture Files Hashes', 0))
+            ]))),
+            subrecord('VNAM', format(uint32('Sound Level'), def('SoundLevelEnum')))
         ]
     })
 };

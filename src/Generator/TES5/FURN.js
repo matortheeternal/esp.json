@@ -1,7 +1,8 @@
 let {
-    def, subrecord, unknown, uint16, ckFormId, 
-    uint32, uint8, int8, struct, bytes, 
-    multiStruct, arrayOfSubrecord, string, record
+    def, req, subrecord, unknown, uint16, 
+    format, ckFormId, uint32, uint8, int8, 
+    struct, bytes, multiStruct, arrayOfSubrecord, cstring, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
@@ -17,19 +18,19 @@ module.exports = () => {
         members: [
             def('EDID'),
             def('VMAD'),
-            def('OBNDReq'),
+            req(def('OBND')),
             def('FULL'),
             def('MODL'),
             def('DEST'),
             def('KSIZ'),
             def('KWDAs'),
             subrecord('PNAM', unknown()),
-            subrecord('FNAM', uint16('Flags', {
+            subrecord('FNAM', format(uint16('Flags'), {
                 "0": "Unknown 0",
                 "1": "Ignored By Sandbox"
             })),
             subrecord('KNAM', ckFormId('Interaction Keyword', ['KYWD', 'NULL'])),
-            subrecord('MNAM', uint32('Active Markers / Flags', {
+            subrecord('MNAM', format(uint32('Active Markers / Flags'), {
                 "0": "Sit 0",
                 "1": "Sit 1",
                 "2": "Sit 2",
@@ -64,7 +65,7 @@ module.exports = () => {
                 "31": "Unknown 32"
             })),
             subrecord('WBDT', struct('Workbench Data', [
-                uint8('Bench Type', {
+                format(uint8('Bench Type'), {
                     "0": "None",
                     "1": "Create object",
                     "2": "Smithing Weapon",
@@ -74,12 +75,22 @@ module.exports = () => {
                     "6": "Alchemy Experiment",
                     "7": "Smithing Armor"
                 }),
-                int8('Uses Skill', def('SkillEnum'))
+                format(int8('Uses Skill'), def('SkillEnum'))
             ])),
             subrecord('NAM1', ckFormId('Associated Spell', ['SPEL'])),
-            arrayOfSubrecord('Markers', undefined),
-            arrayOfSubrecord('Marker Entry Points', undefined),
-            subrecord('XMRK', string('Model FileName'))
+            arrayOfSubrecord('Markers', multiStruct('Marker', [
+                subrecord('ENAM', uint32('Marker Index')),
+                subrecord('NAM0', struct('Disabled Entry Points', [
+                    bytes('Unknown', 2),
+                    format(uint16('Disabled Points'), def('FurnitureEntryTypeFlags'))
+                ])),
+                subrecord('FNMK', ckFormId('Marker Keyword', ['KYWD', 'NULL']))
+            ])),
+            arrayOfSubrecord('Marker Entry Points', subrecord('FNPR', struct('Marker', [
+                format(uint16('Type'), def('FurnitureAnimTypeEnum')),
+                format(uint16('Entry Points'), def('FurnitureEntryTypeFlags'))
+            ]))),
+            subrecord('XMRK', cstring('Model FileName'))
         ]
     })
 };

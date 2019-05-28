@@ -1,43 +1,43 @@
 let {
-    def, subrecord, string, bytes, unknown, 
-    ckFormId, req, uint8, array, opts, 
-    multiStruct, float, struct, uint32, arrayOfSubrecord, 
-    record
+    def, subrecord, cstring, bytes, unknown, 
+    ckFormId, req, uint8, format, array, 
+    opts, multiStruct, float, struct, uint32, 
+    arrayOfSubrecord, record
 } = require('../helpers');
 
 module.exports = () => {
     record('WTHR', 'Weather', {
         members: [
             def('EDID'),
-            subrecord('_00_0TX', string('Cloud Texture Layer #0')),
-            subrecord('_10_0TX', string('Cloud Texture Layer #1')),
-            subrecord('_20_0TX', string('Cloud Texture Layer #2')),
-            subrecord('_30_0TX', string('Cloud Texture Layer #3')),
-            subrecord('_40_0TX', string('Cloud Texture Layer #4')),
-            subrecord('_50_0TX', string('Cloud Texture Layer #5')),
-            subrecord('_60_0TX', string('Cloud Texture Layer #6')),
-            subrecord('_70_0TX', string('Cloud Texture Layer #7')),
-            subrecord('_80_0TX', string('Cloud Texture Layer #8')),
-            subrecord('_90_0TX', string('Cloud Texture Layer #9')),
-            subrecord('_3A_0TX', string('Cloud Texture Layer #10')),
-            subrecord('_3B_0TX', string('Cloud Texture Layer #11')),
-            subrecord('_3C_0TX', string('Cloud Texture Layer #12')),
-            subrecord('_3D_0TX', string('Cloud Texture Layer #13')),
-            subrecord('_3E_0TX', string('Cloud Texture Layer #14')),
-            subrecord('_3F_0TX', string('Cloud Texture Layer #15')),
-            subrecord('_40h_0TX', string('Cloud Texture Layer #16')),
-            subrecord('A0TX', string('Cloud Texture Layer #17')),
-            subrecord('B0TX', string('Cloud Texture Layer #18')),
-            subrecord('C0TX', string('Cloud Texture Layer #19')),
-            subrecord('D0TX', string('Cloud Texture Layer #20')),
-            subrecord('E0TX', string('Cloud Texture Layer #21')),
-            subrecord('F0TX', string('Cloud Texture Layer #22')),
-            subrecord('G0TX', string('Cloud Texture Layer #23')),
-            subrecord('H0TX', string('Cloud Texture Layer #24')),
-            subrecord('I0TX', string('Cloud Texture Layer #25')),
-            subrecord('J0TX', string('Cloud Texture Layer #26')),
-            subrecord('K0TX', string('Cloud Texture Layer #27')),
-            subrecord('L0TX', string('Cloud Texture Layer #28')),
+            subrecord('\x000TX', cstring('Cloud Texture Layer #0')),
+            subrecord('\x100TX', cstring('Cloud Texture Layer #1')),
+            subrecord('\x200TX', cstring('Cloud Texture Layer #2')),
+            subrecord('\x300TX', cstring('Cloud Texture Layer #3')),
+            subrecord('\x400TX', cstring('Cloud Texture Layer #4')),
+            subrecord('\x500TX', cstring('Cloud Texture Layer #5')),
+            subrecord('\x600TX', cstring('Cloud Texture Layer #6')),
+            subrecord('\x700TX', cstring('Cloud Texture Layer #7')),
+            subrecord('\x800TX', cstring('Cloud Texture Layer #8')),
+            subrecord('\x900TX', cstring('Cloud Texture Layer #9')),
+            subrecord('\x3A0TX', cstring('Cloud Texture Layer #10')),
+            subrecord('\x3B0TX', cstring('Cloud Texture Layer #11')),
+            subrecord('\x3C0TX', cstring('Cloud Texture Layer #12')),
+            subrecord('\x3D0TX', cstring('Cloud Texture Layer #13')),
+            subrecord('\x3E0TX', cstring('Cloud Texture Layer #14')),
+            subrecord('\x3F0TX', cstring('Cloud Texture Layer #15')),
+            subrecord('\x400TX', cstring('Cloud Texture Layer #16')),
+            subrecord('A0TX', cstring('Cloud Texture Layer #17')),
+            subrecord('B0TX', cstring('Cloud Texture Layer #18')),
+            subrecord('C0TX', cstring('Cloud Texture Layer #19')),
+            subrecord('D0TX', cstring('Cloud Texture Layer #20')),
+            subrecord('E0TX', cstring('Cloud Texture Layer #21')),
+            subrecord('F0TX', cstring('Cloud Texture Layer #22')),
+            subrecord('G0TX', cstring('Cloud Texture Layer #23')),
+            subrecord('H0TX', cstring('Cloud Texture Layer #24')),
+            subrecord('I0TX', cstring('Cloud Texture Layer #25')),
+            subrecord('J0TX', cstring('Cloud Texture Layer #26')),
+            subrecord('K0TX', cstring('Cloud Texture Layer #27')),
+            subrecord('L0TX', cstring('Cloud Texture Layer #28')),
             subrecord('DNAM', bytes('Unused', 0)),
             subrecord('CNAM', bytes('Unused', 0)),
             subrecord('ANAM', bytes('Unused', 0)),
@@ -46,15 +46,15 @@ module.exports = () => {
             subrecord('MNAM', ckFormId('Precipitation Type', ['SPGD', 'NULL'])),
             req(subrecord('NNAM', ckFormId('Visual Effect', ['RFCT', 'NULL']))),
             subrecord('ONAM', bytes('Unused', 0)),
-            multiStruct(Cloud Speed, [
-                opts(subrecord('RNAM', array('Y Speed', uint8('Layer', def('CloudSpeedToStr')), undefined)), {
+            multiStruct('Cloud Speed', [
+                opts(subrecord('RNAM', array('Y Speed', format(uint8('Layer'), def('CloudSpeedToStr')))), {
                     "includeFlag": "dfNotAlignable"
                 }),
-                opts(subrecord('QNAM', array('X Speed', uint8('Layer', def('CloudSpeedToStr')), undefined)), {
+                opts(subrecord('QNAM', array('X Speed', format(uint8('Layer'), def('CloudSpeedToStr')))), {
                     "includeFlag": "dfNotAlignable"
                 })
             ]),
-            opts(subrecord('PNAM', array('Cloud Colors', def('WeatherColors', { name: 'Layer' }), undefined)), {
+            opts(subrecord('PNAM', array('Cloud Colors', def('WeatherColors', { name: 'Layer' }))), {
                 "includeFlag": "dfNotAlignable"
             }),
             opts(subrecord('JNAM', array('Cloud Alphas', struct('Layer', [
@@ -62,7 +62,7 @@ module.exports = () => {
                 float('Day'),
                 float('Sunset'),
                 float('Night')
-            ]), undefined)), {
+            ]))), {
                 "includeFlag": "dfNotAlignable"
             }),
             req(subrecord('NAM0', struct('Weather Colors', [
@@ -105,7 +105,7 @@ module.exports = () => {
                 uint8('Thunder/Lightning - Begin Fade In'),
                 uint8('Thunder/Lightning - End Fade Out'),
                 uint8('Thunder/Lightning - Frequency'),
-                uint8('Flags', {
+                format(uint8('Flags'), {
                     "0": "Weather - Pleasant",
                     "1": "Weather - Cloudy",
                     "2": "Weather - Rainy",
@@ -123,7 +123,7 @@ module.exports = () => {
                 uint8('Wind Direction'),
                 uint8('Wind Direction Range')
             ]))),
-            subrecord('NAM1', uint32('Disabled Cloud Layers', {
+            subrecord('NAM1', format(uint32('Disabled Cloud Layers'), {
                 "0": "0",
                 "1": "1",
                 "2": "2",
@@ -157,7 +157,15 @@ module.exports = () => {
                 "30": "30",
                 "31": "31"
             })),
-            arrayOfSubrecord('Sounds', undefined),
+            arrayOfSubrecord('Sounds', subrecord('SNAM', struct('Sound', [
+                ckFormId('Sound', ['SNDR', 'SOUN', 'NULL']),
+                format(uint32('Type'), {
+                    "0": "Default",
+                    "1": "Precipitation",
+                    "2": "Wind",
+                    "3": "Thunder"
+                })
+            ]))),
             arrayOfSubrecord('Sky Statics', subrecord('TNAM', ckFormId('Static', ['STAT', 'NULL']))),
             subrecord('IMSP', struct('Image Spaces', [
                 ckFormId('Sunrise', ['IMGS', 'NULL']),
@@ -171,7 +179,7 @@ module.exports = () => {
                 ckFormId('Sunset', ['VOLI', 'NULL']),
                 ckFormId('Night', ['VOLI', 'NULL'])
             ])),
-            req(multiStruct(Directional Ambient Lighting Colors, [
+            req(multiStruct('Directional Ambient Lighting Colors', [
                 subrecord('DALC', def('wbAmbientColors', { name: 'Sunrise' })),
                 subrecord('DALC', def('wbAmbientColors', { name: 'Day' })),
                 subrecord('DALC', def('wbAmbientColors', { name: 'Sunset' })),
@@ -179,7 +187,7 @@ module.exports = () => {
             ])),
             subrecord('NAM2', bytes('Unused', 0)),
             subrecord('NAM3', bytes('Unused', 0)),
-            multiStruct(Aurora, [
+            multiStruct('Aurora', [
                 def('MODL')
             ]),
             subrecord('GNAM', ckFormId('Sun Glare Lens Flare', ['LENS']))

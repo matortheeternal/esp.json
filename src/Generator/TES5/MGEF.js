@@ -1,6 +1,6 @@
 let {
     def, subrecord, ckFormId, arrayOfSubrecord, req, 
-    uint32, struct, array, record
+    uint32, format, struct, array, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -15,7 +15,7 @@ module.exports = () => {
             def('MGEFData'),
             req(arrayOfSubrecord('Counter Effects', subrecord('ESCE', ckFormId('Effect', ['MGEF'])))),
             subrecord('SNDD', array('Sounds', struct('', [
-                uint32('Type', {
+                format(uint32('Type'), {
                     "0": "Sheathe/Draw",
                     "1": "Charge",
                     "2": "Ready",
@@ -24,8 +24,8 @@ module.exports = () => {
                     "5": "On Hit"
                 }),
                 ckFormId('Sound', ['SNDR'])
-            ]), undefined)),
-            subrecord('DNAM', lstringkc(Magic Item Description, 0)),
+            ]))),
+            subrecord('DNAM', string('Magic Item Description')),
             def('CTDAs')
         ]
     })

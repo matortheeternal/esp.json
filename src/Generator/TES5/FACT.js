@@ -1,8 +1,8 @@
 let {
-    def, ckFormId, int32, uint32, subrecord, 
-    sortKey, struct, arrayOfSubrecord, req, uint8, 
-    uint16, float, lstring, string, arrayOfMultiStruct, 
-    bytes, record
+    def, ckFormId, int32, uint32, format, 
+    subrecord, sortKey, struct, arrayOfSubrecord, req, 
+    uint8, uint16, float, string, cstring, 
+    arrayOfStruct, bytes, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -13,7 +13,7 @@ module.exports = () => {
             arrayOfSubrecord('Relations', subrecord('XNAM', sortKey([0], struct('Relation', [
                 ckFormId('Faction', ['FACT', 'RACE']),
                 int32('Modifier'),
-                uint32('Group Combat Reaction', {
+                format(uint32('Group Combat Reaction'), {
                     "0": "Neutral",
                     "1": "Enemy",
                     "2": "Ally",
@@ -21,7 +21,7 @@ module.exports = () => {
                 })
             ])))),
             req(subrecord('DATA', struct('Flags', [
-                uint32('Flags', {
+                format(uint32('Flags'), {
                     "0": "Hidden From NPC",
                     "1": "Special Combat",
                     "2": "Unknown 3",
@@ -63,11 +63,11 @@ module.exports = () => {
             subrecord('CRGR', ckFormId('Shared Crime Faction List', ['FLST'])),
             subrecord('JOUT', ckFormId('Jail Outfit', ['OTFT'])),
             req(subrecord('CRVA', struct('Crime Values', [
-                uint8('Arrest', {
+                format(uint8('Arrest'), {
                     "0": "False",
                     "1": "True"
                 }),
-                uint8('Attack On Sight', {
+                format(uint8('Attack On Sight'), {
                     "0": "False",
                     "1": "True"
                 }),
@@ -80,11 +80,11 @@ module.exports = () => {
                 uint16('Escape'),
                 uint16('Werewolf')
             ]))),
-            arrayOfMultiStruct('Ranks', sortKey([0], multiStruct(Rank, [
+            arrayOfStruct('Ranks', sortKey([0], multiStruct('Rank', [
                 subrecord('RNAM', uint32('Rank#')),
-                subrecord('MNAM', lstring(Male Title)),
-                subrecord('FNAM', lstring(Female Title)),
-                subrecord('INAM', string('Insignia Unused'))
+                subrecord('MNAM', string('Male Title')),
+                subrecord('FNAM', string('Female Title')),
+                subrecord('INAM', cstring('Insignia Unused'))
             ]))),
             subrecord('VEND', ckFormId('Vendor Buy/Sell List', ['FLST'])),
             subrecord('VENC', ckFormId('Merchant Container', ['REFR'])),
@@ -93,11 +93,11 @@ module.exports = () => {
                 uint16('End Hour'),
                 uint16('Radius'),
                 bytes('Unknown 1', 2),
-                uint8('Only Buys Stolen Items', {
+                format(uint8('Only Buys Stolen Items'), {
                     "0": "False",
                     "1": "True"
                 }),
-                uint8('Not/Sell Buy', {
+                format(uint8('Not/Sell Buy'), {
                     "0": "False",
                     "1": "True"
                 }),

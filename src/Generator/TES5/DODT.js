@@ -1,6 +1,6 @@
 let {
-    addDef, float, uint8, struct, bytes, 
-    def, subrecord
+    addDef, float, uint8, struct, format, 
+    bytes, def, subrecord
 } = require('../helpers');
 
 module.exports = () => {
@@ -15,7 +15,7 @@ module.exports = () => {
             float('Scale'),
             uint8('Passes')
         ]),
-        uint8('Flags', {
+        format(uint8('Flags'), {
             "0": "Parallax",
             "1": "Alpha - Blending",
             "2": "Alpha - Testing",

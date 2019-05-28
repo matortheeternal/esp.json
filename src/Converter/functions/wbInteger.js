@@ -1,7 +1,20 @@
-let {subrecordAndField, functionConverter} = require('../converters'),
+let {subrecordAndField} = require('../converters'),
     {args, resolveIntFn} = require('../helpers');
 
-functionConverter('wbInteger', [
+let wbIntegerConvert = ({name, format, intType}, converter) => {
+    let intFn = resolveIntFn(intType),
+        hasFormat = format && format !== 'null',
+        nameArg = name.startsWith('IsSSE(') ? name : `'${name}'`;
+    converter.addRequires(intFn);
+    let line = `${intFn}(${nameArg})`;
+    if (hasFormat) {
+        converter.addRequires('format');
+        return `format(${line}, ${format})`;
+    }
+    return line;
+};
+
+subrecordAndField('wbInteger', [
     { type: 'stringExpr', name: 'name' },
     args.intType,
     args.integerFormat,
@@ -10,12 +23,7 @@ functionConverter('wbInteger', [
     args.identifier,
     args.identifier,
     args.number
-], ({name, format, intType}, converter) => {
-    let intFn = resolveIntFn(intType),
-        formatArg = format ? `, ` + format : '';
-    converter.addRequires(intFn);
-    return `${intFn}('${name}'${formatArg})`;
-});
+], wbIntegerConvert);
 
 subrecordAndField('wbInteger', [
     { type: 'stringExpr', name: 'name' },
@@ -26,9 +34,4 @@ subrecordAndField('wbInteger', [
     args.boolean,
     args.identifier,
     args.identifier
-], ({name, format, intType}, converter) => {
-    let intFn = resolveIntFn(intType),
-        formatArg = format ? `, ` + format : '';
-    converter.addRequires(intFn);
-    return `${intFn}('${name}'${formatArg})`;
-});
+], wbIntegerConvert);

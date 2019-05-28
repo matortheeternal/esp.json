@@ -1,6 +1,7 @@
 let {
-    def, ckFormId, uint32, float, subrecord, 
-    struct, req, IsSSE, string, record
+    def, req, ckFormId, uint32, format, 
+    float, subrecord, struct, IsSSE, cstring, 
+    record
 } = require('../helpers');
 
 module.exports = game => {
@@ -10,7 +11,7 @@ module.exports = game => {
         },
         members: [
             def('EDID'),
-            def('OBNDReq'),
+            req(def('OBND')),
             def('FULL'),
             def('MODL'),
             def('ICON'),
@@ -23,7 +24,7 @@ module.exports = game => {
             IsSSE(game, [
                 req(subrecord('DATA', struct('Data', [
                     ckFormId('Projectile', ['PROJ', 'NULL']),
-                    uint32('Flags', {
+                    format(uint32('Flags'), {
                         "0": "Ignores Normal Weapon Resistance",
                         "1": "Non-Playable",
                         "2": "Non-Bolt"
@@ -34,7 +35,7 @@ module.exports = game => {
                 ]))),
                 req(subrecord('DATA', struct('Data', [
                     ckFormId('Projectile', ['PROJ', 'NULL']),
-                    uint32('Flags', {
+                    format(uint32('Flags'), {
                         "0": "Ignores Normal Weapon Resistance",
                         "1": "Non-Playable",
                         "2": "Non-Bolt"
@@ -43,7 +44,7 @@ module.exports = game => {
                     uint32('Value')
                 ])))
             ]),
-            subrecord('ONAM', string('Short Name'))
+            subrecord('ONAM', cstring('Short Name'))
         ]
     })
 };

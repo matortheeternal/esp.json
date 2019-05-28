@@ -1,6 +1,6 @@
 let {
-    def, subrecord, int32, uint32, float, 
-    struct, record
+    def, req, subrecord, int32, format, 
+    uint32, float, struct, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -8,14 +8,14 @@ module.exports = () => {
         members: [
             def('EDID'),
             def('VMAD'),
-            def('OBNDReq'),
+            req(def('OBND')),
             def('FULL'),
             def('MODL'),
             def('ICON'),
             def('DEST'),
             def('YNAM'),
             def('ZNAM'),
-            subrecord('QUAL', int32('Quality', {
+            subrecord('QUAL', format(int32('Quality'), {
                 "0": "Novice",
                 "1": "Apprentice",
                 "2": "Journeyman",

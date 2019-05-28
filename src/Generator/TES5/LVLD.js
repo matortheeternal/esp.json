@@ -3,5 +3,5 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('LVLD', subrecord('LVLD', uint8('Chance None', null)));
+    addDef('LVLD', subrecord('LVLD', uint8('Chance None')));
 };

@@ -1,22 +1,23 @@
 let {
-    def, subrecord, uint32, float, string, 
-    array, opts, struct, ckFormId, record
+    def, subrecord, uint32, format, float, 
+    cstring, array, opts, struct, ckFormId, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
     record('MUST', 'Music Track', {
         members: [
             def('EDID'),
-            subrecord('CNAM', uint32('Track Type', {
+            subrecord('CNAM', format(uint32('Track Type'), {
                 "603355331": "Palette",
                 "1859641416": "Single Track",
                 "2712257749": "Silent Track"
             })),
             subrecord('FLTV', float('Duration')),
             subrecord('DNAM', float('Fade-Out')),
-            subrecord('ANAM', string('Track FileName')),
-            subrecord('BNAM', string('Finale FileName')),
-            opts(subrecord('FNAM', array('Cue Points', float('Point'), undefined)), {
+            subrecord('ANAM', cstring('Track FileName')),
+            subrecord('BNAM', cstring('Finale FileName')),
+            opts(subrecord('FNAM', array('Cue Points', float('Point'))), {
                 "includeFlag": "dfNotAlignable"
             }),
             subrecord('LNAM', struct('Loop Data', [
@@ -26,7 +27,7 @@ module.exports = () => {
             ])),
             def('CITC'),
             def('CTDAsCount'),
-            subrecord('SNAM', array('Tracks', ckFormId('Track', ['MUST', 'NULL']), undefined))
+            subrecord('SNAM', array('Tracks', ckFormId('Track', ['MUST', 'NULL'])))
         ]
     })
 };

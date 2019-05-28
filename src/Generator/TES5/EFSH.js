@@ -1,22 +1,23 @@
 let {
-    def, subrecord, string, bytes, uint32, 
-    float, ckFormId, struct, req, record
+    def, subrecord, cstring, bytes, uint32, 
+    format, float, ckFormId, struct, req, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
     record('EFSH', 'Effect Shader', {
         members: [
             def('EDID'),
-            subrecord('ICON', string('Fill Texture')),
-            subrecord('ICO2', string('Particle Shader Texture')),
-            subrecord('NAM7', string('Holes Texture')),
-            subrecord('NAM8', string('Membrane Palette Texture')),
-            subrecord('NAM9', string('Particle Palette Texture')),
+            subrecord('ICON', cstring('Fill Texture')),
+            subrecord('ICO2', cstring('Particle Shader Texture')),
+            subrecord('NAM7', cstring('Holes Texture')),
+            subrecord('NAM8', cstring('Membrane Palette Texture')),
+            subrecord('NAM9', cstring('Particle Palette Texture')),
             req(subrecord('DATA', struct('', [
                 bytes('Unknown', 4),
-                uint32('Membrane Shader - Source Blend Mode', def('BlendModeEnum')),
-                uint32('Membrane Shader - Blend Operation', def('BlendOpEnum')),
-                uint32('Membrane Shader - Z Test Function', def('ZTestFuncEnum')),
+                format(uint32('Membrane Shader - Source Blend Mode'), def('BlendModeEnum')),
+                format(uint32('Membrane Shader - Blend Operation'), def('BlendOpEnum')),
+                format(uint32('Membrane Shader - Z Test Function'), def('ZTestFuncEnum')),
                 def('ByteColors', { name: 'Fill/Texture Effect - Color Key 1' }),
                 float('Fill/Texture Effect - Alpha Fade In Time'),
                 float('Fill/Texture Effect - Full Alpha Time'),
@@ -36,11 +37,11 @@ module.exports = () => {
                 float('Edge Effect - Alpha Pulse Frequency'),
                 float('Fill/Texture Effect - Full Alpha Ratio'),
                 float('Edge Effect - Full Alpha Ratio'),
-                uint32('Membrane Shader - Dest Blend Mode', def('BlendModeEnum')),
-                uint32('Particle Shader - Source Blend Mode', def('BlendModeEnum')),
-                uint32('Particle Shader - Blend Operation', def('BlendOpEnum')),
-                uint32('Particle Shader - Z Test Function', def('ZTestFuncEnum')),
-                uint32('Particle Shader - Dest Blend Mode', def('BlendModeEnum')),
+                format(uint32('Membrane Shader - Dest Blend Mode'), def('BlendModeEnum')),
+                format(uint32('Particle Shader - Source Blend Mode'), def('BlendModeEnum')),
+                format(uint32('Particle Shader - Blend Operation'), def('BlendOpEnum')),
+                format(uint32('Particle Shader - Z Test Function'), def('ZTestFuncEnum')),
+                format(uint32('Particle Shader - Dest Blend Mode'), def('BlendModeEnum')),
                 float('Particle Shader - Particle Birth Ramp Up Time'),
                 float('Particle Shader - Full Particle Birth Time'),
                 float('Particle Shader - Particle Birth Ramp Down Time'),
@@ -113,7 +114,7 @@ module.exports = () => {
                     uint32('Frame Count'),
                     uint32('Frame Count Variation')
                 ]),
-                uint32('Flags', {
+                format(uint32('Flags'), {
                     "0": "No Membrane Shader",
                     "1": "Membrane Grayscale Color",
                     "2": "Membrane Grayscale Alpha",

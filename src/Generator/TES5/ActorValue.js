@@ -1,7 +1,7 @@
 let {
-    addDef, def, int32
+    addDef, def, int32, format
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('ActorValue', int32('Actor Value', def('ActorValueEnum')));
+    addDef('ActorValue', format(int32('Actor Value'), def('ActorValueEnum')));
 };

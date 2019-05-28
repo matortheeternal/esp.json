@@ -1,7 +1,8 @@
 let {
-    def, subrecord, uint16, ckFormId, string, 
-    bytes, multiStruct, uint32, float, struct, 
-    uint8, int32, IsSSE, record
+    def, req, subrecord, uint16, ckFormId, 
+    cstring, bytes, multiStruct, uint32, float, 
+    struct, uint8, format, int32, IsSSE, 
+    record
 } = require('../helpers');
 
 module.exports = game => {
@@ -12,7 +13,7 @@ module.exports = game => {
         members: [
             def('EDID'),
             def('VMAD'),
-            def('OBNDReq'),
+            req(def('OBND')),
             def('FULL'),
             def('MODL'),
             def('ICON'),
@@ -27,8 +28,8 @@ module.exports = game => {
             def('KSIZ'),
             def('KWDAs'),
             def('DESC'),
-            multiStruct(Has Scope, [
-                subrecord('MOD3', string('Model FileName')),
+            multiStruct('Has Scope', [
+                subrecord('MOD3', cstring('Model FileName')),
                 subrecord('MO3T', bytes('Texture Files Hashes', 0)),
                 def('MO3S')
             ]),
@@ -48,11 +49,11 @@ module.exports = game => {
                 uint16('Damage')
             ])),
             subrecord('DNAM', struct('Data', [
-                uint8('Animation Type', def('WeaponAnimTypeEnum')),
+                format(uint8('Animation Type'), def('WeaponAnimTypeEnum')),
                 bytes('Unused', 3),
                 float('Speed'),
                 float('Reach'),
-                uint16('Flags', {
+                format(uint16('Flags'), {
                     "0": "Ignores Normal Weapon Resistance",
                     "1": "Automatic (unused)",
                     "2": "Has Scope (unused)",
@@ -66,18 +67,18 @@ module.exports = game => {
                 float('Sight FOV'),
                 bytes('Unknown', 4),
                 uint8('Base VATS To-Hit Chance'),
-                uint8('Attack Animation', def('AttackAnimationEnum')),
+                format(uint8('Attack Animation'), def('AttackAnimationEnum')),
                 uint8('# Projectiles'),
                 uint8('Embedded Weapon AV (unused)'),
                 float('Range Min'),
                 float('Range Max'),
-                uint32('On Hit', {
+                format(uint32('On Hit'), {
                     "0": "No formula behaviour",
                     "1": "Dismember only",
                     "2": "Explode only",
                     "3": "No dismember/explode"
                 }),
-                uint32('Flags2', {
+                format(uint32('Flags2'), {
                     "0": "Player Only",
                     "1": "NPCs Use Ammo",
                     "2": "No Jam After Reload (unused)",
@@ -99,9 +100,9 @@ module.exports = game => {
                 float('Rumble - Right Motor Strength'),
                 float('Rumble - Duration'),
                 bytes('Unknown', 12),
-                int32('Skill', def('SkillEnum')),
+                format(int32('Skill'), def('SkillEnum')),
                 bytes('Unknown', 8),
-                int32('Resist', def('ActorValueEnum')),
+                format(int32('Resist'), def('ActorValueEnum')),
                 bytes('Unknown', 4),
                 float('Stagger')
             ])),
@@ -110,7 +111,7 @@ module.exports = game => {
                     uint16('Damage'),
                     bytes('Unused', 2),
                     float('% Mult'),
-                    uint8('Flags', {
+                    format(uint8('Flags'), {
                         "0": "On Death"
                     }),
                     bytes('Unused', 7),
@@ -121,14 +122,14 @@ module.exports = game => {
                     uint16('Damage'),
                     bytes('Unused', 2),
                     float('% Mult'),
-                    uint8('Flags', {
+                    format(uint8('Flags'), {
                         "0": "On Death"
                     }),
                     bytes('Unused', 3),
                     ckFormId('Effect', ['SPEL', 'NULL'])
                 ]))
             ]),
-            subrecord('VNAM', uint32('Detection Sound Level', def('SoundlevelEnum'))),
+            subrecord('VNAM', format(uint32('Detection Sound Level'), def('SoundlevelEnum'))),
             subrecord('CNAM', ckFormId('Template', ['WEAP']))
         ]
     })

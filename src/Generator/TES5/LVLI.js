@@ -1,16 +1,16 @@
 let {
-    def, subrecord, uint8, ckFormId, uint16, 
-    bytes, sortKey, multiStruct, arrayOfSubrecord, req, 
-    record
+    def, req, subrecord, uint8, format, 
+    ckFormId, uint16, bytes, sortKey, multiStruct, 
+    arrayOfSubrecord, record
 } = require('../helpers');
 
 module.exports = () => {
     record('LVLI', 'Leveled Item', {
         members: [
             def('EDID'),
-            def('OBNDReq'),
+            req(def('OBND')),
             def('LVLD'),
-            subrecord('LVLF', uint8('Flags', {
+            subrecord('LVLF', format(uint8('Flags'), {
                 "0": "Calculate from all levels <= player's level",
                 "1": "Calculate for each item in count",
                 "2": "Use All",

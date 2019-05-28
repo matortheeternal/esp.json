@@ -1,17 +1,17 @@
 let {
-    def, uint8, string, subrecord, struct, 
-    req, arrayOfMultiStruct, sortKey, multiStruct, record
+    def, uint8, cstring, format, subrecord, 
+    struct, req, arrayOfStruct, multiStruct, record
 } = require('../helpers');
 
 module.exports = () => {
     record('DEBR', 'Debris', {
         members: [
             def('EDID'),
-            req(arrayOfMultiStruct('Models', multiStruct(Model, [
+            req(arrayOfStruct('Models', multiStruct('Model', [
                 req(subrecord('DATA', struct('Data', [
                     uint8('Percentage'),
-                    string('Model FileName'),
-                    uint8('Flags', {
+                    cstring('Model FileName'),
+                    format(uint8('Flags'), {
                         "0": "Has Collision Data"
                     })
                 ]))),

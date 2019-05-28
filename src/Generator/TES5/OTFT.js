@@ -6,7 +6,7 @@ module.exports = () => {
     record('OTFT', 'Outfit', {
         members: [
             def('EDID'),
-            subrecord('INAM', array('Items', ckFormId('Item', ['ARMO', 'LVLI']), undefined))
+            subrecord('INAM', array('Items', ckFormId('Item', ['ARMO', 'LVLI'])))
         ]
     })
 };

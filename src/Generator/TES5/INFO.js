@@ -1,8 +1,8 @@
 let {
-    def, subrecord, unknown, uint16, div, 
-    struct, ckFormId, uint8, arrayOfSubrecord, formId, 
-    uint32, bytes, string, multiStruct, lstring, 
-    record
+    def, subrecord, unknown, uint16, format, 
+    div, struct, ckFormId, uint8, arrayOfSubrecord, 
+    formId, uint32, bytes, cstring, multiStruct, 
+    empty, string, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -15,7 +15,7 @@ module.exports = () => {
             def('VMADFragmentedINFO'),
             subrecord('DATA', unknown()),
             subrecord('ENAM', struct('Response flags', [
-                uint16('Flags', {
+                format(uint16('Flags'), {
                     "0": "Goodbye",
                     "1": "Random",
                     "2": "Say once",
@@ -33,22 +33,44 @@ module.exports = () => {
                     "14": "Spends favor points",
                     "15": "Unknown 16"
                 }),
-                uint16('Reset Hours', div(2730))
+                format(uint16('Reset Hours'), div(2730))
             ])),
             subrecord('TPIC', ckFormId('Topic', ['DIAL'])),
             subrecord('PNAM', ckFormId('Previous INFO', ['INFO', 'NULL'])),
-            subrecord('CNAM', uint8('Favor Level', {
+            subrecord('CNAM', format(uint8('Favor Level'), {
                 "0": "None",
                 "1": "Small",
                 "2": "Medium",
                 "3": "Large"
             })),
-            arrayOfSubrecord('Link To', undefined),
+            arrayOfSubrecord('Link To', subrecord('TCLT', ckFormId('Response', ['DIAL', 'INFO', 'NULL']))),
             subrecord('DNAM', formId('Response Data')),
-            arrayOfSubrecord('Responses', undefined),
+            arrayOfSubrecord('Responses', multiStruct('Response', [
+                subrecord('TRDT', struct('Response Data', [
+                    format(uint32('Emotion Type'), def('EmotionTypeEnum')),
+                    uint32('Emotion Value'),
+                    bytes('Unused', 4),
+                    uint8('Response number'),
+                    bytes('Unused', 3),
+                    ckFormId('Sound', ['SNDR', 'NULL']),
+                    format(uint8('Flags'), {
+                        "0": "Use Emotion Animation"
+                    }),
+                    bytes('Unused', 3)
+                ])),
+                subrecord('NAM1', string('Response Text')),
+                subrecord('NAM2', cstring('Script Notes')),
+                subrecord('NAM3', cstring('Edits')),
+                subrecord('SNAM', ckFormId('Idle Animations: Speaker', ['IDLE'])),
+                subrecord('LNAM', ckFormId('Idle Animations: Listener', ['IDLE']))
+            ])),
             def('CTDAs'),
-            arrayOfSubrecord('Unknown', undefined),
-            subrecord('RNAM', lstring(Prompt)),
+            arrayOfSubrecord('Unknown', multiStruct('Unknown', [
+                subrecord('SCHR', unknown()),
+                subrecord('QNAM', formId('Unknown')),
+                subrecord('NEXT', empty('Marker'))
+            ])),
+            subrecord('RNAM', string('Prompt')),
             subrecord('ANAM', ckFormId('Speaker', ['NPC_'])),
             subrecord('TWAT', ckFormId('Walk Away Topic', ['DIAL'])),
             subrecord('ONAM', ckFormId('Audio Output Override', ['SOPM']))

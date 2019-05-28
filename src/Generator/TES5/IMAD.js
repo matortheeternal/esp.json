@@ -1,6 +1,6 @@
 let {
-    def, uint32, float, struct, subrecord, 
-    array, multiStruct, unknown, record
+    def, uint32, format, float, struct, 
+    subrecord, array, multiStruct, unknown, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -8,7 +8,7 @@ module.exports = () => {
         members: [
             def('EDID'),
             subrecord('DNAM', struct('Data Count', [
-                uint32('Flags', {
+                format(uint32('Flags'), {
                     "0": "Animatable"
                 }),
                 float('Duration'),
@@ -64,7 +64,7 @@ module.exports = () => {
                 uint32('Radial Blur Strength'),
                 uint32('Radial Blur Ramp Up'),
                 uint32('Radial Blur Start'),
-                uint32('Radial Blur Flags', {
+                format(uint32('Radial Blur Flags'), {
                     "0": "Use Target"
                 }),
                 float('Radial Blur Center X'),
@@ -72,7 +72,7 @@ module.exports = () => {
                 uint32('DoF Strength'),
                 uint32('DoF Distance'),
                 uint32('DoF Range'),
-                uint32('DoF Flags', {
+                format(uint32('DoF Flags'), {
                     "0": "Use Target",
                     "1": "Unknown 2",
                     "2": "Unknown 3",
@@ -93,65 +93,65 @@ module.exports = () => {
                 uint32('Fade Color'),
                 uint32('Motion Blur Strength')
             ])),
-            subrecord('BNAM', array('Blur Radius', def('TimeInterpolator'), undefined)),
-            subrecord('VNAM', array('Double Vision Strength', def('TimeInterpolator'), undefined)),
-            subrecord('TNAM', array('Tint Color', def('ColorInterpolator'), undefined)),
-            subrecord('NAM3', array('Fade Color', def('ColorInterpolator'), undefined)),
-            subrecord('RNAM', array('Radial Blur Strength', def('TimeInterpolator'), undefined)),
-            subrecord('SNAM', array('Radial Blur Ramp Up', def('TimeInterpolator'), undefined)),
-            subrecord('UNAM', array('Radial Blur Start', def('TimeInterpolator'), undefined)),
-            subrecord('NAM1', array('Radial Blur Ramp Down', def('TimeInterpolator'), undefined)),
-            subrecord('NAM2', array('Radial Blur Down Start', def('TimeInterpolator'), undefined)),
-            subrecord('WNAM', array('DoF Strength', def('TimeInterpolator'), undefined)),
-            subrecord('XNAM', array('DoF Distance', def('TimeInterpolator'), undefined)),
-            subrecord('YNAM', array('DoF Range', def('TimeInterpolator'), undefined)),
-            subrecord('NAM4', array('Motion Blur Strength', def('TimeInterpolator'), undefined)),
-            multiStruct(HDR, [
-                subrecord('_00_IAD', array('Eye Adapt Speed Mult', def('TimeInterpolator'), undefined)),
-                subrecord('_40_IAD', array('Eye Adapt Speed Add', def('TimeInterpolator'), undefined)),
-                subrecord('_01_IAD', array('Bloom Blur Radius Mult', def('TimeInterpolator'), undefined)),
-                subrecord('_41_IAD', array('Bloom Blur Radius Add', def('TimeInterpolator'), undefined)),
-                subrecord('_02_IAD', array('Bloom Threshold Mult', def('TimeInterpolator'), undefined)),
-                subrecord('_42_IAD', array('Bloom Threshold Add', def('TimeInterpolator'), undefined)),
-                subrecord('_03_IAD', array('Bloom Scale Mult', def('TimeInterpolator'), undefined)),
-                subrecord('_43_IAD', array('Bloom Scale Add', def('TimeInterpolator'), undefined)),
-                subrecord('_04_IAD', array('Target Lum Min Mult', def('TimeInterpolator'), undefined)),
-                subrecord('_44_IAD', array('Target Lum Min Add', def('TimeInterpolator'), undefined)),
-                subrecord('_05_IAD', array('Target Lum Max Mult', def('TimeInterpolator'), undefined)),
-                subrecord('_45_IAD', array('Target Lum Max Add', def('TimeInterpolator'), undefined)),
-                subrecord('_06_IAD', array('Sunlight Scale Mult', def('TimeInterpolator'), undefined)),
-                subrecord('_46_IAD', array('Sunlight Scale Add', def('TimeInterpolator'), undefined)),
-                subrecord('_07_IAD', array('Sky Scale Mult', def('TimeInterpolator'), undefined)),
-                subrecord('_47_IAD', array('Sky Scale Add', def('TimeInterpolator'), undefined))
+            subrecord('BNAM', array('Blur Radius', def('TimeInterpolator'))),
+            subrecord('VNAM', array('Double Vision Strength', def('TimeInterpolator'))),
+            subrecord('TNAM', array('Tint Color', def('ColorInterpolator'))),
+            subrecord('NAM3', array('Fade Color', def('ColorInterpolator'))),
+            subrecord('RNAM', array('Radial Blur Strength', def('TimeInterpolator'))),
+            subrecord('SNAM', array('Radial Blur Ramp Up', def('TimeInterpolator'))),
+            subrecord('UNAM', array('Radial Blur Start', def('TimeInterpolator'))),
+            subrecord('NAM1', array('Radial Blur Ramp Down', def('TimeInterpolator'))),
+            subrecord('NAM2', array('Radial Blur Down Start', def('TimeInterpolator'))),
+            subrecord('WNAM', array('DoF Strength', def('TimeInterpolator'))),
+            subrecord('XNAM', array('DoF Distance', def('TimeInterpolator'))),
+            subrecord('YNAM', array('DoF Range', def('TimeInterpolator'))),
+            subrecord('NAM4', array('Motion Blur Strength', def('TimeInterpolator'))),
+            multiStruct('HDR', [
+                subrecord('\x00IAD', array('Eye Adapt Speed Mult', def('TimeInterpolator'))),
+                subrecord('\x40IAD', array('Eye Adapt Speed Add', def('TimeInterpolator'))),
+                subrecord('\x01IAD', array('Bloom Blur Radius Mult', def('TimeInterpolator'))),
+                subrecord('\x41IAD', array('Bloom Blur Radius Add', def('TimeInterpolator'))),
+                subrecord('\x02IAD', array('Bloom Threshold Mult', def('TimeInterpolator'))),
+                subrecord('\x42IAD', array('Bloom Threshold Add', def('TimeInterpolator'))),
+                subrecord('\x03IAD', array('Bloom Scale Mult', def('TimeInterpolator'))),
+                subrecord('\x43IAD', array('Bloom Scale Add', def('TimeInterpolator'))),
+                subrecord('\x04IAD', array('Target Lum Min Mult', def('TimeInterpolator'))),
+                subrecord('\x44IAD', array('Target Lum Min Add', def('TimeInterpolator'))),
+                subrecord('\x05IAD', array('Target Lum Max Mult', def('TimeInterpolator'))),
+                subrecord('\x45IAD', array('Target Lum Max Add', def('TimeInterpolator'))),
+                subrecord('\x06IAD', array('Sunlight Scale Mult', def('TimeInterpolator'))),
+                subrecord('\x46IAD', array('Sunlight Scale Add', def('TimeInterpolator'))),
+                subrecord('\x07IAD', array('Sky Scale Mult', def('TimeInterpolator'))),
+                subrecord('\x47IAD', array('Sky Scale Add', def('TimeInterpolator')))
             ]),
-            subrecord('_08_IAD', unknown()),
-            subrecord('_48_IAD', unknown()),
-            subrecord('_09_IAD', unknown()),
-            subrecord('_49_IAD', unknown()),
-            subrecord('_0A_IAD', unknown()),
-            subrecord('_4A_IAD', unknown()),
-            subrecord('_0B_IAD', unknown()),
-            subrecord('_4B_IAD', unknown()),
-            subrecord('_0C_IAD', unknown()),
-            subrecord('_4C_IAD', unknown()),
-            subrecord('_0D_IAD', unknown()),
-            subrecord('_4D_IAD', unknown()),
-            subrecord('_0E_IAD', unknown()),
-            subrecord('_4E_IAD', unknown()),
-            subrecord('_0F_IAD', unknown()),
-            subrecord('_4F_IAD', unknown()),
-            subrecord('_10_IAD', unknown()),
-            subrecord('_50_IAD', unknown()),
-            multiStruct(Cinematic, [
-                subrecord('_11_IAD', array('Saturation Mult', def('TimeInterpolator'), undefined)),
-                subrecord('_51_IAD', array('Saturation Add', def('TimeInterpolator'), undefined)),
-                subrecord('_12_IAD', array('Brightness Mult', def('TimeInterpolator'), undefined)),
-                subrecord('_52_IAD', array('Brightness Add', def('TimeInterpolator'), undefined)),
-                subrecord('_13_IAD', array('Contrast Mult', def('TimeInterpolator'), undefined)),
-                subrecord('_53_IAD', array('Contrast Add', def('TimeInterpolator'), undefined))
+            subrecord('\x08IAD', unknown()),
+            subrecord('\x48IAD', unknown()),
+            subrecord('\x09IAD', unknown()),
+            subrecord('\x49IAD', unknown()),
+            subrecord('\x0AIAD', unknown()),
+            subrecord('\x4AIAD', unknown()),
+            subrecord('\x0BIAD', unknown()),
+            subrecord('\x4BIAD', unknown()),
+            subrecord('\x0CIAD', unknown()),
+            subrecord('\x4CIAD', unknown()),
+            subrecord('\x0DIAD', unknown()),
+            subrecord('\x4DIAD', unknown()),
+            subrecord('\x0EIAD', unknown()),
+            subrecord('\x4EIAD', unknown()),
+            subrecord('\x0FIAD', unknown()),
+            subrecord('\x4FIAD', unknown()),
+            subrecord('\x10IAD', unknown()),
+            subrecord('\x50IAD', unknown()),
+            multiStruct('Cinematic', [
+                subrecord('\x11IAD', array('Saturation Mult', def('TimeInterpolator'))),
+                subrecord('\x51IAD', array('Saturation Add', def('TimeInterpolator'))),
+                subrecord('\x12IAD', array('Brightness Mult', def('TimeInterpolator'))),
+                subrecord('\x52IAD', array('Brightness Add', def('TimeInterpolator'))),
+                subrecord('\x13IAD', array('Contrast Mult', def('TimeInterpolator'))),
+                subrecord('\x53IAD', array('Contrast Add', def('TimeInterpolator')))
             ]),
-            subrecord('_14_IAD', unknown()),
-            subrecord('_54_IAD', unknown())
+            subrecord('\x14IAD', unknown()),
+            subrecord('\x54IAD', unknown())
         ]
     })
 };

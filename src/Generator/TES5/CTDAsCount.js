@@ -3,5 +3,5 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('CTDAsCount', arrayOfSubrecord('Conditions', undefined));
+    addDef('CTDAsCount', arrayOfSubrecord('Conditions', def('CTDA')));
 };

@@ -1,7 +1,7 @@
 let {
     def, subrecord, bytes, arrayOfSubrecord, float, 
-    struct, uint32, uint8, req, IsSSE, 
-    record
+    struct, uint32, format, uint8, req, 
+    IsSSE, record
 } = require('../helpers');
 
 module.exports = game => {
@@ -9,7 +9,7 @@ module.exports = game => {
         members: [
             def('EDID'),
             def('MODL'),
-            arrayOfSubrecord('Property Data', undefined),
+            arrayOfSubrecord('Property Data', subrecord('DNAM', bytes('Data', 0))),
             IsSSE(game, [
                 req(subrecord('DATA', struct('Directional Material Data', [
                     float('Falloff Scale'),
@@ -23,10 +23,10 @@ module.exports = game => {
                     ]),
                     float('Normal Dampener'),
                     def('FloatColors', { name: 'Single Pass Color' }),
-                    uint32('Flags', {
+                    format(uint32('Flags'), {
                         "0": "Single Pass"
                     }),
-                    uint8('Flags', {
+                    format(uint8('Flags'), {
                         "0": "Snow"
                     }),
                     bytes('Unused', 3)
@@ -43,7 +43,7 @@ module.exports = game => {
                     ]),
                     float('Normal Dampener'),
                     def('FloatColors', { name: 'Single Pass Color' }),
-                    uint32('Flags', {
+                    format(uint32('Flags'), {
                         "0": "Single Pass"
                     })
                 ])))

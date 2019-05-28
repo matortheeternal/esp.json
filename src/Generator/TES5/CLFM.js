@@ -1,5 +1,6 @@
 let {
-    def, subrecord, uint32, record
+    def, req, subrecord, uint32, format, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
@@ -10,8 +11,8 @@ module.exports = () => {
         members: [
             def('EDID'),
             def('FULL'),
-            def('CNAMReq'),
-            subrecord('FNAM', uint32('Playable', {
+            req(def('CNAM')),
+            subrecord('FNAM', format(uint32('Playable'), {
                 "0": "False",
                 "1": "True"
             }))

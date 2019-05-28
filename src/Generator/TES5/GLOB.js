@@ -1,6 +1,6 @@
 let {
-    def, subrecord, uint8, opts, float, 
-    req, record
+    def, subrecord, uint8, format, opts, 
+    float, req, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -10,7 +10,7 @@ module.exports = () => {
         },
         members: [
             def('EDID'),
-            opts(subrecord('FNAM', uint8('Type', {
+            opts(subrecord('FNAM', format(uint8('Type'), {
                 "102": "Float",
                 "108": "Long",
                 "115": "Short"

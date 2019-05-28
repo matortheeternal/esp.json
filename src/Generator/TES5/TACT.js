@@ -1,5 +1,5 @@
 let {
-    def, subrecord, unknown, req, ckFormId, 
+    def, req, subrecord, unknown, ckFormId, 
     record
 } = require('../helpers');
 
@@ -13,7 +13,7 @@ module.exports = () => {
         members: [
             def('EDID'),
             def('VMAD'),
-            def('OBNDReq'),
+            req(def('OBND')),
             def('FULL'),
             def('MODL'),
             def('DEST'),

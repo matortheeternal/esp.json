@@ -1,9 +1,9 @@
 let {
-    addDef, uint32
+    addDef, uint32, format
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('MGEFType', uint32('Archtype', {
+    addDef('MGEFType', format(uint32('Archtype'), {
         "0": "Value Modifier",
         "1": "Script",
         "2": "Dispel",

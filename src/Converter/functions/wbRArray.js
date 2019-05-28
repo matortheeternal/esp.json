@@ -9,7 +9,7 @@ functionConverter('wbRArray', [
     args.identifier,
     args.identifier,
     args.identifier
-], ({name, element}, converter) => {
+], ({name, member}, converter) => {
     converter.addRequires('arrayOfSubrecord');
-    return `arrayOfSubrecord('${name}', ${element})`;
+    return `arrayOfSubrecord('${name}', ${member})`;
 });

@@ -1,20 +1,20 @@
 let {
-    def, record
+    def, req, record
 } = require('../helpers');
 
 module.exports = () => {
     record('SPEL', 'Spell', {
         members: [
             def('EDID'),
-            def('OBNDReq'),
+            req(def('OBND')),
             def('FULL'),
             def('KSIZ'),
             def('KWDAs'),
             def('MDOB'),
             def('ETYP'),
-            def('DESCReq'),
+            req(def('DESC')),
             def('SPIT'),
-            def('EffectsReq')
+            req(def('Effects'))
         ]
     })
 };

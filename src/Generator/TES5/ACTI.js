@@ -1,6 +1,6 @@
 let {
-    def, uint8, subrecord, struct, ckFormId, 
-    lstring, uint16, record
+    def, req, uint8, subrecord, struct, 
+    ckFormId, string, uint16, format, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -23,7 +23,7 @@ module.exports = () => {
         members: [
             def('EDID'),
             def('VMAD'),
-            def('OBNDReq'),
+            req(def('OBND')),
             def('FULL'),
             def('MODL'),
             def('DEST'),
@@ -38,8 +38,8 @@ module.exports = () => {
             subrecord('SNAM', ckFormId('Sound - Looping', ['SNDR'])),
             subrecord('VNAM', ckFormId('Sound - Activation', ['SNDR'])),
             subrecord('WNAM', ckFormId('Water Type', ['WATR'])),
-            subrecord('RNAM', lstring(Activate Text Override)),
-            subrecord('FNAM', uint16('Flags', {
+            subrecord('RNAM', string('Activate Text Override')),
+            subrecord('FNAM', format(uint16('Flags'), {
                 "0": "No Displacement",
                 "1": "Ignored by Sandbox"
             })),

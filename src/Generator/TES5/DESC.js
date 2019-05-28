@@ -1,7 +1,7 @@
 let {
-    addDef, subrecord, lstringkc
+    addDef, subrecord, string
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('DESC', subrecord('DESC', lstringkc(Description, 0)));
+    addDef('DESC', subrecord('DESC', string('Description')));
 };

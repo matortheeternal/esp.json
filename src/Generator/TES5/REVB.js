@@ -1,6 +1,6 @@
 let {
     def, uint16, int8, div, uint8, 
-    subrecord, struct, req, record
+    format, subrecord, struct, req, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -14,7 +14,7 @@ module.exports = () => {
                 int8('Room HF Filter'),
                 int8('Reflections'),
                 int8('Reverb Amp'),
-                uint8('Decay HF Ratio', div(100)),
+                format(uint8('Decay HF Ratio'), div(100)),
                 uint8('Reflect Delay (ms), scaled'),
                 uint8('Reverb Delay (ms)'),
                 uint8('Diffusion %'),

@@ -1,6 +1,6 @@
 let {
-    def, subrecord, string, req, uint8, 
-    record
+    def, req, subrecord, cstring, uint8, 
+    format, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -10,9 +10,9 @@ module.exports = () => {
         },
         members: [
             def('EDID'),
-            def('FULLReq'),
-            req(subrecord('ICON', string('Texture'))),
-            subrecord('DATA', uint8('Flags', {
+            req(def('FULL')),
+            req(subrecord('ICON', cstring('Texture'))),
+            subrecord('DATA', format(uint8('Flags'), {
                 "0": "Playable",
                 "1": "Not Male",
                 "2": "Not Female",

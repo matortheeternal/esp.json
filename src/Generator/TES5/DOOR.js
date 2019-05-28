@@ -1,5 +1,6 @@
 let {
-    def, subrecord, ckFormId, uint8, record
+    def, req, subrecord, ckFormId, uint8, 
+    format, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -12,14 +13,14 @@ module.exports = () => {
         members: [
             def('EDID'),
             def('VMAD'),
-            def('OBNDReq'),
+            req(def('OBND')),
             def('FULL'),
             def('MODL'),
             def('DEST'),
             subrecord('SNAM', ckFormId('Sound - Open', ['SNDR'])),
             subrecord('ANAM', ckFormId('Sound - Close', ['SNDR'])),
             subrecord('BNAM', ckFormId('Sound - Loop', ['SNDR'])),
-            subrecord('FNAM', uint8('Flags', {
+            subrecord('FNAM', format(uint8('Flags'), {
                 "0": "",
                 "1": "Automatic",
                 "2": "Hidden",

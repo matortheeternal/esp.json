@@ -1,8 +1,8 @@
 let {
-    def, uint8, subrecord, struct, req, 
-    ckFormId, sortKey, bytes, union, int8, 
-    arrayOfMultiStruct, lstring, uint16, float, string, 
-    uint32, multiStruct, record
+    def, req, uint8, format, subrecord, 
+    struct, ckFormId, sortKey, bytes, union, 
+    int8, arrayOfStruct, string, uint16, float, 
+    cstring, uint32, multiStruct, empty, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -14,29 +14,29 @@ module.exports = () => {
             def('EDID'),
             def('VMADFragmentedPERK'),
             def('FULL'),
-            def('DESCReq'),
+            req(def('DESC')),
             def('ICON'),
             def('CTDAs'),
             req(subrecord('DATA', struct('Data', [
-                uint8('Trait', {
+                format(uint8('Trait'), {
                     "0": "False",
                     "1": "True"
                 }),
                 uint8('Level'),
                 uint8('Num Ranks'),
-                uint8('Playable', {
+                format(uint8('Playable'), {
                     "0": "False",
                     "1": "True"
                 }),
-                uint8('Hidden', {
+                format(uint8('Hidden'), {
                     "0": "False",
                     "1": "True"
                 })
             ]))),
             subrecord('NNAM', ckFormId('Next Perk', ['PERK', 'NULL'])),
-            arrayOfMultiStruct('Effects', sortKey([0, 1], multiStruct(Effect, [
+            arrayOfStruct('Effects', sortKey([0, 1], multiStruct('Effect', [
                 subrecord('PRKE', sortKey([1, 2, 0], struct('Header', [
-                    uint8('Type', {
+                    format(uint8('Type'), {
                         "0": "Quest + Stage",
                         "1": "Ability",
                         "2": "Entry Point"
@@ -47,13 +47,13 @@ module.exports = () => {
                 req(subrecord('DATA', union('Effect Data', [
                     sortKey([0, 1], struct('Quest + Stage', [
                         ckFormId('Quest', ['QUST']),
-                        uint8('Quest Stage', def('PerkDATAQuestStageToStr')),
+                        format(uint8('Quest Stage'), def('PerkDATAQuestStageToStr')),
                         bytes('Unused', 3)
                     ])),
                     ckFormId('Ability', ['SPEL']),
                     sortKey([0, 1], struct('Entry Point', [
-                        uint8('Entry Point', def('EntryPointsEnum')),
-                        uint8('Function', {
+                        format(uint8('Entry Point'), def('EntryPointsEnum')),
+                        format(uint8('Function'), {
                             "0": "Unknown 0",
                             "1": "Set Value",
                             "2": "Add Value",
@@ -71,15 +71,15 @@ module.exports = () => {
                             "14": "Multiply 1 + Actor Value Mult",
                             "15": "Set Text"
                         }),
-                        uint8('Perk Condition Tab Count', null)
+                        uint8('Perk Condition Tab Count')
                     ]))
                 ]))),
-                req(arrayOfMultiStruct('Perk Conditions', sortKey([0], multiStruct(Perk Condition, [
+                req(arrayOfStruct('Perk Conditions', sortKey([0], multiStruct('Perk Condition', [
                     subrecord('PRKC', int8('Run On (Tab Index)')),
-                    def('CTDAsReq')
+                    req(def('CTDAs'))
                 ])))),
-                req(multiStruct(Function Parameters, [
-                    subrecord('EPFT', uint8('Type', {
+                req(multiStruct('Function Parameters', [
+                    subrecord('EPFT', format(uint8('Type'), {
                         "0": "None",
                         "1": "Float",
                         "2": "Float/AV,Float",
@@ -89,9 +89,9 @@ module.exports = () => {
                         "6": "string",
                         "7": "lstring"
                     })),
-                    subrecord('EPF2', lstring(Button Label)),
+                    subrecord('EPF2', string('Button Label')),
                     subrecord('EPF3', struct('Script Flags', [
-                        uint16('Script Flags', {
+                        format(uint16('Script Flags'), {
                             "0": "Run Immediately",
                             "1": "Replace Default"
                         }),
@@ -107,10 +107,10 @@ module.exports = () => {
                         ckFormId('Leveled Item', ['LVLI']),
                         ckFormId('Spell', ['SPEL']),
                         ckFormId('Spell', ['SPEL']),
+                        cstring('Text'),
                         string('Text'),
-                        lstring(Text),
                         struct('Actor Value, Float', [
-                            uint32('Actor Value', def('EPFDActorValueToStr')),
+                            format(uint32('Actor Value'), def('EPFDActorValueToStr')),
                             float('Float')
                         ])
                     ])))

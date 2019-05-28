@@ -26,6 +26,7 @@ let args = {
 };
 
 let intFunctions = {
+    it0: 'int0',
     itU8: 'uint8',
     itU16: 'uint16',
     itU32: 'uint32',

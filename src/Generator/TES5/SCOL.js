@@ -1,16 +1,15 @@
 let {
-    def, subrecord, ckFormId, float, struct, 
-    req, array, arrayOfMultiStruct, sortKey, multiStruct, 
-    record
+    def, req, subrecord, ckFormId, float, 
+    struct, array, arrayOfStruct, multiStruct, record
 } = require('../helpers');
 
 module.exports = () => {
     record('SCOL', 'Static Collection', {
         members: [
             def('EDID'),
-            def('OBNDReq'),
-            def('MODLReq'),
-            req(arrayOfMultiStruct('Parts', multiStruct(Part, [
+            req(def('OBND')),
+            req(def('MODL')),
+            req(arrayOfStruct('Parts', multiStruct('Part', [
                 subrecord('ONAM', ckFormId('Static', ['STAT'])),
                 subrecord('DATA', array('Placements', struct('Placement', [
                     struct('Position', [
@@ -24,7 +23,7 @@ module.exports = () => {
                         req(float('Z'))
                     ]),
                     float('Scale')
-                ]), 0))
+                ])))
             ])))
         ]
     })

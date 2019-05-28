@@ -1,6 +1,6 @@
 let {
-    def, subrecord, unknown, lstring, ckFormId, 
-    uint8, struct, req, record
+    def, req, subrecord, unknown, string, 
+    ckFormId, uint8, struct, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -8,14 +8,14 @@ module.exports = () => {
         members: [
             def('EDID'),
             def('VMAD'),
-            def('OBNDReq'),
-            def('FULLReq'),
+            req(def('OBND')),
+            req(def('FULL')),
             def('MODL'),
             def('DEST'),
             def('KSIZ'),
             def('KWDAs'),
             subrecord('PNAM', unknown()),
-            subrecord('RNAM', lstring(Activate Text Override)),
+            subrecord('RNAM', string('Activate Text Override')),
             subrecord('FNAM', unknown()),
             subrecord('PFIG', ckFormId('Ingredient', ['INGR', 'ALCH', 'LVLI', 'MISC', 'NULL'])),
             subrecord('SNAM', ckFormId('Sound', ['SNDR', 'NULL'])),

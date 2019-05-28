@@ -1,7 +1,7 @@
 let {
-    addDef, uint32
+    addDef, uint32, format
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('RecordFlags', uint32('Record Flags', {}));
+    addDef('RecordFlags', format(uint32('Record Flags'), {}));
 };

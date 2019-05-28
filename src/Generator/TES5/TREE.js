@@ -1,6 +1,6 @@
 let {
-    def, subrecord, ckFormId, uint8, struct, 
-    float, req, record
+    def, req, subrecord, ckFormId, uint8, 
+    struct, float, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -11,7 +11,7 @@ module.exports = () => {
         members: [
             def('EDID'),
             def('VMAD'),
-            def('OBNDReq'),
+            req(def('OBND')),
             def('MODL'),
             subrecord('PFIG', ckFormId('Ingredient', ['INGR', 'ALCH', 'MISC', 'LVLI', 'NULL'])),
             subrecord('SNAM', ckFormId('Harvest Sound', ['SNDR', 'NULL'])),

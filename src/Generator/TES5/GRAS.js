@@ -1,13 +1,14 @@
 let {
-    def, uint8, bytes, uint16, uint32, 
-    float, subrecord, struct, req, record
+    def, req, uint8, bytes, uint16, 
+    uint32, format, float, subrecord, struct, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
     record('GRAS', 'Grass', {
         members: [
             def('EDID'),
-            def('OBNDReq'),
+            req(def('OBND')),
             def('MODL'),
             req(subrecord('DATA', struct('', [
                 uint8('Density'),
@@ -16,7 +17,7 @@ module.exports = () => {
                 bytes('Unknown', 1),
                 uint16('Units From Water'),
                 bytes('Unknown', 2),
-                uint32('Units From Water Type', {
+                format(uint32('Units From Water Type'), {
                     "0": "Above - At Least",
                     "1": "Above - At Most",
                     "2": "Below - At Least",
@@ -30,7 +31,7 @@ module.exports = () => {
                 float('Height Range'),
                 float('Color Range'),
                 float('Wave Period'),
-                uint8('Flags', {
+                format(uint8('Flags'), {
                     "0": "Vertex Lighting",
                     "1": "Uniform Scaling",
                     "2": "Fit to Slope"

@@ -1,7 +1,7 @@
 let {
-    def, subrecord, ckFormId, uint8, bytes, 
-    float, struct, req, string, multiStruct, 
-    arrayOfSubrecord, record
+    def, subrecord, ckFormId, uint8, format, 
+    bytes, float, struct, req, cstring, 
+    multiStruct, arrayOfSubrecord, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -13,11 +13,11 @@ module.exports = () => {
             req(subrecord('DNAM', struct('Data', [
                 uint8('Male Priority'),
                 uint8('Female Priority'),
-                uint8('Weight slider - Male', {
+                format(uint8('Weight slider - Male'), {
                     "0": "Unknown 0",
                     "1": "Enabled"
                 }),
-                uint8('Weight slider - Female', {
+                format(uint8('Weight slider - Female'), {
                     "0": "Unknown 0",
                     "1": "Enabled"
                 }),
@@ -26,23 +26,23 @@ module.exports = () => {
                 bytes('Unknown', 1),
                 float('Weapon Adjust')
             ]))),
-            req(multiStruct(Male world model, [
-                subrecord('MOD2', string('Model FileName')),
+            req(multiStruct('Male world model', [
+                subrecord('MOD2', cstring('Model FileName')),
                 subrecord('MO2T', bytes('Texture Files Hashes', 0)),
                 def('MO2S')
             ])),
-            multiStruct(Female world model, [
-                subrecord('MOD3', string('Model FileName')),
+            multiStruct('Female world model', [
+                subrecord('MOD3', cstring('Model FileName')),
                 subrecord('MO3T', bytes('Texture Files Hashes', 0)),
                 def('MO3S')
             ]),
-            multiStruct(Male 1st Person, [
-                subrecord('MOD4', string('Model FileName')),
+            multiStruct('Male 1st Person', [
+                subrecord('MOD4', cstring('Model FileName')),
                 subrecord('MO4T', bytes('Texture Files Hashes', 0)),
                 def('MO4S')
             ]),
-            multiStruct(Female 1st Person, [
-                subrecord('MOD5', string('Model FileName')),
+            multiStruct('Female 1st Person', [
+                subrecord('MOD5', cstring('Model FileName')),
                 subrecord('MO5T', bytes('Texture Files Hashes', 0)),
                 def('MO5S')
             ]),

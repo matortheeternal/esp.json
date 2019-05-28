@@ -1,7 +1,7 @@
 let {
-    addDef, subrecord, stringkc
+    addDef, subrecord, cstring
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('EDID', subrecord('EDID', stringkc(Editor ID, 0)));
+    addDef('EDID', subrecord('EDID', cstring('Editor ID')));
 };
