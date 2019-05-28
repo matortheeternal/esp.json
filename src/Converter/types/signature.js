@@ -1,8 +1,9 @@
-let {typeConverter} = require('../converter');
+let {typeParser} = require('../parsers');
 
-let sigExpr = /^([A-Z]{1}[A-Z0-9]{3})/;
+let sigExpr = /^([A-Z]{1}[A-Z0-9_]{3})/,
+    specialSigExpr = /^(_[0-9A-F]{2}h?_[A-Z0-9_]{3})/;
 
-typeConverter('signature', {
-    test: context => context.match(sigExpr),
-    convert: match => match[1]
+typeParser('signature', {
+    test: parser => parser.match(sigExpr) || parser.match(specialSigExpr),
+    parse: match => match[1]
 });

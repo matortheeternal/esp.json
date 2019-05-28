@@ -1,41 +1,41 @@
 let {
-    addDef, record, def, req, uint16, 
-    multiStruct, subrecord, zstring, bytes, ckFormId, 
-    arrayOfStruct, struct, int32, float
+    def, subrecord, uint16, string, bytes, 
+    multiStruct, ckFormId, arrayOfSubrecord, int32, float, 
+    struct, req, div, record
 } = require('../helpers');
 
-module.exports = game => {
-    addDef('ARMO', record('ARMO', 'Armor', {
+module.exports = () => {
+    record('ARMO', 'Armor', {
         flags: {
-            2: 'Non-Playable',                              // 0x00000004
-            6: 'Shield',                                    // 0x00000040
-            10: 'Unknown 10',                               // 0x00000400
-            15: 'Unknown 15',                               // 0x00008000
+            "2": "Non-Playable",
+            "6": "Shield",
+            "10": "Unknown 10",
+            "15": "Unknown 15"
         },
-        elements: [
+        members: [
             def('EDID'),
             def('VMAD'),
-            req(def('OBND')),
+            def('OBNDReq'),
             def('FULL'),
             def('EITM'),
             subrecord('EAMT', uint16('Enchantment Amount')),
-            multiStruct('Male world model', [
-                subrecord('MOD2', zstring('Model Filename')),
-                subrecord('MO2T', bytes('Texture Files Hashes')),
-                def('MO2S'),
+            multiStruct(Male world model, [
+                subrecord('MOD2', string('Model FileName')),
+                subrecord('MO2T', bytes('Texture Files Hashes', 0)),
+                def('MO2S')
             ]),
             def('ICON'),
-            multiStruct('Female world model', [
-                subrecord('MOD4', zstring('Model Filename')),
-                subrecord('MO4T', bytes('Texture Files Hashes')),
-                def('MO4S'),
+            multiStruct(Female world model, [
+                subrecord('MOD4', string('Model FileName')),
+                subrecord('MO4T', bytes('Texture Files Hashes', 0)),
+                def('MO4S')
             ]),
             def('ICO2'),
             def('BODTBOD2'),
             def('DEST'),
             def('YNAM'),
             def('ZNAM'),
-            subrecord('BMCT', zstring('Ragdoll Constraint Template')),
+            subrecord('BMCT', string('Ragdoll Constraint Template')),
             def('ETYP'),
             subrecord('BIDS', ckFormId('Bash Impact Data Set', ['IPDS'])),
             subrecord('BAMT', ckFormId('Alternate Block Material', ['MATT'])),
@@ -43,15 +43,13 @@ module.exports = game => {
             def('KSIZ'),
             def('KWDAs'),
             def('DESC'),
-            arrayOfStruct('Armature',
-                subrecord('MODL', ckFormId('Model Filename', ['ARMA', 'NULL'])),
-            ),
+            arrayOfSubrecord('Armature', undefined),
             req(subrecord('DATA', struct('Data', [
                 int32('Value'),
-                float('Weight'),
+                float('Weight')
             ]))),
-            subrecord('DNAM', int32('Armor Rating')),
-            subrecord('TNAM', ckFormId('Template Armor', ['ARMO'])),
+            subrecord('DNAM', int32('Armor Rating', div(100))),
+            subrecord('TNAM', ckFormId('Template Armor', ['ARMO']))
         ]
-    }));
+    })
 };

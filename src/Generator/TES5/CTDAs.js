@@ -1,9 +1,7 @@
 let {
-    addDef, arrayOfStruct, def
+    addDef, def, arrayOfSubrecord
 } = require('../helpers');
 
-module.exports = game => {
-    addDef('CTDAs', 
-        arrayOfStruct('Conditions', def('lse')),
-    );
+module.exports = () => {
+    addDef('CTDAs', arrayOfSubrecord('Conditions', undefined));
 };

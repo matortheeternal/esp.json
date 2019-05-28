@@ -1,6 +1,8 @@
-let {typeConverter} = require('../converter');
+let {typeParser} = require('../parsers'),
+    {inlineArr} = require('../helpers');
 
-typeConverter('array of number', {
-    test: context => context.matchArray('number'),
-    convert: match => match.value
+typeParser('array of number', {
+    skipAdvance: true,
+    test: parser => parser.matchArray(['number']),
+    parse: inlineArr
 });

@@ -1,8 +1,15 @@
-let {addRequires, functionConverter} = require('../converter'),
-    {arr, args} = require('../helpers');
+let {subrecordAndField} = require('../converters'),
+    {args} = require('../helpers');
 
-functionConverter('wbUnion', [
-
-], ({}) => {
-
+subrecordAndField('wbUnion', [
+    args.name,
+    args.identifier,
+    args.members,
+    args.identifier,
+    args.required,
+    args.identifier,
+    args.identifier
+], ({name, members}, converter) => {
+    converter.addRequires('union');
+    return `union('${name}', ${members})`;
 });

@@ -1,6 +1,8 @@
-let {typeConverter} = require('../converter');
+let {typeParser} = require('../parsers'),
+    {arr} = require('../helpers');
 
-typeConverter('array of field', {
-    test: context => context.matchArray('identifier', 'function'),
-    convert: match => match.value
+typeParser('array of field', {
+    skipAdvance: true,
+    test: parser => parser.matchArray(['field']),
+    parse: entries => arr(entries)
 });

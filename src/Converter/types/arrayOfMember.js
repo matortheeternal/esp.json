@@ -1,6 +1,8 @@
-let {typeConverter} = require('../converter');
+let {typeParser} = require('../parsers'),
+    {arr} = require('../helpers');
 
-typeConverter('array of member', {
-    test: context => context.matchArray('identifier', 'function'),
-    convert: match => match.value
+typeParser('array of member', {
+    skipAdvance: true,
+    test: parser => parser.matchArray(['member']),
+    parse: arr
 });

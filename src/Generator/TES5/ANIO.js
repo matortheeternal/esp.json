@@ -1,16 +1,16 @@
 let {
-    addDef, record, def, subrecord, zstring
+    def, subrecord, string, record
 } = require('../helpers');
 
-module.exports = game => {
-    addDef('ANIO', record('ANIO', 'Animated Object', {
+module.exports = () => {
+    record('ANIO', 'Animated Object', {
         flags: {
-            9: 'Unknown 9',                                 // 0x00000200
+            "9": "Unknown 9"
         },
-        elements: [
+        members: [
             def('EDID'),
             def('MODL'),
-            subrecord('BNAM', zstring('Unload Event')),
+            subrecord('BNAM', string('Unload Event'))
         ]
-    }));
+    })
 };

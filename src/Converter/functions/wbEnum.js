@@ -1,4 +1,4 @@
-let {functionConverter} = require('../converter'),
+let {functionConverter} = require('../converters'),
     {args} = require('../helpers');
 
 functionConverter('wbEnum', [
@@ -6,5 +6,5 @@ functionConverter('wbEnum', [
     args.enum
 ], ({flags, options}) => {
     options = Object.assign({}, flags, options || {});
-    return JSON.stringify(options, null, 2);
+    return JSON.stringify(options, null, 4);
 });

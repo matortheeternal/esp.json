@@ -1,51 +1,49 @@
 let {
-    addDef, record, def, req, subrecord, 
-    lstring, struct, flags8, enum8, bytes, 
-    union, enumS32, ckFormId, uint32, float
+    def, subrecord, lstringkc, req, uint8, 
+    bytes, int32, ckFormId, union, uint32, 
+    float, struct, lstring, record
 } = require('../helpers');
 
-module.exports = game => {
-    addDef('BOOK', record('BOOK', 'Book', {
-        elements: [
+module.exports = () => {
+    record('BOOK', 'Book', {
+        members: [
             def('EDID'),
             def('VMAD'),
-            req(def('OBND')),
+            def('OBNDReq'),
             def('FULL'),
             def('MODL'),
             def('ICON'),
-            req(subrecord('DESC', lstring('Book Text'))),
+            req(subrecord('DESC', lstringkc(Book Text, 0))),
             def('DEST'),
             def('YNAM'),
             def('ZNAM'),
             def('KSIZ'),
             def('KWDAs'),
             req(subrecord('DATA', struct('Data', [
-                flags8('Flags', [
-                    'Teaches Skill',                        // 0x01
-                    'Can\'t be Taken',                      // 0x02
-                    'Teaches Spell',                        // 0x04
-                    'Unknown 4',                            // 0x08
-                    'Unknown 5',                            // 0x10
-                    'Unknown 6',                            // 0x20
-                    'Unknown 7',                            // 0x40
-                    'Unknown 8',                            // 0x80
-                ]),
-                enum8('Type', [
-                    {
-                        '0': 'Book/Tome',
-                        '255': 'Note/Scroll',
-                    }
-                ]),
+                uint8('Flags', {
+                    "0": "Teaches Skill",
+                    "1": "Can't be Taken",
+                    "2": "Teaches Spell",
+                    "3": "Unknown 4",
+                    "4": "Unknown 5",
+                    "5": "Unknown 6",
+                    "6": "Unknown 7",
+                    "7": "Unknown 8"
+                }),
+                uint8('Type', {
+                    "0": "Book/Tome",
+                    "255": "Note/Scroll"
+                }),
                 bytes('Unused', 2),
-                union('Teaches', 'BOOKTeachesDecider', [
-                    enumS32('Skill', def('SkillEnum')),
-                    ckFormId('Spell', ['SPEL', 'NULL']),
+                union('Teaches', [
+                    int32('Skill', def('SkillEnum')),
+                    ckFormId('Spell', ['SPEL', 'NULL'])
                 ]),
                 uint32('Value'),
-                float('Weight'),
+                float('Weight')
             ]))),
             subrecord('INAM', ckFormId('Inventory Art', ['STAT'])),
-            subrecord('CNAM', lstring('Description')),
+            subrecord('CNAM', lstring(Description))
         ]
-    }));
+    })
 };

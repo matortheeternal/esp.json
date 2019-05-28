@@ -1,12 +1,12 @@
 let {
-    addDef, record, def
+    def, record
 } = require('../helpers');
 
-module.exports = game => {
-    addDef('LCRT', record('LCRT', 'Location Reference Type', {
-        elements: [
+module.exports = () => {
+    record('LCRT', 'Location Reference Type', {
+        members: [
             def('EDID'),
-            def('CNAM'),
+            def('CNAM')
         ]
-    }));
+    })
 };

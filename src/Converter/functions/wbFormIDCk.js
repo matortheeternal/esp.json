@@ -1,15 +1,15 @@
-let {addRequires, functionConverter} = require('../converter'),
-    {reqLine, args} = require('../helpers');
+let {subrecordAndField} = require('../converters'),
+    {args} = require('../helpers');
 
-functionConverter('wbFormIDCk', [
-    args.sig,
+subrecordAndField('wbFormIDCk', [
     args.name,
     args.signatures,
     args.boolean,
     args.identifier,
-    args.required
-], ({sig, name, signatures, required}) => {
-    addRequires('subrecord', 'ckFormId');
-    return reqLine(required, `subrecord('${sig}', ckFormId(` +
-        `'${name}', ${signatures}))`);
+    args.required,
+    args.identifier,
+    args.identifier
+], ({sig, name, signatures}, converter) => {
+    converter.addRequires('ckFormId');
+    return `ckFormId('${name}', ${signatures})`;
 });

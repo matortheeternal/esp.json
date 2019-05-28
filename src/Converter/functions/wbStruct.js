@@ -1,13 +1,14 @@
-let {addRequires, functionConverter} = require('../converter'),
-    {arr, args} = require('../helpers');
+let {subrecordAndField} = require('../converters'),
+    {args} = require('../helpers');
 
-functionConverter('wbStruct', [
-    args.sig,
+subrecordAndField('wbStruct', [
     args.name,
     args.fields,
     args.identifier,
-    args.required
-], ({sig, name, fields, required}) => {
-    addRequires('subrecord', 'struct');
-    return reqLine(required, `subrecord('${sig}', struct('${name}', ${arr(fields)}))`);
+    args.required,
+    args.identifier,
+    args.number
+], ({sig, name, fields}, converter) => {
+    converter.addRequires('struct');
+    return `struct('${name}', ${fields})`;
 });

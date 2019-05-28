@@ -6,7 +6,7 @@ let TES5 = path.resolve(__dirname, '..', 'src', 'Generator', 'TES5'),
     files = fs.readdirSync(TES5);
 
 files.forEach(file => {
-    require(`../src/Generator/TES5/${file}`)('TES5')
+    require(`./src/Generator/TES5_old`)('TES5')
 });
 
 let defs = getDefs(),

@@ -1,10 +1,18 @@
-let {addRequires, functionConverter} = require('../converter'),
-    {indent, args} = require('../helpers');
+let {functionConverter} = require('../converters'),
+    {args, reqLine} = require('../helpers');
 
 functionConverter('wbRArrayS', [
     args.name,
-    { type: 'function', id: 'wbStructSK', name: 'struct' }
-], ({name, struct}) => {
-    addRequires('arrayOfSubrecord');
-    return `arrayOfSubrecord('${name}', ${indent(struct)})`;
+    args.field,
+    args.identifier,
+    args.required,
+    args.identifier,
+    args.identifier,
+    args.identifier,
+    args.identifier,
+    args.identifier
+], ({name, element, required}, converter) => {
+    converter.addRequires('arrayOfSubrecord');
+    let line = `arrayOfSubrecord('${name}', ${element})`;
+    return reqLine(required, line, converter);
 });

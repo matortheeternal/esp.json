@@ -1,17 +1,22 @@
-let {addRequires} = require('./converter');
-
 let args = {
     sig: { type: 'signature', name: 'sig' },
     name: { type: 'string', name: 'name' },
+    labels: { type: 'array of string', name: 'labels' },
     signatures: { type: 'array of signature', name: 'signatures' },
+    moreSignatures: { type: 'array of signature', name: 'moreSignatures' },
+    field: { type: 'field', name: 'element' },
+    member: { type: 'member', name: 'member' },
     fields: { type: 'array of field', name: 'fields' },
     members: { type: 'array of member', name: 'members' },
     identifier: { type: 'identifier' },
     required: { type: 'boolean', name: 'required' },
     boolean: { type: 'boolean' },
+    string: { type: 'string' },
     number: { type: 'number' },
     size: { type: 'number', name: 'size' },
     sk: { type: 'array of number', name: 'sk' },
+    elementMap: { type: 'array of number', name: 'elementMap' },
+    exSk: { type: 'array of number', name: 'exSk' },
     intType: { type: 'intType', name: 'intType' },
     integerFormat: { type: 'integerFormat', name: 'format' },
     flagsFn: { type: 'function', id: 'wbFlags', name: 'flags' },
@@ -21,47 +26,57 @@ let args = {
 };
 
 let intFunctions = {
-    integer: {
-        itU8: 'uint8',
-        itU16: 'uint16',
-        itU32: 'uint32',
-        itS8: 'int8',
-        itS16: 'int16',
-        itS32: 'int32'
-    },
-    flags: {
-        itU8: 'flags8',
-        itU16: 'flags16',
-        itU32: 'flags32'
-    },
-    enum: {
-        itU8: 'enum8',
-        itU16: 'enum16',
-        itU32: 'enum32'
-    }
+    itU8: 'uint8',
+    itU16: 'uint16',
+    itU32: 'uint32',
+    itS8: 'int8',
+    itS16: 'int16',
+    itS32: 'int32'
 };
 
+const lineBreak = '\n';
+const tab = '    ';
+
 let indent = function(str) {
-    return `\r\n    ${str.split('\r\n').join('\r\n    ')}\r\n`;
+    return `    ${str.split('\n').join('\n    ')}`;
 };
 
 let arr = function(a) {
-    return `[\r\n    ${a.join(',\r\n\    ')}\r\n]`;
+    return `[\n${a.map(indent).join(',\n')}\n]`;
+};
+
+let inlineArr = function(a) {
+    return `[${a.join(', ')}]`;
 };
 
 let obj = function(a) {
-    return `{\r\n    ${a.join(',\r\n    ')}\r\n}`;
+    return `{\n${a.map(indent).join(',\n')}\n}`;
 };
 
-let reqLine = function(required, line) {
-    if (required) addRequires('req');
-    return required ? `req(${line})` : line;
+let reqLine = function(required, line, converter) {
+    if (!required) return line;
+    converter.addRequires('req');
+    return `req(${line})`;
 };
 
-let resolveIntFn = function(intType, type = 'integer') {
-    let intFn = intFunctions[type][intType];
-    if (!intFn) throw new Error(`No function found for ${type}, ${intType}`);
+let optsLine = function(opts, line, converter) {
+    if (Object.keys(opts).length === 0) return line;
+    converter.addRequires('opts');
+    return `opts(${line}, ${JSON.stringify(opts, null, 4)})`;
+};
+
+let optsReq = function(args, opts, line, converter) {
+    line = reqLine(args.required, line, converter);
+    return optsLine(opts, line, converter);
+};
+
+let resolveIntFn = function(intType) {
+    let intFn = intFunctions[intType];
+    if (!intFn) throw new Error(`No function found for ${intType}`);
     return intFn;
 };
 
-module.exports = { args, indent, arr, obj, reqLine, resolveIntFn };
+module.exports = {
+    args, indent, arr, inlineArr, obj, reqLine,
+    optsLine, optsReq, resolveIntFn, lineBreak, tab
+};

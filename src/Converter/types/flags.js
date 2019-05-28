@@ -1,6 +1,7 @@
-let {typeConverter} = require('../converter');
+let {typeParser} = require('../parsers');
 
-typeConverter('flags', {
-    test: context => context.matchArray('string'),
-    convert: match => Object.assign({}, match.entries)
+typeParser('flags', {
+    skipAdvance: true,
+    test: parser => parser.matchArray(['string', 'function']),
+    parse: entries => Object.assign({}, entries)
 });

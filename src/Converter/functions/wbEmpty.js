@@ -1,4 +1,4 @@
-let {addRequires, functionConverter} = require('../converter'),
+let {functionConverter} = require('../converters'),
     {reqLine, args} = require('../helpers');
 
 functionConverter('wbEmpty', [
@@ -6,7 +6,11 @@ functionConverter('wbEmpty', [
     args.name,
     args.identifier,
     args.required,
-], ({sig, name, required}) => {
-    addRequires('subrecord', 'empty');
-    return reqLine(required, `subrecord('${sig}', empty('${name}'))`);
+], ({required, sig, name}, converter) => {
+    converter.addRequires('subrecord', 'empty');
+    return reqLine(
+        required,
+        `subrecord('${sig}', empty('${name}'))`,
+        converter
+    );
 });

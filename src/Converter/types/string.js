@@ -1,8 +1,8 @@
-let {typeConverter} = require('../converter');
+let {typeParser} = require('../parsers');
 
 let strExpr = /^'((?:[^']+|'')*)'/;
 
-typeConverter('string', {
-    test: context => context.match(strExpr),
-    convert: match => match[1].replace(/''/g, '\'')
+typeParser('string', {
+    test: parser => parser.match(strExpr),
+    parse: match => match[1].replace(/''/g, '\'')
 });

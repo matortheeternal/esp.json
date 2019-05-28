@@ -1,14 +1,13 @@
-let {addRequires, functionConverter} = require('../converter'),
-    {reqLine, args} = require('../helpers');
+let {subrecordAndField} = require('../converters'),
+    {args} = require('../helpers');
 
-functionConverter('wbLString', [
-    args.sig,
+subrecordAndField('wbLString', [
     args.name,
     args.number,
     args.identifier,
     args.required,
     args.identifier
-], ({sig, name, required}) => {
-    addRequires('subrecord', 'lstring');
-    return reqLine(required, `subrecord('${sig}', lstring(${name}))`);
+], ({name}, converter) => {
+    converter.addRequires('lstring');
+    return `lstring(${name})`;
 });

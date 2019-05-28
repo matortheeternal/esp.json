@@ -1,13 +1,14 @@
-let {addRequires, functionConverter} = require('../converter'),
+let {subrecordAndField} = require('../converters'),
     {args} = require('../helpers');
 
-functionConverter('wbByteArray', [
+subrecordAndField('wbByteArray', [
     args.name,
     args.size,
     args.identifier,
     args.boolean,
+    args.identifier,
     args.identifier
-], ({name, size}) => {
-    addRequires('bytes');
-    return `bytes('${name}', ${size})`;
+], ({name, size}, converter) => {
+    converter.addRequires('bytes');
+    return `bytes('${name}', ${size || 0})`;
 });

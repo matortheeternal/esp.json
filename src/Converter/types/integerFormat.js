@@ -1,12 +1,12 @@
-let {typeConverter} = require('../converter');
+let {typeParser} = require('../parsers');
 
-let intFormatExpr = /^(wbDiv)\(([0-9]+)\)/;
-
-let formatFnMap = {
-    wbDiv: match => `div(${match[2]})`
-};
-
-typeConverter('integerFormat', {
-    test: context => context.match(intFormatExpr),
-    convert: match => formatFnMap[match[1]](match)
+typeParser('integerFormat', {
+    skipAdvance: true,
+    test: parser => parser.matchOne(['function', 'identifier']),
+    parse: (match, parser) => {
+        if (match.type === 'function') return match.value;
+        if (match.value === 'null') return 'null';
+        parser.addRequires('def');
+        return `def('${match.value}')`;
+    }
 });

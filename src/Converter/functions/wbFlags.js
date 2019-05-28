@@ -1,15 +1,29 @@
-let {functionConverter} = require('../converter'),
+let {functionConverter} = require('../converters'),
     {args} = require('../helpers');
 
-let convertFlags = ({flags}) => {
-    return JSON.stringify(flags, null, 2);
-};
+let convertFlags = ({flags}) => JSON.stringify(flags, null, 4);
 
 // inherit flags
 functionConverter('wbFlags', [
     args.identifier,
-    { type: 'function', id: 'wbFlagsList', name: 'flags' }
+    { type: 'flagsField', name: 'flags' },
+    { type: 'boolean', name: 'unused' }
+], convertFlags);
+
+// TODO: handle flagsToIgnore ?
+functionConverter('wbFlags', [
+    args.identifier,
+    { type: 'flagsField', name: 'flags' },
+    { type: 'array of number', name: 'flagsToIgnore' }
 ], convertFlags);
 
 // new flags
-functionConverter('wbFlags', [args.flags], convertFlags);
+functionConverter('wbFlags', [
+    { type: 'flagsField', name: 'flags' },
+    { type: 'boolean', name: 'unused' }
+], convertFlags);
+
+functionConverter('wbFlags', [
+    { type: 'flagsField', name: 'flags' },
+    { type: 'array of number', name: 'flagsToIgnore' }
+], convertFlags);

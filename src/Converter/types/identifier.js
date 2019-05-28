@@ -1,8 +1,8 @@
-let {typeConverter} = require('../converter');
+let {typeParser} = require('../parsers');
 
-let idExpr = /^[a-z][a-z0-9]*/i;
+let idExpr = /^(?:wb)?([a-z][a-z0-9_]*)/i;
 
-typeConverter('identifier', {
-    test: context => context.match(idExpr),
-    convert: match => match[0]
+typeParser('identifier', {
+    test: parser => parser.match(idExpr),
+    parse: match => match[0] === 'nil' ? 'null' : match[1]
 });

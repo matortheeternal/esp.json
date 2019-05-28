@@ -1,17 +1,16 @@
 let {
-    addDef, record, def, req, subrecord, 
-    float, struct, int32, flags32, formId, 
-    ckFormId
+    def, subrecord, float, req, int32, 
+    uint32, formId, ckFormId, struct, record
 } = require('../helpers');
 
-module.exports = game => {
-    addDef('ALCH', record('ALCH', 'Ingestible', {
+module.exports = () => {
+    record('ALCH', 'Ingestible', {
         flags: {
-            29: 'Medicine',                                 // 0x20000000
+            "29": "Medicine"
         },
-        elements: [
+        members: [
             def('EDID'),
-            req(def('OBND')),
+            def('OBNDReq'),
             def('FULL'),
             def('KSIZ'),
             def('KWDAs'),
@@ -25,31 +24,31 @@ module.exports = game => {
             req(subrecord('DATA', float('Weight'))),
             req(subrecord('ENIT', struct('Effect Data', [
                 int32('Value'),
-                flags32('Flags', [
-                    'No Auto-Calc',                         // 0x00000001
-                    'Food Item',                            // 0x00000002
-                    'Unknown 3',                            // 0x00000004
-                    'Unknown 4',                            // 0x00000008
-                    'Unknown 5',                            // 0x00000010
-                    'Unknown 6',                            // 0x00000020
-                    'Unknown 7',                            // 0x00000040
-                    'Unknown 8',                            // 0x00000080
-                    'Unknown 9',                            // 0x00000100
-                    'Unknown 10',                           // 0x00000200
-                    'Unknown 11',                           // 0x00000400
-                    'Unknown 12',                           // 0x00000800
-                    'Unknown 13',                           // 0x00001000
-                    'Unknown 14',                           // 0x00002000
-                    'Unknown 15',                           // 0x00004000
-                    'Unknown 16',                           // 0x00008000
-                    'Medicine',                             // 0x00010000
-                    'Poison',                               // 0x00020000
-                ]),
+                uint32('Flags', {
+                    "0": "No Auto-Calc",
+                    "1": "Food Item",
+                    "2": "Unknown 3",
+                    "3": "Unknown 4",
+                    "4": "Unknown 5",
+                    "5": "Unknown 6",
+                    "6": "Unknown 7",
+                    "7": "Unknown 8",
+                    "8": "Unknown 9",
+                    "9": "Unknown 10",
+                    "10": "Unknown 11",
+                    "11": "Unknown 12",
+                    "12": "Unknown 13",
+                    "13": "Unknown 14",
+                    "14": "Unknown 15",
+                    "15": "Unknown 16",
+                    "16": "Medicine",
+                    "17": "Poison"
+                }),
                 formId('Addiction'),
                 float('Addiction Chance'),
-                ckFormId('Sound - Consume', ['SNDR', 'NULL']),
+                ckFormId('Sound - Consume', ['SNDR', 'NULL'])
             ]))),
-            req(def('Effects')),
+            def('EffectsReq')
         ]
-    }));
+    })
 };

@@ -1,7 +1,10 @@
-let {addRequires, functionConverter} = require('../converter'),
+let {subrecordAndField} = require('../converters'),
     {args} = require('../helpers');
 
-functionConverter('wbUnknown', [args.sig], ({sig}) => {
-    addRequires('subrecord', 'unknown');
-    return `subrecord('${sig}', unknown())`;
+subrecordAndField('wbUnknown', [
+    args.identifier,
+    args.required
+], (args, converter) => {
+    converter.addRequires('unknown');
+    return `unknown()`;
 });

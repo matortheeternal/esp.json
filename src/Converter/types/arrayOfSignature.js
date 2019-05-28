@@ -1,6 +1,8 @@
-let {typeConverter} = require('../converter');
+let {typeParser} = require('../parsers'),
+    {inlineArr} = require('../helpers');
 
-typeConverter('array of signature', {
-    test: context => context.matchArray('signature'),
-    convert: match => match.entries
+typeParser('array of signature', {
+    skipAdvance: true,
+    test: parser => parser.matchArray(['signature']),
+    parse: a => inlineArr(a.map(v => `'${v}'`))
 });

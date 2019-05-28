@@ -1,8 +1,8 @@
-let {typeConverter} = require('../converter');
+let {typeParser} = require('../parsers');
 
-let boolExpr = /^true|false/i;
+let boolExpr = /^(true|false)/i;
 
-typeConverter('boolean', {
-    test: context => context.match(boolExpr),
-    convert: match => match[0].toLowerCase()
+typeParser('boolean', {
+    test: parser => parser.match(boolExpr),
+    parse: match => match[0].toLowerCase()
 });
