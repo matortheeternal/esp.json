@@ -2,11 +2,11 @@ let fs = require('fs'),
     path = require('path'),
     {clearDefs, getDefs} = require('./helpers');
 
-let buildDefs = function(game) {
-    let generatorFolder = path.resolve(__dirname, game);
+let buildDefs = function(game, folderName) {
+    let generatorFolder = path.resolve(__dirname, folderName);
     fs.readdirSync(generatorFolder).forEach(file => {
         let filePath = path.resolve(generatorFolder, file);
-        require(filePath)(game);
+        require(filePath)(defGame);
     });
 };
 
@@ -27,7 +27,7 @@ let saveIndividualDefs = function(game) {
 
 let generate = function(game, options = {}) {
     clearDefs();
-    buildDefs(game);
+    buildDefs(game, options.buildFrom || game);
     saveDefs(game);
     if (options.saveIndividualDefs) saveIndividualDefs(game);
 };
