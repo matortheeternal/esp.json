@@ -18,10 +18,10 @@ let convertProcedures = function(converter) {
 };
 
 let convertFile = function(filename, game) {
-    let filePath = path.resolve('Input', filename),
+    let filePath = path.resolve(__dirname, 'Input', filename),
         converter = new Converter(filePath);
     try {
-        let outputFolder = path.resolve('output', game);
+        let outputFolder = path.resolve(__dirname, 'output', game);
         if (!fs.existsSync(outputFolder)) fs.mkdirSync(outputFolder);
         converter.setOutputFolder(outputFolder);
         convertProcedures(converter);
