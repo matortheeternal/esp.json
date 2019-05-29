@@ -1,0 +1,85 @@
+{
+    "name": "Biped Body Template",
+    "type": "multiUnion",
+    "subrecords": [
+        {
+            "signature": "BOD2",
+            "type": "subrecord",
+            "def": {
+                "name": "Biped Body Template",
+                "type": "struct",
+                "fields": [
+                    {
+                        "def": "FirstPersonFlagsU32"
+                    },
+                    {
+                        "name": "General Flags",
+                        "type": "int0",
+                        "format": {
+                            "0": "(ARMA)Modulates Voice",
+                            "1": "Unknown 2",
+                            "2": "Unknown 3",
+                            "3": "Unknown 4",
+                            "4": "(ARMO)Non-Playable",
+                            "5": "Unknown 6",
+                            "6": "Unknown 7",
+                            "7": "Unknown 8"
+                        }
+                    },
+                    {
+                        "name": "Unused",
+                        "type": "empty"
+                    },
+                    {
+                        "name": "Armor Type",
+                        "type": "uint32",
+                        "format": {
+                            "def": "ArmorTypeEnum"
+                        }
+                    }
+                ]
+            },
+            "required": true
+        },
+        {
+            "signature": "BODT",
+            "type": "subrecord",
+            "def": {
+                "name": "Body Template",
+                "type": "struct",
+                "fields": [
+                    {
+                        "def": "FirstPersonFlagsU32"
+                    },
+                    {
+                        "name": "General Flags",
+                        "type": "uint8",
+                        "format": {
+                            "0": "(ARMA)Modulates Voice",
+                            "1": "Unknown 2",
+                            "2": "Unknown 3",
+                            "3": "Unknown 4",
+                            "4": "(ARMO)Non-Playable",
+                            "5": "Unknown 6",
+                            "6": "Unknown 7",
+                            "7": "Unknown 8"
+                        }
+                    },
+                    {
+                        "name": "Unused",
+                        "type": "bytes",
+                        "size": 3
+                    },
+                    {
+                        "name": "Armor Type",
+                        "type": "uint32",
+                        "format": {
+                            "def": "ArmorTypeEnum"
+                        }
+                    }
+                ]
+            },
+            "required": true
+        }
+    ]
+}

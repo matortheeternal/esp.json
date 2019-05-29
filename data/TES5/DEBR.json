@@ -1,0 +1,53 @@
+{
+    "signature": "DEBR",
+    "type": "record",
+    "name": "Debris",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "name": "Models",
+                "type": "structArray",
+                "entryName": {
+                    "name": "Model",
+                    "type": "multiStruct",
+                    "subrecords": [
+                        {
+                            "signature": "DATA",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Data",
+                                "type": "struct",
+                                "fields": [
+                                    {
+                                        "name": "Percentage",
+                                        "type": "uint8"
+                                    },
+                                    {
+                                        "name": "Model FileName",
+                                        "type": "cstring",
+                                        "maxSize": 0
+                                    },
+                                    {
+                                        "name": "Flags",
+                                        "type": "uint8",
+                                        "format": {
+                                            "0": "Has Collision Data"
+                                        }
+                                    }
+                                ]
+                            },
+                            "required": true
+                        },
+                        {
+                            "def": "MODT"
+                        }
+                    ]
+                },
+                "required": true
+            }
+        ]
+    }
+}

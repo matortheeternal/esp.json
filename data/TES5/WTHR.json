@@ -1,0 +1,922 @@
+{
+    "signature": "WTHR",
+    "type": "record",
+    "name": "Weather",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "signature": "\u00000TX",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Texture Layer #0",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "\u00100TX",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Texture Layer #1",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": " 0TX",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Texture Layer #2",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "00TX",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Texture Layer #3",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "@0TX",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Texture Layer #4",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "P0TX",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Texture Layer #5",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "`0TX",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Texture Layer #6",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "p0TX",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Texture Layer #7",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "0TX",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Texture Layer #8",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "0TX",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Texture Layer #9",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": ":0TX",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Texture Layer #10",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": ";0TX",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Texture Layer #11",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "<0TX",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Texture Layer #12",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "=0TX",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Texture Layer #13",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": ">0TX",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Texture Layer #14",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "?0TX",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Texture Layer #15",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "@0TX",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Texture Layer #16",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "A0TX",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Texture Layer #17",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "B0TX",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Texture Layer #18",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "C0TX",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Texture Layer #19",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "D0TX",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Texture Layer #20",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "E0TX",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Texture Layer #21",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "F0TX",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Texture Layer #22",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "G0TX",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Texture Layer #23",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "H0TX",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Texture Layer #24",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "I0TX",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Texture Layer #25",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "J0TX",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Texture Layer #26",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "K0TX",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Texture Layer #27",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "L0TX",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Texture Layer #28",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "DNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 0
+                }
+            },
+            {
+                "signature": "CNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 0
+                }
+            },
+            {
+                "signature": "ANAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 0
+                }
+            },
+            {
+                "signature": "BNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 0
+                }
+            },
+            {
+                "signature": "LNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 0
+                }
+            },
+            {
+                "signature": "MNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Precipitation Type",
+                    "type": "formId",
+                    "signatures": [
+                        "SPGD",
+                        "NULL"
+                    ]
+                }
+            },
+            {
+                "signature": "NNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Visual Effect",
+                    "type": "formId",
+                    "signatures": [
+                        "RFCT",
+                        "NULL"
+                    ]
+                },
+                "required": true
+            },
+            {
+                "signature": "ONAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 0
+                }
+            },
+            {
+                "name": "Cloud Speed",
+                "type": "multiStruct",
+                "subrecords": [
+                    {
+                        "signature": "RNAM",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Y Speed",
+                            "entryDef": {
+                                "name": "Layer",
+                                "type": "uint8",
+                                "format": {
+                                    "def": "CloudSpeedToStr"
+                                }
+                            },
+                            "type": "array",
+                            "size": 0
+                        },
+                        "includeFlag": "dfNotAlignable"
+                    },
+                    {
+                        "signature": "QNAM",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "X Speed",
+                            "entryDef": {
+                                "name": "Layer",
+                                "type": "uint8",
+                                "format": {
+                                    "def": "CloudSpeedToStr"
+                                }
+                            },
+                            "type": "array",
+                            "size": 0
+                        },
+                        "includeFlag": "dfNotAlignable"
+                    }
+                ]
+            },
+            {
+                "signature": "PNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Colors",
+                    "entryDef": {
+                        "def": "WeatherColors",
+                        "name": "Layer"
+                    },
+                    "type": "array",
+                    "size": 0
+                },
+                "includeFlag": "dfNotAlignable"
+            },
+            {
+                "signature": "JNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cloud Alphas",
+                    "entryDef": {
+                        "name": "Layer",
+                        "type": "struct",
+                        "fields": [
+                            {
+                                "name": "Sunrise",
+                                "type": "float",
+                                "formatter": ""
+                            },
+                            {
+                                "name": "Day",
+                                "type": "float",
+                                "formatter": ""
+                            },
+                            {
+                                "name": "Sunset",
+                                "type": "float",
+                                "formatter": ""
+                            },
+                            {
+                                "name": "Night",
+                                "type": "float",
+                                "formatter": ""
+                            }
+                        ]
+                    },
+                    "type": "array",
+                    "size": 0
+                },
+                "includeFlag": "dfNotAlignable"
+            },
+            {
+                "signature": "NAM0",
+                "type": "subrecord",
+                "def": {
+                    "name": "Weather Colors",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "def": "WeatherColors",
+                            "name": "Sky-Upper"
+                        },
+                        {
+                            "def": "WeatherColors",
+                            "name": "Fog Near"
+                        },
+                        {
+                            "def": "WeatherColors",
+                            "name": "Unknown"
+                        },
+                        {
+                            "def": "WeatherColors",
+                            "name": "Ambient"
+                        },
+                        {
+                            "def": "WeatherColors",
+                            "name": "Sunlight"
+                        },
+                        {
+                            "def": "WeatherColors",
+                            "name": "Sun"
+                        },
+                        {
+                            "def": "WeatherColors",
+                            "name": "Stars"
+                        },
+                        {
+                            "def": "WeatherColors",
+                            "name": "Sky-Lower"
+                        },
+                        {
+                            "def": "WeatherColors",
+                            "name": "Horizon"
+                        },
+                        {
+                            "def": "WeatherColors",
+                            "name": "Effect Lighting"
+                        },
+                        {
+                            "def": "WeatherColors",
+                            "name": "Cloud LOD Diffuse"
+                        },
+                        {
+                            "def": "WeatherColors",
+                            "name": "Cloud LOD Ambient"
+                        },
+                        {
+                            "def": "WeatherColors",
+                            "name": "Fog Far"
+                        },
+                        {
+                            "def": "WeatherColors",
+                            "name": "Sky Statics"
+                        },
+                        {
+                            "def": "WeatherColors",
+                            "name": "Water Multiplier"
+                        },
+                        {
+                            "def": "WeatherColors",
+                            "name": "Sun Glare"
+                        },
+                        {
+                            "def": "WeatherColors",
+                            "name": "Moon Glare"
+                        }
+                    ]
+                },
+                "required": true
+            },
+            {
+                "signature": "FNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Fog Distance",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Day - Near",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Day - Far",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Night - Near",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Night - Far",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Day - Power",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Night - Power",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Day - Max",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Night - Max",
+                            "type": "float",
+                            "formatter": ""
+                        }
+                    ]
+                },
+                "required": true
+            },
+            {
+                "signature": "DATA",
+                "type": "subrecord",
+                "def": {
+                    "name": "Data",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Wind Speed",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 2
+                        },
+                        {
+                            "name": "Trans Delta",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Sun Glare",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Sun Damage",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Precipitation - Begin Fade In",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Precipitation - End Fade Out",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Thunder/Lightning - Begin Fade In",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Thunder/Lightning - End Fade Out",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Thunder/Lightning - Frequency",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Flags",
+                            "type": "uint8",
+                            "format": {
+                                "0": "Weather - Pleasant",
+                                "1": "Weather - Cloudy",
+                                "2": "Weather - Rainy",
+                                "3": "Weather - Snow",
+                                "4": "Sky Statics - Always Visible",
+                                "5": "Sky Statics - Follows Sun Position"
+                            }
+                        },
+                        {
+                            "name": "Lightning Color",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Visual Effect - Begin",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Visual Effect - End",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Wind Direction",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Wind Direction Range",
+                            "type": "uint8"
+                        }
+                    ]
+                },
+                "required": true
+            },
+            {
+                "signature": "NAM1",
+                "type": "subrecord",
+                "def": {
+                    "name": "Disabled Cloud Layers",
+                    "type": "uint32",
+                    "format": {
+                        "0": "0",
+                        "1": "1",
+                        "2": "2",
+                        "3": "3",
+                        "4": "4",
+                        "5": "5",
+                        "6": "6",
+                        "7": "7",
+                        "8": "8",
+                        "9": "9",
+                        "10": "10",
+                        "11": "11",
+                        "12": "12",
+                        "13": "13",
+                        "14": "14",
+                        "15": "15",
+                        "16": "16",
+                        "17": "17",
+                        "18": "18",
+                        "19": "19",
+                        "20": "20",
+                        "21": "21",
+                        "22": "22",
+                        "23": "23",
+                        "24": "24",
+                        "25": "25",
+                        "26": "26",
+                        "27": "27",
+                        "28": "28",
+                        "29": "29",
+                        "30": "30",
+                        "31": "31"
+                    }
+                }
+            },
+            {
+                "name": "Sounds",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "signature": "SNAM",
+                    "type": "subrecord",
+                    "def": {
+                        "name": "Sound",
+                        "type": "struct",
+                        "fields": [
+                            {
+                                "name": "Sound",
+                                "type": "formId",
+                                "signatures": [
+                                    "SNDR",
+                                    "SOUN",
+                                    "NULL"
+                                ]
+                            },
+                            {
+                                "name": "Type",
+                                "type": "uint32",
+                                "format": {
+                                    "0": "Default",
+                                    "1": "Precipitation",
+                                    "2": "Wind",
+                                    "3": "Thunder"
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "Sky Statics",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "signature": "TNAM",
+                    "type": "subrecord",
+                    "def": {
+                        "name": "Static",
+                        "type": "formId",
+                        "signatures": [
+                            "STAT",
+                            "NULL"
+                        ]
+                    }
+                }
+            },
+            {
+                "signature": "IMSP",
+                "type": "subrecord",
+                "def": {
+                    "name": "Image Spaces",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Sunrise",
+                            "type": "formId",
+                            "signatures": [
+                                "IMGS",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Day",
+                            "type": "formId",
+                            "signatures": [
+                                "IMGS",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Sunset",
+                            "type": "formId",
+                            "signatures": [
+                                "IMGS",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Night",
+                            "type": "formId",
+                            "signatures": [
+                                "IMGS",
+                                "NULL"
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "signature": "HNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Volumetric Lighting",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Sunrise",
+                            "type": "formId",
+                            "signatures": [
+                                "VOLI",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Day",
+                            "type": "formId",
+                            "signatures": [
+                                "VOLI",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Sunset",
+                            "type": "formId",
+                            "signatures": [
+                                "VOLI",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Night",
+                            "type": "formId",
+                            "signatures": [
+                                "VOLI",
+                                "NULL"
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Directional Ambient Lighting Colors",
+                "type": "multiStruct",
+                "subrecords": [
+                    {
+                        "signature": "DALC",
+                        "type": "subrecord",
+                        "def": {
+                            "def": "wbAmbientColors",
+                            "name": "Sunrise"
+                        }
+                    },
+                    {
+                        "signature": "DALC",
+                        "type": "subrecord",
+                        "def": {
+                            "def": "wbAmbientColors",
+                            "name": "Day"
+                        }
+                    },
+                    {
+                        "signature": "DALC",
+                        "type": "subrecord",
+                        "def": {
+                            "def": "wbAmbientColors",
+                            "name": "Sunset"
+                        }
+                    },
+                    {
+                        "signature": "DALC",
+                        "type": "subrecord",
+                        "def": {
+                            "def": "wbAmbientColors",
+                            "name": "Night"
+                        }
+                    }
+                ],
+                "required": true
+            },
+            {
+                "signature": "NAM2",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 0
+                }
+            },
+            {
+                "signature": "NAM3",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 0
+                }
+            },
+            {
+                "name": "Aurora",
+                "type": "multiStruct",
+                "subrecords": [
+                    {
+                        "def": "MODL"
+                    }
+                ]
+            },
+            {
+                "signature": "GNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Sun Glare Lens Flare",
+                    "type": "formId",
+                    "signatures": [
+                        "LENS"
+                    ]
+                }
+            }
+        ]
+    }
+}

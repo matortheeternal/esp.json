@@ -1,0 +1,237 @@
+{
+    "signature": "NAVI",
+    "type": "record",
+    "name": "Navigation Mesh Info Map",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "signature": "NVER",
+                "type": "subrecord",
+                "def": {
+                    "name": "Version",
+                    "type": "uint32"
+                }
+            },
+            {
+                "name": "Navigation Map Infos",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "signature": "NVMI",
+                    "type": "subrecord",
+                    "def": {
+                        "name": "Navigation Map Info",
+                        "type": "struct",
+                        "fields": [
+                            {
+                                "name": "Navigation Mesh",
+                                "type": "formId",
+                                "signatures": [
+                                    "NAVM"
+                                ]
+                            },
+                            {
+                                "name": "Unknown",
+                                "type": "bytes",
+                                "size": 4
+                            },
+                            {
+                                "name": "X",
+                                "type": "float",
+                                "formatter": ""
+                            },
+                            {
+                                "name": "Y",
+                                "type": "float",
+                                "formatter": ""
+                            },
+                            {
+                                "name": "Z",
+                                "type": "float",
+                                "formatter": ""
+                            },
+                            {
+                                "name": "Preferred Merges Flag",
+                                "type": "uint32"
+                            },
+                            {
+                                "name": "Merged To",
+                                "entryDef": {
+                                    "name": "Mesh",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "NAVM"
+                                    ]
+                                },
+                                "type": "array",
+                                "size": -1
+                            },
+                            {
+                                "name": "Preferred Merges",
+                                "entryDef": {
+                                    "name": "Mesh",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "NAVM"
+                                    ]
+                                },
+                                "type": "array",
+                                "size": -1
+                            },
+                            {
+                                "name": "Linked Doors",
+                                "entryDef": {
+                                    "name": "Door",
+                                    "type": "struct",
+                                    "fields": [
+                                        {
+                                            "name": "Unknown",
+                                            "type": "bytes",
+                                            "size": 4
+                                        },
+                                        {
+                                            "name": "Door Ref",
+                                            "type": "formId",
+                                            "signatures": [
+                                                "REFR"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                "type": "array",
+                                "size": -1
+                            },
+                            {
+                                "name": "Is Island",
+                                "type": "uint8",
+                                "format": {
+                                    "0": "False",
+                                    "1": "True"
+                                }
+                            },
+                            {
+                                "name": "Island",
+                                "type": "union",
+                                "decider": [
+                                    {
+                                        "def": "Null"
+                                    },
+                                    {
+                                        "def": "NAVIslandData"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Unknown",
+                                "type": "bytes",
+                                "size": 4
+                            },
+                            {
+                                "name": "Parent Worldspace",
+                                "type": "formId",
+                                "signatures": [
+                                    "WRLD",
+                                    "NULL"
+                                ]
+                            },
+                            {
+                                "name": "Parent",
+                                "type": "union",
+                                "decider": [
+                                    {
+                                        "name": "Coordinates",
+                                        "type": "struct",
+                                        "fields": [
+                                            {
+                                                "name": "Grid Y",
+                                                "type": "int16"
+                                            },
+                                            {
+                                                "name": "Grid X",
+                                                "type": "int16"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "Parent Cell",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "CELL"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "signature": "NVPP",
+                "type": "subrecord",
+                "def": {
+                    "name": "Preferred Pathing",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "NavMeshes",
+                            "entryDef": {
+                                "name": "Set",
+                                "entryDef": {
+                                    "name": "",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "NAVM"
+                                    ]
+                                },
+                                "type": "array",
+                                "size": -1
+                            },
+                            "type": "array",
+                            "size": -1
+                        },
+                        {
+                            "name": "NavMesh Tree?",
+                            "entryDef": {
+                                "name": "",
+                                "type": "struct",
+                                "fields": [
+                                    {
+                                        "name": "NavMesh",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "NAVM"
+                                        ]
+                                    },
+                                    {
+                                        "name": "Index/Node",
+                                        "type": "uint32"
+                                    }
+                                ]
+                            },
+                            "type": "array",
+                            "size": -1
+                        }
+                    ]
+                }
+            },
+            {
+                "signature": "NVSI",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unknown",
+                    "entryDef": {
+                        "name": "Navigation Mesh",
+                        "type": "formId",
+                        "signatures": [
+                            "NAVM"
+                        ]
+                    },
+                    "type": "array",
+                    "size": 0
+                }
+            }
+        ]
+    }
+}

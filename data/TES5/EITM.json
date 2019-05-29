@@ -1,0 +1,12 @@
+{
+    "signature": "EITM",
+    "type": "subrecord",
+    "def": {
+        "name": "Object Effect",
+        "type": "formId",
+        "signatures": [
+            "ENCH",
+            "SPEL"
+        ]
+    }
+}

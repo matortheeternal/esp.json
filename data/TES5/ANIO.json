@@ -1,0 +1,27 @@
+{
+    "signature": "ANIO",
+    "type": "record",
+    "name": "Animated Object",
+    "def": {
+        "flags": {
+            "9": "Unknown 9"
+        },
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "MODL"
+            },
+            {
+                "signature": "BNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unload Event",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            }
+        ]
+    }
+}

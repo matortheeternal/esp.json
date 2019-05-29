@@ -1,0 +1,48 @@
+{
+    "signature": "COBJ",
+    "type": "record",
+    "name": "Constructible Object",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "COCT"
+            },
+            {
+                "def": "CNTOsNoReach"
+            },
+            {
+                "def": "CTDAs"
+            },
+            {
+                "signature": "CNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Created Object",
+                    "type": "formId"
+                }
+            },
+            {
+                "signature": "BNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Workbench Keyword",
+                    "type": "formId",
+                    "signatures": [
+                        "KYWD"
+                    ]
+                }
+            },
+            {
+                "signature": "NAM1",
+                "type": "subrecord",
+                "def": {
+                    "name": "Created Object Count",
+                    "type": "uint16"
+                }
+            }
+        ]
+    }
+}

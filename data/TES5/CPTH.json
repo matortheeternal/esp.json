@@ -1,0 +1,63 @@
+{
+    "signature": "CPTH",
+    "type": "record",
+    "name": "Camera Path",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "CTDAs"
+            },
+            {
+                "signature": "ANAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Related Camera Paths",
+                    "entryDef": {
+                        "name": "Related Camera Path",
+                        "type": "formId",
+                        "signatures": [
+                            "CPTH",
+                            "NULL"
+                        ]
+                    },
+                    "type": "array",
+                    "size": 0
+                }
+            },
+            {
+                "signature": "DATA",
+                "type": "subrecord",
+                "def": {
+                    "name": "Camera Zoom",
+                    "type": "uint8",
+                    "format": {
+                        "0": "Default, Must Have Camera Shots",
+                        "1": "Disable, Must Have Camera Shots",
+                        "2": "Shot List, Must Have Camera Shots",
+                        "128": "Default",
+                        "129": "Disable",
+                        "130": "Shot List"
+                    }
+                }
+            },
+            {
+                "name": "Camera Shots",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "signature": "SNAM",
+                    "type": "subrecord",
+                    "def": {
+                        "name": "Camera Shot",
+                        "type": "formId",
+                        "signatures": [
+                            "CAMS"
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

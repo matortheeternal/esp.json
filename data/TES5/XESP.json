@@ -1,0 +1,40 @@
+{
+    "signature": "XESP",
+    "type": "subrecord",
+    "def": {
+        "name": "Enable Parent",
+        "type": "struct",
+        "fields": [
+            {
+                "name": "Reference",
+                "type": "formId",
+                "signatures": [
+                    "PLYR",
+                    "ACHR",
+                    "REFR",
+                    "PGRE",
+                    "PHZD",
+                    "PMIS",
+                    "PARW",
+                    "PBAR",
+                    "PBEA",
+                    "PCON",
+                    "PFLA"
+                ]
+            },
+            {
+                "name": "Flags",
+                "type": "uint8",
+                "format": {
+                    "0": "Set Enable State to Opposite of Parent",
+                    "1": "Pop In"
+                }
+            },
+            {
+                "name": "Unused",
+                "type": "bytes",
+                "size": 3
+            }
+        ]
+    }
+}

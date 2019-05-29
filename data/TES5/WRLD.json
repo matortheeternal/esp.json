@@ -1,0 +1,497 @@
+{
+    "signature": "WRLD",
+    "type": "record",
+    "name": "Worldspace",
+    "def": {
+        "flags": {
+            "19": "Can't Wait"
+        },
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "type": "subrecordArray",
+                "sortKey": {
+                    "signature": "RNAM",
+                    "type": "subrecord",
+                    "def": {
+                        "name": "Grid",
+                        "type": "struct",
+                        "fields": [
+                            {
+                                "name": "Y",
+                                "type": "int16"
+                            },
+                            {
+                                "name": "X",
+                                "type": "int16"
+                            },
+                            {
+                                "name": "References",
+                                "entryDef": {
+                                    "name": "Reference",
+                                    "type": "struct",
+                                    "fields": [
+                                        {
+                                            "name": "Ref",
+                                            "type": "formId",
+                                            "signatures": [
+                                                "REFR"
+                                            ]
+                                        },
+                                        {
+                                            "name": "Y",
+                                            "type": "int16"
+                                        },
+                                        {
+                                            "name": "X",
+                                            "type": "int16"
+                                        }
+                                    ]
+                                },
+                                "type": "array",
+                                "size": -1,
+                                "includeFlag": "dfNotAlignable"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "def": "MaxHeightDataWRLD"
+            },
+            {
+                "def": "FULL"
+            },
+            {
+                "signature": "WCTR",
+                "type": "subrecord",
+                "def": {
+                    "name": "Fixed Dimensions Center Cell",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "X",
+                            "type": "int16"
+                        },
+                        {
+                            "name": "Y",
+                            "type": "int16"
+                        }
+                    ]
+                }
+            },
+            {
+                "signature": "LTMP",
+                "type": "subrecord",
+                "def": {
+                    "name": "Interior Lighting",
+                    "type": "formId",
+                    "signatures": [
+                        "LGTM"
+                    ]
+                }
+            },
+            {
+                "signature": "XEZN",
+                "type": "subrecord",
+                "def": {
+                    "name": "Encounter Zone",
+                    "type": "formId",
+                    "signatures": [
+                        "ECZN",
+                        "NULL"
+                    ]
+                }
+            },
+            {
+                "signature": "XLCN",
+                "type": "subrecord",
+                "def": {
+                    "name": "Location",
+                    "type": "formId",
+                    "signatures": [
+                        "LCTN",
+                        "NULL"
+                    ]
+                }
+            },
+            {
+                "name": "Parent",
+                "type": "multiStruct",
+                "subrecords": [
+                    {
+                        "signature": "WNAM",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Worldspace",
+                            "type": "formId",
+                            "signatures": [
+                                "WRLD"
+                            ]
+                        }
+                    },
+                    {
+                        "signature": "PNAM",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "Flags",
+                                    "type": "uint8",
+                                    "format": {
+                                        "0": "Use Land Data",
+                                        "1": "Use LOD Data",
+                                        "2": "Don't Use Map Data",
+                                        "3": "Use Water Data",
+                                        "4": "Use Climate Data",
+                                        "5": "Use Image Space Data (unused)",
+                                        "6": "Use Sky Cell"
+                                    }
+                                },
+                                {
+                                    "name": "Unknown",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        "required": true
+                    }
+                ]
+            },
+            {
+                "signature": "CNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Climate",
+                    "type": "formId",
+                    "signatures": [
+                        "CLMT"
+                    ]
+                }
+            },
+            {
+                "signature": "NAM2",
+                "type": "subrecord",
+                "def": {
+                    "name": "Water",
+                    "type": "formId",
+                    "signatures": [
+                        "WATR"
+                    ]
+                }
+            },
+            {
+                "signature": "NAM3",
+                "type": "subrecord",
+                "def": {
+                    "name": "LOD Water Type",
+                    "type": "formId",
+                    "signatures": [
+                        "WATR"
+                    ]
+                }
+            },
+            {
+                "signature": "NAM4",
+                "type": "subrecord",
+                "def": {
+                    "name": "LOD Water Height",
+                    "type": "float",
+                    "formatter": ""
+                }
+            },
+            {
+                "signature": "DNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Land Data",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Default Land Height",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Default Water Height",
+                            "type": "float",
+                            "formatter": ""
+                        }
+                    ]
+                }
+            },
+            {
+                "signature": "ICON",
+                "type": "subrecord",
+                "def": {
+                    "name": "Map Image",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "name": "Cloud Model",
+                "type": "multiStruct",
+                "subrecords": [
+                    {
+                        "def": "MODL"
+                    }
+                ]
+            },
+            {
+                "signature": "MNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Map Data",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Usable Dimensions",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "X",
+                                    "type": "int32"
+                                },
+                                {
+                                    "name": "Y",
+                                    "type": "int32"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Cell Coordinates",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "NW Cell",
+                                    "type": "struct",
+                                    "fields": [
+                                        {
+                                            "name": "X",
+                                            "type": "int16"
+                                        },
+                                        {
+                                            "name": "Y",
+                                            "type": "int16"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "SE Cell",
+                                    "type": "struct",
+                                    "fields": [
+                                        {
+                                            "name": "X",
+                                            "type": "int16"
+                                        },
+                                        {
+                                            "name": "Y",
+                                            "type": "int16"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Camera Data",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "Min Height",
+                                    "type": "float",
+                                    "formatter": ""
+                                },
+                                {
+                                    "name": "Max Height",
+                                    "type": "float",
+                                    "formatter": ""
+                                },
+                                {
+                                    "name": "Initial Pitch",
+                                    "type": "float",
+                                    "formatter": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "required": true
+            },
+            {
+                "signature": "ONAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "World Map Offset Data",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "World Map Scale",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Cell X Offset",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Cell Y Offset",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Cell Z Offset",
+                            "type": "float",
+                            "formatter": ""
+                        }
+                    ]
+                },
+                "required": true
+            },
+            {
+                "signature": "NAMA",
+                "type": "subrecord",
+                "def": {
+                    "name": "Distant LOD Multiplier",
+                    "type": "float",
+                    "formatter": ""
+                }
+            },
+            {
+                "signature": "DATA",
+                "type": "subrecord",
+                "def": {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "0": "Small World",
+                        "1": "Can't Fast Travel",
+                        "2": "Unknown 3",
+                        "3": "No LOD Water",
+                        "4": "No Landscape",
+                        "5": "No Sky",
+                        "6": "Fixed Dimensions",
+                        "7": "No Grass"
+                    }
+                }
+            },
+            {
+                "name": "Object Bounds",
+                "type": "multiStruct",
+                "subrecords": [
+                    {
+                        "signature": "NAM0",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Min",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "X",
+                                    "type": "float",
+                                    "formatter": "",
+                                    "required": true
+                                },
+                                {
+                                    "name": "Y",
+                                    "type": "float",
+                                    "formatter": "",
+                                    "required": true
+                                }
+                            ]
+                        },
+                        "required": true
+                    },
+                    {
+                        "signature": "NAM9",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Max",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "X",
+                                    "type": "float",
+                                    "formatter": "",
+                                    "required": true
+                                },
+                                {
+                                    "name": "Y",
+                                    "type": "float",
+                                    "formatter": "",
+                                    "required": true
+                                }
+                            ]
+                        },
+                        "required": true
+                    }
+                ]
+            },
+            {
+                "signature": "ZNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Music",
+                    "type": "formId",
+                    "signatures": [
+                        "MUSC"
+                    ]
+                }
+            },
+            {
+                "signature": "NNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Canopy Shadow (unused)",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "XNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Water Noise Texture",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "TNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "HD LOD Diffuse Texture",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "UNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "HD LOD Normal Texture",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "XWEM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Water Environment Map (unused)",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "def": "OFST"
+            }
+        ]
+    }
+}

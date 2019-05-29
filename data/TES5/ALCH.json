@@ -1,0 +1,119 @@
+{
+    "signature": "ALCH",
+    "type": "record",
+    "name": "Ingestible",
+    "def": {
+        "flags": {
+            "29": "Medicine"
+        },
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "OBND",
+                "required": true
+            },
+            {
+                "def": "FULL"
+            },
+            {
+                "def": "KSIZ"
+            },
+            {
+                "def": "KWDAs"
+            },
+            {
+                "def": "DESC"
+            },
+            {
+                "def": "MODL"
+            },
+            {
+                "def": "DEST"
+            },
+            {
+                "def": "ICON"
+            },
+            {
+                "def": "YNAM"
+            },
+            {
+                "def": "ZNAM"
+            },
+            {
+                "def": "ETYP"
+            },
+            {
+                "signature": "DATA",
+                "type": "subrecord",
+                "def": {
+                    "name": "Weight",
+                    "type": "float",
+                    "formatter": ""
+                },
+                "required": true
+            },
+            {
+                "signature": "ENIT",
+                "type": "subrecord",
+                "def": {
+                    "name": "Effect Data",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Value",
+                            "type": "int32"
+                        },
+                        {
+                            "name": "Flags",
+                            "type": "uint32",
+                            "format": {
+                                "0": "No Auto-Calc",
+                                "1": "Food Item",
+                                "2": "Unknown 3",
+                                "3": "Unknown 4",
+                                "4": "Unknown 5",
+                                "5": "Unknown 6",
+                                "6": "Unknown 7",
+                                "7": "Unknown 8",
+                                "8": "Unknown 9",
+                                "9": "Unknown 10",
+                                "10": "Unknown 11",
+                                "11": "Unknown 12",
+                                "12": "Unknown 13",
+                                "13": "Unknown 14",
+                                "14": "Unknown 15",
+                                "15": "Unknown 16",
+                                "16": "Medicine",
+                                "17": "Poison"
+                            }
+                        },
+                        {
+                            "name": "Addiction",
+                            "type": "formId"
+                        },
+                        {
+                            "name": "Addiction Chance",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Sound - Consume",
+                            "type": "formId",
+                            "signatures": [
+                                "SNDR",
+                                "NULL"
+                            ]
+                        }
+                    ]
+                },
+                "required": true
+            },
+            {
+                "def": "Effects",
+                "required": true
+            }
+        ]
+    }
+}

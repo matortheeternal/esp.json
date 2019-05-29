@@ -1,0 +1,85 @@
+{
+    "name": "Island Data",
+    "type": "struct",
+    "fields": [
+        {
+            "name": "Min X",
+            "type": "float",
+            "formatter": ""
+        },
+        {
+            "name": "Min Y",
+            "type": "float",
+            "formatter": ""
+        },
+        {
+            "name": "Min Z",
+            "type": "float",
+            "formatter": ""
+        },
+        {
+            "name": "Max X",
+            "type": "float",
+            "formatter": ""
+        },
+        {
+            "name": "Max Y",
+            "type": "float",
+            "formatter": ""
+        },
+        {
+            "name": "Max Z",
+            "type": "float",
+            "formatter": ""
+        },
+        {
+            "name": "Triangles",
+            "entryDef": {
+                "name": "Triangle",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Vertices",
+                        "entryDef": {
+                            "name": "Vertex",
+                            "type": "int16"
+                        },
+                        "type": "array",
+                        "size": 3,
+                        "includeFlag": "dfNotAlignable"
+                    }
+                ]
+            },
+            "type": "array",
+            "size": -1,
+            "includeFlag": "dfNotAlignable"
+        },
+        {
+            "name": "Vertices",
+            "entryDef": {
+                "name": "Vertex",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "X",
+                        "type": "float",
+                        "formatter": ""
+                    },
+                    {
+                        "name": "Y",
+                        "type": "float",
+                        "formatter": ""
+                    },
+                    {
+                        "name": "Z",
+                        "type": "float",
+                        "formatter": ""
+                    }
+                ]
+            },
+            "type": "array",
+            "size": -1,
+            "includeFlag": "dfNotAlignable"
+        }
+    ]
+}

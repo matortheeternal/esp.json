@@ -1,0 +1,51 @@
+{
+    "name": "Script Fragments",
+    "type": "struct",
+    "fields": [
+        {
+            "name": "Unknown",
+            "type": "int8"
+        },
+        {
+            "name": "FileName",
+            "type": "string",
+            "maxSize": 0
+        },
+        {
+            "name": "Fragments",
+            "entryDef": {
+                "name": "Fragment",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Fragment Index",
+                        "type": "uint16"
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "int16"
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "int8"
+                    },
+                    {
+                        "name": "ScriptName",
+                        "type": "string",
+                        "maxSize": 0
+                    },
+                    {
+                        "name": "FragmentName",
+                        "type": "string",
+                        "maxSize": 0
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            },
+            "type": "array",
+            "size": -2
+        }
+    ]
+}

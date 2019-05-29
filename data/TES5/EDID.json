@@ -1,0 +1,9 @@
+{
+    "signature": "EDID",
+    "type": "subrecord",
+    "def": {
+        "name": "Editor ID",
+        "type": "cstring",
+        "maxSize": 0
+    }
+}

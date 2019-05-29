@@ -1,0 +1,32 @@
+{
+    "signature": "FLST",
+    "type": "record",
+    "name": "FormID List",
+    "def": {
+        "members": [
+            {
+                "signature": "EDID",
+                "type": "subrecord",
+                "def": {
+                    "name": "Editor ID",
+                    "type": "cstring",
+                    "maxSize": 0
+                },
+                "required": true
+            },
+            {
+                "name": "FormIDs",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "signature": "LNAM",
+                    "type": "subrecord",
+                    "def": {
+                        "name": "FormID",
+                        "type": "formId"
+                    }
+                },
+                "required": true
+            }
+        ]
+    }
+}

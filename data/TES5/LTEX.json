@@ -1,0 +1,89 @@
+{
+    "signature": "LTEX",
+    "type": "record",
+    "name": "Landscape Texture",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "signature": "TNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Texture Set",
+                    "type": "formId",
+                    "signatures": [
+                        "TXST"
+                    ]
+                },
+                "required": true
+            },
+            {
+                "signature": "MNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Material Type",
+                    "type": "formId",
+                    "signatures": [
+                        "MATT",
+                        "NULL"
+                    ]
+                },
+                "required": true
+            },
+            {
+                "signature": "HNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Havok Data",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Friction",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Restitution",
+                            "type": "uint8"
+                        }
+                    ]
+                },
+                "required": true
+            },
+            {
+                "signature": "SNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Texture Specular Exponent",
+                    "type": "uint8"
+                }
+            },
+            {
+                "name": "Grasses",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "signature": "GNAM",
+                    "type": "subrecord",
+                    "def": {
+                        "name": "Grass",
+                        "type": "formId",
+                        "signatures": [
+                            "GRAS"
+                        ]
+                    }
+                }
+            },
+            {
+                "signature": "INAM",
+                "type": "subrecord",
+                "def": {
+                    "type": "uint32",
+                    "format": {
+                        "0": "Is Snow"
+                    }
+                }
+            }
+        ]
+    }
+}

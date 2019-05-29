@@ -1,0 +1,82 @@
+{
+    "signature": "DOOR",
+    "type": "record",
+    "name": "Door",
+    "def": {
+        "flags": {
+            "15": "Has Distant LOD",
+            "16": "Random Anim Start",
+            "23": "Is Marker"
+        },
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "VMAD"
+            },
+            {
+                "def": "OBND",
+                "required": true
+            },
+            {
+                "def": "FULL"
+            },
+            {
+                "def": "MODL"
+            },
+            {
+                "def": "DEST"
+            },
+            {
+                "signature": "SNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Sound - Open",
+                    "type": "formId",
+                    "signatures": [
+                        "SNDR"
+                    ]
+                }
+            },
+            {
+                "signature": "ANAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Sound - Close",
+                    "type": "formId",
+                    "signatures": [
+                        "SNDR"
+                    ]
+                }
+            },
+            {
+                "signature": "BNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Sound - Loop",
+                    "type": "formId",
+                    "signatures": [
+                        "SNDR"
+                    ]
+                }
+            },
+            {
+                "signature": "FNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "0": "",
+                        "1": "Automatic",
+                        "2": "Hidden",
+                        "3": "Minimal Use",
+                        "4": "Sliding",
+                        "5": "Do Not Open in Combat Search"
+                    }
+                }
+            }
+        ]
+    }
+}

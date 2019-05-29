@@ -1,0 +1,51 @@
+{
+    "name": "Position/Rotation",
+    "type": "struct",
+    "fields": [
+        {
+            "name": "Position",
+            "type": "struct",
+            "fields": [
+                {
+                    "name": "X",
+                    "type": "float",
+                    "formatter": ""
+                },
+                {
+                    "name": "Y",
+                    "type": "float",
+                    "formatter": ""
+                },
+                {
+                    "name": "Z",
+                    "type": "float",
+                    "formatter": ""
+                }
+            ]
+        },
+        {
+            "name": "Rotation",
+            "type": "struct",
+            "fields": [
+                {
+                    "name": "X",
+                    "type": "float",
+                    "formatter": "",
+                    "required": true
+                },
+                {
+                    "name": "Y",
+                    "type": "float",
+                    "formatter": "",
+                    "required": true
+                },
+                {
+                    "name": "Z",
+                    "type": "float",
+                    "formatter": "",
+                    "required": true
+                }
+            ]
+        }
+    ]
+}

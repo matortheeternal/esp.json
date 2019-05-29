@@ -1,0 +1,47 @@
+{
+    "signature": "EYES",
+    "type": "record",
+    "name": "Eyes",
+    "def": {
+        "flags": {
+            "2": "Non-Playable"
+        },
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "FULL",
+                "required": true
+            },
+            {
+                "signature": "ICON",
+                "type": "subrecord",
+                "def": {
+                    "name": "Texture",
+                    "type": "cstring",
+                    "maxSize": 0
+                },
+                "required": true
+            },
+            {
+                "signature": "DATA",
+                "type": "subrecord",
+                "def": {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "0": "Playable",
+                        "1": "Not Male",
+                        "2": "Not Female",
+                        "3": "Unknown 4",
+                        "4": "Unknown 5",
+                        "5": "Unknown 6",
+                        "6": "Unknown 7",
+                        "7": "Unknown 8"
+                    }
+                }
+            }
+        ]
+    }
+}

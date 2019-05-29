@@ -1,0 +1,117 @@
+{
+    "signature": "MOVT",
+    "type": "record",
+    "name": "Movement Type",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "signature": "MNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Name",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "SPED",
+                "type": "subrecord",
+                "def": {
+                    "name": "Default Data",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Left Walk",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Left Run",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Right Walk",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Right Run",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Forward Walk",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Forward Run",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Back Walk",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Back Run",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Rotate in Place Walk",
+                            "type": "float",
+                            "formatter": "",
+                            "required": true
+                        },
+                        {
+                            "name": "Rotate in Place Run",
+                            "type": "float",
+                            "formatter": "",
+                            "required": true
+                        },
+                        {
+                            "name": "Rotate while Moving Run",
+                            "type": "float",
+                            "formatter": "",
+                            "required": true
+                        }
+                    ]
+                },
+                "required": true
+            },
+            {
+                "signature": "INAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Anim Change Thresholds",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Directional",
+                            "type": "float",
+                            "formatter": "",
+                            "required": true
+                        },
+                        {
+                            "name": "Movement Speed",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Rotation Speed",
+                            "type": "float",
+                            "formatter": "",
+                            "required": true
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

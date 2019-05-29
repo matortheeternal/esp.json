@@ -1,0 +1,318 @@
+{
+    "signature": "LAND",
+    "type": "record",
+    "name": "Landscape",
+    "def": {
+        "flags": {
+            "18": "Compressed"
+        },
+        "members": [
+            {
+                "signature": "DATA",
+                "type": "subrecord",
+                "def": {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "0": "Vertex Normals / Height Map",
+                        "1": "Vertex Colours",
+                        "2": "Layers",
+                        "3": "Unknown 4",
+                        "4": "Unknown 5",
+                        "5": "",
+                        "6": "",
+                        "7": "",
+                        "8": "",
+                        "9": "",
+                        "10": "MPCD"
+                    }
+                }
+            },
+            {
+                "signature": "VNML",
+                "type": "subrecord",
+                "def": {
+                    "name": "Vertex Normals",
+                    "entryDef": {
+                        "name": "Row",
+                        "type": "struct",
+                        "fields": [
+                            {
+                                "name": "Columns",
+                                "entryDef": {
+                                    "name": "Column",
+                                    "type": "struct",
+                                    "fields": [
+                                        {
+                                            "name": "X",
+                                            "type": "uint8"
+                                        },
+                                        {
+                                            "name": "Y",
+                                            "type": "uint8"
+                                        },
+                                        {
+                                            "name": "Z",
+                                            "type": "uint8"
+                                        }
+                                    ]
+                                },
+                                "type": "array",
+                                "size": 33
+                            }
+                        ]
+                    },
+                    "type": "array",
+                    "size": 33
+                }
+            },
+            {
+                "signature": "VHGT",
+                "type": "subrecord",
+                "def": {
+                    "name": "Vertext Height Map",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Offset",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Rows",
+                            "entryDef": {
+                                "name": "Row",
+                                "type": "struct",
+                                "fields": [
+                                    {
+                                        "name": "Columns",
+                                        "entryDef": {
+                                            "name": "Column",
+                                            "type": "uint8"
+                                        },
+                                        "type": "array",
+                                        "size": 33
+                                    }
+                                ]
+                            },
+                            "type": "array",
+                            "size": 33
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 3
+                        }
+                    ]
+                }
+            },
+            {
+                "signature": "VCLR",
+                "type": "subrecord",
+                "def": {
+                    "name": "Vertex Colours",
+                    "entryDef": {
+                        "name": "Row",
+                        "type": "struct",
+                        "fields": [
+                            {
+                                "name": "Columns",
+                                "entryDef": {
+                                    "name": "Column",
+                                    "type": "struct",
+                                    "fields": [
+                                        {
+                                            "name": "X",
+                                            "type": "uint8"
+                                        },
+                                        {
+                                            "name": "Y",
+                                            "type": "uint8"
+                                        },
+                                        {
+                                            "name": "Z",
+                                            "type": "uint8"
+                                        }
+                                    ]
+                                },
+                                "type": "array",
+                                "size": 33
+                            }
+                        ]
+                    },
+                    "type": "array",
+                    "size": 33
+                }
+            },
+            {
+                "name": "Layers",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "name": "Layer",
+                    "type": "multiUnion",
+                    "subrecords": [
+                        {
+                            "name": "Base Layer",
+                            "type": "multiStruct",
+                            "subrecords": [
+                                {
+                                    "signature": "BTXT",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Base Layer Header",
+                                        "type": "struct",
+                                        "fields": [
+                                            {
+                                                "name": "Texture",
+                                                "type": "formId",
+                                                "signatures": [
+                                                    "LTEX",
+                                                    "NULL"
+                                                ]
+                                            },
+                                            {
+                                                "name": "Quadrant",
+                                                "type": "uint8",
+                                                "format": {
+                                                    "def": "QuadrantEnum"
+                                                }
+                                            },
+                                            {
+                                                "name": "Unused",
+                                                "type": "bytes",
+                                                "size": 1
+                                            },
+                                            {
+                                                "name": "Layer",
+                                                "type": "int16"
+                                            }
+                                        ],
+                                        "sortKey": [
+                                            1,
+                                            3
+                                        ]
+                                    }
+                                }
+                            ],
+                            "sortKey": [
+                                0
+                            ]
+                        },
+                        {
+                            "name": "Alpha Layer",
+                            "type": "multiStruct",
+                            "subrecords": [
+                                {
+                                    "signature": "ATXT",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Alpha Layer Header",
+                                        "type": "struct",
+                                        "fields": [
+                                            {
+                                                "name": "Texture",
+                                                "type": "formId",
+                                                "signatures": [
+                                                    "LTEX",
+                                                    "NULL"
+                                                ]
+                                            },
+                                            {
+                                                "name": "Quadrant",
+                                                "type": "uint8",
+                                                "format": {
+                                                    "def": "QuadrantEnum"
+                                                }
+                                            },
+                                            {
+                                                "name": "Unused",
+                                                "type": "bytes",
+                                                "size": 1
+                                            },
+                                            {
+                                                "name": "Layer",
+                                                "type": "int16"
+                                            }
+                                        ],
+                                        "sortKey": [
+                                            1,
+                                            3
+                                        ]
+                                    }
+                                },
+                                {
+                                    "signature": "VTXT",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Alpha Layer Data",
+                                        "entryDef": {
+                                            "name": "Cell",
+                                            "type": "struct",
+                                            "fields": [
+                                                {
+                                                    "name": "Position",
+                                                    "type": "uint16",
+                                                    "format": {
+                                                        "def": "AtxtPosition"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "Unused",
+                                                    "type": "bytes",
+                                                    "size": 2
+                                                },
+                                                {
+                                                    "name": "Opacity",
+                                                    "type": "float",
+                                                    "formatter": ""
+                                                }
+                                            ],
+                                            "sortKey": [
+                                                0
+                                            ]
+                                        },
+                                        "type": "array",
+                                        "size": 0
+                                    }
+                                }
+                            ],
+                            "sortKey": [
+                                0
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "signature": "VTEX",
+                "type": "subrecord",
+                "def": {
+                    "name": "Textures",
+                    "entryDef": {
+                        "name": "Texture",
+                        "type": "formId",
+                        "signatures": [
+                            "LTEX",
+                            "NULL"
+                        ]
+                    },
+                    "type": "array",
+                    "size": 0
+                }
+            },
+            {
+                "name": "Unknown",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "signature": "MPCD",
+                    "type": "subrecord",
+                    "def": {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 0
+                    }
+                }
+            }
+        ]
+    }
+}

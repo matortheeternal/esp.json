@@ -1,0 +1,43 @@
+{
+    "signature": "MHDT",
+    "type": "subrecord",
+    "def": {
+        "name": "Max Height Data",
+        "type": "struct",
+        "fields": [
+            {
+                "name": "Min",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "X",
+                        "type": "int16"
+                    },
+                    {
+                        "name": "Y",
+                        "type": "int16"
+                    }
+                ]
+            },
+            {
+                "name": "Max",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "X",
+                        "type": "int16"
+                    },
+                    {
+                        "name": "Y",
+                        "type": "int16"
+                    }
+                ]
+            },
+            {
+                "name": "Cell Data",
+                "type": "bytes",
+                "size": 0
+            }
+        ]
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "signature": "GMST",
+    "type": "record",
+    "name": "Game Setting",
+    "def": {
+        "members": [
+            {
+                "signature": "EDID",
+                "type": "subrecord",
+                "def": {
+                    "name": "Editor ID",
+                    "type": "cstring",
+                    "maxSize": 0
+                },
+                "required": true
+            },
+            {
+                "signature": "DATA",
+                "type": "subrecord",
+                "def": {
+                    "name": "Value",
+                    "type": "union",
+                    "decider": [
+                        {
+                            "name": "Name",
+                            "type": "string",
+                            "maxSize": 0
+                        },
+                        {
+                            "name": "Int",
+                            "type": "int32"
+                        },
+                        {
+                            "name": "Float",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Bool",
+                            "type": "uint32",
+                            "format": {
+                                "0": "False",
+                                "1": "True"
+                            }
+                        }
+                    ]
+                },
+                "required": true
+            }
+        ]
+    }
+}

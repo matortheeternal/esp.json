@@ -1,0 +1,24 @@
+{
+    "signature": "VTYP",
+    "type": "record",
+    "name": "Voice Type",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "signature": "DNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "0": "Allow Default Dialog",
+                        "1": "Female"
+                    }
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "name": "Icon",
+    "type": "multiStruct",
+    "subrecords": [
+        {
+            "signature": "ICON",
+            "type": "subrecord",
+            "def": {
+                "name": "Large Icon FileName",
+                "type": "cstring",
+                "maxSize": 0
+            },
+            "required": true
+        },
+        {
+            "signature": "MICO",
+            "type": "subrecord",
+            "def": {
+                "name": "Small Icon FileName",
+                "type": "cstring",
+                "maxSize": 0
+            }
+        }
+    ],
+    "required": true
+}

@@ -1,0 +1,92 @@
+{
+    "signature": "MGEF",
+    "type": "record",
+    "name": "Magic Effect",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "VMAD"
+            },
+            {
+                "def": "FULL"
+            },
+            {
+                "def": "MDOB"
+            },
+            {
+                "def": "KSIZ"
+            },
+            {
+                "def": "KWDAs"
+            },
+            {
+                "def": "MGEFData"
+            },
+            {
+                "name": "Counter Effects",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "signature": "ESCE",
+                    "type": "subrecord",
+                    "def": {
+                        "name": "Effect",
+                        "type": "formId",
+                        "signatures": [
+                            "MGEF"
+                        ]
+                    }
+                },
+                "required": true
+            },
+            {
+                "signature": "SNDD",
+                "type": "subrecord",
+                "def": {
+                    "name": "Sounds",
+                    "entryDef": {
+                        "name": "",
+                        "type": "struct",
+                        "fields": [
+                            {
+                                "name": "Type",
+                                "type": "uint32",
+                                "format": {
+                                    "0": "Sheathe/Draw",
+                                    "1": "Charge",
+                                    "2": "Ready",
+                                    "3": "Release",
+                                    "4": "Concentration Cast Loop",
+                                    "5": "On Hit"
+                                }
+                            },
+                            {
+                                "name": "Sound",
+                                "type": "formId",
+                                "signatures": [
+                                    "SNDR"
+                                ]
+                            }
+                        ]
+                    },
+                    "type": "array",
+                    "size": 0
+                }
+            },
+            {
+                "signature": "DNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Magic Item Description",
+                    "type": "string",
+                    "maxSize": 0
+                }
+            },
+            {
+                "def": "CTDAs"
+            }
+        ]
+    }
+}

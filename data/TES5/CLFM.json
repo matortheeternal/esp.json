@@ -1,0 +1,34 @@
+{
+    "signature": "CLFM",
+    "type": "record",
+    "name": "Color",
+    "def": {
+        "flags": {
+            "2": "Non-Playable"
+        },
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "FULL"
+            },
+            {
+                "def": "CNAM",
+                "required": true
+            },
+            {
+                "signature": "FNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Playable",
+                    "type": "uint32",
+                    "format": {
+                        "0": "False",
+                        "1": "True"
+                    }
+                }
+            }
+        ]
+    }
+}

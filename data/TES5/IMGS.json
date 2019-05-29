@@ -1,0 +1,173 @@
+{
+    "signature": "IMGS",
+    "type": "record",
+    "name": "Image Space",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "signature": "ENAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 0
+                }
+            },
+            {
+                "signature": "HNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "HDR",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Eye Adapt Speed",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Bloom Blur Radius",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Bloom Threshold",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Bloom Scale",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Receive Bloom Threshold",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "White",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Sunlight Scale",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Sky Scale",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Eye Adapt Strength",
+                            "type": "float",
+                            "formatter": ""
+                        }
+                    ]
+                }
+            },
+            {
+                "signature": "CNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Cinematic",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Saturation",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Brightness",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Contrast",
+                            "type": "float",
+                            "formatter": ""
+                        }
+                    ]
+                }
+            },
+            {
+                "signature": "TNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Tint",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Amount",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "def": "FloatColors",
+                            "name": "Color"
+                        }
+                    ]
+                }
+            },
+            {
+                "signature": "DNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Depth of Field",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Strength",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Distance",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Range",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 2
+                        },
+                        {
+                            "name": "Sky / Blur Radius",
+                            "type": "uint16",
+                            "format": {
+                                "16384": "Radius 0",
+                                "16576": "No Sky, Radius 0",
+                                "16672": "Radius 1",
+                                "16736": "No Sky, Radius 1",
+                                "16784": "Radius 2",
+                                "16816": "No Sky, Radius 2",
+                                "16848": "Radius 3",
+                                "16880": "No Sky, Radius 3",
+                                "16904": "Radius 4",
+                                "16920": "No Sky, Radius 4",
+                                "16936": "Radius 5",
+                                "16952": "No Sky, Radius 5",
+                                "16968": "Radius 6",
+                                "16984": "No Sky, Radius 6",
+                                "17000": "Radius 7",
+                                "17016": "No Sky, Radius 7"
+                            }
+                        }
+                    ]
+                },
+                "required": true
+            }
+        ]
+    }
+}

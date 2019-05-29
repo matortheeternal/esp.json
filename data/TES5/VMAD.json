@@ -1,0 +1,28 @@
+{
+    "signature": "VMAD",
+    "type": "subrecord",
+    "def": {
+        "name": "Virtual Machine Adapter",
+        "type": "struct",
+        "fields": [
+            {
+                "name": "Version",
+                "type": "int16",
+                "defaultNativeValue": 5
+            },
+            {
+                "name": "Object Format",
+                "type": "int16",
+                "defaultNativeValue": 2
+            },
+            {
+                "name": "Scripts",
+                "entryDef": {
+                    "def": "ScriptEntry"
+                },
+                "type": "array",
+                "size": -2
+            }
+        ]
+    }
+}

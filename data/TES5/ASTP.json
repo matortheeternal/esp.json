@@ -1,0 +1,59 @@
+{
+    "signature": "ASTP",
+    "type": "record",
+    "name": "Association Type",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "signature": "MPRT",
+                "type": "subrecord",
+                "def": {
+                    "name": "Male Parent Title",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "FPRT",
+                "type": "subrecord",
+                "def": {
+                    "name": "Female Parent Title",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "MCHT",
+                "type": "subrecord",
+                "def": {
+                    "name": "Male Child Title",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "FCHT",
+                "type": "subrecord",
+                "def": {
+                    "name": "Female Child Title",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "DATA",
+                "type": "subrecord",
+                "def": {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "0": "Family Association"
+                    }
+                }
+            }
+        ]
+    }
+}

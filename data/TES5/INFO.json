@@ -1,0 +1,323 @@
+{
+    "signature": "INFO",
+    "type": "record",
+    "name": "Dialog response",
+    "def": {
+        "flags": {
+            "13": "Actor Changed"
+        },
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "VMADFragmentedINFO"
+            },
+            {
+                "signature": "DATA",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 0
+                }
+            },
+            {
+                "signature": "ENAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Response flags",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Flags",
+                            "type": "uint16",
+                            "format": {
+                                "0": "Goodbye",
+                                "1": "Random",
+                                "2": "Say once",
+                                "3": "Unknown 4",
+                                "4": "Unknown 5",
+                                "5": "Random end",
+                                "6": "Invisible continue",
+                                "7": "Walk Away",
+                                "8": "Walk Away Invisible in Menu",
+                                "9": "Force subtitle",
+                                "10": "Can move while greeting",
+                                "11": "No LIP File",
+                                "12": "Requires post-processing",
+                                "13": "Audio Output Override",
+                                "14": "Spends favor points",
+                                "15": "Unknown 16"
+                            }
+                        },
+                        {
+                            "name": "Reset Hours",
+                            "type": "uint16",
+                            "format": {
+                                "type": "divide",
+                                "value": 2730
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "signature": "TPIC",
+                "type": "subrecord",
+                "def": {
+                    "name": "Topic",
+                    "type": "formId",
+                    "signatures": [
+                        "DIAL"
+                    ]
+                }
+            },
+            {
+                "signature": "PNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Previous INFO",
+                    "type": "formId",
+                    "signatures": [
+                        "INFO",
+                        "NULL"
+                    ]
+                }
+            },
+            {
+                "signature": "CNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Favor Level",
+                    "type": "uint8",
+                    "format": {
+                        "0": "None",
+                        "1": "Small",
+                        "2": "Medium",
+                        "3": "Large"
+                    }
+                }
+            },
+            {
+                "name": "Link To",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "signature": "TCLT",
+                    "type": "subrecord",
+                    "def": {
+                        "name": "Response",
+                        "type": "formId",
+                        "signatures": [
+                            "DIAL",
+                            "INFO",
+                            "NULL"
+                        ]
+                    }
+                }
+            },
+            {
+                "signature": "DNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Response Data",
+                    "type": "formId"
+                }
+            },
+            {
+                "name": "Responses",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "name": "Response",
+                    "type": "multiStruct",
+                    "subrecords": [
+                        {
+                            "signature": "TRDT",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Response Data",
+                                "type": "struct",
+                                "fields": [
+                                    {
+                                        "name": "Emotion Type",
+                                        "type": "uint32",
+                                        "format": {
+                                            "def": "EmotionTypeEnum"
+                                        }
+                                    },
+                                    {
+                                        "name": "Emotion Value",
+                                        "type": "uint32"
+                                    },
+                                    {
+                                        "name": "Unused",
+                                        "type": "bytes",
+                                        "size": 4
+                                    },
+                                    {
+                                        "name": "Response number",
+                                        "type": "uint8"
+                                    },
+                                    {
+                                        "name": "Unused",
+                                        "type": "bytes",
+                                        "size": 3
+                                    },
+                                    {
+                                        "name": "Sound",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "SNDR",
+                                            "NULL"
+                                        ]
+                                    },
+                                    {
+                                        "name": "Flags",
+                                        "type": "uint8",
+                                        "format": {
+                                            "0": "Use Emotion Animation"
+                                        }
+                                    },
+                                    {
+                                        "name": "Unused",
+                                        "type": "bytes",
+                                        "size": 3
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "signature": "NAM1",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Response Text",
+                                "type": "string",
+                                "maxSize": 0
+                            }
+                        },
+                        {
+                            "signature": "NAM2",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Script Notes",
+                                "type": "cstring",
+                                "maxSize": 0
+                            }
+                        },
+                        {
+                            "signature": "NAM3",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Edits",
+                                "type": "cstring",
+                                "maxSize": 0
+                            }
+                        },
+                        {
+                            "signature": "SNAM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Idle Animations: Speaker",
+                                "type": "formId",
+                                "signatures": [
+                                    "IDLE"
+                                ]
+                            }
+                        },
+                        {
+                            "signature": "LNAM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Idle Animations: Listener",
+                                "type": "formId",
+                                "signatures": [
+                                    "IDLE"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "def": "CTDAs"
+            },
+            {
+                "name": "Unknown",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "name": "Unknown",
+                    "type": "multiStruct",
+                    "subrecords": [
+                        {
+                            "signature": "SCHR",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Unknown",
+                                "type": "bytes",
+                                "size": 0
+                            }
+                        },
+                        {
+                            "signature": "QNAM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Unknown",
+                                "type": "formId"
+                            }
+                        },
+                        {
+                            "signature": "NEXT",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Marker",
+                                "type": "empty"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "signature": "RNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Prompt",
+                    "type": "string",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "ANAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Speaker",
+                    "type": "formId",
+                    "signatures": [
+                        "NPC_"
+                    ]
+                }
+            },
+            {
+                "signature": "TWAT",
+                "type": "subrecord",
+                "def": {
+                    "name": "Walk Away Topic",
+                    "type": "formId",
+                    "signatures": [
+                        "DIAL"
+                    ]
+                }
+            },
+            {
+                "signature": "ONAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Audio Output Override",
+                    "type": "formId",
+                    "signatures": [
+                        "SOPM"
+                    ]
+                }
+            }
+        ]
+    }
+}

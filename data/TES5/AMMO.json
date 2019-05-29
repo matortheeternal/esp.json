@@ -1,0 +1,56 @@
+{
+    "signature": "AMMO",
+    "type": "record",
+    "name": "Ammunition",
+    "def": {
+        "flags": {
+            "2": "Non-Playable"
+        },
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "OBND",
+                "required": true
+            },
+            {
+                "def": "FULL"
+            },
+            {
+                "def": "MODL"
+            },
+            {
+                "def": "ICON"
+            },
+            {
+                "def": "DEST"
+            },
+            {
+                "def": "YNAM"
+            },
+            {
+                "def": "ZNAM"
+            },
+            {
+                "def": "DESC"
+            },
+            {
+                "def": "KSIZ"
+            },
+            {
+                "def": "KWDAs"
+            },
+            null,
+            {
+                "signature": "ONAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Short Name",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            }
+        ]
+    }
+}

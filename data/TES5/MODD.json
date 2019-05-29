@@ -1,0 +1,14 @@
+{
+    "signature": "MODD",
+    "type": "subrecord",
+    "def": {
+        "name": "FaceGen Model Flags",
+        "type": "uint8",
+        "format": {
+            "0": "Head",
+            "1": "Torso",
+            "2": "Right Hand",
+            "3": "Left Hand"
+        }
+    }
+}

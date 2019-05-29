@@ -1,0 +1,611 @@
+{
+    "signature": "EFSH",
+    "type": "record",
+    "name": "Effect Shader",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "signature": "ICON",
+                "type": "subrecord",
+                "def": {
+                    "name": "Fill Texture",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "ICO2",
+                "type": "subrecord",
+                "def": {
+                    "name": "Particle Shader Texture",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "NAM7",
+                "type": "subrecord",
+                "def": {
+                    "name": "Holes Texture",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "NAM8",
+                "type": "subrecord",
+                "def": {
+                    "name": "Membrane Palette Texture",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "NAM9",
+                "type": "subrecord",
+                "def": {
+                    "name": "Particle Palette Texture",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "DATA",
+                "type": "subrecord",
+                "def": {
+                    "name": "",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 4
+                        },
+                        {
+                            "name": "Membrane Shader - Source Blend Mode",
+                            "type": "uint32",
+                            "format": {
+                                "def": "BlendModeEnum"
+                            }
+                        },
+                        {
+                            "name": "Membrane Shader - Blend Operation",
+                            "type": "uint32",
+                            "format": {
+                                "def": "BlendOpEnum"
+                            }
+                        },
+                        {
+                            "name": "Membrane Shader - Z Test Function",
+                            "type": "uint32",
+                            "format": {
+                                "def": "ZTestFuncEnum"
+                            }
+                        },
+                        {
+                            "def": "ByteColors",
+                            "name": "Fill/Texture Effect - Color Key 1"
+                        },
+                        {
+                            "name": "Fill/Texture Effect - Alpha Fade In Time",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Fill/Texture Effect - Full Alpha Time",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Fill/Texture Effect - Alpha Fade Out Time",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Fill/Texture Effect - Presistent Alpha Ratio",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Fill/Texture Effect - Alpha Pulse Amplitude",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Fill/Texture Effect - Alpha Pulse Frequency",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Fill/Texture Effect - Texture Animation Speed (U)",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Fill/Texture Effect - Texture Animation Speed (V)",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Edge Effect - Fall Off",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "def": "ByteColors",
+                            "name": "Edge Effect - Color"
+                        },
+                        {
+                            "name": "Edge Effect - Alpha Fade In Time",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Edge Effect - Full Alpha Time",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Edge Effect - Alpha Fade Out Time",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Edge Effect - Persistent Alpha Ratio",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Edge Effect - Alpha Pulse Amplitude",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Edge Effect - Alpha Pulse Frequency",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Fill/Texture Effect - Full Alpha Ratio",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Edge Effect - Full Alpha Ratio",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Membrane Shader - Dest Blend Mode",
+                            "type": "uint32",
+                            "format": {
+                                "def": "BlendModeEnum"
+                            }
+                        },
+                        {
+                            "name": "Particle Shader - Source Blend Mode",
+                            "type": "uint32",
+                            "format": {
+                                "def": "BlendModeEnum"
+                            }
+                        },
+                        {
+                            "name": "Particle Shader - Blend Operation",
+                            "type": "uint32",
+                            "format": {
+                                "def": "BlendOpEnum"
+                            }
+                        },
+                        {
+                            "name": "Particle Shader - Z Test Function",
+                            "type": "uint32",
+                            "format": {
+                                "def": "ZTestFuncEnum"
+                            }
+                        },
+                        {
+                            "name": "Particle Shader - Dest Blend Mode",
+                            "type": "uint32",
+                            "format": {
+                                "def": "BlendModeEnum"
+                            }
+                        },
+                        {
+                            "name": "Particle Shader - Particle Birth Ramp Up Time",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Particle Shader - Full Particle Birth Time",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Particle Shader - Particle Birth Ramp Down Time",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Particle Shader - Full Particle Birth Ratio",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Particle Shader - Persistant Particle Count",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Particle Shader - Particle Lifetime",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Particle Shader - Particle Lifetime +/-",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Particle Shader - Initial Speed Along Normal",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Particle Shader - Acceleration Along Normal",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Particle Shader - Initial Velocity #1",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Particle Shader - Initial Velocity #2",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Particle Shader - Initial Velocity #3",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Particle Shader - Acceleration #1",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Particle Shader - Acceleration #2",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Particle Shader - Acceleration #3",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Particle Shader - Scale Key 1",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Particle Shader - Scale Key 2",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Particle Shader - Scale Key 1 Time",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Particle Shader - Scale Key 2 Time",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "def": "ByteColors",
+                            "name": "Color Key 1 - Color"
+                        },
+                        {
+                            "def": "ByteColors",
+                            "name": "Color Key 2 - Color"
+                        },
+                        {
+                            "def": "ByteColors",
+                            "name": "Color Key 3 - Color"
+                        },
+                        {
+                            "name": "Color Key 1 - Color Alpha",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Color Key 2 - Color Alpha",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Color Key 3 - Color Alpha",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Color Key 1 - Color Key Time",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Color Key 2 - Color Key Time",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Color Key 3 - Color Key Time",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Particle Shader - Initial Speed Along Normal +/-",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Particle Shader - Initial Rotation (deg)",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Particle Shader - Initial Rotation (deg) +/-",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Particle Shader - Rotation Speed (deg/sec)",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Particle Shader - Rotation Speed (deg/sec) +/-",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Addon Models",
+                            "type": "formId",
+                            "signatures": [
+                                "DEBR",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Holes - Start Time",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Holes - End Time",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Holes - Start Val",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Holes - End Val",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Edge Width (alpha units)",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "def": "ByteColors",
+                            "name": "Edge Color"
+                        },
+                        {
+                            "name": "Explosion Wind Speed",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Texture Count U",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Texture Count V",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Addon Models - Fade In Time",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Addon Models - Fade Out Time",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Addon Models - Scale Start",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Addon Models - Scale End",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Addon Models - Scale In Time",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Addon Models - Scale Out Time",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Ambient Sound",
+                            "type": "formId",
+                            "signatures": [
+                                "SNDR",
+                                "SOUN",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "def": "ByteColors",
+                            "name": "Fill/Texture Effect - Color Key 2"
+                        },
+                        {
+                            "def": "ByteColors",
+                            "name": "Fill/Texture Effect - Color Key 3"
+                        },
+                        {
+                            "name": "Fill/Texture Effect - Color Key Scale/Time",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "Color Key 1 - Scale",
+                                    "type": "float",
+                                    "formatter": ""
+                                },
+                                {
+                                    "name": "Color Key 2 - Scale",
+                                    "type": "float",
+                                    "formatter": ""
+                                },
+                                {
+                                    "name": "Color Key 3 - Scale",
+                                    "type": "float",
+                                    "formatter": ""
+                                },
+                                {
+                                    "name": "Color Key 1 - Time",
+                                    "type": "float",
+                                    "formatter": ""
+                                },
+                                {
+                                    "name": "Color Key 2 - Time",
+                                    "type": "float",
+                                    "formatter": ""
+                                },
+                                {
+                                    "name": "Color Key 3 - Time",
+                                    "type": "float",
+                                    "formatter": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Color Scale",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Birth Position Offset",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Birth Position Offset Range +/-",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Particle Shader Animated",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "Start Frame",
+                                    "type": "uint32"
+                                },
+                                {
+                                    "name": "Start Frame Variation",
+                                    "type": "uint32"
+                                },
+                                {
+                                    "name": "End Frame",
+                                    "type": "uint32"
+                                },
+                                {
+                                    "name": "Loop Start Frame",
+                                    "type": "uint32"
+                                },
+                                {
+                                    "name": "Loop Start Variation",
+                                    "type": "uint32"
+                                },
+                                {
+                                    "name": "Frame Count",
+                                    "type": "uint32"
+                                },
+                                {
+                                    "name": "Frame Count Variation",
+                                    "type": "uint32"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Flags",
+                            "type": "uint32",
+                            "format": {
+                                "0": "No Membrane Shader",
+                                "1": "Membrane Grayscale Color",
+                                "2": "Membrane Grayscale Alpha",
+                                "3": "No Particle Shader",
+                                "4": "Edge Effect Inverse",
+                                "5": "Affect Skin Only",
+                                "6": "Ignore Alpha",
+                                "7": "Project UVs",
+                                "8": "Ignore Base Geometry Alpha",
+                                "9": "Lighting",
+                                "10": "No Weapons",
+                                "11": "Unknown 11",
+                                "12": "Unknown 12",
+                                "13": "Unknown 13",
+                                "14": "Unknown 14",
+                                "15": "Particle Animated",
+                                "16": "Particle Grayscale Color",
+                                "17": "Particle Grayscale Alpha",
+                                "18": "Unknown 18",
+                                "19": "Unknown 19",
+                                "20": "Unknown 20",
+                                "21": "Unknown 21",
+                                "22": "Unknown 22",
+                                "23": "Unknown 23",
+                                "24": "Use Blood Geometry"
+                            }
+                        },
+                        {
+                            "name": "Fill/Texture Effect - Texture Scale (U)",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Fill/Texture Effect - Texture Scale (V)",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Scene Graph Emit Depth Limit (unused)",
+                            "type": "uint32"
+                        }
+                    ]
+                },
+                "required": true
+            }
+        ]
+    }
+}

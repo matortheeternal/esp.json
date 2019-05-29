@@ -1,0 +1,37 @@
+{
+    "signature": "GLOB",
+    "type": "record",
+    "name": "Global",
+    "def": {
+        "flags": {
+            "6": "Constant"
+        },
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "signature": "FNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Type",
+                    "type": "uint8",
+                    "format": {
+                        "39": "Float"
+                    }
+                },
+                "defaultEditValue": "'Float'"
+            },
+            {
+                "signature": "FLTV",
+                "type": "subrecord",
+                "def": {
+                    "name": "Value",
+                    "type": "float",
+                    "formatter": ""
+                },
+                "required": true
+            }
+        ]
+    }
+}

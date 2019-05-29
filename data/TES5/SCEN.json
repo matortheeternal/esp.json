@@ -1,0 +1,644 @@
+{
+    "signature": "SCEN",
+    "type": "record",
+    "name": "Scene",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "VMADFragmentedSCEN"
+            },
+            {
+                "signature": "FNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "0": "Begin on Quest Start",
+                        "1": "Stop on Quest End",
+                        "2": "Unknown 3",
+                        "3": "Repeat Conditions While True",
+                        "4": "Interruptible"
+                    }
+                }
+            },
+            {
+                "name": "Phases",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "name": "Phase",
+                    "type": "multiStruct",
+                    "subrecords": [
+                        {
+                            "signature": "HNAM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Marker Phase Start",
+                                "type": "empty"
+                            }
+                        },
+                        {
+                            "signature": "NAM0",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Name",
+                                "type": "cstring",
+                                "maxSize": 0
+                            }
+                        },
+                        {
+                            "name": "Start Conditions",
+                            "type": "multiStruct",
+                            "subrecords": [
+                                {
+                                    "def": "CTDAs"
+                                }
+                            ]
+                        },
+                        {
+                            "signature": "NEXT",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Marker",
+                                "type": "empty"
+                            }
+                        },
+                        {
+                            "name": "Completion Conditions",
+                            "type": "multiStruct",
+                            "subrecords": [
+                                {
+                                    "def": "CTDAs"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "multiStruct",
+                            "subrecords": [
+                                {
+                                    "signature": "SCHR",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Unknown",
+                                        "type": "bytes",
+                                        "size": 0
+                                    }
+                                },
+                                {
+                                    "signature": "SCDA",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Unknown",
+                                        "type": "bytes",
+                                        "size": 0
+                                    }
+                                },
+                                {
+                                    "signature": "SCTX",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Unknown",
+                                        "type": "bytes",
+                                        "size": 0
+                                    }
+                                },
+                                {
+                                    "signature": "QNAM",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Unknown",
+                                        "type": "bytes",
+                                        "size": 0
+                                    }
+                                },
+                                {
+                                    "signature": "SCRO",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Unknown",
+                                        "type": "bytes",
+                                        "size": 0
+                                    }
+                                }
+                            ],
+                            "required": true
+                        },
+                        {
+                            "signature": "NEXT",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Marker",
+                                "type": "empty"
+                            }
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "multiStruct",
+                            "subrecords": [
+                                {
+                                    "signature": "SCHR",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Unknown",
+                                        "type": "bytes",
+                                        "size": 0
+                                    }
+                                },
+                                {
+                                    "signature": "SCDA",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Unknown",
+                                        "type": "bytes",
+                                        "size": 0
+                                    }
+                                },
+                                {
+                                    "signature": "SCTX",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Unknown",
+                                        "type": "bytes",
+                                        "size": 0
+                                    }
+                                },
+                                {
+                                    "signature": "QNAM",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Unknown",
+                                        "type": "bytes",
+                                        "size": 0
+                                    }
+                                },
+                                {
+                                    "signature": "SCRO",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Unknown",
+                                        "type": "bytes",
+                                        "size": 0
+                                    }
+                                }
+                            ],
+                            "required": true
+                        },
+                        {
+                            "signature": "WNAM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Editor Width",
+                                "type": "uint32"
+                            }
+                        },
+                        {
+                            "signature": "HNAM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Marker Phase End",
+                                "type": "empty"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Actors",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "name": "Actor",
+                    "type": "multiStruct",
+                    "subrecords": [
+                        {
+                            "signature": "ALID",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Actor ID",
+                                "type": "uint32"
+                            }
+                        },
+                        {
+                            "signature": "LNAM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Flags",
+                                "type": "uint32",
+                                "format": {
+                                    "0": "No Player Activation",
+                                    "1": "Optional"
+                                }
+                            }
+                        },
+                        {
+                            "signature": "DNAM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Behaviour Flags",
+                                "type": "uint32",
+                                "format": {
+                                    "0": "Death Pause (unsused)",
+                                    "1": "Death End",
+                                    "2": "Combat Pause",
+                                    "3": "Combat End",
+                                    "4": "Dialogue Pause",
+                                    "5": "Dialogue End",
+                                    "6": "OBS_COM Pause",
+                                    "7": "OBS_COM End"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Actions",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "name": "Action",
+                    "type": "multiStruct",
+                    "subrecords": [
+                        {
+                            "signature": "ANAM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Type",
+                                "type": "uint16",
+                                "format": {
+                                    "0": "Dialogue",
+                                    "1": "Package",
+                                    "2": "Timer"
+                                }
+                            }
+                        },
+                        {
+                            "signature": "NAM0",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Name",
+                                "type": "cstring",
+                                "maxSize": 0
+                            }
+                        },
+                        {
+                            "signature": "ALID",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Actor ID",
+                                "type": "int32"
+                            }
+                        },
+                        {
+                            "signature": "LNAM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Unknown",
+                                "type": "bytes",
+                                "size": 0
+                            }
+                        },
+                        {
+                            "signature": "INAM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Index",
+                                "type": "uint32"
+                            }
+                        },
+                        {
+                            "signature": "FNAM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Flags",
+                                "type": "uint32",
+                                "format": {
+                                    "0": "Unknown 1",
+                                    "1": "Unknown 2",
+                                    "2": "Unknown 3",
+                                    "3": "Unknown 4",
+                                    "4": "Unknown 5",
+                                    "5": "Unknown 6",
+                                    "6": "Unknown 7",
+                                    "7": "Unknown 8",
+                                    "8": "Unknown 9",
+                                    "9": "Unknown 10",
+                                    "10": "Unknown 11",
+                                    "11": "Unknown 12",
+                                    "12": "Unknown 13",
+                                    "13": "Unknown 14",
+                                    "14": "Unknown 15",
+                                    "15": "Face Target",
+                                    "16": "Looping",
+                                    "17": "Headtrack Player"
+                                }
+                            }
+                        },
+                        {
+                            "signature": "SNAM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Start Phase",
+                                "type": "uint32"
+                            }
+                        },
+                        {
+                            "signature": "ENAM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "End Phase",
+                                "type": "uint32"
+                            }
+                        },
+                        {
+                            "signature": "SNAM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Timer Seconds",
+                                "type": "float",
+                                "formatter": ""
+                            }
+                        },
+                        {
+                            "name": "Packages",
+                            "type": "subrecordArray",
+                            "sortKey": {
+                                "signature": "PNAM",
+                                "type": "subrecord",
+                                "def": {
+                                    "name": "Package",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "PACK"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "signature": "DATA",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Topic",
+                                "type": "formId",
+                                "signatures": [
+                                    "DIAL",
+                                    "NULL"
+                                ]
+                            }
+                        },
+                        {
+                            "signature": "HTID",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Headtrack Actor ID",
+                                "type": "int32"
+                            }
+                        },
+                        {
+                            "signature": "DMAX",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Looping - Max",
+                                "type": "float",
+                                "formatter": ""
+                            }
+                        },
+                        {
+                            "signature": "DMIN",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Looping - Min",
+                                "type": "float",
+                                "formatter": ""
+                            }
+                        },
+                        {
+                            "signature": "DEMO",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Emotion Type",
+                                "type": "uint32",
+                                "format": {
+                                    "def": "EmotionTypeEnum"
+                                }
+                            }
+                        },
+                        {
+                            "signature": "DEVA",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Emotion Value",
+                                "type": "uint32"
+                            }
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "multiStruct",
+                            "subrecords": [
+                                {
+                                    "signature": "SCHR",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Unknown",
+                                        "type": "bytes",
+                                        "size": 0
+                                    }
+                                },
+                                {
+                                    "signature": "SCDA",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Unknown",
+                                        "type": "bytes",
+                                        "size": 0
+                                    }
+                                },
+                                {
+                                    "signature": "SCTX",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Unknown",
+                                        "type": "bytes",
+                                        "size": 0
+                                    }
+                                },
+                                {
+                                    "signature": "QNAM",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Unknown",
+                                        "type": "bytes",
+                                        "size": 0
+                                    }
+                                },
+                                {
+                                    "signature": "SCRO",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Unknown",
+                                        "type": "bytes",
+                                        "size": 0
+                                    }
+                                }
+                            ],
+                            "required": true
+                        },
+                        {
+                            "signature": "ANAM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "End Marker",
+                                "type": "empty"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Unused",
+                "type": "multiStruct",
+                "subrecords": [
+                    {
+                        "signature": "SCHR",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 0
+                        }
+                    },
+                    {
+                        "signature": "SCDA",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 0
+                        }
+                    },
+                    {
+                        "signature": "SCTX",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 0
+                        }
+                    },
+                    {
+                        "signature": "QNAM",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 0
+                        }
+                    },
+                    {
+                        "signature": "SCRO",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 0
+                        }
+                    }
+                ],
+                "required": true
+            },
+            {
+                "signature": "NEXT",
+                "type": "subrecord",
+                "def": {
+                    "name": "Marker",
+                    "type": "empty"
+                }
+            },
+            {
+                "name": "Unused",
+                "type": "multiStruct",
+                "subrecords": [
+                    {
+                        "signature": "SCHR",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 0
+                        }
+                    },
+                    {
+                        "signature": "SCDA",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 0
+                        }
+                    },
+                    {
+                        "signature": "SCTX",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 0
+                        }
+                    },
+                    {
+                        "signature": "QNAM",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 0
+                        }
+                    },
+                    {
+                        "signature": "SCRO",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 0
+                        }
+                    }
+                ],
+                "required": true
+            },
+            {
+                "signature": "PNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Quest",
+                    "type": "formId",
+                    "signatures": [
+                        "QUST"
+                    ]
+                }
+            },
+            {
+                "signature": "INAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Last Action Index",
+                    "type": "uint32"
+                }
+            },
+            {
+                "signature": "VNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 0
+                }
+            },
+            {
+                "def": "CTDAs"
+            }
+        ]
+    }
+}

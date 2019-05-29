@@ -1,0 +1,47 @@
+{
+    "signature": "NAVM",
+    "type": "record",
+    "name": "Navigation Mesh",
+    "def": {
+        "flags": {
+            "18": "Compressed",
+            "26": "AutoGen",
+            "31": "NavmeshGenCell"
+        },
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "NVNM"
+            },
+            {
+                "signature": "ONAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 0
+                }
+            },
+            {
+                "signature": "PNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 0
+                }
+            },
+            {
+                "signature": "NNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 0
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,112 @@
+{
+    "signature": "HAZD",
+    "type": "record",
+    "name": "Hazard",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "OBND",
+                "required": true
+            },
+            {
+                "def": "FULL"
+            },
+            {
+                "def": "MODL"
+            },
+            {
+                "signature": "MNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Image Space Modifier",
+                    "type": "formId",
+                    "signatures": [
+                        "IMAD",
+                        "NULL"
+                    ]
+                }
+            },
+            {
+                "signature": "DATA",
+                "type": "subrecord",
+                "def": {
+                    "name": "Data",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Limit",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Radius",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Lifetime",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Image Space Radius",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Target Interval",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Flags",
+                            "type": "uint32",
+                            "format": {
+                                "0": "Affects Player Only",
+                                "1": "Inherit Duration from Spawn Spell",
+                                "2": "Align to Impact Normal",
+                                "3": "Inherit Radius from Spawn Spell",
+                                "4": "Drop to Ground"
+                            }
+                        },
+                        {
+                            "name": "Spell",
+                            "type": "formId",
+                            "signatures": [
+                                "SPEL",
+                                "ENCH",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Light",
+                            "type": "formId",
+                            "signatures": [
+                                "LIGH",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Impact Data Set",
+                            "type": "formId",
+                            "signatures": [
+                                "IPDS",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Sound",
+                            "type": "formId",
+                            "signatures": [
+                                "SNDR",
+                                "NULL"
+                            ]
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

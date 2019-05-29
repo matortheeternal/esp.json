@@ -1,0 +1,324 @@
+{
+    "signature": "NVNM",
+    "type": "subrecord",
+    "def": {
+        "name": "Geometry",
+        "type": "struct",
+        "fields": [
+            {
+                "name": "Version",
+                "type": "uint32",
+                "defaultNativeValue": 12
+            },
+            {
+                "name": "Magic",
+                "type": "bytes",
+                "size": 4,
+                "defaultEditValue": "'3C A0 E9 A5'"
+            },
+            {
+                "name": "Parent Worldspace",
+                "type": "formId",
+                "signatures": [
+                    "WRLD",
+                    "NULL"
+                ]
+            },
+            {
+                "name": "Parent",
+                "type": "union",
+                "decider": [
+                    {
+                        "name": "Coordinates",
+                        "type": "struct",
+                        "fields": [
+                            {
+                                "name": "Grid Y",
+                                "type": "int16"
+                            },
+                            {
+                                "name": "Grid X",
+                                "type": "int16"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Parent Cell",
+                        "type": "formId",
+                        "signatures": [
+                            "CELL"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Vertices",
+                "entryDef": {
+                    "name": "Vertex",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "X",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Y",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Z",
+                            "type": "float",
+                            "formatter": ""
+                        }
+                    ],
+                    "sortKey": [
+                        0,
+                        1,
+                        2
+                    ]
+                },
+                "type": "array",
+                "size": -1,
+                "includeFlag": "dfNotAlignable"
+            },
+            {
+                "name": "Triangles",
+                "entryDef": {
+                    "name": "Triangle",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Vertex 0",
+                            "type": "int16",
+                            "format": {
+                                "def": "VertexToStr0"
+                            },
+                            "linksToCallback": "VertexLinksTo"
+                        },
+                        {
+                            "name": "Vertex 1",
+                            "type": "int16",
+                            "format": {
+                                "def": "VertexToStr1"
+                            },
+                            "linksToCallback": "VertexLinksTo"
+                        },
+                        {
+                            "name": "Vertex 2",
+                            "type": "int16",
+                            "format": {
+                                "def": "VertexToStr2"
+                            },
+                            "linksToCallback": "VertexLinksTo"
+                        },
+                        {
+                            "name": "Edge 0-1",
+                            "type": "int16",
+                            "format": {
+                                "def": "EdgeToStr0"
+                            },
+                            "linksToCallback": "EdgeLinksTo0"
+                        },
+                        {
+                            "name": "Edge 1-2",
+                            "type": "int16",
+                            "format": {
+                                "def": "EdgeToStr1"
+                            },
+                            "linksToCallback": "EdgeLinksTo1"
+                        },
+                        {
+                            "name": "Edge 2-0",
+                            "type": "int16",
+                            "format": {
+                                "def": "EdgeToStr2"
+                            },
+                            "linksToCallback": "EdgeLinksTo2"
+                        },
+                        {
+                            "name": "Flags",
+                            "type": "uint16",
+                            "format": {
+                                "0": "Edge 0-1 link",
+                                "1": "Edge 1-2 link",
+                                "2": "Edge 2-0 link",
+                                "3": "Deleted",
+                                "4": "No Large Creatures",
+                                "5": "Overlapping",
+                                "6": "Preferred",
+                                "7": "",
+                                "8": "Unknown 9",
+                                "9": "Water",
+                                "10": "Door",
+                                "11": "Found",
+                                "12": "Unknown 13",
+                                "13": "",
+                                "14": "",
+                                "15": ""
+                            }
+                        },
+                        {
+                            "name": "Cover Flags",
+                            "type": "uint16",
+                            "format": {
+                                "0": "Edge 0-1 Cover Value 1/4",
+                                "1": "Edge 0-1 Cover Value 2/4",
+                                "2": "Edge 0-1 Cover Value 3/4",
+                                "3": "Edge 0-1 Cover Value 4/4",
+                                "4": "Edge 0-1 Left",
+                                "5": "Edge 0-1 Right",
+                                "6": "Edge 1-2 Cover Value 1/4",
+                                "7": "Edge 1-2 Cover Value 2/4",
+                                "8": "Edge 1-2 Cover Value 3/4",
+                                "9": "Edge 1-2 Cover Value 4/4",
+                                "10": "Edge 1-2 Left",
+                                "11": "Edge 1-2 Right",
+                                "12": "Unknown 13",
+                                "13": "Unknown 14",
+                                "14": "Unknown 15",
+                                "15": "Unknown 16"
+                            }
+                        }
+                    ]
+                },
+                "type": "array",
+                "size": -1,
+                "includeFlag": "dfNotAlignable"
+            },
+            {
+                "name": "Edge Links",
+                "entryDef": {
+                    "name": "Edge Link",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 4
+                        },
+                        {
+                            "name": "Mesh",
+                            "type": "formId",
+                            "signatures": [
+                                "NAVM"
+                            ]
+                        },
+                        {
+                            "name": "Triangle",
+                            "type": "int16"
+                        }
+                    ]
+                },
+                "type": "array",
+                "size": -1,
+                "includeFlag": "dfNotAlignable"
+            },
+            {
+                "name": "Door Triangles",
+                "entryDef": {
+                    "name": "Door Triangle",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Triangle before door",
+                            "type": "int16",
+                            "linksToCallback": "TriangleLinksTo"
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 4
+                        },
+                        {
+                            "name": "Door",
+                            "type": "formId",
+                            "signatures": [
+                                "REFR"
+                            ]
+                        }
+                    ],
+                    "sortKey": [
+                        0,
+                        2
+                    ]
+                },
+                "type": "array",
+                "size": -1
+            },
+            {
+                "name": "Cover Triangles",
+                "entryDef": {
+                    "name": "Triangle",
+                    "type": "int16",
+                    "linksToCallback": "TriangleLinksTo"
+                },
+                "type": "array",
+                "size": -1,
+                "includeFlag": "dfNotAlignable"
+            },
+            {
+                "name": "NavMeshGrid Divisor",
+                "type": "uint32"
+            },
+            {
+                "name": "Max X Distance",
+                "type": "float",
+                "formatter": ""
+            },
+            {
+                "name": "Max Y Distance",
+                "type": "float",
+                "formatter": ""
+            },
+            {
+                "name": "Min X",
+                "type": "float",
+                "formatter": ""
+            },
+            {
+                "name": "Min Y",
+                "type": "float",
+                "formatter": ""
+            },
+            {
+                "name": "Min Z",
+                "type": "float",
+                "formatter": ""
+            },
+            {
+                "name": "Max X",
+                "type": "float",
+                "formatter": ""
+            },
+            {
+                "name": "Max Y",
+                "type": "float",
+                "formatter": ""
+            },
+            {
+                "name": "Max Z",
+                "type": "float",
+                "formatter": ""
+            },
+            {
+                "name": "NavMeshGrid",
+                "entryDef": {
+                    "name": "NavMeshGridCell",
+                    "entryDef": {
+                        "name": "Triangle",
+                        "type": "int16",
+                        "linksToCallback": "TriangleLinksTo"
+                    },
+                    "type": "array",
+                    "size": -1,
+                    "includeFlag": "dfNotAlignable"
+                },
+                "type": "array",
+                "size": 0,
+                "includeFlag": "dfNotAlignable"
+            }
+        ]
+    }
+}

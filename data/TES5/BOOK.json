@@ -1,0 +1,141 @@
+{
+    "signature": "BOOK",
+    "type": "record",
+    "name": "Book",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "VMAD"
+            },
+            {
+                "def": "OBND",
+                "required": true
+            },
+            {
+                "def": "FULL"
+            },
+            {
+                "def": "MODL"
+            },
+            {
+                "def": "ICON"
+            },
+            {
+                "signature": "DESC",
+                "type": "subrecord",
+                "def": {
+                    "name": "Book Text",
+                    "type": "string",
+                    "maxSize": 0
+                },
+                "required": true
+            },
+            {
+                "def": "DEST"
+            },
+            {
+                "def": "YNAM"
+            },
+            {
+                "def": "ZNAM"
+            },
+            {
+                "def": "KSIZ"
+            },
+            {
+                "def": "KWDAs"
+            },
+            {
+                "signature": "DATA",
+                "type": "subrecord",
+                "def": {
+                    "name": "Data",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Flags",
+                            "type": "uint8",
+                            "format": {
+                                "0": "Teaches Skill",
+                                "1": "Can't be Taken",
+                                "2": "Teaches Spell",
+                                "3": "Unknown 4",
+                                "4": "Unknown 5",
+                                "5": "Unknown 6",
+                                "6": "Unknown 7",
+                                "7": "Unknown 8"
+                            }
+                        },
+                        {
+                            "name": "Type",
+                            "type": "uint8",
+                            "format": {
+                                "0": "Book/Tome",
+                                "255": "Note/Scroll"
+                            }
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 2
+                        },
+                        {
+                            "name": "Teaches",
+                            "type": "union",
+                            "decider": [
+                                {
+                                    "name": "Skill",
+                                    "type": "int32",
+                                    "format": {
+                                        "def": "SkillEnum"
+                                    }
+                                },
+                                {
+                                    "name": "Spell",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "SPEL",
+                                        "NULL"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Value",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Weight",
+                            "type": "float",
+                            "formatter": ""
+                        }
+                    ]
+                },
+                "required": true
+            },
+            {
+                "signature": "INAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Inventory Art",
+                    "type": "formId",
+                    "signatures": [
+                        "STAT"
+                    ]
+                }
+            },
+            {
+                "signature": "CNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Description",
+                    "type": "string",
+                    "maxSize": 0
+                }
+            }
+        ]
+    }
+}

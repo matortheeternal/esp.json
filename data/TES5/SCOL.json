@@ -1,0 +1,107 @@
+{
+    "signature": "SCOL",
+    "type": "record",
+    "name": "Static Collection",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "OBND",
+                "required": true
+            },
+            {
+                "def": "MODL",
+                "required": true
+            },
+            {
+                "name": "Parts",
+                "type": "structArray",
+                "entryName": {
+                    "name": "Part",
+                    "type": "multiStruct",
+                    "subrecords": [
+                        {
+                            "signature": "ONAM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Static",
+                                "type": "formId",
+                                "signatures": [
+                                    "STAT"
+                                ]
+                            }
+                        },
+                        {
+                            "signature": "DATA",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Placements",
+                                "entryDef": {
+                                    "name": "Placement",
+                                    "type": "struct",
+                                    "fields": [
+                                        {
+                                            "name": "Position",
+                                            "type": "struct",
+                                            "fields": [
+                                                {
+                                                    "name": "X",
+                                                    "type": "float",
+                                                    "formatter": ""
+                                                },
+                                                {
+                                                    "name": "Y",
+                                                    "type": "float",
+                                                    "formatter": ""
+                                                },
+                                                {
+                                                    "name": "Z",
+                                                    "type": "float",
+                                                    "formatter": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "Rotation",
+                                            "type": "struct",
+                                            "fields": [
+                                                {
+                                                    "name": "X",
+                                                    "type": "float",
+                                                    "formatter": "",
+                                                    "required": true
+                                                },
+                                                {
+                                                    "name": "Y",
+                                                    "type": "float",
+                                                    "formatter": "",
+                                                    "required": true
+                                                },
+                                                {
+                                                    "name": "Z",
+                                                    "type": "float",
+                                                    "formatter": "",
+                                                    "required": true
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "Scale",
+                                            "type": "float",
+                                            "formatter": ""
+                                        }
+                                    ]
+                                },
+                                "type": "array",
+                                "size": 0
+                            }
+                        }
+                    ]
+                },
+                "required": true
+            }
+        ]
+    }
+}

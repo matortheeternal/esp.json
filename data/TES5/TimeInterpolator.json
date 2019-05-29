@@ -1,0 +1,19 @@
+{
+    "name": "Data",
+    "type": "struct",
+    "fields": [
+        {
+            "name": "Time",
+            "type": "float",
+            "formatter": ""
+        },
+        {
+            "name": "Value",
+            "type": "float",
+            "formatter": ""
+        }
+    ],
+    "sortKey": [
+        0
+    ]
+}

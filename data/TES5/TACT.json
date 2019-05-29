@@ -1,0 +1,81 @@
+{
+    "signature": "TACT",
+    "type": "record",
+    "name": "Talking Activator",
+    "def": {
+        "flags": {
+            "9": "Hidden From Local Map",
+            "16": "Random Anim Start",
+            "17": "Radio Station"
+        },
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "VMAD"
+            },
+            {
+                "def": "OBND",
+                "required": true
+            },
+            {
+                "def": "FULL"
+            },
+            {
+                "def": "MODL"
+            },
+            {
+                "def": "DEST"
+            },
+            {
+                "def": "KSIZ"
+            },
+            {
+                "def": "KWDAs"
+            },
+            {
+                "signature": "PNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 0
+                },
+                "required": true
+            },
+            {
+                "signature": "SNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Looping Sound",
+                    "type": "formId",
+                    "signatures": [
+                        "SNDR"
+                    ]
+                }
+            },
+            {
+                "signature": "FNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 0
+                },
+                "required": true
+            },
+            {
+                "signature": "VNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Voice Type",
+                    "type": "formId",
+                    "signatures": [
+                        "VTYP"
+                    ]
+                }
+            }
+        ]
+    }
+}

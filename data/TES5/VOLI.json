@@ -1,0 +1,123 @@
+{
+    "signature": "VOLI",
+    "type": "record",
+    "name": "Volumetric Lighting",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "signature": "CNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Intensity",
+                    "type": "float",
+                    "formatter": ""
+                }
+            },
+            {
+                "signature": "DNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Custom Color - Contribution",
+                    "type": "float",
+                    "formatter": ""
+                }
+            },
+            {
+                "signature": "ENAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Red",
+                    "type": "float",
+                    "formatter": ""
+                },
+                "required": true
+            },
+            {
+                "signature": "FNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Green",
+                    "type": "float",
+                    "formatter": ""
+                },
+                "required": true
+            },
+            {
+                "signature": "GNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Blue",
+                    "type": "float",
+                    "formatter": ""
+                },
+                "required": true
+            },
+            {
+                "signature": "HNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Density - Contribution",
+                    "type": "float",
+                    "formatter": ""
+                }
+            },
+            {
+                "signature": "INAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Density - Size",
+                    "type": "float",
+                    "formatter": ""
+                }
+            },
+            {
+                "signature": "JNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Density - Wind Speed",
+                    "type": "float",
+                    "formatter": ""
+                }
+            },
+            {
+                "signature": "KNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Density - Falling Speed",
+                    "type": "float",
+                    "formatter": ""
+                }
+            },
+            {
+                "signature": "LNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Phase Function - Contribution",
+                    "type": "float",
+                    "formatter": ""
+                }
+            },
+            {
+                "signature": "MNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Phase Function - Scattering",
+                    "type": "float",
+                    "formatter": ""
+                }
+            },
+            {
+                "signature": "NNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Sampling Repartition - Range Factor",
+                    "type": "float",
+                    "formatter": ""
+                }
+            }
+        ]
+    }
+}

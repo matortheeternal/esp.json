@@ -1,0 +1,89 @@
+{
+    "signature": "LVSP",
+    "type": "record",
+    "name": "Leveled Spell",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "OBND",
+                "required": true
+            },
+            {
+                "def": "LVLD"
+            },
+            {
+                "signature": "LVLF",
+                "type": "subrecord",
+                "def": {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "0": "Calculate from all levels <= player's level",
+                        "1": "Calculate for each item in count",
+                        "2": "Use All Spells"
+                    }
+                }
+            },
+            {
+                "def": "LLCT"
+            },
+            {
+                "name": "Leveled List Entries",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "name": "Leveled List Entry",
+                    "type": "multiStruct",
+                    "subrecords": [
+                        {
+                            "signature": "LVLO",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Base Data",
+                                "type": "struct",
+                                "fields": [
+                                    {
+                                        "name": "Level",
+                                        "type": "uint16"
+                                    },
+                                    {
+                                        "name": "Unknown",
+                                        "type": "bytes",
+                                        "size": 2
+                                    },
+                                    {
+                                        "name": "Reference",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "SPEL",
+                                            "LVSP"
+                                        ]
+                                    },
+                                    {
+                                        "name": "Count",
+                                        "type": "uint16"
+                                    },
+                                    {
+                                        "name": "Unknown",
+                                        "type": "bytes",
+                                        "size": 2
+                                    }
+                                ],
+                                "sortKey": [
+                                    0,
+                                    2
+                                ]
+                            }
+                        }
+                    ],
+                    "sortKey": [
+                        0
+                    ]
+                },
+                "required": true
+            }
+        ]
+    }
+}

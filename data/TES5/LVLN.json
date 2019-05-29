@@ -1,0 +1,105 @@
+{
+    "signature": "LVLN",
+    "type": "record",
+    "name": "Leveled NPC",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "OBND",
+                "required": true
+            },
+            {
+                "def": "LVLD"
+            },
+            {
+                "signature": "LVLF",
+                "type": "subrecord",
+                "def": {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "0": "Calculate from all levels <= player's level",
+                        "1": "Calculate for each item in count"
+                    }
+                }
+            },
+            {
+                "signature": "LVLG",
+                "type": "subrecord",
+                "def": {
+                    "name": "Global",
+                    "type": "formId",
+                    "signatures": [
+                        "GLOB"
+                    ]
+                }
+            },
+            {
+                "def": "LLCT"
+            },
+            {
+                "name": "Leveled List Entries",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "name": "Leveled List Entry",
+                    "type": "multiStruct",
+                    "subrecords": [
+                        {
+                            "signature": "LVLO",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Base Data",
+                                "type": "struct",
+                                "fields": [
+                                    {
+                                        "name": "Level",
+                                        "type": "int16"
+                                    },
+                                    {
+                                        "name": "Unknown",
+                                        "type": "bytes",
+                                        "size": 2
+                                    },
+                                    {
+                                        "name": "Reference",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "NPC_",
+                                            "LVLN"
+                                        ]
+                                    },
+                                    {
+                                        "name": "Count",
+                                        "type": "int16"
+                                    },
+                                    {
+                                        "name": "Unknown",
+                                        "type": "bytes",
+                                        "size": 2
+                                    }
+                                ],
+                                "sortKey": [
+                                    0,
+                                    2
+                                ]
+                            }
+                        },
+                        {
+                            "def": "COED"
+                        }
+                    ],
+                    "sortKey": [
+                        0
+                    ]
+                },
+                "required": true
+            },
+            {
+                "def": "MODL"
+            }
+        ]
+    }
+}

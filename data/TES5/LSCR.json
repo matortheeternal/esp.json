@@ -1,0 +1,122 @@
+{
+    "signature": "LSCR",
+    "type": "record",
+    "name": "Load Screen",
+    "def": {
+        "flags": {
+            "10": "Displays In Main Menu"
+        },
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "ICON"
+            },
+            {
+                "def": "DESC",
+                "required": true
+            },
+            {
+                "def": "CTDAs"
+            },
+            {
+                "signature": "NNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Loading Screen NIF",
+                    "type": "formId",
+                    "signatures": [
+                        "STAT",
+                        "NULL"
+                    ]
+                },
+                "required": true
+            },
+            {
+                "signature": "SNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Initial Scale",
+                    "type": "float",
+                    "formatter": ""
+                }
+            },
+            {
+                "signature": "RNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Initial Rotation",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "X",
+                            "type": "int16"
+                        },
+                        {
+                            "name": "Y",
+                            "type": "int16"
+                        },
+                        {
+                            "name": "Z",
+                            "type": "int16"
+                        }
+                    ]
+                }
+            },
+            {
+                "signature": "ONAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Rotation Offset Constraints",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Min",
+                            "type": "int16"
+                        },
+                        {
+                            "name": "Max",
+                            "type": "int16"
+                        }
+                    ]
+                }
+            },
+            {
+                "signature": "XNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Initial Translation Offset",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "X",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Y",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Z",
+                            "type": "float",
+                            "formatter": ""
+                        }
+                    ]
+                }
+            },
+            {
+                "signature": "MOD2",
+                "type": "subrecord",
+                "def": {
+                    "name": "Camera Path",
+                    "type": "cstring",
+                    "maxSize": 0
+                },
+                "required": true
+            }
+        ]
+    }
+}

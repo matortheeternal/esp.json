@@ -1,0 +1,43 @@
+{
+    "signature": "IPDS",
+    "type": "record",
+    "name": "Impact Data Set",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "name": "Data",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "signature": "PNAM",
+                    "type": "subrecord",
+                    "def": {
+                        "name": "",
+                        "type": "struct",
+                        "fields": [
+                            {
+                                "name": "Material",
+                                "type": "formId",
+                                "signatures": [
+                                    "MATT"
+                                ]
+                            },
+                            {
+                                "name": "Impact",
+                                "type": "formId",
+                                "signatures": [
+                                    "IPCT"
+                                ]
+                            }
+                        ],
+                        "sortKey": [
+                            0
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

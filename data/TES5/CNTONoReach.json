@@ -1,0 +1,48 @@
+{
+    "name": "Item",
+    "type": "multiStruct",
+    "subrecords": [
+        {
+            "signature": "CNTO",
+            "type": "subrecord",
+            "def": {
+                "name": "Item",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Item",
+                        "type": "formId",
+                        "signatures": [
+                            "ARMO",
+                            "AMMO",
+                            "APPA",
+                            "MISC",
+                            "WEAP",
+                            "BOOK",
+                            "LVLI",
+                            "KEYM",
+                            "ALCH",
+                            "INGR",
+                            "LIGH",
+                            "SLGM",
+                            "SCRL"
+                        ]
+                    },
+                    {
+                        "name": "Count",
+                        "type": "int32"
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        },
+        {
+            "def": "COED"
+        }
+    ],
+    "sortKey": [
+        0
+    ]
+}

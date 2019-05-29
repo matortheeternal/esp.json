@@ -1,0 +1,113 @@
+{
+    "signature": "LENS",
+    "type": "record",
+    "name": "Lens Flare",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "signature": "CNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Color Influence",
+                    "type": "float",
+                    "formatter": ""
+                }
+            },
+            {
+                "signature": "DNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Fade Distance Radius Scale",
+                    "type": "float",
+                    "formatter": ""
+                }
+            },
+            {
+                "signature": "LFSP",
+                "type": "subrecord",
+                "def": {
+                    "name": "Count",
+                    "type": "uint32"
+                }
+            },
+            {
+                "name": "Lens Flare Sprites",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "name": "Flare",
+                    "type": "multiStruct",
+                    "subrecords": [
+                        {
+                            "signature": "DNAM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Lens Flare Sprite ID",
+                                "type": "cstring",
+                                "maxSize": 0
+                            }
+                        },
+                        {
+                            "signature": "FNAM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Texture",
+                                "type": "cstring",
+                                "maxSize": 0
+                            }
+                        },
+                        {
+                            "signature": "LFSD",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Lens Flare Data",
+                                "type": "struct",
+                                "fields": [
+                                    {
+                                        "def": "FloatColors",
+                                        "name": "Tint"
+                                    },
+                                    {
+                                        "name": "Width",
+                                        "type": "float",
+                                        "formatter": ""
+                                    },
+                                    {
+                                        "name": "Height",
+                                        "type": "float",
+                                        "formatter": ""
+                                    },
+                                    {
+                                        "name": "Position",
+                                        "type": "float",
+                                        "formatter": ""
+                                    },
+                                    {
+                                        "name": "Angular Fade",
+                                        "type": "float",
+                                        "formatter": ""
+                                    },
+                                    {
+                                        "name": "Opacity",
+                                        "type": "float",
+                                        "formatter": ""
+                                    },
+                                    {
+                                        "name": "Flags",
+                                        "type": "uint32",
+                                        "format": {
+                                            "0": "Rotates",
+                                            "1": "Shrinks When Occluded"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

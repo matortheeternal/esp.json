@@ -1,0 +1,46 @@
+{
+    "signature": "SOUN",
+    "type": "record",
+    "name": "Sound Marker",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "OBND",
+                "required": true
+            },
+            {
+                "signature": "FNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 0
+                }
+            },
+            {
+                "signature": "SNDD",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 0
+                }
+            },
+            {
+                "signature": "SDSC",
+                "type": "subrecord",
+                "def": {
+                    "name": "Sound Descriptor",
+                    "type": "formId",
+                    "signatures": [
+                        "SNDR",
+                        "NULL"
+                    ]
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,143 @@
+{
+    "signature": "IPCT",
+    "type": "record",
+    "name": "Impact",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "MODL"
+            },
+            {
+                "signature": "DATA",
+                "type": "subrecord",
+                "def": {
+                    "name": "",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Effect - Duration",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Effect - Orientation",
+                            "type": "uint32",
+                            "format": {
+                                "0": "Surface Normal",
+                                "1": "Projectile Vector",
+                                "2": "Projectile Reflection"
+                            }
+                        },
+                        {
+                            "name": "Angle Threshold",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Placement Radius",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Sound Level",
+                            "type": "uint32",
+                            "format": {
+                                "def": "SoundLevelEnum"
+                            }
+                        },
+                        {
+                            "name": "Flags",
+                            "type": "uint8",
+                            "format": {
+                                "0": "No Decal Data"
+                            }
+                        },
+                        {
+                            "name": "Impact Result",
+                            "type": "uint8",
+                            "format": {
+                                "0": "Default",
+                                "1": "Destroy",
+                                "2": "Bounce",
+                                "3": "Impale",
+                                "4": "Stick"
+                            }
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 2
+                        }
+                    ]
+                },
+                "required": true
+            },
+            {
+                "def": "DODT"
+            },
+            {
+                "signature": "DNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Texture Set",
+                    "type": "formId",
+                    "signatures": [
+                        "TXST"
+                    ]
+                }
+            },
+            {
+                "signature": "ENAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Secondary Texture Set",
+                    "type": "formId",
+                    "signatures": [
+                        "TXST"
+                    ]
+                }
+            },
+            {
+                "signature": "SNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Sound 1",
+                    "type": "formId",
+                    "signatures": [
+                        "SNDR",
+                        "SOUN",
+                        "NULL"
+                    ]
+                }
+            },
+            {
+                "signature": "NAM1",
+                "type": "subrecord",
+                "def": {
+                    "name": "Sound 2",
+                    "type": "formId",
+                    "signatures": [
+                        "SNDR",
+                        "SOUN",
+                        "NULL"
+                    ]
+                }
+            },
+            {
+                "signature": "NAM2",
+                "type": "subrecord",
+                "def": {
+                    "name": "Hazard",
+                    "type": "formId",
+                    "signatures": [
+                        "HAZD",
+                        "NULL"
+                    ]
+                }
+            }
+        ]
+    }
+}

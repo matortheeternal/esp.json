@@ -1,0 +1,74 @@
+{
+    "signature": "DODT",
+    "type": "subrecord",
+    "def": {
+        "name": "Decal Data",
+        "type": "struct",
+        "fields": [
+            {
+                "name": "Min Width",
+                "type": "float",
+                "formatter": ""
+            },
+            {
+                "name": "Max Width",
+                "type": "float",
+                "formatter": ""
+            },
+            {
+                "name": "Min Height",
+                "type": "float",
+                "formatter": ""
+            },
+            {
+                "name": "Max Height",
+                "type": "float",
+                "formatter": ""
+            },
+            {
+                "name": "Depth",
+                "type": "float",
+                "formatter": ""
+            },
+            {
+                "name": "Shininess",
+                "type": "float",
+                "formatter": ""
+            },
+            {
+                "name": "Parallax",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Scale",
+                        "type": "float",
+                        "formatter": ""
+                    },
+                    {
+                        "name": "Passes",
+                        "type": "uint8"
+                    }
+                ]
+            },
+            {
+                "name": "Flags",
+                "type": "uint8",
+                "format": {
+                    "0": "Parallax",
+                    "1": "Alpha - Blending",
+                    "2": "Alpha - Testing",
+                    "3": "No Subtextures"
+                }
+            },
+            {
+                "name": "Unknown",
+                "type": "bytes",
+                "size": 2
+            },
+            {
+                "def": "ByteColors",
+                "name": "Color"
+            }
+        ]
+    }
+}

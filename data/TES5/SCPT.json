@@ -1,0 +1,12 @@
+{
+    "signature": "SCPT",
+    "type": "record",
+    "name": "SCPT",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            }
+        ]
+    }
+}

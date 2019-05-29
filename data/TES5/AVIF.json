@@ -1,0 +1,164 @@
+{
+    "signature": "AVIF",
+    "type": "record",
+    "name": "Actor Value Information",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "FULL"
+            },
+            {
+                "def": "DESC",
+                "required": true
+            },
+            {
+                "signature": "ANAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Abbreviation",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "CNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 0
+                }
+            },
+            {
+                "signature": "AVSK",
+                "type": "subrecord",
+                "def": {
+                    "name": "Skill",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Skill Use Mult",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Skill Offset Mult",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Skill Improve Mult",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Skill Improve Offset",
+                            "type": "float",
+                            "formatter": ""
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Perk Tree",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "name": "Node",
+                    "type": "multiStruct",
+                    "subrecords": [
+                        {
+                            "signature": "PNAM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Perk",
+                                "type": "formId",
+                                "signatures": [
+                                    "PERK",
+                                    "NULL"
+                                ]
+                            }
+                        },
+                        {
+                            "signature": "FNAM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Unknown",
+                                "type": "bytes",
+                                "size": 0
+                            }
+                        },
+                        {
+                            "signature": "XNAM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Perk-Grid X",
+                                "type": "uint32"
+                            }
+                        },
+                        {
+                            "signature": "YNAM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Perk-Grid Y",
+                                "type": "uint32"
+                            }
+                        },
+                        {
+                            "signature": "HNAM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Horizontal Position",
+                                "type": "float",
+                                "formatter": ""
+                            }
+                        },
+                        {
+                            "signature": "VNAM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Vertical Position",
+                                "type": "float",
+                                "formatter": ""
+                            }
+                        },
+                        {
+                            "signature": "SNAM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Associated Skill",
+                                "type": "formId",
+                                "signatures": [
+                                    "AVIF",
+                                    "NULL"
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Connections",
+                            "type": "subrecordArray",
+                            "sortKey": {
+                                "signature": "CNAM",
+                                "type": "subrecord",
+                                "def": {
+                                    "name": "Line to Index",
+                                    "type": "uint32"
+                                }
+                            }
+                        },
+                        {
+                            "signature": "INAM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Index",
+                                "type": "uint32"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

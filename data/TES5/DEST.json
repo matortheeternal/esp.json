@@ -1,0 +1,140 @@
+{
+    "name": "Destructible",
+    "type": "multiStruct",
+    "subrecords": [
+        {
+            "signature": "DEST",
+            "type": "subrecord",
+            "def": {
+                "name": "Header",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Health",
+                        "type": "int32"
+                    },
+                    {
+                        "name": "DEST Count",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "VATS Targetable",
+                        "type": "uint8",
+                        "format": {
+                            "0": "False",
+                            "1": "True"
+                        }
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 2
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Stages",
+            "type": "subrecordArray",
+            "sortKey": {
+                "name": "Stage",
+                "type": "multiStruct",
+                "subrecords": [
+                    {
+                        "signature": "DSTD",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Destruction Stage Data",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "Health %",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Index",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Model Damage Stage",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Flags",
+                                    "type": "uint8",
+                                    "format": {
+                                        "0": "Cap Damage",
+                                        "1": "Disable",
+                                        "2": "Destroy",
+                                        "3": "Ignore External Dmg"
+                                    }
+                                },
+                                {
+                                    "name": "Self Damage per Second",
+                                    "type": "int32"
+                                },
+                                {
+                                    "name": "Explosion",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "EXPL",
+                                        "NULL"
+                                    ]
+                                },
+                                {
+                                    "name": "Debris",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "DEBR",
+                                        "NULL"
+                                    ]
+                                },
+                                {
+                                    "name": "Debris Count",
+                                    "type": "int32"
+                                }
+                            ]
+                        },
+                        "required": true
+                    },
+                    {
+                        "name": "Model",
+                        "type": "multiStruct",
+                        "subrecords": [
+                            {
+                                "signature": "DMDL",
+                                "type": "subrecord",
+                                "def": {
+                                    "name": "Model FileName",
+                                    "type": "cstring",
+                                    "maxSize": 0
+                                }
+                            },
+                            {
+                                "def": "DMDT"
+                            },
+                            {
+                                "def": "DMDSs"
+                            }
+                        ],
+                        "sortKey": [
+                            0
+                        ],
+                        "required": true
+                    },
+                    {
+                        "signature": "DSTF",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "End Marker",
+                            "type": "empty"
+                        },
+                        "required": true
+                    }
+                ],
+                "required": true
+            }
+        }
+    ],
+    "required": true
+}

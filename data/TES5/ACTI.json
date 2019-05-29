@@ -1,0 +1,140 @@
+{
+    "signature": "ACTI",
+    "type": "record",
+    "name": "Activator",
+    "def": {
+        "flags": {
+            "6": "Has Tree LOD",
+            "8": "Must Update Anims",
+            "9": "Hidden From Local Map",
+            "15": "Has Distant LOD",
+            "16": "Random Anim Start",
+            "17": "Dangerous",
+            "20": "Ignore Object Interaction",
+            "23": "Is Marker",
+            "25": "Obstacle",
+            "26": "NavMesh Generation - Filter",
+            "27": "NavMesh Generation - Bounding Box",
+            "29": "Child Can Use",
+            "30": "NavMesh Generation - Ground"
+        },
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "VMAD"
+            },
+            {
+                "def": "OBND",
+                "required": true
+            },
+            {
+                "def": "FULL"
+            },
+            {
+                "def": "MODL"
+            },
+            {
+                "def": "DEST"
+            },
+            {
+                "def": "KSIZ"
+            },
+            {
+                "def": "KWDAs"
+            },
+            {
+                "signature": "PNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Marker Color",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Red",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Green",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Blue",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "uint8"
+                        }
+                    ]
+                }
+            },
+            {
+                "signature": "SNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Sound - Looping",
+                    "type": "formId",
+                    "signatures": [
+                        "SNDR"
+                    ]
+                }
+            },
+            {
+                "signature": "VNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Sound - Activation",
+                    "type": "formId",
+                    "signatures": [
+                        "SNDR"
+                    ]
+                }
+            },
+            {
+                "signature": "WNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Water Type",
+                    "type": "formId",
+                    "signatures": [
+                        "WATR"
+                    ]
+                }
+            },
+            {
+                "signature": "RNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Activate Text Override",
+                    "type": "string",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "FNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Flags",
+                    "type": "uint16",
+                    "format": {
+                        "0": "No Displacement",
+                        "1": "Ignored by Sandbox"
+                    }
+                }
+            },
+            {
+                "signature": "KNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Interaction Keyword",
+                    "type": "formId",
+                    "signatures": [
+                        "KYWD"
+                    ]
+                }
+            }
+        ]
+    }
+}

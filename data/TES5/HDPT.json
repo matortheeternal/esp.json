@@ -1,0 +1,137 @@
+{
+    "signature": "HDPT",
+    "type": "record",
+    "name": "Head Part",
+    "def": {
+        "flags": {
+            "2": "Non-Playable"
+        },
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "FULL"
+            },
+            {
+                "def": "MODL"
+            },
+            {
+                "signature": "DATA",
+                "type": "subrecord",
+                "def": {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "0": "Playable",
+                        "1": "Male",
+                        "2": "Female",
+                        "3": "Is Extra Part",
+                        "4": "Use Solid Tint"
+                    }
+                }
+            },
+            {
+                "signature": "PNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Type",
+                    "type": "uint32",
+                    "format": {
+                        "0": "Misc",
+                        "1": "Face",
+                        "2": "Eyes",
+                        "3": "Hair",
+                        "4": "Facial Hair",
+                        "5": "Scar",
+                        "6": "Eyebrows"
+                    }
+                }
+            },
+            {
+                "name": "Extra Parts",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "signature": "HNAM",
+                    "type": "subrecord",
+                    "def": {
+                        "name": "Part",
+                        "type": "formId",
+                        "signatures": [
+                            "HDPT"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "Parts",
+                "type": "structArray",
+                "entryName": {
+                    "name": "Part",
+                    "type": "multiStruct",
+                    "subrecords": [
+                        {
+                            "signature": "NAM0",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Part Type",
+                                "type": "uint32",
+                                "format": {
+                                    "0": "Race Morph",
+                                    "1": "Tri",
+                                    "2": "Chargen Morph"
+                                }
+                            }
+                        },
+                        {
+                            "signature": "NAM1",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "FileName",
+                                "type": "cstring",
+                                "maxSize": 0
+                            },
+                            "required": true
+                        }
+                    ]
+                }
+            },
+            {
+                "signature": "TNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Texture Set",
+                    "type": "formId",
+                    "signatures": [
+                        "TXST",
+                        "NULL"
+                    ]
+                }
+            },
+            {
+                "signature": "CNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Color",
+                    "type": "formId",
+                    "signatures": [
+                        "CLFM",
+                        "NULL"
+                    ]
+                }
+            },
+            {
+                "signature": "RNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Valid Races",
+                    "type": "formId",
+                    "signatures": [
+                        "FLST",
+                        "NULL"
+                    ]
+                }
+            }
+        ]
+    }
+}

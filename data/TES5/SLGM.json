@@ -1,0 +1,95 @@
+{
+    "signature": "SLGM",
+    "type": "record",
+    "name": "Soul Gem",
+    "def": {
+        "flags": {
+            "17": "Can Hold NPC Soul"
+        },
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "OBND"
+            },
+            {
+                "def": "FULL"
+            },
+            {
+                "def": "MODL"
+            },
+            {
+                "def": "ICON"
+            },
+            {
+                "def": "DEST"
+            },
+            {
+                "def": "YNAM"
+            },
+            {
+                "def": "ZNAM"
+            },
+            {
+                "def": "KSIZ"
+            },
+            {
+                "def": "KWDAs"
+            },
+            {
+                "signature": "DATA",
+                "type": "subrecord",
+                "def": {
+                    "name": "",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Value",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Weight",
+                            "type": "float",
+                            "formatter": ""
+                        }
+                    ]
+                },
+                "required": true
+            },
+            {
+                "signature": "SOUL",
+                "type": "subrecord",
+                "def": {
+                    "name": "Contained Soul",
+                    "type": "uint8",
+                    "format": {
+                        "def": "SoulGemEnum"
+                    }
+                }
+            },
+            {
+                "signature": "SLCP",
+                "type": "subrecord",
+                "def": {
+                    "name": "Maximum Capacity",
+                    "type": "uint8",
+                    "format": {
+                        "def": "SoulGemEnum"
+                    }
+                }
+            },
+            {
+                "signature": "NAM0",
+                "type": "subrecord",
+                "def": {
+                    "name": "Linked To",
+                    "type": "formId",
+                    "signatures": [
+                        "SLGM"
+                    ]
+                }
+            }
+        ]
+    }
+}

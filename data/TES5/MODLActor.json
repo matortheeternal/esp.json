@@ -1,0 +1,26 @@
+{
+    "name": "Model",
+    "type": "multiStruct",
+    "subrecords": [
+        {
+            "signature": "MODL",
+            "type": "subrecord",
+            "def": {
+                "name": "Model FileName",
+                "type": "cstring",
+                "maxSize": 0
+            },
+            "required": true
+        },
+        {
+            "def": "MODT"
+        },
+        {
+            "def": "MODS"
+        }
+    ],
+    "sortKey": [
+        0
+    ],
+    "required": true
+}

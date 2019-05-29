@@ -1,0 +1,243 @@
+{
+    "signature": "PROJ",
+    "type": "record",
+    "name": "Projectile",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "OBND",
+                "required": true
+            },
+            {
+                "def": "FULL"
+            },
+            {
+                "def": "MODL"
+            },
+            {
+                "def": "DEST"
+            },
+            {
+                "signature": "DATA",
+                "type": "subrecord",
+                "def": {
+                    "name": "Data",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Flags",
+                            "type": "uint16",
+                            "format": {
+                                "0": "Hitscan",
+                                "1": "Explosion",
+                                "2": "Alt. Trigger",
+                                "3": "Muzzle Flash",
+                                "4": "",
+                                "5": "Can Be Disabled",
+                                "6": "Can Be Picked Up",
+                                "7": "Supersonic",
+                                "8": "Pins Limbs",
+                                "9": "Pass Through Small Transparent",
+                                "10": "Disable Combat Aim Correction",
+                                "11": "Rotation"
+                            }
+                        },
+                        {
+                            "name": "Type",
+                            "type": "uint16",
+                            "format": {
+                                "1": "Missile",
+                                "2": "Lobber",
+                                "4": "Beam",
+                                "8": "Flame",
+                                "16": "Cone",
+                                "32": "Barrier",
+                                "64": "Arrow"
+                            }
+                        },
+                        {
+                            "name": "Gravity",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Speed",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Range",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Light",
+                            "type": "formId",
+                            "signatures": [
+                                "LIGH",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Muzzle Flash - Light",
+                            "type": "formId",
+                            "signatures": [
+                                "LIGH",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Tracer Chance",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Explosion - Alt. Trigger - Proximity",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Explosion - Alt. Trigger - Timer",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Explosion",
+                            "type": "formId",
+                            "signatures": [
+                                "EXPL",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Sound",
+                            "type": "formId",
+                            "signatures": [
+                                "SNDR",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Muzzle Flash - Duration",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Fade Duration",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Impact Force",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Sound - Countdown",
+                            "type": "formId",
+                            "signatures": [
+                                "SNDR",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Sound - Disable",
+                            "type": "formId",
+                            "signatures": [
+                                "SNDR",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Default Weapon Source",
+                            "type": "formId",
+                            "signatures": [
+                                "WEAP",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Cone Spread",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Collision Radius",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Lifetime",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Relaunch Interval",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Decal Data",
+                            "type": "formId",
+                            "signatures": [
+                                "TXST",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Collision Layer",
+                            "type": "formId",
+                            "signatures": [
+                                "COLL",
+                                "NULL"
+                            ]
+                        }
+                    ]
+                },
+                "required": true
+            },
+            {
+                "name": "Muzzle Flash Model",
+                "type": "multiStruct",
+                "subrecords": [
+                    {
+                        "signature": "NAM1",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Model FileName",
+                            "type": "cstring",
+                            "maxSize": 0
+                        }
+                    },
+                    {
+                        "signature": "NAM2",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Texture Files Hashes",
+                            "type": "bytes",
+                            "size": 0
+                        }
+                    }
+                ],
+                "sortKey": [
+                    0
+                ],
+                "required": true
+            },
+            {
+                "signature": "VNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Sound Level",
+                    "type": "uint32",
+                    "format": {
+                        "def": "SoundLevelEnum"
+                    }
+                }
+            }
+        ]
+    }
+}

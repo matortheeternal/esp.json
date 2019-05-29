@@ -1,0 +1,94 @@
+{
+    "signature": "IDLE",
+    "type": "record",
+    "name": "Idle Animation",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "CTDAs"
+            },
+            {
+                "signature": "DNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "FileName",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "ENAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Animation Event",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "signature": "ANAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Related Idle Animations",
+                    "entryDef": {
+                        "name": "Related Idle Animation",
+                        "type": "formId",
+                        "signatures": [
+                            "AACT",
+                            "IDLE",
+                            "NULL"
+                        ]
+                    },
+                    "type": "array",
+                    "size": 0
+                }
+            },
+            {
+                "signature": "DATA",
+                "type": "subrecord",
+                "def": {
+                    "name": "Data (unused)",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Looping seconds (both 255 forever)",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "Min",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Max",
+                                    "type": "uint8"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Flags",
+                            "type": "uint8",
+                            "format": {
+                                "0": "Parent",
+                                "1": "Sequence",
+                                "2": "No Attacking",
+                                "3": "Blocking"
+                            }
+                        },
+                        {
+                            "name": "Animation Group Section",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Replay Delay",
+                            "type": "uint16"
+                        }
+                    ]
+                },
+                "required": true
+            }
+        ]
+    }
+}

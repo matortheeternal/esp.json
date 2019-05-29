@@ -1,0 +1,120 @@
+{
+    "signature": "CAMS",
+    "type": "record",
+    "name": "Camera Shot",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "MODL"
+            },
+            {
+                "signature": "DATA",
+                "type": "subrecord",
+                "def": {
+                    "name": "Data",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Action",
+                            "type": "uint32",
+                            "format": {
+                                "0": "Shoot",
+                                "1": "Fly",
+                                "2": "Hit",
+                                "3": "Zoom"
+                            }
+                        },
+                        {
+                            "name": "Location",
+                            "type": "uint32",
+                            "format": {
+                                "0": "Attacker",
+                                "1": "Projectile",
+                                "2": "Target",
+                                "3": "Lead Actor"
+                            }
+                        },
+                        {
+                            "name": "Target",
+                            "type": "uint32",
+                            "format": {
+                                "0": "Attacker",
+                                "1": "Projectile",
+                                "2": "Target",
+                                "3": "Lead Actor"
+                            }
+                        },
+                        {
+                            "name": "Flags",
+                            "type": "uint32",
+                            "format": {
+                                "0": "Position Follows Location",
+                                "1": "Rotation Follows Target",
+                                "2": "Don't Follow Bone",
+                                "3": "First Person Camera",
+                                "4": "No Tracer",
+                                "5": "Start At Time Zero"
+                            }
+                        },
+                        {
+                            "name": "Time Multipliers",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "Player",
+                                    "type": "float",
+                                    "formatter": ""
+                                },
+                                {
+                                    "name": "Target",
+                                    "type": "float",
+                                    "formatter": ""
+                                },
+                                {
+                                    "name": "Global",
+                                    "type": "float",
+                                    "formatter": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Max Time",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Min Time",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Target % Between Actors",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Near Target Distance",
+                            "type": "float",
+                            "formatter": ""
+                        }
+                    ]
+                },
+                "required": true
+            },
+            {
+                "signature": "MNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Image Space Modifier",
+                    "type": "formId",
+                    "signatures": [
+                        "IMAD"
+                    ]
+                }
+            }
+        ]
+    }
+}

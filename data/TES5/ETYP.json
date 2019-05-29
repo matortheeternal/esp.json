@@ -1,0 +1,12 @@
+{
+    "signature": "ETYP",
+    "type": "subrecord",
+    "def": {
+        "name": "Equipment Type",
+        "type": "formId",
+        "signatures": [
+            "EQUP",
+            "NULL"
+        ]
+    }
+}

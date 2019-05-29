@@ -1,0 +1,35 @@
+{
+    "signature": "MO4S",
+    "type": "subrecord",
+    "def": {
+        "name": "Alternate Textures",
+        "entryDef": {
+            "name": "Alternate Texture",
+            "type": "struct",
+            "fields": [
+                {
+                    "name": "3D Name",
+                    "type": "string",
+                    "maxSize": 0
+                },
+                {
+                    "name": "New Texture",
+                    "type": "formId",
+                    "signatures": [
+                        "TXST"
+                    ]
+                },
+                {
+                    "name": "3D Index",
+                    "type": "int32"
+                }
+            ],
+            "sortKey": [
+                0,
+                2
+            ]
+        },
+        "type": "array",
+        "size": -1
+    }
+}

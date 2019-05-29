@@ -1,0 +1,27 @@
+{
+    "signature": "CNAM",
+    "type": "subrecord",
+    "def": {
+        "name": "Color",
+        "type": "struct",
+        "fields": [
+            {
+                "name": "Red",
+                "type": "uint8"
+            },
+            {
+                "name": "Green",
+                "type": "uint8"
+            },
+            {
+                "name": "Blue",
+                "type": "uint8"
+            },
+            {
+                "name": "Unknown",
+                "type": "bytes",
+                "size": 1
+            }
+        ]
+    }
+}

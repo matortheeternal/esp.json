@@ -1,0 +1,104 @@
+{
+    "signature": "GRAS",
+    "type": "record",
+    "name": "Grass",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "OBND",
+                "required": true
+            },
+            {
+                "def": "MODL"
+            },
+            {
+                "signature": "DATA",
+                "type": "subrecord",
+                "def": {
+                    "name": "",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Density",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Min Slope",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Max Slope",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 1
+                        },
+                        {
+                            "name": "Units From Water",
+                            "type": "uint16"
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 2
+                        },
+                        {
+                            "name": "Units From Water Type",
+                            "type": "uint32",
+                            "format": {
+                                "0": "Above - At Least",
+                                "1": "Above - At Most",
+                                "2": "Below - At Least",
+                                "3": "Below - At Most",
+                                "4": "Either - At Least",
+                                "5": "Either - At Most",
+                                "6": "Either - At Most Above",
+                                "7": "Either - At Most Below"
+                            }
+                        },
+                        {
+                            "name": "Position Range",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Height Range",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Color Range",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Wave Period",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Flags",
+                            "type": "uint8",
+                            "format": {
+                                "0": "Vertex Lighting",
+                                "1": "Uniform Scaling",
+                                "2": "Fit to Slope"
+                            }
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 3
+                        }
+                    ]
+                },
+                "required": true
+            }
+        ]
+    }
+}

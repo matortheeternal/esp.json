@@ -18,10 +18,10 @@ let saveDefs = function(game) {
 let saveIndividualDefs = function(game) {
     let defs = getDefs(),
         gamePath = path.resolve('data', game);
-    fs.mkdirSync(gamePath);
+    if (!fs.existsSync(gamePath)) fs.mkdirSync(gamePath);
     Object.keys(defs).forEach(key => {
         let filePath = path.resolve(gamePath, `${key}.json`);
-        fs.writeFileSync(filePath, JSON.stringify(defs[key]));
+        fs.writeFileSync(filePath, JSON.stringify(defs[key], null, 4));
     });
 };
 

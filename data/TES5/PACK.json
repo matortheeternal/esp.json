@@ -1,0 +1,739 @@
+{
+    "signature": "PACK",
+    "type": "record",
+    "name": "Package",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "VMADFragmentedPACK"
+            },
+            {
+                "signature": "PKDT",
+                "type": "subrecord",
+                "def": {
+                    "name": "Pack Data",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "General Flags",
+                            "type": "uint32",
+                            "format": {
+                                "def": "PKDTFlags"
+                            }
+                        },
+                        {
+                            "name": "Type",
+                            "type": "uint8",
+                            "format": {
+                                "18": "Package",
+                                "19": "Package Template"
+                            }
+                        },
+                        {
+                            "name": "Interrupt Override",
+                            "type": "uint8",
+                            "format": {
+                                "0": "None",
+                                "1": "Spectator",
+                                "2": "ObserveDead",
+                                "3": "GuardWarn",
+                                "4": "Combat"
+                            }
+                        },
+                        {
+                            "name": "Preferred Speed",
+                            "type": "uint8",
+                            "format": {
+                                "0": "Walk",
+                                "1": "Jog",
+                                "2": "Run",
+                                "3": "Fast Walk"
+                            }
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 1
+                        },
+                        {
+                            "name": "Interrupt Flags",
+                            "type": "uint16",
+                            "format": {
+                                "def": "PKDTInterruptFlags"
+                            }
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 2
+                        }
+                    ]
+                },
+                "required": true
+            },
+            {
+                "signature": "PSDT",
+                "type": "subrecord",
+                "def": {
+                    "name": "Schedule",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Month",
+                            "type": "int8"
+                        },
+                        {
+                            "name": "Day of week",
+                            "type": "int8",
+                            "format": {
+                                "0": "Sunday",
+                                "1": "Monday",
+                                "2": "Tuesday",
+                                "3": "Wednesday",
+                                "4": "Thursday",
+                                "5": "Friday",
+                                "6": "Saturday",
+                                "7": "Weekdays",
+                                "8": "Weekends",
+                                "9": "Monday, Wednesday, Friday",
+                                "10": "Tuesday, Thursday",
+                                "-1": "Any"
+                            }
+                        },
+                        {
+                            "name": "Date",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Hour",
+                            "type": "int8"
+                        },
+                        {
+                            "name": "Minute",
+                            "type": "int8"
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 3
+                        },
+                        {
+                            "name": "Duration (minutes)",
+                            "type": "int32"
+                        }
+                    ]
+                },
+                "required": true
+            },
+            {
+                "def": "CTDAs"
+            },
+            {
+                "name": "Idle Animations",
+                "type": "multiStruct",
+                "subrecords": [
+                    {
+                        "signature": "IDLF",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Flags",
+                            "type": "uint8",
+                            "format": {
+                                "0": "Unknown",
+                                "8": "Random",
+                                "9": "Run in Sequence",
+                                "12": "Random, Do Once",
+                                "13": "Run in Sequence, Do Once"
+                            }
+                        }
+                    },
+                    {
+                        "signature": "IDLC",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "Animation Count",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unknown",
+                                    "type": "bytes",
+                                    "size": 3
+                                }
+                            ]
+                        },
+                        "required": true
+                    },
+                    {
+                        "signature": "IDLT",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Idle Timer Setting",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        "required": true
+                    },
+                    {
+                        "signature": "IDLA",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Animations",
+                            "entryDef": {
+                                "name": "Animation",
+                                "type": "formId",
+                                "signatures": [
+                                    "IDLE"
+                                ]
+                            },
+                            "type": "array",
+                            "size": 0
+                        }
+                    },
+                    {
+                        "signature": "IDLB",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 4
+                        }
+                    }
+                ],
+                "required": true
+            },
+            {
+                "signature": "CNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Combat Style",
+                    "type": "formId",
+                    "signatures": [
+                        "CSTY"
+                    ]
+                }
+            },
+            {
+                "signature": "QNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Owner Quest",
+                    "type": "formId",
+                    "signatures": [
+                        "QUST"
+                    ]
+                }
+            },
+            {
+                "signature": "PKCU",
+                "type": "subrecord",
+                "def": {
+                    "name": "Counter",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Data Input Count",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Package Template",
+                            "type": "formId",
+                            "signatures": [
+                                "PACK",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Version Counter (autoincremented)",
+                            "type": "uint32"
+                        }
+                    ]
+                },
+                "required": true
+            },
+            {
+                "name": "Package Data",
+                "type": "multiStruct",
+                "subrecords": [
+                    {
+                        "name": "Data Input Values",
+                        "type": "subrecordArray",
+                        "sortKey": {
+                            "name": "Value",
+                            "type": "multiStruct",
+                            "subrecords": [
+                                {
+                                    "signature": "ANAM",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Type",
+                                        "type": "cstring",
+                                        "maxSize": 0
+                                    }
+                                },
+                                {
+                                    "signature": "CNAM",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Value",
+                                        "type": "union",
+                                        "decider": [
+                                            {
+                                                "name": "Unknown",
+                                                "type": "bytes",
+                                                "size": 0
+                                            },
+                                            {
+                                                "name": "Bool",
+                                                "type": "uint8",
+                                                "format": {
+                                                    "0": "False",
+                                                    "1": "True"
+                                                }
+                                            },
+                                            {
+                                                "name": "Integer",
+                                                "type": "uint32"
+                                            },
+                                            {
+                                                "name": "Float",
+                                                "type": "float",
+                                                "formatter": ""
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "signature": "BNAM",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Unknown",
+                                        "type": "bytes",
+                                        "size": 0
+                                    }
+                                },
+                                {
+                                    "def": "PDTOs"
+                                },
+                                {
+                                    "def": "PLDT"
+                                },
+                                {
+                                    "signature": "PTDA",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Target",
+                                        "type": "struct",
+                                        "fields": [
+                                            {
+                                                "def": "TargetData"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "signature": "TPIC",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Unknown",
+                                        "type": "bytes",
+                                        "size": 0
+                                    }
+                                }
+                            ],
+                            "required": true
+                        }
+                    },
+                    {
+                        "def": "UNAMs"
+                    }
+                ]
+            },
+            {
+                "signature": "XNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Marker",
+                    "type": "bytes",
+                    "size": 0
+                }
+            },
+            {
+                "name": "Procedure Tree",
+                "type": "multiStruct",
+                "subrecords": [
+                    {
+                        "name": "Branches",
+                        "type": "subrecordArray",
+                        "sortKey": {
+                            "name": "Branch",
+                            "type": "multiStruct",
+                            "subrecords": [
+                                {
+                                    "signature": "ANAM",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Branch Type",
+                                        "type": "cstring",
+                                        "maxSize": 0
+                                    }
+                                },
+                                {
+                                    "def": "CITC",
+                                    "required": true
+                                },
+                                {
+                                    "def": "CTDAsCount"
+                                },
+                                {
+                                    "signature": "PRCB",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Root",
+                                        "type": "struct",
+                                        "fields": [
+                                            {
+                                                "name": "Branch Count",
+                                                "type": "uint32"
+                                            },
+                                            {
+                                                "name": "Flags",
+                                                "type": "uint32",
+                                                "format": {
+                                                    "0": "Repeat when Complete",
+                                                    "1": "Unknown 1"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "signature": "PNAM",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Procedure Type",
+                                        "type": "cstring",
+                                        "maxSize": 0
+                                    }
+                                },
+                                {
+                                    "signature": "FNAM",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Flags",
+                                        "type": "uint32",
+                                        "format": {
+                                            "0": "Success Completes Package"
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "Data Input Indexes",
+                                    "type": "subrecordArray",
+                                    "sortKey": {
+                                        "signature": "PKC2",
+                                        "type": "subrecord",
+                                        "def": {
+                                            "name": "Index",
+                                            "type": "uint8"
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "Flags Override",
+                                    "type": "subrecordArray",
+                                    "sortKey": {
+                                        "signature": "PFO2",
+                                        "type": "subrecord",
+                                        "def": {
+                                            "name": "Data",
+                                            "type": "struct",
+                                            "fields": [
+                                                {
+                                                    "name": "Set General Flags",
+                                                    "type": "uint32",
+                                                    "format": {
+                                                        "def": "PKDTFlags"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "Clear General Flags",
+                                                    "type": "uint32",
+                                                    "format": {
+                                                        "def": "PKDTFlags"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "Set Interrupt Flags",
+                                                    "type": "uint16",
+                                                    "format": {
+                                                        "def": "PKDTInterruptFlags"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "Clear Interrupt Flags",
+                                                    "type": "uint16",
+                                                    "format": {
+                                                        "def": "PKDTInterruptFlags"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "Preferred Speed Override",
+                                                    "type": "uint8",
+                                                    "format": {
+                                                        "0": "Walk",
+                                                        "1": "Jog",
+                                                        "2": "Run",
+                                                        "3": "Fast Walk"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "Unknown",
+                                                    "type": "bytes",
+                                                    "size": 3
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "Unknown",
+                                    "type": "subrecordArray",
+                                    "sortKey": {
+                                        "signature": "PFOR",
+                                        "type": "subrecord",
+                                        "def": {
+                                            "name": "Unknown",
+                                            "type": "bytes",
+                                            "size": 0
+                                        }
+                                    }
+                                }
+                            ],
+                            "required": true
+                        }
+                    }
+                ]
+            },
+            {
+                "def": "UNAMs"
+            },
+            {
+                "name": "OnBegin",
+                "type": "multiStruct",
+                "subrecords": [
+                    {
+                        "signature": "POBA",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "OnBegin Marker",
+                            "type": "empty"
+                        },
+                        "required": true
+                    },
+                    {
+                        "signature": "INAM",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Idle",
+                            "type": "formId",
+                            "signatures": [
+                                "IDLE",
+                                "NULL"
+                            ]
+                        },
+                        "required": true
+                    },
+                    {
+                        "signature": "SCHR",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 0
+                        }
+                    },
+                    {
+                        "signature": "SCTX",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 0
+                        }
+                    },
+                    {
+                        "signature": "QNAM",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 0
+                        }
+                    },
+                    {
+                        "signature": "TNAM",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 0
+                        }
+                    },
+                    {
+                        "def": "PDTOs"
+                    }
+                ]
+            },
+            {
+                "name": "OnEnd",
+                "type": "multiStruct",
+                "subrecords": [
+                    {
+                        "signature": "POEA",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "OnEnd Marker",
+                            "type": "empty"
+                        },
+                        "required": true
+                    },
+                    {
+                        "signature": "INAM",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Idle",
+                            "type": "formId",
+                            "signatures": [
+                                "IDLE",
+                                "NULL"
+                            ]
+                        },
+                        "required": true
+                    },
+                    {
+                        "signature": "SCHR",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 0
+                        }
+                    },
+                    {
+                        "signature": "SCTX",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 0
+                        }
+                    },
+                    {
+                        "signature": "QNAM",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 0
+                        }
+                    },
+                    {
+                        "signature": "TNAM",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 0
+                        }
+                    },
+                    {
+                        "def": "PDTOs"
+                    }
+                ]
+            },
+            {
+                "name": "OnChange",
+                "type": "multiStruct",
+                "subrecords": [
+                    {
+                        "signature": "POCA",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "OnChange Marker",
+                            "type": "empty"
+                        },
+                        "required": true
+                    },
+                    {
+                        "signature": "INAM",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Idle",
+                            "type": "formId",
+                            "signatures": [
+                                "IDLE",
+                                "NULL"
+                            ]
+                        },
+                        "required": true
+                    },
+                    {
+                        "signature": "SCHR",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 0
+                        }
+                    },
+                    {
+                        "signature": "SCDA",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 0
+                        }
+                    },
+                    {
+                        "signature": "SCTX",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 0
+                        }
+                    },
+                    {
+                        "signature": "QNAM",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 0
+                        }
+                    },
+                    {
+                        "signature": "TNAM",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 0
+                        }
+                    },
+                    {
+                        "def": "PDTOs"
+                    }
+                ]
+            }
+        ]
+    }
+}

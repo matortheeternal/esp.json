@@ -1,0 +1,237 @@
+{
+    "name": "Available Morphs",
+    "type": "multiStruct",
+    "subrecords": [
+        {
+            "signature": "MPAI",
+            "type": "subrecord",
+            "def": {
+                "name": "Unknown",
+                "type": "bytes",
+                "size": 0
+            }
+        },
+        {
+            "signature": "MPAV",
+            "type": "subrecord",
+            "def": {
+                "name": "Nose Variants",
+                "type": "struct",
+                "fields": [
+                    {
+                        "def": "NoseMorphFlags"
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "MPAI",
+            "type": "subrecord",
+            "def": {
+                "name": "Unknown",
+                "type": "bytes",
+                "size": 0
+            }
+        },
+        {
+            "signature": "MPAV",
+            "type": "subrecord",
+            "def": {
+                "name": "Brow Variants",
+                "type": "struct",
+                "fields": [
+                    {
+                        "def": "BrowMorphFlags"
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "MPAI",
+            "type": "subrecord",
+            "def": {
+                "name": "Unknown",
+                "type": "bytes",
+                "size": 0
+            }
+        },
+        {
+            "signature": "MPAV",
+            "type": "subrecord",
+            "def": {
+                "name": "Eye Variants",
+                "type": "struct",
+                "fields": [
+                    {
+                        "def": "EyesMorphFlags01"
+                    },
+                    {
+                        "def": "EyesMorphFlags02"
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 3
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "MPAI",
+            "type": "subrecord",
+            "def": {
+                "name": "Unknown",
+                "type": "bytes",
+                "size": 0
+            }
+        },
+        {
+            "signature": "MPAV",
+            "type": "subrecord",
+            "def": {
+                "name": "Lip Variants",
+                "type": "struct",
+                "fields": [
+                    {
+                        "def": "LipMorphFlags"
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    }
+                ]
+            }
+        }
+    ]
+}

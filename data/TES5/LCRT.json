@@ -1,0 +1,15 @@
+{
+    "signature": "LCRT",
+    "type": "record",
+    "name": "Location Reference Type",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "CNAM"
+            }
+        ]
+    }
+}

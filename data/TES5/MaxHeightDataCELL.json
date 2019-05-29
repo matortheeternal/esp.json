@@ -1,0 +1,25 @@
+{
+    "signature": "MHDT",
+    "type": "subrecord",
+    "def": {
+        "name": "Max Height Data",
+        "type": "struct",
+        "fields": [
+            {
+                "name": "Offset",
+                "type": "float",
+                "formatter": ""
+            },
+            {
+                "name": "Rows",
+                "entryDef": {
+                    "name": "Columns",
+                    "type": "bytes",
+                    "size": 32
+                },
+                "type": "array",
+                "size": 32
+            }
+        ]
+    }
+}

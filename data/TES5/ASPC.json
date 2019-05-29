@@ -1,0 +1,49 @@
+{
+    "signature": "ASPC",
+    "type": "record",
+    "name": "Acoustic Space",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "OBND",
+                "required": true
+            },
+            {
+                "signature": "SNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Ambient Sound",
+                    "type": "formId",
+                    "signatures": [
+                        "SNDR"
+                    ]
+                }
+            },
+            {
+                "signature": "RDAT",
+                "type": "subrecord",
+                "def": {
+                    "name": "Use Sound from Region (Interiors Only)",
+                    "type": "formId",
+                    "signatures": [
+                        "REGN"
+                    ]
+                }
+            },
+            {
+                "signature": "BNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Environment Type (reverb)",
+                    "type": "formId",
+                    "signatures": [
+                        "REVB"
+                    ]
+                }
+            }
+        ]
+    }
+}

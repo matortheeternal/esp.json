@@ -1,0 +1,67 @@
+{
+    "signature": "KEYM",
+    "type": "record",
+    "name": "Key",
+    "def": {
+        "flags": {
+            "2": "Non-Playable"
+        },
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "VMAD"
+            },
+            {
+                "def": "OBND",
+                "required": true
+            },
+            {
+                "def": "FULL",
+                "required": true
+            },
+            {
+                "def": "MODL"
+            },
+            {
+                "def": "ICON"
+            },
+            {
+                "def": "DEST"
+            },
+            {
+                "def": "YNAM"
+            },
+            {
+                "def": "ZNAM"
+            },
+            {
+                "def": "KSIZ"
+            },
+            {
+                "def": "KWDAs"
+            },
+            {
+                "signature": "DATA",
+                "type": "subrecord",
+                "def": {
+                    "name": "",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Value",
+                            "type": "int32"
+                        },
+                        {
+                            "name": "Weight",
+                            "type": "float",
+                            "formatter": ""
+                        }
+                    ]
+                },
+                "required": true
+            }
+        ]
+    }
+}

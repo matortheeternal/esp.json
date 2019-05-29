@@ -1,0 +1,99 @@
+{
+    "name": "Tint Masks",
+    "type": "subrecordArray",
+    "sortKey": {
+        "name": "Tint Assets",
+        "type": "multiStruct",
+        "subrecords": [
+            {
+                "name": "Tint Layer",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "name": "Texture",
+                    "type": "multiStruct",
+                    "subrecords": [
+                        {
+                            "signature": "TINI",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Index",
+                                "type": "uint16"
+                            }
+                        },
+                        {
+                            "signature": "TINT",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "File Name",
+                                "type": "cstring",
+                                "maxSize": 0
+                            }
+                        },
+                        {
+                            "signature": "TINP",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Mask Type",
+                                "type": "uint16",
+                                "format": {
+                                    "def": "TintMaskTypeEnum"
+                                }
+                            }
+                        },
+                        {
+                            "signature": "TIND",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Preset Default",
+                                "type": "formId",
+                                "signatures": [
+                                    "CLFM",
+                                    "NULL"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Presets",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "name": "Preset",
+                    "type": "multiStruct",
+                    "subrecords": [
+                        {
+                            "signature": "TINC",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Color",
+                                "type": "formId",
+                                "signatures": [
+                                    "CLFM",
+                                    "NULL"
+                                ]
+                            }
+                        },
+                        {
+                            "signature": "TINV",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Default Value",
+                                "type": "float",
+                                "formatter": ""
+                            }
+                        },
+                        {
+                            "signature": "TIRS",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Index",
+                                "type": "uint16"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

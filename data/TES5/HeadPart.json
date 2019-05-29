@@ -1,0 +1,29 @@
+{
+    "name": "Head Part",
+    "type": "multiStruct",
+    "subrecords": [
+        {
+            "signature": "INDX",
+            "type": "subrecord",
+            "def": {
+                "name": "Head Part Number",
+                "type": "uint32"
+            }
+        },
+        {
+            "signature": "HEAD",
+            "type": "subrecord",
+            "def": {
+                "name": "Head",
+                "type": "formId",
+                "signatures": [
+                    "HDPT",
+                    "NULL"
+                ]
+            }
+        }
+    ],
+    "sortKey": [
+        0
+    ]
+}

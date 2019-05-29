@@ -22,7 +22,7 @@ let convertFile = function(filename, game) {
         converter = new Converter(filePath);
     try {
         let outputFolder = path.resolve('output', game);
-        fs.mkdirSync(outputFolder);
+        if (!fs.existsSync(outputFolder)) fs.mkdirSync(outputFolder);
         converter.setOutputFolder(outputFolder);
         convertProcedures(converter);
     } catch (x) {

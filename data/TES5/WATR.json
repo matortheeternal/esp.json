@@ -1,0 +1,217 @@
+{
+    "signature": "WATR",
+    "type": "record",
+    "name": "Water",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "FULL"
+            },
+            {
+                "name": "Unused",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "signature": "NNAM",
+                    "type": "subrecord",
+                    "def": {
+                        "name": "Noise Map",
+                        "type": "cstring",
+                        "maxSize": 0
+                    },
+                    "required": true
+                }
+            },
+            {
+                "signature": "ANAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Opacity",
+                    "type": "uint8"
+                }
+            },
+            {
+                "signature": "FNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "0": "Causes Damage",
+                        "1": "Unknown 1",
+                        "2": "Unknown 2",
+                        "5": "Unknown 5",
+                        "6": "Unknown 6",
+                        "7": "Unknown 7"
+                    }
+                }
+            },
+            {
+                "signature": "MNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 0
+                }
+            },
+            {
+                "signature": "TNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Material",
+                    "type": "formId",
+                    "signatures": [
+                        "MATT"
+                    ]
+                }
+            },
+            {
+                "signature": "SNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Open Sound",
+                    "type": "formId",
+                    "signatures": [
+                        "SNDR",
+                        "NULL"
+                    ]
+                }
+            },
+            {
+                "signature": "XNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Spell",
+                    "type": "formId",
+                    "signatures": [
+                        "SPEL"
+                    ]
+                }
+            },
+            {
+                "signature": "INAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Image Space",
+                    "type": "formId",
+                    "signatures": [
+                        "IMGS"
+                    ]
+                }
+            },
+            {
+                "signature": "DATA",
+                "type": "subrecord",
+                "def": {
+                    "name": "Damage Per Second",
+                    "type": "uint16"
+                }
+            },
+            null,
+            {
+                "signature": "GNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 0
+                }
+            },
+            {
+                "signature": "NAM0",
+                "type": "subrecord",
+                "def": {
+                    "name": "Linear Velocity",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "X",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Y",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Z",
+                            "type": "float",
+                            "formatter": ""
+                        }
+                    ]
+                },
+                "required": true
+            },
+            {
+                "signature": "NAM1",
+                "type": "subrecord",
+                "def": {
+                    "name": "Angular Velocity",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "X",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Y",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Z",
+                            "type": "float",
+                            "formatter": ""
+                        }
+                    ]
+                },
+                "required": true
+            },
+            {
+                "signature": "NAM2",
+                "type": "subrecord",
+                "def": {
+                    "name": "Noise Layer One - Noise Texture",
+                    "type": "cstring",
+                    "maxSize": 0
+                },
+                "required": true
+            },
+            {
+                "signature": "NAM3",
+                "type": "subrecord",
+                "def": {
+                    "name": "Noise Layer Two - Noise Texture",
+                    "type": "cstring",
+                    "maxSize": 0
+                },
+                "required": true
+            },
+            {
+                "signature": "NAM4",
+                "type": "subrecord",
+                "def": {
+                    "name": "Noise Layer Three - Noise Texture",
+                    "type": "cstring",
+                    "maxSize": 0
+                },
+                "required": true
+            },
+            {
+                "signature": "NAM5",
+                "type": "subrecord",
+                "def": {
+                    "name": "Flow Normals - Noise Texture",
+                    "type": "cstring",
+                    "maxSize": 0
+                },
+                "required": true
+            }
+        ]
+    }
+}

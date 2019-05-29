@@ -1,0 +1,38 @@
+{
+    "name": "Data",
+    "type": "struct",
+    "fields": [
+        {
+            "name": "Time",
+            "type": "float",
+            "formatter": ""
+        },
+        {
+            "name": "Red",
+            "type": "float",
+            "formatter": "",
+            "required": true
+        },
+        {
+            "name": "Green",
+            "type": "float",
+            "formatter": "",
+            "required": true
+        },
+        {
+            "name": "Blue",
+            "type": "float",
+            "formatter": "",
+            "required": true
+        },
+        {
+            "name": "Alpha",
+            "type": "float",
+            "formatter": "",
+            "required": true
+        }
+    ],
+    "sortKey": [
+        0
+    ]
+}

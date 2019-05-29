@@ -1,0 +1,123 @@
+{
+    "name": "Properties",
+    "entryDef": {
+        "name": "Property",
+        "type": "struct",
+        "fields": [
+            {
+                "name": "propertyName",
+                "type": "string",
+                "maxSize": 0
+            },
+            {
+                "name": "Type",
+                "type": "uint8",
+                "format": {
+                    "def": "PropTypeEnum"
+                }
+            },
+            {
+                "name": "Flags",
+                "type": "uint8",
+                "format": {
+                    "0": "",
+                    "1": "Edited",
+                    "2": "",
+                    "3": "Removed"
+                },
+                "defaultEditValue": "'Edited'"
+            },
+            {
+                "name": "Value",
+                "type": "union",
+                "decider": [
+                    {
+                        "def": "Null"
+                    },
+                    {
+                        "def": "ScriptPropertyObject"
+                    },
+                    {
+                        "name": "String",
+                        "type": "string",
+                        "maxSize": 0,
+                        "encoding": "EncodingVMAD"
+                    },
+                    {
+                        "name": "Int32",
+                        "type": "int32"
+                    },
+                    {
+                        "name": "Float",
+                        "type": "float",
+                        "formatter": ""
+                    },
+                    {
+                        "name": "Bool",
+                        "type": "uint8",
+                        "format": {
+                            "0": "False",
+                            "1": "True"
+                        }
+                    },
+                    {
+                        "name": "Array of Object",
+                        "entryDef": {
+                            "def": "ScriptPropertyObject"
+                        },
+                        "type": "array",
+                        "size": -1
+                    },
+                    {
+                        "name": "Array of String",
+                        "entryDef": {
+                            "name": "Element",
+                            "type": "string",
+                            "maxSize": 0,
+                            "encoding": "EncodingVMAD"
+                        },
+                        "type": "array",
+                        "size": -1
+                    },
+                    {
+                        "name": "Array of Int32",
+                        "entryDef": {
+                            "name": "Element",
+                            "type": "int32"
+                        },
+                        "type": "array",
+                        "size": -1
+                    },
+                    {
+                        "name": "Array of Float",
+                        "entryDef": {
+                            "name": "Element",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        "type": "array",
+                        "size": -1
+                    },
+                    {
+                        "name": "Array of Bool",
+                        "entryDef": {
+                            "name": "Element",
+                            "type": "uint8",
+                            "format": {
+                                "0": "False",
+                                "1": "True"
+                            }
+                        },
+                        "type": "array",
+                        "size": -1
+                    }
+                ]
+            }
+        ],
+        "sortKey": [
+            0
+        ]
+    },
+    "type": "array",
+    "size": -2
+}

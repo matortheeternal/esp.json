@@ -1,0 +1,71 @@
+{
+    "signature": "IDLM",
+    "type": "record",
+    "name": "Idle Marker",
+    "def": {
+        "flags": {
+            "29": "Child Can Use"
+        },
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "OBND",
+                "required": true
+            },
+            {
+                "signature": "IDLF",
+                "type": "subrecord",
+                "def": {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "0": "Run in Sequence",
+                        "1": "Unknown 1",
+                        "2": "Do Once",
+                        "3": "Unknown 3",
+                        "4": "Ignored by Sandbox"
+                    }
+                }
+            },
+            {
+                "signature": "IDLC",
+                "type": "subrecord",
+                "def": {
+                    "name": "Animation Count",
+                    "type": "uint8"
+                }
+            },
+            {
+                "signature": "IDLT",
+                "type": "subrecord",
+                "def": {
+                    "name": "Idle Timer Setting",
+                    "type": "float",
+                    "formatter": ""
+                },
+                "required": true
+            },
+            {
+                "signature": "IDLA",
+                "type": "subrecord",
+                "def": {
+                    "name": "Animations",
+                    "entryDef": {
+                        "name": "Animation",
+                        "type": "formId",
+                        "signatures": [
+                            "IDLE"
+                        ]
+                    },
+                    "type": "array",
+                    "size": 0
+                }
+            },
+            {
+                "def": "MODL"
+            }
+        ]
+    }
+}

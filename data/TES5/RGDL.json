@@ -1,0 +1,12 @@
+{
+    "signature": "RGDL",
+    "type": "record",
+    "name": "RGDL",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            }
+        ]
+    }
+}

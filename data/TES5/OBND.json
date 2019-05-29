@@ -1,0 +1,34 @@
+{
+    "signature": "OBND",
+    "type": "subrecord",
+    "def": {
+        "name": "Object Bounds",
+        "type": "struct",
+        "fields": [
+            {
+                "name": "X1",
+                "type": "int16"
+            },
+            {
+                "name": "Y1",
+                "type": "int16"
+            },
+            {
+                "name": "Z1",
+                "type": "int16"
+            },
+            {
+                "name": "X2",
+                "type": "int16"
+            },
+            {
+                "name": "Y2",
+                "type": "int16"
+            },
+            {
+                "name": "Z2",
+                "type": "int16"
+            }
+        ]
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "signature": "KYWD",
+    "type": "record",
+    "name": "Keyword",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "CNAM"
+            }
+        ]
+    }
+}

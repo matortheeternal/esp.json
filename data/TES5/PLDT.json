@@ -1,0 +1,141 @@
+{
+    "signature": "PLDT",
+    "type": "subrecord",
+    "def": {
+        "name": "Location",
+        "type": "struct",
+        "fields": [
+            {
+                "name": "Type",
+                "type": "int32",
+                "format": {
+                    "def": "LocationEnum"
+                }
+            },
+            {
+                "name": "Location Value",
+                "type": "union",
+                "decider": [
+                    {
+                        "name": "Reference",
+                        "type": "formId",
+                        "signatures": [
+                            "NULL",
+                            "DOOR",
+                            "PLYR",
+                            "ACHR",
+                            "REFR",
+                            "PGRE",
+                            "PHZD",
+                            "PMIS",
+                            "PARW",
+                            "PBAR",
+                            "PBEA",
+                            "PCON",
+                            "PFLA"
+                        ]
+                    },
+                    {
+                        "name": "Cell",
+                        "type": "formId",
+                        "signatures": [
+                            "NULL",
+                            "CELL"
+                        ]
+                    },
+                    {
+                        "name": "Near Package Start Location",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Near Editor Location",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Object ID",
+                        "type": "formId",
+                        "signatures": [
+                            "NULL",
+                            "ACTI",
+                            "DOOR",
+                            "STAT",
+                            "MSTT",
+                            "FURN",
+                            "SPEL",
+                            "SCRL",
+                            "NPC_",
+                            "CONT",
+                            "ARMO",
+                            "AMMO",
+                            "MISC",
+                            "WEAP",
+                            "BOOK",
+                            "KEYM",
+                            "ALCH",
+                            "LIGH",
+                            "FACT",
+                            "FLST",
+                            "IDLM",
+                            "SHOU"
+                        ]
+                    },
+                    {
+                        "name": "Object Type",
+                        "type": "uint32",
+                        "format": {
+                            "def": "ObjectTypeEnum"
+                        }
+                    },
+                    {
+                        "name": "Keyword",
+                        "type": "formId",
+                        "signatures": [
+                            "NULL",
+                            "KYWD"
+                        ]
+                    },
+                    {
+                        "name": "Unused",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Alias",
+                        "type": "int32",
+                        "format": {
+                            "def": "PackageLocationAliasToStr"
+                        }
+                    },
+                    {
+                        "name": "Reference",
+                        "type": "int32",
+                        "format": {
+                            "def": "PackageLocationAliasToStr"
+                        }
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    }
+                ]
+            },
+            {
+                "name": "Radius",
+                "type": "int32"
+            }
+        ]
+    }
+}

@@ -1,0 +1,59 @@
+{
+    "signature": "SHOU",
+    "type": "record",
+    "name": "Shout",
+    "def": {
+        "flags": {
+            "7": "Treat spells as powers"
+        },
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "FULL"
+            },
+            {
+                "def": "MDOB"
+            },
+            {
+                "def": "DESC"
+            },
+            {
+                "name": "Words of Power",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "signature": "SNAM",
+                    "type": "subrecord",
+                    "def": {
+                        "name": "",
+                        "type": "struct",
+                        "fields": [
+                            {
+                                "name": "Word",
+                                "type": "formId",
+                                "signatures": [
+                                    "WOOP",
+                                    "NULL"
+                                ]
+                            },
+                            {
+                                "name": "Spell",
+                                "type": "formId",
+                                "signatures": [
+                                    "SPEL",
+                                    "NULL"
+                                ]
+                            },
+                            {
+                                "name": "Recovery Time",
+                                "type": "float",
+                                "formatter": ""
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,107 @@
+{
+    "name": "Target Data",
+    "type": "struct",
+    "fields": [
+        {
+            "name": "Type",
+            "type": "int32",
+            "format": {
+                "0": "Specific Reference",
+                "1": "Object ID",
+                "2": "Object Type",
+                "3": "Linked Reference",
+                "4": "Ref Alias",
+                "5": "Unknown 5",
+                "6": "Self"
+            }
+        },
+        {
+            "name": "Target",
+            "type": "union",
+            "decider": [
+                {
+                    "name": "Reference",
+                    "type": "formId",
+                    "signatures": [
+                        "NULL",
+                        "PLYR",
+                        "ACHR",
+                        "REFR",
+                        "PGRE",
+                        "PHZD",
+                        "PMIS",
+                        "PARW",
+                        "PBAR",
+                        "PBEA",
+                        "PCON",
+                        "PFLA"
+                    ]
+                },
+                {
+                    "name": "Object ID",
+                    "type": "formId",
+                    "signatures": [
+                        "NULL",
+                        "ACTI",
+                        "DOOR",
+                        "STAT",
+                        "MSTT",
+                        "FURN",
+                        "SPEL",
+                        "SCRL",
+                        "NPC_",
+                        "CONT",
+                        "ARMO",
+                        "AMMO",
+                        "MISC",
+                        "WEAP",
+                        "BOOK",
+                        "KEYM",
+                        "ALCH",
+                        "INGR",
+                        "LIGH",
+                        "FACT",
+                        "FLST",
+                        "IDLM",
+                        "SHOU",
+                        "SOUN",
+                        "TXST",
+                        "PROJ"
+                    ]
+                },
+                {
+                    "name": "Object Type",
+                    "type": "uint32",
+                    "format": {
+                        "def": "ObjectTypeEnum"
+                    }
+                },
+                {
+                    "name": "Reference",
+                    "type": "formId"
+                },
+                {
+                    "name": "Alias",
+                    "type": "int32",
+                    "format": {
+                        "def": "PackageLocationAliasToStr"
+                    }
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                }
+            ]
+        },
+        {
+            "name": "Count / Distance",
+            "type": "int32"
+        }
+    ]
+}

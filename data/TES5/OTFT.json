@@ -1,0 +1,29 @@
+{
+    "signature": "OTFT",
+    "type": "record",
+    "name": "Outfit",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "signature": "INAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Items",
+                    "entryDef": {
+                        "name": "Item",
+                        "type": "formId",
+                        "signatures": [
+                            "ARMO",
+                            "LVLI"
+                        ]
+                    },
+                    "type": "array",
+                    "size": 0
+                }
+            }
+        ]
+    }
+}

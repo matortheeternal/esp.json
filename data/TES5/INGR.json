@@ -1,0 +1,100 @@
+{
+    "signature": "INGR",
+    "type": "record",
+    "name": "Ingredient",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "VMAD"
+            },
+            {
+                "def": "OBND",
+                "required": true
+            },
+            {
+                "def": "FULL"
+            },
+            {
+                "def": "KSIZ"
+            },
+            {
+                "def": "KWDAs"
+            },
+            {
+                "def": "MODL"
+            },
+            {
+                "def": "ICON"
+            },
+            {
+                "def": "DEST"
+            },
+            {
+                "def": "ETYP"
+            },
+            {
+                "def": "YNAM"
+            },
+            {
+                "def": "ZNAM"
+            },
+            {
+                "signature": "DATA",
+                "type": "subrecord",
+                "def": {
+                    "name": "",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Value",
+                            "type": "int32"
+                        },
+                        {
+                            "name": "Weight",
+                            "type": "float",
+                            "formatter": ""
+                        }
+                    ]
+                },
+                "required": true
+            },
+            {
+                "signature": "ENIT",
+                "type": "subrecord",
+                "def": {
+                    "name": "Effect Data",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Ingredient Value",
+                            "type": "int32"
+                        },
+                        {
+                            "name": "Flags",
+                            "type": "uint32",
+                            "format": {
+                                "0": "No auto-calculation",
+                                "1": "Food item",
+                                "2": "Unknown 3",
+                                "3": "Unknown 4",
+                                "4": "Unknown 5",
+                                "5": "Unknown 6",
+                                "6": "Unknown 7",
+                                "7": "Unknown 8",
+                                "8": "References Persist"
+                            }
+                        }
+                    ]
+                },
+                "required": true
+            },
+            {
+                "def": "Effects",
+                "required": true
+            }
+        ]
+    }
+}

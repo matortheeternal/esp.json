@@ -1,0 +1,29 @@
+{
+    "signature": "MATO",
+    "type": "record",
+    "name": "Material Object",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "MODL"
+            },
+            {
+                "name": "Property Data",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "signature": "DNAM",
+                    "type": "subrecord",
+                    "def": {
+                        "name": "Data",
+                        "type": "bytes",
+                        "size": 0
+                    }
+                }
+            },
+            null
+        ]
+    }
+}

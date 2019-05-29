@@ -1,0 +1,1186 @@
+{
+    "signature": "RACE",
+    "type": "record",
+    "name": "Race",
+    "def": {
+        "flags": {
+            "19": "Critter?"
+        },
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "FULL"
+            },
+            {
+                "def": "DESC",
+                "required": true
+            },
+            {
+                "def": "SPCT"
+            },
+            {
+                "def": "SPLOs"
+            },
+            {
+                "signature": "WNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Skin",
+                    "type": "formId",
+                    "signatures": [
+                        "ARMO",
+                        "NULL"
+                    ]
+                }
+            },
+            {
+                "def": "BODTBOD2"
+            },
+            {
+                "def": "KSIZ"
+            },
+            {
+                "def": "KWDAs"
+            },
+            {
+                "signature": "DATA",
+                "type": "subrecord",
+                "def": {
+                    "name": "",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Skill Boosts",
+                            "entryDef": {
+                                "name": "Skill Boost",
+                                "type": "struct",
+                                "fields": [
+                                    {
+                                        "name": "Skill",
+                                        "type": "int8",
+                                        "format": {
+                                            "def": "ActorValueEnum"
+                                        }
+                                    },
+                                    {
+                                        "name": "Boost",
+                                        "type": "int8"
+                                    }
+                                ],
+                                "sortKey": [
+                                    0
+                                ]
+                            },
+                            "type": "array",
+                            "size": 7
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 2
+                        },
+                        {
+                            "name": "Male Height",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Female Height",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Male Weight",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Female Weight",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "def": "RACE_DATAFlags01"
+                        },
+                        {
+                            "name": "Starting Health",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Starting Magicka",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Starting Stamina",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Base Carry Weight",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Base Mass",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Acceleration rate",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Deceleration rate",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Size",
+                            "type": "uint32",
+                            "format": {
+                                "0": "Small",
+                                "1": "Medium",
+                                "2": "Large",
+                                "3": "Extra Large"
+                            }
+                        },
+                        {
+                            "name": "Head Biped Object",
+                            "type": "int32",
+                            "format": {
+                                "def": "BipedObjectEnum"
+                            }
+                        },
+                        {
+                            "name": "Hair Biped Object",
+                            "type": "int32",
+                            "format": {
+                                "def": "BipedObjectEnum"
+                            }
+                        },
+                        {
+                            "name": "Injured Health Pct",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Shield Biped Object",
+                            "type": "int32",
+                            "format": {
+                                "def": "BipedObjectEnum"
+                            }
+                        },
+                        {
+                            "name": "Health Regen",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Magicka Regen",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Stamina Regen",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Unarmed Damage",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Unarmed Reach",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Body Biped Object",
+                            "type": "int32",
+                            "format": {
+                                "def": "BipedObjectEnum"
+                            }
+                        },
+                        {
+                            "name": "Aim Angle Tolerance",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Flight Radius",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Angular Acceleration Rate",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Angular Tolerance",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Flags 2",
+                            "type": "uint32",
+                            "format": {
+                                "0": "Use Advanced Avoidance",
+                                "1": "Non-Hostile",
+                                "2": "Unknown 2",
+                                "3": "Unknown 3",
+                                "4": "Allow Mounted Combat"
+                            }
+                        },
+                        {
+                            "name": "Mount Data",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "Offset X",
+                                    "type": "float",
+                                    "formatter": "",
+                                    "required": true
+                                },
+                                {
+                                    "name": "Offset Y",
+                                    "type": "float",
+                                    "formatter": ""
+                                },
+                                {
+                                    "name": "Unknown",
+                                    "type": "float",
+                                    "formatter": ""
+                                },
+                                {
+                                    "name": "Unknown",
+                                    "type": "float",
+                                    "formatter": "",
+                                    "required": true
+                                },
+                                {
+                                    "name": "Unknown",
+                                    "type": "float",
+                                    "formatter": ""
+                                },
+                                {
+                                    "name": "Unknown",
+                                    "type": "float",
+                                    "formatter": "",
+                                    "required": true
+                                },
+                                {
+                                    "name": "Unknown",
+                                    "type": "float",
+                                    "formatter": ""
+                                },
+                                {
+                                    "name": "Unknown",
+                                    "type": "float",
+                                    "formatter": "",
+                                    "required": true
+                                },
+                                {
+                                    "name": "Unknown",
+                                    "type": "float",
+                                    "formatter": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "required": true
+            },
+            {
+                "signature": "MNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Male Marker",
+                    "type": "empty"
+                }
+            },
+            {
+                "signature": "ANAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Male Skeletal Model",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "def": "MODT"
+            },
+            {
+                "signature": "FNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Female Marker",
+                    "type": "empty"
+                }
+            },
+            {
+                "signature": "ANAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Female Skeletal Model",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "def": "MODT"
+            },
+            {
+                "signature": "NAM2",
+                "type": "subrecord",
+                "def": {
+                    "name": "Marker NAM2 #1",
+                    "type": "empty"
+                }
+            },
+            {
+                "name": "Movement Type Names",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "signature": "MTNM",
+                    "type": "subrecord",
+                    "def": {
+                        "name": "Name",
+                        "type": "cstring",
+                        "maxSize": 0
+                    }
+                }
+            },
+            {
+                "signature": "VTCK",
+                "type": "subrecord",
+                "def": {
+                    "name": "Voices",
+                    "entryDef": {
+                        "name": "Voice",
+                        "type": "formId",
+                        "signatures": [
+                            "VTYP"
+                        ]
+                    },
+                    "type": "array",
+                    "size": 0
+                }
+            },
+            {
+                "signature": "DNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Decapitate Armors",
+                    "entryDef": {
+                        "name": "Decapitate Armor",
+                        "type": "formId",
+                        "signatures": [
+                            "NULL",
+                            "ARMO"
+                        ]
+                    },
+                    "type": "array",
+                    "size": 0
+                }
+            },
+            {
+                "signature": "HCLF",
+                "type": "subrecord",
+                "def": {
+                    "name": "Default Hair Colors",
+                    "entryDef": {
+                        "name": "Default Hair Color",
+                        "type": "formId",
+                        "signatures": [
+                            "NULL",
+                            "CLFM"
+                        ]
+                    },
+                    "type": "array",
+                    "size": 0
+                }
+            },
+            {
+                "signature": "TINL",
+                "type": "subrecord",
+                "def": {
+                    "name": "Total Number of Tints in List",
+                    "type": "uint16"
+                }
+            },
+            {
+                "signature": "PNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "FaceGen - Main clamp",
+                    "type": "float",
+                    "formatter": ""
+                },
+                "required": true
+            },
+            {
+                "signature": "UNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "FaceGen - Face clamp",
+                    "type": "float",
+                    "formatter": ""
+                },
+                "required": true
+            },
+            {
+                "signature": "ATKR",
+                "type": "subrecord",
+                "def": {
+                    "name": "Attack Race",
+                    "type": "formId",
+                    "signatures": [
+                        "RACE"
+                    ]
+                },
+                "required": true
+            },
+            {
+                "name": "Attacks",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "def": "AttackData"
+                }
+            },
+            {
+                "name": "Body Data",
+                "type": "multiStruct",
+                "subrecords": [
+                    {
+                        "signature": "NAM1",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Body Data Marker",
+                            "type": "empty"
+                        },
+                        "required": true
+                    },
+                    {
+                        "name": "Male Body Data",
+                        "type": "multiStruct",
+                        "subrecords": [
+                            {
+                                "signature": "MNAM",
+                                "type": "subrecord",
+                                "def": {
+                                    "name": "Male Data Marker",
+                                    "type": "empty"
+                                }
+                            },
+                            {
+                                "name": "Parts",
+                                "type": "subrecordArray",
+                                "sortKey": {
+                                    "name": "Part",
+                                    "type": "multiStruct",
+                                    "subrecords": [
+                                        {
+                                            "signature": "INDX",
+                                            "type": "subrecord",
+                                            "def": {
+                                                "name": "Index",
+                                                "type": "uint32",
+                                                "format": {
+                                                    "def": "BodyPartIndexEnum"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "def": "MODL"
+                                        }
+                                    ],
+                                    "sortKey": [
+                                        0
+                                    ]
+                                },
+                                "required": true
+                            }
+                        ],
+                        "required": true
+                    },
+                    {
+                        "name": "Female Body Data",
+                        "type": "multiStruct",
+                        "subrecords": [
+                            {
+                                "signature": "FNAM",
+                                "type": "subrecord",
+                                "def": {
+                                    "name": "Female Data Marker",
+                                    "type": "empty"
+                                },
+                                "required": true
+                            },
+                            {
+                                "name": "Parts",
+                                "type": "subrecordArray",
+                                "sortKey": {
+                                    "name": "Part",
+                                    "type": "multiStruct",
+                                    "subrecords": [
+                                        {
+                                            "signature": "INDX",
+                                            "type": "subrecord",
+                                            "def": {
+                                                "name": "Index",
+                                                "type": "uint32",
+                                                "format": {
+                                                    "def": "BodyPartIndexEnum"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "def": "MODL"
+                                        }
+                                    ],
+                                    "sortKey": [
+                                        0
+                                    ]
+                                },
+                                "required": true
+                            }
+                        ],
+                        "required": true
+                    }
+                ],
+                "required": true
+            },
+            {
+                "signature": "HNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Hairs",
+                    "entryDef": {
+                        "name": "Hair",
+                        "type": "formId",
+                        "signatures": [
+                            "HDPT",
+                            "NULL"
+                        ]
+                    },
+                    "type": "array",
+                    "size": 0
+                }
+            },
+            {
+                "signature": "ENAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Eyes",
+                    "entryDef": {
+                        "name": "Eye",
+                        "type": "formId",
+                        "signatures": [
+                            "EYES",
+                            "NULL"
+                        ]
+                    },
+                    "type": "array",
+                    "size": 0
+                }
+            },
+            {
+                "signature": "GNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Body Part Data",
+                    "type": "formId",
+                    "signatures": [
+                        "BPTD",
+                        "NULL"
+                    ]
+                }
+            },
+            {
+                "signature": "NAM2",
+                "type": "subrecord",
+                "def": {
+                    "name": "Marker NAM2 #2",
+                    "type": "empty"
+                }
+            },
+            {
+                "signature": "NAM3",
+                "type": "subrecord",
+                "def": {
+                    "name": "Marker NAM3 #3",
+                    "type": "empty"
+                },
+                "required": true
+            },
+            {
+                "name": "Male Behavior Graph",
+                "type": "multiStruct",
+                "subrecords": [
+                    {
+                        "signature": "MNAM",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Male Data Marker",
+                            "type": "empty"
+                        }
+                    },
+                    {
+                        "def": "MODL"
+                    }
+                ],
+                "required": true
+            },
+            {
+                "name": "Female Behavior Graph",
+                "type": "multiStruct",
+                "subrecords": [
+                    {
+                        "signature": "FNAM",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Female Data Marker",
+                            "type": "empty"
+                        },
+                        "required": true
+                    },
+                    {
+                        "def": "MODL"
+                    }
+                ],
+                "required": true
+            },
+            {
+                "signature": "NAM4",
+                "type": "subrecord",
+                "def": {
+                    "name": "Material Type",
+                    "type": "formId",
+                    "signatures": [
+                        "MATT",
+                        "NULL"
+                    ]
+                }
+            },
+            {
+                "signature": "NAM5",
+                "type": "subrecord",
+                "def": {
+                    "name": "Impact Data Set",
+                    "type": "formId",
+                    "signatures": [
+                        "IPDS",
+                        "NULL"
+                    ]
+                }
+            },
+            {
+                "signature": "NAM7",
+                "type": "subrecord",
+                "def": {
+                    "name": "Decapitation FX",
+                    "type": "formId",
+                    "signatures": [
+                        "ARTO",
+                        "NULL"
+                    ]
+                }
+            },
+            {
+                "signature": "ONAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Open Loot Sound",
+                    "type": "formId",
+                    "signatures": [
+                        "SNDR",
+                        "NULL"
+                    ]
+                }
+            },
+            {
+                "signature": "LNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Close Loot Sound",
+                    "type": "formId",
+                    "signatures": [
+                        "SNDR",
+                        "NULL"
+                    ]
+                }
+            },
+            {
+                "name": "Biped Object Names",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "signature": "NAME",
+                    "type": "subrecord",
+                    "def": {
+                        "name": "Name",
+                        "type": "cstring",
+                        "maxSize": 0
+                    }
+                }
+            },
+            {
+                "name": "Movement Types",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "name": "Movement Types",
+                    "type": "multiStruct",
+                    "subrecords": [
+                        {
+                            "signature": "MTYP",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Movement Type",
+                                "type": "formId",
+                                "signatures": [
+                                    "MOVT",
+                                    "NULL"
+                                ]
+                            }
+                        },
+                        {
+                            "signature": "SPED",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Override Values",
+                                "type": "struct",
+                                "fields": [
+                                    {
+                                        "name": "Left - Walk",
+                                        "type": "float",
+                                        "formatter": ""
+                                    },
+                                    {
+                                        "name": "Left - Run",
+                                        "type": "float",
+                                        "formatter": ""
+                                    },
+                                    {
+                                        "name": "Right - Walk",
+                                        "type": "float",
+                                        "formatter": ""
+                                    },
+                                    {
+                                        "name": "Right - Run",
+                                        "type": "float",
+                                        "formatter": ""
+                                    },
+                                    {
+                                        "name": "Forward - Walk",
+                                        "type": "float",
+                                        "formatter": ""
+                                    },
+                                    {
+                                        "name": "Forward - Run",
+                                        "type": "float",
+                                        "formatter": ""
+                                    },
+                                    {
+                                        "name": "Back - Walk",
+                                        "type": "float",
+                                        "formatter": ""
+                                    },
+                                    {
+                                        "name": "Back - Run",
+                                        "type": "float",
+                                        "formatter": ""
+                                    },
+                                    {
+                                        "name": "Rotate - Walk",
+                                        "type": "float",
+                                        "formatter": ""
+                                    },
+                                    {
+                                        "name": "Rotate - Walk",
+                                        "type": "float",
+                                        "formatter": ""
+                                    },
+                                    {
+                                        "name": "Unknown",
+                                        "type": "float",
+                                        "formatter": ""
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "sortKey": [
+                        0
+                    ]
+                }
+            },
+            {
+                "signature": "VNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Equipment Flags",
+                    "type": "uint32",
+                    "format": {
+                        "def": "EquipType"
+                    }
+                }
+            },
+            {
+                "name": "Equip Slots",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "signature": "QNAM",
+                    "type": "subrecord",
+                    "def": {
+                        "name": "Equip Slot",
+                        "type": "formId",
+                        "signatures": [
+                            "EQUP",
+                            "NULL"
+                        ]
+                    }
+                }
+            },
+            {
+                "signature": "UNES",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unarmed Equip Slot",
+                    "type": "formId",
+                    "signatures": [
+                        "EQUP",
+                        "NULL"
+                    ]
+                }
+            },
+            {
+                "name": "Phoneme Target Names",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "signature": "PHTN",
+                    "type": "subrecord",
+                    "def": {
+                        "name": "Name",
+                        "type": "cstring",
+                        "maxSize": 0
+                    }
+                }
+            },
+            {
+                "def": "PHWT"
+            },
+            {
+                "signature": "WKMV",
+                "type": "subrecord",
+                "def": {
+                    "name": "Base Movement Default - Walk",
+                    "type": "formId",
+                    "signatures": [
+                        "MOVT",
+                        "NULL"
+                    ]
+                }
+            },
+            {
+                "signature": "RNMV",
+                "type": "subrecord",
+                "def": {
+                    "name": "Base Movement Default - Run",
+                    "type": "formId",
+                    "signatures": [
+                        "MOVT",
+                        "NULL"
+                    ]
+                }
+            },
+            {
+                "signature": "SWMV",
+                "type": "subrecord",
+                "def": {
+                    "name": "Base Movement Default - Swim",
+                    "type": "formId",
+                    "signatures": [
+                        "MOVT",
+                        "NULL"
+                    ]
+                }
+            },
+            {
+                "signature": "FLMV",
+                "type": "subrecord",
+                "def": {
+                    "name": "Base Movement Default - Fly",
+                    "type": "formId",
+                    "signatures": [
+                        "MOVT",
+                        "NULL"
+                    ]
+                }
+            },
+            {
+                "signature": "SNMV",
+                "type": "subrecord",
+                "def": {
+                    "name": "Base Movement Default - Sneak",
+                    "type": "formId",
+                    "signatures": [
+                        "MOVT",
+                        "NULL"
+                    ]
+                }
+            },
+            {
+                "signature": "SPMV",
+                "type": "subrecord",
+                "def": {
+                    "name": "Base Movement Default - Sprint",
+                    "type": "formId",
+                    "signatures": [
+                        "MOVT",
+                        "NULL"
+                    ]
+                }
+            },
+            {
+                "name": "Head Data",
+                "type": "multiStruct",
+                "subrecords": [
+                    {
+                        "signature": "NAM0",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Head Data Marker",
+                            "type": "empty"
+                        },
+                        "required": true
+                    },
+                    {
+                        "name": "Male Head Data",
+                        "type": "multiStruct",
+                        "subrecords": [
+                            {
+                                "signature": "MNAM",
+                                "type": "subrecord",
+                                "def": {
+                                    "name": "Male Data Marker",
+                                    "type": "empty"
+                                },
+                                "required": true
+                            },
+                            {
+                                "name": "Head Parts",
+                                "type": "subrecordArray",
+                                "sortKey": {
+                                    "def": "HeadPart"
+                                }
+                            },
+                            {
+                                "def": "Morphs"
+                            },
+                            {
+                                "name": "Race Presets Male",
+                                "type": "subrecordArray",
+                                "sortKey": {
+                                    "signature": "RPRM",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Preset NPC",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "NPC_",
+                                            "NULL"
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Available Hair Colors Male",
+                                "type": "subrecordArray",
+                                "sortKey": {
+                                    "signature": "AHCM",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Hair Color",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "CLFM",
+                                            "NULL"
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Face Details Texture Set List Male",
+                                "type": "subrecordArray",
+                                "sortKey": {
+                                    "signature": "FTSM",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Texture Set",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "TXST",
+                                            "NULL"
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "signature": "DFTM",
+                                "type": "subrecord",
+                                "def": {
+                                    "name": "Default Face Texture Male",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "TXST",
+                                        "NULL"
+                                    ]
+                                }
+                            },
+                            {
+                                "def": "Tints"
+                            },
+                            {
+                                "def": "MODL"
+                            }
+                        ],
+                        "required": true
+                    },
+                    {
+                        "name": "Female Head Data",
+                        "type": "multiStruct",
+                        "subrecords": [
+                            {
+                                "signature": "NAM0",
+                                "type": "subrecord",
+                                "def": {
+                                    "name": "Head Data Marker",
+                                    "type": "empty"
+                                },
+                                "required": true
+                            },
+                            {
+                                "signature": "FNAM",
+                                "type": "subrecord",
+                                "def": {
+                                    "name": "Female Data Marker",
+                                    "type": "empty"
+                                },
+                                "required": true
+                            },
+                            {
+                                "name": "Head Parts",
+                                "type": "subrecordArray",
+                                "sortKey": {
+                                    "def": "HeadPart"
+                                }
+                            },
+                            {
+                                "def": "Morphs"
+                            },
+                            {
+                                "name": "Race Presets Female",
+                                "type": "subrecordArray",
+                                "sortKey": {
+                                    "signature": "RPRF",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Preset NPC",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "NPC_",
+                                            "NULL"
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Available Hair Colors Female",
+                                "type": "subrecordArray",
+                                "sortKey": {
+                                    "signature": "AHCF",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Hair Color",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "CLFM",
+                                            "NULL"
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Face Details Texture Set List Female",
+                                "type": "subrecordArray",
+                                "sortKey": {
+                                    "signature": "FTSF",
+                                    "type": "subrecord",
+                                    "def": {
+                                        "name": "Texture Set",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "TXST",
+                                            "NULL"
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "signature": "DFTF",
+                                "type": "subrecord",
+                                "def": {
+                                    "name": "Default Face Texture Female",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "TXST",
+                                        "NULL"
+                                    ]
+                                }
+                            },
+                            {
+                                "def": "Tints"
+                            },
+                            {
+                                "def": "MODL"
+                            }
+                        ],
+                        "required": true
+                    }
+                ],
+                "required": true
+            },
+            {
+                "signature": "NAM8",
+                "type": "subrecord",
+                "def": {
+                    "name": "Morph race",
+                    "type": "formId",
+                    "signatures": [
+                        "RACE",
+                        "NULL"
+                    ]
+                }
+            },
+            {
+                "signature": "RNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Armor race",
+                    "type": "formId",
+                    "signatures": [
+                        "RACE",
+                        "NULL"
+                    ]
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,76 @@
+{
+    "signature": "DLVW",
+    "type": "record",
+    "name": "Dialog View",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "signature": "QNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Quest",
+                    "type": "formId",
+                    "signatures": [
+                        "QUST"
+                    ]
+                },
+                "required": true
+            },
+            {
+                "name": "Branches",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "signature": "BNAM",
+                    "type": "subrecord",
+                    "def": {
+                        "name": "Branch",
+                        "type": "formId",
+                        "signatures": [
+                            "DLBR"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "Unknown TNAM",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "name": "Unknown",
+                    "type": "multiStruct",
+                    "subrecords": [
+                        {
+                            "signature": "TNAM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Unknown",
+                                "type": "bytes",
+                                "size": 0
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "signature": "ENAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 0
+                }
+            },
+            {
+                "signature": "DNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 0
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,110 @@
+{
+    "signature": "TXST",
+    "type": "record",
+    "name": "Texture Set",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "OBND",
+                "required": true
+            },
+            {
+                "name": "Textures (RGB/A)",
+                "type": "multiStruct",
+                "subrecords": [
+                    {
+                        "signature": "TX00",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Difuse",
+                            "type": "cstring",
+                            "maxSize": 0
+                        }
+                    },
+                    {
+                        "signature": "TX01",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Normal/Gloss",
+                            "type": "cstring",
+                            "maxSize": 0
+                        }
+                    },
+                    {
+                        "signature": "TX02",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Environment Mask/Subsurface Tint",
+                            "type": "cstring",
+                            "maxSize": 0
+                        }
+                    },
+                    {
+                        "signature": "TX03",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Glow/Detail Map",
+                            "type": "cstring",
+                            "maxSize": 0
+                        }
+                    },
+                    {
+                        "signature": "TX04",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Height",
+                            "type": "cstring",
+                            "maxSize": 0
+                        }
+                    },
+                    {
+                        "signature": "TX05",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Environment",
+                            "type": "cstring",
+                            "maxSize": 0
+                        }
+                    },
+                    {
+                        "signature": "TX06",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Multilayer",
+                            "type": "cstring",
+                            "maxSize": 0
+                        }
+                    },
+                    {
+                        "signature": "TX07",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Backlight Mask/Specular",
+                            "type": "cstring",
+                            "maxSize": 0
+                        }
+                    }
+                ]
+            },
+            {
+                "def": "DODT"
+            },
+            {
+                "signature": "DNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Flags",
+                    "type": "uint16",
+                    "format": {
+                        "0": "No Specular Map",
+                        "1": "Facegen Textures",
+                        "2": "Has Model Space Normal Map"
+                    }
+                }
+            }
+        ]
+    }
+}

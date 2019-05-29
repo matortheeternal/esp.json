@@ -1,0 +1,91 @@
+{
+    "signature": "PHWT",
+    "type": "subrecord",
+    "def": {
+        "name": "Phoneme Target Weight",
+        "type": "struct",
+        "fields": [
+            {
+                "name": "Aah / LipBigAah",
+                "type": "float",
+                "formatter": ""
+            },
+            {
+                "name": "BigAah / LipDST",
+                "type": "float",
+                "formatter": ""
+            },
+            {
+                "name": "BMP / LipEee",
+                "type": "float",
+                "formatter": ""
+            },
+            {
+                "name": "ChJsh / LipFV",
+                "type": "float",
+                "formatter": ""
+            },
+            {
+                "name": "DST / LipK",
+                "type": "float",
+                "formatter": ""
+            },
+            {
+                "name": "Eee / LipL",
+                "type": "float",
+                "formatter": ""
+            },
+            {
+                "name": "Eh / LipR",
+                "type": "float",
+                "formatter": ""
+            },
+            {
+                "name": "FV / LipTh",
+                "type": "float",
+                "formatter": ""
+            },
+            {
+                "name": "I",
+                "type": "float",
+                "formatter": ""
+            },
+            {
+                "name": "K",
+                "type": "float",
+                "formatter": ""
+            },
+            {
+                "name": "N",
+                "type": "float",
+                "formatter": ""
+            },
+            {
+                "name": "Oh",
+                "type": "float",
+                "formatter": ""
+            },
+            {
+                "name": "OohQ",
+                "type": "float",
+                "formatter": ""
+            },
+            {
+                "name": "R",
+                "type": "float",
+                "formatter": ""
+            },
+            {
+                "name": "TH",
+                "type": "float",
+                "formatter": ""
+            },
+            {
+                "name": "W",
+                "type": "float",
+                "formatter": ""
+            }
+        ]
+    },
+    "required": true
+}

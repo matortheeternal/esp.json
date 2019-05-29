@@ -1,0 +1,17 @@
+{
+    "signature": "KWDA",
+    "type": "subrecord",
+    "def": {
+        "name": "Keywords",
+        "entryDef": {
+            "name": "Keyword",
+            "type": "formId",
+            "signatures": [
+                "KYWD",
+                "NULL"
+            ]
+        },
+        "type": "array",
+        "size": 0
+    }
+}

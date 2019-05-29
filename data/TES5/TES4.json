@@ -1,0 +1,159 @@
+{
+    "signature": "TES4",
+    "type": "record",
+    "name": "Main File Header",
+    "def": {
+        "flags": {
+            "0": "ESM",
+            "7": "Localized"
+        },
+        "members": [
+            {
+                "signature": "HEDR",
+                "type": "subrecord",
+                "def": {
+                    "name": "Header",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Version",
+                            "type": "float",
+                            "formatter": ""
+                        },
+                        {
+                            "name": "Number of Records",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Next Object ID",
+                            "type": "uint32",
+                            "format": {
+                                "def": "NextObjectIDToString"
+                            }
+                        }
+                    ]
+                },
+                "required": true
+            },
+            {
+                "signature": "OFST",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 0
+                }
+            },
+            {
+                "signature": "DELE",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 0
+                }
+            },
+            {
+                "signature": "CNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Author",
+                    "type": "cstring",
+                    "maxSize": 0
+                },
+                "required": true
+            },
+            {
+                "signature": "SNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Description",
+                    "type": "cstring",
+                    "maxSize": 0
+                }
+            },
+            {
+                "name": "Master Files",
+                "type": "subrecordArray",
+                "sortKey": {
+                    "name": "Master File",
+                    "type": "multiStruct",
+                    "subrecords": [
+                        {
+                            "signature": "MAST",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "FileName",
+                                "type": "cstring",
+                                "maxSize": 0
+                            }
+                        },
+                        {
+                            "signature": "DATA",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Unknown",
+                                "type": "bytes",
+                                "size": 8
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "signature": "ONAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Overridden Forms",
+                    "entryDef": {
+                        "name": "Form",
+                        "type": "formId",
+                        "signatures": [
+                            "ACHR",
+                            "LAND",
+                            "NAVM",
+                            "REFR",
+                            "PGRE",
+                            "PHZD",
+                            "PMIS",
+                            "PARW",
+                            "PBAR",
+                            "PBEA",
+                            "PCON",
+                            "PFLA"
+                        ]
+                    },
+                    "type": "array",
+                    "size": 0
+                }
+            },
+            {
+                "signature": "SCRN",
+                "type": "subrecord",
+                "def": {
+                    "name": "Screenshot",
+                    "type": "bytes",
+                    "size": 0
+                }
+            },
+            {
+                "signature": "INTV",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 0
+                }
+            },
+            {
+                "signature": "INCC",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 0
+                }
+            }
+        ]
+    }
+}

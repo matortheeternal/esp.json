@@ -1,0 +1,20 @@
+{
+    "name": "Script",
+    "type": "struct",
+    "fields": [
+        {
+            "name": "ScriptName",
+            "type": "string",
+            "maxSize": 0
+        },
+        {
+            "def": "ScriptFlags"
+        },
+        {
+            "def": "ScriptProperties"
+        }
+    ],
+    "sortKey": [
+        0
+    ]
+}

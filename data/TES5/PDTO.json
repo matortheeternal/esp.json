@@ -1,0 +1,37 @@
+{
+    "signature": "PDTO",
+    "type": "subrecord",
+    "def": {
+        "name": "Topic Data",
+        "type": "struct",
+        "fields": [
+            {
+                "name": "Type",
+                "type": "uint32",
+                "format": {
+                    "0": "Topic Ref",
+                    "1": "Topic Subtype"
+                }
+            },
+            {
+                "name": "Data",
+                "type": "union",
+                "decider": [
+                    {
+                        "name": "Topic",
+                        "type": "formId",
+                        "signatures": [
+                            "DIAL",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "name": "Subtype",
+                        "type": "cstring",
+                        "maxSize": 4
+                    }
+                ]
+            }
+        ]
+    }
+}

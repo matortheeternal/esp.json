@@ -1,0 +1,12 @@
+{
+    "signature": "PWAT",
+    "type": "record",
+    "name": "PWAT",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            }
+        ]
+    }
+}

@@ -1,0 +1,37 @@
+{
+    "signature": "EQUP",
+    "type": "record",
+    "name": "Equip Type",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "signature": "PNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Slot Parents",
+                    "entryDef": {
+                        "name": "Can Be Equipped",
+                        "type": "formId"
+                    },
+                    "type": "array",
+                    "size": 0
+                }
+            },
+            {
+                "signature": "DATA",
+                "type": "subrecord",
+                "def": {
+                    "name": "Use All Parents",
+                    "type": "uint32",
+                    "format": {
+                        "0": "False",
+                        "1": "True"
+                    }
+                }
+            }
+        ]
+    }
+}

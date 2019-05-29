@@ -1,0 +1,308 @@
+{
+    "signature": "BPTD",
+    "type": "record",
+    "name": "Body Part Data",
+    "def": {
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "MODL"
+            },
+            {
+                "name": "Body Parts",
+                "type": "structArray",
+                "entryName": {
+                    "name": "Body Part",
+                    "type": "multiStruct",
+                    "subrecords": [
+                        {
+                            "signature": "BPTN",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Part Name",
+                                "type": "string",
+                                "maxSize": 0
+                            },
+                            "required": true
+                        },
+                        {
+                            "signature": "PNAM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Pose Matching",
+                                "type": "cstring",
+                                "maxSize": 0
+                            },
+                            "required": true
+                        },
+                        {
+                            "signature": "BPNN",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Part Node",
+                                "type": "cstring",
+                                "maxSize": 0
+                            },
+                            "required": true
+                        },
+                        {
+                            "signature": "BPNT",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "VATS Target",
+                                "type": "cstring",
+                                "maxSize": 0
+                            },
+                            "required": true
+                        },
+                        {
+                            "signature": "BPNI",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "IK Data - Start Node",
+                                "type": "cstring",
+                                "maxSize": 0
+                            },
+                            "required": true
+                        },
+                        {
+                            "signature": "BPND",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "",
+                                "type": "struct",
+                                "fields": [
+                                    {
+                                        "name": "Damage Mult",
+                                        "type": "float",
+                                        "formatter": ""
+                                    },
+                                    {
+                                        "name": "Flags",
+                                        "type": "uint8",
+                                        "format": {
+                                            "0": "Severable",
+                                            "1": "IK Data",
+                                            "2": "IK Data - Biped Data",
+                                            "3": "Explodable",
+                                            "4": "IK Data - Is Head",
+                                            "5": "IK Data - Headtracking",
+                                            "6": "To Hit Chance - Absolute"
+                                        }
+                                    },
+                                    {
+                                        "name": "Part Type",
+                                        "type": "uint8",
+                                        "format": {
+                                            "0": "Torso",
+                                            "1": "Head",
+                                            "2": "Eye",
+                                            "3": "LookAt",
+                                            "4": "Fly Grab",
+                                            "5": "Saddle"
+                                        }
+                                    },
+                                    {
+                                        "name": "Health Percent",
+                                        "type": "uint8"
+                                    },
+                                    {
+                                        "name": "Actor Value",
+                                        "type": "int8",
+                                        "format": {
+                                            "def": "ActorValueEnum"
+                                        }
+                                    },
+                                    {
+                                        "name": "To Hit Chance",
+                                        "type": "uint8"
+                                    },
+                                    {
+                                        "name": "Explodable - Explosion Chance %",
+                                        "type": "uint8"
+                                    },
+                                    {
+                                        "name": "Explodable - Debris Count",
+                                        "type": "uint16"
+                                    },
+                                    {
+                                        "name": "Explodable - Debris",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "DEBR",
+                                            "NULL"
+                                        ]
+                                    },
+                                    {
+                                        "name": "Explodable - Explosion",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "EXPL",
+                                            "NULL"
+                                        ]
+                                    },
+                                    {
+                                        "name": "Tracking Max Angle",
+                                        "type": "float",
+                                        "formatter": ""
+                                    },
+                                    {
+                                        "name": "Explodable - Debris Scale",
+                                        "type": "float",
+                                        "formatter": ""
+                                    },
+                                    {
+                                        "name": "Severable - Debris Count",
+                                        "type": "int32"
+                                    },
+                                    {
+                                        "name": "Severable - Debris",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "DEBR",
+                                            "NULL"
+                                        ]
+                                    },
+                                    {
+                                        "name": "Severable - Explosion",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "EXPL",
+                                            "NULL"
+                                        ]
+                                    },
+                                    {
+                                        "name": "Severable - Debris Scale",
+                                        "type": "float",
+                                        "formatter": ""
+                                    },
+                                    {
+                                        "name": "Gore Effects Positioning",
+                                        "type": "struct",
+                                        "fields": [
+                                            {
+                                                "name": "Translate",
+                                                "type": "struct",
+                                                "fields": [
+                                                    {
+                                                        "name": "X",
+                                                        "type": "float",
+                                                        "formatter": ""
+                                                    },
+                                                    {
+                                                        "name": "Y",
+                                                        "type": "float",
+                                                        "formatter": ""
+                                                    },
+                                                    {
+                                                        "name": "Z",
+                                                        "type": "float",
+                                                        "formatter": ""
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name": "Rotation",
+                                                "type": "struct",
+                                                "fields": [
+                                                    {
+                                                        "name": "X",
+                                                        "type": "float",
+                                                        "formatter": "",
+                                                        "required": true
+                                                    },
+                                                    {
+                                                        "name": "Y",
+                                                        "type": "float",
+                                                        "formatter": "",
+                                                        "required": true
+                                                    },
+                                                    {
+                                                        "name": "Z",
+                                                        "type": "float",
+                                                        "formatter": "",
+                                                        "required": true
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "Severable - Impact DataSet",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "IPDS",
+                                            "NULL"
+                                        ]
+                                    },
+                                    {
+                                        "name": "Explodable - Impact DataSet",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "IPDS",
+                                            "NULL"
+                                        ]
+                                    },
+                                    {
+                                        "name": "Severable - Decal Count",
+                                        "type": "uint8"
+                                    },
+                                    {
+                                        "name": "Explodable - Decal Count",
+                                        "type": "uint8"
+                                    },
+                                    {
+                                        "name": "Unknown",
+                                        "type": "bytes",
+                                        "size": 2
+                                    },
+                                    {
+                                        "name": "Limb Replacement Scale",
+                                        "type": "float",
+                                        "formatter": ""
+                                    }
+                                ]
+                            },
+                            "required": true
+                        },
+                        {
+                            "signature": "NAM1",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Limb Replacement Model",
+                                "type": "cstring",
+                                "maxSize": 0
+                            },
+                            "required": true
+                        },
+                        {
+                            "signature": "NAM4",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Gore Effects - Target Bone",
+                                "type": "cstring",
+                                "maxSize": 0
+                            },
+                            "required": true
+                        },
+                        {
+                            "signature": "NAM5",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Texture Files Hashes",
+                                "type": "bytes",
+                                "size": 0
+                            }
+                        }
+                    ],
+                    "sortKey": [
+                        2
+                    ]
+                },
+                "required": true
+            }
+        ]
+    }
+}
