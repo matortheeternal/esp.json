@@ -2,7 +2,7 @@ let {
     def, ckFormId, int32, uint32, format, 
     subrecord, sortKey, struct, arrayOfSubrecord, req, 
     uint8, uint16, float, string, cstring, 
-    arrayOfStruct, bytes, record
+    arrayOfStruct, multiStruct, bytes, record
 } = require('../helpers');
 
 module.exports = () => {

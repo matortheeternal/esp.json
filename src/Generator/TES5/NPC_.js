@@ -3,7 +3,7 @@ let {
     div, union, uint16, subrecord, struct, 
     ckFormId, int8, bytes, sortKey, arrayOfSubrecord, 
     uint8, string, array, float, unknown, 
-    int32, record
+    int32, multiStruct, record
 } = require('../helpers');
 
 module.exports = () => {

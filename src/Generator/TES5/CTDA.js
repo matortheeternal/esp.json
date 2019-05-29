@@ -2,7 +2,7 @@ let {
     addDef, def, uint8, format, bytes, 
     float, ckFormId, union, uint16, opts, 
     int32, uint32, formId, subrecord, sortKey, 
-    struct, cstring
+    struct, cstring, multiStruct
 } = require('../helpers');
 
 module.exports = () => {

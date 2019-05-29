@@ -26,7 +26,7 @@ class Converter extends Parser {
         if (!this.output) throw new Error('Output not initialized.');
         for (let i = 0; i < arguments.length; i++) {
             let req = arguments[i];
-            if (this.output.requires.includes(req)) return;
+            if (this.output.requires.includes(req)) continue;
             this.output.requires.push(req);
         }
     }

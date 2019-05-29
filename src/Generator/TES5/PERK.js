@@ -1,8 +1,8 @@
 let {
     def, req, uint8, format, subrecord, 
     struct, ckFormId, sortKey, bytes, union, 
-    int8, arrayOfStruct, string, uint16, float, 
-    cstring, uint32, multiStruct, empty, record
+    int8, arrayOfStruct, multiStruct, string, uint16, 
+    float, cstring, uint32, empty, record
 } = require('../helpers');
 
 module.exports = () => {
