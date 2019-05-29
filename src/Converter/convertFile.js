@@ -18,11 +18,11 @@ let convertProcedures = function(converter) {
 };
 
 let convertFile = function(filename, game) {
-    let basePath = path.resolve(__dirname, '..', '..'),
-        filePath = path.resolve(basePath, 'Input', filename),
+    let filePath = path.resolve('Input', filename),
         converter = new Converter(filePath);
     try {
-        let outputFolder = path.resolve(basePath, 'src', 'Generator', game);
+        let outputFolder = path.resolve('output', game);
+        fs.mkdirSync(outputFolder);
         converter.setOutputFolder(outputFolder);
         convertProcedures(converter);
     } catch (x) {

@@ -1,13 +1,8 @@
 let defs = {};
 
-let prop = (obj, key, value) => {
-    if (!value) return obj;
-    obj[key] = value;
-    return obj;
-};
-
 let addDef = (id, def) => defs[id] = def;
 let getDefs = () => defs;
+let clearDefs = () => defs = {};
 let IsSSE = (game, a, b) => game === 'SSE' ? a : b;
 
 // meta
@@ -61,7 +56,7 @@ let ckFormId = (name, signatures) => ({ name, type: 'formId', signatures });
 let empty = name => ({ name, type: 'empty' });
 
 module.exports = {
-    addDef, getDefs, IsSSE,
+    addDef, getDefs, clearDefs, IsSSE,
     req, def, opts, sortKey, format, div,
     record, subrecord,
     arrayOfSubrecord, arrayOfStruct, multiStruct, multiUnion,
