@@ -1,12 +1,12 @@
 let {
-    addDef, multiStruct, subrecord, zstring
+    addDef, subrecord, cstring, req, multiStruct
 } = require('../helpers');
 
-module.exports = game => {
+module.exports = () => {
     addDef('ICON', 
-        multiStruct('Icon', [
-            subrecord('ICON', zstring('Large Icon filename')),
-            subrecord('MICO', zstring('Small Icon filename')),
-        ]),
+        req(multiStruct('Icon', [
+            req(subrecord('ICON', cstring('Large Icon FileName'))),
+            subrecord('MICO', cstring('Small Icon FileName'))
+        ]))
     );
 };

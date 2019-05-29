@@ -1,26 +1,109 @@
-let LineExpr = expr => new RegExp(`^\\s*${expr}`);
-let convertStr = (str = '') => str.replace(/''/g, "\\'");
-let isTrue = str => str && str.match(/true/i);
-let processAllowedSigs = str => {
-    let sigStrs = str.split(',').map(s => `'${s.trim()}'`);
-    return `[${sigStrs.join(', ')}]`;
+let args = {
+    sig: { type: 'signature', name: 'sig' },
+    name: { type: 'string', name: 'name' },
+    labels: { type: 'array of string', name: 'labels' },
+    signatures: { type: 'array of signature', name: 'signatures' },
+    moreSignatures: { type: 'array of signature', name: 'moreSignatures' },
+    field: { type: 'field', name: 'element' },
+    member: { type: 'member', name: 'member' },
+    fields: { type: 'array of field', name: 'fields' },
+    members: { type: 'array of member', name: 'members' },
+    identifier: { type: 'identifier' },
+    required: { type: 'boolean', name: 'required' },
+    boolean: { type: 'boolean' },
+    string: { type: 'string' },
+    number: { type: 'number' },
+    size: { type: 'number', name: 'size' },
+    sk: { type: 'array of number', name: 'sk' },
+    elementMap: { type: 'array of number', name: 'elementMap' },
+    exSk: { type: 'array of number', name: 'exSk' },
+    intType: { type: 'intType', name: 'intType' },
+    integerFormat: { type: 'integerFormat', name: 'format' },
+    flagsFn: { type: 'function', id: 'wbFlags', name: 'flags' },
+    flags: { type: 'flags', name: 'flags' },
+    enumFn: { type: 'function', id: 'wbEnum', name: 'options' },
+    enum: { type: 'enum', name: 'options' }
 };
-let resolveIntType = (signChar, bits) =>
-    signChar === 'U' ? `uint${bits}` : `int${bits}`;
 
-let sigExpr = `([A-Z]{1}[A-Z0-9]{3})`;
-let strExpr = `'((?:[^']+|'')*)'`;
-let sigArrayExpr = `\\[([^\\]]+)\\]`;
-let numExpr = '\\-?[0-9]+';
-let numArrayExpr = `(\\[(?:[0-9]+(?:,\\s)?)+\\])`;
-let offsetExpr = `\\{(0x[0-9A-F]+)\\}`;
-let uintExpr = `itU(8|16|24|32|64)`;
-let intTypeExpr = `it(U|S)(8|16|24|32|64)`;
-let boolExpr = `(True|true|False|false)`;
-let idExpr = `[A-Za-z][A-Za-z0-9]*`;
+let intFunctions = {
+    it0: 'int0',
+    itU8: 'uint8',
+    itU16: 'uint16',
+    itU32: 'uint32',
+    itS8: 'int8',
+    itS16: 'int16',
+    itS32: 'int32'
+};
+
+const lineBreak = '\n';
+const tabSize = 4;
+const tab = ' '.repeat(tabSize);
+
+let indent = function(str) {
+    return tab + str.split(lineBreak).join(lineBreak + tab);
+};
+
+let arr = function(a) {
+    return '[' + lineBreak +
+        a.map(indent).join(',' + lineBreak) + lineBreak +
+    ']';
+};
+
+let inlineArr = function(a) {
+    return `[${a.join(', ')}]`;
+};
+
+let mixedArr = function(a, targetLength) {
+    let s = '[';
+    a.forEach((entry, index) => {
+        if (index > 0) s += ',';
+        if (index % targetLength === 0) s += lineBreak;
+        s += indent(entry);
+    });
+    s += lineBreak + ']';
+    return s;
+};
+
+let stringify = function(obj) {
+    let s = '{' + lineBreak;
+    Object.keys(obj).forEach((key, index) => {
+        if (index > 0) s += ',' + lineBreak;
+        let keyStr = key.includes('-') ? `"${key}": ` : key + ': ';
+        s += indent(keyStr + obj[key]);
+    });
+    s += lineBreak + '}';
+    return s;
+};
+
+let newLine = function(str) {
+    return lineBreak + indent(str) + lineBreak;
+};
+
+let reqLine = function(required, line, converter) {
+    if (!required) return line;
+    converter.addRequires('req');
+    return `req(${line})`;
+};
+
+let optsLine = function(opts, line, converter) {
+    if (Object.keys(opts).length === 0) return line;
+    converter.addRequires('opts');
+    return `opts(${line}, ${JSON.stringify(opts, null, 4)})`;
+};
+
+let optsReq = function(args, opts, line, converter) {
+    line = reqLine(args.required, line, converter);
+    return optsLine(opts, line, converter);
+};
+
+let resolveIntFn = function(intType) {
+    let intFn = intFunctions[intType];
+    if (!intFn) throw new Error(`No function found for ${intType}`);
+    return intFn;
+};
 
 module.exports = {
-    LineExpr, convertStr, isTrue, processAllowedSigs, resolveIntType,
-    sigExpr, strExpr, sigArrayExpr, numExpr, numArrayExpr,
-    offsetExpr, uintExpr, intTypeExpr, boolExpr, idExpr
+    args, indent, arr, inlineArr, mixedArr, stringify,
+    reqLine, newLine, optsLine, optsReq,
+    resolveIntFn, lineBreak, tab
 };

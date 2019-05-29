@@ -1,24 +1,24 @@
 let {
-    addDef, record, def, req, subrecord, 
-    zstring, unknown, struct, float, arrayOfStruct, 
-    multiStruct, ckFormId, uint32
+    def, req, subrecord, cstring, unknown, 
+    float, struct, ckFormId, uint32, arrayOfSubrecord, 
+    multiStruct, record
 } = require('../helpers');
 
-module.exports = game => {
-    addDef('AVIF', record('AVIF', 'Actor Value Information', {
-        elements: [
+module.exports = () => {
+    record('AVIF', 'Actor Value Information', {
+        members: [
             def('EDID'),
             def('FULL'),
             req(def('DESC')),
-            subrecord('ANAM', zstring('Abbreviation')),
+            subrecord('ANAM', cstring('Abbreviation')),
             subrecord('CNAM', unknown()),
             subrecord('AVSK', struct('Skill', [
                 float('Skill Use Mult'),
                 float('Skill Offset Mult'),
                 float('Skill Improve Mult'),
-                float('Skill Improve Offset'),
+                float('Skill Improve Offset')
             ])),
-            arrayOfStruct('Perk Tree',
+            arrayOfSubrecord('Perk Tree', 
                 multiStruct('Node', [
                     subrecord('PNAM', ckFormId('Perk', ['PERK', 'NULL'])),
                     subrecord('FNAM', unknown()),
@@ -27,12 +27,12 @@ module.exports = game => {
                     subrecord('HNAM', float('Horizontal Position')),
                     subrecord('VNAM', float('Vertical Position')),
                     subrecord('SNAM', ckFormId('Associated Skill', ['AVIF', 'NULL'])),
-                    arrayOfStruct('Connections',
-                        subrecord('CNAM', uint32('Line to Index')),
+                    arrayOfSubrecord('Connections', 
+                        subrecord('CNAM', uint32('Line to Index'))
                     ),
-                    subrecord('INAM', uint32('Index')),
-                ]),
-            ),
+                    subrecord('INAM', uint32('Index'))
+                ])
+            )
         ]
-    }));
+    })
 };

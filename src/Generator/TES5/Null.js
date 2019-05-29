@@ -2,8 +2,8 @@ let {
     addDef, bytes
 } = require('../helpers');
 
-module.exports = game => {
+module.exports = () => {
     addDef('Null', 
-        bytes('Unused', -255),
+        bytes('Unused', -255)
     );
 };

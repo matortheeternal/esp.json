@@ -1,9 +1,9 @@
 let {
-    addDef, enumS32, def
+    addDef, def, int32, format
 } = require('../helpers');
 
-module.exports = game => {
+module.exports = () => {
     addDef('ActorValue', 
-        enumS32('Actor Value', def('ActorValueEnum')),
+        format(int32('Actor Value'), def('ActorValueEnum'))
     );
 };

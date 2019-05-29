@@ -2,8 +2,8 @@ let {
     addDef, subrecord, ckFormId
 } = require('../helpers');
 
-module.exports = game => {
+module.exports = () => {
     addDef('EFID', 
-        subrecord('EFID', ckFormId('Base Effect', ['MGEF'])),
+        subrecord('EFID', ckFormId('Base Effect', ['MGEF']))
     );
 };

@@ -2,11 +2,11 @@ let {
     addDef
 } = require('../helpers');
 
-module.exports = game => {
+module.exports = () => {
     addDef('SexEnum', 
         {
-            '0': 'Male',
-            '1': 'Female',
+            0: 'Male',
+            1: 'Female'
         }
     );
 };

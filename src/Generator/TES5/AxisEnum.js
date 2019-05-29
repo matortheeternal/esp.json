@@ -2,12 +2,12 @@ let {
     addDef
 } = require('../helpers');
 
-module.exports = game => {
+module.exports = () => {
     addDef('AxisEnum', 
         {
-            '88': 'X',
-            '89': 'Y',
-            '90': 'Z',
+            88: 'X',
+            89: 'Y',
+            90: 'Z'
         }
     );
 };

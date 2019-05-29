@@ -1,12 +1,12 @@
 let {
-    addDef, record, def
+    def, record
 } = require('../helpers');
 
-module.exports = game => {
-    addDef('AACT', record('AACT', 'Action', {
-        elements: [
+module.exports = () => {
+    record('AACT', 'Action', {
+        members: [
             def('EDID'),
-            def('CNAM'),
+            def('CNAM')
         ]
-    }));
+    })
 };

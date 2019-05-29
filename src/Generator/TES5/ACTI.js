@@ -1,26 +1,26 @@
 let {
-    addDef, record, def, req, subrecord, 
-    struct, uint8, ckFormId, lstring, flags16
+    def, req, uint8, subrecord, struct, 
+    ckFormId, string, uint16, format, record
 } = require('../helpers');
 
-module.exports = game => {
-    addDef('ACTI', record('ACTI', 'Activator', {
+module.exports = () => {
+    record('ACTI', 'Activator', {
         flags: {
-            6: 'Has Tree LOD',                              // 0x00000040
-            8: 'Must Update Anims',                         // 0x00000100
-            9: 'Hidden From Local Map',                     // 0x00000200
-            15: 'Has Distant LOD',                          // 0x00008000
-            16: 'Random Anim Start',                        // 0x00010000
-            17: 'Dangerous',                                // 0x00020000
-            20: 'Ignore Object Interaction',                // 0x00100000
-            23: 'Is Marker',                                // 0x00800000
-            25: 'Obstacle',                                 // 0x02000000
-            26: 'NavMesh Generation - Filter',              // 0x04000000
-            27: 'NavMesh Generation - Bounding Box',        // 0x08000000
-            29: 'Child Can Use',                            // 0x20000000
-            30: 'NavMesh Generation - Ground',              // 0x40000000
+            6: 'Has Tree LOD',
+            8: 'Must Update Anims',
+            9: 'Hidden From Local Map',
+            15: 'Has Distant LOD',
+            16: 'Random Anim Start',
+            17: 'Dangerous',
+            20: 'Ignore Object Interaction',
+            23: 'Is Marker',
+            25: 'Obstacle',
+            26: 'NavMesh Generation - Filter',
+            27: 'NavMesh Generation - Bounding Box',
+            29: 'Child Can Use',
+            30: 'NavMesh Generation - Ground'
         },
-        elements: [
+        members: [
             def('EDID'),
             def('VMAD'),
             req(def('OBND')),
@@ -33,17 +33,17 @@ module.exports = game => {
                 uint8('Red'),
                 uint8('Green'),
                 uint8('Blue'),
-                uint8('Unused'),
+                uint8('Unused')
             ])),
             subrecord('SNAM', ckFormId('Sound - Looping', ['SNDR'])),
             subrecord('VNAM', ckFormId('Sound - Activation', ['SNDR'])),
             subrecord('WNAM', ckFormId('Water Type', ['WATR'])),
-            subrecord('RNAM', lstring('Activate Text Override')),
-            subrecord('FNAM', flags16('Flags', [
-                'No Displacement',
-                'Ignored by Sandbox',
-            ])),
-            subrecord('KNAM', ckFormId('Interaction Keyword', ['KYWD'])),
+            subrecord('RNAM', string('Activate Text Override')),
+            subrecord('FNAM', format(uint16('Flags'), {
+                0: 'No Displacement',
+                1: 'Ignored by Sandbox'
+            })),
+            subrecord('KNAM', ckFormId('Interaction Keyword', ['KYWD']))
         ]
-    }));
+    })
 };

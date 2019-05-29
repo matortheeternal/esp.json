@@ -1,15 +1,15 @@
 let {
-    addDef, record, def, req, IsSSE, 
-    subrecord, struct, ckFormId, flags32, float, 
-    uint32, zstring
+    def, req, ckFormId, uint32, format, 
+    float, subrecord, struct, IsSSE, cstring, 
+    record
 } = require('../helpers');
 
 module.exports = game => {
-    addDef('AMMO', record('AMMO', 'Ammunition', {
+    record('AMMO', 'Ammunition', {
         flags: {
-            2: 'Non-Playable',                              // 0x00000004
+            2: 'Non-Playable'
         },
-        elements: [
+        members: [
             def('EDID'),
             req(def('OBND')),
             def('FULL'),
@@ -24,27 +24,27 @@ module.exports = game => {
             IsSSE(game, [
                 req(subrecord('DATA', struct('Data', [
                     ckFormId('Projectile', ['PROJ', 'NULL']),
-                    flags32('Flags', [
-                        'Ignores Normal Weapon Resistance',
-                        'Non-Playable',
-                        'Non-Bolt',
-                    ]),
+                    format(uint32('Flags'), {
+                        0: 'Ignores Normal Weapon Resistance',
+                        1: 'Non-Playable',
+                        2: 'Non-Bolt'
+                    }),
                     float('Damage'),
                     uint32('Value'),
-                    float('Weight'),
+                    float('Weight')
                 ]))),
                 req(subrecord('DATA', struct('Data', [
                     ckFormId('Projectile', ['PROJ', 'NULL']),
-                    flags32('Flags', [
-                        'Ignores Normal Weapon Resistance',
-                        'Non-Playable',
-                        'Non-Bolt',
-                    ]),
+                    format(uint32('Flags'), {
+                        0: 'Ignores Normal Weapon Resistance',
+                        1: 'Non-Playable',
+                        2: 'Non-Bolt'
+                    }),
                     float('Damage'),
-                    uint32('Value'),
-                ]))),
+                    uint32('Value')
+                ])))
             ]),
-            subrecord('ONAM', zstring('Short Name')),
+            subrecord('ONAM', cstring('Short Name'))
         ]
-    }));
+    })
 };

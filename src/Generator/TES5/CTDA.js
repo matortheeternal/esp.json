@@ -1,41 +1,57 @@
 let {
-    addDef, multiStruct, subrecord, struct, uint8, 
-    bytes, union, float, ckFormId, uint16, 
-    int32, enum32, def, enumS32, uint32, 
-    formId, zstring
+    addDef, def, uint8, format, bytes, 
+    float, ckFormId, union, uint16, opts, 
+    int32, uint32, formId, subrecord, sortKey, 
+    struct, cstring, multiStruct
 } = require('../helpers');
 
-module.exports = game => {
+module.exports = () => {
     addDef('CTDA', 
-        multiStruct('Condition', [
-            subrecord('CTDA', struct('', [
-                uint8('Type'),
+        sortKey([0], multiStruct('Condition', [
+            subrecord('CTDA', sortKey([3, 5], struct('', [
+                format(uint8('Type'), def('CtdaTypeToStr')),
                 bytes('Unused', 3),
-                union('Comparison Value', 'CTDACompValueDecider', [
+                union('Comparison Value', [
                     float('Comparison Value - Float'),
-                    ckFormId('Comparison Value - Global', ['GLOB']),
+                    ckFormId('Comparison Value - Global', ['GLOB'])
                 ]),
-                uint16('Function'),
+                format(uint16('Function'), def('CTDAFunctionToStr')),
                 bytes('Unused', 2),
-                union('Parameter #1', 'CTDAParam1Decider', [
+                union('Parameter #1', [
                     bytes('Unknown', 4),
-                    bytes('None', 4),
+                    opts(bytes('None', 4), {
+                        "includeFlag": "dfZeroSortKey"
+                    }),
                     int32('Integer'),
                     float('Float'),
-                    bytes('Variable Name (unused)', 4),
-                    enum32('Sex', def('SexEnum')),
-                    enumS32('Actor Value', def('ActorValueEnum')),
-                    enum32('Crime Type', def('CrimeTypeEnum')),
-                    enum32('Axis', def('AxisEnum')),
-                    int32('Quest Stage (unused)'),
-                    enum32('Misc Stat', def('MiscStatEnum')),
-                    enum32('Alignment', def('AlignmentEnum')),
+                    opts(bytes('Variable Name (unused)', 4), {
+                        "includeFlag": "dfZeroSortKey"
+                    }),
+                    format(uint32('Sex'), def('SexEnum')),
+                    format(int32('Actor Value'), def('ActorValueEnum')),
+                    format(uint32('Crime Type'), def('CrimeTypeEnum')),
+                    format(uint32('Axis'), def('AxisEnum')),
+                    opts(int32('Quest Stage (unused)'), {
+                        "includeFlag": "dfZeroSortKey"
+                    }),
+                    format(uint32('Misc Stat'), def('MiscStatEnum')),
+                    format(uint32('Alignment'), def('AlignmentEnum')),
                     ckFormId('Equip Type', ['EQUP']),
-                    enum32('Form Type', def('FormTypeEnum')),
-                    enum32('Critical Stage', def('CriticalStageEnum')),
-                    ckFormId('Object Reference', ['NULL', 'PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD', 'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON', 'PFLA']),
-                    ckFormId('Inventory Object', ['ARMO', 'BOOK', 'MISC', 'WEAP', 'AMMO', 'KEYM', 'ALCH', 'SCRL', 'SLGM', 'INGR', 'FLST', 'LIGH', 'LVLI', 'COBJ']),
-                    ckFormId('Actor', ['NULL', 'PLYR', 'ACHR', 'REFR']),
+                    format(uint32('Form Type'), def('FormTypeEnum')),
+                    format(uint32('Critical Stage'), def('CriticalStageEnum')),
+                    ckFormId('Object Reference', [
+                        'NULL',    'PLYR',    'ACHR',    'REFR',    'PGRE',
+                        'PHZD',    'PMIS',    'PARW',    'PBAR',    'PBEA',
+                        'PCON',    'PFLA'
+                    ]),
+                    ckFormId('Inventory Object', [
+                        'ARMO',    'BOOK',    'MISC',    'WEAP',    'AMMO',
+                        'KEYM',    'ALCH',    'SCRL',    'SLGM',    'INGR',
+                        'FLST',    'LIGH',    'LVLI',    'COBJ'
+                    ]),
+                    ckFormId('Actor', [
+                        'NULL',    'PLYR',    'ACHR',    'REFR'
+                    ]),
                     ckFormId('Voice Type', ['VTYP', 'FLST']),
                     ckFormId('Idle', ['IDLE']),
                     ckFormId('Form List', ['FLST']),
@@ -50,58 +66,85 @@ module.exports = game => {
                     ckFormId('Package', ['PACK']),
                     ckFormId('Encounter Zone', ['ECZN']),
                     ckFormId('Perk', ['PERK']),
-                    ckFormId('Owner', ['NULL', 'FACT', 'NPC_']),
+                    ckFormId('Owner', [
+                        'NULL',    'FACT',    'NPC_'
+                    ]),
                     ckFormId('Furniture', ['FURN', 'FLST']),
-                    ckFormId('Effect Item', ['SPEL', 'ENCH', 'ALCH', 'INGR', 'SCRL']),
+                    ckFormId('Effect Item', [
+                        'SPEL',    'ENCH',    'ALCH',    'INGR',    'SCRL'
+                    ]),
                     ckFormId('Base Effect', ['MGEF']),
                     ckFormId('Worldspace', ['WRLD', 'FLST']),
-                    enum32('VATS Value Function', def('VATSValueFunctionEnum')),
-                    uint32('VATS Value Param (INVALID)'),
-                    ckFormId('Referenceable Object', ['NULL', 'NPC_', 'PROJ', 'TREE', 'SOUN', 'ACTI', 'DOOR', 'STAT', 'FURN', 'CONT', 'ARMO', 'AMMO', 'MISC', 'WEAP', 'BOOK', 'KEYM', 'ALCH', 'LIGH', 'GRAS', 'ASPC', 'IDLM', 'ARMA', 'MSTT', 'TACT', 'FLST', 'LVLI', 'LVSP', 'SPEL', 'SCRL', 'SHOU', 'SLGM', 'ENCH']),
+                    format(uint32('VATS Value Function'), def('VATSValueFunctionEnum')),
+                    opts(uint32('VATS Value Param (INVALID)'), {
+                        "includeFlag": "dfZeroSortKey"
+                    }),
+                    ckFormId('Referenceable Object', [
+                        'NULL',    'NPC_',    'PROJ',    'TREE',    'SOUN',
+                        'ACTI',    'DOOR',    'STAT',    'FURN',    'CONT',
+                        'ARMO',    'AMMO',    'MISC',    'WEAP',    'BOOK',
+                        'KEYM',    'ALCH',    'LIGH',    'GRAS',    'ASPC',
+                        'IDLM',    'ARMA',    'MSTT',    'TACT',    'LVLI',
+                        'LVSP',    'SPEL',    'SCRL',    'SHOU',    'SLGM',
+                        'ENCH',    'FLOR',    'FLST'
+                    ]),
                     ckFormId('Region', ['REGN']),
                     ckFormId('Keyword', ['KYWD', 'NULL']),
-                    enum32('Player Action', def('AdvanceActionEnum')),
-                    enum32('Casting Type', def('CastingSourceEnum')),
+                    format(uint32('Player Action'), def('AdvanceActionEnum')),
+                    format(uint32('Casting Type'), def('CastingSourceEnum')),
                     ckFormId('Shout', ['SHOU']),
                     ckFormId('Location', ['LCTN']),
                     ckFormId('Location Ref Type', ['LCRT']),
-                    int32('Alias'),
+                    format(int32('Alias'), def('ConditionAliasToStr')),
                     uint32('Packdata ID'),
                     ckFormId('Association Type', ['ASTP']),
-                    enum32('Furniture Anim', def('FurnitureAnimTypeEnum')),
-                    enum32('Furniture Entry', [
-                        {
-                            '0x010000': 'Front',
-                            '0x020000': 'Behind',
-                            '0x040000': 'Right',
-                            '0x80000': 'Left',
-                            '0x100000': 'Up',
-                        }
-                    ]),
+                    format(uint32('Furniture Anim'), def('FurnitureAnimTypeEnum')),
+                    format(uint32('Furniture Entry'), {
+                        65536: 'Front',
+                        131072: 'Behind',
+                        262144: 'Right',
+                        524288: 'Left',
+                        1048576: 'Up'
+                    }),
                     ckFormId('Scene', ['NULL', 'SCEN']),
-                    enum32('Ward State', def('WardStateEnum')),
-                    uint32('Event'),
+                    format(uint32('Ward State'), def('WardStateEnum')),
+                    format(uint32('Event'), def('EventFunctionAndMemberToStr')),
                     formId('Event Data'),
+                    ckFormId('Knowable', ['MGEF', 'WOOP'])
                 ]),
-                union('Parameter #2', 'CTDAParam2Decider', [
+                union('Parameter #2', [
                     bytes('Unknown', 4),
-                    bytes('None', 4),
+                    opts(bytes('None', 4), {
+                        "includeFlag": "dfZeroSortKey"
+                    }),
                     int32('Integer'),
                     float('Float'),
-                    bytes('Variable Name (unused)', 4),
-                    enum32('Sex', def('SexEnum')),
-                    enumS32('Actor Value', def('ActorValueEnum')),
-                    enum32('Crime Type', def('CrimeTypeEnum')),
-                    enum32('Axis', def('AxisEnum')),
-                    int32('Quest Stage'),
-                    enum32('Misc Stat', def('MiscStatEnum')),
-                    enum32('Alignment', def('AlignmentEnum')),
+                    opts(bytes('Variable Name (unused)', 4), {
+                        "includeFlag": "dfZeroSortKey"
+                    }),
+                    format(uint32('Sex'), def('SexEnum')),
+                    format(int32('Actor Value'), def('ActorValueEnum')),
+                    format(uint32('Crime Type'), def('CrimeTypeEnum')),
+                    format(uint32('Axis'), def('AxisEnum')),
+                    format(int32('Quest Stage'), def('CTDAParam2QuestStageToStr')),
+                    format(uint32('Misc Stat'), def('MiscStatEnum')),
+                    format(uint32('Alignment'), def('AlignmentEnum')),
                     ckFormId('Equip Type', ['EQUP']),
-                    enum32('Form Type', def('FormTypeEnum')),
-                    enum32('Critical Stage', def('CriticalStageEnum')),
-                    ckFormId('Object Reference', ['NULL', 'PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD', 'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON', 'PFLA']),
-                    ckFormId('Inventory Object', ['ARMO', 'BOOK', 'MISC', 'WEAP', 'AMMO', 'KEYM', 'ALCH', 'SCRL', 'SLGM', 'INGR', 'FLST', 'LIGH', 'LVLI', 'COBJ']),
-                    ckFormId('Actor', ['NULL', 'PLYR', 'ACHR', 'REFR']),
+                    format(uint32('Form Type'), def('FormTypeEnum')),
+                    format(uint32('Critical Stage'), def('CriticalStageEnum')),
+                    ckFormId('Object Reference', [
+                        'NULL',    'PLYR',    'ACHR',    'REFR',    'PGRE',
+                        'PHZD',    'PMIS',    'PARW',    'PBAR',    'PBEA',
+                        'PCON',    'PFLA'
+                    ]),
+                    ckFormId('Inventory Object', [
+                        'ARMO',    'BOOK',    'MISC',    'WEAP',    'AMMO',
+                        'KEYM',    'ALCH',    'SCRL',    'SLGM',    'INGR',
+                        'FLST',    'LIGH',    'LVLI',    'COBJ'
+                    ]),
+                    ckFormId('Actor', [
+                        'NULL',    'PLYR',    'ACHR',    'REFR'
+                    ]),
                     ckFormId('Voice Type', ['VTYP', 'FLST']),
                     ckFormId('Idle', ['IDLE']),
                     ckFormId('Form List', ['FLST']),
@@ -116,106 +159,131 @@ module.exports = game => {
                     ckFormId('Package', ['PACK']),
                     ckFormId('Encounter Zone', ['ECZN']),
                     ckFormId('Perk', ['PERK']),
-                    ckFormId('Owner', ['NULL', 'FACT', 'NPC_']),
+                    ckFormId('Owner', [
+                        'NULL',    'FACT',    'NPC_'
+                    ]),
                     ckFormId('Furniture', ['FURN', 'FLST']),
-                    ckFormId('Effect Item', ['SPEL', 'ENCH', 'ALCH', 'INGR', 'SCRL']),
+                    ckFormId('Effect Item', [
+                        'SPEL',    'ENCH',    'ALCH',    'INGR',    'SCRL'
+                    ]),
                     ckFormId('Base Effect', ['MGEF']),
                     ckFormId('Worldspace', ['WRLD', 'FLST']),
-                    enum32('VATS Value Function', def('VATSValueFunctionEnum')),
-                    union('VATS Value Param', 'CTDAParam2VATSValueParamDecider', [
+                    format(uint32('VATS Value Function'), def('VATSValueFunctionEnum')),
+                    union('VATS Value Param', [
                         ckFormId('Weapon', ['WEAP']),
                         ckFormId('Weapon List', ['FLST']),
                         ckFormId('Target', ['NPC_']),
                         ckFormId('Target List', ['FLST']),
                         bytes('Unknown', 4),
-                        enumS32('Target Part', def('ActorValueEnum')),
-                        enum32('VATS Action', [
-                            {
-                                '0': 'Unarmed Attack',
-                                '1': 'One Hand Melee Attack',
-                                '2': 'Two Hand Melee Attack',
-                                '3': 'Magic Attack',
-                                '4': 'Ranged Attack',
-                                '5': 'Reload',
-                                '6': 'Crouch',
-                                '7': 'Stand',
-                                '8': 'Switch Weapon',
-                                '9': 'Toggle Weapon Drawn',
-                                '10': 'Heal',
-                                '11': 'Player Death',
-                            }
-                        ]),
-                        bytes('Unknown', 4),
-                        bytes('Unknown', 4),
+                        format(int32('Target Part'), def('ActorValueEnum')),
+                        format(uint32('VATS Action'), {
+                            0: 'Unarmed Attack',
+                            1: 'One Hand Melee Attack',
+                            2: 'Two Hand Melee Attack',
+                            3: 'Magic Attack',
+                            4: 'Ranged Attack',
+                            5: 'Reload',
+                            6: 'Crouch',
+                            7: 'Stand',
+                            8: 'Switch Weapon',
+                            9: 'Toggle Weapon Drawn',
+                            10: 'Heal',
+                            11: 'Player Death'
+                        }),
+                        opts(bytes('Unknown', 4), {
+                            "includeFlag": "dfZeroSortKey"
+                        }),
+                        opts(bytes('Unknown', 4), {
+                            "includeFlag": "dfZeroSortKey"
+                        }),
                         ckFormId('Critical Effect', ['SPEL']),
                         ckFormId('Critical Effect List', ['FLST']),
-                        bytes('Unknown', 4),
-                        bytes('Unknown', 4),
-                        bytes('Unknown', 4),
-                        bytes('Unknown', 4),
-                        enum32('Weapon Type', def('WeaponAnimTypeEnum')),
-                        bytes('Unknown', 4),
-                        bytes('Unknown', 4),
-                        enum32('Projectile Type', [
-                            {
-                                '0': 'Missile',
-                                '1': 'Lobber',
-                                '2': 'Beam',
-                                '3': 'Flame',
-                                '4': 'Cone',
-                                '5': 'Barrier',
-                                '6': 'Arrow',
-                            }
-                        ]),
-                        enum32('Delivery Type', def('TargetEnum')),
-                        enum32('Casting Type', def('CastEnum')),
+                        opts(bytes('Unknown', 4), {
+                            "includeFlag": "dfZeroSortKey"
+                        }),
+                        opts(bytes('Unknown', 4), {
+                            "includeFlag": "dfZeroSortKey"
+                        }),
+                        opts(bytes('Unknown', 4), {
+                            "includeFlag": "dfZeroSortKey"
+                        }),
+                        opts(bytes('Unknown', 4), {
+                            "includeFlag": "dfZeroSortKey"
+                        }),
+                        format(uint32('Weapon Type'), def('WeaponAnimTypeEnum')),
+                        opts(bytes('Unknown', 4), {
+                            "includeFlag": "dfZeroSortKey"
+                        }),
+                        opts(bytes('Unknown', 4), {
+                            "includeFlag": "dfZeroSortKey"
+                        }),
+                        format(uint32('Projectile Type'), {
+                            0: 'Missile',
+                            1: 'Lobber',
+                            2: 'Beam',
+                            3: 'Flame',
+                            4: 'Cone',
+                            5: 'Barrier',
+                            6: 'Arrow'
+                        }),
+                        format(uint32('Delivery Type'), def('TargetEnum')),
+                        format(uint32('Casting Type'), def('CastEnum'))
                     ]),
-                    ckFormId('Referenceable Object', ['NULL', 'NPC_', 'PROJ', 'TREE', 'SOUN', 'ACTI', 'DOOR', 'STAT', 'FURN', 'CONT', 'ARMO', 'AMMO', 'MISC', 'WEAP', 'BOOK', 'KEYM', 'ALCH', 'LIGH', 'GRAS', 'ASPC', 'IDLM', 'ARMA', 'MSTT', 'TACT', 'FLST', 'LVLI', 'LVSP', 'SPEL', 'SCRL', 'SHOU', 'SLGM', 'ENCH']),
+                    ckFormId('Referenceable Object', [
+                        'NULL',    'NPC_',    'PROJ',    'TREE',    'SOUN',
+                        'ACTI',    'DOOR',    'STAT',    'FURN',    'CONT',
+                        'ARMO',    'AMMO',    'MISC',    'WEAP',    'BOOK',
+                        'KEYM',    'ALCH',    'LIGH',    'GRAS',    'ASPC',
+                        'IDLM',    'ARMA',    'MSTT',    'TACT',    'FLST',
+                        'LVLI',    'LVSP',    'SPEL',    'SCRL',    'SHOU',
+                        'SLGM',    'ENCH'
+                    ]),
                     ckFormId('Region', ['REGN']),
                     ckFormId('Keyword', ['KYWD', 'NULL']),
-                    enum32('Player Action', def('AdvanceActionEnum')),
-                    enum32('Casting Type', def('CastingSourceEnum')),
+                    format(uint32('Player Action'), def('AdvanceActionEnum')),
+                    format(uint32('Casting Type'), def('CastingSourceEnum')),
                     ckFormId('Shout', ['SHOU']),
                     ckFormId('Location', ['LCTN']),
                     ckFormId('Location Ref Type', ['LCRT']),
-                    int32('Alias'),
+                    format(int32('Alias'), def('ConditionAliasToStr')),
                     uint32('Packdata ID'),
                     ckFormId('Association Type', ['ASTP']),
-                    enum32('Furniture Anim', def('FurnitureAnimTypeEnum')),
-                    enum32('Furniture Entry', [
-                        {
-                            '0x010000': 'Front',
-                            '0x020000': 'Behind',
-                            '0x040000': 'Right',
-                            '0x80000': 'Left',
-                            '0x100000': 'Up',
-                        }
-                    ]),
+                    format(uint32('Furniture Anim'), def('FurnitureAnimTypeEnum')),
+                    format(uint32('Furniture Entry'), {
+                        65536: 'Front',
+                        131072: 'Behind',
+                        262144: 'Right',
+                        524288: 'Left',
+                        1048576: 'Up'
+                    }),
                     ckFormId('Scene', ['NULL', 'SCEN']),
-                    enum32('Ward State', def('WardStateEnum')),
-                    uint32('Event'),
+                    format(uint32('Ward State'), def('WardStateEnum')),
+                    format(uint32('Event'), def('EventFunctionAndMemberToStr')),
                     formId('Event Data'),
+                    ckFormId('Knowable', ['MGEF', 'WOOP'])
                 ]),
-                enum32('Run On', [
-                    {
-                        '0': 'Subject',
-                        '1': 'Target',
-                        '2': 'Reference',
-                        '3': 'Combat Target',
-                        '4': 'Linked Reference',
-                        '5': 'Quest Alias',
-                        '6': 'Package Data',
-                        '7': 'Event Data',
-                    }
-                ]),
-                union('Reference', 'CTDAReferenceDecider', [
+                format(uint32('Run On'), {
+                    0: 'Subject',
+                    1: 'Target',
+                    2: 'Reference',
+                    3: 'Combat Target',
+                    4: 'Linked Reference',
+                    5: 'Quest Alias',
+                    6: 'Package Data',
+                    7: 'Event Data'
+                }),
+                union('Reference', [
                     uint32('Unused'),
-                    ckFormId('Reference', ['NULL', 'PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD', 'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON', 'PFLA']),
+                    ckFormId('Reference', [
+                        'NULL',    'PLYR',    'ACHR',    'REFR',    'PGRE',
+                        'PHZD',    'PMIS',    'PARW',    'PBAR',    'PBEA',
+                        'PCON',    'PFLA'
+                    ])
                 ]),
-                int32('Parameter #3'),
-            ])),
-            subrecord('CIS1', zstring('Parameter #1')),
-            subrecord('CIS2', zstring('Parameter #2')),
-        ]),
+                int32('Parameter #3')
+            ]))),
+            subrecord('CIS1', cstring('Parameter #1')),
+            subrecord('CIS2', cstring('Parameter #2'))
+        ]))
     );
 };

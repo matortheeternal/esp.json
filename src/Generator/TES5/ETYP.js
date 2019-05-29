@@ -2,8 +2,8 @@ let {
     addDef, subrecord, ckFormId
 } = require('../helpers');
 
-module.exports = game => {
+module.exports = () => {
     addDef('ETYP', 
-        subrecord('ETYP', ckFormId('Equipment Type', ['EQUP', 'NULL'])),
+        subrecord('ETYP', ckFormId('Equipment Type', ['EQUP', 'NULL']))
     );
 };

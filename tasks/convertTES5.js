@@ -1,10 +1,3 @@
-let { convertFile } = require('../src/Converter/converter');
+let convertFile = require('../src/Converter/convertFile');
 
-// 25.4% completed
-['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'].forEach(char => {
-    try {
-        convertFile(`TES5${char}.pas`);
-    } catch (x) {
-        console.error(x);
-    }
-});
+convertFile('wbDefinitionsTES5.pas', 'TES5');

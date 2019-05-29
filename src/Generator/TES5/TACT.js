@@ -1,16 +1,16 @@
 let {
-    addDef, record, def, req, subrecord, 
-    unknown, ckFormId
+    def, req, subrecord, unknown, ckFormId, 
+    record
 } = require('../helpers');
 
-module.exports = game => {
-    addDef('TACT', record('TACT', 'Talking Activator', {
+module.exports = () => {
+    record('TACT', 'Talking Activator', {
         flags: {
-            9: 'Hidden From Local Map',                     // 0x00000200
-            16: 'Random Anim Start',                        // 0x00010000
-            17: 'Radio Station',                            // 0x00020000
+            9: 'Hidden From Local Map',
+            16: 'Random Anim Start',
+            17: 'Radio Station'
         },
-        elements: [
+        members: [
             def('EDID'),
             def('VMAD'),
             req(def('OBND')),
@@ -22,7 +22,7 @@ module.exports = game => {
             req(subrecord('PNAM', unknown())),
             subrecord('SNAM', ckFormId('Looping Sound', ['SNDR'])),
             req(subrecord('FNAM', unknown())),
-            subrecord('VNAM', ckFormId('Voice Type', ['VTYP'])),
+            subrecord('VNAM', ckFormId('Voice Type', ['VTYP']))
         ]
-    }));
+    })
 };

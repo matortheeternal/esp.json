@@ -2,13 +2,13 @@ let {
     addDef
 } = require('../helpers');
 
-module.exports = game => {
+module.exports = () => {
     addDef('CastingSourceEnum', 
         {
-            '0': 'Left',
-            '1': 'Right',
-            '2': 'Voice',
-            '3': 'Instant',
+            0: 'Left',
+            1: 'Right',
+            2: 'Voice',
+            3: 'Instant'
         }
     );
 };
