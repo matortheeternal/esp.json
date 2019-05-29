@@ -19,8 +19,10 @@ let format = (obj, format) => (obj.format = format) && obj;
 let div = value => ({ type: 'divide', value });
 
 // data structures
-let record = (signature, name, def) =>
-    ({ signature, type: 'record', name, def });
+let record = (signature, name, def) => addDef(signature,
+    ({ signature, type: 'record', name, def })
+);
+
 let subrecord = (signature, def) =>
     ({ signature, type: 'subrecord', def });
 let arrayOfSubrecord = (name, sortKey, subrecord) =>
