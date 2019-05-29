@@ -1,9 +1,9 @@
 let {functionConverter} = require('../converters'),
-    {args, reqLine} = require('../helpers');
+    {args, reqLine, newLine} = require('../helpers');
 
 functionConverter('wbRArrayS', [
     args.name,
-    args.field,
+    args.member,
     args.identifier,
     args.required,
     args.identifier,
@@ -11,8 +11,8 @@ functionConverter('wbRArrayS', [
     args.identifier,
     args.identifier,
     args.identifier
-], ({name, element, required}, converter) => {
+], ({name, member, required}, converter) => {
     converter.addRequires('arrayOfSubrecord');
-    let line = `arrayOfSubrecord('${name}', ${element})`;
+    let line = `arrayOfSubrecord(${name}, ${newLine(member)})`;
     return reqLine(required, line, converter);
 });

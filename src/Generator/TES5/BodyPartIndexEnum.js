@@ -3,7 +3,9 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('BodyPartIndexEnum', {
-        "0": "Body Texture"
-    });
+    addDef('BodyPartIndexEnum', 
+        {
+            0: 'Body Texture'
+        }
+    );
 };

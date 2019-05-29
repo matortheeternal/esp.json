@@ -3,5 +3,9 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('CNTOsNoReach', req(arrayOfSubrecord('Items', def('CNTONoReach'))));
+    addDef('CNTOsNoReach', 
+        req(arrayOfSubrecord('Items', 
+            def('CNTONoReach')
+        ))
+    );
 };

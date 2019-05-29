@@ -3,5 +3,9 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('PDTOs', arrayOfSubrecord('Topic', def('PDTO')));
+    addDef('PDTOs', 
+        arrayOfSubrecord('Topic', 
+            def('PDTO')
+        )
+    );
 };

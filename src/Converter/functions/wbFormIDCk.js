@@ -11,5 +11,5 @@ subrecordAndField('wbFormIDCk', [
     args.identifier
 ], ({sig, name, signatures}, converter) => {
     converter.addRequires('ckFormId');
-    return `ckFormId('${name}', ${signatures})`;
+    return `ckFormId(${name}, ${signatures})`;
 });

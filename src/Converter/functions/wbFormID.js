@@ -7,5 +7,5 @@ subrecordAndField('wbFormID', [
     args.required
 ], ({name}, converter) => {
     converter.addRequires('formId');
-    return `formId('${name}')`;
+    return `formId(${name})`;
 });

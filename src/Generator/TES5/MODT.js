@@ -3,5 +3,7 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('MODT', subrecord('MODT', bytes('Texture Files Hashes', 0)));
+    addDef('MODT', 
+        subrecord('MODT', bytes('Texture Files Hashes'))
+    );
 };

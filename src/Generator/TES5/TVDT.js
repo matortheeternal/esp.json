@@ -3,5 +3,7 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('TVDT', subrecord('TVDT', bytes('Occlusion Data', 0)));
+    addDef('TVDT', 
+        subrecord('TVDT', bytes('Occlusion Data'))
+    );
 };

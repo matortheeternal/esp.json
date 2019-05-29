@@ -11,7 +11,7 @@ subrecordAndField('wbFormIDCkNoReach', [
     args.identifier
 ], ({name, signatures}, converter) => {
     converter.addRequires('ckFormId');
-    return `ckFormId('${name}', ${signatures})`;
+    return `ckFormId(${name}, ${signatures})`;
 });
 
 functionConverter('wbFormIDCkNoReach', [
@@ -25,5 +25,5 @@ functionConverter('wbFormIDCkNoReach', [
     args.identifier
 ], ({name, signatures}, converter) => {
     converter.addRequires('ckFormId');
-    return `ckFormId('${name}', ${signatures})`;
+    return `ckFormId(${name}, ${signatures})`;
 });

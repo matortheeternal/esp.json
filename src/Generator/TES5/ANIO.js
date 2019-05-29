@@ -5,7 +5,7 @@ let {
 module.exports = () => {
     record('ANIO', 'Animated Object', {
         flags: {
-            "9": "Unknown 9"
+            9: 'Unknown 9'
         },
         members: [
             def('EDID'),

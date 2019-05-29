@@ -11,5 +11,5 @@ subrecordAndField('wbUnion', [
     args.identifier
 ], ({name, members}, converter) => {
     converter.addRequires('union');
-    return `union('${name}', ${members})`;
+    return `union(${name}, ${members})`;
 });

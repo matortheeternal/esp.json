@@ -6,7 +6,7 @@ let {
 module.exports = () => {
     record('MISC', 'Misc. Item', {
         flags: {
-            "2": "Non-Playable"
+            2: 'Non-Playable'
         },
         members: [
             def('EDID'),

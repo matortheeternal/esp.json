@@ -16,8 +16,8 @@ module.exports = () => {
             ])),
             subrecord('BNAM', float('Buoyancy')),
             subrecord('FNAM', format(uint32('Flags'), {
-                "0": "Stair Material",
-                "1": "Arrows Stick"
+                0: 'Stair Material',
+                1: 'Arrows Stick'
             })),
             subrecord('HNAM', ckFormId('Havok Impact Data Set', ['IPDS', 'NULL']))
         ]

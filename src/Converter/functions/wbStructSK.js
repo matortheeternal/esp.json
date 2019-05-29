@@ -14,7 +14,7 @@ subrecordAndField('wbStructSK', [
     args.identifier
 ], ({sk, name, fields}, converter) => {
     converter.addRequires('sortKey', 'struct');
-    return `sortKey(${sk}, struct('${name}', ${fields}))`;
+    return `sortKey(${sk}, struct(${name}, ${fields}))`;
 });
 
 functionConverter('wbStructSK', [
@@ -31,5 +31,5 @@ functionConverter('wbStructSK', [
     args.identifier
 ], ({sk, name, fields}, converter) => {
     converter.addRequires('sortKey', 'struct');
-    return `sortKey(${sk}, struct('${name}', ${fields}))`;
+    return `sortKey(${sk}, struct(${name}, ${fields}))`;
 });

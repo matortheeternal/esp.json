@@ -9,8 +9,8 @@ module.exports = () => {
             def('EDID'),
             def('FULL'),
             subrecord('FNAM', format(uint32('Flags'), {
-                "0": "Mute When Submerged",
-                "1": "Should Appear on Menu"
+                0: 'Mute When Submerged',
+                1: 'Should Appear on Menu'
             })),
             subrecord('PNAM', ckFormId('Parent', ['SNCT'])),
             subrecord('VNAM', format(uint16('Static Volume Multiplier'), div(65535))),

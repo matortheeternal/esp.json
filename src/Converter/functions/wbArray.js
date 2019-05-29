@@ -1,5 +1,5 @@
 let {subrecordAndField} = require('../converters'),
-    {args} = require('../helpers');
+    {args, newLine} = require('../helpers');
 
 subrecordAndField('wbArray', [
     args.name,
@@ -14,7 +14,7 @@ subrecordAndField('wbArray', [
 ], ({name, element, size}, converter) => {
     converter.addRequires('array');
     let sizeArg = size ? ', ' + size : '';
-    return `array('${name}', ${element}${sizeArg})`;
+    return `array(${name}, ${newLine(element)}${sizeArg})`;
 });
 
 // TODO: use labels?
@@ -29,5 +29,5 @@ subrecordAndField('wbArray', [
     args.identifier
 ], ({name, element, labels}, converter) => {
     converter.addRequires('array');
-    return `array('${name}', ${element})`;
+    return `array(${name}, ${newLine(element)})`;
 });

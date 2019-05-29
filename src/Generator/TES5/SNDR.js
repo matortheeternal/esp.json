@@ -12,19 +12,21 @@ module.exports = () => {
             subrecord('CNAM', unknown()),
             subrecord('GNAM', formId('Category')),
             subrecord('SNAM', ckFormId('Alternate Sound For', ['SNDR', 'NULL'])),
-            arrayOfSubrecord('Sounds', multiStruct('Sound Files', [
-                subrecord('ANAM', cstring('File Name'))
-            ])),
+            arrayOfSubrecord('Sounds', 
+                multiStruct('Sound Files', [
+                    subrecord('ANAM', cstring('File Name'))
+                ])
+            ),
             subrecord('ONAM', ckFormId('Output Model', ['SOPM', 'NULL'])),
             subrecord('FNAM', string('String')),
             def('CTDAs'),
             subrecord('LNAM', struct('Values', [
                 bytes('Unknown', 1),
                 format(uint8('Looping'), {
-                    "0": "None",
-                    "8": "Loop",
-                    "16": "Envelope Fast",
-                    "32": "Envelope Slow"
+                    0: 'None',
+                    8: 'Loop',
+                    16: 'Envelope Fast',
+                    32: 'Envelope Slow'
                 }),
                 bytes('Unknown', 1),
                 uint8('Rumble Send Value = (Small / 7) + ((Big / 7) * 16)')

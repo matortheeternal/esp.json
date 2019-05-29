@@ -7,7 +7,7 @@ let {
 module.exports = game => {
     record('AMMO', 'Ammunition', {
         flags: {
-            "2": "Non-Playable"
+            2: 'Non-Playable'
         },
         members: [
             def('EDID'),
@@ -25,9 +25,9 @@ module.exports = game => {
                 req(subrecord('DATA', struct('Data', [
                     ckFormId('Projectile', ['PROJ', 'NULL']),
                     format(uint32('Flags'), {
-                        "0": "Ignores Normal Weapon Resistance",
-                        "1": "Non-Playable",
-                        "2": "Non-Bolt"
+                        0: 'Ignores Normal Weapon Resistance',
+                        1: 'Non-Playable',
+                        2: 'Non-Bolt'
                     }),
                     float('Damage'),
                     uint32('Value'),
@@ -36,9 +36,9 @@ module.exports = game => {
                 req(subrecord('DATA', struct('Data', [
                     ckFormId('Projectile', ['PROJ', 'NULL']),
                     format(uint32('Flags'), {
-                        "0": "Ignores Normal Weapon Resistance",
-                        "1": "Non-Playable",
-                        "2": "Non-Bolt"
+                        0: 'Ignores Normal Weapon Resistance',
+                        1: 'Non-Playable',
+                        2: 'Non-Bolt'
                     }),
                     float('Damage'),
                     uint32('Value')

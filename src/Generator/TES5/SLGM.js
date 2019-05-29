@@ -6,7 +6,7 @@ let {
 module.exports = () => {
     record('SLGM', 'Soul Gem', {
         flags: {
-            "17": "Can Hold NPC Soul"
+            17: 'Can Hold NPC Soul'
         },
         members: [
             def('EDID'),

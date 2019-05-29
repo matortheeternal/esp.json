@@ -6,7 +6,7 @@ let {
 module.exports = () => {
     record('KEYM', 'Key', {
         flags: {
-            "2": "Non-Playable"
+            2: 'Non-Playable'
         },
         members: [
             def('EDID'),

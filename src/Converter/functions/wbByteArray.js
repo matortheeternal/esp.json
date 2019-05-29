@@ -10,5 +10,6 @@ subrecordAndField('wbByteArray', [
     args.identifier
 ], ({name, size}, converter) => {
     converter.addRequires('bytes');
-    return `bytes('${name}', ${size || 0})`;
+    let sizeArg = size ? ', ' + size : '';
+    return `bytes(${name + sizeArg})`;
 });

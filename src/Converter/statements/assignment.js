@@ -1,4 +1,5 @@
-let {statementConverter, convertFunction} = require('../converters');
+let {statementConverter, convertFunction} = require('../converters'),
+    {newLine} = require('../helpers');
 
 let assignmentExpr = /^([a-z][a-z0-9]*)\s+:=\s+([a-z][a-z0-9]*)\(/i;
 
@@ -19,7 +20,7 @@ statementConverter('assignment', {
         converter.newOutput(`${name}.js`);
         converter.addRequires('addDef');
         let code = convertFunction(converter, match[2]);
-        converter.write(`addDef('${name}', ${code});`);
+        converter.write(`addDef('${name}', ${newLine(code)});`);
         if (!skipReq(name)) converter.saveOutput();
         converter.chomp(';');
     }

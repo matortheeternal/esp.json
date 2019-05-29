@@ -10,9 +10,9 @@ module.exports = () => {
             req(subrecord('QNAM', ckFormId('Quest', ['QUST']))),
             subrecord('TNAM', uint32('Unknown')),
             subrecord('DNAM', format(uint32('Flags'), {
-                "0": "Top-Level",
-                "1": "Blocking",
-                "2": "Exclusive"
+                0: 'Top-Level',
+                1: 'Blocking',
+                2: 'Exclusive'
             })),
             req(subrecord('SNAM', ckFormId('Starting Topic', ['DIAL'])))
         ]

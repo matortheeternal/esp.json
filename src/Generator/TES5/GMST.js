@@ -12,8 +12,8 @@ module.exports = () => {
                 int32('Int'),
                 float('Float'),
                 format(uint32('Bool'), {
-                    "0": "False",
-                    "1": "True"
+                    0: 'False',
+                    1: 'True'
                 })
             ])))
         ]

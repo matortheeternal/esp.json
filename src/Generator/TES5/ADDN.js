@@ -14,8 +14,8 @@ module.exports = () => {
             req(subrecord('DNAM', struct('Data', [
                 uint16('Master Particle System Cap'),
                 format(uint16('Flags'), {
-                    "1": "Unknown 1",
-                    "3": "Always Loaded"
+                    1: 'Unknown 1',
+                    3: 'Always Loaded'
                 })
             ])))
         ]

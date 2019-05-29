@@ -4,9 +4,11 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('MODLActor', req(sortKey([0], multiStruct('Model', [
-        req(subrecord('MODL', cstring('Model FileName'))),
-        def('MODT'),
-        def('MODS')
-    ]))));
+    addDef('MODLActor', 
+        req(sortKey([0], multiStruct('Model', [
+            req(subrecord('MODL', cstring('Model FileName'))),
+            def('MODT'),
+            def('MODS')
+        ])))
+    );
 };

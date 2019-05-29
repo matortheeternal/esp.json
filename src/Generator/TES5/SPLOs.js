@@ -3,5 +3,9 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('SPLOs', req(arrayOfSubrecord('Actor Effects', def('SPLO'))));
+    addDef('SPLOs', 
+        req(arrayOfSubrecord('Actor Effects', 
+            def('SPLO')
+        ))
+    );
 };

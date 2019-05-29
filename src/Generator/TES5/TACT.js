@@ -6,9 +6,9 @@ let {
 module.exports = () => {
     record('TACT', 'Talking Activator', {
         flags: {
-            "9": "Hidden From Local Map",
-            "16": "Random Anim Start",
-            "17": "Radio Station"
+            9: 'Hidden From Local Map',
+            16: 'Random Anim Start',
+            17: 'Radio Station'
         },
         members: [
             def('EDID'),

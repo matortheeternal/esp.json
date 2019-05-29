@@ -3,5 +3,7 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('ActorValue', format(int32('Actor Value'), def('ActorValueEnum')));
+    addDef('ActorValue', 
+        format(int32('Actor Value'), def('ActorValueEnum'))
+    );
 };

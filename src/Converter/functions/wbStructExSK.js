@@ -9,7 +9,7 @@ functionConverter('wbStructExSK', [
     args.fields
 ], ({sig, sk, exSk, name, fields}, converter) => {
     converter.addRequires('subrecord', 'sortKey', 'struct');
-    let structDef = `struct('${name}', ${fields})`,
+    let structDef = `struct(${name}, ${fields})`,
         sortKeyDef = `sortKey(${sk}, ${structDef})`;
     return `subrecord('${sig}', ${sortKeyDef})`;
 });

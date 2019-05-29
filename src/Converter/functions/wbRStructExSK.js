@@ -9,6 +9,6 @@ functionConverter('wbRStructExSK', [
     args.signatures
 ], ({sk, exSk, name, fields}, converter) => {
     converter.addRequires('sortKey', 'multiStruct');
-    let structDef = `multiStruct('${name}', ${fields})`;
+    let structDef = `multiStruct(${name}, ${fields})`;
     return `sortKey(${sk}, ${structDef})`;
 });

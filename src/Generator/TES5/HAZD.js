@@ -18,13 +18,15 @@ module.exports = () => {
                 float('Image Space Radius'),
                 float('Target Interval'),
                 format(uint32('Flags'), {
-                    "0": "Affects Player Only",
-                    "1": "Inherit Duration from Spawn Spell",
-                    "2": "Align to Impact Normal",
-                    "3": "Inherit Radius from Spawn Spell",
-                    "4": "Drop to Ground"
+                    0: 'Affects Player Only',
+                    1: 'Inherit Duration from Spawn Spell',
+                    2: 'Align to Impact Normal',
+                    3: 'Inherit Radius from Spawn Spell',
+                    4: 'Drop to Ground'
                 }),
-                ckFormId('Spell', ['SPEL', 'ENCH', 'NULL']),
+                ckFormId('Spell', [
+                    'SPEL',    'ENCH',    'NULL'
+                ]),
                 ckFormId('Light', ['LIGH', 'NULL']),
                 ckFormId('Impact Data Set', ['IPDS', 'NULL']),
                 ckFormId('Sound', ['SNDR', 'NULL'])

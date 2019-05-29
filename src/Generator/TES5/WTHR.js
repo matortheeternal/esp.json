@@ -38,31 +38,39 @@ module.exports = () => {
             subrecord('J0TX', cstring('Cloud Texture Layer #26')),
             subrecord('K0TX', cstring('Cloud Texture Layer #27')),
             subrecord('L0TX', cstring('Cloud Texture Layer #28')),
-            subrecord('DNAM', bytes('Unused', 0)),
-            subrecord('CNAM', bytes('Unused', 0)),
-            subrecord('ANAM', bytes('Unused', 0)),
-            subrecord('BNAM', bytes('Unused', 0)),
+            subrecord('DNAM', bytes('Unused')),
+            subrecord('CNAM', bytes('Unused')),
+            subrecord('ANAM', bytes('Unused')),
+            subrecord('BNAM', bytes('Unused')),
             subrecord('LNAM', unknown()),
             subrecord('MNAM', ckFormId('Precipitation Type', ['SPGD', 'NULL'])),
             req(subrecord('NNAM', ckFormId('Visual Effect', ['RFCT', 'NULL']))),
-            subrecord('ONAM', bytes('Unused', 0)),
+            subrecord('ONAM', bytes('Unused')),
             multiStruct('Cloud Speed', [
-                opts(subrecord('RNAM', array('Y Speed', format(uint8('Layer'), def('CloudSpeedToStr')))), {
+                opts(subrecord('RNAM', array('Y Speed', 
+                    format(uint8('Layer'), def('CloudSpeedToStr'))
+                )), {
                     "includeFlag": "dfNotAlignable"
                 }),
-                opts(subrecord('QNAM', array('X Speed', format(uint8('Layer'), def('CloudSpeedToStr')))), {
+                opts(subrecord('QNAM', array('X Speed', 
+                    format(uint8('Layer'), def('CloudSpeedToStr'))
+                )), {
                     "includeFlag": "dfNotAlignable"
                 })
             ]),
-            opts(subrecord('PNAM', array('Cloud Colors', def('WeatherColors', { name: 'Layer' }))), {
+            opts(subrecord('PNAM', array('Cloud Colors', 
+                def('WeatherColors', { name: 'Layer' })
+            )), {
                 "includeFlag": "dfNotAlignable"
             }),
-            opts(subrecord('JNAM', array('Cloud Alphas', struct('Layer', [
-                float('Sunrise'),
-                float('Day'),
-                float('Sunset'),
-                float('Night')
-            ]))), {
+            opts(subrecord('JNAM', array('Cloud Alphas', 
+                struct('Layer', [
+                    float('Sunrise'),
+                    float('Day'),
+                    float('Sunset'),
+                    float('Night')
+                ])
+            )), {
                 "includeFlag": "dfNotAlignable"
             }),
             req(subrecord('NAM0', struct('Weather Colors', [
@@ -106,12 +114,12 @@ module.exports = () => {
                 uint8('Thunder/Lightning - End Fade Out'),
                 uint8('Thunder/Lightning - Frequency'),
                 format(uint8('Flags'), {
-                    "0": "Weather - Pleasant",
-                    "1": "Weather - Cloudy",
-                    "2": "Weather - Rainy",
-                    "3": "Weather - Snow",
-                    "4": "Sky Statics - Always Visible",
-                    "5": "Sky Statics - Follows Sun Position"
+                    0: 'Weather - Pleasant',
+                    1: 'Weather - Cloudy',
+                    2: 'Weather - Rainy',
+                    3: 'Weather - Snow',
+                    4: 'Sky Statics - Always Visible',
+                    5: 'Sky Statics - Follows Sun Position'
                 }),
                 struct('Lightning Color', [
                     uint8('Red'),
@@ -124,49 +132,55 @@ module.exports = () => {
                 uint8('Wind Direction Range')
             ]))),
             subrecord('NAM1', format(uint32('Disabled Cloud Layers'), {
-                "0": "0",
-                "1": "1",
-                "2": "2",
-                "3": "3",
-                "4": "4",
-                "5": "5",
-                "6": "6",
-                "7": "7",
-                "8": "8",
-                "9": "9",
-                "10": "10",
-                "11": "11",
-                "12": "12",
-                "13": "13",
-                "14": "14",
-                "15": "15",
-                "16": "16",
-                "17": "17",
-                "18": "18",
-                "19": "19",
-                "20": "20",
-                "21": "21",
-                "22": "22",
-                "23": "23",
-                "24": "24",
-                "25": "25",
-                "26": "26",
-                "27": "27",
-                "28": "28",
-                "29": "29",
-                "30": "30",
-                "31": "31"
+                0: '0',
+                1: '1',
+                2: '2',
+                3: '3',
+                4: '4',
+                5: '5',
+                6: '6',
+                7: '7',
+                8: '8',
+                9: '9',
+                10: '10',
+                11: '11',
+                12: '12',
+                13: '13',
+                14: '14',
+                15: '15',
+                16: '16',
+                17: '17',
+                18: '18',
+                19: '19',
+                20: '20',
+                21: '21',
+                22: '22',
+                23: '23',
+                24: '24',
+                25: '25',
+                26: '26',
+                27: '27',
+                28: '28',
+                29: '29',
+                30: '30',
+                31: '31'
             })),
-            arrayOfSubrecord('Sounds', subrecord('SNAM', struct('Sound', [
-                ckFormId('Sound', ['SNDR', 'SOUN', 'NULL']),
-                format(uint32('Type'), {
-                    "0": "Default",
-                    "1": "Precipitation",
-                    "2": "Wind",
-                    "3": "Thunder"
-                })
-            ]))),
-            arrayOfSubrecord('Sky Statics', subrecord('TNAM', ckFormId('Static', ['STAT', 'NULL']))),
+            arrayOfSubrecord('Sounds', 
+                subrecord('SNAM', struct('Sound', [
+                    ckFormId('Sound', [
+                        'SNDR',    'SOUN',    'NULL'
+                    ]),
+                    format(uint32('Type'), {
+                        0: 'Default',
+                        1: 'Precipitation',
+                        2: 'Wind',
+                        3: 'Thunder'
+                    })
+                ]))
+            ),
+            arrayOfSubrecord('Sky Statics', 
+                subrecord('TNAM', ckFormId('Static', ['STAT', 'NULL']))
+            ),
             subrecord('IMSP', struct('Image Spaces', [
                 ckFormId('Sunrise', ['IMGS', 'NULL']),
                 ckFormId('Day', ['IMGS', 'NULL']),
@@ -185,8 +199,8 @@ module.exports = () => {
                 subrecord('DALC', def('wbAmbientColors', { name: 'Sunset' })),
                 subrecord('DALC', def('wbAmbientColors', { name: 'Night' }))
             ])),
-            subrecord('NAM2', bytes('Unused', 0)),
-            subrecord('NAM3', bytes('Unused', 0)),
+            subrecord('NAM2', bytes('Unused')),
+            subrecord('NAM3', bytes('Unused')),
             multiStruct('Aurora', [
                 def('MODL')
             ]),

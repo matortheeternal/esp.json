@@ -5,5 +5,5 @@ functionConverter('wbByteColors', [
     args.name
 ], ({name}, converter) => {
     converter.addRequires('def');
-    return `def('ByteColors', { name: '${name}' })`;
+    return `def('ByteColors', { name: ${name} })`;
 });

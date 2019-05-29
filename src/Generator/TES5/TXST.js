@@ -20,9 +20,9 @@ module.exports = () => {
             ]),
             def('DODT'),
             subrecord('DNAM', format(uint16('Flags'), {
-                "0": "No Specular Map",
-                "1": "Facegen Textures",
-                "2": "Has Model Space Normal Map"
+                0: 'No Specular Map',
+                1: 'Facegen Textures',
+                2: 'Has Model Space Normal Map'
             }))
         ]
     })

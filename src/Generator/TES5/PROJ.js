@@ -14,27 +14,27 @@ module.exports = () => {
             def('DEST'),
             req(subrecord('DATA', struct('Data', [
                 format(uint16('Flags'), {
-                    "0": "Hitscan",
-                    "1": "Explosion",
-                    "2": "Alt. Trigger",
-                    "3": "Muzzle Flash",
-                    "4": "",
-                    "5": "Can Be Disabled",
-                    "6": "Can Be Picked Up",
-                    "7": "Supersonic",
-                    "8": "Pins Limbs",
-                    "9": "Pass Through Small Transparent",
-                    "10": "Disable Combat Aim Correction",
-                    "11": "Rotation"
+                    0: 'Hitscan',
+                    1: 'Explosion',
+                    2: 'Alt. Trigger',
+                    3: 'Muzzle Flash',
+                    4: '',
+                    5: 'Can Be Disabled',
+                    6: 'Can Be Picked Up',
+                    7: 'Supersonic',
+                    8: 'Pins Limbs',
+                    9: 'Pass Through Small Transparent',
+                    10: 'Disable Combat Aim Correction',
+                    11: 'Rotation'
                 }),
                 format(uint16('Type'), {
-                    "1": "Missile",
-                    "2": "Lobber",
-                    "4": "Beam",
-                    "8": "Flame",
-                    "16": "Cone",
-                    "32": "Barrier",
-                    "64": "Arrow"
+                    1: 'Missile',
+                    2: 'Lobber',
+                    4: 'Beam',
+                    8: 'Flame',
+                    16: 'Cone',
+                    32: 'Barrier',
+                    64: 'Arrow'
                 }),
                 float('Gravity'),
                 float('Speed'),
@@ -61,7 +61,7 @@ module.exports = () => {
             ]))),
             req(sortKey([0], multiStruct('Muzzle Flash Model', [
                 subrecord('NAM1', cstring('Model FileName')),
-                subrecord('NAM2', bytes('Texture Files Hashes', 0))
+                subrecord('NAM2', bytes('Texture Files Hashes'))
             ]))),
             subrecord('VNAM', format(uint32('Sound Level'), def('SoundLevelEnum')))
         ]

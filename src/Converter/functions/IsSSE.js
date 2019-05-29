@@ -1,5 +1,5 @@
 let {functionConverter} = require('../converters'),
-    {arr} = require('../helpers');
+    {arr, inlineArr} = require('../helpers');
 
 functionConverter('IsSSE', [
     { type: 'member', name: 'm1' },
@@ -14,5 +14,5 @@ functionConverter('IsSSE', [
     { type: 'string', name: 's2' }
 ], ({s1, s2}, converter) => {
     converter.addRequires('IsSSE');
-    return `IsSSE(game, ${arr([`'${s1}'`, `'${s2}'`])})`;
+    return `IsSSE(game, ${inlineArr([s1, s2])})`;
 });

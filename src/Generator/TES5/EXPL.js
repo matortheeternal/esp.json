@@ -26,15 +26,15 @@ module.exports = () => {
                 float('IS Radius'),
                 float('Vertical Offset Mult'),
                 format(uint32('Flags'), {
-                    "0": "Unknown 0",
-                    "1": "Always Uses World Orientation",
-                    "2": "Knock Down - Always",
-                    "3": "Knock Down - By Formula",
-                    "4": "Ignore LOS Check",
-                    "5": "Push Explosion Source Ref Only",
-                    "6": "Ignore Image Space Swap",
-                    "7": "Chain",
-                    "8": "No Controller Vibration"
+                    0: 'Unknown 0',
+                    1: 'Always Uses World Orientation',
+                    2: 'Knock Down - Always',
+                    3: 'Knock Down - By Formula',
+                    4: 'Ignore LOS Check',
+                    5: 'Push Explosion Source Ref Only',
+                    6: 'Ignore Image Space Swap',
+                    7: 'Chain',
+                    8: 'No Controller Vibration'
                 }),
                 format(uint32('Sound Level'), def('SoundLevelEnum'))
             ])))

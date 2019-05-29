@@ -8,24 +8,25 @@ let {
 module.exports = game => {
     record('WRLD', 'Worldspace', {
         flags: {
-            "19": "Can't Wait"
+            19: 'Can\'t Wait'
         },
         members: [
             def('EDID'),
-            arrayOfSubrecord('IsSSE(game, [
-                'Large References',
-                'Unused RNAM'
-            ])', subrecord('RNAM', struct('Grid', [
-                int16('Y'),
-                int16('X'),
-                opts(array('References', struct('Reference', [
-                    ckFormId('Ref', ['REFR']),
+            arrayOfSubrecord(IsSSE(game, ['Large References', 'Unused RNAM']), 
+                subrecord('RNAM', struct('Grid', [
                     int16('Y'),
-                    int16('X')
-                ]), -1), {
-                    "includeFlag": "dfNotAlignable"
-                })
-            ]))),
+                    int16('X'),
+                    opts(array('References', 
+                        struct('Reference', [
+                            ckFormId('Ref', ['REFR']),
+                            int16('Y'),
+                            int16('X')
+                        ])
+                    , -1), {
+                        "includeFlag": "dfNotAlignable"
+                    })
+                ]))
+            ),
             def('MaxHeightDataWRLD'),
             def('FULL'),
             subrecord('WCTR', struct('Fixed Dimensions Center Cell', [
@@ -39,13 +40,13 @@ module.exports = game => {
                 subrecord('WNAM', ckFormId('Worldspace', ['WRLD'])),
                 req(subrecord('PNAM', struct('', [
                     format(uint8('Flags'), {
-                        "0": "Use Land Data",
-                        "1": "Use LOD Data",
-                        "2": "Don't Use Map Data",
-                        "3": "Use Water Data",
-                        "4": "Use Climate Data",
-                        "5": "Use Image Space Data (unused)",
-                        "6": "Use Sky Cell"
+                        0: 'Use Land Data',
+                        1: 'Use LOD Data',
+                        2: 'Don\'t Use Map Data',
+                        3: 'Use Water Data',
+                        4: 'Use Climate Data',
+                        5: 'Use Image Space Data (unused)',
+                        6: 'Use Sky Cell'
                     }),
                     bytes('Unknown', 1)
                 ])))
@@ -91,14 +92,14 @@ module.exports = game => {
             ]))),
             subrecord('NAMA', float('Distant LOD Multiplier')),
             subrecord('DATA', format(uint8('Flags'), {
-                "0": "Small World",
-                "1": "Can't Fast Travel",
-                "2": "Unknown 3",
-                "3": "No LOD Water",
-                "4": "No Landscape",
-                "5": "No Sky",
-                "6": "Fixed Dimensions",
-                "7": "No Grass"
+                0: 'Small World',
+                1: 'Can\'t Fast Travel',
+                2: 'Unknown 3',
+                3: 'No LOD Water',
+                4: 'No Landscape',
+                5: 'No Sky',
+                6: 'Fixed Dimensions',
+                7: 'No Grass'
             })),
             multiStruct('Object Bounds', [
                 req(subrecord('NAM0', struct('Min', [

@@ -10,9 +10,9 @@ module.exports = () => {
             req(def('OBND')),
             def('MODL'),
             subrecord('DNAM', format(uint32('Art Type'), {
-                "0": "Magic Casting",
-                "1": "Magic Hit Effect",
-                "2": "Enchantment Effect"
+                0: 'Magic Casting',
+                1: 'Magic Hit Effect',
+                2: 'Enchantment Effect'
             }))
         ]
     })

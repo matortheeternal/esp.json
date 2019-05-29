@@ -7,10 +7,10 @@ let {
 module.exports = () => {
     record('ARMO', 'Armor', {
         flags: {
-            "2": "Non-Playable",
-            "6": "Shield",
-            "10": "Unknown 10",
-            "15": "Unknown 15"
+            2: 'Non-Playable',
+            6: 'Shield',
+            10: 'Unknown 10',
+            15: 'Unknown 15'
         },
         members: [
             def('EDID'),
@@ -21,13 +21,13 @@ module.exports = () => {
             subrecord('EAMT', uint16('Enchantment Amount')),
             multiStruct('Male world model', [
                 subrecord('MOD2', cstring('Model FileName')),
-                subrecord('MO2T', bytes('Texture Files Hashes', 0)),
+                subrecord('MO2T', bytes('Texture Files Hashes')),
                 def('MO2S')
             ]),
             def('ICON'),
             multiStruct('Female world model', [
                 subrecord('MOD4', cstring('Model FileName')),
-                subrecord('MO4T', bytes('Texture Files Hashes', 0)),
+                subrecord('MO4T', bytes('Texture Files Hashes')),
                 def('MO4S')
             ]),
             def('ICO2'),
@@ -43,7 +43,9 @@ module.exports = () => {
             def('KSIZ'),
             def('KWDAs'),
             def('DESC'),
-            arrayOfSubrecord('Armature', subrecord('MODL', ckFormId('Model FileName', ['ARMA', 'NULL']))),
+            arrayOfSubrecord('Armature', 
+                subrecord('MODL', ckFormId('Model FileName', ['ARMA', 'NULL']))
+            ),
             req(subrecord('DATA', struct('Data', [
                 int32('Value'),
                 float('Weight')

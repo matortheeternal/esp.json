@@ -3,5 +3,7 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('CITC', subrecord('CITC', uint32('Condition Count')));
+    addDef('CITC', 
+        subrecord('CITC', uint32('Condition Count'))
+    );
 };

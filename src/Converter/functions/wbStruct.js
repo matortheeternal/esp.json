@@ -10,5 +10,5 @@ subrecordAndField('wbStruct', [
     args.number
 ], ({sig, name, fields}, converter) => {
     converter.addRequires('struct');
-    return `struct('${name}', ${fields})`;
+    return `struct(${name}, ${fields})`;
 });

@@ -6,19 +6,19 @@ let {
 module.exports = () => {
     record('ACTI', 'Activator', {
         flags: {
-            "6": "Has Tree LOD",
-            "8": "Must Update Anims",
-            "9": "Hidden From Local Map",
-            "15": "Has Distant LOD",
-            "16": "Random Anim Start",
-            "17": "Dangerous",
-            "20": "Ignore Object Interaction",
-            "23": "Is Marker",
-            "25": "Obstacle",
-            "26": "NavMesh Generation - Filter",
-            "27": "NavMesh Generation - Bounding Box",
-            "29": "Child Can Use",
-            "30": "NavMesh Generation - Ground"
+            6: 'Has Tree LOD',
+            8: 'Must Update Anims',
+            9: 'Hidden From Local Map',
+            15: 'Has Distant LOD',
+            16: 'Random Anim Start',
+            17: 'Dangerous',
+            20: 'Ignore Object Interaction',
+            23: 'Is Marker',
+            25: 'Obstacle',
+            26: 'NavMesh Generation - Filter',
+            27: 'NavMesh Generation - Bounding Box',
+            29: 'Child Can Use',
+            30: 'NavMesh Generation - Ground'
         },
         members: [
             def('EDID'),
@@ -40,8 +40,8 @@ module.exports = () => {
             subrecord('WNAM', ckFormId('Water Type', ['WATR'])),
             subrecord('RNAM', string('Activate Text Override')),
             subrecord('FNAM', format(uint16('Flags'), {
-                "0": "No Displacement",
-                "1": "Ignored by Sandbox"
+                0: 'No Displacement',
+                1: 'Ignored by Sandbox'
             })),
             subrecord('KNAM', ckFormId('Interaction Keyword', ['KYWD']))
         ]

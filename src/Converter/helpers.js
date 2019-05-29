@@ -36,22 +36,47 @@ let intFunctions = {
 };
 
 const lineBreak = '\n';
-const tab = '    ';
+const tabSize = 4;
+const tab = ' '.repeat(tabSize);
 
 let indent = function(str) {
-    return `    ${str.split('\n').join('\n    ')}`;
+    return tab + str.split(lineBreak).join(lineBreak + tab);
 };
 
 let arr = function(a) {
-    return `[\n${a.map(indent).join(',\n')}\n]`;
+    return '[' + lineBreak +
+        a.map(indent).join(',' + lineBreak) + lineBreak +
+    ']';
 };
 
 let inlineArr = function(a) {
     return `[${a.join(', ')}]`;
 };
 
-let obj = function(a) {
-    return `{\n${a.map(indent).join(',\n')}\n}`;
+let mixedArr = function(a, targetLength) {
+    let s = '[';
+    a.forEach((entry, index) => {
+        if (index > 0) s += ',';
+        if (index % targetLength === 0) s += lineBreak;
+        s += indent(entry);
+    });
+    s += lineBreak + ']';
+    return s;
+};
+
+let stringify = function(obj) {
+    let s = '{' + lineBreak;
+    Object.keys(obj).forEach((key, index) => {
+        if (index > 0) s += ',' + lineBreak;
+        let keyStr = key.includes('-') ? `"${key}": ` : key + ': ';
+        s += indent(keyStr + obj[key]);
+    });
+    s += lineBreak + '}';
+    return s;
+};
+
+let newLine = function(str) {
+    return lineBreak + indent(str) + lineBreak;
 };
 
 let reqLine = function(required, line, converter) {
@@ -78,6 +103,7 @@ let resolveIntFn = function(intType) {
 };
 
 module.exports = {
-    args, indent, arr, inlineArr, obj, reqLine,
-    optsLine, optsReq, resolveIntFn, lineBreak, tab
+    args, indent, arr, inlineArr, mixedArr, stringify,
+    reqLine, newLine, optsLine, optsReq,
+    resolveIntFn, lineBreak, tab
 };

@@ -7,5 +7,5 @@ subrecordAndField('wbEmpty', [
     args.required,
 ], ({name}, converter) => {
     converter.addRequires('empty');
-    return `empty('${name}')`;
+    return `empty(${name})`;
 });

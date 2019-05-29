@@ -3,5 +3,7 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('ETYP', subrecord('ETYP', ckFormId('Equipment Type', ['EQUP', 'NULL'])));
+    addDef('ETYP', 
+        subrecord('ETYP', ckFormId('Equipment Type', ['EQUP', 'NULL']))
+    );
 };

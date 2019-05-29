@@ -9,5 +9,5 @@ subrecordAndField('wbLString', [
     args.identifier
 ], ({name}, converter) => {
     converter.addRequires('string');
-    return `string('${name}')`;
+    return `string(${name})`;
 });

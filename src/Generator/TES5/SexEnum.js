@@ -3,8 +3,10 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('SexEnum', {
-        "0": "Male",
-        "1": "Female"
-    });
+    addDef('SexEnum', 
+        {
+            0: 'Male',
+            1: 'Female'
+        }
+    );
 };

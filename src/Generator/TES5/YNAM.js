@@ -3,5 +3,7 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('YNAM', subrecord('YNAM', ckFormId('Sound - Pick Up', ['SNDR'])));
+    addDef('YNAM', 
+        subrecord('YNAM', ckFormId('Sound - Pick Up', ['SNDR']))
+    );
 };

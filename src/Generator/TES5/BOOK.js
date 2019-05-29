@@ -21,18 +21,18 @@ module.exports = () => {
             def('KWDAs'),
             req(subrecord('DATA', struct('Data', [
                 format(uint8('Flags'), {
-                    "0": "Teaches Skill",
-                    "1": "Can't be Taken",
-                    "2": "Teaches Spell",
-                    "3": "Unknown 4",
-                    "4": "Unknown 5",
-                    "5": "Unknown 6",
-                    "6": "Unknown 7",
-                    "7": "Unknown 8"
+                    0: 'Teaches Skill',
+                    1: 'Can\'t be Taken',
+                    2: 'Teaches Spell',
+                    3: 'Unknown 4',
+                    4: 'Unknown 5',
+                    5: 'Unknown 6',
+                    6: 'Unknown 7',
+                    7: 'Unknown 8'
                 }),
                 format(uint8('Type'), {
-                    "0": "Book/Tome",
-                    "255": "Note/Scroll"
+                    0: 'Book/Tome',
+                    255: 'Note/Scroll'
                 }),
                 bytes('Unused', 2),
                 union('Teaches', [

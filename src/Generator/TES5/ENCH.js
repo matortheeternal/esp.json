@@ -12,16 +12,16 @@ module.exports = () => {
             req(subrecord('ENIT', struct('Effect Data', [
                 int32('Enchantment Cost'),
                 format(uint32('Flags'), {
-                    "0": "No Auto-Calc",
-                    "1": "",
-                    "2": "Extend Duration On Recast"
+                    0: 'No Auto-Calc',
+                    1: '',
+                    2: 'Extend Duration On Recast'
                 }),
                 format(uint32('Cast Type'), def('CastEnum')),
                 int32('Enchantment Amount'),
                 format(uint32('Target Type'), def('TargetEnum')),
                 format(uint32('Enchant Type'), {
-                    "6": "Enchantment",
-                    "12": "Staff Enchantment"
+                    6: 'Enchantment',
+                    12: 'Staff Enchantment'
                 }),
                 float('Charge Time'),
                 ckFormId('Base Enchantment', ['ENCH', 'NULL']),

@@ -3,5 +3,7 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('XSCL', subrecord('XSCL', float('Scale')));
+    addDef('XSCL', 
+        subrecord('XSCL', float('Scale'))
+    );
 };

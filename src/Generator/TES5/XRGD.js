@@ -3,5 +3,7 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('XRGD', subrecord('XRGD', bytes('Ragdoll Data', 0)));
+    addDef('XRGD', 
+        subrecord('XRGD', bytes('Ragdoll Data'))
+    );
 };

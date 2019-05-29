@@ -3,5 +3,7 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('LLCT', subrecord('LLCT', uint8('Count')));
+    addDef('LLCT', 
+        subrecord('LLCT', uint8('Count'))
+    );
 };

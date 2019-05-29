@@ -4,5 +4,5 @@ let strExpr = /^'((?:[^']+|'')*)'/;
 
 typeParser('string', {
     test: parser => parser.match(strExpr),
-    parse: match => match[1].replace(/''/g, '\'')
+    parse: match => `'${match[1].replace(/''/g, '\\\'')}'`
 });

@@ -6,9 +6,9 @@ let {
 module.exports = () => {
     record('DOOR', 'Door', {
         flags: {
-            "15": "Has Distant LOD",
-            "16": "Random Anim Start",
-            "23": "Is Marker"
+            15: 'Has Distant LOD',
+            16: 'Random Anim Start',
+            23: 'Is Marker'
         },
         members: [
             def('EDID'),
@@ -21,12 +21,12 @@ module.exports = () => {
             subrecord('ANAM', ckFormId('Sound - Close', ['SNDR'])),
             subrecord('BNAM', ckFormId('Sound - Loop', ['SNDR'])),
             subrecord('FNAM', format(uint8('Flags'), {
-                "0": "",
-                "1": "Automatic",
-                "2": "Hidden",
-                "3": "Minimal Use",
-                "4": "Sliding",
-                "5": "Do Not Open in Combat Search"
+                0: '',
+                1: 'Automatic',
+                2: 'Hidden',
+                3: 'Minimal Use',
+                4: 'Sliding',
+                5: 'Do Not Open in Combat Search'
             }))
         ]
     })

@@ -13,6 +13,6 @@ functionConverter('wbStringKC', [
 ], ({name, sig, size, required}, converter) => {
     converter.addRequires('subrecord', 'cstring');
     let sizeArg = size ? ', ' + size : '',
-        line = `subrecord('${sig}', cstring('${name}'${sizeArg}))`;
+        line = `subrecord('${sig}', cstring(${name}${sizeArg}))`;
     return reqLine(required, line, converter);
 });

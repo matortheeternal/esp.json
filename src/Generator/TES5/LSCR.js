@@ -6,7 +6,7 @@ let {
 module.exports = () => {
     record('LSCR', 'Load Screen', {
         flags: {
-            "10": "Displays In Main Menu"
+            10: 'Displays In Main Menu'
         },
         members: [
             def('EDID'),

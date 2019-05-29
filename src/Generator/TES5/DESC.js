@@ -3,5 +3,7 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('DESC', subrecord('DESC', string('Description')));
+    addDef('DESC', 
+        subrecord('DESC', string('Description'))
+    );
 };

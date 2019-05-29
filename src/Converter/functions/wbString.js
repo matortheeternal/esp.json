@@ -12,7 +12,7 @@ subrecordAndField('wbString', [
 ], ({name, size}, converter) => {
     converter.addRequires('cstring');
     let sizeArg = size ? ', ' + size : '';
-    return `cstring('${name}'${sizeArg})`;
+    return `cstring(${name}${sizeArg})`;
 });
 
 functionConverter('wbString', [
@@ -22,5 +22,5 @@ functionConverter('wbString', [
 ], ({name, size}, converter) => {
     converter.addRequires('cstring');
     let sizeArg = size ? ', ' + size : '';
-    return `cstring('${name}'${sizeArg})`;
+    return `cstring(${name}${sizeArg})`;
 });

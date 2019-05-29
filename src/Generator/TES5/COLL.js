@@ -17,13 +17,15 @@ module.exports = () => {
                 uint8('Unused')
             ]))),
             subrecord('GNAM', format(uint32('Flags'), {
-                "0": "Trigger Volume",
-                "1": "Sensor",
-                "2": "Navmesh Obstacle"
+                0: 'Trigger Volume',
+                1: 'Sensor',
+                2: 'Navmesh Obstacle'
             })),
             req(subrecord('MNAM', cstring('Name'))),
             subrecord('INTV', uint32('Interactables Count')),
-            subrecord('CNAM', array('Collides With', ckFormId('Forms', ['COLL'])))
+            subrecord('CNAM', array('Collides With', 
+                ckFormId('Forms', ['COLL'])
+            ))
         ]
     })
 };

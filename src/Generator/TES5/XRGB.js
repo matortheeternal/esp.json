@@ -3,5 +3,7 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('XRGB', subrecord('XRGB', bytes('Ragdoll Biped Data', 0)));
+    addDef('XRGB', 
+        subrecord('XRGB', bytes('Ragdoll Biped Data'))
+    );
 };

@@ -7,10 +7,12 @@ module.exports = () => {
     record('IPDS', 'Impact Data Set', {
         members: [
             def('EDID'),
-            arrayOfSubrecord('Data', subrecord('PNAM', sortKey([0], struct('', [
-                ckFormId('Material', ['MATT']),
-                ckFormId('Impact', ['IPCT'])
-            ]))))
+            arrayOfSubrecord('Data', 
+                subrecord('PNAM', sortKey([0], struct('', [
+                    ckFormId('Material', ['MATT']),
+                    ckFormId('Impact', ['IPCT'])
+                ])))
+            )
         ]
     })
 };

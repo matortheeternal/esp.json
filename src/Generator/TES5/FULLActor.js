@@ -3,5 +3,7 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('FULLActor', req(subrecord('FULL', string('Name'))));
+    addDef('FULLActor', 
+        req(subrecord('FULL', string('Name')))
+    );
 };

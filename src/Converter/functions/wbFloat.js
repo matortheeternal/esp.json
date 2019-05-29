@@ -13,7 +13,7 @@ subrecordAndField('wbFloat', [
     args.identifier
 ], ({name}, converter) => {
     converter.addRequires('float');
-    return `float('${name}')`;
+    return `float(${name})`;
 });
 
 functionConverter('wbFloat', [
@@ -27,5 +27,5 @@ functionConverter('wbFloat', [
     args.identifier
 ], ({name}, converter) => {
     converter.addRequires('float');
-    return `float('${name}')`;
+    return `float(${name})`;
 });

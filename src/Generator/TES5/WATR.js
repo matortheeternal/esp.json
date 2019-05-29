@@ -9,19 +9,21 @@ module.exports = game => {
         members: [
             def('EDID'),
             def('FULL'),
-            arrayOfSubrecord('Unused', req(subrecord('NNAM', cstring('Noise Map')))),
+            arrayOfSubrecord('Unused', 
+                req(subrecord('NNAM', cstring('Noise Map')))
+            ),
             subrecord('ANAM', uint8('Opacity')),
             subrecord('FNAM', format(uint8('Flags'), {
-                "0": "Causes Damage",
-                "1": "Unknown 1",
-                "2": "Unknown 2",
-                "3": "IsSSE(game, [\n    'Enable Flowmap',\n    'Unknown 3'\n])",
-                "4": "IsSSE(game, [\n    'Blend Normals',\n    'Unknown 4'\n])",
-                "5": "Unknown 5",
-                "6": "Unknown 6",
-                "7": "Unknown 7"
+                0: 'Causes Damage',
+                1: 'Unknown 1',
+                2: 'Unknown 2',
+                3: IsSSE(game, ['Enable Flowmap', 'Unknown 3']),
+                4: IsSSE(game, ['Blend Normals', 'Unknown 4']),
+                5: 'Unknown 5',
+                6: 'Unknown 6',
+                7: 'Unknown 7'
             })),
-            subrecord('MNAM', bytes('Unused', 0)),
+            subrecord('MNAM', bytes('Unused')),
             subrecord('TNAM', ckFormId('Material', ['MATT'])),
             subrecord('SNAM', ckFormId('Open Sound', ['SNDR', 'NULL'])),
             subrecord('XNAM', ckFormId('Spell', ['SPEL'])),
@@ -148,7 +150,7 @@ module.exports = game => {
                     float('Specular Properties - Sun Sparkle Power')
                 ]))
             ]),
-            subrecord('GNAM', bytes('Unused', 0)),
+            subrecord('GNAM', bytes('Unused')),
             req(subrecord('NAM0', struct('Linear Velocity', [
                 float('X'),
                 float('Y'),

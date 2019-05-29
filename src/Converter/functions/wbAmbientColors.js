@@ -6,6 +6,6 @@ functionConverter('wbAmbientColors', [
     args.name
 ], ({sig, name}, converter) => {
     converter.addRequires('subrecord', 'def');
-    let defArg = `def('wbAmbientColors', { name: '${name}' })`;
+    let defArg = `def('wbAmbientColors', { name: ${name} })`;
     return `subrecord('${sig}', ${defArg})`;
 });

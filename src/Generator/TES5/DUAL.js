@@ -15,9 +15,9 @@ module.exports = () => {
                 ckFormId('Hit Effect Art', ['ARTO', 'NULL']),
                 ckFormId('Impact Data Set', ['IPDS', 'NULL']),
                 format(uint32('Inherit Scale'), {
-                    "0": "Hit Effect Art",
-                    "1": "Projectile",
-                    "2": "Explosion"
+                    0: 'Hit Effect Art',
+                    1: 'Projectile',
+                    2: 'Explosion'
                 })
             ])))
         ]

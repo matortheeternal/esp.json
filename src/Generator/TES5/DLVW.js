@@ -8,10 +8,14 @@ module.exports = () => {
         members: [
             def('EDID'),
             req(subrecord('QNAM', ckFormId('Quest', ['QUST']))),
-            arrayOfSubrecord('Branches', subrecord('BNAM', ckFormId('Branch', ['DLBR']))),
-            arrayOfSubrecord('Unknown TNAM', multiStruct('Unknown', [
-                subrecord('TNAM', unknown())
-            ])),
+            arrayOfSubrecord('Branches', 
+                subrecord('BNAM', ckFormId('Branch', ['DLBR']))
+            ),
+            arrayOfSubrecord('Unknown TNAM', 
+                multiStruct('Unknown', [
+                    subrecord('TNAM', unknown())
+                ])
+            ),
             subrecord('ENAM', unknown()),
             subrecord('DNAM', unknown())
         ]

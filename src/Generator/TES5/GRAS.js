@@ -18,23 +18,23 @@ module.exports = () => {
                 uint16('Units From Water'),
                 bytes('Unknown', 2),
                 format(uint32('Units From Water Type'), {
-                    "0": "Above - At Least",
-                    "1": "Above - At Most",
-                    "2": "Below - At Least",
-                    "3": "Below - At Most",
-                    "4": "Either - At Least",
-                    "5": "Either - At Most",
-                    "6": "Either - At Most Above",
-                    "7": "Either - At Most Below"
+                    0: 'Above - At Least',
+                    1: 'Above - At Most',
+                    2: 'Below - At Least',
+                    3: 'Below - At Most',
+                    4: 'Either - At Least',
+                    5: 'Either - At Most',
+                    6: 'Either - At Most Above',
+                    7: 'Either - At Most Below'
                 }),
                 float('Position Range'),
                 float('Height Range'),
                 float('Color Range'),
                 float('Wave Period'),
                 format(uint8('Flags'), {
-                    "0": "Vertex Lighting",
-                    "1": "Uniform Scaling",
-                    "2": "Fit to Slope"
+                    0: 'Vertex Lighting',
+                    1: 'Uniform Scaling',
+                    2: 'Fit to Slope'
                 }),
                 bytes('Unknown', 3)
             ])))

@@ -3,5 +3,7 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('EFID', subrecord('EFID', ckFormId('Base Effect', ['MGEF'])));
+    addDef('EFID', 
+        subrecord('EFID', ckFormId('Base Effect', ['MGEF']))
+    );
 };

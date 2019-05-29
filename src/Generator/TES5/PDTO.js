@@ -4,14 +4,16 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('PDTO', subrecord('PDTO', struct('Topic Data', [
-        format(uint32('Type'), {
-            "0": "Topic Ref",
-            "1": "Topic Subtype"
-        }),
-        union('Data', [
-            ckFormId('Topic', ['DIAL', 'NULL']),
-            cstring('Subtype', 4)
-        ])
-    ])));
+    addDef('PDTO', 
+        subrecord('PDTO', struct('Topic Data', [
+            format(uint32('Type'), {
+                0: 'Topic Ref',
+                1: 'Topic Subtype'
+            }),
+            union('Data', [
+                ckFormId('Topic', ['DIAL', 'NULL']),
+                cstring('Subtype', 4)
+            ])
+        ]))
+    );
 };

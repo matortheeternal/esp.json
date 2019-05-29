@@ -3,5 +3,7 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('KSIZ', subrecord('KSIZ', uint32('Keyword Count')));
+    addDef('KSIZ', 
+        subrecord('KSIZ', uint32('Keyword Count'))
+    );
 };

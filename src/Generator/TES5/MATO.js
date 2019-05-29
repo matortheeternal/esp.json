@@ -9,7 +9,9 @@ module.exports = game => {
         members: [
             def('EDID'),
             def('MODL'),
-            arrayOfSubrecord('Property Data', subrecord('DNAM', bytes('Data', 0))),
+            arrayOfSubrecord('Property Data', 
+                subrecord('DNAM', bytes('Data'))
+            ),
             IsSSE(game, [
                 req(subrecord('DATA', struct('Directional Material Data', [
                     float('Falloff Scale'),
@@ -24,10 +26,10 @@ module.exports = game => {
                     float('Normal Dampener'),
                     def('FloatColors', { name: 'Single Pass Color' }),
                     format(uint32('Flags'), {
-                        "0": "Single Pass"
+                        0: 'Single Pass'
                     }),
                     format(uint8('Flags'), {
-                        "0": "Snow"
+                        0: 'Snow'
                     }),
                     bytes('Unused', 3)
                 ]))),
@@ -44,7 +46,7 @@ module.exports = game => {
                     float('Normal Dampener'),
                     def('FloatColors', { name: 'Single Pass Color' }),
                     format(uint32('Flags'), {
-                        "0": "Single Pass"
+                        0: 'Single Pass'
                     })
                 ])))
             ])

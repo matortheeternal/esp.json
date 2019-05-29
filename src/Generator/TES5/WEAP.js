@@ -8,7 +8,7 @@ let {
 module.exports = game => {
     record('WEAP', 'Weapon', {
         flags: {
-            "2": "Non-Playable"
+            2: 'Non-Playable'
         },
         members: [
             def('EDID'),
@@ -30,10 +30,10 @@ module.exports = game => {
             def('DESC'),
             multiStruct('Has Scope', [
                 subrecord('MOD3', cstring('Model FileName')),
-                subrecord('MO3T', bytes('Texture Files Hashes', 0)),
+                subrecord('MO3T', bytes('Texture Files Hashes')),
                 def('MO3S')
             ]),
-            subrecord('NNAM', bytes('Unused', 0)),
+            subrecord('NNAM', bytes('Unused')),
             subrecord('INAM', ckFormId('Impact Data Set', ['IPDS', 'NULL'])),
             subrecord('WNAM', ckFormId('1st Person Model Object', ['STAT', 'NULL'])),
             subrecord('SNAM', ckFormId('Attack Sound', ['SNDR'])),
@@ -54,14 +54,14 @@ module.exports = game => {
                 float('Speed'),
                 float('Reach'),
                 format(uint16('Flags'), {
-                    "0": "Ignores Normal Weapon Resistance",
-                    "1": "Automatic (unused)",
-                    "2": "Has Scope (unused)",
-                    "3": "Can't Drop",
-                    "4": "Hide Backpack (unused)",
-                    "5": "Embedded Weapon (unused)",
-                    "6": "Don't Use 1st Person IS Anim (unused)",
-                    "7": "Non-playable"
+                    0: 'Ignores Normal Weapon Resistance',
+                    1: 'Automatic (unused)',
+                    2: 'Has Scope (unused)',
+                    3: 'Can\'t Drop',
+                    4: 'Hide Backpack (unused)',
+                    5: 'Embedded Weapon (unused)',
+                    6: 'Don\'t Use 1st Person IS Anim (unused)',
+                    7: 'Non-playable'
                 }),
                 bytes('Unused', 2),
                 float('Sight FOV'),
@@ -73,26 +73,26 @@ module.exports = game => {
                 float('Range Min'),
                 float('Range Max'),
                 format(uint32('On Hit'), {
-                    "0": "No formula behaviour",
-                    "1": "Dismember only",
-                    "2": "Explode only",
-                    "3": "No dismember/explode"
+                    0: 'No formula behaviour',
+                    1: 'Dismember only',
+                    2: 'Explode only',
+                    3: 'No dismember/explode'
                 }),
                 format(uint32('Flags2'), {
-                    "0": "Player Only",
-                    "1": "NPCs Use Ammo",
-                    "2": "No Jam After Reload (unused)",
-                    "3": "Unknown 4",
-                    "4": "Minor Crime",
-                    "5": "Range Fixed",
-                    "6": "Not Used in Normal Combat",
-                    "7": "Unknown 8",
-                    "8": "Don't Use 3rd Person IS Anim (unused)",
-                    "9": "Burst Shot",
-                    "10": "Rumble - Alternate",
-                    "11": "Long Bursts",
-                    "12": "Non-hostile",
-                    "13": "Bound Weapon"
+                    0: 'Player Only',
+                    1: 'NPCs Use Ammo',
+                    2: 'No Jam After Reload (unused)',
+                    3: 'Unknown 4',
+                    4: 'Minor Crime',
+                    5: 'Range Fixed',
+                    6: 'Not Used in Normal Combat',
+                    7: 'Unknown 8',
+                    8: 'Don\'t Use 3rd Person IS Anim (unused)',
+                    9: 'Burst Shot',
+                    10: 'Rumble - Alternate',
+                    11: 'Long Bursts',
+                    12: 'Non-hostile',
+                    13: 'Bound Weapon'
                 }),
                 float('Animation Attack Mult'),
                 float('Unknown'),
@@ -112,7 +112,7 @@ module.exports = game => {
                     bytes('Unused', 2),
                     float('% Mult'),
                     format(uint8('Flags'), {
-                        "0": "On Death"
+                        0: 'On Death'
                     }),
                     bytes('Unused', 7),
                     ckFormId('Effect', ['SPEL', 'NULL']),
@@ -123,7 +123,7 @@ module.exports = game => {
                     bytes('Unused', 2),
                     float('% Mult'),
                     format(uint8('Flags'), {
-                        "0": "On Death"
+                        0: 'On Death'
                     }),
                     bytes('Unused', 3),
                     ckFormId('Effect', ['SPEL', 'NULL'])

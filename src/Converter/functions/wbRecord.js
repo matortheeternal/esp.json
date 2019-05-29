@@ -1,5 +1,5 @@
 let {functionConverter} = require('../converters'),
-    {obj, args} = require('../helpers');
+    {stringify, args} = require('../helpers');
 
 functionConverter('wbRecord', [
     args.sig,
@@ -14,10 +14,10 @@ functionConverter('wbRecord', [
     args.identifier
 ], ({sig, name, flags, members}, converter) => {
     converter.addRequires('record');
-    return `record('${sig}', '${name}', ` + obj([
-        `flags: ${flags}`,
-        `members: ${members}`
-    ]) + ')';
+    return `record('${sig}', ${name}, ` + stringify({
+        flags,
+        members
+    }) + ')';
 });
 
 functionConverter('wbRecord', [
@@ -32,7 +32,7 @@ functionConverter('wbRecord', [
     args.identifier
 ], ({sig, name, members}, converter) => {
     converter.addRequires('record');
-    return `record('${sig}', '${name}', ` + obj([
-        `members: ${members}`
-    ]) + ')';
+    return `record('${sig}', ${name}, ` + stringify({
+        members
+    }) + ')';
 });

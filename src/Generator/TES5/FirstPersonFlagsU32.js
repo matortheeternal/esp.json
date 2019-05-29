@@ -3,5 +3,7 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('FirstPersonFlagsU32', format(uint32('First Person Flags'), def('BipedObjectFlags')));
+    addDef('FirstPersonFlagsU32', 
+        format(uint32('First Person Flags'), def('BipedObjectFlags'))
+    );
 };

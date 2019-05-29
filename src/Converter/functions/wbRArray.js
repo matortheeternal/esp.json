@@ -1,5 +1,5 @@
 let {functionConverter} = require('../converters'),
-    {args} = require('../helpers');
+    {args, newLine} = require('../helpers');
 
 functionConverter('wbRArray', [
     { type: 'stringExpr', name: 'name' },
@@ -11,5 +11,5 @@ functionConverter('wbRArray', [
     args.identifier
 ], ({name, member}, converter) => {
     converter.addRequires('arrayOfSubrecord');
-    return `arrayOfSubrecord('${name}', ${member})`;
+    return `arrayOfSubrecord(${name}, ${newLine(member)})`;
 });

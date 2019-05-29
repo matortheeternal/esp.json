@@ -5,9 +5,9 @@ let {
 module.exports = () => {
     record('NAVM', 'Navigation Mesh', {
         flags: {
-            "18": "Compressed",
-            "26": "AutoGen",
-            "31": "NavmeshGenCell"
+            18: 'Compressed',
+            26: 'AutoGen',
+            31: 'NavmeshGenCell'
         },
         members: [
             def('EDID'),

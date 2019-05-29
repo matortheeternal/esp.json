@@ -1,5 +1,5 @@
 let {functionConverter} = require('../converters'),
-    {args, reqLine} = require('../helpers');
+    {args, reqLine, newLine} = require('../helpers');
 
 functionConverter('wbRStructs', [
     args.name,
@@ -14,7 +14,7 @@ functionConverter('wbRStructs', [
     args.identifier
 ], ({name, structName, members, required}, converter) => {
     converter.addRequires('arrayOfStruct', 'multiStruct');
-    let multiStructArg = `multiStruct('${structName}', ${members})`,
-        line = `arrayOfStruct('${name}', ${multiStructArg})`;
+    let multiStructArg = `multiStruct(${structName}, ${members})`,
+        line = `arrayOfStruct(${name}, ${newLine(multiStructArg)})`;
     return reqLine(required, line, converter);
 });

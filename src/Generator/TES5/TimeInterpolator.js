@@ -3,8 +3,10 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    addDef('TimeInterpolator', sortKey([0], struct('Data', [
-        float('Time'),
-        float('Value')
-    ])));
+    addDef('TimeInterpolator', 
+        sortKey([0], struct('Data', [
+            float('Time'),
+            float('Value')
+        ]))
+    );
 };

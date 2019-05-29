@@ -16,11 +16,11 @@ module.exports = () => {
             def('YNAM'),
             def('ZNAM'),
             subrecord('QUAL', format(int32('Quality'), {
-                "0": "Novice",
-                "1": "Apprentice",
-                "2": "Journeyman",
-                "3": "Expert",
-                "4": "Master"
+                0: 'Novice',
+                1: 'Apprentice',
+                2: 'Journeyman',
+                3: 'Expert',
+                4: 'Master'
             })),
             def('DESC'),
             subrecord('DATA', struct('Data', [

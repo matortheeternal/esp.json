@@ -13,5 +13,5 @@ functionConverter('wbStringForward', [
 ], ({sig, name, size}, converter) => {
     converter.addRequires('subrecord', 'cstring');
     let sizeArg = size ? ', ' + size : '';
-    return `subrecord('${sig}', cstring('${name}'${sizeArg}))`;
+    return `subrecord('${sig}', cstring(${name}${sizeArg}))`;
 });

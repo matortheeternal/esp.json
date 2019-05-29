@@ -15,12 +15,11 @@ module.exports = game => {
                 uint8('Restitution')
             ]))),
             subrecord('SNAM', uint8('Texture Specular Exponent')),
-            arrayOfSubrecord('Grasses', subrecord('GNAM', ckFormId('Grass', ['GRAS']))),
-            subrecord('INAM', format(uint32(IsSSE(game, [
-                'Flags',
-                'Unused'
-            ])), {
-                "0": "Is Snow"
+            arrayOfSubrecord('Grasses', 
+                subrecord('GNAM', ckFormId('Grass', ['GRAS']))
+            ),
+            subrecord('INAM', format(uint32(IsSSE(game, ['Flags', 'Unused'])), {
+                0: 'Is Snow'
             }))
         ]
     })

@@ -1,5 +1,5 @@
 let {subrecordAndField, functionConverter} = require('../converters'),
-    {args} = require('../helpers');
+    {args, newLine} = require('../helpers');
 
 subrecordAndField('wbArrayS', [
     args.name,
@@ -14,7 +14,7 @@ subrecordAndField('wbArrayS', [
 ], ({name, element, size}, converter) => {
     converter.addRequires('array');
     let sizeArg = size ? ', ' + size : '';
-    return `array('${name}', ${element}${sizeArg})`;
+    return `array(${name}, ${newLine(element)}${sizeArg})`;
 });
 
 functionConverter('wbArrayS', [
@@ -30,5 +30,5 @@ functionConverter('wbArrayS', [
 ], ({name, element, size}, converter) => {
     converter.addRequires('array');
     let sizeArg = size ? ', ' + size : '';
-    return `array('${name}', ${element}${sizeArg})`;
+    return `array(${name}, ${newLine(element)}${sizeArg})`;
 });

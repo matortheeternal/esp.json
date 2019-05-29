@@ -12,7 +12,7 @@ module.exports = () => {
             subrecord('MCHT', cstring('Male Child Title')),
             subrecord('FCHT', cstring('Female Child Title')),
             subrecord('DATA', format(uint32('Flags'), {
-                "0": "Family Association"
+                0: 'Family Association'
             }))
         ]
     })

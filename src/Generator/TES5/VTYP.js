@@ -7,8 +7,8 @@ module.exports = () => {
         members: [
             def('EDID'),
             subrecord('DNAM', format(uint8('Flags'), {
-                "0": "Allow Default Dialog",
-                "1": "Female"
+                0: 'Allow Default Dialog',
+                1: 'Female'
             }))
         ]
     })
