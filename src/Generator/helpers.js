@@ -16,6 +16,9 @@ let size = (size, obj) => ({ ...obj, size});
 let prefix = (prefix, obj) => ({ ...obj, prefix });
 let localized = (obj) => ({ ...obj, localized: true });
 
+let flags = (flags) => ({ type: 'flags', flags });
+let enumeration = (options) => ({type: 'enum', options });
+
 // data structures
 let record = (signature, name, def) => addDef(signature,
     ({ signature, type: 'record', name, def })
@@ -62,6 +65,7 @@ let empty = name => ({ name, type: 'empty' });
 module.exports = {
     addDef, getDefs, clearDefs, IsSSE,
     req, def, opts, sortKey, format, div, size, prefix, localized,
+    flags, enumeration,
     record, subrecord,
     arrayOfSubrecord, arrayOfStruct, multiStruct, multiUnion,
     struct, array, union,

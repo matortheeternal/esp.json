@@ -1,7 +1,10 @@
 let {functionConverter} = require('../converters'),
     {args, stringify} = require('../helpers');
 
-let convertFlags = ({flags}) => stringify(flags);
+let convertFlags = ({flags}, converter) => {
+    converter.addRequires('flags');
+    return `flags(${stringify(flags)})`;
+};
 
 // inherit flags
 functionConverter('wbFlags', [

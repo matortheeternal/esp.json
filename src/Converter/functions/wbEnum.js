@@ -4,7 +4,8 @@ let {functionConverter} = require('../converters'),
 functionConverter('wbEnum', [
     args.flags,
     args.enum
-], ({flags, options}) => {
+], ({flags, options}, converter) => {
+    converter.addRequires('enumeration');
     options = Object.assign({}, flags, options || {});
-    return stringify(options);
+    return `enumeration(${stringify(options)})`;
 });
