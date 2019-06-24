@@ -74,7 +74,7 @@
             {
                 "name": "Text Display Globals",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "signature": "QTGL",
                     "type": "subrecord",
                     "def": {
@@ -119,7 +119,7 @@
             {
                 "name": "Stages",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "name": "Stage",
                     "type": "multiStruct",
                     "subrecords": [
@@ -157,7 +157,7 @@
                         {
                             "name": "Log Entries",
                             "type": "subrecordArray",
-                            "sortKey": {
+                            "subrecord": {
                                 "name": "Log Entry",
                                 "type": "multiStruct",
                                 "subrecords": [
@@ -235,7 +235,7 @@
             {
                 "name": "Objectives",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "name": "Objective",
                     "type": "multiStruct",
                     "subrecords": [
@@ -271,7 +271,7 @@
                         {
                             "name": "Targets",
                             "type": "subrecordArray",
-                            "sortKey": {
+                            "subrecord": {
                                 "name": "Target",
                                 "type": "multiStruct",
                                 "subrecords": [
@@ -324,7 +324,7 @@
             {
                 "name": "Aliases",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "name": "Alias",
                     "type": "multiUnion",
                     "subrecords": [
@@ -643,7 +643,7 @@
                                 {
                                     "name": "Alias Spells",
                                     "type": "subrecordArray",
-                                    "sortKey": {
+                                    "subrecord": {
                                         "signature": "ALSP",
                                         "type": "subrecord",
                                         "def": {
@@ -658,7 +658,7 @@
                                 {
                                     "name": "Alias Factions",
                                     "type": "subrecordArray",
-                                    "sortKey": {
+                                    "subrecord": {
                                         "signature": "ALFC",
                                         "type": "subrecord",
                                         "def": {
@@ -673,7 +673,7 @@
                                 {
                                     "name": "Alias Package Data",
                                     "type": "subrecordArray",
-                                    "sortKey": {
+                                    "subrecord": {
                                         "signature": "ALPC",
                                         "type": "subrecord",
                                         "def": {
@@ -1028,7 +1028,7 @@
                                 {
                                     "name": "Alias Spells",
                                     "type": "subrecordArray",
-                                    "sortKey": {
+                                    "subrecord": {
                                         "signature": "ALSP",
                                         "type": "subrecord",
                                         "def": {
@@ -1043,7 +1043,7 @@
                                 {
                                     "name": "Alias Factions",
                                     "type": "subrecordArray",
-                                    "sortKey": {
+                                    "subrecord": {
                                         "signature": "ALFC",
                                         "type": "subrecord",
                                         "def": {
@@ -1058,7 +1058,7 @@
                                 {
                                     "name": "Alias Package Data",
                                     "type": "subrecordArray",
-                                    "sortKey": {
+                                    "subrecord": {
                                         "signature": "ALPC",
                                         "type": "subrecord",
                                         "def": {
@@ -1114,7 +1114,7 @@
             {
                 "name": "Targets",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "name": "Target",
                     "type": "multiStruct",
                     "subrecords": [

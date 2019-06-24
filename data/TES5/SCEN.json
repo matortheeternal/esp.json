@@ -28,7 +28,7 @@
             {
                 "name": "Phases",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "name": "Phase",
                     "type": "multiStruct",
                     "subrecords": [
@@ -209,7 +209,7 @@
             {
                 "name": "Actors",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "name": "Actor",
                     "type": "multiStruct",
                     "subrecords": [
@@ -257,7 +257,7 @@
             {
                 "name": "Actions",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "name": "Action",
                     "type": "multiStruct",
                     "subrecords": [
@@ -364,7 +364,7 @@
                         {
                             "name": "Packages",
                             "type": "subrecordArray",
-                            "sortKey": {
+                            "subrecord": {
                                 "signature": "PNAM",
                                 "type": "subrecord",
                                 "def": {

@@ -22,7 +22,7 @@
             {
                 "name": "Branches",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "signature": "BNAM",
                     "type": "subrecord",
                     "def": {
@@ -37,7 +37,7 @@
             {
                 "name": "Unknown TNAM",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "name": "Unknown",
                     "type": "multiStruct",
                     "subrecords": [

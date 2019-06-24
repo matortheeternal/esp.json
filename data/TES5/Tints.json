@@ -1,14 +1,14 @@
 {
     "name": "Tint Masks",
     "type": "subrecordArray",
-    "sortKey": {
+    "subrecord": {
         "name": "Tint Assets",
         "type": "multiStruct",
         "subrecords": [
             {
                 "name": "Tint Layer",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "name": "Texture",
                     "type": "multiStruct",
                     "subrecords": [
@@ -58,7 +58,7 @@
             {
                 "name": "Presets",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "name": "Preset",
                     "type": "multiStruct",
                     "subrecords": [

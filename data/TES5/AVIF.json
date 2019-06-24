@@ -65,7 +65,7 @@
             {
                 "name": "Perk Tree",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "name": "Node",
                     "type": "multiStruct",
                     "subrecords": [
@@ -139,7 +139,7 @@
                         {
                             "name": "Connections",
                             "type": "subrecordArray",
-                            "sortKey": {
+                            "subrecord": {
                                 "signature": "CNAM",
                                 "type": "subrecord",
                                 "def": {

@@ -102,7 +102,7 @@
             {
                 "name": "Link To",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "signature": "TCLT",
                     "type": "subrecord",
                     "def": {
@@ -127,7 +127,7 @@
             {
                 "name": "Responses",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "name": "Response",
                     "type": "multiStruct",
                     "subrecords": [
@@ -244,7 +244,7 @@
             {
                 "name": "Unknown",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "name": "Unknown",
                     "type": "multiStruct",
                     "subrecords": [

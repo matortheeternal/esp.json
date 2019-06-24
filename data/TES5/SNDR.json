@@ -39,7 +39,7 @@
             {
                 "name": "Sounds",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "name": "Sound Files",
                     "type": "multiStruct",
                     "subrecords": [

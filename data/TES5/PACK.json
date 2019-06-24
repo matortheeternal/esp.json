@@ -264,7 +264,7 @@
                     {
                         "name": "Data Input Values",
                         "type": "subrecordArray",
-                        "sortKey": {
+                        "subrecord": {
                             "name": "Value",
                             "type": "multiStruct",
                             "subrecords": [
@@ -371,7 +371,7 @@
                     {
                         "name": "Branches",
                         "type": "subrecordArray",
-                        "sortKey": {
+                        "subrecord": {
                             "name": "Branch",
                             "type": "multiStruct",
                             "subrecords": [
@@ -436,7 +436,7 @@
                                 {
                                     "name": "Data Input Indexes",
                                     "type": "subrecordArray",
-                                    "sortKey": {
+                                    "subrecord": {
                                         "signature": "PKC2",
                                         "type": "subrecord",
                                         "def": {
@@ -448,7 +448,7 @@
                                 {
                                     "name": "Flags Override",
                                     "type": "subrecordArray",
-                                    "sortKey": {
+                                    "subrecord": {
                                         "signature": "PFO2",
                                         "type": "subrecord",
                                         "def": {
@@ -505,7 +505,7 @@
                                 {
                                     "name": "Unknown",
                                     "type": "subrecordArray",
-                                    "sortKey": {
+                                    "subrecord": {
                                         "signature": "PFOR",
                                         "type": "subrecord",
                                         "def": {

@@ -43,7 +43,7 @@
             {
                 "name": "Leveled List Entries",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "name": "Leveled List Entry",
                     "type": "multiStruct",
                     "subrecords": [

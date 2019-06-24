@@ -13,7 +13,7 @@
             {
                 "name": "Property Data",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "signature": "DNAM",
                     "type": "subrecord",
                     "def": {

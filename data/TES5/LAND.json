@@ -147,7 +147,7 @@
             {
                 "name": "Layers",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "name": "Layer",
                     "type": "multiUnion",
                     "subrecords": [
@@ -303,7 +303,7 @@
             {
                 "name": "Unknown",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "signature": "MPCD",
                     "type": "subrecord",
                     "def": {

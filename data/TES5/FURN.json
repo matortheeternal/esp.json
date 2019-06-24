@@ -157,7 +157,7 @@
             {
                 "name": "Markers",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "name": "Marker",
                     "type": "multiStruct",
                     "subrecords": [
@@ -209,7 +209,7 @@
             {
                 "name": "Marker Entry Points",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "signature": "FNPR",
                     "type": "subrecord",
                     "def": {

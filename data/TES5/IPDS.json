@@ -10,7 +10,7 @@
             {
                 "name": "Data",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "signature": "PNAM",
                     "type": "subrecord",
                     "def": {

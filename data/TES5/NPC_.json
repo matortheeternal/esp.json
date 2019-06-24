@@ -142,7 +142,7 @@
             {
                 "name": "Factions",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "signature": "SNAM",
                     "type": "subrecord",
                     "def": {
@@ -269,7 +269,7 @@
             {
                 "name": "Attacks",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "def": "AttackData"
                 }
             },
@@ -332,7 +332,7 @@
             {
                 "name": "Perks",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "signature": "PRKR",
                     "type": "subrecord",
                     "def": {
@@ -375,7 +375,7 @@
             {
                 "name": "Packages",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "signature": "PKID",
                     "type": "subrecord",
                     "def": {
@@ -489,7 +489,7 @@
             {
                 "name": "Head Parts",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "signature": "PNAM",
                     "type": "subrecord",
                     "def": {
@@ -817,7 +817,7 @@
             {
                 "name": "Tint Layers",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "name": "Layer",
                     "type": "multiStruct",
                     "subrecords": [

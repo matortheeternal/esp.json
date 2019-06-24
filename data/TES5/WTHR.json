@@ -710,7 +710,7 @@
             {
                 "name": "Sounds",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "signature": "SNAM",
                     "type": "subrecord",
                     "def": {
@@ -743,7 +743,7 @@
             {
                 "name": "Sky Statics",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "signature": "TNAM",
                     "type": "subrecord",
                     "def": {

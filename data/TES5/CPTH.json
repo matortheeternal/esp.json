@@ -46,7 +46,7 @@
             {
                 "name": "Camera Shots",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "signature": "SNAM",
                     "type": "subrecord",
                     "def": {

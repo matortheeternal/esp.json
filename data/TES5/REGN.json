@@ -52,7 +52,7 @@
             {
                 "name": "Region Areas",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "name": "Region Area",
                     "type": "multiStruct",
                     "subrecords": [
@@ -95,7 +95,7 @@
             {
                 "name": "Region Data Entries",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "name": "Region Data Entry",
                     "type": "multiStruct",
                     "subrecords": [

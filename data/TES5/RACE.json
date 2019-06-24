@@ -348,7 +348,7 @@
             {
                 "name": "Movement Type Names",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "signature": "MTNM",
                     "type": "subrecord",
                     "def": {
@@ -451,7 +451,7 @@
             {
                 "name": "Attacks",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "def": "AttackData"
                 }
             },
@@ -483,7 +483,7 @@
                             {
                                 "name": "Parts",
                                 "type": "subrecordArray",
-                                "sortKey": {
+                                "subrecord": {
                                     "name": "Part",
                                     "type": "multiStruct",
                                     "subrecords": [
@@ -527,7 +527,7 @@
                             {
                                 "name": "Parts",
                                 "type": "subrecordArray",
-                                "sortKey": {
+                                "subrecord": {
                                     "name": "Part",
                                     "type": "multiStruct",
                                     "subrecords": [
@@ -721,7 +721,7 @@
             {
                 "name": "Biped Object Names",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "signature": "NAME",
                     "type": "subrecord",
                     "def": {
@@ -734,7 +734,7 @@
             {
                 "name": "Movement Types",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "name": "Movement Types",
                     "type": "multiStruct",
                     "subrecords": [
@@ -835,7 +835,7 @@
             {
                 "name": "Equip Slots",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "signature": "QNAM",
                     "type": "subrecord",
                     "def": {
@@ -863,7 +863,7 @@
             {
                 "name": "Phoneme Target Names",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "signature": "PHTN",
                     "type": "subrecord",
                     "def": {
@@ -977,7 +977,7 @@
                             {
                                 "name": "Head Parts",
                                 "type": "subrecordArray",
-                                "sortKey": {
+                                "subrecord": {
                                     "def": "HeadPart"
                                 }
                             },
@@ -987,7 +987,7 @@
                             {
                                 "name": "Race Presets Male",
                                 "type": "subrecordArray",
-                                "sortKey": {
+                                "subrecord": {
                                     "signature": "RPRM",
                                     "type": "subrecord",
                                     "def": {
@@ -1003,7 +1003,7 @@
                             {
                                 "name": "Available Hair Colors Male",
                                 "type": "subrecordArray",
-                                "sortKey": {
+                                "subrecord": {
                                     "signature": "AHCM",
                                     "type": "subrecord",
                                     "def": {
@@ -1019,7 +1019,7 @@
                             {
                                 "name": "Face Details Texture Set List Male",
                                 "type": "subrecordArray",
-                                "sortKey": {
+                                "subrecord": {
                                     "signature": "FTSM",
                                     "type": "subrecord",
                                     "def": {
@@ -1078,7 +1078,7 @@
                             {
                                 "name": "Head Parts",
                                 "type": "subrecordArray",
-                                "sortKey": {
+                                "subrecord": {
                                     "def": "HeadPart"
                                 }
                             },
@@ -1088,7 +1088,7 @@
                             {
                                 "name": "Race Presets Female",
                                 "type": "subrecordArray",
-                                "sortKey": {
+                                "subrecord": {
                                     "signature": "RPRF",
                                     "type": "subrecord",
                                     "def": {
@@ -1104,7 +1104,7 @@
                             {
                                 "name": "Available Hair Colors Female",
                                 "type": "subrecordArray",
-                                "sortKey": {
+                                "subrecord": {
                                     "signature": "AHCF",
                                     "type": "subrecord",
                                     "def": {
@@ -1120,7 +1120,7 @@
                             {
                                 "name": "Face Details Texture Set List Female",
                                 "type": "subrecordArray",
-                                "sortKey": {
+                                "subrecord": {
                                     "signature": "FTSF",
                                     "type": "subrecord",
                                     "def": {

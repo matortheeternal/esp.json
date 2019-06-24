@@ -75,7 +75,7 @@
             {
                 "name": "Master Files",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "name": "Master File",
                     "type": "multiStruct",
                     "subrecords": [

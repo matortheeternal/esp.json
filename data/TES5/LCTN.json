@@ -340,7 +340,7 @@
             {
                 "name": "Actor Cell Encounter Cell",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "signature": "ACEC",
                     "type": "subrecord",
                     "def": {
@@ -381,7 +381,7 @@
             {
                 "name": "Location Cell Encounter Cell",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "signature": "LCEC",
                     "type": "subrecord",
                     "def": {
@@ -422,7 +422,7 @@
             {
                 "name": "Reference Cell Encounter Cell",
                 "type": "subrecordArray",
-                "sortKey": {
+                "subrecord": {
                     "signature": "RCEC",
                     "type": "subrecord",
                     "def": {
