@@ -18,7 +18,7 @@ let convertProcedures = function(converter) {
 };
 
 let convertFile = function(filename, game) {
-    let filePath = path.resolve(__dirname, 'Input', filename),
+    let filePath = path.resolve(__dirname, 'input', filename),
         converter = new Converter(filePath);
     try {
         let outputFolder = path.resolve(__dirname, 'output', game);
