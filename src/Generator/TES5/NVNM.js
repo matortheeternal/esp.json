@@ -1,8 +1,8 @@
 let {
     addDef, uint32, opts, bytes, size, 
     ckFormId, int16, struct, union, float, 
-    sortKey, array, def, format, flags, 
-    uint16, subrecord
+    sortKey, array, prefix, def, format, 
+    flags, uint16, subrecord
 } = require('../helpers');
 
 module.exports = () => {
@@ -22,16 +22,16 @@ module.exports = () => {
                 ]),
                 ckFormId('Parent Cell', ['CELL'])
             ]),
-            opts(array('Vertices', 
+            opts(prefix(4, array('Vertices', 
                 sortKey([0, 1, 2], struct('Vertex', [
                     float('X'),
                     float('Y'),
                     float('Z')
                 ]))
-            , -1), {
+            )), {
                 "includeFlag": "dfNotAlignable"
             }),
-            opts(array('Triangles', 
+            opts(prefix(4, array('Triangles', 
                 struct('Triangle', [
                     opts(format(int16('Vertex 0'), def('VertexToStr0')), {
                         "linksToCallback": "VertexLinksTo"
@@ -88,16 +88,16 @@ module.exports = () => {
                         15: 'Unknown 16'
                     }))
                 ])
-            , -1), {
+            )), {
                 "includeFlag": "dfNotAlignable"
             }),
-            opts(array('Edge Links', 
+            opts(prefix(4, array('Edge Links', 
                 struct('Edge Link', [
                     size(4, bytes('Unknown')),
                     ckFormId('Mesh', ['NAVM']),
                     int16('Triangle')
                 ])
-            , -1), {
+            )), {
                 "includeFlag": "dfNotAlignable"
             }),
             array('Door Triangles', 
@@ -109,11 +109,11 @@ module.exports = () => {
                     ckFormId('Door', ['REFR'])
                 ]))
             , -1),
-            opts(array('Cover Triangles', 
+            opts(prefix(4, array('Cover Triangles', 
                 opts(int16('Triangle'), {
                     "linksToCallback": "TriangleLinksTo"
                 })
-            , -1), {
+            )), {
                 "includeFlag": "dfNotAlignable"
             }),
             uint32('NavMeshGrid Divisor'),
@@ -126,11 +126,11 @@ module.exports = () => {
             float('Max Y'),
             float('Max Z'),
             opts(array('NavMeshGrid', 
-                opts(array('NavMeshGridCell', 
+                opts(prefix(4, array('NavMeshGridCell', 
                     opts(int16('Triangle'), {
                         "linksToCallback": "TriangleLinksTo"
                     })
-                , -1), {
+                )), {
                     "includeFlag": "dfNotAlignable"
                 })
             ), {

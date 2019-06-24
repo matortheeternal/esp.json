@@ -63,7 +63,8 @@
                                     ]
                                 },
                                 "type": "array",
-                                "size": -1
+                                "size": 0,
+                                "prefix": 4
                             },
                             {
                                 "name": "Preferred Merges",
@@ -75,7 +76,8 @@
                                     ]
                                 },
                                 "type": "array",
-                                "size": -1
+                                "size": 0,
+                                "prefix": 4
                             },
                             {
                                 "name": "Linked Doors",
@@ -98,7 +100,8 @@
                                     ]
                                 },
                                 "type": "array",
-                                "size": -1
+                                "size": 0,
+                                "prefix": 4
                             },
                             {
                                 "name": "Is Island",
@@ -186,10 +189,12 @@
                                     ]
                                 },
                                 "type": "array",
-                                "size": -1
+                                "size": 0,
+                                "prefix": 4
                             },
                             "type": "array",
-                            "size": -1
+                            "size": 0,
+                            "prefix": 4
                         },
                         {
                             "name": "NavMesh Tree?",
@@ -211,7 +216,8 @@
                                 ]
                             },
                             "type": "array",
-                            "size": -1
+                            "size": 0,
+                            "prefix": 4
                         }
                     ]
                 }

@@ -1,8 +1,8 @@
 let {
     def, subrecord, uint32, ckFormId, bytes, 
-    size, float, array, struct, enumeration, 
-    uint8, format, union, int16, arrayOfSubrecord, 
-    record
+    size, float, array, prefix, struct, 
+    enumeration, uint8, format, union, int16, 
+    arrayOfSubrecord, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -18,18 +18,18 @@ module.exports = () => {
                     float('Y'),
                     float('Z'),
                     uint32('Preferred Merges Flag'),
-                    array('Merged To', 
+                    prefix(4, array('Merged To', 
                         ckFormId('Mesh', ['NAVM'])
-                    , -1),
-                    array('Preferred Merges', 
+                    )),
+                    prefix(4, array('Preferred Merges', 
                         ckFormId('Mesh', ['NAVM'])
-                    , -1),
-                    array('Linked Doors', 
+                    )),
+                    prefix(4, array('Linked Doors', 
                         struct('Door', [
                             size(4, bytes('Unknown')),
                             ckFormId('Door Ref', ['REFR'])
                         ])
-                    , -1),
+                    )),
                     format(uint8('Is Island'), enumeration({
                         0: 'False',
                         1: 'True'
@@ -50,17 +50,17 @@ module.exports = () => {
                 ]))
             ),
             subrecord('NVPP', struct('Preferred Pathing', [
-                array('NavMeshes', 
-                    array('Set', 
+                prefix(4, array('NavMeshes', 
+                    prefix(4, array('Set', 
                         ckFormId('', ['NAVM'])
-                    , -1)
-                , -1),
-                array('NavMesh Tree?', 
+                    ))
+                )),
+                prefix(4, array('NavMesh Tree?', 
                     struct('', [
                         ckFormId('NavMesh', ['NAVM']),
                         uint32('Index/Node')
                     ])
-                , -1)
+                ))
             ])),
             subrecord('NVSI', array('Unknown', 
                 ckFormId('Navigation Mesh', ['NAVM'])

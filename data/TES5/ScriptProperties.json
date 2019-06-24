@@ -71,7 +71,8 @@
                             "def": "ScriptPropertyObject"
                         },
                         "type": "array",
-                        "size": -1
+                        "size": 0,
+                        "prefix": 4
                     },
                     {
                         "name": "Array of String",
@@ -82,7 +83,8 @@
                             "encoding": "EncodingVMAD"
                         },
                         "type": "array",
-                        "size": -1
+                        "size": 0,
+                        "prefix": 4
                     },
                     {
                         "name": "Array of Int32",
@@ -91,7 +93,8 @@
                             "type": "int32"
                         },
                         "type": "array",
-                        "size": -1
+                        "size": 0,
+                        "prefix": 4
                     },
                     {
                         "name": "Array of Float",
@@ -100,7 +103,8 @@
                             "type": "float"
                         },
                         "type": "array",
-                        "size": -1
+                        "size": 0,
+                        "prefix": 4
                     },
                     {
                         "name": "Array of Bool",
@@ -116,7 +120,8 @@
                             }
                         },
                         "type": "array",
-                        "size": -1
+                        "size": 0,
+                        "prefix": 4
                     }
                 ]
             }

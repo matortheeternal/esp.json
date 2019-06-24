@@ -1,8 +1,9 @@
 let {
     flags, def, IsSSE, int16, ckFormId, 
-    struct, array, opts, subrecord, arrayOfSubrecord, 
-    uint8, format, bytes, size, req, 
-    multiStruct, float, string, int32, record
+    struct, array, prefix, opts, subrecord, 
+    arrayOfSubrecord, uint8, format, bytes, size, 
+    req, multiStruct, float, string, int32, 
+    record
 } = require('../helpers');
 
 module.exports = game => {
@@ -16,13 +17,13 @@ module.exports = game => {
                 subrecord('RNAM', struct('Grid', [
                     int16('Y'),
                     int16('X'),
-                    opts(array('References', 
+                    opts(prefix(4, array('References', 
                         struct('Reference', [
                             ckFormId('Ref', ['REFR']),
                             int16('Y'),
                             int16('X')
                         ])
-                    , -1), {
+                    )), {
                         "includeFlag": "dfNotAlignable"
                     })
                 ]))

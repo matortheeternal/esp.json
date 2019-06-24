@@ -41,9 +41,9 @@ module.exports = () => {
                 size(4, bytes('Unknown')),
                 float('Min Distance'),
                 float('Max Distance'),
-                array('Curve', 
+                size(5, array('Curve', 
                     uint8('Value')
-                , 5),
+                )),
                 bytes('Unknown')
             ]))
         ]

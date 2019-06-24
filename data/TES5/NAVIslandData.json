@@ -45,7 +45,8 @@
                 ]
             },
             "type": "array",
-            "size": -1,
+            "size": 0,
+            "prefix": 4,
             "includeFlag": "dfNotAlignable"
         },
         {
@@ -69,7 +70,8 @@
                 ]
             },
             "type": "array",
-            "size": -1,
+            "size": 0,
+            "prefix": 4,
             "includeFlag": "dfNotAlignable"
         }
     ]

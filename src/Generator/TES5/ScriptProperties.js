@@ -30,26 +30,26 @@ module.exports = () => {
                         0: 'False',
                         1: 'True'
                     })),
-                    array('Array of Object', 
+                    prefix(4, array('Array of Object', 
                         def('ScriptPropertyObject')
-                    , -1),
-                    array('Array of String', 
+                    )),
+                    prefix(4, array('Array of String', 
                         opts(prefix(2, string('Element')), {
                             "encoding": "EncodingVMAD"
                         })
-                    , -1),
-                    array('Array of Int32', 
+                    )),
+                    prefix(4, array('Array of Int32', 
                         int32('Element')
-                    , -1),
-                    array('Array of Float', 
+                    )),
+                    prefix(4, array('Array of Float', 
                         float('Element')
-                    , -1),
-                    array('Array of Bool', 
+                    )),
+                    prefix(4, array('Array of Bool', 
                         format(uint8('Element'), enumeration({
                             0: 'False',
                             1: 'True'
                         }))
-                    , -1)
+                    ))
                 ])
             ]))
         , -2)

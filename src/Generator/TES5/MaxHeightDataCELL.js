@@ -7,9 +7,9 @@ module.exports = () => {
     addDef('MaxHeightDataCELL', 
         subrecord('MHDT', struct('Max Height Data', [
             float('Offset'),
-            array('Rows', 
+            size(32, array('Rows', 
                 size(32, bytes('Columns'))
-            , 32)
+            ))
         ]))
     );
 };

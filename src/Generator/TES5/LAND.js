@@ -1,6 +1,6 @@
 let {
     flags, subrecord, uint32, format, uint8, 
-    struct, array, float, bytes, size, 
+    struct, array, size, float, bytes, 
     ckFormId, def, int16, sortKey, multiStruct, 
     uint16, multiUnion, arrayOfSubrecord, unknown, record
 } = require('../helpers');
@@ -24,39 +24,39 @@ module.exports = () => {
                 9: '',
                 10: 'MPCD'
             }))),
-            subrecord('VNML', array('Vertex Normals', 
+            subrecord('VNML', size(33, array('Vertex Normals', 
                 struct('Row', [
-                    array('Columns', 
+                    size(33, array('Columns', 
                         struct('Column', [
                             uint8('X'),
                             uint8('Y'),
                             uint8('Z')
                         ])
-                    , 33)
+                    ))
                 ])
-            , 33)),
+            ))),
             subrecord('VHGT', struct('Vertext Height Map', [
                 float('Offset'),
-                array('Rows', 
+                size(33, array('Rows', 
                     struct('Row', [
-                        array('Columns', 
+                        size(33, array('Columns', 
                             uint8('Column')
-                        , 33)
+                        ))
                     ])
-                , 33),
+                )),
                 size(3, bytes('Unused'))
             ])),
-            subrecord('VCLR', array('Vertex Colours', 
+            subrecord('VCLR', size(33, array('Vertex Colours', 
                 struct('Row', [
-                    array('Columns', 
+                    size(33, array('Columns', 
                         struct('Column', [
                             uint8('X'),
                             uint8('Y'),
                             uint8('Z')
                         ])
-                    , 33)
+                    ))
                 ])
-            , 33)),
+            ))),
             arrayOfSubrecord('Layers', 
                 multiUnion('Layer', [
                     sortKey([0], multiStruct('Base Layer', [

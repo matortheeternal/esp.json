@@ -20,7 +20,7 @@ module.exports = () => {
                     prefix(2, string('FragmentName'))
                 ])
             ),
-            array('Phase Fragments', 
+            prefix(2, array('Phase Fragments', 
                 sortKey([0, 1], struct('Phase Fragment', [
                     format(uint8('Phase Flag'), flags({
                         0: 'OnStart',
@@ -33,7 +33,7 @@ module.exports = () => {
                     prefix(2, string('ScriptName')),
                     prefix(2, string('FragmentName'))
                 ]))
-            , -2)
+            ))
         ])
     );
 };
