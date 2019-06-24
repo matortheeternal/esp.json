@@ -20,7 +20,7 @@ let record = (signature, name, def) => addDef(signature,
 
 let subrecord = (signature, def) =>
     ({ signature, type: 'subrecord', def });
-let arrayOfSubrecord = (name, sortKey, subrecord) =>
+let arrayOfSubrecord = (name, subrecord, sortKey) =>
     ({ name, type: 'subrecordArray', subrecord, sortKey });
 let arrayOfStruct = (name, entryName, subrecords) =>
     ({ name, type: 'structArray', entryName, subrecords });
