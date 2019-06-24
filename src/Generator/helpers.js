@@ -42,14 +42,9 @@ let array = (name, entryDef, size = 0) =>
 let union = (name, decider, elements) =>
     ({ name, type: 'union', decider, elements });
 
-// variable length data
-let bytes = (name, size = 0) => ({ name, type: 'bytes', size });
-let unknown = () => ({ name: 'Unknown', type: 'bytes' });
-
-// strings
+// base types
 let string = (name) => ({ name, type: 'string' });
-
-// fixed length data
+let bytes = name => ({ name, type: 'bytes' });
 let float = name => ({ name, type: 'float' });
 let int0 = name => ({ name, type: 'int0' });
 let int8 = name => ({ name, type: 'int8' });
@@ -58,8 +53,11 @@ let int16 = name => ({ name, type: 'int16' });
 let uint16 = name => ({ name, type: 'uint16' });
 let int32 = name => ({ name, type: 'int32' });
 let uint32 = name => ({ name, type: 'uint32' });
+
+// special types
 let formId = name => ({ name, type: 'formId' });
 let ckFormId = (name, signatures) => ({ name, type: 'formId', signatures });
+let unknown = () => ({ name: 'Unknown', type: 'bytes' });
 let empty = name => ({ name, type: 'empty' });
 
 module.exports = {
@@ -69,7 +67,7 @@ module.exports = {
     record, subrecord,
     arrayOfSubrecord, arrayOfStruct, multiStruct, multiUnion,
     struct, array, union,
-    bytes, unknown, string,
-    float, int0, int8, uint8, int16, uint16, int32, uint32,
-    formId, ckFormId, empty
+    bytes, string, float,
+    int0, int8, uint8, int16, uint16, int32, uint32,
+    formId, ckFormId, unknown, empty
 };
