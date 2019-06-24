@@ -47,8 +47,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Short Name",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 }
             }
         ]

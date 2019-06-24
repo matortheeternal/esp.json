@@ -24,8 +24,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Material Name",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 }
             },
             {

@@ -12,8 +12,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Male Parent Title",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 }
             },
             {
@@ -21,8 +20,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Female Parent Title",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 }
             },
             {
@@ -30,8 +28,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Male Child Title",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 }
             },
             {
@@ -39,8 +36,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Female Child Title",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 }
             },
             {

@@ -27,8 +27,8 @@
                     },
                     {
                         "name": "Subtype",
-                        "type": "cstring",
-                        "maxSize": 4
+                        "type": "string",
+                        "size": 4
                     }
                 ]
             }

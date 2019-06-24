@@ -12,8 +12,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Fill Texture",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 }
             },
             {
@@ -21,8 +20,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Particle Shader Texture",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 }
             },
             {
@@ -30,8 +28,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Holes Texture",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 }
             },
             {
@@ -39,8 +36,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Membrane Palette Texture",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 }
             },
             {
@@ -48,8 +44,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Particle Palette Texture",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 }
             },
             {

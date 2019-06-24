@@ -192,7 +192,7 @@
                             "def": {
                                 "name": "Response Text",
                                 "type": "string",
-                                "maxSize": 0
+                                "localized": true
                             }
                         },
                         {
@@ -200,8 +200,7 @@
                             "type": "subrecord",
                             "def": {
                                 "name": "Script Notes",
-                                "type": "cstring",
-                                "maxSize": 0
+                                "type": "string"
                             }
                         },
                         {
@@ -209,8 +208,7 @@
                             "type": "subrecord",
                             "def": {
                                 "name": "Edits",
-                                "type": "cstring",
-                                "maxSize": 0
+                                "type": "string"
                             }
                         },
                         {
@@ -282,7 +280,7 @@
                 "def": {
                     "name": "Prompt",
                     "type": "string",
-                    "maxSize": 0
+                    "localized": true
                 }
             },
             {

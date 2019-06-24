@@ -45,8 +45,7 @@
                             "type": "subrecord",
                             "def": {
                                 "name": "Lens Flare Sprite ID",
-                                "type": "cstring",
-                                "maxSize": 0
+                                "type": "string"
                             }
                         },
                         {
@@ -54,8 +53,7 @@
                             "type": "subrecord",
                             "def": {
                                 "name": "Texture",
-                                "type": "cstring",
-                                "maxSize": 0
+                                "type": "string"
                             }
                         },
                         {

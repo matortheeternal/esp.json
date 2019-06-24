@@ -105,8 +105,7 @@
                                 "type": "subrecord",
                                 "def": {
                                     "name": "Model FileName",
-                                    "type": "cstring",
-                                    "maxSize": 0
+                                    "type": "string"
                                 }
                             }
                         ],

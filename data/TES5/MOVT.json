@@ -12,8 +12,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Name",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 }
             },
             {

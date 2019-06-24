@@ -19,8 +19,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Abbreviation",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 }
             },
             {

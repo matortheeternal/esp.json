@@ -190,8 +190,8 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Subtype Name",
-                    "type": "cstring",
-                    "maxSize": 4
+                    "type": "string",
+                    "size": 4
                 }
             },
             {

@@ -15,8 +15,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "FileName",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 }
             },
             {
@@ -24,8 +23,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Animation Event",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 }
             },
             {

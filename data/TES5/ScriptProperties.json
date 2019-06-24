@@ -7,7 +7,7 @@
             {
                 "name": "propertyName",
                 "type": "string",
-                "maxSize": 0
+                "prefixLength": 2
             },
             {
                 "name": "Type",
@@ -40,7 +40,7 @@
                     {
                         "name": "String",
                         "type": "string",
-                        "maxSize": 0,
+                        "prefixLength": 2,
                         "encoding": "EncodingVMAD"
                     },
                     {
@@ -73,7 +73,7 @@
                         "entryDef": {
                             "name": "Element",
                             "type": "string",
-                            "maxSize": 0,
+                            "prefixLength": 2,
                             "encoding": "EncodingVMAD"
                         },
                         "type": "array",

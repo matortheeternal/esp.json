@@ -18,8 +18,7 @@
                     "type": "subrecord",
                     "def": {
                         "name": "Noise Map",
-                        "type": "cstring",
-                        "maxSize": 0
+                        "type": "string"
                     },
                     "required": true
                 }
@@ -177,8 +176,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Noise Layer One - Noise Texture",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 },
                 "required": true
             },
@@ -187,8 +185,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Noise Layer Two - Noise Texture",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 },
                 "required": true
             },
@@ -197,8 +194,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Noise Layer Three - Noise Texture",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 },
                 "required": true
             },
@@ -207,8 +203,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Flow Normals - Noise Texture",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 },
                 "required": true
             }

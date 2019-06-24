@@ -245,7 +245,7 @@
                             "def": {
                                 "name": "Male Title",
                                 "type": "string",
-                                "maxSize": 0
+                                "localized": true
                             }
                         },
                         {
@@ -254,7 +254,7 @@
                             "def": {
                                 "name": "Female Title",
                                 "type": "string",
-                                "maxSize": 0
+                                "localized": true
                             }
                         },
                         {
@@ -262,8 +262,7 @@
                             "type": "subrecord",
                             "def": {
                                 "name": "Insignia Unused",
-                                "type": "cstring",
-                                "maxSize": 0
+                                "type": "string"
                             }
                         }
                     ],

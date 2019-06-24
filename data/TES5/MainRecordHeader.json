@@ -4,8 +4,8 @@
     "fields": [
         {
             "name": "Signature",
-            "type": "cstring",
-            "maxSize": 4
+            "type": "string",
+            "size": 4
         },
         {
             "name": "Data Size",

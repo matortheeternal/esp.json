@@ -112,8 +112,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Camera Path",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 },
                 "required": true
             }

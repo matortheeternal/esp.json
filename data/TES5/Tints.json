@@ -25,8 +25,7 @@
                             "type": "subrecord",
                             "def": {
                                 "name": "File Name",
-                                "type": "cstring",
-                                "maxSize": 0
+                                "type": "string"
                             }
                         },
                         {

@@ -5,7 +5,7 @@
         {
             "name": "ScriptName",
             "type": "string",
-            "maxSize": 0
+            "prefixLength": 2
         },
         {
             "def": "ScriptFlags"

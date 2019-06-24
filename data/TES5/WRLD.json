@@ -230,8 +230,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Map Image",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 }
             },
             {
@@ -449,8 +448,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Canopy Shadow (unused)",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 }
             },
             {
@@ -458,8 +456,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Water Noise Texture",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 }
             },
             {
@@ -467,8 +464,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "HD LOD Diffuse Texture",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 }
             },
             {
@@ -476,8 +472,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "HD LOD Normal Texture",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 }
             },
             {
@@ -485,8 +480,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Water Environment Map (unused)",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 }
             },
             {

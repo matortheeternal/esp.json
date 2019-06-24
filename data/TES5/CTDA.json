@@ -1187,8 +1187,7 @@
             "type": "subrecord",
             "def": {
                 "name": "Parameter #1",
-                "type": "cstring",
-                "maxSize": 0
+                "type": "string"
             }
         },
         {
@@ -1196,8 +1195,7 @@
             "type": "subrecord",
             "def": {
                 "name": "Parameter #2",
-                "type": "cstring",
-                "maxSize": 0
+                "type": "string"
             }
         }
     ],

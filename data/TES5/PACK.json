@@ -273,8 +273,7 @@
                                     "type": "subrecord",
                                     "def": {
                                         "name": "Type",
-                                        "type": "cstring",
-                                        "maxSize": 0
+                                        "type": "string"
                                     }
                                 },
                                 {
@@ -380,8 +379,7 @@
                                     "type": "subrecord",
                                     "def": {
                                         "name": "Branch Type",
-                                        "type": "cstring",
-                                        "maxSize": 0
+                                        "type": "string"
                                     }
                                 },
                                 {
@@ -418,8 +416,7 @@
                                     "type": "subrecord",
                                     "def": {
                                         "name": "Procedure Type",
-                                        "type": "cstring",
-                                        "maxSize": 0
+                                        "type": "string"
                                     }
                                 },
                                 {

@@ -13,7 +13,7 @@
         {
             "name": "FileName",
             "type": "string",
-            "maxSize": 0
+            "prefixLength": 2
         },
         {
             "name": "Fragments",
@@ -40,12 +40,12 @@
                     {
                         "name": "ScriptName",
                         "type": "string",
-                        "maxSize": 0
+                        "prefixLength": 2
                     },
                     {
                         "name": "FragmentName",
                         "type": "string",
-                        "maxSize": 0
+                        "prefixLength": 2
                     }
                 ],
                 "sortKey": [

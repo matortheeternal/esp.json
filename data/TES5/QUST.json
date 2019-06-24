@@ -67,8 +67,8 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Event",
-                    "type": "cstring",
-                    "maxSize": 4
+                    "type": "string",
+                    "size": 4
                 }
             },
             {
@@ -91,8 +91,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Object Window Filter",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 }
             },
             {
@@ -182,7 +181,7 @@
                                         "def": {
                                             "name": "Log Entry",
                                             "type": "string",
-                                            "maxSize": 0
+                                            "localized": true
                                         }
                                     },
                                     {
@@ -264,7 +263,7 @@
                             "def": {
                                 "name": "Display Text",
                                 "type": "string",
-                                "maxSize": 0
+                                "localized": true
                             },
                             "required": true
                         },
@@ -345,8 +344,7 @@
                                     "type": "subrecord",
                                     "def": {
                                         "name": "Alias Name",
-                                        "type": "cstring",
-                                        "maxSize": 0
+                                        "type": "string"
                                     }
                                 },
                                 {
@@ -551,8 +549,8 @@
                                             "type": "subrecord",
                                             "def": {
                                                 "name": "From Event",
-                                                "type": "cstring",
-                                                "maxSize": 4
+                                                "type": "string",
+                                                "size": 4
                                             }
                                         },
                                         {
@@ -730,8 +728,7 @@
                                     "type": "subrecord",
                                     "def": {
                                         "name": "Alias Name",
-                                        "type": "cstring",
-                                        "maxSize": 0
+                                        "type": "string"
                                     }
                                 },
                                 {
@@ -936,8 +933,8 @@
                                             "type": "subrecord",
                                             "def": {
                                                 "name": "From Event",
-                                                "type": "cstring",
-                                                "maxSize": 4
+                                                "type": "string",
+                                                "size": 4
                                             }
                                         },
                                         {
@@ -1106,8 +1103,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Description",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 },
                 "required": true
             },

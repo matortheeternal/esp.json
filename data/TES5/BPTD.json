@@ -23,7 +23,7 @@
                             "def": {
                                 "name": "Part Name",
                                 "type": "string",
-                                "maxSize": 0
+                                "localized": true
                             },
                             "required": true
                         },
@@ -32,8 +32,7 @@
                             "type": "subrecord",
                             "def": {
                                 "name": "Pose Matching",
-                                "type": "cstring",
-                                "maxSize": 0
+                                "type": "string"
                             },
                             "required": true
                         },
@@ -42,8 +41,7 @@
                             "type": "subrecord",
                             "def": {
                                 "name": "Part Node",
-                                "type": "cstring",
-                                "maxSize": 0
+                                "type": "string"
                             },
                             "required": true
                         },
@@ -52,8 +50,7 @@
                             "type": "subrecord",
                             "def": {
                                 "name": "VATS Target",
-                                "type": "cstring",
-                                "maxSize": 0
+                                "type": "string"
                             },
                             "required": true
                         },
@@ -62,8 +59,7 @@
                             "type": "subrecord",
                             "def": {
                                 "name": "IK Data - Start Node",
-                                "type": "cstring",
-                                "maxSize": 0
+                                "type": "string"
                             },
                             "required": true
                         },
@@ -272,8 +268,7 @@
                             "type": "subrecord",
                             "def": {
                                 "name": "Limb Replacement Model",
-                                "type": "cstring",
-                                "maxSize": 0
+                                "type": "string"
                             },
                             "required": true
                         },
@@ -282,8 +277,7 @@
                             "type": "subrecord",
                             "def": {
                                 "name": "Gore Effects - Target Bone",
-                                "type": "cstring",
-                                "maxSize": 0
+                                "type": "string"
                             },
                             "required": true
                         },

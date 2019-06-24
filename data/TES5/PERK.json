@@ -264,7 +264,7 @@
                                     "def": {
                                         "name": "Button Label",
                                         "type": "string",
-                                        "maxSize": 0
+                                        "localized": true
                                     }
                                 },
                                 {
@@ -345,13 +345,12 @@
                                             },
                                             {
                                                 "name": "Text",
-                                                "type": "cstring",
-                                                "maxSize": 0
+                                                "type": "string"
                                             },
                                             {
                                                 "name": "Text",
                                                 "type": "string",
-                                                "maxSize": 0
+                                                "localized": true
                                             },
                                             {
                                                 "name": "Actor Value, Float",

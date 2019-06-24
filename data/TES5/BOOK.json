@@ -29,7 +29,7 @@
                 "def": {
                     "name": "Book Text",
                     "type": "string",
-                    "maxSize": 0
+                    "localized": true
                 },
                 "required": true
             },
@@ -133,7 +133,7 @@
                 "def": {
                     "name": "Description",
                     "type": "string",
-                    "maxSize": 0
+                    "localized": true
                 }
             }
         ]

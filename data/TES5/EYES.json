@@ -19,8 +19,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Texture",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 },
                 "required": true
             },

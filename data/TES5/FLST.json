@@ -9,8 +9,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Editor ID",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 },
                 "required": true
             },

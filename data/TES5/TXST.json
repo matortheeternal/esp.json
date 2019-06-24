@@ -20,8 +20,7 @@
                         "type": "subrecord",
                         "def": {
                             "name": "Difuse",
-                            "type": "cstring",
-                            "maxSize": 0
+                            "type": "string"
                         }
                     },
                     {
@@ -29,8 +28,7 @@
                         "type": "subrecord",
                         "def": {
                             "name": "Normal/Gloss",
-                            "type": "cstring",
-                            "maxSize": 0
+                            "type": "string"
                         }
                     },
                     {
@@ -38,8 +36,7 @@
                         "type": "subrecord",
                         "def": {
                             "name": "Environment Mask/Subsurface Tint",
-                            "type": "cstring",
-                            "maxSize": 0
+                            "type": "string"
                         }
                     },
                     {
@@ -47,8 +44,7 @@
                         "type": "subrecord",
                         "def": {
                             "name": "Glow/Detail Map",
-                            "type": "cstring",
-                            "maxSize": 0
+                            "type": "string"
                         }
                     },
                     {
@@ -56,8 +52,7 @@
                         "type": "subrecord",
                         "def": {
                             "name": "Height",
-                            "type": "cstring",
-                            "maxSize": 0
+                            "type": "string"
                         }
                     },
                     {
@@ -65,8 +60,7 @@
                         "type": "subrecord",
                         "def": {
                             "name": "Environment",
-                            "type": "cstring",
-                            "maxSize": 0
+                            "type": "string"
                         }
                     },
                     {
@@ -74,8 +68,7 @@
                         "type": "subrecord",
                         "def": {
                             "name": "Multilayer",
-                            "type": "cstring",
-                            "maxSize": 0
+                            "type": "string"
                         }
                     },
                     {
@@ -83,8 +76,7 @@
                         "type": "subrecord",
                         "def": {
                             "name": "Backlight Mask/Specular",
-                            "type": "cstring",
-                            "maxSize": 0
+                            "type": "string"
                         }
                     }
                 ]

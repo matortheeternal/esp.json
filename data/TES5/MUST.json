@@ -43,8 +43,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Track FileName",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 }
             },
             {
@@ -52,8 +51,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Finale FileName",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 }
             },
             {

@@ -310,8 +310,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Male Skeletal Model",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 }
             },
             {
@@ -330,8 +329,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Female Skeletal Model",
-                    "type": "cstring",
-                    "maxSize": 0
+                    "type": "string"
                 }
             },
             {
@@ -353,8 +351,7 @@
                     "type": "subrecord",
                     "def": {
                         "name": "Name",
-                        "type": "cstring",
-                        "maxSize": 0
+                        "type": "string"
                     }
                 }
             },
@@ -726,8 +723,7 @@
                     "type": "subrecord",
                     "def": {
                         "name": "Name",
-                        "type": "cstring",
-                        "maxSize": 0
+                        "type": "string"
                     }
                 }
             },
@@ -868,8 +864,7 @@
                     "type": "subrecord",
                     "def": {
                         "name": "Name",
-                        "type": "cstring",
-                        "maxSize": 0
+                        "type": "string"
                     }
                 }
             },
