@@ -2,7 +2,7 @@ let fs = require('fs'),
     path = require('path'),
     {clearDefs, getDefs} = require('./helpers');
 
-let buildDefs = function(game, folderName) {
+let buildDefs = function(defGame, folderName) {
     let generatorFolder = path.resolve(__dirname, folderName);
     fs.readdirSync(generatorFolder).forEach(file => {
         let filePath = path.resolve(generatorFolder, file);
