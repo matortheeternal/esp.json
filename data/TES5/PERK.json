@@ -327,8 +327,7 @@
                                             },
                                             {
                                                 "name": "Float",
-                                                "type": "float",
-                                                "formatter": ""
+                                                "type": "float"
                                             },
                                             {
                                                 "name": "Float, Float",
@@ -336,13 +335,11 @@
                                                 "fields": [
                                                     {
                                                         "name": "Float 1",
-                                                        "type": "float",
-                                                        "formatter": ""
+                                                        "type": "float"
                                                     },
                                                     {
                                                         "name": "Float 2",
-                                                        "type": "float",
-                                                        "formatter": ""
+                                                        "type": "float"
                                                     }
                                                 ]
                                             },
@@ -389,8 +386,7 @@
                                                     },
                                                     {
                                                         "name": "Float",
-                                                        "type": "float",
-                                                        "formatter": ""
+                                                        "type": "float"
                                                     }
                                                 ]
                                             }

@@ -26,8 +26,7 @@
                         },
                         {
                             "name": "Duration",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "HDR",
@@ -245,13 +244,11 @@
                         },
                         {
                             "name": "Radial Blur Center X",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Radial Blur Center Y",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "DoF Strength",

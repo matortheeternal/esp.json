@@ -78,13 +78,11 @@
                                     "fields": [
                                         {
                                             "name": "X",
-                                            "type": "float",
-                                            "formatter": ""
+                                            "type": "float"
                                         },
                                         {
                                             "name": "Y",
-                                            "type": "float",
-                                            "formatter": ""
+                                            "type": "float"
                                         }
                                     ]
                                 },
@@ -206,8 +204,7 @@
                                         },
                                         {
                                             "name": "Chance",
-                                            "type": "float",
-                                            "formatter": ""
+                                            "type": "float"
                                         }
                                     ],
                                     "sortKey": [
@@ -262,8 +259,7 @@
                                         },
                                         {
                                             "name": "Density",
-                                            "type": "float",
-                                            "formatter": ""
+                                            "type": "float"
                                         },
                                         {
                                             "name": "Clustering",
@@ -304,28 +300,23 @@
                                         },
                                         {
                                             "name": "Min Height",
-                                            "type": "float",
-                                            "formatter": ""
+                                            "type": "float"
                                         },
                                         {
                                             "name": "Max Height",
-                                            "type": "float",
-                                            "formatter": ""
+                                            "type": "float"
                                         },
                                         {
                                             "name": "Sink",
-                                            "type": "float",
-                                            "formatter": ""
+                                            "type": "float"
                                         },
                                         {
                                             "name": "Sink Variance",
-                                            "type": "float",
-                                            "formatter": ""
+                                            "type": "float"
                                         },
                                         {
                                             "name": "Size Variance",
-                                            "type": "float",
-                                            "formatter": ""
+                                            "type": "float"
                                         },
                                         {
                                             "name": "Angle Variance",

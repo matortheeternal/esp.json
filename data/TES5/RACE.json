@@ -86,61 +86,50 @@
                         },
                         {
                             "name": "Male Height",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Female Height",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Male Weight",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Female Weight",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "def": "RACE_DATAFlags01"
                         },
                         {
                             "name": "Starting Health",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Starting Magicka",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Starting Stamina",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Base Carry Weight",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Base Mass",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Acceleration rate",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Deceleration rate",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Size",
@@ -171,8 +160,7 @@
                         },
                         {
                             "name": "Injured Health Pct",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Shield Biped Object",
@@ -183,28 +171,23 @@
                         },
                         {
                             "name": "Health Regen",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Magicka Regen",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Stamina Regen",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Unarmed Damage",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Unarmed Reach",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Body Biped Object",
@@ -215,23 +198,19 @@
                         },
                         {
                             "name": "Aim Angle Tolerance",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Flight Radius",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Angular Acceleration Rate",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Angular Tolerance",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Flags 2",
@@ -254,51 +233,42 @@
                                 {
                                     "name": "Offset X",
                                     "type": "float",
-                                    "formatter": "",
                                     "required": true
                                 },
                                 {
                                     "name": "Offset Y",
-                                    "type": "float",
-                                    "formatter": ""
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "Unknown",
+                                    "type": "float"
                                 },
                                 {
                                     "name": "Unknown",
                                     "type": "float",
-                                    "formatter": ""
-                                },
-                                {
-                                    "name": "Unknown",
-                                    "type": "float",
-                                    "formatter": "",
                                     "required": true
                                 },
                                 {
                                     "name": "Unknown",
-                                    "type": "float",
-                                    "formatter": ""
+                                    "type": "float"
                                 },
                                 {
                                     "name": "Unknown",
                                     "type": "float",
-                                    "formatter": "",
                                     "required": true
                                 },
                                 {
                                     "name": "Unknown",
-                                    "type": "float",
-                                    "formatter": ""
+                                    "type": "float"
                                 },
                                 {
                                     "name": "Unknown",
                                     "type": "float",
-                                    "formatter": "",
                                     "required": true
                                 },
                                 {
                                     "name": "Unknown",
-                                    "type": "float",
-                                    "formatter": ""
+                                    "type": "float"
                                 }
                             ]
                         }
@@ -427,8 +397,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "FaceGen - Main clamp",
-                    "type": "float",
-                    "formatter": ""
+                    "type": "float"
                 },
                 "required": true
             },
@@ -437,8 +406,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "FaceGen - Face clamp",
-                    "type": "float",
-                    "formatter": ""
+                    "type": "float"
                 },
                 "required": true
             },
@@ -764,58 +732,47 @@
                                 "fields": [
                                     {
                                         "name": "Left - Walk",
-                                        "type": "float",
-                                        "formatter": ""
+                                        "type": "float"
                                     },
                                     {
                                         "name": "Left - Run",
-                                        "type": "float",
-                                        "formatter": ""
+                                        "type": "float"
                                     },
                                     {
                                         "name": "Right - Walk",
-                                        "type": "float",
-                                        "formatter": ""
+                                        "type": "float"
                                     },
                                     {
                                         "name": "Right - Run",
-                                        "type": "float",
-                                        "formatter": ""
+                                        "type": "float"
                                     },
                                     {
                                         "name": "Forward - Walk",
-                                        "type": "float",
-                                        "formatter": ""
+                                        "type": "float"
                                     },
                                     {
                                         "name": "Forward - Run",
-                                        "type": "float",
-                                        "formatter": ""
+                                        "type": "float"
                                     },
                                     {
                                         "name": "Back - Walk",
-                                        "type": "float",
-                                        "formatter": ""
+                                        "type": "float"
                                     },
                                     {
                                         "name": "Back - Run",
-                                        "type": "float",
-                                        "formatter": ""
+                                        "type": "float"
                                     },
                                     {
                                         "name": "Rotate - Walk",
-                                        "type": "float",
-                                        "formatter": ""
+                                        "type": "float"
                                     },
                                     {
                                         "name": "Rotate - Walk",
-                                        "type": "float",
-                                        "formatter": ""
+                                        "type": "float"
                                     },
                                     {
                                         "name": "Unknown",
-                                        "type": "float",
-                                        "formatter": ""
+                                        "type": "float"
                                     }
                                 ]
                             }

@@ -48,18 +48,15 @@
                                             "fields": [
                                                 {
                                                     "name": "X",
-                                                    "type": "float",
-                                                    "formatter": ""
+                                                    "type": "float"
                                                 },
                                                 {
                                                     "name": "Y",
-                                                    "type": "float",
-                                                    "formatter": ""
+                                                    "type": "float"
                                                 },
                                                 {
                                                     "name": "Z",
-                                                    "type": "float",
-                                                    "formatter": ""
+                                                    "type": "float"
                                                 }
                                             ]
                                         },
@@ -70,27 +67,23 @@
                                                 {
                                                     "name": "X",
                                                     "type": "float",
-                                                    "formatter": "",
                                                     "required": true
                                                 },
                                                 {
                                                     "name": "Y",
                                                     "type": "float",
-                                                    "formatter": "",
                                                     "required": true
                                                 },
                                                 {
                                                     "name": "Z",
                                                     "type": "float",
-                                                    "formatter": "",
                                                     "required": true
                                                 }
                                             ]
                                         },
                                         {
                                             "name": "Scale",
-                                            "type": "float",
-                                            "formatter": ""
+                                            "type": "float"
                                         }
                                     ]
                                 },

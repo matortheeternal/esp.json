@@ -359,8 +359,7 @@
                             "type": "subrecord",
                             "def": {
                                 "name": "Timer Seconds",
-                                "type": "float",
-                                "formatter": ""
+                                "type": "float"
                             }
                         },
                         {
@@ -403,8 +402,7 @@
                             "type": "subrecord",
                             "def": {
                                 "name": "Looping - Max",
-                                "type": "float",
-                                "formatter": ""
+                                "type": "float"
                             }
                         },
                         {
@@ -412,8 +410,7 @@
                             "type": "subrecord",
                             "def": {
                                 "name": "Looping - Min",
-                                "type": "float",
-                                "formatter": ""
+                                "type": "float"
                             }
                         },
                         {

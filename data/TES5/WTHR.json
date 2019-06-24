@@ -382,23 +382,19 @@
                         "fields": [
                             {
                                 "name": "Sunrise",
-                                "type": "float",
-                                "formatter": ""
+                                "type": "float"
                             },
                             {
                                 "name": "Day",
-                                "type": "float",
-                                "formatter": ""
+                                "type": "float"
                             },
                             {
                                 "name": "Sunset",
-                                "type": "float",
-                                "formatter": ""
+                                "type": "float"
                             },
                             {
                                 "name": "Night",
-                                "type": "float",
-                                "formatter": ""
+                                "type": "float"
                             }
                         ]
                     },
@@ -495,43 +491,35 @@
                     "fields": [
                         {
                             "name": "Day - Near",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Day - Far",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Night - Near",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Night - Far",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Day - Power",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Night - Power",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Day - Max",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Night - Max",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         }
                     ]
                 },

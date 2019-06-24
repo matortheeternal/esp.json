@@ -77,40 +77,33 @@
                             "fields": [
                                 {
                                     "name": "Player",
-                                    "type": "float",
-                                    "formatter": ""
+                                    "type": "float"
                                 },
                                 {
                                     "name": "Target",
-                                    "type": "float",
-                                    "formatter": ""
+                                    "type": "float"
                                 },
                                 {
                                     "name": "Global",
-                                    "type": "float",
-                                    "formatter": ""
+                                    "type": "float"
                                 }
                             ]
                         },
                         {
                             "name": "Max Time",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Min Time",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Target % Between Actors",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Near Target Distance",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         }
                     ]
                 },

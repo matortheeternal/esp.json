@@ -28,8 +28,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Duration",
-                    "type": "float",
-                    "formatter": ""
+                    "type": "float"
                 }
             },
             {
@@ -37,8 +36,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Fade-Out",
-                    "type": "float",
-                    "formatter": ""
+                    "type": "float"
                 }
             },
             {
@@ -64,8 +62,7 @@
                     "name": "Cue Points",
                     "entryDef": {
                         "name": "Point",
-                        "type": "float",
-                        "formatter": ""
+                        "type": "float"
                     },
                     "type": "array",
                     "size": 0
@@ -81,13 +78,11 @@
                     "fields": [
                         {
                             "name": "Loop Begins",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Loop Ends",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Loop Count",

@@ -52,8 +52,7 @@
                     },
                     {
                         "name": "Base Cost",
-                        "type": "float",
-                        "formatter": ""
+                        "type": "float"
                     },
                     {
                         "name": "Assoc. Item",
@@ -164,8 +163,7 @@
                     },
                     {
                         "name": "Taper Weight",
-                        "type": "float",
-                        "formatter": ""
+                        "type": "float"
                     },
                     {
                         "name": "Hit Shader",
@@ -197,25 +195,21 @@
                             },
                             {
                                 "name": "Casting Time",
-                                "type": "float",
-                                "formatter": ""
+                                "type": "float"
                             }
                         ]
                     },
                     {
                         "name": "Taper Curve",
-                        "type": "float",
-                        "formatter": ""
+                        "type": "float"
                     },
                     {
                         "name": "Taper Duration",
-                        "type": "float",
-                        "formatter": ""
+                        "type": "float"
                     },
                     {
                         "name": "Second AV Weight",
                         "type": "float",
-                        "formatter": "",
                         "required": true
                     },
                     {
@@ -287,8 +281,7 @@
                     },
                     {
                         "name": "Skill Usage Multiplier",
-                        "type": "float",
-                        "formatter": ""
+                        "type": "float"
                     },
                     {
                         "name": "Dual Casting",
@@ -304,8 +297,7 @@
                             },
                             {
                                 "name": "Scale",
-                                "type": "float",
-                                "formatter": ""
+                                "type": "float"
                             }
                         ]
                     },
@@ -362,13 +354,11 @@
                         "fields": [
                             {
                                 "name": "Score",
-                                "type": "float",
-                                "formatter": ""
+                                "type": "float"
                             },
                             {
                                 "name": "Delay Time",
-                                "type": "float",
-                                "formatter": ""
+                                "type": "float"
                             }
                         ]
                     }

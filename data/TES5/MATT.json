@@ -37,19 +37,16 @@
                         {
                             "name": "Red",
                             "type": "float",
-                            "formatter": "",
                             "required": true
                         },
                         {
                             "name": "Green",
                             "type": "float",
-                            "formatter": "",
                             "required": true
                         },
                         {
                             "name": "Blue",
                             "type": "float",
-                            "formatter": "",
                             "required": true
                         }
                     ]
@@ -60,8 +57,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Buoyancy",
-                    "type": "float",
-                    "formatter": ""
+                    "type": "float"
                 }
             },
             {

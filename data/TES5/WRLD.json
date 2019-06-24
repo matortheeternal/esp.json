@@ -207,8 +207,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "LOD Water Height",
-                    "type": "float",
-                    "formatter": ""
+                    "type": "float"
                 }
             },
             {
@@ -220,13 +219,11 @@
                     "fields": [
                         {
                             "name": "Default Land Height",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Default Water Height",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         }
                     ]
                 }
@@ -309,18 +306,15 @@
                             "fields": [
                                 {
                                     "name": "Min Height",
-                                    "type": "float",
-                                    "formatter": ""
+                                    "type": "float"
                                 },
                                 {
                                     "name": "Max Height",
-                                    "type": "float",
-                                    "formatter": ""
+                                    "type": "float"
                                 },
                                 {
                                     "name": "Initial Pitch",
-                                    "type": "float",
-                                    "formatter": ""
+                                    "type": "float"
                                 }
                             ]
                         }
@@ -337,23 +331,19 @@
                     "fields": [
                         {
                             "name": "World Map Scale",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Cell X Offset",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Cell Y Offset",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Cell Z Offset",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         }
                     ]
                 },
@@ -364,8 +354,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Distant LOD Multiplier",
-                    "type": "float",
-                    "formatter": ""
+                    "type": "float"
                 }
             },
             {
@@ -403,13 +392,11 @@
                                 {
                                     "name": "X",
                                     "type": "float",
-                                    "formatter": "",
                                     "required": true
                                 },
                                 {
                                     "name": "Y",
                                     "type": "float",
-                                    "formatter": "",
                                     "required": true
                                 }
                             ]
@@ -426,13 +413,11 @@
                                 {
                                     "name": "X",
                                     "type": "float",
-                                    "formatter": "",
                                     "required": true
                                 },
                                 {
                                     "name": "Y",
                                     "type": "float",
-                                    "formatter": "",
                                     "required": true
                                 }
                             ]

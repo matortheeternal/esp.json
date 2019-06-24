@@ -59,18 +59,15 @@
                     "fields": [
                         {
                             "name": "X",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Y",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Z",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         }
                     ],
                     "sortKey": [
@@ -270,43 +267,35 @@
             },
             {
                 "name": "Max X Distance",
-                "type": "float",
-                "formatter": ""
+                "type": "float"
             },
             {
                 "name": "Max Y Distance",
-                "type": "float",
-                "formatter": ""
+                "type": "float"
             },
             {
                 "name": "Min X",
-                "type": "float",
-                "formatter": ""
+                "type": "float"
             },
             {
                 "name": "Min Y",
-                "type": "float",
-                "formatter": ""
+                "type": "float"
             },
             {
                 "name": "Min Z",
-                "type": "float",
-                "formatter": ""
+                "type": "float"
             },
             {
                 "name": "Max X",
-                "type": "float",
-                "formatter": ""
+                "type": "float"
             },
             {
                 "name": "Max Y",
-                "type": "float",
-                "formatter": ""
+                "type": "float"
             },
             {
                 "name": "Max Z",
-                "type": "float",
-                "formatter": ""
+                "type": "float"
             },
             {
                 "name": "NavMeshGrid",

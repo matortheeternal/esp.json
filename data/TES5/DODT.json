@@ -7,33 +7,27 @@
         "fields": [
             {
                 "name": "Min Width",
-                "type": "float",
-                "formatter": ""
+                "type": "float"
             },
             {
                 "name": "Max Width",
-                "type": "float",
-                "formatter": ""
+                "type": "float"
             },
             {
                 "name": "Min Height",
-                "type": "float",
-                "formatter": ""
+                "type": "float"
             },
             {
                 "name": "Max Height",
-                "type": "float",
-                "formatter": ""
+                "type": "float"
             },
             {
                 "name": "Depth",
-                "type": "float",
-                "formatter": ""
+                "type": "float"
             },
             {
                 "name": "Shininess",
-                "type": "float",
-                "formatter": ""
+                "type": "float"
             },
             {
                 "name": "Parallax",
@@ -41,8 +35,7 @@
                 "fields": [
                     {
                         "name": "Scale",
-                        "type": "float",
-                        "formatter": ""
+                        "type": "float"
                     },
                     {
                         "name": "Passes",

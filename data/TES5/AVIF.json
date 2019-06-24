@@ -39,23 +39,19 @@
                     "fields": [
                         {
                             "name": "Skill Use Mult",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Skill Offset Mult",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Skill Improve Mult",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Skill Improve Offset",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         }
                     ]
                 }
@@ -108,8 +104,7 @@
                             "type": "subrecord",
                             "def": {
                                 "name": "Horizontal Position",
-                                "type": "float",
-                                "formatter": ""
+                                "type": "float"
                             }
                         },
                         {
@@ -117,8 +112,7 @@
                             "type": "subrecord",
                             "def": {
                                 "name": "Vertical Position",
-                                "type": "float",
-                                "formatter": ""
+                                "type": "float"
                             }
                         },
                         {

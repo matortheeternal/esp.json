@@ -12,8 +12,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Color Influence",
-                    "type": "float",
-                    "formatter": ""
+                    "type": "float"
                 }
             },
             {
@@ -21,8 +20,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Fade Distance Radius Scale",
-                    "type": "float",
-                    "formatter": ""
+                    "type": "float"
                 }
             },
             {
@@ -69,28 +67,23 @@
                                     },
                                     {
                                         "name": "Width",
-                                        "type": "float",
-                                        "formatter": ""
+                                        "type": "float"
                                     },
                                     {
                                         "name": "Height",
-                                        "type": "float",
-                                        "formatter": ""
+                                        "type": "float"
                                     },
                                     {
                                         "name": "Position",
-                                        "type": "float",
-                                        "formatter": ""
+                                        "type": "float"
                                     },
                                     {
                                         "name": "Angular Fade",
-                                        "type": "float",
-                                        "formatter": ""
+                                        "type": "float"
                                     },
                                     {
                                         "name": "Opacity",
-                                        "type": "float",
-                                        "formatter": ""
+                                        "type": "float"
                                     },
                                     {
                                         "name": "Flags",

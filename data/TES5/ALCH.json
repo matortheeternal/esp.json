@@ -52,8 +52,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Weight",
-                    "type": "float",
-                    "formatter": ""
+                    "type": "float"
                 },
                 "required": true
             },
@@ -101,8 +100,7 @@
                         },
                         {
                             "name": "Addiction Chance",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Sound - Consume",

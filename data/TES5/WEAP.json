@@ -234,8 +234,7 @@
                         },
                         {
                             "name": "Weight",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Damage",
@@ -265,13 +264,11 @@
                         },
                         {
                             "name": "Speed",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Reach",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Flags",
@@ -297,8 +294,7 @@
                         },
                         {
                             "name": "Sight FOV",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Unknown",
@@ -326,13 +322,11 @@
                         },
                         {
                             "name": "Range Min",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Range Max",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "On Hit",
@@ -372,28 +366,23 @@
                         },
                         {
                             "name": "Animation Attack Mult",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Unknown",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Rumble - Left Motor Strength",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Rumble - Right Motor Strength",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Rumble - Duration",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Unknown",
@@ -426,8 +415,7 @@
                         },
                         {
                             "name": "Stagger",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         }
                     ]
                 }

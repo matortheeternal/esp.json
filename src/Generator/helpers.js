@@ -50,7 +50,7 @@ let unknown = () => ({ name: 'Unknown', type: 'bytes' });
 let string = (name) => ({ name, type: 'string' });
 
 // fixed length data
-let float = (name, formatter = '') => ({ name, type: 'float', formatter });
+let float = name => ({ name, type: 'float' });
 let int0 = name => ({ name, type: 'int0' });
 let int8 = name => ({ name, type: 'int8' });
 let uint8 = name => ({ name, type: 'uint8' });

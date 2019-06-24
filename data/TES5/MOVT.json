@@ -24,60 +24,49 @@
                     "fields": [
                         {
                             "name": "Left Walk",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Left Run",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Right Walk",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Right Run",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Forward Walk",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Forward Run",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Back Walk",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Back Run",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Rotate in Place Walk",
                             "type": "float",
-                            "formatter": "",
                             "required": true
                         },
                         {
                             "name": "Rotate in Place Run",
                             "type": "float",
-                            "formatter": "",
                             "required": true
                         },
                         {
                             "name": "Rotate while Moving Run",
                             "type": "float",
-                            "formatter": "",
                             "required": true
                         }
                     ]
@@ -94,18 +83,15 @@
                         {
                             "name": "Directional",
                             "type": "float",
-                            "formatter": "",
                             "required": true
                         },
                         {
                             "name": "Movement Speed",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Rotation Speed",
                             "type": "float",
-                            "formatter": "",
                             "required": true
                         }
                     ]

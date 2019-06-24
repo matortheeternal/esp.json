@@ -24,48 +24,39 @@
                     "fields": [
                         {
                             "name": "Eye Adapt Speed",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Bloom Blur Radius",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Bloom Threshold",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Bloom Scale",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Receive Bloom Threshold",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "White",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Sunlight Scale",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Sky Scale",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Eye Adapt Strength",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         }
                     ]
                 }
@@ -79,18 +70,15 @@
                     "fields": [
                         {
                             "name": "Saturation",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Brightness",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Contrast",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         }
                     ]
                 }
@@ -104,8 +92,7 @@
                     "fields": [
                         {
                             "name": "Amount",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "def": "FloatColors",
@@ -123,18 +110,15 @@
                     "fields": [
                         {
                             "name": "Strength",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Distance",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Range",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Unknown",

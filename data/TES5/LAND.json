@@ -81,8 +81,7 @@
                     "fields": [
                         {
                             "name": "Offset",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Rows",
@@ -269,8 +268,7 @@
                                                 },
                                                 {
                                                     "name": "Opacity",
-                                                    "type": "float",
-                                                    "formatter": ""
+                                                    "type": "float"
                                                 }
                                             ],
                                             "sortKey": [

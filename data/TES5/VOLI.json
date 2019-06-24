@@ -12,8 +12,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Intensity",
-                    "type": "float",
-                    "formatter": ""
+                    "type": "float"
                 }
             },
             {
@@ -21,8 +20,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Custom Color - Contribution",
-                    "type": "float",
-                    "formatter": ""
+                    "type": "float"
                 }
             },
             {
@@ -30,8 +28,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Red",
-                    "type": "float",
-                    "formatter": ""
+                    "type": "float"
                 },
                 "required": true
             },
@@ -40,8 +37,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Green",
-                    "type": "float",
-                    "formatter": ""
+                    "type": "float"
                 },
                 "required": true
             },
@@ -50,8 +46,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Blue",
-                    "type": "float",
-                    "formatter": ""
+                    "type": "float"
                 },
                 "required": true
             },
@@ -60,8 +55,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Density - Contribution",
-                    "type": "float",
-                    "formatter": ""
+                    "type": "float"
                 }
             },
             {
@@ -69,8 +63,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Density - Size",
-                    "type": "float",
-                    "formatter": ""
+                    "type": "float"
                 }
             },
             {
@@ -78,8 +71,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Density - Wind Speed",
-                    "type": "float",
-                    "formatter": ""
+                    "type": "float"
                 }
             },
             {
@@ -87,8 +79,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Density - Falling Speed",
-                    "type": "float",
-                    "formatter": ""
+                    "type": "float"
                 }
             },
             {
@@ -96,8 +87,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Phase Function - Contribution",
-                    "type": "float",
-                    "formatter": ""
+                    "type": "float"
                 }
             },
             {
@@ -105,8 +95,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Phase Function - Scattering",
-                    "type": "float",
-                    "formatter": ""
+                    "type": "float"
                 }
             },
             {
@@ -114,8 +103,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Sampling Repartition - Range Factor",
-                    "type": "float",
-                    "formatter": ""
+                    "type": "float"
                 }
             }
         ]

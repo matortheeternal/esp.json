@@ -19,8 +19,7 @@
                     "fields": [
                         {
                             "name": "Effect - Duration",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Effect - Orientation",
@@ -36,13 +35,11 @@
                         },
                         {
                             "name": "Angle Threshold",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Placement Radius",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Sound Level",

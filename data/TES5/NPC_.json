@@ -479,8 +479,7 @@
                         },
                         {
                             "name": "Far away model distance",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Geared up weapons",
@@ -561,8 +560,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Height",
-                    "type": "float",
-                    "formatter": ""
+                    "type": "float"
                 },
                 "required": true
             },
@@ -571,8 +569,7 @@
                 "type": "subrecord",
                 "def": {
                     "name": "Weight",
-                    "type": "float",
-                    "formatter": ""
+                    "type": "float"
                 },
                 "required": true
             },
@@ -672,19 +669,16 @@
                         {
                             "name": "Red",
                             "type": "float",
-                            "formatter": "",
                             "required": true
                         },
                         {
                             "name": "Green",
                             "type": "float",
-                            "formatter": "",
                             "required": true
                         },
                         {
                             "name": "Blue",
                             "type": "float",
-                            "formatter": "",
                             "required": true
                         }
                     ]
@@ -699,98 +693,79 @@
                     "fields": [
                         {
                             "name": "Nose Long/Short",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Nose Up/Down",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Jaw Up/Down",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Jaw Narrow/Wide",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Jaw Farward/Back",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Cheeks Up/Down",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Cheeks Farward/Back",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Eyes Up/Down",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Eyes In/Out",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Brows Up/Down",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Brows In/Out",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Brows Farward/Back",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Lips Up/Down",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Lips In/Out",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Chin Narrow/Wide",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Chin Up/Down",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Chin Underbite/Overbite",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Eyes Farward/Back",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         },
                         {
                             "name": "Unknown",
-                            "type": "float",
-                            "formatter": ""
+                            "type": "float"
                         }
                     ]
                 },

@@ -11,13 +11,11 @@
                 "fields": [
                     {
                         "name": "Damage Mult",
-                        "type": "float",
-                        "formatter": ""
+                        "type": "float"
                     },
                     {
                         "name": "Attack Chance",
-                        "type": "float",
-                        "formatter": ""
+                        "type": "float"
                     },
                     {
                         "name": "Attack Spell",
@@ -71,18 +69,15 @@
                     },
                     {
                         "name": "Attack Angle",
-                        "type": "float",
-                        "formatter": ""
+                        "type": "float"
                     },
                     {
                         "name": "Strike Angle",
-                        "type": "float",
-                        "formatter": ""
+                        "type": "float"
                     },
                     {
                         "name": "Stagger",
-                        "type": "float",
-                        "formatter": ""
+                        "type": "float"
                     },
                     {
                         "name": "Attack Type",
@@ -94,18 +89,15 @@
                     },
                     {
                         "name": "Knockdown",
-                        "type": "float",
-                        "formatter": ""
+                        "type": "float"
                     },
                     {
                         "name": "Recovery Time",
-                        "type": "float",
-                        "formatter": ""
+                        "type": "float"
                     },
                     {
                         "name": "Stamina Mult",
-                        "type": "float",
-                        "formatter": ""
+                        "type": "float"
                     }
                 ]
             }

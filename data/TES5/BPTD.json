@@ -72,8 +72,7 @@
                                 "fields": [
                                     {
                                         "name": "Damage Mult",
-                                        "type": "float",
-                                        "formatter": ""
+                                        "type": "float"
                                     },
                                     {
                                         "name": "Flags",
@@ -147,13 +146,11 @@
                                     },
                                     {
                                         "name": "Tracking Max Angle",
-                                        "type": "float",
-                                        "formatter": ""
+                                        "type": "float"
                                     },
                                     {
                                         "name": "Explodable - Debris Scale",
-                                        "type": "float",
-                                        "formatter": ""
+                                        "type": "float"
                                     },
                                     {
                                         "name": "Severable - Debris Count",
@@ -177,8 +174,7 @@
                                     },
                                     {
                                         "name": "Severable - Debris Scale",
-                                        "type": "float",
-                                        "formatter": ""
+                                        "type": "float"
                                     },
                                     {
                                         "name": "Gore Effects Positioning",
@@ -190,18 +186,15 @@
                                                 "fields": [
                                                     {
                                                         "name": "X",
-                                                        "type": "float",
-                                                        "formatter": ""
+                                                        "type": "float"
                                                     },
                                                     {
                                                         "name": "Y",
-                                                        "type": "float",
-                                                        "formatter": ""
+                                                        "type": "float"
                                                     },
                                                     {
                                                         "name": "Z",
-                                                        "type": "float",
-                                                        "formatter": ""
+                                                        "type": "float"
                                                     }
                                                 ]
                                             },
@@ -212,19 +205,16 @@
                                                     {
                                                         "name": "X",
                                                         "type": "float",
-                                                        "formatter": "",
                                                         "required": true
                                                     },
                                                     {
                                                         "name": "Y",
                                                         "type": "float",
-                                                        "formatter": "",
                                                         "required": true
                                                     },
                                                     {
                                                         "name": "Z",
                                                         "type": "float",
-                                                        "formatter": "",
                                                         "required": true
                                                     }
                                                 ]
@@ -262,8 +252,7 @@
                                     },
                                     {
                                         "name": "Limb Replacement Scale",
-                                        "type": "float",
-                                        "formatter": ""
+                                        "type": "float"
                                     }
                                 ]
                             },
