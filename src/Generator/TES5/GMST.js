@@ -1,6 +1,7 @@
 let {
     subrecord, string, req, localized, int32, 
-    float, uint32, format, union, record
+    float, enumeration, uint32, format, union, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
@@ -11,10 +12,10 @@ module.exports = () => {
                 localized(string('Name')),
                 int32('Int'),
                 float('Float'),
-                format(uint32('Bool'), {
+                format(uint32('Bool'), enumeration({
                     0: 'False',
                     1: 'True'
-                })
+                }))
             ])))
         ]
     })

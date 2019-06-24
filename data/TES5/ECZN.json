@@ -43,9 +43,12 @@
                             "name": "Flags",
                             "type": "uint8",
                             "format": {
-                                "0": "Never Resets",
-                                "1": "Match PC Below Minimum Level",
-                                "2": "Disable Combat Boundary"
+                                "type": "flags",
+                                "flags": {
+                                    "0": "Never Resets",
+                                    "1": "Match PC Below Minimum Level",
+                                    "2": "Disable Combat Boundary"
+                                }
                             }
                         },
                         {

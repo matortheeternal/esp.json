@@ -80,7 +80,10 @@
                 "def": {
                     "type": "uint32",
                     "format": {
-                        "0": "Is Snow"
+                        "type": "flags",
+                        "flags": {
+                            "0": "Is Snow"
+                        }
                     }
                 }
             }

@@ -4,7 +4,10 @@
     "name": "Landscape",
     "def": {
         "flags": {
-            "18": "Compressed"
+            "type": "flags",
+            "flags": {
+                "18": "Compressed"
+            }
         },
         "members": [
             {
@@ -14,17 +17,20 @@
                     "name": "Flags",
                     "type": "uint32",
                     "format": {
-                        "0": "Vertex Normals / Height Map",
-                        "1": "Vertex Colours",
-                        "2": "Layers",
-                        "3": "Unknown 4",
-                        "4": "Unknown 5",
-                        "5": "",
-                        "6": "",
-                        "7": "",
-                        "8": "",
-                        "9": "",
-                        "10": "MPCD"
+                        "type": "flags",
+                        "flags": {
+                            "0": "Vertex Normals / Height Map",
+                            "1": "Vertex Colours",
+                            "2": "Layers",
+                            "3": "Unknown 4",
+                            "4": "Unknown 5",
+                            "5": "",
+                            "6": "",
+                            "7": "",
+                            "8": "",
+                            "9": "",
+                            "10": "MPCD"
+                        }
                     }
                 }
             },

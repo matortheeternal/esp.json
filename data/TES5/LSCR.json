@@ -4,7 +4,10 @@
     "name": "Load Screen",
     "def": {
         "flags": {
-            "10": "Displays In Main Menu"
+            "type": "flags",
+            "flags": {
+                "10": "Displays In Main Menu"
+            }
         },
         "members": [
             {

@@ -10,9 +10,12 @@
             "name": "Flags",
             "type": "uint8",
             "format": {
-                "0": "OnBegin",
-                "1": "OnEnd",
-                "2": "OnChange"
+                "type": "flags",
+                "flags": {
+                    "0": "OnBegin",
+                    "1": "OnEnd",
+                    "2": "OnChange"
+                }
             }
         },
         {

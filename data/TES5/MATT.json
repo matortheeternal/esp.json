@@ -71,8 +71,11 @@
                     "name": "Flags",
                     "type": "uint32",
                     "format": {
-                        "0": "Stair Material",
-                        "1": "Arrows Stick"
+                        "type": "flags",
+                        "flags": {
+                            "0": "Stair Material",
+                            "1": "Arrows Stick"
+                        }
                     }
                 }
             },

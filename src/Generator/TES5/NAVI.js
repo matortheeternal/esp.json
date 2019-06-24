@@ -1,7 +1,8 @@
 let {
     def, subrecord, uint32, ckFormId, bytes, 
-    size, float, array, struct, uint8, 
-    format, union, int16, arrayOfSubrecord, record
+    size, float, array, struct, enumeration, 
+    uint8, format, union, int16, arrayOfSubrecord, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
@@ -29,10 +30,10 @@ module.exports = () => {
                             ckFormId('Door Ref', ['REFR'])
                         ])
                     , -1),
-                    format(uint8('Is Island'), {
+                    format(uint8('Is Island'), enumeration({
                         0: 'False',
                         1: 'True'
-                    }),
+                    })),
                     union('Island', [
                         def('Null'),
                         def('NAVIslandData')

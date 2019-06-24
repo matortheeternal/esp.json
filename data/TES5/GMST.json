@@ -38,8 +38,11 @@
                             "name": "Bool",
                             "type": "uint32",
                             "format": {
-                                "0": "False",
-                                "1": "True"
+                                "type": "enum",
+                                "options": {
+                                    "0": "False",
+                                    "1": "True"
+                                }
                             }
                         }
                     ]

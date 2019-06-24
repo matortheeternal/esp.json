@@ -4,7 +4,10 @@
     "name": "Global",
     "def": {
         "flags": {
-            "6": "Constant"
+            "type": "flags",
+            "flags": {
+                "6": "Constant"
+            }
         },
         "members": [
             {
@@ -17,7 +20,10 @@
                     "name": "Type",
                     "type": "uint8",
                     "format": {
-                        "39": "Float"
+                        "type": "enum",
+                        "options": {
+                            "39": "Float"
+                        }
                     }
                 },
                 "defaultEditValue": "'Float'"

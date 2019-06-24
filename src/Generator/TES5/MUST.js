@@ -1,18 +1,18 @@
 let {
-    def, subrecord, uint32, format, float, 
-    string, array, opts, struct, ckFormId, 
-    record
+    def, enumeration, subrecord, uint32, format, 
+    float, string, array, opts, struct, 
+    ckFormId, record
 } = require('../helpers');
 
 module.exports = () => {
     record('MUST', 'Music Track', {
         members: [
             def('EDID'),
-            subrecord('CNAM', format(uint32('Track Type'), {
+            subrecord('CNAM', format(uint32('Track Type'), enumeration({
                 603355331: 'Palette',
                 1859641416: 'Single Track',
                 2712257749: 'Silent Track'
-            })),
+            }))),
             subrecord('FLTV', float('Duration')),
             subrecord('DNAM', float('Fade-Out')),
             subrecord('ANAM', string('Track FileName')),

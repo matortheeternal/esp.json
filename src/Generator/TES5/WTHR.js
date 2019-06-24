@@ -2,7 +2,7 @@ let {
     def, subrecord, string, bytes, unknown, 
     ckFormId, req, uint8, format, array, 
     opts, multiStruct, float, struct, size, 
-    uint32, arrayOfSubrecord, record
+    flags, uint32, enumeration, arrayOfSubrecord, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -113,14 +113,14 @@ module.exports = () => {
                 uint8('Thunder/Lightning - Begin Fade In'),
                 uint8('Thunder/Lightning - End Fade Out'),
                 uint8('Thunder/Lightning - Frequency'),
-                format(uint8('Flags'), {
+                format(uint8('Flags'), flags({
                     0: 'Weather - Pleasant',
                     1: 'Weather - Cloudy',
                     2: 'Weather - Rainy',
                     3: 'Weather - Snow',
                     4: 'Sky Statics - Always Visible',
                     5: 'Sky Statics - Follows Sun Position'
-                }),
+                })),
                 struct('Lightning Color', [
                     uint8('Red'),
                     uint8('Green'),
@@ -131,7 +131,7 @@ module.exports = () => {
                 uint8('Wind Direction'),
                 uint8('Wind Direction Range')
             ]))),
-            subrecord('NAM1', format(uint32('Disabled Cloud Layers'), {
+            subrecord('NAM1', format(uint32('Disabled Cloud Layers'), flags({
                 0: '0',
                 1: '1',
                 2: '2',
@@ -164,18 +164,18 @@ module.exports = () => {
                 29: '29',
                 30: '30',
                 31: '31'
-            })),
+            }))),
             arrayOfSubrecord('Sounds', 
                 subrecord('SNAM', struct('Sound', [
                     ckFormId('Sound', [
                         'SNDR',    'SOUN',    'NULL'
                     ]),
-                    format(uint32('Type'), {
+                    format(uint32('Type'), enumeration({
                         0: 'Default',
                         1: 'Precipitation',
                         2: 'Wind',
                         3: 'Thunder'
-                    })
+                    }))
                 ]))
             ),
             arrayOfSubrecord('Sky Statics', 

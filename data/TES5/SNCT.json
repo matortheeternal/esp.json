@@ -17,8 +17,11 @@
                     "name": "Flags",
                     "type": "uint32",
                     "format": {
-                        "0": "Mute When Submerged",
-                        "1": "Should Appear on Menu"
+                        "type": "flags",
+                        "flags": {
+                            "0": "Mute When Submerged",
+                            "1": "Should Appear on Menu"
+                        }
                     }
                 }
             },

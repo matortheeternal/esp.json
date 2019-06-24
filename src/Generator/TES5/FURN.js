@@ -1,20 +1,20 @@
 let {
-    def, req, subrecord, unknown, uint16, 
-    format, ckFormId, uint32, uint8, int8, 
-    struct, bytes, size, multiStruct, arrayOfSubrecord, 
-    string, record
+    flags, def, req, subrecord, unknown, 
+    uint16, format, ckFormId, uint32, enumeration, 
+    uint8, int8, struct, bytes, size, 
+    multiStruct, arrayOfSubrecord, string, record
 } = require('../helpers');
 
 module.exports = () => {
     record('FURN', 'Furniture', {
-        flags: {
+        flags: flags({
             7: 'Is Perch',
             15: 'Has Distant LOD',
             16: 'Random Anim Start',
             23: 'Is Marker',
             28: 'Must Exit To Talk',
             29: 'Child Can Use'
-        },
+        }),
         members: [
             def('EDID'),
             def('VMAD'),
@@ -25,12 +25,12 @@ module.exports = () => {
             def('KSIZ'),
             def('KWDAs'),
             subrecord('PNAM', unknown()),
-            subrecord('FNAM', format(uint16('Flags'), {
+            subrecord('FNAM', format(uint16('Flags'), flags({
                 0: 'Unknown 0',
                 1: 'Ignored By Sandbox'
-            })),
+            }))),
             subrecord('KNAM', ckFormId('Interaction Keyword', ['KYWD', 'NULL'])),
-            subrecord('MNAM', format(uint32('Active Markers / Flags'), {
+            subrecord('MNAM', format(uint32('Active Markers / Flags'), flags({
                 0: 'Sit 0',
                 1: 'Sit 1',
                 2: 'Sit 2',
@@ -63,9 +63,9 @@ module.exports = () => {
                 29: 'Unknown 30',
                 30: 'Unknown 31',
                 31: 'Unknown 32'
-            })),
+            }))),
             subrecord('WBDT', struct('Workbench Data', [
-                format(uint8('Bench Type'), {
+                format(uint8('Bench Type'), enumeration({
                     0: 'None',
                     1: 'Create object',
                     2: 'Smithing Weapon',
@@ -74,7 +74,7 @@ module.exports = () => {
                     5: 'Alchemy',
                     6: 'Alchemy Experiment',
                     7: 'Smithing Armor'
-                }),
+                })),
                 format(int8('Uses Skill'), def('SkillEnum'))
             ])),
             subrecord('NAM1', ckFormId('Associated Spell', ['SPEL'])),

@@ -4,9 +4,12 @@
     "name": "Navigation Mesh",
     "def": {
         "flags": {
-            "18": "Compressed",
-            "26": "AutoGen",
-            "31": "NavmeshGenCell"
+            "type": "flags",
+            "flags": {
+                "18": "Compressed",
+                "26": "AutoGen",
+                "31": "NavmeshGenCell"
+            }
         },
         "members": [
             {

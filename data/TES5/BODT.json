@@ -12,14 +12,17 @@
                 "name": "General Flags",
                 "type": "uint8",
                 "format": {
-                    "0": "(ARMA)Modulates Voice",
-                    "1": "Unknown 2",
-                    "2": "Unknown 3",
-                    "3": "Unknown 4",
-                    "4": "(ARMO)Non-Playable",
-                    "5": "Unknown 6",
-                    "6": "Unknown 7",
-                    "7": "Unknown 8"
+                    "type": "flags",
+                    "flags": {
+                        "0": "(ARMA)Modulates Voice",
+                        "1": "Unknown 2",
+                        "2": "Unknown 3",
+                        "3": "Unknown 4",
+                        "4": "(ARMO)Non-Playable",
+                        "5": "Unknown 6",
+                        "6": "Unknown 7",
+                        "7": "Unknown 8"
+                    }
                 }
             },
             {

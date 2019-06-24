@@ -93,10 +93,13 @@
                             "name": "Looping",
                             "type": "uint8",
                             "format": {
-                                "0": "None",
-                                "8": "Loop",
-                                "16": "Envelope Fast",
-                                "32": "Envelope Slow"
+                                "type": "enum",
+                                "options": {
+                                    "0": "None",
+                                    "8": "Loop",
+                                    "16": "Envelope Fast",
+                                    "32": "Envelope Slow"
+                                }
                             }
                         },
                         {

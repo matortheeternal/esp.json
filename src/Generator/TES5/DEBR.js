@@ -1,6 +1,7 @@
 let {
-    def, uint8, string, format, subrecord, 
-    struct, req, arrayOfStruct, multiStruct, record
+    def, uint8, string, flags, format, 
+    subrecord, struct, req, arrayOfStruct, multiStruct, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
@@ -12,9 +13,9 @@ module.exports = () => {
                     req(subrecord('DATA', struct('Data', [
                         uint8('Percentage'),
                         string('Model FileName'),
-                        format(uint8('Flags'), {
+                        format(uint8('Flags'), flags({
                             0: 'Has Collision Data'
-                        })
+                        }))
                     ]))),
                     def('MODT')
                 ])

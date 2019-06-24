@@ -18,8 +18,11 @@
                             "name": "Flags",
                             "type": "uint8",
                             "format": {
-                                "0": "Attenuates With Distance",
-                                "1": "Allows Rumble"
+                                "type": "flags",
+                                "flags": {
+                                    "0": "Attenuates With Distance",
+                                    "1": "Allows Rumble"
+                                }
                             }
                         },
                         {
@@ -49,8 +52,11 @@
                     "name": "Type",
                     "type": "uint32",
                     "format": {
-                        "0": "Uses HRTF",
-                        "1": "Defined Speaker Output"
+                        "type": "enum",
+                        "options": {
+                            "0": "Uses HRTF",
+                            "1": "Defined Speaker Output"
+                        }
                     }
                 }
             },

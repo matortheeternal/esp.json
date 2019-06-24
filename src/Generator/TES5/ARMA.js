@@ -1,7 +1,7 @@
 let {
-    def, subrecord, ckFormId, uint8, format, 
-    bytes, size, float, struct, req, 
-    string, multiStruct, arrayOfSubrecord, record
+    def, subrecord, ckFormId, uint8, flags, 
+    format, bytes, size, float, struct, 
+    req, string, multiStruct, arrayOfSubrecord, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -13,14 +13,14 @@ module.exports = () => {
             req(subrecord('DNAM', struct('Data', [
                 uint8('Male Priority'),
                 uint8('Female Priority'),
-                format(uint8('Weight slider - Male'), {
+                format(uint8('Weight slider - Male'), flags({
                     0: 'Unknown 0',
                     1: 'Enabled'
-                }),
-                format(uint8('Weight slider - Female'), {
+                })),
+                format(uint8('Weight slider - Female'), flags({
                     0: 'Unknown 0',
                     1: 'Enabled'
-                }),
+                })),
                 size(2, bytes('Unknown')),
                 uint8('Detection Sound Value'),
                 size(1, bytes('Unknown')),

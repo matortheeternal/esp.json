@@ -1,17 +1,17 @@
 let {
-    subrecord, uint32, format, uint8, struct, 
-    array, float, bytes, size, ckFormId, 
-    def, int16, sortKey, multiStruct, uint16, 
-    multiUnion, arrayOfSubrecord, unknown, record
+    flags, subrecord, uint32, format, uint8, 
+    struct, array, float, bytes, size, 
+    ckFormId, def, int16, sortKey, multiStruct, 
+    uint16, multiUnion, arrayOfSubrecord, unknown, record
 } = require('../helpers');
 
 module.exports = () => {
     record('LAND', 'Landscape', {
-        flags: {
+        flags: flags({
             18: 'Compressed'
-        },
+        }),
         members: [
-            subrecord('DATA', format(uint32('Flags'), {
+            subrecord('DATA', format(uint32('Flags'), flags({
                 0: 'Vertex Normals / Height Map',
                 1: 'Vertex Colours',
                 2: 'Layers',
@@ -23,7 +23,7 @@ module.exports = () => {
                 8: '',
                 9: '',
                 10: 'MPCD'
-            })),
+            }))),
             subrecord('VNML', array('Vertex Normals', 
                 struct('Row', [
                     array('Columns', 

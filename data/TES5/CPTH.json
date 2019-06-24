@@ -34,12 +34,15 @@
                     "name": "Camera Zoom",
                     "type": "uint8",
                     "format": {
-                        "0": "Default, Must Have Camera Shots",
-                        "1": "Disable, Must Have Camera Shots",
-                        "2": "Shot List, Must Have Camera Shots",
-                        "128": "Default",
-                        "129": "Disable",
-                        "130": "Shot List"
+                        "type": "enum",
+                        "options": {
+                            "0": "Default, Must Have Camera Shots",
+                            "1": "Disable, Must Have Camera Shots",
+                            "2": "Shot List, Must Have Camera Shots",
+                            "128": "Default",
+                            "129": "Disable",
+                            "130": "Shot List"
+                        }
                     }
                 }
             },

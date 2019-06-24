@@ -1,15 +1,15 @@
 let {
-    def, IsSSE, int16, ckFormId, struct, 
-    array, opts, subrecord, arrayOfSubrecord, uint8, 
-    format, bytes, size, req, multiStruct, 
-    float, string, int32, record
+    flags, def, IsSSE, int16, ckFormId, 
+    struct, array, opts, subrecord, arrayOfSubrecord, 
+    uint8, format, bytes, size, req, 
+    multiStruct, float, string, int32, record
 } = require('../helpers');
 
 module.exports = game => {
     record('WRLD', 'Worldspace', {
-        flags: {
+        flags: flags({
             19: 'Can\'t Wait'
-        },
+        }),
         members: [
             def('EDID'),
             arrayOfSubrecord(IsSSE(game, ['Large References', 'Unused RNAM']), 
@@ -39,7 +39,7 @@ module.exports = game => {
             multiStruct('Parent', [
                 subrecord('WNAM', ckFormId('Worldspace', ['WRLD'])),
                 req(subrecord('PNAM', struct('', [
-                    format(uint8('Flags'), {
+                    format(uint8('Flags'), flags({
                         0: 'Use Land Data',
                         1: 'Use LOD Data',
                         2: 'Don\'t Use Map Data',
@@ -47,7 +47,7 @@ module.exports = game => {
                         4: 'Use Climate Data',
                         5: 'Use Image Space Data (unused)',
                         6: 'Use Sky Cell'
-                    }),
+                    })),
                     size(1, bytes('Unknown'))
                 ])))
             ]),
@@ -91,7 +91,7 @@ module.exports = game => {
                 float('Cell Z Offset')
             ]))),
             subrecord('NAMA', float('Distant LOD Multiplier')),
-            subrecord('DATA', format(uint8('Flags'), {
+            subrecord('DATA', format(uint8('Flags'), flags({
                 0: 'Small World',
                 1: 'Can\'t Fast Travel',
                 2: 'Unknown 3',
@@ -100,7 +100,7 @@ module.exports = game => {
                 5: 'No Sky',
                 6: 'Fixed Dimensions',
                 7: 'No Grass'
-            })),
+            }))),
             multiStruct('Object Bounds', [
                 req(subrecord('NAM0', struct('Min', [
                     req(float('X')),

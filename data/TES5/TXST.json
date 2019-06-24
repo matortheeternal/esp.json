@@ -91,9 +91,12 @@
                     "name": "Flags",
                     "type": "uint16",
                     "format": {
-                        "0": "No Specular Map",
-                        "1": "Facegen Textures",
-                        "2": "Has Model Space Normal Map"
+                        "type": "flags",
+                        "flags": {
+                            "0": "No Specular Map",
+                            "1": "Facegen Textures",
+                            "2": "Has Model Space Normal Map"
+                        }
                     }
                 }
             }

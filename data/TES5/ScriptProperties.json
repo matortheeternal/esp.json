@@ -20,10 +20,13 @@
                 "name": "Flags",
                 "type": "uint8",
                 "format": {
-                    "0": "",
-                    "1": "Edited",
-                    "2": "",
-                    "3": "Removed"
+                    "type": "enum",
+                    "options": {
+                        "0": "",
+                        "1": "Edited",
+                        "2": "",
+                        "3": "Removed"
+                    }
                 },
                 "defaultEditValue": "'Edited'"
             },
@@ -56,8 +59,11 @@
                         "name": "Bool",
                         "type": "uint8",
                         "format": {
-                            "0": "False",
-                            "1": "True"
+                            "type": "enum",
+                            "options": {
+                                "0": "False",
+                                "1": "True"
+                            }
                         }
                     },
                     {
@@ -104,8 +110,11 @@
                             "name": "Element",
                             "type": "uint8",
                             "format": {
-                                "0": "False",
-                                "1": "True"
+                                "type": "enum",
+                                "options": {
+                                    "0": "False",
+                                    "1": "True"
+                                }
                             }
                         },
                         "type": "array",

@@ -1,15 +1,16 @@
 let {
-    def, req, subrecord, ckFormId, int8, 
-    format, sortKey, struct, array, bytes, 
-    size, float, uint32, int32, empty, 
-    string, arrayOfSubrecord, uint16, multiStruct, record
+    flags, def, req, subrecord, ckFormId, 
+    int8, format, sortKey, struct, array, 
+    bytes, size, float, enumeration, uint32, 
+    int32, empty, string, arrayOfSubrecord, uint16, 
+    multiStruct, record
 } = require('../helpers');
 
 module.exports = () => {
     record('RACE', 'Race', {
-        flags: {
+        flags: flags({
             19: 'Critter?'
-        },
+        }),
         members: [
             def('EDID'),
             def('FULL'),
@@ -40,12 +41,12 @@ module.exports = () => {
                 float('Base Mass'),
                 float('Acceleration rate'),
                 float('Deceleration rate'),
-                format(uint32('Size'), {
+                format(uint32('Size'), enumeration({
                     0: 'Small',
                     1: 'Medium',
                     2: 'Large',
                     3: 'Extra Large'
-                }),
+                })),
                 format(int32('Head Biped Object'), def('BipedObjectEnum')),
                 format(int32('Hair Biped Object'), def('BipedObjectEnum')),
                 float('Injured Health Pct'),
@@ -60,13 +61,13 @@ module.exports = () => {
                 float('Flight Radius'),
                 float('Angular Acceleration Rate'),
                 float('Angular Tolerance'),
-                format(uint32('Flags 2'), {
+                format(uint32('Flags 2'), flags({
                     0: 'Use Advanced Avoidance',
                     1: 'Non-Hostile',
                     2: 'Unknown 2',
                     3: 'Unknown 3',
                     4: 'Allow Mounted Combat'
-                }),
+                })),
                 struct('Mount Data', [
                     req(float('Offset X')),
                     float('Offset Y'),

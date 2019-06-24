@@ -1,6 +1,6 @@
 let {
-    def, req, subrecord, uint32, format, 
-    record
+    def, req, enumeration, subrecord, uint32, 
+    format, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -9,11 +9,11 @@ module.exports = () => {
             def('EDID'),
             req(def('OBND')),
             def('MODL'),
-            subrecord('DNAM', format(uint32('Art Type'), {
+            subrecord('DNAM', format(uint32('Art Type'), enumeration({
                 0: 'Magic Casting',
                 1: 'Magic Hit Effect',
                 2: 'Enchantment Effect'
-            }))
+            })))
         ]
     })
 };

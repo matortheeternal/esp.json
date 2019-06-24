@@ -1,16 +1,16 @@
 let {
-    def, req, uint8, format, subrecord, 
-    struct, ckFormId, sortKey, bytes, size, 
-    union, int8, arrayOfStruct, multiStruct, localized, 
-    string, uint16, float, uint32, empty, 
-    record
+    flags, def, req, enumeration, uint8, 
+    format, subrecord, struct, ckFormId, sortKey, 
+    bytes, size, union, int8, arrayOfStruct, 
+    multiStruct, localized, string, uint16, float, 
+    uint32, empty, record
 } = require('../helpers');
 
 module.exports = () => {
     record('PERK', 'Perk', {
-        flags: {
+        flags: flags({
             2: 'Non-Playable'
-        },
+        }),
         members: [
             def('EDID'),
             def('VMADFragmentedPERK'),
@@ -19,30 +19,30 @@ module.exports = () => {
             def('ICON'),
             def('CTDAs'),
             req(subrecord('DATA', struct('Data', [
-                format(uint8('Trait'), {
+                format(uint8('Trait'), enumeration({
                     0: 'False',
                     1: 'True'
-                }),
+                })),
                 uint8('Level'),
                 uint8('Num Ranks'),
-                format(uint8('Playable'), {
+                format(uint8('Playable'), enumeration({
                     0: 'False',
                     1: 'True'
-                }),
-                format(uint8('Hidden'), {
+                })),
+                format(uint8('Hidden'), enumeration({
                     0: 'False',
                     1: 'True'
-                })
+                }))
             ]))),
             subrecord('NNAM', ckFormId('Next Perk', ['PERK', 'NULL'])),
             arrayOfStruct('Effects', 
                 sortKey([0, 1], multiStruct('Effect', [
                     subrecord('PRKE', sortKey([1, 2, 0], struct('Header', [
-                        format(uint8('Type'), {
+                        format(uint8('Type'), enumeration({
                             0: 'Quest + Stage',
                             1: 'Ability',
                             2: 'Entry Point'
-                        }),
+                        })),
                         uint8('Rank'),
                         uint8('Priority')
                     ]))),
@@ -55,7 +55,7 @@ module.exports = () => {
                         ckFormId('Ability', ['SPEL']),
                         sortKey([0, 1], struct('Entry Point', [
                             format(uint8('Entry Point'), def('EntryPointsEnum')),
-                            format(uint8('Function'), {
+                            format(uint8('Function'), enumeration({
                                 0: 'Unknown 0',
                                 1: 'Set Value',
                                 2: 'Add Value',
@@ -72,7 +72,7 @@ module.exports = () => {
                                 13: 'Multiply Actor Value Mult',
                                 14: 'Multiply 1 + Actor Value Mult',
                                 15: 'Set Text'
-                            }),
+                            })),
                             uint8('Perk Condition Tab Count')
                         ]))
                     ]))),
@@ -83,7 +83,7 @@ module.exports = () => {
                         ]))
                     )),
                     req(multiStruct('Function Parameters', [
-                        subrecord('EPFT', format(uint8('Type'), {
+                        subrecord('EPFT', format(uint8('Type'), enumeration({
                             0: 'None',
                             1: 'Float',
                             2: 'Float/AV,Float',
@@ -92,13 +92,13 @@ module.exports = () => {
                             5: 'SPEL',
                             6: 'string',
                             7: 'lstring'
-                        })),
+                        }))),
                         subrecord('EPF2', localized(string('Button Label'))),
                         subrecord('EPF3', struct('Script Flags', [
-                            format(uint16('Script Flags'), {
+                            format(uint16('Script Flags'), flags({
                                 0: 'Run Immediately',
                                 1: 'Replace Default'
-                            }),
+                            })),
                             uint16('Fragment Index')
                         ])),
                         req(subrecord('EPFD', union('Data', [

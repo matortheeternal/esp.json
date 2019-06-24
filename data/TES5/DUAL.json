@@ -62,9 +62,12 @@
                             "name": "Inherit Scale",
                             "type": "uint32",
                             "format": {
-                                "0": "Hit Effect Art",
-                                "1": "Projectile",
-                                "2": "Explosion"
+                                "type": "flags",
+                                "flags": {
+                                    "0": "Hit Effect Art",
+                                    "1": "Projectile",
+                                    "2": "Explosion"
+                                }
                             }
                         }
                     ]

@@ -79,25 +79,31 @@
                                         "name": "Flags",
                                         "type": "uint8",
                                         "format": {
-                                            "0": "Severable",
-                                            "1": "IK Data",
-                                            "2": "IK Data - Biped Data",
-                                            "3": "Explodable",
-                                            "4": "IK Data - Is Head",
-                                            "5": "IK Data - Headtracking",
-                                            "6": "To Hit Chance - Absolute"
+                                            "type": "flags",
+                                            "flags": {
+                                                "0": "Severable",
+                                                "1": "IK Data",
+                                                "2": "IK Data - Biped Data",
+                                                "3": "Explodable",
+                                                "4": "IK Data - Is Head",
+                                                "5": "IK Data - Headtracking",
+                                                "6": "To Hit Chance - Absolute"
+                                            }
                                         }
                                     },
                                     {
                                         "name": "Part Type",
                                         "type": "uint8",
                                         "format": {
-                                            "0": "Torso",
-                                            "1": "Head",
-                                            "2": "Eye",
-                                            "3": "LookAt",
-                                            "4": "Fly Grab",
-                                            "5": "Saddle"
+                                            "type": "enum",
+                                            "options": {
+                                                "0": "Torso",
+                                                "1": "Head",
+                                                "2": "Eye",
+                                                "3": "LookAt",
+                                                "4": "Fly Grab",
+                                                "5": "Saddle"
+                                            }
                                         }
                                     },
                                     {

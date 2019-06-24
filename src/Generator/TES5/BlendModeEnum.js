@@ -1,10 +1,10 @@
 let {
-    addDef
+    addDef, enumeration
 } = require('../helpers');
 
 module.exports = () => {
     addDef('BlendModeEnum', 
-        {
+        enumeration({
             0: '',
             1: 'Zero',
             2: 'One',
@@ -17,6 +17,6 @@ module.exports = () => {
             9: 'Dest Color',
             10: 'Dest Inverse Color',
             11: 'Source Alpha SAT'
-        }
+        })
     );
 };

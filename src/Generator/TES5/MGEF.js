@@ -1,7 +1,7 @@
 let {
     def, subrecord, ckFormId, arrayOfSubrecord, req, 
-    uint32, format, struct, array, localized, 
-    string, record
+    enumeration, uint32, format, struct, array, 
+    localized, string, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -19,14 +19,14 @@ module.exports = () => {
             )),
             subrecord('SNDD', array('Sounds', 
                 struct('', [
-                    format(uint32('Type'), {
+                    format(uint32('Type'), enumeration({
                         0: 'Sheathe/Draw',
                         1: 'Charge',
                         2: 'Ready',
                         3: 'Release',
                         4: 'Concentration Cast Loop',
                         5: 'On Hit'
-                    }),
+                    })),
                     ckFormId('Sound', ['SNDR'])
                 ])
             )),

@@ -1,8 +1,8 @@
 let {
     def, req, subrecord, localized, string, 
-    uint8, format, bytes, size, int32, 
-    ckFormId, union, uint32, float, struct, 
-    record
+    flags, uint8, format, enumeration, bytes, 
+    size, int32, ckFormId, union, uint32, 
+    float, struct, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -21,7 +21,7 @@ module.exports = () => {
             def('KSIZ'),
             def('KWDAs'),
             req(subrecord('DATA', struct('Data', [
-                format(uint8('Flags'), {
+                format(uint8('Flags'), flags({
                     0: 'Teaches Skill',
                     1: 'Can\'t be Taken',
                     2: 'Teaches Spell',
@@ -30,11 +30,11 @@ module.exports = () => {
                     5: 'Unknown 6',
                     6: 'Unknown 7',
                     7: 'Unknown 8'
-                }),
-                format(uint8('Type'), {
+                })),
+                format(uint8('Type'), enumeration({
                     0: 'Book/Tome',
                     255: 'Note/Scroll'
-                }),
+                })),
                 size(2, bytes('Unused')),
                 union('Teaches', [
                     format(int32('Skill'), def('SkillEnum')),

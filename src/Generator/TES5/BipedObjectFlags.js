@@ -1,10 +1,10 @@
 let {
-    addDef
+    addDef, flags
 } = require('../helpers');
 
 module.exports = () => {
     addDef('BipedObjectFlags', 
-        {
+        flags({
             0: '30 - Head',
             1: '31 - Hair',
             2: '32 - Body',
@@ -37,6 +37,6 @@ module.exports = () => {
             29: '59 - Unnamed',
             30: '60 - Unnamed',
             31: '61 - FX01'
-        }
+        })
     );
 };

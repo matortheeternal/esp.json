@@ -9,8 +9,11 @@
                 "name": "Type",
                 "type": "uint32",
                 "format": {
-                    "0": "Topic Ref",
-                    "1": "Topic Subtype"
+                    "type": "enum",
+                    "options": {
+                        "0": "Topic Ref",
+                        "1": "Topic Subtype"
+                    }
                 }
             },
             {

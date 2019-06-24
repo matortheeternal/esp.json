@@ -1,12 +1,12 @@
 let {
-    def, req, float, ckFormId, uint8, 
-    format, bytes, size, subrecord, struct, 
-    IsSSE, string, array, record
+    flags, def, req, float, ckFormId, 
+    uint8, format, bytes, size, subrecord, 
+    struct, IsSSE, string, array, record
 } = require('../helpers');
 
 module.exports = game => {
     record('STAT', 'Static', {
-        flags: {
+        flags: flags({
             0: '',
             1: '',
             2: 'Never Fades',
@@ -39,7 +39,7 @@ module.exports = game => {
             29: '',
             30: 'NavMesh Generation - Ground',
             31: ''
-        },
+        }),
         members: [
             def('EDID'),
             req(def('OBND')),
@@ -48,9 +48,9 @@ module.exports = game => {
                 req(subrecord('DNAM', struct('Direction Material', [
                     float('Max Angle (30-120)'),
                     ckFormId('Material', ['MATO', 'NULL']),
-                    format(uint8('Flags'), {
+                    format(uint8('Flags'), flags({
                         0: 'Considered Snow'
-                    }),
+                    })),
                     size(3, bytes('Unused'))
                 ]))),
                 req(subrecord('DNAM', struct('Direction Material', [

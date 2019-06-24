@@ -1,10 +1,10 @@
 let {
-    addDef
+    addDef, enumeration
 } = require('../helpers');
 
 module.exports = () => {
     addDef('EntryPointsEnum', 
-        {
+        enumeration({
             0: 'Calculate Weapon Damage',
             1: 'Calculate My Critical Hit Chance',
             2: 'Calculate My Critical Hit Damage',
@@ -97,6 +97,6 @@ module.exports = () => {
             89: 'Mod Potions Created',
             90: 'Mod Lockpicking Key Reward Chance',
             91: 'Allow Mount Actor'
-        }
+        })
     );
 };

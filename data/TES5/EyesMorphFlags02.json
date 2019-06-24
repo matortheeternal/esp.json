@@ -2,12 +2,15 @@
     "name": "Eye Morph Flags 2",
     "type": "uint8",
     "format": {
-        "0": "EyesType32",
-        "1": "EyesType33",
-        "2": "EyesType34",
-        "3": "EyesType35",
-        "4": "EyesType36",
-        "5": "EyesType37",
-        "6": "EyesType38"
+        "type": "flags",
+        "flags": {
+            "0": "EyesType32",
+            "1": "EyesType33",
+            "2": "EyesType34",
+            "3": "EyesType35",
+            "4": "EyesType36",
+            "5": "EyesType37",
+            "6": "EyesType38"
+        }
     }
 }

@@ -1,10 +1,10 @@
 let {
-    addDef
+    addDef, flags
 } = require('../helpers');
 
 module.exports = () => {
     addDef('PKDTFlags', 
-        {
+        flags({
             0: 'Offers Services',
             1: 'Unknown 2',
             2: 'Must complete',
@@ -37,6 +37,6 @@ module.exports = () => {
             29: 'Wear Sleep Outfit (unused)',
             30: 'Unknown 31',
             31: 'Unknown 32'
-        }
+        })
     );
 };

@@ -1,12 +1,12 @@
 let {
-    def, subrecord, string, record
+    flags, def, subrecord, string, record
 } = require('../helpers');
 
 module.exports = () => {
     record('ANIO', 'Animated Object', {
-        flags: {
+        flags: flags({
             9: 'Unknown 9'
-        },
+        }),
         members: [
             def('EDID'),
             def('MODL'),

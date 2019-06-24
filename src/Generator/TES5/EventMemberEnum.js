@@ -1,10 +1,10 @@
 let {
-    addDef
+    addDef, enumeration
 } = require('../helpers');
 
 module.exports = () => {
     addDef('EventMemberEnum', 
-        {
+        enumeration({
             0: 'None',
             12614: 'Form',
             12619: 'Keyword',
@@ -13,6 +13,6 @@ module.exports = () => {
             12630: 'Value1',
             12876: '(New)Location',
             12886: 'Value2'
-        }
+        })
     );
 };

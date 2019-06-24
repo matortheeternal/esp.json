@@ -31,31 +31,37 @@
                             "name": "Flags",
                             "type": "uint16",
                             "format": {
-                                "0": "Hitscan",
-                                "1": "Explosion",
-                                "2": "Alt. Trigger",
-                                "3": "Muzzle Flash",
-                                "4": "",
-                                "5": "Can Be Disabled",
-                                "6": "Can Be Picked Up",
-                                "7": "Supersonic",
-                                "8": "Pins Limbs",
-                                "9": "Pass Through Small Transparent",
-                                "10": "Disable Combat Aim Correction",
-                                "11": "Rotation"
+                                "type": "flags",
+                                "flags": {
+                                    "0": "Hitscan",
+                                    "1": "Explosion",
+                                    "2": "Alt. Trigger",
+                                    "3": "Muzzle Flash",
+                                    "4": "",
+                                    "5": "Can Be Disabled",
+                                    "6": "Can Be Picked Up",
+                                    "7": "Supersonic",
+                                    "8": "Pins Limbs",
+                                    "9": "Pass Through Small Transparent",
+                                    "10": "Disable Combat Aim Correction",
+                                    "11": "Rotation"
+                                }
                             }
                         },
                         {
                             "name": "Type",
                             "type": "uint16",
                             "format": {
-                                "1": "Missile",
-                                "2": "Lobber",
-                                "4": "Beam",
-                                "8": "Flame",
-                                "16": "Cone",
-                                "32": "Barrier",
-                                "64": "Arrow"
+                                "type": "enum",
+                                "options": {
+                                    "1": "Missile",
+                                    "2": "Lobber",
+                                    "4": "Beam",
+                                    "8": "Flame",
+                                    "16": "Cone",
+                                    "32": "Barrier",
+                                    "64": "Arrow"
+                                }
                             }
                         },
                         {

@@ -1,26 +1,26 @@
 let {
-    def, subrecord, uint8, format, uint32, 
-    ckFormId, arrayOfSubrecord, string, req, arrayOfStruct, 
-    multiStruct, record
+    flags, def, subrecord, uint8, format, 
+    enumeration, uint32, ckFormId, arrayOfSubrecord, string, 
+    req, arrayOfStruct, multiStruct, record
 } = require('../helpers');
 
 module.exports = () => {
     record('HDPT', 'Head Part', {
-        flags: {
+        flags: flags({
             2: 'Non-Playable'
-        },
+        }),
         members: [
             def('EDID'),
             def('FULL'),
             def('MODL'),
-            subrecord('DATA', format(uint8('Flags'), {
+            subrecord('DATA', format(uint8('Flags'), flags({
                 0: 'Playable',
                 1: 'Male',
                 2: 'Female',
                 3: 'Is Extra Part',
                 4: 'Use Solid Tint'
-            })),
-            subrecord('PNAM', format(uint32('Type'), {
+            }))),
+            subrecord('PNAM', format(uint32('Type'), enumeration({
                 0: 'Misc',
                 1: 'Face',
                 2: 'Eyes',
@@ -28,17 +28,17 @@ module.exports = () => {
                 4: 'Facial Hair',
                 5: 'Scar',
                 6: 'Eyebrows'
-            })),
+            }))),
             arrayOfSubrecord('Extra Parts', 
                 subrecord('HNAM', ckFormId('Part', ['HDPT']))
             ),
             arrayOfStruct('Parts', 
                 multiStruct('Part', [
-                    subrecord('NAM0', format(uint32('Part Type'), {
+                    subrecord('NAM0', format(uint32('Part Type'), enumeration({
                         0: 'Race Morph',
                         1: 'Tri',
                         2: 'Chargen Morph'
-                    })),
+                    }))),
                     req(subrecord('NAM1', string('FileName')))
                 ])
             ),

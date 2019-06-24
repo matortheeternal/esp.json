@@ -54,10 +54,13 @@
                 "name": "Flags",
                 "type": "uint8",
                 "format": {
-                    "0": "Parallax",
-                    "1": "Alpha - Blending",
-                    "2": "Alpha - Testing",
-                    "3": "No Subtextures"
+                    "type": "flags",
+                    "flags": {
+                        "0": "Parallax",
+                        "1": "Alpha - Blending",
+                        "2": "Alpha - Testing",
+                        "3": "No Subtextures"
+                    }
                 }
             },
             {

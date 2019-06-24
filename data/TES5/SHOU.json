@@ -4,7 +4,10 @@
     "name": "Shout",
     "def": {
         "flags": {
-            "7": "Treat spells as powers"
+            "type": "flags",
+            "flags": {
+                "7": "Treat spells as powers"
+            }
         },
         "members": [
             {

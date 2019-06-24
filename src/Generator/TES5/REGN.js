@@ -1,15 +1,16 @@
 let {
-    def, uint8, bytes, size, subrecord, 
-    struct, req, ckFormId, uint32, float, 
-    array, multiStruct, arrayOfSubrecord, format, sortKey, 
-    localized, string, uint16, record
+    flags, def, uint8, bytes, size, 
+    subrecord, struct, req, ckFormId, uint32, 
+    float, array, multiStruct, arrayOfSubrecord, enumeration, 
+    format, sortKey, localized, string, uint16, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
     record('REGN', 'Region', {
-        flags: {
+        flags: flags({
             6: 'Border Region'
-        },
+        }),
         members: [
             def('EDID'),
             req(subrecord('RCLR', struct('Map Color', [
@@ -33,7 +34,7 @@ module.exports = () => {
             arrayOfSubrecord('Region Data Entries', 
                 sortKey([0], multiStruct('Region Data Entry', [
                     subrecord('RDAT', sortKey([0], struct('Data Header', [
-                        format(uint32('Type'), {
+                        format(uint32('Type'), enumeration({
                             0: 'Unknown 0',
                             1: 'Unknown 1',
                             2: 'Objects',
@@ -50,10 +51,10 @@ module.exports = () => {
                             13: 'Unknown 14',
                             14: 'Unknown 15',
                             15: 'Unknown 16'
-                        }),
-                        format(uint8('Flags'), {
+                        })),
+                        format(uint8('Flags'), flags({
                             0: 'Override'
-                        }),
+                        })),
                         uint8('Priority'),
                         bytes('Unknown')
                     ]))),
@@ -62,12 +63,12 @@ module.exports = () => {
                     subrecord('RDSA', array('Sounds', 
                         sortKey([0], struct('Sound', [
                             ckFormId('Sound', ['SNDR', 'NULL']),
-                            format(uint32('Flags'), {
+                            format(uint32('Flags'), flags({
                                 0: 'Pleasant',
                                 1: 'Cloudy',
                                 2: 'Rainy',
                                 3: 'Snowy'
-                            }),
+                            })),
                             float('Chance')
                         ]))
                     )),
@@ -83,7 +84,7 @@ module.exports = () => {
                             uint8('Clustering'),
                             uint8('Min Slope'),
                             uint8('Max Slope'),
-                            format(uint8('Flags'), {
+                            format(uint8('Flags'), flags({
                                 0: 'Conform to slope',
                                 1: 'Paint Vertices',
                                 2: 'Size Variance +/-',
@@ -92,7 +93,7 @@ module.exports = () => {
                                 5: 'Z +/-',
                                 6: 'Tree',
                                 7: 'Huge Rock'
-                            }),
+                            })),
                             uint16('Radius wrt Parent'),
                             uint16('Radius'),
                             float('Min Height'),

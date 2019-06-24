@@ -1,6 +1,6 @@
 let {
     def, req, subrecord, ckFormId, uint32, 
-    float, format, struct, record
+    float, flags, format, struct, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -17,13 +17,13 @@ module.exports = () => {
                 float('Lifetime'),
                 float('Image Space Radius'),
                 float('Target Interval'),
-                format(uint32('Flags'), {
+                format(uint32('Flags'), flags({
                     0: 'Affects Player Only',
                     1: 'Inherit Duration from Spawn Spell',
                     2: 'Align to Impact Normal',
                     3: 'Inherit Radius from Spawn Spell',
                     4: 'Drop to Ground'
-                }),
+                })),
                 ckFormId('Spell', [
                     'SPEL',    'ENCH',    'NULL'
                 ]),

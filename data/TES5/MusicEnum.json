@@ -1,5 +1,8 @@
 {
-    "0": "Default",
-    "1": "Public",
-    "2": "Dungeon"
+    "type": "enum",
+    "options": {
+        "0": "Default",
+        "1": "Public",
+        "2": "Dungeon"
+    }
 }

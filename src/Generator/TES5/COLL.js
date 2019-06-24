@@ -1,7 +1,7 @@
 let {
     def, req, subrecord, uint32, uint8, 
-    struct, format, string, ckFormId, array, 
-    record
+    struct, flags, format, string, ckFormId, 
+    array, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -16,11 +16,11 @@ module.exports = () => {
                 uint8('Blue'),
                 uint8('Unused')
             ]))),
-            subrecord('GNAM', format(uint32('Flags'), {
+            subrecord('GNAM', format(uint32('Flags'), flags({
                 0: 'Trigger Volume',
                 1: 'Sensor',
                 2: 'Navmesh Obstacle'
-            })),
+            }))),
             req(subrecord('MNAM', string('Name'))),
             subrecord('INTV', uint32('Interactables Count')),
             subrecord('CNAM', array('Collides With', 

@@ -4,8 +4,11 @@
     "name": "Main File Header",
     "def": {
         "flags": {
-            "0": "ESM",
-            "7": "Localized"
+            "type": "flags",
+            "flags": {
+                "0": "ESM",
+                "7": "Localized"
+            }
         },
         "members": [
             {

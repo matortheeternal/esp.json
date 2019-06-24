@@ -1,10 +1,10 @@
 let {
-    addDef
+    addDef, enumeration
 } = require('../helpers');
 
 module.exports = () => {
     addDef('SkillEnum', 
-        {
+        enumeration({
             0: 'Unknown 1',
             1: 'Unknown 2',
             2: 'Unknown 3',
@@ -30,6 +30,6 @@ module.exports = () => {
             22: 'Restoration',
             23: 'Enchanting',
             "-1": 'None'
-        }
+        })
     );
 };

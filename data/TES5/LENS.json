@@ -96,8 +96,11 @@
                                         "name": "Flags",
                                         "type": "uint32",
                                         "format": {
-                                            "0": "Rotates",
-                                            "1": "Shrinks When Occluded"
+                                            "type": "flags",
+                                            "flags": {
+                                                "0": "Rotates",
+                                                "1": "Shrinks When Occluded"
+                                            }
                                         }
                                     }
                                 ]

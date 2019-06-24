@@ -1,13 +1,13 @@
 let {
-    def, ckFormId, float, subrecord, struct, 
-    arrayOfSubrecord, record
+    flags, def, ckFormId, float, subrecord, 
+    struct, arrayOfSubrecord, record
 } = require('../helpers');
 
 module.exports = () => {
     record('SHOU', 'Shout', {
-        flags: {
+        flags: flags({
             7: 'Treat spells as powers'
-        },
+        }),
         members: [
             def('EDID'),
             def('FULL'),

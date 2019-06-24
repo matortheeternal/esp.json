@@ -1,17 +1,18 @@
 let {
-    def, req, subrecord, uint16, string, 
-    bytes, multiStruct, ckFormId, arrayOfSubrecord, int32, 
-    float, struct, div, format, record
+    flags, def, req, subrecord, uint16, 
+    string, bytes, multiStruct, ckFormId, arrayOfSubrecord, 
+    int32, float, struct, div, format, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
     record('ARMO', 'Armor', {
-        flags: {
+        flags: flags({
             2: 'Non-Playable',
             6: 'Shield',
             10: 'Unknown 10',
             15: 'Unknown 15'
-        },
+        }),
         members: [
             def('EDID'),
             def('VMAD'),

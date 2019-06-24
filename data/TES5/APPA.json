@@ -39,11 +39,14 @@
                     "name": "Quality",
                     "type": "int32",
                     "format": {
-                        "0": "Novice",
-                        "1": "Apprentice",
-                        "2": "Journeyman",
-                        "3": "Expert",
-                        "4": "Master"
+                        "type": "enum",
+                        "options": {
+                            "0": "Novice",
+                            "1": "Apprentice",
+                            "2": "Journeyman",
+                            "3": "Expert",
+                            "4": "Master"
+                        }
                     }
                 }
             },

@@ -1,10 +1,10 @@
 let {
-    addDef
+    addDef, enumeration
 } = require('../helpers');
 
 module.exports = () => {
     addDef('ActorValueEnum', 
-        {
+        enumeration({
             0: 'Aggresion',
             1: 'Confidence',
             2: 'Energy',
@@ -170,6 +170,6 @@ module.exports = () => {
             162: 'Unknown 162',
             163: 'Reflect Damage',
             "-1": 'None'
-        }
+        })
     );
 };

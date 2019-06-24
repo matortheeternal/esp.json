@@ -1,8 +1,11 @@
 {
-    "0": "",
-    "1": "Add",
-    "2": "Subtract",
-    "3": "Reverse Subtract",
-    "4": "Minimum",
-    "5": "Maximum"
+    "type": "enum",
+    "options": {
+        "0": "",
+        "1": "Add",
+        "2": "Subtract",
+        "3": "Reverse Subtract",
+        "4": "Minimum",
+        "5": "Maximum"
+    }
 }

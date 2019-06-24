@@ -1,10 +1,10 @@
 let {
-    addDef
+    addDef, enumeration
 } = require('../helpers');
 
 module.exports = () => {
     addDef('ObjectTypeEnum', 
-        {
+        enumeration({
             0: ' NONE',
             1: 'Activators',
             2: 'Armor',
@@ -34,6 +34,6 @@ module.exports = () => {
             26: 'Actor Effects: Range Touch',
             27: 'Actor Effects: Range Self',
             28: 'Actors: Any'
-        }
+        })
     );
 };

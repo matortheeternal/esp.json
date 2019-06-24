@@ -59,22 +59,28 @@
                             "name": "Flags",
                             "type": "uint8",
                             "format": {
-                                "0": "Teaches Skill",
-                                "1": "Can't be Taken",
-                                "2": "Teaches Spell",
-                                "3": "Unknown 4",
-                                "4": "Unknown 5",
-                                "5": "Unknown 6",
-                                "6": "Unknown 7",
-                                "7": "Unknown 8"
+                                "type": "flags",
+                                "flags": {
+                                    "0": "Teaches Skill",
+                                    "1": "Can't be Taken",
+                                    "2": "Teaches Spell",
+                                    "3": "Unknown 4",
+                                    "4": "Unknown 5",
+                                    "5": "Unknown 6",
+                                    "6": "Unknown 7",
+                                    "7": "Unknown 8"
+                                }
                             }
                         },
                         {
                             "name": "Type",
                             "type": "uint8",
                             "format": {
-                                "0": "Book/Tome",
-                                "255": "Note/Scroll"
+                                "type": "enum",
+                                "options": {
+                                    "0": "Book/Tome",
+                                    "255": "Note/Scroll"
+                                }
                             }
                         },
                         {

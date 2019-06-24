@@ -1,10 +1,10 @@
 let {
-    addDef
+    addDef, enumeration
 } = require('../helpers');
 
 module.exports = () => {
     addDef('ZTestFuncEnum', 
-        {
+        enumeration({
             0: '',
             1: '',
             2: '',
@@ -14,6 +14,6 @@ module.exports = () => {
             6: '',
             7: 'Greater Than or Equal To',
             8: 'Always Show'
-        }
+        })
     );
 };

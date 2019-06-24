@@ -46,7 +46,10 @@
                     "name": "Flags",
                     "type": "uint32",
                     "format": {
-                        "0": "Family Association"
+                        "type": "flags",
+                        "flags": {
+                            "0": "Family Association"
+                        }
                     }
                 }
             }

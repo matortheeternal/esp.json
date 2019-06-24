@@ -1,6 +1,6 @@
 let {
     def, subrecord, ckFormId, req, uint32, 
-    format, record
+    flags, format, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -9,11 +9,11 @@ module.exports = () => {
             def('EDID'),
             req(subrecord('QNAM', ckFormId('Quest', ['QUST']))),
             subrecord('TNAM', uint32('Unknown')),
-            subrecord('DNAM', format(uint32('Flags'), {
+            subrecord('DNAM', format(uint32('Flags'), flags({
                 0: 'Top-Level',
                 1: 'Blocking',
                 2: 'Exclusive'
-            })),
+            }))),
             req(subrecord('SNAM', ckFormId('Starting Topic', ['DIAL'])))
         ]
     })

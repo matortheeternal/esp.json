@@ -1,10 +1,10 @@
 let {
-    addDef
+    addDef, enumeration
 } = require('../helpers');
 
 module.exports = () => {
     addDef('VatsValueFunctionEnum', 
-        {
+        enumeration({
             0: 'Weapon Is',
             1: 'Weapon In List',
             2: 'Target Is',
@@ -26,6 +26,6 @@ module.exports = () => {
             18: 'Projectile Type Is',
             19: 'Delivery Type Is',
             20: 'Casting Type Is'
-        }
+        })
     );
 };

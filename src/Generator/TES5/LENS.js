@@ -1,6 +1,7 @@
 let {
     def, subrecord, float, uint32, string, 
-    format, struct, multiStruct, arrayOfSubrecord, record
+    flags, format, struct, multiStruct, arrayOfSubrecord, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
@@ -21,10 +22,10 @@ module.exports = () => {
                         float('Position'),
                         float('Angular Fade'),
                         float('Opacity'),
-                        format(uint32('Flags'), {
+                        format(uint32('Flags'), flags({
                             0: 'Rotates',
                             1: 'Shrinks When Occluded'
-                        })
+                        }))
                     ]))
                 ])
             )

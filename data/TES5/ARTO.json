@@ -21,9 +21,12 @@
                     "name": "Art Type",
                     "type": "uint32",
                     "format": {
-                        "0": "Magic Casting",
-                        "1": "Magic Hit Effect",
-                        "2": "Enchantment Effect"
+                        "type": "enum",
+                        "options": {
+                            "0": "Magic Casting",
+                            "1": "Magic Hit Effect",
+                            "2": "Enchantment Effect"
+                        }
                     }
                 }
             }

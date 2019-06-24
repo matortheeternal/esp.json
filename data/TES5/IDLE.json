@@ -69,10 +69,13 @@
                             "name": "Flags",
                             "type": "uint8",
                             "format": {
-                                "0": "Parent",
-                                "1": "Sequence",
-                                "2": "No Attacking",
-                                "3": "Blocking"
+                                "type": "flags",
+                                "flags": {
+                                    "0": "Parent",
+                                    "1": "Sequence",
+                                    "2": "No Attacking",
+                                    "3": "Blocking"
+                                }
                             }
                         },
                         {

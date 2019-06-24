@@ -1,7 +1,7 @@
 let {
     def, subrecord, string, ckFormId, array, 
-    uint8, struct, format, uint16, req, 
-    record
+    uint8, struct, flags, format, uint16, 
+    req, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -21,12 +21,12 @@ module.exports = () => {
                     uint8('Min'),
                     uint8('Max')
                 ]),
-                format(uint8('Flags'), {
+                format(uint8('Flags'), flags({
                     0: 'Parent',
                     1: 'Sequence',
                     2: 'No Attacking',
                     3: 'Blocking'
-                }),
+                })),
                 uint8('Animation Group Section'),
                 uint16('Replay Delay')
             ])))

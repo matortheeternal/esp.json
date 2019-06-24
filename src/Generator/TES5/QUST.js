@@ -1,9 +1,9 @@
 let {
-    def, uint16, format, uint8, bytes, 
-    size, uint32, subrecord, struct, string, 
-    ckFormId, arrayOfSubrecord, multiStruct, req, empty, 
-    sortKey, localized, int32, formId, int16, 
-    multiUnion, record
+    def, flags, uint16, format, uint8, 
+    bytes, size, uint32, subrecord, struct, 
+    string, ckFormId, arrayOfSubrecord, multiStruct, req, 
+    empty, sortKey, localized, int32, formId, 
+    int16, enumeration, multiUnion, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -13,7 +13,7 @@ module.exports = () => {
             def('VMADFragmentedQUST'),
             def('FULL'),
             subrecord('DNAM', struct('General', [
-                format(uint16('Flags'), {
+                format(uint16('Flags'), flags({
                     0: 'Start Game Enabled',
                     1: 'Unknown 2',
                     2: 'Unknown 3',
@@ -27,7 +27,7 @@ module.exports = () => {
                     10: 'Warn on alias fill failure',
                     11: 'Unknown 12',
                     12: 'Unknown 13'
-                }),
+                })),
                 uint8('Priority'),
                 uint8('Form Version'),
                 size(4, bytes('Unknown')),
@@ -47,20 +47,20 @@ module.exports = () => {
                 sortKey([0], multiStruct('Stage', [
                     subrecord('INDX', sortKey([0], struct('Stage Index', [
                         uint16('Stage Index'),
-                        format(uint8('Flags'), {
+                        format(uint8('Flags'), flags({
                             0: 'Unknown 1',
                             1: 'Start Up Stage',
                             2: 'Shut Down Stage',
                             3: 'Keep Instance Data From Here On'
-                        }),
+                        })),
                         uint8('Unknown')
                     ]))),
                     arrayOfSubrecord('Log Entries', 
                         multiStruct('Log Entry', [
-                            subrecord('QSDT', format(uint8('Stage Flags'), {
+                            subrecord('QSDT', format(uint8('Stage Flags'), flags({
                                 0: 'Complete Quest',
                                 1: 'Fail Quest'
-                            })),
+                            }))),
                             def('CTDAs'),
                             subrecord('CNAM', localized(string('Log Entry'))),
                             subrecord('NAM0', ckFormId('Next Quest', ['QUST'])),
@@ -74,17 +74,17 @@ module.exports = () => {
             arrayOfSubrecord('Objectives', 
                 multiStruct('Objective', [
                     subrecord('QOBJ', uint16('Objective Index')),
-                    subrecord('FNAM', format(uint32('Flags'), {
+                    subrecord('FNAM', format(uint32('Flags'), flags({
                         0: 'ORed With Previous'
-                    })),
+                    }))),
                     req(subrecord('NNAM', localized(string('Display Text')))),
                     arrayOfSubrecord('Targets', 
                         multiStruct('Target', [
                             subrecord('QSTA', struct('Target', [
                                 format(int32('Alias'), def('QuestAliasToStr')),
-                                format(uint8('Flags'), {
+                                format(uint8('Flags'), flags({
                                     0: 'Compass Marker Ignores Locks'
-                                }),
+                                })),
                                 size(3, bytes('Unused'))
                             ])),
                             def('CTDAs')
@@ -116,24 +116,24 @@ module.exports = () => {
                             subrecord('ALCO', formId('Object')),
                             subrecord('ALCA', struct('Alias', [
                                 format(int16('Alias'), def('QuestAliasToStr')),
-                                format(uint16('Create'), {
+                                format(uint16('Create'), enumeration({
                                     0: 'At',
                                     32768: 'In'
-                                })
+                                }))
                             ])),
-                            subrecord('ALCL', format(uint32('Level'), {
+                            subrecord('ALCL', format(uint32('Level'), enumeration({
                                 0: 'Easy',
                                 1: 'Medium',
                                 2: 'Hard',
                                 3: 'Very Hard',
                                 4: 'None'
-                            }))
+                            })))
                         ]),
                         multiStruct('Find Matching Reference Near Alias', [
                             subrecord('ALNA', format(int32('Alias'), def('QuestAliasToStr'))),
-                            subrecord('ALNT', format(uint32('Type'), {
+                            subrecord('ALNT', format(uint32('Type'), enumeration({
                                 0: 'Linked Ref Child'
-                            }))
+                            })))
                         ]),
                         multiStruct('Find Matching Reference From Event', [
                             subrecord('ALFE', size(4, string('From Event'))),
@@ -184,24 +184,24 @@ module.exports = () => {
                             subrecord('ALCO', formId('Object')),
                             subrecord('ALCA', struct('Alias', [
                                 format(int16('Alias'), def('QuestAliasToStr')),
-                                format(uint16('Create'), {
+                                format(uint16('Create'), enumeration({
                                     0: 'At',
                                     32768: 'In'
-                                })
+                                }))
                             ])),
-                            subrecord('ALCL', format(uint32('Level'), {
+                            subrecord('ALCL', format(uint32('Level'), enumeration({
                                 0: 'Easy',
                                 1: 'Medium',
                                 2: 'Hard',
                                 3: 'Very Hard',
                                 4: 'None'
-                            }))
+                            })))
                         ]),
                         multiStruct('Find Matching Reference Near Alias', [
                             subrecord('ALNA', format(int32('Alias'), def('QuestAliasToStr'))),
-                            subrecord('ALNT', format(uint32('Type'), {
+                            subrecord('ALNT', format(uint32('Type'), enumeration({
                                 0: 'Linked Ref Child'
-                            }))
+                            })))
                         ]),
                         multiStruct('Find Matching Reference From Event', [
                             subrecord('ALFE', size(4, string('From Event'))),
@@ -241,9 +241,9 @@ module.exports = () => {
                             'ACHR',    'REFR',    'PGRE',    'PHZD',    'PMIS',
                             'PARW',    'PBAR',    'PBEA',    'PCON',    'PFLA'
                         ]),
-                        format(uint8('Flags'), {
+                        format(uint8('Flags'), flags({
                             0: 'Compass Marker Ignores Locks'
-                        }),
+                        })),
                         size(3, bytes('Unknown'))
                     ])),
                     def('CTDAs')

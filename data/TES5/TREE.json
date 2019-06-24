@@ -4,7 +4,10 @@
     "name": "Tree",
     "def": {
         "flags": {
-            "15": "Has Distant LOD"
+            "type": "flags",
+            "flags": {
+                "15": "Has Distant LOD"
+            }
         },
         "members": [
             {

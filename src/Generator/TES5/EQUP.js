@@ -1,6 +1,6 @@
 let {
-    def, formId, subrecord, array, uint32, 
-    format, record
+    def, formId, subrecord, array, enumeration, 
+    uint32, format, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -10,10 +10,10 @@ module.exports = () => {
             subrecord('PNAM', array('Slot Parents', 
                 formId('Can Be Equipped')
             )),
-            subrecord('DATA', format(uint32('Use All Parents'), {
+            subrecord('DATA', format(uint32('Use All Parents'), enumeration({
                 0: 'False',
                 1: 'True'
-            }))
+            })))
         ]
     })
 };

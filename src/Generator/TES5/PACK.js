@@ -1,9 +1,9 @@
 let {
-    def, uint32, format, uint8, bytes, 
-    size, uint16, subrecord, struct, req, 
-    int8, int32, float, ckFormId, array, 
-    multiStruct, string, union, unknown, arrayOfSubrecord, 
-    empty, record
+    def, uint32, format, enumeration, uint8, 
+    bytes, size, uint16, subrecord, struct, 
+    req, int8, int32, float, ckFormId, 
+    array, multiStruct, string, union, unknown, 
+    arrayOfSubrecord, flags, empty, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -13,30 +13,30 @@ module.exports = () => {
             def('VMADFragmentedPACK'),
             req(subrecord('PKDT', struct('Pack Data', [
                 format(uint32('General Flags'), def('PKDTFlags')),
-                format(uint8('Type'), {
+                format(uint8('Type'), enumeration({
                     18: 'Package',
                     19: 'Package Template'
-                }),
-                format(uint8('Interrupt Override'), {
+                })),
+                format(uint8('Interrupt Override'), enumeration({
                     0: 'None',
                     1: 'Spectator',
                     2: 'ObserveDead',
                     3: 'GuardWarn',
                     4: 'Combat'
-                }),
-                format(uint8('Preferred Speed'), {
+                })),
+                format(uint8('Preferred Speed'), enumeration({
                     0: 'Walk',
                     1: 'Jog',
                     2: 'Run',
                     3: 'Fast Walk'
-                }),
+                })),
                 size(1, bytes('Unknown')),
                 format(uint16('Interrupt Flags'), def('PKDTInterruptFlags')),
                 size(2, bytes('Unknown'))
             ]))),
             req(subrecord('PSDT', struct('Schedule', [
                 int8('Month'),
-                format(int8('Day of week'), {
+                format(int8('Day of week'), enumeration({
                     0: 'Sunday',
                     1: 'Monday',
                     2: 'Tuesday',
@@ -49,7 +49,7 @@ module.exports = () => {
                     9: 'Monday, Wednesday, Friday',
                     10: 'Tuesday, Thursday',
                     "-1": 'Any'
-                }),
+                })),
                 uint8('Date'),
                 int8('Hour'),
                 int8('Minute'),
@@ -58,13 +58,13 @@ module.exports = () => {
             ]))),
             def('CTDAs'),
             req(multiStruct('Idle Animations', [
-                subrecord('IDLF', format(uint8('Flags'), {
+                subrecord('IDLF', format(uint8('Flags'), enumeration({
                     0: 'Unknown',
                     8: 'Random',
                     9: 'Run in Sequence',
                     12: 'Random, Do Once',
                     13: 'Run in Sequence, Do Once'
-                })),
+                }))),
                 req(subrecord('IDLC', struct('', [
                     uint8('Animation Count'),
                     size(3, bytes('Unknown'))
@@ -88,10 +88,10 @@ module.exports = () => {
                         subrecord('ANAM', string('Type')),
                         subrecord('CNAM', union('Value', [
                             bytes('Unknown'),
-                            format(uint8('Bool'), {
+                            format(uint8('Bool'), enumeration({
                                 0: 'False',
                                 1: 'True'
-                            }),
+                            })),
                             uint32('Integer'),
                             float('Float')
                         ])),
@@ -115,15 +115,15 @@ module.exports = () => {
                         def('CTDAsCount'),
                         subrecord('PRCB', struct('Root', [
                             uint32('Branch Count'),
-                            format(uint32('Flags'), {
+                            format(uint32('Flags'), flags({
                                 0: 'Repeat when Complete',
                                 1: 'Unknown 1'
-                            })
+                            }))
                         ])),
                         subrecord('PNAM', string('Procedure Type')),
-                        subrecord('FNAM', format(uint32('Flags'), {
+                        subrecord('FNAM', format(uint32('Flags'), flags({
                             0: 'Success Completes Package'
-                        })),
+                        }))),
                         arrayOfSubrecord('Data Input Indexes', 
                             subrecord('PKC2', uint8('Index'))
                         ),
@@ -133,12 +133,12 @@ module.exports = () => {
                                 format(uint32('Clear General Flags'), def('PKDTFlags')),
                                 format(uint16('Set Interrupt Flags'), def('PKDTInterruptFlags')),
                                 format(uint16('Clear Interrupt Flags'), def('PKDTInterruptFlags')),
-                                format(uint8('Preferred Speed Override'), {
+                                format(uint8('Preferred Speed Override'), enumeration({
                                     0: 'Walk',
                                     1: 'Jog',
                                     2: 'Run',
                                     3: 'Fast Walk'
-                                }),
+                                })),
                                 size(3, bytes('Unknown'))
                             ]))
                         ),

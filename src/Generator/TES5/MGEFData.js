@@ -1,15 +1,15 @@
 let {
-    addDef, uint32, format, float, formId, 
-    ckFormId, union, req, def, int32, 
-    uint16, bytes, size, struct, subrecord, 
-    multiStruct
+    addDef, flags, uint32, format, float, 
+    formId, ckFormId, union, req, def, 
+    int32, uint16, bytes, size, struct, 
+    subrecord, multiStruct
 } = require('../helpers');
 
 module.exports = () => {
     addDef('MGEFData', 
         multiStruct('Magic Effect Data', [
             req(subrecord('DATA', struct('Data', [
-                format(uint32('Flags'), {
+                format(uint32('Flags'), flags({
                     0: 'Hostile',
                     1: 'Recover',
                     2: 'Detrimental',
@@ -42,7 +42,7 @@ module.exports = () => {
                     29: 'Unknown 30',
                     30: 'Unknown 31',
                     31: 'Unknown 32'
-                }),
+                })),
                 float('Base Cost'),
                 req(union('Assoc. Item', [
                     formId('Unused'),

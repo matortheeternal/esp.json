@@ -1,7 +1,7 @@
 let {
     def, subrecord, unknown, float, struct, 
-    bytes, size, uint16, format, req, 
-    record
+    bytes, size, enumeration, uint16, format, 
+    req, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -34,7 +34,7 @@ module.exports = () => {
                 float('Distance'),
                 float('Range'),
                 size(2, bytes('Unknown')),
-                format(uint16('Sky / Blur Radius'), {
+                format(uint16('Sky / Blur Radius'), enumeration({
                     16384: 'Radius 0',
                     16576: 'No Sky, Radius 0',
                     16672: 'Radius 1',
@@ -51,7 +51,7 @@ module.exports = () => {
                     16984: 'No Sky, Radius 6',
                     17000: 'Radius 7',
                     17016: 'No Sky, Radius 7'
-                })
+                }))
             ])))
         ]
     })

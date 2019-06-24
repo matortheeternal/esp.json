@@ -1,13 +1,14 @@
 let {
-    def, uint32, float, subrecord, struct, 
-    req, uint8, format, ckFormId, record
+    flags, def, uint32, float, subrecord, 
+    struct, req, uint8, format, ckFormId, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
     record('SLGM', 'Soul Gem', {
-        flags: {
+        flags: flags({
             17: 'Can Hold NPC Soul'
-        },
+        }),
         members: [
             def('EDID'),
             def('OBND'),

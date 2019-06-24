@@ -1,10 +1,10 @@
 let {
-    addDef
+    addDef, enumeration
 } = require('../helpers');
 
 module.exports = () => {
     addDef('WeaponAnimTypeEnum', 
-        {
+        enumeration({
             0: 'HandToHandMelee',
             1: 'OneHandSword',
             2: 'OneHandDagger',
@@ -15,6 +15,6 @@ module.exports = () => {
             7: 'Bow',
             8: 'Staff',
             9: 'Crossbow'
-        }
+        })
     );
 };

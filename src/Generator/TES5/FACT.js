@@ -1,8 +1,9 @@
 let {
-    def, ckFormId, int32, uint32, format, 
-    subrecord, sortKey, struct, arrayOfSubrecord, req, 
-    uint8, uint16, float, localized, string, 
-    arrayOfStruct, multiStruct, bytes, size, record
+    def, ckFormId, int32, enumeration, uint32, 
+    format, subrecord, sortKey, struct, arrayOfSubrecord, 
+    flags, req, uint8, uint16, float, 
+    localized, string, arrayOfStruct, multiStruct, bytes, 
+    size, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -14,16 +15,16 @@ module.exports = () => {
                 subrecord('XNAM', sortKey([0], struct('Relation', [
                     ckFormId('Faction', ['FACT', 'RACE']),
                     int32('Modifier'),
-                    format(uint32('Group Combat Reaction'), {
+                    format(uint32('Group Combat Reaction'), enumeration({
                         0: 'Neutral',
                         1: 'Enemy',
                         2: 'Ally',
                         3: 'Friend'
-                    })
+                    }))
                 ])))
             ),
             req(subrecord('DATA', struct('Flags', [
-                format(uint32('Flags'), {
+                format(uint32('Flags'), flags({
                     0: 'Hidden From NPC',
                     1: 'Special Combat',
                     2: 'Unknown 3',
@@ -56,7 +57,7 @@ module.exports = () => {
                     29: 'Unknown 30',
                     30: 'Unknown 31',
                     31: 'Unknown 32'
-                })
+                }))
             ]))),
             subrecord('JAIL', ckFormId('Exterior Jail Marker', ['REFR'])),
             subrecord('WAIT', ckFormId('Follower Wait Marker', ['REFR'])),
@@ -65,14 +66,14 @@ module.exports = () => {
             subrecord('CRGR', ckFormId('Shared Crime Faction List', ['FLST'])),
             subrecord('JOUT', ckFormId('Jail Outfit', ['OTFT'])),
             req(subrecord('CRVA', struct('Crime Values', [
-                format(uint8('Arrest'), {
+                format(uint8('Arrest'), enumeration({
                     0: 'False',
                     1: 'True'
-                }),
-                format(uint8('Attack On Sight'), {
+                })),
+                format(uint8('Attack On Sight'), enumeration({
                     0: 'False',
                     1: 'True'
-                }),
+                })),
                 uint16('Murder'),
                 uint16('Assault'),
                 uint16('Trespass'),
@@ -97,14 +98,14 @@ module.exports = () => {
                 uint16('End Hour'),
                 uint16('Radius'),
                 size(2, bytes('Unknown 1')),
-                format(uint8('Only Buys Stolen Items'), {
+                format(uint8('Only Buys Stolen Items'), enumeration({
                     0: 'False',
                     1: 'True'
-                }),
-                format(uint8('Not/Sell Buy'), {
+                })),
+                format(uint8('Not/Sell Buy'), enumeration({
                     0: 'False',
                     1: 'True'
-                }),
+                })),
                 size(2, bytes('Unknown 2'))
             ])),
             def('PLVD'),

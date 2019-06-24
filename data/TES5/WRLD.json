@@ -4,7 +4,10 @@
     "name": "Worldspace",
     "def": {
         "flags": {
-            "19": "Can't Wait"
+            "type": "flags",
+            "flags": {
+                "19": "Can't Wait"
+            }
         },
         "members": [
             {
@@ -143,13 +146,16 @@
                                     "name": "Flags",
                                     "type": "uint8",
                                     "format": {
-                                        "0": "Use Land Data",
-                                        "1": "Use LOD Data",
-                                        "2": "Don't Use Map Data",
-                                        "3": "Use Water Data",
-                                        "4": "Use Climate Data",
-                                        "5": "Use Image Space Data (unused)",
-                                        "6": "Use Sky Cell"
+                                        "type": "flags",
+                                        "flags": {
+                                            "0": "Use Land Data",
+                                            "1": "Use LOD Data",
+                                            "2": "Don't Use Map Data",
+                                            "3": "Use Water Data",
+                                            "4": "Use Climate Data",
+                                            "5": "Use Image Space Data (unused)",
+                                            "6": "Use Sky Cell"
+                                        }
                                     }
                                 },
                                 {
@@ -369,14 +375,17 @@
                     "name": "Flags",
                     "type": "uint8",
                     "format": {
-                        "0": "Small World",
-                        "1": "Can't Fast Travel",
-                        "2": "Unknown 3",
-                        "3": "No LOD Water",
-                        "4": "No Landscape",
-                        "5": "No Sky",
-                        "6": "Fixed Dimensions",
-                        "7": "No Grass"
+                        "type": "flags",
+                        "flags": {
+                            "0": "Small World",
+                            "1": "Can't Fast Travel",
+                            "2": "Unknown 3",
+                            "3": "No LOD Water",
+                            "4": "No Landscape",
+                            "5": "No Sky",
+                            "6": "Fixed Dimensions",
+                            "7": "No Grass"
+                        }
                     }
                 }
             },

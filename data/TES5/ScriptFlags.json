@@ -2,9 +2,12 @@
     "name": "Flags",
     "type": "uint8",
     "format": {
-        "0": "Local",
-        "1": "Inherited",
-        "2": "Removed",
-        "3": "Inherited and Removed"
+        "type": "enum",
+        "options": {
+            "0": "Local",
+            "1": "Inherited",
+            "2": "Removed",
+            "3": "Inherited and Removed"
+        }
     }
 }

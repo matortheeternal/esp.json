@@ -1,17 +1,17 @@
 let {
-    IsSSE, float, uint32, def, format, 
-    subrecord, struct, req, bytes, string, 
-    size, multiStruct, arrayOfSubrecord, ckFormId, array, 
-    unknown, record
+    IsSSE, flags, float, uint32, def, 
+    format, subrecord, struct, req, bytes, 
+    string, size, multiStruct, arrayOfSubrecord, ckFormId, 
+    array, unknown, record
 } = require('../helpers');
 
 module.exports = game => {
     record('TES4', 'Main File Header', {
-        flags: {
+        flags: flags({
             0: 'ESM',
             7: 'Localized',
             9: IsSSE(game, ['ESL', ''])
-        },
+        }),
         members: [
             req(subrecord('HEDR', struct('Header', [
                 float('Version'),

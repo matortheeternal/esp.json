@@ -1,6 +1,7 @@
 let {
     def, req, subrecord, ckFormId, formId, 
-    float, uint32, format, struct, record
+    float, flags, uint32, format, struct, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
@@ -25,7 +26,7 @@ module.exports = () => {
                 float('Radius'),
                 float('IS Radius'),
                 float('Vertical Offset Mult'),
-                format(uint32('Flags'), {
+                format(uint32('Flags'), flags({
                     0: 'Unknown 0',
                     1: 'Always Uses World Orientation',
                     2: 'Knock Down - Always',
@@ -35,7 +36,7 @@ module.exports = () => {
                     6: 'Ignore Image Space Swap',
                     7: 'Chain',
                     8: 'No Controller Vibration'
-                }),
+                })),
                 format(uint32('Sound Level'), def('SoundLevelEnum'))
             ])))
         ]

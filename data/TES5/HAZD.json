@@ -64,11 +64,14 @@
                             "name": "Flags",
                             "type": "uint32",
                             "format": {
-                                "0": "Affects Player Only",
-                                "1": "Inherit Duration from Spawn Spell",
-                                "2": "Align to Impact Normal",
-                                "3": "Inherit Radius from Spawn Spell",
-                                "4": "Drop to Ground"
+                                "type": "flags",
+                                "flags": {
+                                    "0": "Affects Player Only",
+                                    "1": "Inherit Duration from Spawn Spell",
+                                    "2": "Align to Impact Normal",
+                                    "3": "Inherit Radius from Spawn Spell",
+                                    "4": "Drop to Ground"
+                                }
                             }
                         },
                         {

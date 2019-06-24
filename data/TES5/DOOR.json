@@ -4,9 +4,12 @@
     "name": "Door",
     "def": {
         "flags": {
-            "15": "Has Distant LOD",
-            "16": "Random Anim Start",
-            "23": "Is Marker"
+            "type": "flags",
+            "flags": {
+                "15": "Has Distant LOD",
+                "16": "Random Anim Start",
+                "23": "Is Marker"
+            }
         },
         "members": [
             {
@@ -68,12 +71,15 @@
                     "name": "Flags",
                     "type": "uint8",
                     "format": {
-                        "0": "",
-                        "1": "Automatic",
-                        "2": "Hidden",
-                        "3": "Minimal Use",
-                        "4": "Sliding",
-                        "5": "Do Not Open in Combat Search"
+                        "type": "flags",
+                        "flags": {
+                            "0": "",
+                            "1": "Automatic",
+                            "2": "Hidden",
+                            "3": "Minimal Use",
+                            "4": "Sliding",
+                            "5": "Do Not Open in Combat Search"
+                        }
                     }
                 }
             }

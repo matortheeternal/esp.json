@@ -14,8 +14,11 @@
                     "name": "Flags",
                     "type": "uint8",
                     "format": {
-                        "0": "Allow Default Dialog",
-                        "1": "Female"
+                        "type": "flags",
+                        "flags": {
+                            "0": "Allow Default Dialog",
+                            "1": "Female"
+                        }
                     }
                 }
             }

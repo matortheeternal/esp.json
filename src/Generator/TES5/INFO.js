@@ -1,21 +1,22 @@
 let {
-    def, subrecord, unknown, uint16, format, 
-    div, struct, ckFormId, uint8, arrayOfSubrecord, 
-    formId, uint32, bytes, size, localized, 
-    string, multiStruct, empty, record
+    flags, def, subrecord, unknown, uint16, 
+    format, div, struct, ckFormId, enumeration, 
+    uint8, arrayOfSubrecord, formId, uint32, bytes, 
+    size, localized, string, multiStruct, empty, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
     record('INFO', 'Dialog response', {
-        flags: {
+        flags: flags({
             13: 'Actor Changed'
-        },
+        }),
         members: [
             def('EDID'),
             def('VMADFragmentedINFO'),
             subrecord('DATA', unknown()),
             subrecord('ENAM', struct('Response flags', [
-                format(uint16('Flags'), {
+                format(uint16('Flags'), flags({
                     0: 'Goodbye',
                     1: 'Random',
                     2: 'Say once',
@@ -32,17 +33,17 @@ module.exports = () => {
                     13: 'Audio Output Override',
                     14: 'Spends favor points',
                     15: 'Unknown 16'
-                }),
+                })),
                 format(uint16('Reset Hours'), div(2730))
             ])),
             subrecord('TPIC', ckFormId('Topic', ['DIAL'])),
             subrecord('PNAM', ckFormId('Previous INFO', ['INFO', 'NULL'])),
-            subrecord('CNAM', format(uint8('Favor Level'), {
+            subrecord('CNAM', format(uint8('Favor Level'), enumeration({
                 0: 'None',
                 1: 'Small',
                 2: 'Medium',
                 3: 'Large'
-            })),
+            }))),
             arrayOfSubrecord('Link To', 
                 subrecord('TCLT', ckFormId('Response', [
                     'DIAL',    'INFO',    'NULL'
@@ -58,9 +59,9 @@ module.exports = () => {
                         uint8('Response number'),
                         size(3, bytes('Unused')),
                         ckFormId('Sound', ['SNDR', 'NULL']),
-                        format(uint8('Flags'), {
+                        format(uint8('Flags'), flags({
                             0: 'Use Emotion Animation'
-                        }),
+                        })),
                         size(3, bytes('Unused'))
                     ])),
                     subrecord('NAM1', localized(string('Response Text'))),

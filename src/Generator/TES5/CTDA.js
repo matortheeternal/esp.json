@@ -1,8 +1,8 @@
 let {
     addDef, def, uint8, format, bytes, 
     size, float, ckFormId, union, uint16, 
-    opts, int32, uint32, formId, subrecord, 
-    sortKey, struct, string, multiStruct
+    opts, int32, uint32, enumeration, formId, 
+    subrecord, sortKey, struct, string, multiStruct
 } = require('../helpers');
 
 module.exports = () => {
@@ -99,13 +99,13 @@ module.exports = () => {
                     uint32('Packdata ID'),
                     ckFormId('Association Type', ['ASTP']),
                     format(uint32('Furniture Anim'), def('FurnitureAnimTypeEnum')),
-                    format(uint32('Furniture Entry'), {
+                    format(uint32('Furniture Entry'), enumeration({
                         65536: 'Front',
                         131072: 'Behind',
                         262144: 'Right',
                         524288: 'Left',
                         1048576: 'Up'
-                    }),
+                    })),
                     ckFormId('Scene', ['NULL', 'SCEN']),
                     format(uint32('Ward State'), def('WardStateEnum')),
                     format(uint32('Event'), def('EventFunctionAndMemberToStr')),
@@ -176,7 +176,7 @@ module.exports = () => {
                         ckFormId('Target List', ['FLST']),
                         size(4, bytes('Unknown')),
                         format(int32('Target Part'), def('ActorValueEnum')),
-                        format(uint32('VATS Action'), {
+                        format(uint32('VATS Action'), enumeration({
                             0: 'Unarmed Attack',
                             1: 'One Hand Melee Attack',
                             2: 'Two Hand Melee Attack',
@@ -189,7 +189,7 @@ module.exports = () => {
                             9: 'Toggle Weapon Drawn',
                             10: 'Heal',
                             11: 'Player Death'
-                        }),
+                        })),
                         opts(size(4, bytes('Unknown')), {
                             "includeFlag": "dfZeroSortKey"
                         }),
@@ -217,7 +217,7 @@ module.exports = () => {
                         opts(size(4, bytes('Unknown')), {
                             "includeFlag": "dfZeroSortKey"
                         }),
-                        format(uint32('Projectile Type'), {
+                        format(uint32('Projectile Type'), enumeration({
                             0: 'Missile',
                             1: 'Lobber',
                             2: 'Beam',
@@ -225,7 +225,7 @@ module.exports = () => {
                             4: 'Cone',
                             5: 'Barrier',
                             6: 'Arrow'
-                        }),
+                        })),
                         format(uint32('Delivery Type'), def('TargetEnum')),
                         format(uint32('Casting Type'), def('CastEnum'))
                     ]),
@@ -249,20 +249,20 @@ module.exports = () => {
                     uint32('Packdata ID'),
                     ckFormId('Association Type', ['ASTP']),
                     format(uint32('Furniture Anim'), def('FurnitureAnimTypeEnum')),
-                    format(uint32('Furniture Entry'), {
+                    format(uint32('Furniture Entry'), enumeration({
                         65536: 'Front',
                         131072: 'Behind',
                         262144: 'Right',
                         524288: 'Left',
                         1048576: 'Up'
-                    }),
+                    })),
                     ckFormId('Scene', ['NULL', 'SCEN']),
                     format(uint32('Ward State'), def('WardStateEnum')),
                     format(uint32('Event'), def('EventFunctionAndMemberToStr')),
                     formId('Event Data'),
                     ckFormId('Knowable', ['MGEF', 'WOOP'])
                 ]),
-                format(uint32('Run On'), {
+                format(uint32('Run On'), enumeration({
                     0: 'Subject',
                     1: 'Target',
                     2: 'Reference',
@@ -271,7 +271,7 @@ module.exports = () => {
                     5: 'Quest Alias',
                     6: 'Package Data',
                     7: 'Event Data'
-                }),
+                })),
                 union('Reference', [
                     uint32('Unused'),
                     ckFormId('Reference', [

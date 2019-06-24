@@ -1,7 +1,8 @@
 let {
     def, subrecord, string, req, arrayOfSubrecord, 
-    uint8, IsSSE, format, bytes, ckFormId, 
-    uint16, float, size, struct, record
+    uint8, IsSSE, flags, format, bytes, 
+    ckFormId, uint16, float, size, struct, 
+    record
 } = require('../helpers');
 
 module.exports = game => {
@@ -13,7 +14,7 @@ module.exports = game => {
                 req(subrecord('NNAM', string('Noise Map')))
             ),
             subrecord('ANAM', uint8('Opacity')),
-            subrecord('FNAM', format(uint8('Flags'), {
+            subrecord('FNAM', format(uint8('Flags'), flags({
                 0: 'Causes Damage',
                 1: 'Unknown 1',
                 2: 'Unknown 2',
@@ -22,7 +23,7 @@ module.exports = game => {
                 5: 'Unknown 5',
                 6: 'Unknown 6',
                 7: 'Unknown 7'
-            })),
+            }))),
             subrecord('MNAM', bytes('Unused')),
             subrecord('TNAM', ckFormId('Material', ['MATT'])),
             subrecord('SNAM', ckFormId('Open Sound', ['SNDR', 'NULL'])),

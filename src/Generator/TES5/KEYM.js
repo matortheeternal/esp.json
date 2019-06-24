@@ -1,13 +1,13 @@
 let {
-    def, req, int32, float, subrecord, 
-    struct, record
+    flags, def, req, int32, float, 
+    subrecord, struct, record
 } = require('../helpers');
 
 module.exports = () => {
     record('KEYM', 'Key', {
-        flags: {
+        flags: flags({
             2: 'Non-Playable'
-        },
+        }),
         members: [
             def('EDID'),
             def('VMAD'),

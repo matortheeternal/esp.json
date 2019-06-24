@@ -1,8 +1,8 @@
 let {
     addDef, uint32, opts, bytes, size, 
     ckFormId, int16, struct, union, float, 
-    sortKey, array, def, format, uint16, 
-    subrecord
+    sortKey, array, def, format, flags, 
+    uint16, subrecord
 } = require('../helpers');
 
 module.exports = () => {
@@ -51,7 +51,7 @@ module.exports = () => {
                     opts(format(int16('Edge 2-0'), def('EdgeToStr2')), {
                         "linksToCallback": "EdgeLinksTo2"
                     }),
-                    format(uint16('Flags'), {
+                    format(uint16('Flags'), flags({
                         0: 'Edge 0-1 link',
                         1: 'Edge 1-2 link',
                         2: 'Edge 2-0 link',
@@ -68,8 +68,8 @@ module.exports = () => {
                         13: '',
                         14: '',
                         15: ''
-                    }),
-                    format(uint16('Cover Flags'), {
+                    })),
+                    format(uint16('Cover Flags'), flags({
                         0: 'Edge 0-1 Cover Value 1/4',
                         1: 'Edge 0-1 Cover Value 2/4',
                         2: 'Edge 0-1 Cover Value 3/4',
@@ -86,7 +86,7 @@ module.exports = () => {
                         13: 'Unknown 14',
                         14: 'Unknown 15',
                         15: 'Unknown 16'
-                    })
+                    }))
                 ])
             , -1), {
                 "includeFlag": "dfNotAlignable"

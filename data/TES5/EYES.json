@@ -4,7 +4,10 @@
     "name": "Eyes",
     "def": {
         "flags": {
-            "2": "Non-Playable"
+            "type": "flags",
+            "flags": {
+                "2": "Non-Playable"
+            }
         },
         "members": [
             {
@@ -30,14 +33,17 @@
                     "name": "Flags",
                     "type": "uint8",
                     "format": {
-                        "0": "Playable",
-                        "1": "Not Male",
-                        "2": "Not Female",
-                        "3": "Unknown 4",
-                        "4": "Unknown 5",
-                        "5": "Unknown 6",
-                        "6": "Unknown 7",
-                        "7": "Unknown 8"
+                        "type": "flags",
+                        "flags": {
+                            "0": "Playable",
+                            "1": "Not Male",
+                            "2": "Not Female",
+                            "3": "Unknown 4",
+                            "4": "Unknown 5",
+                            "5": "Unknown 6",
+                            "6": "Unknown 7",
+                            "7": "Unknown 8"
+                        }
                     }
                 }
             }

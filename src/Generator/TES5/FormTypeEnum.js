@@ -1,10 +1,10 @@
 let {
-    addDef
+    addDef, enumeration
 } = require('../helpers');
 
 module.exports = () => {
     addDef('FormTypeEnum', 
-        {
+        enumeration({
             0: 'Activator',
             1: 'Armor',
             2: 'Book',
@@ -106,6 +106,6 @@ module.exports = () => {
             100: 'Scroll',
             101: 'ColorForm',
             102: 'Reverb Parameters'
-        }
+        })
     );
 };

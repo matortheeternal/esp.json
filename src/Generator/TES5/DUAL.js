@@ -1,6 +1,6 @@
 let {
-    def, req, ckFormId, uint32, format, 
-    subrecord, struct, record
+    def, req, ckFormId, flags, uint32, 
+    format, subrecord, struct, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -14,11 +14,11 @@ module.exports = () => {
                 ckFormId('Effect Shader', ['EFSH', 'NULL']),
                 ckFormId('Hit Effect Art', ['ARTO', 'NULL']),
                 ckFormId('Impact Data Set', ['IPDS', 'NULL']),
-                format(uint32('Inherit Scale'), {
+                format(uint32('Inherit Scale'), flags({
                     0: 'Hit Effect Art',
                     1: 'Projectile',
                     2: 'Explosion'
-                })
+                }))
             ])))
         ]
     })

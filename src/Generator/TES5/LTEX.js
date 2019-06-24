@@ -1,7 +1,7 @@
 let {
     def, subrecord, ckFormId, req, uint8, 
-    struct, arrayOfSubrecord, IsSSE, uint32, format, 
-    record
+    struct, arrayOfSubrecord, IsSSE, flags, uint32, 
+    format, record
 } = require('../helpers');
 
 module.exports = game => {
@@ -18,9 +18,9 @@ module.exports = game => {
             arrayOfSubrecord('Grasses', 
                 subrecord('GNAM', ckFormId('Grass', ['GRAS']))
             ),
-            subrecord('INAM', format(uint32(IsSSE(game, ['Flags', 'Unused'])), {
+            subrecord('INAM', format(uint32(IsSSE(game, ['Flags', 'Unused'])), flags({
                 0: 'Is Snow'
-            }))
+            })))
         ]
     })
 };

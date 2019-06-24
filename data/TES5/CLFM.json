@@ -4,7 +4,10 @@
     "name": "Color",
     "def": {
         "flags": {
-            "2": "Non-Playable"
+            "type": "flags",
+            "flags": {
+                "2": "Non-Playable"
+            }
         },
         "members": [
             {
@@ -24,8 +27,11 @@
                     "name": "Playable",
                     "type": "uint32",
                     "format": {
-                        "0": "False",
-                        "1": "True"
+                        "type": "enum",
+                        "options": {
+                            "0": "False",
+                            "1": "True"
+                        }
                     }
                 }
             }

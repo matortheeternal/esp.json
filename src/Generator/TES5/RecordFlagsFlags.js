@@ -1,10 +1,10 @@
 let {
-    addDef
+    addDef, flags
 } = require('../helpers');
 
 module.exports = () => {
     addDef('RecordFlagsFlags', 
-        {
+        flags({
             0: 'Unknown 0',
             1: 'Unknown 1',
             2: 'Unknown 2',
@@ -37,6 +37,6 @@ module.exports = () => {
             29: 'Unknown 29',
             30: 'Unknown 30',
             31: 'Unknown 31'
-        }
+        })
     );
 };

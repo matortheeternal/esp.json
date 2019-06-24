@@ -1,7 +1,7 @@
 let {
     def, subrecord, string, bytes, size, 
     uint32, format, float, ckFormId, struct, 
-    req, record
+    flags, req, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -116,7 +116,7 @@ module.exports = () => {
                     uint32('Frame Count'),
                     uint32('Frame Count Variation')
                 ]),
-                format(uint32('Flags'), {
+                format(uint32('Flags'), flags({
                     0: 'No Membrane Shader',
                     1: 'Membrane Grayscale Color',
                     2: 'Membrane Grayscale Alpha',
@@ -142,7 +142,7 @@ module.exports = () => {
                     22: 'Unknown 22',
                     23: 'Unknown 23',
                     24: 'Use Blood Geometry'
-                }),
+                })),
                 float('Fill/Texture Effect - Texture Scale (U)'),
                 float('Fill/Texture Effect - Texture Scale (V)'),
                 uint32('Scene Graph Emit Depth Limit (unused)')

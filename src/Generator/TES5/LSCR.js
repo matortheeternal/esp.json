@@ -1,13 +1,13 @@
 let {
-    def, req, subrecord, ckFormId, float, 
-    int16, struct, string, record
+    flags, def, req, subrecord, ckFormId, 
+    float, int16, struct, string, record
 } = require('../helpers');
 
 module.exports = () => {
     record('LSCR', 'Load Screen', {
-        flags: {
+        flags: flags({
             10: 'Displays In Main Menu'
-        },
+        }),
         members: [
             def('EDID'),
             def('ICON'),

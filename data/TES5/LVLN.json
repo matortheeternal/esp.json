@@ -21,8 +21,11 @@
                     "name": "Flags",
                     "type": "uint8",
                     "format": {
-                        "0": "Calculate from all levels <= player's level",
-                        "1": "Calculate for each item in count"
+                        "type": "flags",
+                        "flags": {
+                            "0": "Calculate from all levels <= player's level",
+                            "1": "Calculate for each item in count"
+                        }
                     }
                 }
             },

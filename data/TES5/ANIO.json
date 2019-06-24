@@ -4,7 +4,10 @@
     "name": "Animated Object",
     "def": {
         "flags": {
-            "9": "Unknown 9"
+            "type": "flags",
+            "flags": {
+                "9": "Unknown 9"
+            }
         },
         "members": [
             {

@@ -1,8 +1,9 @@
 let {
     def, subrecord, localized, string, req, 
-    float, uint8, format, int8, uint16, 
-    ckFormId, int32, struct, bytes, size, 
-    arrayOfStruct, sortKey, multiStruct, record
+    float, flags, uint8, format, enumeration, 
+    int8, uint16, ckFormId, int32, struct, 
+    bytes, size, arrayOfStruct, sortKey, multiStruct, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
@@ -19,7 +20,7 @@ module.exports = () => {
                     req(subrecord('BPNI', string('IK Data - Start Node'))),
                     req(subrecord('BPND', struct('', [
                         float('Damage Mult'),
-                        format(uint8('Flags'), {
+                        format(uint8('Flags'), flags({
                             0: 'Severable',
                             1: 'IK Data',
                             2: 'IK Data - Biped Data',
@@ -27,15 +28,15 @@ module.exports = () => {
                             4: 'IK Data - Is Head',
                             5: 'IK Data - Headtracking',
                             6: 'To Hit Chance - Absolute'
-                        }),
-                        format(uint8('Part Type'), {
+                        })),
+                        format(uint8('Part Type'), enumeration({
                             0: 'Torso',
                             1: 'Head',
                             2: 'Eye',
                             3: 'LookAt',
                             4: 'Fly Grab',
                             5: 'Saddle'
-                        }),
+                        })),
                         uint8('Health Percent'),
                         format(int8('Actor Value'), def('ActorValueEnum')),
                         uint8('To Hit Chance'),

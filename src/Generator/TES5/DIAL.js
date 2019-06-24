@@ -1,7 +1,7 @@
 let {
     def, subrecord, float, req, ckFormId, 
-    uint8, format, uint16, struct, string, 
-    size, uint32, record
+    flags, uint8, format, enumeration, uint16, 
+    struct, string, size, uint32, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -13,10 +13,10 @@ module.exports = () => {
             subrecord('BNAM', ckFormId('Branch', ['DLBR', 'NULL'])),
             req(subrecord('QNAM', ckFormId('Quest', ['QUST', 'NULL']))),
             subrecord('DATA', struct('Data', [
-                format(uint8('Topic Flags'), {
+                format(uint8('Topic Flags'), flags({
                     0: 'Do All Before Repeating'
-                }),
-                format(uint8('Category'), {
+                })),
+                format(uint8('Category'), enumeration({
                     0: 'Topic',
                     1: 'Favor',
                     2: 'Scene',
@@ -25,8 +25,8 @@ module.exports = () => {
                     5: 'Detection',
                     6: 'Service',
                     7: 'Miscellaneous'
-                }),
-                format(uint16('Subtype'), {
+                })),
+                format(uint16('Subtype'), enumeration({
                     0: 'Custom',
                     1: 'ForceGreet',
                     2: 'Rumors',
@@ -130,7 +130,7 @@ module.exports = () => {
                     100: 'OutofBreath',
                     101: 'CombatGrunt',
                     102: 'LeaveWaterBreath'
-                })
+                }))
             ])),
             subrecord('SNAM', size(4, string('Subtype Name'))),
             subrecord('TIFC', uint32('Info Count'))

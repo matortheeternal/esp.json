@@ -1,10 +1,10 @@
 let {
-    addDef
+    addDef, enumeration
 } = require('../helpers');
 
 module.exports = () => {
     addDef('PropTypeEnum', 
-        {
+        enumeration({
             0: 'None',
             1: 'Object',
             2: 'String',
@@ -21,6 +21,6 @@ module.exports = () => {
             13: 'Array of Int32',
             14: 'Array of Float',
             15: 'Array of Bool'
-        }
+        })
     );
 };

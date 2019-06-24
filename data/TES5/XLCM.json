@@ -5,10 +5,13 @@
         "name": "Level Modifier",
         "type": "int32",
         "format": {
-            "0": "Easy",
-            "1": "Medium",
-            "2": "Hard",
-            "3": "Very Hard"
+            "type": "enum",
+            "options": {
+                "0": "Easy",
+                "1": "Medium",
+                "2": "Hard",
+                "3": "Very Hard"
+            }
         }
     }
 }

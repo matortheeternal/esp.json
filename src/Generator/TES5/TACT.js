@@ -1,15 +1,15 @@
 let {
-    def, req, subrecord, unknown, ckFormId, 
-    record
+    flags, def, req, subrecord, unknown, 
+    ckFormId, record
 } = require('../helpers');
 
 module.exports = () => {
     record('TACT', 'Talking Activator', {
-        flags: {
+        flags: flags({
             9: 'Hidden From Local Map',
             16: 'Random Anim Start',
             17: 'Radio Station'
-        },
+        }),
         members: [
             def('EDID'),
             def('VMAD'),

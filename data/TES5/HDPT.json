@@ -4,7 +4,10 @@
     "name": "Head Part",
     "def": {
         "flags": {
-            "2": "Non-Playable"
+            "type": "flags",
+            "flags": {
+                "2": "Non-Playable"
+            }
         },
         "members": [
             {
@@ -23,11 +26,14 @@
                     "name": "Flags",
                     "type": "uint8",
                     "format": {
-                        "0": "Playable",
-                        "1": "Male",
-                        "2": "Female",
-                        "3": "Is Extra Part",
-                        "4": "Use Solid Tint"
+                        "type": "flags",
+                        "flags": {
+                            "0": "Playable",
+                            "1": "Male",
+                            "2": "Female",
+                            "3": "Is Extra Part",
+                            "4": "Use Solid Tint"
+                        }
                     }
                 }
             },
@@ -38,13 +44,16 @@
                     "name": "Type",
                     "type": "uint32",
                     "format": {
-                        "0": "Misc",
-                        "1": "Face",
-                        "2": "Eyes",
-                        "3": "Hair",
-                        "4": "Facial Hair",
-                        "5": "Scar",
-                        "6": "Eyebrows"
+                        "type": "enum",
+                        "options": {
+                            "0": "Misc",
+                            "1": "Face",
+                            "2": "Eyes",
+                            "3": "Hair",
+                            "4": "Facial Hair",
+                            "5": "Scar",
+                            "6": "Eyebrows"
+                        }
                     }
                 }
             },
@@ -77,9 +86,12 @@
                                 "name": "Part Type",
                                 "type": "uint32",
                                 "format": {
-                                    "0": "Race Morph",
-                                    "1": "Tri",
-                                    "2": "Chargen Morph"
+                                    "type": "enum",
+                                    "options": {
+                                        "0": "Race Morph",
+                                        "1": "Tri",
+                                        "2": "Chargen Morph"
+                                    }
                                 }
                             }
                         },

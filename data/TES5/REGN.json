@@ -4,7 +4,10 @@
     "name": "Region",
     "def": {
         "flags": {
-            "6": "Border Region"
+            "type": "flags",
+            "flags": {
+                "6": "Border Region"
+            }
         },
         "members": [
             {
@@ -110,29 +113,35 @@
                                         "name": "Type",
                                         "type": "uint32",
                                         "format": {
-                                            "0": "Unknown 0",
-                                            "1": "Unknown 1",
-                                            "2": "Objects",
-                                            "3": "Weather",
-                                            "4": "Map",
-                                            "5": "Land",
-                                            "6": "Grass",
-                                            "7": "Sound",
-                                            "8": "Imposter",
-                                            "9": "Unknown 10",
-                                            "10": "Unknown 11",
-                                            "11": "Unknown 12",
-                                            "12": "Unknown 13",
-                                            "13": "Unknown 14",
-                                            "14": "Unknown 15",
-                                            "15": "Unknown 16"
+                                            "type": "enum",
+                                            "options": {
+                                                "0": "Unknown 0",
+                                                "1": "Unknown 1",
+                                                "2": "Objects",
+                                                "3": "Weather",
+                                                "4": "Map",
+                                                "5": "Land",
+                                                "6": "Grass",
+                                                "7": "Sound",
+                                                "8": "Imposter",
+                                                "9": "Unknown 10",
+                                                "10": "Unknown 11",
+                                                "11": "Unknown 12",
+                                                "12": "Unknown 13",
+                                                "13": "Unknown 14",
+                                                "14": "Unknown 15",
+                                                "15": "Unknown 16"
+                                            }
                                         }
                                     },
                                     {
                                         "name": "Flags",
                                         "type": "uint8",
                                         "format": {
-                                            "0": "Override"
+                                            "type": "flags",
+                                            "flags": {
+                                                "0": "Override"
+                                            }
                                         }
                                     },
                                     {
@@ -186,10 +195,13 @@
                                             "name": "Flags",
                                             "type": "uint32",
                                             "format": {
-                                                "0": "Pleasant",
-                                                "1": "Cloudy",
-                                                "2": "Rainy",
-                                                "3": "Snowy"
+                                                "type": "flags",
+                                                "flags": {
+                                                    "0": "Pleasant",
+                                                    "1": "Cloudy",
+                                                    "2": "Rainy",
+                                                    "3": "Snowy"
+                                                }
                                             }
                                         },
                                         {
@@ -269,14 +281,17 @@
                                             "name": "Flags",
                                             "type": "uint8",
                                             "format": {
-                                                "0": "Conform to slope",
-                                                "1": "Paint Vertices",
-                                                "2": "Size Variance +/-",
-                                                "3": "X +/-",
-                                                "4": "Y +/-",
-                                                "5": "Z +/-",
-                                                "6": "Tree",
-                                                "7": "Huge Rock"
+                                                "type": "flags",
+                                                "flags": {
+                                                    "0": "Conform to slope",
+                                                    "1": "Paint Vertices",
+                                                    "2": "Size Variance +/-",
+                                                    "3": "X +/-",
+                                                    "4": "Y +/-",
+                                                    "5": "Z +/-",
+                                                    "6": "Tree",
+                                                    "7": "Huge Rock"
+                                                }
                                             }
                                         },
                                         {

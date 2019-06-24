@@ -1,25 +1,26 @@
 let {
-    def, req, uint32, format, int16, 
-    div, union, uint16, subrecord, struct, 
-    ckFormId, int8, bytes, size, sortKey, 
-    arrayOfSubrecord, uint8, localized, string, array, 
-    float, unknown, int32, multiStruct, record
+    flags, def, req, uint32, format, 
+    int16, div, union, uint16, subrecord, 
+    struct, ckFormId, int8, bytes, size, 
+    sortKey, arrayOfSubrecord, uint8, localized, string, 
+    array, float, unknown, int32, multiStruct, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
     record('NPC_', 'Non-Player Character (Actor)', {
-        flags: {
+        flags: flags({
             10: 'Unknown 10',
             18: 'Compressed',
             19: 'Unknown 19',
             29: 'Bleedout Override'
-        },
+        }),
         members: [
             def('EDID'),
             def('VMAD'),
             req(def('OBND')),
             req(subrecord('ACBS', struct('Configuration', [
-                format(uint32('Flags'), {
+                format(uint32('Flags'), flags({
                     0: 'Female',
                     1: 'Essential',
                     2: 'Is CharGen Face Preset',
@@ -52,7 +53,7 @@ module.exports = () => {
                     29: 'Is Ghost',
                     30: 'Unknown 30',
                     31: 'Invulnerable'
-                }),
+                })),
                 int16('Magicka Offset'),
                 int16('Stamina Offset'),
                 req(union('Level', [
@@ -63,7 +64,7 @@ module.exports = () => {
                 uint16('Calc max level'),
                 uint16('Speed Multiplier'),
                 int16('Disposition Base (unused)'),
-                format(uint16('Template Flags'), {
+                format(uint16('Template Flags'), flags({
                     0: 'Use Traits',
                     1: 'Use Stats',
                     2: 'Use Factions',
@@ -77,7 +78,7 @@ module.exports = () => {
                     10: 'Use Def Pack List',
                     11: 'Use Attack Data',
                     12: 'Use Keywords'
-                }),
+                })),
                 int16('Health Offset'),
                 uint16('Bleedout Override')
             ]))),

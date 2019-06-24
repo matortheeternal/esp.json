@@ -1,7 +1,7 @@
 let {
-    def, float, uint32, format, uint8, 
-    bytes, size, subrecord, struct, req, 
-    ckFormId, record
+    def, float, enumeration, uint32, format, 
+    flags, uint8, bytes, size, subrecord, 
+    struct, req, ckFormId, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -11,24 +11,24 @@ module.exports = () => {
             def('MODL'),
             req(subrecord('DATA', struct('', [
                 float('Effect - Duration'),
-                format(uint32('Effect - Orientation'), {
+                format(uint32('Effect - Orientation'), enumeration({
                     0: 'Surface Normal',
                     1: 'Projectile Vector',
                     2: 'Projectile Reflection'
-                }),
+                })),
                 float('Angle Threshold'),
                 float('Placement Radius'),
                 format(uint32('Sound Level'), def('SoundLevelEnum')),
-                format(uint8('Flags'), {
+                format(uint8('Flags'), flags({
                     0: 'No Decal Data'
-                }),
-                format(uint8('Impact Result'), {
+                })),
+                format(uint8('Impact Result'), enumeration({
                     0: 'Default',
                     1: 'Destroy',
                     2: 'Bounce',
                     3: 'Impale',
                     4: 'Stick'
-                }),
+                })),
                 size(2, bytes('Unknown'))
             ]))),
             def('DODT'),

@@ -1,7 +1,8 @@
 let {
-    def, subrecord, uint32, format, empty, 
-    string, multiStruct, unknown, req, arrayOfSubrecord, 
-    uint16, int32, float, ckFormId, record
+    def, flags, subrecord, uint32, format, 
+    empty, string, multiStruct, unknown, req, 
+    arrayOfSubrecord, enumeration, uint16, int32, float, 
+    ckFormId, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -9,13 +10,13 @@ module.exports = () => {
         members: [
             def('EDID'),
             def('VMADFragmentedSCEN'),
-            subrecord('FNAM', format(uint32('Flags'), {
+            subrecord('FNAM', format(uint32('Flags'), flags({
                 0: 'Begin on Quest Start',
                 1: 'Stop on Quest End',
                 2: 'Unknown 3',
                 3: 'Repeat Conditions While True',
                 4: 'Interruptible'
-            })),
+            }))),
             arrayOfSubrecord('Phases', 
                 multiStruct('Phase', [
                     subrecord('HNAM', empty('Marker Phase Start')),
@@ -49,11 +50,11 @@ module.exports = () => {
             arrayOfSubrecord('Actors', 
                 multiStruct('Actor', [
                     subrecord('ALID', uint32('Actor ID')),
-                    subrecord('LNAM', format(uint32('Flags'), {
+                    subrecord('LNAM', format(uint32('Flags'), flags({
                         0: 'No Player Activation',
                         1: 'Optional'
-                    })),
-                    subrecord('DNAM', format(uint32('Behaviour Flags'), {
+                    }))),
+                    subrecord('DNAM', format(uint32('Behaviour Flags'), flags({
                         0: 'Death Pause (unsused)',
                         1: 'Death End',
                         2: 'Combat Pause',
@@ -62,21 +63,21 @@ module.exports = () => {
                         5: 'Dialogue End',
                         6: 'OBS_COM Pause',
                         7: 'OBS_COM End'
-                    }))
+                    })))
                 ])
             ),
             arrayOfSubrecord('Actions', 
                 multiStruct('Action', [
-                    subrecord('ANAM', format(uint16('Type'), {
+                    subrecord('ANAM', format(uint16('Type'), enumeration({
                         0: 'Dialogue',
                         1: 'Package',
                         2: 'Timer'
-                    })),
+                    }))),
                     subrecord('NAM0', string('Name')),
                     subrecord('ALID', int32('Actor ID')),
                     subrecord('LNAM', unknown()),
                     subrecord('INAM', uint32('Index')),
-                    subrecord('FNAM', format(uint32('Flags'), {
+                    subrecord('FNAM', format(uint32('Flags'), flags({
                         0: 'Unknown 1',
                         1: 'Unknown 2',
                         2: 'Unknown 3',
@@ -95,7 +96,7 @@ module.exports = () => {
                         15: 'Face Target',
                         16: 'Looping',
                         17: 'Headtrack Player'
-                    })),
+                    }))),
                     subrecord('SNAM', uint32('Start Phase')),
                     subrecord('ENAM', uint32('End Phase')),
                     subrecord('SNAM', float('Timer Seconds')),

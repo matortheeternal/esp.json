@@ -1,6 +1,7 @@
 let {
-    def, uint32, format, float, struct, 
-    subrecord, array, multiStruct, unknown, record
+    def, flags, uint32, format, float, 
+    struct, subrecord, array, multiStruct, unknown, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
@@ -8,9 +9,9 @@ module.exports = () => {
         members: [
             def('EDID'),
             subrecord('DNAM', struct('Data Count', [
-                format(uint32('Flags'), {
+                format(uint32('Flags'), flags({
                     0: 'Animatable'
-                }),
+                })),
                 float('Duration'),
                 struct('HDR', [
                     uint32('Eye Adapt Speed Mult'),
@@ -64,15 +65,15 @@ module.exports = () => {
                 uint32('Radial Blur Strength'),
                 uint32('Radial Blur Ramp Up'),
                 uint32('Radial Blur Start'),
-                format(uint32('Radial Blur Flags'), {
+                format(uint32('Radial Blur Flags'), flags({
                     0: 'Use Target'
-                }),
+                })),
                 float('Radial Blur Center X'),
                 float('Radial Blur Center Y'),
                 uint32('DoF Strength'),
                 uint32('DoF Distance'),
                 uint32('DoF Range'),
-                format(uint32('DoF Flags'), {
+                format(uint32('DoF Flags'), flags({
                     0: 'Use Target',
                     1: 'Unknown 2',
                     2: 'Unknown 3',
@@ -87,7 +88,7 @@ module.exports = () => {
                     11: 'Blur Radius Bit 2',
                     12: 'Blur Radius Bit 1',
                     13: 'Blur Radius Bit 0'
-                }),
+                })),
                 uint32('Radial Blur Ramp Down'),
                 uint32('Radial Blur Down Start'),
                 uint32('Fade Color'),

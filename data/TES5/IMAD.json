@@ -18,7 +18,10 @@
                             "name": "Flags",
                             "type": "uint32",
                             "format": {
-                                "0": "Animatable"
+                                "type": "flags",
+                                "flags": {
+                                    "0": "Animatable"
+                                }
                             }
                         },
                         {
@@ -234,7 +237,10 @@
                             "name": "Radial Blur Flags",
                             "type": "uint32",
                             "format": {
-                                "0": "Use Target"
+                                "type": "flags",
+                                "flags": {
+                                    "0": "Use Target"
+                                }
                             }
                         },
                         {
@@ -263,20 +269,23 @@
                             "name": "DoF Flags",
                             "type": "uint32",
                             "format": {
-                                "0": "Use Target",
-                                "1": "Unknown 2",
-                                "2": "Unknown 3",
-                                "3": "Unknown 4",
-                                "4": "Unknown 5",
-                                "5": "Unknown 6",
-                                "6": "Unknown 7",
-                                "7": "Unknown 8",
-                                "8": "Mode - Front",
-                                "9": "Mode - Back",
-                                "10": "No Sky",
-                                "11": "Blur Radius Bit 2",
-                                "12": "Blur Radius Bit 1",
-                                "13": "Blur Radius Bit 0"
+                                "type": "flags",
+                                "flags": {
+                                    "0": "Use Target",
+                                    "1": "Unknown 2",
+                                    "2": "Unknown 3",
+                                    "3": "Unknown 4",
+                                    "4": "Unknown 5",
+                                    "5": "Unknown 6",
+                                    "6": "Unknown 7",
+                                    "7": "Unknown 8",
+                                    "8": "Mode - Front",
+                                    "9": "Mode - Back",
+                                    "10": "No Sky",
+                                    "11": "Blur Radius Bit 2",
+                                    "12": "Blur Radius Bit 1",
+                                    "13": "Blur Radius Bit 0"
+                                }
                             }
                         },
                         {

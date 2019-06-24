@@ -24,19 +24,22 @@
                             "name": "Flags",
                             "type": "uint16",
                             "format": {
-                                "0": "Start Game Enabled",
-                                "1": "Unknown 2",
-                                "2": "Unknown 3",
-                                "3": "Allow repeated stages",
-                                "4": "Unknown 5",
-                                "5": "Unknown 6",
-                                "6": "Unknown 7",
-                                "7": "Unknown 8",
-                                "8": "Run Once",
-                                "9": "Exclude from dialogue export",
-                                "10": "Warn on alias fill failure",
-                                "11": "Unknown 12",
-                                "12": "Unknown 13"
+                                "type": "flags",
+                                "flags": {
+                                    "0": "Start Game Enabled",
+                                    "1": "Unknown 2",
+                                    "2": "Unknown 3",
+                                    "3": "Allow repeated stages",
+                                    "4": "Unknown 5",
+                                    "5": "Unknown 6",
+                                    "6": "Unknown 7",
+                                    "7": "Unknown 8",
+                                    "8": "Run Once",
+                                    "9": "Exclude from dialogue export",
+                                    "10": "Warn on alias fill failure",
+                                    "11": "Unknown 12",
+                                    "12": "Unknown 13"
+                                }
                             }
                         },
                         {
@@ -137,10 +140,13 @@
                                         "name": "Flags",
                                         "type": "uint8",
                                         "format": {
-                                            "0": "Unknown 1",
-                                            "1": "Start Up Stage",
-                                            "2": "Shut Down Stage",
-                                            "3": "Keep Instance Data From Here On"
+                                            "type": "flags",
+                                            "flags": {
+                                                "0": "Unknown 1",
+                                                "1": "Start Up Stage",
+                                                "2": "Shut Down Stage",
+                                                "3": "Keep Instance Data From Here On"
+                                            }
                                         }
                                     },
                                     {
@@ -167,8 +173,11 @@
                                             "name": "Stage Flags",
                                             "type": "uint8",
                                             "format": {
-                                                "0": "Complete Quest",
-                                                "1": "Fail Quest"
+                                                "type": "flags",
+                                                "flags": {
+                                                    "0": "Complete Quest",
+                                                    "1": "Fail Quest"
+                                                }
                                             }
                                         }
                                     },
@@ -253,7 +262,10 @@
                                 "name": "Flags",
                                 "type": "uint32",
                                 "format": {
-                                    "0": "ORed With Previous"
+                                    "type": "flags",
+                                    "flags": {
+                                        "0": "ORed With Previous"
+                                    }
                                 }
                             }
                         },
@@ -292,7 +304,10 @@
                                                     "name": "Flags",
                                                     "type": "uint8",
                                                     "format": {
-                                                        "0": "Compass Marker Ignores Locks"
+                                                        "type": "flags",
+                                                        "flags": {
+                                                            "0": "Compass Marker Ignores Locks"
+                                                        }
                                                     }
                                                 },
                                                 {
@@ -488,8 +503,11 @@
                                                         "name": "Create",
                                                         "type": "uint16",
                                                         "format": {
-                                                            "0": "At",
-                                                            "32768": "In"
+                                                            "type": "enum",
+                                                            "options": {
+                                                                "0": "At",
+                                                                "32768": "In"
+                                                            }
                                                         }
                                                     }
                                                 ]
@@ -502,11 +520,14 @@
                                                 "name": "Level",
                                                 "type": "uint32",
                                                 "format": {
-                                                    "0": "Easy",
-                                                    "1": "Medium",
-                                                    "2": "Hard",
-                                                    "3": "Very Hard",
-                                                    "4": "None"
+                                                    "type": "enum",
+                                                    "options": {
+                                                        "0": "Easy",
+                                                        "1": "Medium",
+                                                        "2": "Hard",
+                                                        "3": "Very Hard",
+                                                        "4": "None"
+                                                    }
                                                 }
                                             }
                                         }
@@ -534,7 +555,10 @@
                                                 "name": "Type",
                                                 "type": "uint32",
                                                 "format": {
-                                                    "0": "Linked Ref Child"
+                                                    "type": "enum",
+                                                    "options": {
+                                                        "0": "Linked Ref Child"
+                                                    }
                                                 }
                                             }
                                         }
@@ -872,8 +896,11 @@
                                                         "name": "Create",
                                                         "type": "uint16",
                                                         "format": {
-                                                            "0": "At",
-                                                            "32768": "In"
+                                                            "type": "enum",
+                                                            "options": {
+                                                                "0": "At",
+                                                                "32768": "In"
+                                                            }
                                                         }
                                                     }
                                                 ]
@@ -886,11 +913,14 @@
                                                 "name": "Level",
                                                 "type": "uint32",
                                                 "format": {
-                                                    "0": "Easy",
-                                                    "1": "Medium",
-                                                    "2": "Hard",
-                                                    "3": "Very Hard",
-                                                    "4": "None"
+                                                    "type": "enum",
+                                                    "options": {
+                                                        "0": "Easy",
+                                                        "1": "Medium",
+                                                        "2": "Hard",
+                                                        "3": "Very Hard",
+                                                        "4": "None"
+                                                    }
                                                 }
                                             }
                                         }
@@ -918,7 +948,10 @@
                                                 "name": "Type",
                                                 "type": "uint32",
                                                 "format": {
-                                                    "0": "Linked Ref Child"
+                                                    "type": "enum",
+                                                    "options": {
+                                                        "0": "Linked Ref Child"
+                                                    }
                                                 }
                                             }
                                         }
@@ -1141,7 +1174,10 @@
                                         "name": "Flags",
                                         "type": "uint8",
                                         "format": {
-                                            "0": "Compass Marker Ignores Locks"
+                                            "type": "flags",
+                                            "flags": {
+                                                "0": "Compass Marker Ignores Locks"
+                                            }
                                         }
                                     },
                                     {

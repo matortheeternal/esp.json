@@ -54,12 +54,15 @@
                                 "name": "Type",
                                 "type": "uint32",
                                 "format": {
-                                    "0": "Sheathe/Draw",
-                                    "1": "Charge",
-                                    "2": "Ready",
-                                    "3": "Release",
-                                    "4": "Concentration Cast Loop",
-                                    "5": "On Hit"
+                                    "type": "enum",
+                                    "options": {
+                                        "0": "Sheathe/Draw",
+                                        "1": "Charge",
+                                        "2": "Ready",
+                                        "3": "Release",
+                                        "4": "Concentration Cast Loop",
+                                        "5": "On Hit"
+                                    }
                                 }
                             },
                             {

@@ -1,6 +1,7 @@
 let {
-    addDef, float, ckFormId, uint32, format, 
-    subrecord, struct, string, sortKey, multiStruct
+    addDef, float, ckFormId, flags, uint32, 
+    format, subrecord, struct, string, sortKey, 
+    multiStruct
 } = require('../helpers');
 
 module.exports = () => {
@@ -12,7 +13,7 @@ module.exports = () => {
                 ckFormId('Attack Spell', [
                     'SPEL',    'SHOU',    'NULL'
                 ]),
-                format(uint32('Attack Flags'), {
+                format(uint32('Attack Flags'), flags({
                     0: 'Ignore Weapon',
                     1: 'Bash Attack',
                     2: 'Power Attack',
@@ -45,7 +46,7 @@ module.exports = () => {
                     29: 'Unknown 29',
                     30: 'Unknown 30',
                     31: 'Override Data'
-                }),
+                })),
                 float('Attack Angle'),
                 float('Strike Angle'),
                 float('Stagger'),

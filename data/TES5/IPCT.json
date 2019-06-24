@@ -26,9 +26,12 @@
                             "name": "Effect - Orientation",
                             "type": "uint32",
                             "format": {
-                                "0": "Surface Normal",
-                                "1": "Projectile Vector",
-                                "2": "Projectile Reflection"
+                                "type": "enum",
+                                "options": {
+                                    "0": "Surface Normal",
+                                    "1": "Projectile Vector",
+                                    "2": "Projectile Reflection"
+                                }
                             }
                         },
                         {
@@ -52,18 +55,24 @@
                             "name": "Flags",
                             "type": "uint8",
                             "format": {
-                                "0": "No Decal Data"
+                                "type": "flags",
+                                "flags": {
+                                    "0": "No Decal Data"
+                                }
                             }
                         },
                         {
                             "name": "Impact Result",
                             "type": "uint8",
                             "format": {
-                                "0": "Default",
-                                "1": "Destroy",
-                                "2": "Bounce",
-                                "3": "Impale",
-                                "4": "Stick"
+                                "type": "enum",
+                                "options": {
+                                    "0": "Default",
+                                    "1": "Destroy",
+                                    "2": "Bounce",
+                                    "3": "Impale",
+                                    "4": "Stick"
+                                }
                             }
                         },
                         {

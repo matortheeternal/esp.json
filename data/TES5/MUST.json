@@ -14,9 +14,12 @@
                     "name": "Track Type",
                     "type": "uint32",
                     "format": {
-                        "603355331": "Palette",
-                        "1859641416": "Single Track",
-                        "2712257749": "Silent Track"
+                        "type": "enum",
+                        "options": {
+                            "603355331": "Palette",
+                            "1859641416": "Single Track",
+                            "2712257749": "Silent Track"
+                        }
                     }
                 }
             },

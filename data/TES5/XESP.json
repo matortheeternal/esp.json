@@ -26,8 +26,11 @@
                 "name": "Flags",
                 "type": "uint8",
                 "format": {
-                    "0": "Set Enable State to Opposite of Parent",
-                    "1": "Pop In"
+                    "type": "flags",
+                    "flags": {
+                        "0": "Set Enable State to Opposite of Parent",
+                        "1": "Pop In"
+                    }
                 }
             },
             {

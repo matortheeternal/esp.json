@@ -1,7 +1,8 @@
 let {
-    def, req, uint16, format, float, 
-    ckFormId, subrecord, struct, string, bytes, 
-    sortKey, multiStruct, uint32, record
+    def, req, flags, uint16, format, 
+    enumeration, float, ckFormId, subrecord, struct, 
+    string, bytes, sortKey, multiStruct, uint32, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
@@ -13,7 +14,7 @@ module.exports = () => {
             def('MODL'),
             def('DEST'),
             req(subrecord('DATA', struct('Data', [
-                format(uint16('Flags'), {
+                format(uint16('Flags'), flags({
                     0: 'Hitscan',
                     1: 'Explosion',
                     2: 'Alt. Trigger',
@@ -26,8 +27,8 @@ module.exports = () => {
                     9: 'Pass Through Small Transparent',
                     10: 'Disable Combat Aim Correction',
                     11: 'Rotation'
-                }),
-                format(uint16('Type'), {
+                })),
+                format(uint16('Type'), enumeration({
                     1: 'Missile',
                     2: 'Lobber',
                     4: 'Beam',
@@ -35,7 +36,7 @@ module.exports = () => {
                     16: 'Cone',
                     32: 'Barrier',
                     64: 'Arrow'
-                }),
+                })),
                 float('Gravity'),
                 float('Speed'),
                 float('Range'),

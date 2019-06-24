@@ -4,15 +4,18 @@
     "name": "Moveable Static",
     "def": {
         "flags": {
-            "8": "Must Update Anims",
-            "9": "Hidden From Local Map",
-            "15": "Has Distant LOD",
-            "16": "Random Anim Start",
-            "19": "Has Currents",
-            "25": "Obstacle",
-            "26": "NavMesh Generation - Filter",
-            "27": "NavMesh Generation - Bounding Box",
-            "30": "NavMesh Generation - Ground"
+            "type": "flags",
+            "flags": {
+                "8": "Must Update Anims",
+                "9": "Hidden From Local Map",
+                "15": "Has Distant LOD",
+                "16": "Random Anim Start",
+                "19": "Has Currents",
+                "25": "Obstacle",
+                "26": "NavMesh Generation - Filter",
+                "27": "NavMesh Generation - Bounding Box",
+                "30": "NavMesh Generation - Ground"
+            }
         },
         "members": [
             {
@@ -38,9 +41,12 @@
                     "name": "Flags",
                     "type": "uint8",
                     "format": {
-                        "0": "On Local Map",
-                        "1": "Unknown 1",
-                        "2": "Unknown 2"
+                        "type": "flags",
+                        "flags": {
+                            "0": "On Local Map",
+                            "1": "Unknown 1",
+                            "2": "Unknown 2"
+                        }
                     }
                 }
             },

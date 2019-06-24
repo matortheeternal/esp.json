@@ -1,12 +1,12 @@
 let {
-    def, req, uint8, subrecord, struct, 
-    ckFormId, localized, string, uint16, format, 
-    record
+    flags, def, req, uint8, subrecord, 
+    struct, ckFormId, localized, string, uint16, 
+    format, record
 } = require('../helpers');
 
 module.exports = () => {
     record('ACTI', 'Activator', {
-        flags: {
+        flags: flags({
             6: 'Has Tree LOD',
             8: 'Must Update Anims',
             9: 'Hidden From Local Map',
@@ -20,7 +20,7 @@ module.exports = () => {
             27: 'NavMesh Generation - Bounding Box',
             29: 'Child Can Use',
             30: 'NavMesh Generation - Ground'
-        },
+        }),
         members: [
             def('EDID'),
             def('VMAD'),
@@ -40,10 +40,10 @@ module.exports = () => {
             subrecord('VNAM', ckFormId('Sound - Activation', ['SNDR'])),
             subrecord('WNAM', ckFormId('Water Type', ['WATR'])),
             subrecord('RNAM', localized(string('Activate Text Override'))),
-            subrecord('FNAM', format(uint16('Flags'), {
+            subrecord('FNAM', format(uint16('Flags'), flags({
                 0: 'No Displacement',
                 1: 'Ignored by Sandbox'
-            })),
+            }))),
             subrecord('KNAM', ckFormId('Interaction Keyword', ['KYWD']))
         ]
     })

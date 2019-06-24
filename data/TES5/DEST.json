@@ -21,8 +21,11 @@
                         "name": "VATS Targetable",
                         "type": "uint8",
                         "format": {
-                            "0": "False",
-                            "1": "True"
+                            "type": "enum",
+                            "options": {
+                                "0": "False",
+                                "1": "True"
+                            }
                         }
                     },
                     {
@@ -63,10 +66,13 @@
                                     "name": "Flags",
                                     "type": "uint8",
                                     "format": {
-                                        "0": "Cap Damage",
-                                        "1": "Disable",
-                                        "2": "Destroy",
-                                        "3": "Ignore External Dmg"
+                                        "type": "flags",
+                                        "flags": {
+                                            "0": "Cap Damage",
+                                            "1": "Disable",
+                                            "2": "Destroy",
+                                            "3": "Ignore External Dmg"
+                                        }
                                     }
                                 },
                                 {

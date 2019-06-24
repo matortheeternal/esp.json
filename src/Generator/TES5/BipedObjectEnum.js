@@ -1,10 +1,10 @@
 let {
-    addDef
+    addDef, enumeration
 } = require('../helpers');
 
 module.exports = () => {
     addDef('BipedObjectEnum', 
-        {
+        enumeration({
             0: '30 - Head',
             1: '31 - Hair',
             2: '32 - Body',
@@ -38,6 +38,6 @@ module.exports = () => {
             30: '60 - Unnamed',
             31: '61 - FX01',
             "-1": 'None'
-        }
+        })
     );
 };

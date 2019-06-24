@@ -4,7 +4,10 @@
     "name": "Perk",
     "def": {
         "flags": {
-            "2": "Non-Playable"
+            "type": "flags",
+            "flags": {
+                "2": "Non-Playable"
+            }
         },
         "members": [
             {
@@ -37,8 +40,11 @@
                             "name": "Trait",
                             "type": "uint8",
                             "format": {
-                                "0": "False",
-                                "1": "True"
+                                "type": "enum",
+                                "options": {
+                                    "0": "False",
+                                    "1": "True"
+                                }
                             }
                         },
                         {
@@ -53,16 +59,22 @@
                             "name": "Playable",
                             "type": "uint8",
                             "format": {
-                                "0": "False",
-                                "1": "True"
+                                "type": "enum",
+                                "options": {
+                                    "0": "False",
+                                    "1": "True"
+                                }
                             }
                         },
                         {
                             "name": "Hidden",
                             "type": "uint8",
                             "format": {
-                                "0": "False",
-                                "1": "True"
+                                "type": "enum",
+                                "options": {
+                                    "0": "False",
+                                    "1": "True"
+                                }
                             }
                         }
                     ]
@@ -99,9 +111,12 @@
                                         "name": "Type",
                                         "type": "uint8",
                                         "format": {
-                                            "0": "Quest + Stage",
-                                            "1": "Ability",
-                                            "2": "Entry Point"
+                                            "type": "enum",
+                                            "options": {
+                                                "0": "Quest + Stage",
+                                                "1": "Ability",
+                                                "2": "Entry Point"
+                                            }
                                         }
                                     },
                                     {
@@ -178,22 +193,25 @@
                                                 "name": "Function",
                                                 "type": "uint8",
                                                 "format": {
-                                                    "0": "Unknown 0",
-                                                    "1": "Set Value",
-                                                    "2": "Add Value",
-                                                    "3": "Multiply Value",
-                                                    "4": "Add Range To Value",
-                                                    "5": "Add Actor Value Mult",
-                                                    "6": "Absolute Value",
-                                                    "7": "Negative Absolute Value",
-                                                    "8": "Add Leveled List",
-                                                    "9": "Add Activate Choice",
-                                                    "10": "Select Spell",
-                                                    "11": "Select Text",
-                                                    "12": "Set to Actor Value Mult",
-                                                    "13": "Multiply Actor Value Mult",
-                                                    "14": "Multiply 1 + Actor Value Mult",
-                                                    "15": "Set Text"
+                                                    "type": "enum",
+                                                    "options": {
+                                                        "0": "Unknown 0",
+                                                        "1": "Set Value",
+                                                        "2": "Add Value",
+                                                        "3": "Multiply Value",
+                                                        "4": "Add Range To Value",
+                                                        "5": "Add Actor Value Mult",
+                                                        "6": "Absolute Value",
+                                                        "7": "Negative Absolute Value",
+                                                        "8": "Add Leveled List",
+                                                        "9": "Add Activate Choice",
+                                                        "10": "Select Spell",
+                                                        "11": "Select Text",
+                                                        "12": "Set to Actor Value Mult",
+                                                        "13": "Multiply Actor Value Mult",
+                                                        "14": "Multiply 1 + Actor Value Mult",
+                                                        "15": "Set Text"
+                                                    }
                                                 }
                                             },
                                             {
@@ -247,14 +265,17 @@
                                         "name": "Type",
                                         "type": "uint8",
                                         "format": {
-                                            "0": "None",
-                                            "1": "Float",
-                                            "2": "Float/AV,Float",
-                                            "3": "LVLI",
-                                            "4": "SPEL,lstring,flags",
-                                            "5": "SPEL",
-                                            "6": "string",
-                                            "7": "lstring"
+                                            "type": "enum",
+                                            "options": {
+                                                "0": "None",
+                                                "1": "Float",
+                                                "2": "Float/AV,Float",
+                                                "3": "LVLI",
+                                                "4": "SPEL,lstring,flags",
+                                                "5": "SPEL",
+                                                "6": "string",
+                                                "7": "lstring"
+                                            }
                                         }
                                     }
                                 },
@@ -278,8 +299,11 @@
                                                 "name": "Script Flags",
                                                 "type": "uint16",
                                                 "format": {
-                                                    "0": "Run Immediately",
-                                                    "1": "Replace Default"
+                                                    "type": "flags",
+                                                    "flags": {
+                                                        "0": "Run Immediately",
+                                                        "1": "Replace Default"
+                                                    }
                                                 }
                                             },
                                             {

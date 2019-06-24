@@ -1,10 +1,10 @@
 let {
-    addDef
+    addDef, enumeration
 } = require('../helpers');
 
 module.exports = () => {
     addDef('MiscStatEnum', 
-        {
+        enumeration({
             37001190: 'Armor Made',
             97801986: 'Stores Invested In',
             226200342: 'Quests Completed',
@@ -110,6 +110,6 @@ module.exports = () => {
             4194451480: 'Hours Slept',
             4194706187: 'Most Gold Carried',
             4242362385: 'Animals Killed'
-        }
+        })
     );
 };

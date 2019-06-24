@@ -4,7 +4,10 @@
     "name": "Weapon",
     "def": {
         "flags": {
-            "2": "Non-Playable"
+            "type": "flags",
+            "flags": {
+                "2": "Non-Playable"
+            }
         },
         "members": [
             {
@@ -274,14 +277,17 @@
                             "name": "Flags",
                             "type": "uint16",
                             "format": {
-                                "0": "Ignores Normal Weapon Resistance",
-                                "1": "Automatic (unused)",
-                                "2": "Has Scope (unused)",
-                                "3": "Can't Drop",
-                                "4": "Hide Backpack (unused)",
-                                "5": "Embedded Weapon (unused)",
-                                "6": "Don't Use 1st Person IS Anim (unused)",
-                                "7": "Non-playable"
+                                "type": "flags",
+                                "flags": {
+                                    "0": "Ignores Normal Weapon Resistance",
+                                    "1": "Automatic (unused)",
+                                    "2": "Has Scope (unused)",
+                                    "3": "Can't Drop",
+                                    "4": "Hide Backpack (unused)",
+                                    "5": "Embedded Weapon (unused)",
+                                    "6": "Don't Use 1st Person IS Anim (unused)",
+                                    "7": "Non-playable"
+                                }
                             }
                         },
                         {
@@ -332,30 +338,36 @@
                             "name": "On Hit",
                             "type": "uint32",
                             "format": {
-                                "0": "No formula behaviour",
-                                "1": "Dismember only",
-                                "2": "Explode only",
-                                "3": "No dismember/explode"
+                                "type": "enum",
+                                "options": {
+                                    "0": "No formula behaviour",
+                                    "1": "Dismember only",
+                                    "2": "Explode only",
+                                    "3": "No dismember/explode"
+                                }
                             }
                         },
                         {
                             "name": "Flags2",
                             "type": "uint32",
                             "format": {
-                                "0": "Player Only",
-                                "1": "NPCs Use Ammo",
-                                "2": "No Jam After Reload (unused)",
-                                "3": "Unknown 4",
-                                "4": "Minor Crime",
-                                "5": "Range Fixed",
-                                "6": "Not Used in Normal Combat",
-                                "7": "Unknown 8",
-                                "8": "Don't Use 3rd Person IS Anim (unused)",
-                                "9": "Burst Shot",
-                                "10": "Rumble - Alternate",
-                                "11": "Long Bursts",
-                                "12": "Non-hostile",
-                                "13": "Bound Weapon"
+                                "type": "flags",
+                                "flags": {
+                                    "0": "Player Only",
+                                    "1": "NPCs Use Ammo",
+                                    "2": "No Jam After Reload (unused)",
+                                    "3": "Unknown 4",
+                                    "4": "Minor Crime",
+                                    "5": "Range Fixed",
+                                    "6": "Not Used in Normal Combat",
+                                    "7": "Unknown 8",
+                                    "8": "Don't Use 3rd Person IS Anim (unused)",
+                                    "9": "Burst Shot",
+                                    "10": "Rumble - Alternate",
+                                    "11": "Long Bursts",
+                                    "12": "Non-hostile",
+                                    "13": "Bound Weapon"
+                                }
                             }
                         },
                         {

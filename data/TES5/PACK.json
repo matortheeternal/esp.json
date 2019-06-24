@@ -28,29 +28,38 @@
                             "name": "Type",
                             "type": "uint8",
                             "format": {
-                                "18": "Package",
-                                "19": "Package Template"
+                                "type": "enum",
+                                "options": {
+                                    "18": "Package",
+                                    "19": "Package Template"
+                                }
                             }
                         },
                         {
                             "name": "Interrupt Override",
                             "type": "uint8",
                             "format": {
-                                "0": "None",
-                                "1": "Spectator",
-                                "2": "ObserveDead",
-                                "3": "GuardWarn",
-                                "4": "Combat"
+                                "type": "enum",
+                                "options": {
+                                    "0": "None",
+                                    "1": "Spectator",
+                                    "2": "ObserveDead",
+                                    "3": "GuardWarn",
+                                    "4": "Combat"
+                                }
                             }
                         },
                         {
                             "name": "Preferred Speed",
                             "type": "uint8",
                             "format": {
-                                "0": "Walk",
-                                "1": "Jog",
-                                "2": "Run",
-                                "3": "Fast Walk"
+                                "type": "enum",
+                                "options": {
+                                    "0": "Walk",
+                                    "1": "Jog",
+                                    "2": "Run",
+                                    "3": "Fast Walk"
+                                }
                             }
                         },
                         {
@@ -89,18 +98,21 @@
                             "name": "Day of week",
                             "type": "int8",
                             "format": {
-                                "0": "Sunday",
-                                "1": "Monday",
-                                "2": "Tuesday",
-                                "3": "Wednesday",
-                                "4": "Thursday",
-                                "5": "Friday",
-                                "6": "Saturday",
-                                "7": "Weekdays",
-                                "8": "Weekends",
-                                "9": "Monday, Wednesday, Friday",
-                                "10": "Tuesday, Thursday",
-                                "-1": "Any"
+                                "type": "enum",
+                                "options": {
+                                    "0": "Sunday",
+                                    "1": "Monday",
+                                    "2": "Tuesday",
+                                    "3": "Wednesday",
+                                    "4": "Thursday",
+                                    "5": "Friday",
+                                    "6": "Saturday",
+                                    "7": "Weekdays",
+                                    "8": "Weekends",
+                                    "9": "Monday, Wednesday, Friday",
+                                    "10": "Tuesday, Thursday",
+                                    "-1": "Any"
+                                }
                             }
                         },
                         {
@@ -142,11 +154,14 @@
                             "name": "Flags",
                             "type": "uint8",
                             "format": {
-                                "0": "Unknown",
-                                "8": "Random",
-                                "9": "Run in Sequence",
-                                "12": "Random, Do Once",
-                                "13": "Run in Sequence, Do Once"
+                                "type": "enum",
+                                "options": {
+                                    "0": "Unknown",
+                                    "8": "Random",
+                                    "9": "Run in Sequence",
+                                    "12": "Random, Do Once",
+                                    "13": "Run in Sequence, Do Once"
+                                }
                             }
                         }
                     },
@@ -292,8 +307,11 @@
                                                 "name": "Bool",
                                                 "type": "uint8",
                                                 "format": {
-                                                    "0": "False",
-                                                    "1": "True"
+                                                    "type": "enum",
+                                                    "options": {
+                                                        "0": "False",
+                                                        "1": "True"
+                                                    }
                                                 }
                                             },
                                             {
@@ -402,8 +420,11 @@
                                                 "name": "Flags",
                                                 "type": "uint32",
                                                 "format": {
-                                                    "0": "Repeat when Complete",
-                                                    "1": "Unknown 1"
+                                                    "type": "flags",
+                                                    "flags": {
+                                                        "0": "Repeat when Complete",
+                                                        "1": "Unknown 1"
+                                                    }
                                                 }
                                             }
                                         ]
@@ -424,7 +445,10 @@
                                         "name": "Flags",
                                         "type": "uint32",
                                         "format": {
-                                            "0": "Success Completes Package"
+                                            "type": "flags",
+                                            "flags": {
+                                                "0": "Success Completes Package"
+                                            }
                                         }
                                     }
                                 },
@@ -482,10 +506,13 @@
                                                     "name": "Preferred Speed Override",
                                                     "type": "uint8",
                                                     "format": {
-                                                        "0": "Walk",
-                                                        "1": "Jog",
-                                                        "2": "Run",
-                                                        "3": "Fast Walk"
+                                                        "type": "enum",
+                                                        "options": {
+                                                            "0": "Walk",
+                                                            "1": "Jog",
+                                                            "2": "Run",
+                                                            "3": "Fast Walk"
+                                                        }
                                                     }
                                                 },
                                                 {

@@ -4,7 +4,10 @@
     "name": "Race",
     "def": {
         "flags": {
-            "19": "Critter?"
+            "type": "flags",
+            "flags": {
+                "19": "Critter?"
+            }
         },
         "members": [
             {
@@ -143,10 +146,13 @@
                             "name": "Size",
                             "type": "uint32",
                             "format": {
-                                "0": "Small",
-                                "1": "Medium",
-                                "2": "Large",
-                                "3": "Extra Large"
+                                "type": "enum",
+                                "options": {
+                                    "0": "Small",
+                                    "1": "Medium",
+                                    "2": "Large",
+                                    "3": "Extra Large"
+                                }
                             }
                         },
                         {
@@ -231,11 +237,14 @@
                             "name": "Flags 2",
                             "type": "uint32",
                             "format": {
-                                "0": "Use Advanced Avoidance",
-                                "1": "Non-Hostile",
-                                "2": "Unknown 2",
-                                "3": "Unknown 3",
-                                "4": "Allow Mounted Combat"
+                                "type": "flags",
+                                "flags": {
+                                    "0": "Use Advanced Avoidance",
+                                    "1": "Non-Hostile",
+                                    "2": "Unknown 2",
+                                    "3": "Unknown 3",
+                                    "4": "Allow Mounted Combat"
+                                }
                             }
                         },
                         {

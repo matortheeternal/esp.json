@@ -1,10 +1,10 @@
 let {
-    addDef
+    addDef, flags
 } = require('../helpers');
 
 module.exports = () => {
     addDef('EquipType', 
-        {
+        flags({
             0: 'Hand To Hand Melee',
             1: 'One Hand Sword',
             2: 'One Hand Dagger',
@@ -18,6 +18,6 @@ module.exports = () => {
             10: 'Shield',
             11: 'Torch',
             12: 'Crossbow'
-        }
+        })
     );
 };

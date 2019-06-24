@@ -141,44 +141,50 @@
                             "name": "Flags",
                             "type": "uint16",
                             "format": {
-                                "0": "Edge 0-1 link",
-                                "1": "Edge 1-2 link",
-                                "2": "Edge 2-0 link",
-                                "3": "Deleted",
-                                "4": "No Large Creatures",
-                                "5": "Overlapping",
-                                "6": "Preferred",
-                                "7": "",
-                                "8": "Unknown 9",
-                                "9": "Water",
-                                "10": "Door",
-                                "11": "Found",
-                                "12": "Unknown 13",
-                                "13": "",
-                                "14": "",
-                                "15": ""
+                                "type": "flags",
+                                "flags": {
+                                    "0": "Edge 0-1 link",
+                                    "1": "Edge 1-2 link",
+                                    "2": "Edge 2-0 link",
+                                    "3": "Deleted",
+                                    "4": "No Large Creatures",
+                                    "5": "Overlapping",
+                                    "6": "Preferred",
+                                    "7": "",
+                                    "8": "Unknown 9",
+                                    "9": "Water",
+                                    "10": "Door",
+                                    "11": "Found",
+                                    "12": "Unknown 13",
+                                    "13": "",
+                                    "14": "",
+                                    "15": ""
+                                }
                             }
                         },
                         {
                             "name": "Cover Flags",
                             "type": "uint16",
                             "format": {
-                                "0": "Edge 0-1 Cover Value 1/4",
-                                "1": "Edge 0-1 Cover Value 2/4",
-                                "2": "Edge 0-1 Cover Value 3/4",
-                                "3": "Edge 0-1 Cover Value 4/4",
-                                "4": "Edge 0-1 Left",
-                                "5": "Edge 0-1 Right",
-                                "6": "Edge 1-2 Cover Value 1/4",
-                                "7": "Edge 1-2 Cover Value 2/4",
-                                "8": "Edge 1-2 Cover Value 3/4",
-                                "9": "Edge 1-2 Cover Value 4/4",
-                                "10": "Edge 1-2 Left",
-                                "11": "Edge 1-2 Right",
-                                "12": "Unknown 13",
-                                "13": "Unknown 14",
-                                "14": "Unknown 15",
-                                "15": "Unknown 16"
+                                "type": "flags",
+                                "flags": {
+                                    "0": "Edge 0-1 Cover Value 1/4",
+                                    "1": "Edge 0-1 Cover Value 2/4",
+                                    "2": "Edge 0-1 Cover Value 3/4",
+                                    "3": "Edge 0-1 Cover Value 4/4",
+                                    "4": "Edge 0-1 Left",
+                                    "5": "Edge 0-1 Right",
+                                    "6": "Edge 1-2 Cover Value 1/4",
+                                    "7": "Edge 1-2 Cover Value 2/4",
+                                    "8": "Edge 1-2 Cover Value 3/4",
+                                    "9": "Edge 1-2 Cover Value 4/4",
+                                    "10": "Edge 1-2 Left",
+                                    "11": "Edge 1-2 Right",
+                                    "12": "Unknown 13",
+                                    "13": "Unknown 14",
+                                    "14": "Unknown 15",
+                                    "15": "Unknown 16"
+                                }
                             }
                         }
                     ]

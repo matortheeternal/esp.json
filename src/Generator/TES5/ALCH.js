@@ -1,14 +1,14 @@
 let {
-    def, req, subrecord, float, int32, 
-    uint32, format, formId, ckFormId, struct, 
-    record
+    flags, def, req, subrecord, float, 
+    int32, uint32, format, formId, ckFormId, 
+    struct, record
 } = require('../helpers');
 
 module.exports = () => {
     record('ALCH', 'Ingestible', {
-        flags: {
+        flags: flags({
             29: 'Medicine'
-        },
+        }),
         members: [
             def('EDID'),
             req(def('OBND')),
@@ -25,7 +25,7 @@ module.exports = () => {
             req(subrecord('DATA', float('Weight'))),
             req(subrecord('ENIT', struct('Effect Data', [
                 int32('Value'),
-                format(uint32('Flags'), {
+                format(uint32('Flags'), flags({
                     0: 'No Auto-Calc',
                     1: 'Food Item',
                     2: 'Unknown 3',
@@ -44,7 +44,7 @@ module.exports = () => {
                     15: 'Unknown 16',
                     16: 'Medicine',
                     17: 'Poison'
-                }),
+                })),
                 formId('Addiction'),
                 float('Addiction Chance'),
                 ckFormId('Sound - Consume', ['SNDR', 'NULL'])

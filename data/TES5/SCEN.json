@@ -17,11 +17,14 @@
                     "name": "Flags",
                     "type": "uint32",
                     "format": {
-                        "0": "Begin on Quest Start",
-                        "1": "Stop on Quest End",
-                        "2": "Unknown 3",
-                        "3": "Repeat Conditions While True",
-                        "4": "Interruptible"
+                        "type": "flags",
+                        "flags": {
+                            "0": "Begin on Quest Start",
+                            "1": "Stop on Quest End",
+                            "2": "Unknown 3",
+                            "3": "Repeat Conditions While True",
+                            "4": "Interruptible"
+                        }
                     }
                 }
             },
@@ -217,8 +220,11 @@
                                 "name": "Flags",
                                 "type": "uint32",
                                 "format": {
-                                    "0": "No Player Activation",
-                                    "1": "Optional"
+                                    "type": "flags",
+                                    "flags": {
+                                        "0": "No Player Activation",
+                                        "1": "Optional"
+                                    }
                                 }
                             }
                         },
@@ -229,14 +235,17 @@
                                 "name": "Behaviour Flags",
                                 "type": "uint32",
                                 "format": {
-                                    "0": "Death Pause (unsused)",
-                                    "1": "Death End",
-                                    "2": "Combat Pause",
-                                    "3": "Combat End",
-                                    "4": "Dialogue Pause",
-                                    "5": "Dialogue End",
-                                    "6": "OBS_COM Pause",
-                                    "7": "OBS_COM End"
+                                    "type": "flags",
+                                    "flags": {
+                                        "0": "Death Pause (unsused)",
+                                        "1": "Death End",
+                                        "2": "Combat Pause",
+                                        "3": "Combat End",
+                                        "4": "Dialogue Pause",
+                                        "5": "Dialogue End",
+                                        "6": "OBS_COM Pause",
+                                        "7": "OBS_COM End"
+                                    }
                                 }
                             }
                         }
@@ -257,9 +266,12 @@
                                 "name": "Type",
                                 "type": "uint16",
                                 "format": {
-                                    "0": "Dialogue",
-                                    "1": "Package",
-                                    "2": "Timer"
+                                    "type": "enum",
+                                    "options": {
+                                        "0": "Dialogue",
+                                        "1": "Package",
+                                        "2": "Timer"
+                                    }
                                 }
                             }
                         },
@@ -302,24 +314,27 @@
                                 "name": "Flags",
                                 "type": "uint32",
                                 "format": {
-                                    "0": "Unknown 1",
-                                    "1": "Unknown 2",
-                                    "2": "Unknown 3",
-                                    "3": "Unknown 4",
-                                    "4": "Unknown 5",
-                                    "5": "Unknown 6",
-                                    "6": "Unknown 7",
-                                    "7": "Unknown 8",
-                                    "8": "Unknown 9",
-                                    "9": "Unknown 10",
-                                    "10": "Unknown 11",
-                                    "11": "Unknown 12",
-                                    "12": "Unknown 13",
-                                    "13": "Unknown 14",
-                                    "14": "Unknown 15",
-                                    "15": "Face Target",
-                                    "16": "Looping",
-                                    "17": "Headtrack Player"
+                                    "type": "flags",
+                                    "flags": {
+                                        "0": "Unknown 1",
+                                        "1": "Unknown 2",
+                                        "2": "Unknown 3",
+                                        "3": "Unknown 4",
+                                        "4": "Unknown 5",
+                                        "5": "Unknown 6",
+                                        "6": "Unknown 7",
+                                        "7": "Unknown 8",
+                                        "8": "Unknown 9",
+                                        "9": "Unknown 10",
+                                        "10": "Unknown 11",
+                                        "11": "Unknown 12",
+                                        "12": "Unknown 13",
+                                        "13": "Unknown 14",
+                                        "14": "Unknown 15",
+                                        "15": "Face Target",
+                                        "16": "Looping",
+                                        "17": "Headtrack Player"
+                                    }
                                 }
                             }
                         },

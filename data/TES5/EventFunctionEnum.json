@@ -1,7 +1,10 @@
 {
-    "0": "GetIsID",
-    "1": "IsInList",
-    "2": "GetValue",
-    "3": "HasKeyword",
-    "4": "GetItemValue"
+    "type": "enum",
+    "options": {
+        "0": "GetIsID",
+        "1": "IsInList",
+        "2": "GetValue",
+        "3": "HasKeyword",
+        "4": "GetItemValue"
+    }
 }

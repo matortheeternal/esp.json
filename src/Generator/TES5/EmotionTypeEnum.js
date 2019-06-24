@@ -1,10 +1,10 @@
 let {
-    addDef
+    addDef, enumeration
 } = require('../helpers');
 
 module.exports = () => {
     addDef('EmotionTypeEnum', 
-        {
+        enumeration({
             0: 'Neutral',
             1: 'Anger',
             2: 'Disgust',
@@ -13,6 +13,6 @@ module.exports = () => {
             5: 'Happy',
             6: 'Surprise',
             7: 'Puzzled'
-        }
+        })
     );
 };

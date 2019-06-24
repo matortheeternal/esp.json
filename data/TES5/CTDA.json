@@ -469,11 +469,14 @@
                                 "name": "Furniture Entry",
                                 "type": "uint32",
                                 "format": {
-                                    "65536": "Front",
-                                    "131072": "Behind",
-                                    "262144": "Right",
-                                    "524288": "Left",
-                                    "1048576": "Up"
+                                    "type": "enum",
+                                    "options": {
+                                        "65536": "Front",
+                                        "131072": "Behind",
+                                        "262144": "Right",
+                                        "524288": "Left",
+                                        "1048576": "Up"
+                                    }
                                 }
                             },
                             {
@@ -857,18 +860,21 @@
                                         "name": "VATS Action",
                                         "type": "uint32",
                                         "format": {
-                                            "0": "Unarmed Attack",
-                                            "1": "One Hand Melee Attack",
-                                            "2": "Two Hand Melee Attack",
-                                            "3": "Magic Attack",
-                                            "4": "Ranged Attack",
-                                            "5": "Reload",
-                                            "6": "Crouch",
-                                            "7": "Stand",
-                                            "8": "Switch Weapon",
-                                            "9": "Toggle Weapon Drawn",
-                                            "10": "Heal",
-                                            "11": "Player Death"
+                                            "type": "enum",
+                                            "options": {
+                                                "0": "Unarmed Attack",
+                                                "1": "One Hand Melee Attack",
+                                                "2": "Two Hand Melee Attack",
+                                                "3": "Magic Attack",
+                                                "4": "Ranged Attack",
+                                                "5": "Reload",
+                                                "6": "Crouch",
+                                                "7": "Stand",
+                                                "8": "Switch Weapon",
+                                                "9": "Toggle Weapon Drawn",
+                                                "10": "Heal",
+                                                "11": "Player Death"
+                                            }
                                         }
                                     },
                                     {
@@ -944,13 +950,16 @@
                                         "name": "Projectile Type",
                                         "type": "uint32",
                                         "format": {
-                                            "0": "Missile",
-                                            "1": "Lobber",
-                                            "2": "Beam",
-                                            "3": "Flame",
-                                            "4": "Cone",
-                                            "5": "Barrier",
-                                            "6": "Arrow"
+                                            "type": "enum",
+                                            "options": {
+                                                "0": "Missile",
+                                                "1": "Lobber",
+                                                "2": "Beam",
+                                                "3": "Flame",
+                                                "4": "Cone",
+                                                "5": "Barrier",
+                                                "6": "Arrow"
+                                            }
                                         }
                                     },
                                     {
@@ -1086,11 +1095,14 @@
                                 "name": "Furniture Entry",
                                 "type": "uint32",
                                 "format": {
-                                    "65536": "Front",
-                                    "131072": "Behind",
-                                    "262144": "Right",
-                                    "524288": "Left",
-                                    "1048576": "Up"
+                                    "type": "enum",
+                                    "options": {
+                                        "65536": "Front",
+                                        "131072": "Behind",
+                                        "262144": "Right",
+                                        "524288": "Left",
+                                        "1048576": "Up"
+                                    }
                                 }
                             },
                             {
@@ -1133,14 +1145,17 @@
                         "name": "Run On",
                         "type": "uint32",
                         "format": {
-                            "0": "Subject",
-                            "1": "Target",
-                            "2": "Reference",
-                            "3": "Combat Target",
-                            "4": "Linked Reference",
-                            "5": "Quest Alias",
-                            "6": "Package Data",
-                            "7": "Event Data"
+                            "type": "enum",
+                            "options": {
+                                "0": "Subject",
+                                "1": "Target",
+                                "2": "Reference",
+                                "3": "Combat Target",
+                                "4": "Linked Reference",
+                                "5": "Quest Alias",
+                                "6": "Package Data",
+                                "7": "Event Data"
+                            }
                         }
                     },
                     {

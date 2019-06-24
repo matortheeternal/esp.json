@@ -1,7 +1,7 @@
 let {
     def, subrecord, bytes, arrayOfSubrecord, float, 
-    struct, uint32, format, uint8, size, 
-    req, IsSSE, record
+    struct, flags, uint32, format, uint8, 
+    size, req, IsSSE, record
 } = require('../helpers');
 
 module.exports = game => {
@@ -25,12 +25,12 @@ module.exports = game => {
                     ]),
                     float('Normal Dampener'),
                     def('FloatColors', { name: 'Single Pass Color' }),
-                    format(uint32('Flags'), {
+                    format(uint32('Flags'), flags({
                         0: 'Single Pass'
-                    }),
-                    format(uint8('Flags'), {
+                    })),
+                    format(uint8('Flags'), flags({
                         0: 'Snow'
-                    }),
+                    })),
                     size(3, bytes('Unused'))
                 ]))),
                 req(subrecord('DATA', struct('Directional Material Data', [
@@ -45,9 +45,9 @@ module.exports = game => {
                     ]),
                     float('Normal Dampener'),
                     def('FloatColors', { name: 'Single Pass Color' }),
-                    format(uint32('Flags'), {
+                    format(uint32('Flags'), flags({
                         0: 'Single Pass'
-                    })
+                    }))
                 ])))
             ])
         ]

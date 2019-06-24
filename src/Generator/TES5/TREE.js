@@ -1,13 +1,13 @@
 let {
-    def, req, subrecord, ckFormId, uint8, 
-    struct, float, record
+    flags, def, req, subrecord, ckFormId, 
+    uint8, struct, float, record
 } = require('../helpers');
 
 module.exports = () => {
     record('TREE', 'Tree', {
-        flags: {
+        flags: flags({
             15: 'Has Distant LOD'
-        },
+        }),
         members: [
             def('EDID'),
             def('VMAD'),

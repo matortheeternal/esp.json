@@ -1,10 +1,10 @@
 let {
-    addDef
+    addDef, enumeration
 } = require('../helpers');
 
 module.exports = () => {
     addDef('TintMaskTypeEnum', 
-        {
+        enumeration({
             0: 'None',
             1: 'Lip Color',
             2: 'Cheek Color',
@@ -21,6 +21,6 @@ module.exports = () => {
             13: 'Forehead',
             14: 'Dirt',
             15: 'Unknown 16'
-        }
+        })
     );
 };

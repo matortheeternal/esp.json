@@ -4,9 +4,12 @@
     "name": "Talking Activator",
     "def": {
         "flags": {
-            "9": "Hidden From Local Map",
-            "16": "Random Anim Start",
-            "17": "Radio Station"
+            "type": "flags",
+            "flags": {
+                "9": "Hidden From Local Map",
+                "16": "Random Anim Start",
+                "17": "Radio Station"
+            }
         },
         "members": [
             {

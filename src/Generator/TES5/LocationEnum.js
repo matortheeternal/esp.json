@@ -1,10 +1,10 @@
 let {
-    addDef
+    addDef, enumeration
 } = require('../helpers');
 
 module.exports = () => {
     addDef('LocationEnum', 
-        {
+        enumeration({
             0: 'Near reference',
             1: 'In cell',
             2: 'Near package start location',
@@ -18,6 +18,6 @@ module.exports = () => {
             10: 'Unknown 10',
             11: 'Unknown 11',
             12: 'Near self'
-        }
+        })
     );
 };

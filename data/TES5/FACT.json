@@ -36,10 +36,13 @@
                                 "name": "Group Combat Reaction",
                                 "type": "uint32",
                                 "format": {
-                                    "0": "Neutral",
-                                    "1": "Enemy",
-                                    "2": "Ally",
-                                    "3": "Friend"
+                                    "type": "enum",
+                                    "options": {
+                                        "0": "Neutral",
+                                        "1": "Enemy",
+                                        "2": "Ally",
+                                        "3": "Friend"
+                                    }
                                 }
                             }
                         ],
@@ -60,38 +63,41 @@
                             "name": "Flags",
                             "type": "uint32",
                             "format": {
-                                "0": "Hidden From NPC",
-                                "1": "Special Combat",
-                                "2": "Unknown 3",
-                                "3": "Unknown 4",
-                                "4": "Unknown 5",
-                                "5": "Unknown 6",
-                                "6": "Track Crime",
-                                "7": "Ignore Crimes: Murder",
-                                "8": "Ignore Crimes: Assault",
-                                "9": "Ignore Crimes: Stealing",
-                                "10": "Ignore Crimes: Trespass",
-                                "11": "Do Not Report Crimes Against Members",
-                                "12": "Crime Gold - Use Defaults",
-                                "13": "Ignore Crimes: Pickpocket",
-                                "14": "Vendor",
-                                "15": "Can Be Owner",
-                                "16": "Ignore Crimes: Werewolf",
-                                "17": "Unknown 18",
-                                "18": "Unknown 19",
-                                "19": "Unknown 20",
-                                "20": "Unknown 21",
-                                "21": "Unknown 22",
-                                "22": "Unknown 23",
-                                "23": "Unknown 24",
-                                "24": "Unknown 25",
-                                "25": "Unknown 26",
-                                "26": "Unknown 27",
-                                "27": "Unknown 28",
-                                "28": "Unknown 29",
-                                "29": "Unknown 30",
-                                "30": "Unknown 31",
-                                "31": "Unknown 32"
+                                "type": "flags",
+                                "flags": {
+                                    "0": "Hidden From NPC",
+                                    "1": "Special Combat",
+                                    "2": "Unknown 3",
+                                    "3": "Unknown 4",
+                                    "4": "Unknown 5",
+                                    "5": "Unknown 6",
+                                    "6": "Track Crime",
+                                    "7": "Ignore Crimes: Murder",
+                                    "8": "Ignore Crimes: Assault",
+                                    "9": "Ignore Crimes: Stealing",
+                                    "10": "Ignore Crimes: Trespass",
+                                    "11": "Do Not Report Crimes Against Members",
+                                    "12": "Crime Gold - Use Defaults",
+                                    "13": "Ignore Crimes: Pickpocket",
+                                    "14": "Vendor",
+                                    "15": "Can Be Owner",
+                                    "16": "Ignore Crimes: Werewolf",
+                                    "17": "Unknown 18",
+                                    "18": "Unknown 19",
+                                    "19": "Unknown 20",
+                                    "20": "Unknown 21",
+                                    "21": "Unknown 22",
+                                    "22": "Unknown 23",
+                                    "23": "Unknown 24",
+                                    "24": "Unknown 25",
+                                    "25": "Unknown 26",
+                                    "26": "Unknown 27",
+                                    "27": "Unknown 28",
+                                    "28": "Unknown 29",
+                                    "29": "Unknown 30",
+                                    "30": "Unknown 31",
+                                    "31": "Unknown 32"
+                                }
                             }
                         }
                     ]
@@ -175,16 +181,22 @@
                             "name": "Arrest",
                             "type": "uint8",
                             "format": {
-                                "0": "False",
-                                "1": "True"
+                                "type": "enum",
+                                "options": {
+                                    "0": "False",
+                                    "1": "True"
+                                }
                             }
                         },
                         {
                             "name": "Attack On Sight",
                             "type": "uint8",
                             "format": {
-                                "0": "False",
-                                "1": "True"
+                                "type": "enum",
+                                "options": {
+                                    "0": "False",
+                                    "1": "True"
+                                }
                             }
                         },
                         {
@@ -321,16 +333,22 @@
                             "name": "Only Buys Stolen Items",
                             "type": "uint8",
                             "format": {
-                                "0": "False",
-                                "1": "True"
+                                "type": "enum",
+                                "options": {
+                                    "0": "False",
+                                    "1": "True"
+                                }
                             }
                         },
                         {
                             "name": "Not/Sell Buy",
                             "type": "uint8",
                             "format": {
-                                "0": "False",
-                                "1": "True"
+                                "type": "enum",
+                                "options": {
+                                    "0": "False",
+                                    "1": "True"
+                                }
                             }
                         },
                         {

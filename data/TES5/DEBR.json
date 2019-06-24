@@ -33,7 +33,10 @@
                                         "name": "Flags",
                                         "type": "uint8",
                                         "format": {
-                                            "0": "Has Collision Data"
+                                            "type": "flags",
+                                            "flags": {
+                                                "0": "Has Collision Data"
+                                            }
                                         }
                                     }
                                 ]

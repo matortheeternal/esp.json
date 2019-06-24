@@ -34,9 +34,12 @@
                     "name": "Flags",
                     "type": "uint32",
                     "format": {
-                        "0": "Top-Level",
-                        "1": "Blocking",
-                        "2": "Exclusive"
+                        "type": "flags",
+                        "flags": {
+                            "0": "Top-Level",
+                            "1": "Blocking",
+                            "2": "Exclusive"
+                        }
                     }
                 }
             },

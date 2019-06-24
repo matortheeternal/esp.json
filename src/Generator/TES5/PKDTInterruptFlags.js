@@ -1,10 +1,10 @@
 let {
-    addDef
+    addDef, flags
 } = require('../helpers');
 
 module.exports = () => {
     addDef('PKDTInterruptFlags', 
-        {
+        flags({
             0: 'Hellos to player',
             1: 'Random conversations',
             2: 'Observe combat behavior',
@@ -21,6 +21,6 @@ module.exports = () => {
             13: 'Unknown 14',
             14: 'Unknown 15',
             15: 'Unknown 16'
-        }
+        })
     );
 };
