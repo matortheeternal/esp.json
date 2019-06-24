@@ -1,6 +1,6 @@
 let {
     def, ckFormId, uint16, format, bytes, 
-    uint8, subrecord, struct, record
+    size, uint8, subrecord, struct, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -24,7 +24,7 @@ module.exports = () => {
                     7: 'Enemy',
                     8: 'Archnemesis'
                 }),
-                bytes('Unknown', 1),
+                size(1, bytes('Unknown')),
                 format(uint8('Flags'), {
                     0: 'Unknown 1',
                     1: 'Unknown 2',

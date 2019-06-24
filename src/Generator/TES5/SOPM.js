@@ -1,7 +1,7 @@
 let {
-    def, uint8, format, bytes, subrecord, 
-    struct, unknown, uint32, array, float, 
-    record
+    def, uint8, format, bytes, size, 
+    subrecord, struct, unknown, uint32, array, 
+    float, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -13,7 +13,7 @@ module.exports = () => {
                     0: 'Attenuates With Distance',
                     1: 'Allows Rumble'
                 }),
-                bytes('Unknown', 2),
+                size(2, bytes('Unknown')),
                 uint8('Reverb Send %')
             ])),
             subrecord('FNAM', unknown()),
@@ -38,7 +38,7 @@ module.exports = () => {
                 )
             ])),
             subrecord('ANAM', struct('Attenuation Values', [
-                bytes('Unknown', 4),
+                size(4, bytes('Unknown')),
                 float('Min Distance'),
                 float('Max Distance'),
                 array('Curve', 

@@ -1,6 +1,6 @@
 let {
     addDef, def, uint8, format, bytes, 
-    uint32, subrecord, struct, req
+    size, uint32, subrecord, struct, req
 } = require('../helpers');
 
 module.exports = () => {
@@ -17,7 +17,7 @@ module.exports = () => {
                 6: 'Unknown 7',
                 7: 'Unknown 8'
             }),
-            bytes('Unused', 3),
+            size(3, bytes('Unused')),
             format(uint32('Armor Type'), def('ArmorTypeEnum'))
         ])))
     );

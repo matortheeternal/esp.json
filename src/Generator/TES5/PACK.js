@@ -1,9 +1,9 @@
 let {
     def, uint32, format, uint8, bytes, 
-    uint16, subrecord, struct, req, int8, 
-    int32, float, ckFormId, array, multiStruct, 
-    string, union, unknown, arrayOfSubrecord, empty, 
-    record
+    size, uint16, subrecord, struct, req, 
+    int8, int32, float, ckFormId, array, 
+    multiStruct, string, union, unknown, arrayOfSubrecord, 
+    empty, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -30,9 +30,9 @@ module.exports = () => {
                     2: 'Run',
                     3: 'Fast Walk'
                 }),
-                bytes('Unknown', 1),
+                size(1, bytes('Unknown')),
                 format(uint16('Interrupt Flags'), def('PKDTInterruptFlags')),
-                bytes('Unknown', 2)
+                size(2, bytes('Unknown'))
             ]))),
             req(subrecord('PSDT', struct('Schedule', [
                 int8('Month'),
@@ -53,7 +53,7 @@ module.exports = () => {
                 uint8('Date'),
                 int8('Hour'),
                 int8('Minute'),
-                bytes('Unused', 3),
+                size(3, bytes('Unused')),
                 int32('Duration (minutes)')
             ]))),
             def('CTDAs'),
@@ -67,13 +67,13 @@ module.exports = () => {
                 })),
                 req(subrecord('IDLC', struct('', [
                     uint8('Animation Count'),
-                    bytes('Unknown', 3)
+                    size(3, bytes('Unknown'))
                 ]))),
                 req(subrecord('IDLT', float('Idle Timer Setting'))),
                 subrecord('IDLA', array('Animations', 
                     ckFormId('Animation', ['IDLE'])
                 )),
-                subrecord('IDLB', bytes('Unknown', 4))
+                subrecord('IDLB', size(4, bytes('Unknown')))
             ])),
             subrecord('CNAM', ckFormId('Combat Style', ['CSTY'])),
             subrecord('QNAM', ckFormId('Owner Quest', ['QUST'])),
@@ -139,7 +139,7 @@ module.exports = () => {
                                     2: 'Run',
                                     3: 'Fast Walk'
                                 }),
-                                bytes('Unknown', 3)
+                                size(3, bytes('Unknown'))
                             ]))
                         ),
                         arrayOfSubrecord('Unknown', 

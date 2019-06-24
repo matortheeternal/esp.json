@@ -17,7 +17,7 @@
         {
             "name": "FileName",
             "type": "string",
-            "prefixLength": 2
+            "prefix": 2
         },
         {
             "name": "Fragments",
@@ -32,12 +32,12 @@
                     {
                         "name": "ScriptName",
                         "type": "string",
-                        "prefixLength": 2
+                        "prefix": 2
                     },
                     {
                         "name": "FragmentName",
                         "type": "string",
-                        "prefixLength": 2
+                        "prefix": 2
                     }
                 ]
             },

@@ -12,15 +12,15 @@ module.exports = () => {
             def('RecordFlags'),
             formId('FormID'),
             union('Version Control Info 1', [
-                opts(bytes('Version Control Info 1', 4), {
+                opts(size(4, bytes('Version Control Info 1')), {
                     "toStr": "VCI1ToStrBeforeFO4"
                 }),
-                opts(bytes('Version Control Info 1', 4), {
+                opts(size(4, bytes('Version Control Info 1')), {
                     "toStr": "VCI1ToStrAfterFO4"
                 })
             ]),
             uint16('Form Version'),
-            bytes('Version Control Info 2', 2)
+            size(2, bytes('Version Control Info 2'))
         ])
     );
 };

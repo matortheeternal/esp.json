@@ -1,7 +1,7 @@
 let {
     def, req, subrecord, uint8, format, 
-    ckFormId, int16, bytes, sortKey, struct, 
-    multiStruct, arrayOfSubrecord, record
+    ckFormId, int16, bytes, size, sortKey, 
+    struct, multiStruct, arrayOfSubrecord, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -20,10 +20,10 @@ module.exports = () => {
                 sortKey([0], multiStruct('Leveled List Entry', [
                     subrecord('LVLO', sortKey([0, 2], struct('Base Data', [
                         int16('Level'),
-                        bytes('Unknown', 2),
+                        size(2, bytes('Unknown')),
                         ckFormId('Reference', ['NPC_', 'LVLN']),
                         int16('Count'),
-                        bytes('Unknown', 2)
+                        size(2, bytes('Unknown'))
                     ]))),
                     def('COED')
                 ]))

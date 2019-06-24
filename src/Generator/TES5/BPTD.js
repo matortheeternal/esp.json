@@ -1,8 +1,8 @@
 let {
     def, subrecord, localized, string, req, 
     float, uint8, format, int8, uint16, 
-    ckFormId, int32, struct, bytes, arrayOfStruct, 
-    sortKey, multiStruct, record
+    ckFormId, int32, struct, bytes, size, 
+    arrayOfStruct, sortKey, multiStruct, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -65,7 +65,7 @@ module.exports = () => {
                         ckFormId('Explodable - Impact DataSet', ['IPDS', 'NULL']),
                         uint8('Severable - Decal Count'),
                         uint8('Explodable - Decal Count'),
-                        bytes('Unknown', 2),
+                        size(2, bytes('Unknown')),
                         float('Limb Replacement Scale')
                     ]))),
                     req(subrecord('NAM1', string('Limb Replacement Model'))),

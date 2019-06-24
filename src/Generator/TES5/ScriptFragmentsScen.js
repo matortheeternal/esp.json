@@ -1,5 +1,5 @@
 let {
-    addDef, int8, uint8, format, prefixLength, 
+    addDef, int8, uint8, format, prefix, 
     string, struct, array, int16, sortKey
 } = require('../helpers');
 
@@ -11,12 +11,12 @@ module.exports = () => {
                 0: 'OnBegin',
                 1: 'OnEnd'
             }),
-            prefixLength(2, string('FileName')),
+            prefix(2, string('FileName')),
             array('Fragments', 
                 struct('Fragment', [
                     int8('Unknown'),
-                    prefixLength(2, string('ScriptName')),
-                    prefixLength(2, string('FragmentName'))
+                    prefix(2, string('ScriptName')),
+                    prefix(2, string('FragmentName'))
                 ])
             ),
             array('Phase Fragments', 
@@ -29,8 +29,8 @@ module.exports = () => {
                     int16('Unknown'),
                     int8('Unknown'),
                     int8('Unknown'),
-                    prefixLength(2, string('ScriptName')),
-                    prefixLength(2, string('FragmentName'))
+                    prefix(2, string('ScriptName')),
+                    prefix(2, string('FragmentName'))
                 ]))
             , -2)
         ])

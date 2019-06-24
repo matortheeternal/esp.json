@@ -1,7 +1,7 @@
 let {
     def, subrecord, string, req, arrayOfSubrecord, 
     uint8, IsSSE, format, bytes, ckFormId, 
-    uint16, float, struct, record
+    uint16, float, size, struct, record
 } = require('../helpers');
 
 module.exports = game => {
@@ -38,13 +38,13 @@ module.exports = game => {
                     float('Specular Properties - Sun Specular Power'),
                     float('Water Properties - Reflectivity Amount'),
                     float('Water Properties - Fresnel Amount'),
-                    bytes('Unknown', 4),
+                    size(4, bytes('Unknown')),
                     float('Fog Properties - Above Water - Fog Distance - Near Plane'),
                     float('Fog Properties - Above Water - Fog Distance - Far Plane'),
                     def('ByteColors', { name: 'Shallow Color' }),
                     def('ByteColors', { name: 'Deep Color' }),
                     def('ByteColors', { name: 'Reflection Color' }),
-                    bytes('Unknown', 4),
+                    size(4, bytes('Unknown')),
                     float('Unknown'),
                     float('Unknown'),
                     float('Unknown'),
@@ -98,13 +98,13 @@ module.exports = game => {
                     float('Specular Properties - Sun Specular Power'),
                     float('Water Properties - Reflectivity Amount'),
                     float('Water Properties - Fresnel Amount'),
-                    bytes('Unknown', 4),
+                    size(4, bytes('Unknown')),
                     float('Fog Properties - Above Water - Fog Distance - Near Plane'),
                     float('Fog Properties - Above Water - Fog Distance - Far Plane'),
                     def('ByteColors', { name: 'Shallow Color' }),
                     def('ByteColors', { name: 'Deep Color' }),
                     def('ByteColors', { name: 'Reflection Color' }),
-                    bytes('Unknown', 4),
+                    size(4, bytes('Unknown')),
                     float('Unknown'),
                     float('Unknown'),
                     float('Unknown'),

@@ -1,7 +1,8 @@
 let {
     addDef, uint32, format, float, formId, 
     ckFormId, union, req, def, int32, 
-    uint16, bytes, struct, subrecord, multiStruct
+    uint16, bytes, size, struct, subrecord, 
+    multiStruct
 } = require('../helpers');
 
 module.exports = () => {
@@ -59,7 +60,7 @@ module.exports = () => {
                 format(int32('Magic Skill'), def('ActorValueEnum')),
                 format(int32('Resist Value'), def('ActorValueEnum')),
                 uint16('Counter Effect count'),
-                bytes('Unused', 2),
+                size(2, bytes('Unused')),
                 ckFormId('Casting Light', ['LIGH', 'NULL']),
                 float('Taper Weight'),
                 ckFormId('Hit Shader', ['EFSH', 'NULL']),

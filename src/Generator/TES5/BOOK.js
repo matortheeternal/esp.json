@@ -1,7 +1,8 @@
 let {
     def, req, subrecord, localized, string, 
-    uint8, format, bytes, int32, ckFormId, 
-    union, uint32, float, struct, record
+    uint8, format, bytes, size, int32, 
+    ckFormId, union, uint32, float, struct, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
@@ -34,7 +35,7 @@ module.exports = () => {
                     0: 'Book/Tome',
                     255: 'Note/Scroll'
                 }),
-                bytes('Unused', 2),
+                size(2, bytes('Unused')),
                 union('Teaches', [
                     format(int32('Skill'), def('SkillEnum')),
                     ckFormId('Spell', ['SPEL', 'NULL'])

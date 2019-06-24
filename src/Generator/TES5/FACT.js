@@ -2,7 +2,7 @@ let {
     def, ckFormId, int32, uint32, format, 
     subrecord, sortKey, struct, arrayOfSubrecord, req, 
     uint8, uint16, float, localized, string, 
-    arrayOfStruct, multiStruct, bytes, record
+    arrayOfStruct, multiStruct, bytes, size, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -96,7 +96,7 @@ module.exports = () => {
                 uint16('Start Hour'),
                 uint16('End Hour'),
                 uint16('Radius'),
-                bytes('Unknown 1', 2),
+                size(2, bytes('Unknown 1')),
                 format(uint8('Only Buys Stolen Items'), {
                     0: 'False',
                     1: 'True'
@@ -105,7 +105,7 @@ module.exports = () => {
                     0: 'False',
                     1: 'True'
                 }),
-                bytes('Unknown 2', 2)
+                size(2, bytes('Unknown 2'))
             ])),
             def('PLVD'),
             def('CITC'),

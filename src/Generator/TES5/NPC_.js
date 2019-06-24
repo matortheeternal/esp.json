@@ -1,9 +1,9 @@
 let {
     def, req, uint32, format, int16, 
     div, union, uint16, subrecord, struct, 
-    ckFormId, int8, bytes, sortKey, arrayOfSubrecord, 
-    uint8, localized, string, array, float, 
-    unknown, int32, multiStruct, record
+    ckFormId, int8, bytes, size, sortKey, 
+    arrayOfSubrecord, uint8, localized, string, array, 
+    float, unknown, int32, multiStruct, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -85,7 +85,7 @@ module.exports = () => {
                 subrecord('SNAM', sortKey([0], struct('Faction', [
                     ckFormId('Faction', ['FACT']),
                     int8('Rank'),
-                    bytes('Unused', 3)
+                    size(3, bytes('Unused'))
                 ])))
             )),
             req(subrecord('INAM', ckFormId('Death item', ['LVLI']))),
@@ -110,7 +110,7 @@ module.exports = () => {
                 subrecord('PRKR', sortKey([0], struct('Perk', [
                     ckFormId('Perk', ['PERK']),
                     uint8('Rank'),
-                    bytes('Unused', 3)
+                    size(3, bytes('Unused'))
                 ])))
             )),
             def('COCT'),
@@ -135,10 +135,10 @@ module.exports = () => {
                 uint16('Health'),
                 uint16('Magicka'),
                 uint16('Stamina'),
-                bytes('Unused', 2),
+                size(2, bytes('Unused')),
                 float('Far away model distance'),
                 uint8('Geared up weapons'),
-                bytes('Unused', 3)
+                size(3, bytes('Unused'))
             ]))),
             req(arrayOfSubrecord('Head Parts', 
                 subrecord('PNAM', ckFormId('Head Part', ['HDPT']))

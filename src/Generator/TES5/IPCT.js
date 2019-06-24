@@ -1,7 +1,7 @@
 let {
     def, float, uint32, format, uint8, 
-    bytes, subrecord, struct, req, ckFormId, 
-    record
+    bytes, size, subrecord, struct, req, 
+    ckFormId, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -29,7 +29,7 @@ module.exports = () => {
                     3: 'Impale',
                     4: 'Stick'
                 }),
-                bytes('Unknown', 2)
+                size(2, bytes('Unknown'))
             ]))),
             def('DODT'),
             subrecord('DNAM', ckFormId('Texture Set', ['TXST'])),

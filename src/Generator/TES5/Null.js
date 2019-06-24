@@ -4,6 +4,6 @@ let {
 
 module.exports = () => {
     addDef('Null', 
-        bytes('Unused', -255)
+        bytes('Unused')
     );
 };

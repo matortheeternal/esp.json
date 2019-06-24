@@ -1,8 +1,8 @@
 let {
-    def, uint8, bytes, subrecord, struct, 
-    req, ckFormId, uint32, float, array, 
-    multiStruct, arrayOfSubrecord, format, sortKey, localized, 
-    string, uint16, record
+    def, uint8, bytes, size, subrecord, 
+    struct, req, ckFormId, uint32, float, 
+    array, multiStruct, arrayOfSubrecord, format, sortKey, 
+    localized, string, uint16, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -16,7 +16,7 @@ module.exports = () => {
                 uint8('Red'),
                 uint8('Green'),
                 uint8('Blue'),
-                bytes('Unknown', 1)
+                size(1, bytes('Unknown'))
             ]))),
             subrecord('WNAM', ckFormId('Worldspace', ['WRLD'])),
             arrayOfSubrecord('Region Areas', 
@@ -78,7 +78,7 @@ module.exports = () => {
                                 'TREE',    'FLOR',    'STAT',    'LTEX',    'MSTT'
                             ]),
                             format(uint16('Parent Index'), def('HideFFFF')),
-                            bytes('Unknown', 2),
+                            size(2, bytes('Unknown')),
                             float('Density'),
                             uint8('Clustering'),
                             uint8('Min Slope'),
@@ -105,14 +105,14 @@ module.exports = () => {
                                 uint16('Y'),
                                 uint16('Z')
                             ]),
-                            bytes('Unknown', 2),
-                            bytes('Unknown', 4)
+                            size(2, bytes('Unknown')),
+                            size(4, bytes('Unknown'))
                         ])
                     )),
                     subrecord('RDGS', array('Grasses', 
                         sortKey([0], struct('Grass', [
                             ckFormId('Grass', ['GRAS']),
-                            bytes('Unknown', 4)
+                            size(4, bytes('Unknown'))
                         ]))
                     )),
                     subrecord('RDWT', array('Weather Types', 

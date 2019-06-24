@@ -1,7 +1,7 @@
 let {
-    def, subrecord, string, bytes, uint32, 
-    format, float, ckFormId, struct, req, 
-    record
+    def, subrecord, string, bytes, size, 
+    uint32, format, float, ckFormId, struct, 
+    req, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -14,7 +14,7 @@ module.exports = () => {
             subrecord('NAM8', string('Membrane Palette Texture')),
             subrecord('NAM9', string('Particle Palette Texture')),
             req(subrecord('DATA', struct('', [
-                bytes('Unknown', 4),
+                size(4, bytes('Unknown')),
                 format(uint32('Membrane Shader - Source Blend Mode'), def('BlendModeEnum')),
                 format(uint32('Membrane Shader - Blend Operation'), def('BlendOpEnum')),
                 format(uint32('Membrane Shader - Z Test Function'), def('ZTestFuncEnum')),

@@ -1,8 +1,8 @@
 let {
     def, subrecord, unknown, formId, ckFormId, 
     string, multiStruct, arrayOfSubrecord, localized, bytes, 
-    uint8, format, struct, int8, div, 
-    uint16, record
+    size, uint8, format, struct, int8, 
+    div, uint16, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -21,14 +21,14 @@ module.exports = () => {
             subrecord('FNAM', localized(string('String'))),
             def('CTDAs'),
             subrecord('LNAM', struct('Values', [
-                bytes('Unknown', 1),
+                size(1, bytes('Unknown')),
                 format(uint8('Looping'), {
                     0: 'None',
                     8: 'Loop',
                     16: 'Envelope Fast',
                     32: 'Envelope Slow'
                 }),
-                bytes('Unknown', 1),
+                size(1, bytes('Unknown')),
                 uint8('Rumble Send Value = (Small / 7) + ((Big / 7) * 16)')
             ])),
             subrecord('BNAM', struct('Values', [

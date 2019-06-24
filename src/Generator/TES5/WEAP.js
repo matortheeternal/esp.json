@@ -1,8 +1,8 @@
 let {
     def, req, subrecord, uint16, ckFormId, 
     string, bytes, multiStruct, uint32, float, 
-    struct, uint8, format, int32, IsSSE, 
-    record
+    struct, uint8, format, size, int32, 
+    IsSSE, record
 } = require('../helpers');
 
 module.exports = game => {
@@ -50,7 +50,7 @@ module.exports = game => {
             ])),
             subrecord('DNAM', struct('Data', [
                 format(uint8('Animation Type'), def('WeaponAnimTypeEnum')),
-                bytes('Unused', 3),
+                size(3, bytes('Unused')),
                 float('Speed'),
                 float('Reach'),
                 format(uint16('Flags'), {
@@ -63,9 +63,9 @@ module.exports = game => {
                     6: 'Don\'t Use 1st Person IS Anim (unused)',
                     7: 'Non-playable'
                 }),
-                bytes('Unused', 2),
+                size(2, bytes('Unused')),
                 float('Sight FOV'),
-                bytes('Unknown', 4),
+                size(4, bytes('Unknown')),
                 uint8('Base VATS To-Hit Chance'),
                 format(uint8('Attack Animation'), def('AttackAnimationEnum')),
                 uint8('# Projectiles'),
@@ -99,33 +99,33 @@ module.exports = game => {
                 float('Rumble - Left Motor Strength'),
                 float('Rumble - Right Motor Strength'),
                 float('Rumble - Duration'),
-                bytes('Unknown', 12),
+                size(12, bytes('Unknown')),
                 format(int32('Skill'), def('SkillEnum')),
-                bytes('Unknown', 8),
+                size(8, bytes('Unknown')),
                 format(int32('Resist'), def('ActorValueEnum')),
-                bytes('Unknown', 4),
+                size(4, bytes('Unknown')),
                 float('Stagger')
             ])),
             IsSSE(game, [
                 subrecord('CRDT', struct('Critical Data', [
                     uint16('Damage'),
-                    bytes('Unused', 2),
+                    size(2, bytes('Unused')),
                     float('% Mult'),
                     format(uint8('Flags'), {
                         0: 'On Death'
                     }),
-                    bytes('Unused', 7),
+                    size(7, bytes('Unused')),
                     ckFormId('Effect', ['SPEL', 'NULL']),
-                    bytes('Unused', 4)
+                    size(4, bytes('Unused'))
                 ])),
                 subrecord('CRDT', struct('Critical Data', [
                     uint16('Damage'),
-                    bytes('Unused', 2),
+                    size(2, bytes('Unused')),
                     float('% Mult'),
                     format(uint8('Flags'), {
                         0: 'On Death'
                     }),
-                    bytes('Unused', 3),
+                    size(3, bytes('Unused')),
                     ckFormId('Effect', ['SPEL', 'NULL'])
                 ]))
             ]),

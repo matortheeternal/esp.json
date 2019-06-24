@@ -1,6 +1,6 @@
 let {
     addDef, float, uint8, struct, format, 
-    bytes, def, subrecord
+    bytes, size, def, subrecord
 } = require('../helpers');
 
 module.exports = () => {
@@ -22,7 +22,7 @@ module.exports = () => {
                 2: 'Alpha - Testing',
                 3: 'No Subtextures'
             }),
-            bytes('Unknown', 2),
+            size(2, bytes('Unknown')),
             def('ByteColors', { name: 'Color' })
         ]))
     );

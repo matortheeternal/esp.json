@@ -1,6 +1,6 @@
 let {
-    addDef, float, bytes, array, subrecord, 
-    struct
+    addDef, float, bytes, size, array, 
+    subrecord, struct
 } = require('../helpers');
 
 module.exports = () => {
@@ -8,7 +8,7 @@ module.exports = () => {
         subrecord('MHDT', struct('Max Height Data', [
             float('Offset'),
             array('Rows', 
-                bytes('Columns', 32)
+                size(32, bytes('Columns'))
             , 32)
         ]))
     );

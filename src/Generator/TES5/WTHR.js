@@ -1,8 +1,8 @@
 let {
     def, subrecord, string, bytes, unknown, 
     ckFormId, req, uint8, format, array, 
-    opts, multiStruct, float, struct, uint32, 
-    arrayOfSubrecord, record
+    opts, multiStruct, float, struct, size, 
+    uint32, arrayOfSubrecord, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -104,7 +104,7 @@ module.exports = () => {
             ]))),
             req(subrecord('DATA', struct('Data', [
                 uint8('Wind Speed'),
-                bytes('Unknown', 2),
+                size(2, bytes('Unknown')),
                 uint8('Trans Delta'),
                 uint8('Sun Glare'),
                 uint8('Sun Damage'),

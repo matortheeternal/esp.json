@@ -1,7 +1,7 @@
 let {
     def, subrecord, bytes, arrayOfSubrecord, float, 
-    struct, uint32, format, uint8, req, 
-    IsSSE, record
+    struct, uint32, format, uint8, size, 
+    req, IsSSE, record
 } = require('../helpers');
 
 module.exports = game => {
@@ -31,7 +31,7 @@ module.exports = game => {
                     format(uint8('Flags'), {
                         0: 'Snow'
                     }),
-                    bytes('Unused', 3)
+                    size(3, bytes('Unused'))
                 ]))),
                 req(subrecord('DATA', struct('Directional Material Data', [
                     float('Falloff Scale'),

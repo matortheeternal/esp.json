@@ -1,8 +1,8 @@
 let {
     def, subrecord, unknown, uint16, format, 
     div, struct, ckFormId, uint8, arrayOfSubrecord, 
-    formId, uint32, bytes, localized, string, 
-    multiStruct, empty, record
+    formId, uint32, bytes, size, localized, 
+    string, multiStruct, empty, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -54,14 +54,14 @@ module.exports = () => {
                     subrecord('TRDT', struct('Response Data', [
                         format(uint32('Emotion Type'), def('EmotionTypeEnum')),
                         uint32('Emotion Value'),
-                        bytes('Unused', 4),
+                        size(4, bytes('Unused')),
                         uint8('Response number'),
-                        bytes('Unused', 3),
+                        size(3, bytes('Unused')),
                         ckFormId('Sound', ['SNDR', 'NULL']),
                         format(uint8('Flags'), {
                             0: 'Use Emotion Animation'
                         }),
-                        bytes('Unused', 3)
+                        size(3, bytes('Unused'))
                     ])),
                     subrecord('NAM1', localized(string('Response Text'))),
                     subrecord('NAM2', string('Script Notes')),

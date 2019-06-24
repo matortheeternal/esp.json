@@ -1,7 +1,7 @@
 let {
-    def, req, uint8, bytes, uint16, 
-    uint32, format, float, subrecord, struct, 
-    record
+    def, req, uint8, bytes, size, 
+    uint16, uint32, format, float, subrecord, 
+    struct, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -14,9 +14,9 @@ module.exports = () => {
                 uint8('Density'),
                 uint8('Min Slope'),
                 uint8('Max Slope'),
-                bytes('Unknown', 1),
+                size(1, bytes('Unknown')),
                 uint16('Units From Water'),
-                bytes('Unknown', 2),
+                size(2, bytes('Unknown')),
                 format(uint32('Units From Water Type'), {
                     0: 'Above - At Least',
                     1: 'Above - At Most',
@@ -36,7 +36,7 @@ module.exports = () => {
                     1: 'Uniform Scaling',
                     2: 'Fit to Slope'
                 }),
-                bytes('Unknown', 3)
+                size(3, bytes('Unknown'))
             ])))
         ]
     })

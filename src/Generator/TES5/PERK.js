@@ -1,8 +1,9 @@
 let {
     def, req, uint8, format, subrecord, 
-    struct, ckFormId, sortKey, bytes, union, 
-    int8, arrayOfStruct, multiStruct, localized, string, 
-    uint16, float, uint32, empty, record
+    struct, ckFormId, sortKey, bytes, size, 
+    union, int8, arrayOfStruct, multiStruct, localized, 
+    string, uint16, float, uint32, empty, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
@@ -49,7 +50,7 @@ module.exports = () => {
                         sortKey([0, 1], struct('Quest + Stage', [
                             ckFormId('Quest', ['QUST']),
                             format(uint8('Quest Stage'), def('PerkDATAQuestStageToStr')),
-                            bytes('Unused', 3)
+                            size(3, bytes('Unused'))
                         ])),
                         ckFormId('Ability', ['SPEL']),
                         sortKey([0, 1], struct('Entry Point', [

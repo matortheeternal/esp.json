@@ -1,7 +1,8 @@
 let {
     addDef, int32, uint8, format, bytes, 
-    subrecord, struct, ckFormId, req, string, 
-    sortKey, multiStruct, def, empty, arrayOfSubrecord
+    size, subrecord, struct, ckFormId, req, 
+    string, sortKey, multiStruct, def, empty, 
+    arrayOfSubrecord
 } = require('../helpers');
 
 module.exports = () => {
@@ -14,7 +15,7 @@ module.exports = () => {
                     0: 'False',
                     1: 'True'
                 }),
-                bytes('Unknown', 2)
+                size(2, bytes('Unknown'))
             ])),
             arrayOfSubrecord('Stages', 
                 multiStruct('Stage', [

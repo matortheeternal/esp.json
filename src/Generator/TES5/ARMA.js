@@ -1,7 +1,7 @@
 let {
     def, subrecord, ckFormId, uint8, format, 
-    bytes, float, struct, req, string, 
-    multiStruct, arrayOfSubrecord, record
+    bytes, size, float, struct, req, 
+    string, multiStruct, arrayOfSubrecord, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -21,9 +21,9 @@ module.exports = () => {
                     0: 'Unknown 0',
                     1: 'Enabled'
                 }),
-                bytes('Unknown', 2),
+                size(2, bytes('Unknown')),
                 uint8('Detection Sound Value'),
-                bytes('Unknown', 1),
+                size(1, bytes('Unknown')),
                 float('Weapon Adjust')
             ]))),
             req(multiStruct('Male world model', [

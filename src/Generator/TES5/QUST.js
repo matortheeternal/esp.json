@@ -1,6 +1,6 @@
 let {
     def, uint16, format, uint8, bytes, 
-    uint32, subrecord, struct, string, size, 
+    size, uint32, subrecord, struct, string, 
     ckFormId, arrayOfSubrecord, multiStruct, req, empty, 
     sortKey, localized, int32, formId, int16, 
     multiUnion, record
@@ -30,7 +30,7 @@ module.exports = () => {
                 }),
                 uint8('Priority'),
                 uint8('Form Version'),
-                bytes('Unknown', 4),
+                size(4, bytes('Unknown')),
                 format(uint32('Type'), def('QuestTypeEnum'))
             ])),
             subrecord('ENAM', size(4, string('Event'))),
@@ -85,7 +85,7 @@ module.exports = () => {
                                 format(uint8('Flags'), {
                                     0: 'Compass Marker Ignores Locks'
                                 }),
-                                bytes('Unused', 3)
+                                size(3, bytes('Unused'))
                             ])),
                             def('CTDAs')
                         ])
@@ -244,7 +244,7 @@ module.exports = () => {
                         format(uint8('Flags'), {
                             0: 'Compass Marker Ignores Locks'
                         }),
-                        bytes('Unknown', 3)
+                        size(3, bytes('Unknown'))
                     ])),
                     def('CTDAs')
                 ])

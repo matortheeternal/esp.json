@@ -1,8 +1,8 @@
 let {
     addDef, def, uint8, format, bytes, 
-    float, ckFormId, union, uint16, opts, 
-    int32, uint32, formId, subrecord, sortKey, 
-    struct, string, multiStruct
+    size, float, ckFormId, union, uint16, 
+    opts, int32, uint32, formId, subrecord, 
+    sortKey, struct, string, multiStruct
 } = require('../helpers');
 
 module.exports = () => {
@@ -10,21 +10,21 @@ module.exports = () => {
         sortKey([0], multiStruct('Condition', [
             subrecord('CTDA', sortKey([3, 5], struct('', [
                 format(uint8('Type'), def('CtdaTypeToStr')),
-                bytes('Unused', 3),
+                size(3, bytes('Unused')),
                 union('Comparison Value', [
                     float('Comparison Value - Float'),
                     ckFormId('Comparison Value - Global', ['GLOB'])
                 ]),
                 format(uint16('Function'), def('CTDAFunctionToStr')),
-                bytes('Unused', 2),
+                size(2, bytes('Unused')),
                 union('Parameter #1', [
-                    bytes('Unknown', 4),
-                    opts(bytes('None', 4), {
+                    size(4, bytes('Unknown')),
+                    opts(size(4, bytes('None')), {
                         "includeFlag": "dfZeroSortKey"
                     }),
                     int32('Integer'),
                     float('Float'),
-                    opts(bytes('Variable Name (unused)', 4), {
+                    opts(size(4, bytes('Variable Name (unused)')), {
                         "includeFlag": "dfZeroSortKey"
                     }),
                     format(uint32('Sex'), def('SexEnum')),
@@ -113,13 +113,13 @@ module.exports = () => {
                     ckFormId('Knowable', ['MGEF', 'WOOP'])
                 ]),
                 union('Parameter #2', [
-                    bytes('Unknown', 4),
-                    opts(bytes('None', 4), {
+                    size(4, bytes('Unknown')),
+                    opts(size(4, bytes('None')), {
                         "includeFlag": "dfZeroSortKey"
                     }),
                     int32('Integer'),
                     float('Float'),
-                    opts(bytes('Variable Name (unused)', 4), {
+                    opts(size(4, bytes('Variable Name (unused)')), {
                         "includeFlag": "dfZeroSortKey"
                     }),
                     format(uint32('Sex'), def('SexEnum')),
@@ -174,7 +174,7 @@ module.exports = () => {
                         ckFormId('Weapon List', ['FLST']),
                         ckFormId('Target', ['NPC_']),
                         ckFormId('Target List', ['FLST']),
-                        bytes('Unknown', 4),
+                        size(4, bytes('Unknown')),
                         format(int32('Target Part'), def('ActorValueEnum')),
                         format(uint32('VATS Action'), {
                             0: 'Unarmed Attack',
@@ -190,31 +190,31 @@ module.exports = () => {
                             10: 'Heal',
                             11: 'Player Death'
                         }),
-                        opts(bytes('Unknown', 4), {
+                        opts(size(4, bytes('Unknown')), {
                             "includeFlag": "dfZeroSortKey"
                         }),
-                        opts(bytes('Unknown', 4), {
+                        opts(size(4, bytes('Unknown')), {
                             "includeFlag": "dfZeroSortKey"
                         }),
                         ckFormId('Critical Effect', ['SPEL']),
                         ckFormId('Critical Effect List', ['FLST']),
-                        opts(bytes('Unknown', 4), {
+                        opts(size(4, bytes('Unknown')), {
                             "includeFlag": "dfZeroSortKey"
                         }),
-                        opts(bytes('Unknown', 4), {
+                        opts(size(4, bytes('Unknown')), {
                             "includeFlag": "dfZeroSortKey"
                         }),
-                        opts(bytes('Unknown', 4), {
+                        opts(size(4, bytes('Unknown')), {
                             "includeFlag": "dfZeroSortKey"
                         }),
-                        opts(bytes('Unknown', 4), {
+                        opts(size(4, bytes('Unknown')), {
                             "includeFlag": "dfZeroSortKey"
                         }),
                         format(uint32('Weapon Type'), def('WeaponAnimTypeEnum')),
-                        opts(bytes('Unknown', 4), {
+                        opts(size(4, bytes('Unknown')), {
                             "includeFlag": "dfZeroSortKey"
                         }),
-                        opts(bytes('Unknown', 4), {
+                        opts(size(4, bytes('Unknown')), {
                             "includeFlag": "dfZeroSortKey"
                         }),
                         format(uint32('Projectile Type'), {

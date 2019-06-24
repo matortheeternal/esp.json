@@ -1,8 +1,8 @@
 let {
     def, IsSSE, int16, ckFormId, struct, 
     array, opts, subrecord, arrayOfSubrecord, uint8, 
-    format, bytes, req, multiStruct, float, 
-    string, int32, record
+    format, bytes, size, req, multiStruct, 
+    float, string, int32, record
 } = require('../helpers');
 
 module.exports = game => {
@@ -48,7 +48,7 @@ module.exports = game => {
                         5: 'Use Image Space Data (unused)',
                         6: 'Use Sky Cell'
                     }),
-                    bytes('Unknown', 1)
+                    size(1, bytes('Unknown'))
                 ])))
             ]),
             subrecord('CNAM', ckFormId('Climate', ['CLMT'])),

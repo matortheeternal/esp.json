@@ -1,8 +1,8 @@
 let {
     def, req, subrecord, unknown, uint16, 
     format, ckFormId, uint32, uint8, int8, 
-    struct, bytes, multiStruct, arrayOfSubrecord, string, 
-    record
+    struct, bytes, size, multiStruct, arrayOfSubrecord, 
+    string, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -82,7 +82,7 @@ module.exports = () => {
                 multiStruct('Marker', [
                     subrecord('ENAM', uint32('Marker Index')),
                     subrecord('NAM0', struct('Disabled Entry Points', [
-                        bytes('Unknown', 2),
+                        size(2, bytes('Unknown')),
                         format(uint16('Disabled Points'), def('FurnitureEntryTypeFlags'))
                     ])),
                     subrecord('FNMK', ckFormId('Marker Keyword', ['KYWD', 'NULL']))

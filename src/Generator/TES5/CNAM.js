@@ -1,5 +1,6 @@
 let {
-    addDef, uint8, bytes, subrecord, struct
+    addDef, uint8, bytes, size, subrecord, 
+    struct
 } = require('../helpers');
 
 module.exports = () => {
@@ -8,7 +9,7 @@ module.exports = () => {
             uint8('Red'),
             uint8('Green'),
             uint8('Blue'),
-            bytes('Unknown', 1)
+            size(1, bytes('Unknown'))
         ]))
     );
 };

@@ -1,8 +1,8 @@
 let {
     subrecord, uint32, format, uint8, struct, 
-    array, float, bytes, ckFormId, def, 
-    int16, sortKey, multiStruct, uint16, multiUnion, 
-    arrayOfSubrecord, unknown, record
+    array, float, bytes, size, ckFormId, 
+    def, int16, sortKey, multiStruct, uint16, 
+    multiUnion, arrayOfSubrecord, unknown, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -44,7 +44,7 @@ module.exports = () => {
                         , 33)
                     ])
                 , 33),
-                bytes('Unused', 3)
+                size(3, bytes('Unused'))
             ])),
             subrecord('VCLR', array('Vertex Colours', 
                 struct('Row', [
@@ -63,7 +63,7 @@ module.exports = () => {
                         subrecord('BTXT', sortKey([1, 3], struct('Base Layer Header', [
                             ckFormId('Texture', ['LTEX', 'NULL']),
                             format(uint8('Quadrant'), def('QuadrantEnum')),
-                            bytes('Unused', 1),
+                            size(1, bytes('Unused')),
                             int16('Layer')
                         ])))
                     ])),
@@ -71,13 +71,13 @@ module.exports = () => {
                         subrecord('ATXT', sortKey([1, 3], struct('Alpha Layer Header', [
                             ckFormId('Texture', ['LTEX', 'NULL']),
                             format(uint8('Quadrant'), def('QuadrantEnum')),
-                            bytes('Unused', 1),
+                            size(1, bytes('Unused')),
                             int16('Layer')
                         ]))),
                         subrecord('VTXT', array('Alpha Layer Data', 
                             sortKey([0], struct('Cell', [
                                 format(uint16('Position'), def('AtxtPosition')),
-                                bytes('Unused', 2),
+                                size(2, bytes('Unused')),
                                 float('Opacity')
                             ]))
                         ))

@@ -1,6 +1,6 @@
 let {
-    addDef, subrecord, bytes, def, struct, 
-    multiStruct
+    addDef, subrecord, bytes, def, size, 
+    struct, multiStruct
 } = require('../helpers');
 
 module.exports = () => {
@@ -9,47 +9,47 @@ module.exports = () => {
             subrecord('MPAI', bytes('Unknown')),
             subrecord('MPAV', struct('Nose Variants', [
                 def('NoseMorphFlags'),
-                bytes('Unknown', 4),
-                bytes('Unknown', 4),
-                bytes('Unknown', 4),
-                bytes('Unknown', 4),
-                bytes('Unknown', 4),
-                bytes('Unknown', 4),
-                bytes('Unknown', 4)
+                size(4, bytes('Unknown')),
+                size(4, bytes('Unknown')),
+                size(4, bytes('Unknown')),
+                size(4, bytes('Unknown')),
+                size(4, bytes('Unknown')),
+                size(4, bytes('Unknown')),
+                size(4, bytes('Unknown'))
             ])),
             subrecord('MPAI', bytes('Unknown')),
             subrecord('MPAV', struct('Brow Variants', [
                 def('BrowMorphFlags'),
-                bytes('Unknown', 4),
-                bytes('Unknown', 4),
-                bytes('Unknown', 4),
-                bytes('Unknown', 4),
-                bytes('Unknown', 4),
-                bytes('Unknown', 4),
-                bytes('Unknown', 4)
+                size(4, bytes('Unknown')),
+                size(4, bytes('Unknown')),
+                size(4, bytes('Unknown')),
+                size(4, bytes('Unknown')),
+                size(4, bytes('Unknown')),
+                size(4, bytes('Unknown')),
+                size(4, bytes('Unknown'))
             ])),
             subrecord('MPAI', bytes('Unknown')),
             subrecord('MPAV', struct('Eye Variants', [
                 def('EyesMorphFlags01'),
                 def('EyesMorphFlags02'),
-                bytes('Unknown', 3),
-                bytes('Unknown', 4),
-                bytes('Unknown', 4),
-                bytes('Unknown', 4),
-                bytes('Unknown', 4),
-                bytes('Unknown', 4),
-                bytes('Unknown', 4)
+                size(3, bytes('Unknown')),
+                size(4, bytes('Unknown')),
+                size(4, bytes('Unknown')),
+                size(4, bytes('Unknown')),
+                size(4, bytes('Unknown')),
+                size(4, bytes('Unknown')),
+                size(4, bytes('Unknown'))
             ])),
             subrecord('MPAI', bytes('Unknown')),
             subrecord('MPAV', struct('Lip Variants', [
                 def('LipMorphFlags'),
-                bytes('Unknown', 4),
-                bytes('Unknown', 4),
-                bytes('Unknown', 4),
-                bytes('Unknown', 4),
-                bytes('Unknown', 4),
-                bytes('Unknown', 4),
-                bytes('Unknown', 4)
+                size(4, bytes('Unknown')),
+                size(4, bytes('Unknown')),
+                size(4, bytes('Unknown')),
+                size(4, bytes('Unknown')),
+                size(4, bytes('Unknown')),
+                size(4, bytes('Unknown')),
+                size(4, bytes('Unknown'))
             ]))
         ])
     );

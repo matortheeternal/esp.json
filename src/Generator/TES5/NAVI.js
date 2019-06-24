@@ -1,7 +1,7 @@
 let {
     def, subrecord, uint32, ckFormId, bytes, 
-    float, array, struct, uint8, format, 
-    union, int16, arrayOfSubrecord, record
+    size, float, array, struct, uint8, 
+    format, union, int16, arrayOfSubrecord, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -12,7 +12,7 @@ module.exports = () => {
             arrayOfSubrecord('Navigation Map Infos', 
                 subrecord('NVMI', struct('Navigation Map Info', [
                     ckFormId('Navigation Mesh', ['NAVM']),
-                    bytes('Unknown', 4),
+                    size(4, bytes('Unknown')),
                     float('X'),
                     float('Y'),
                     float('Z'),
@@ -25,7 +25,7 @@ module.exports = () => {
                     , -1),
                     array('Linked Doors', 
                         struct('Door', [
-                            bytes('Unknown', 4),
+                            size(4, bytes('Unknown')),
                             ckFormId('Door Ref', ['REFR'])
                         ])
                     , -1),
@@ -37,7 +37,7 @@ module.exports = () => {
                         def('Null'),
                         def('NAVIslandData')
                     ]),
-                    bytes('Unknown', 4),
+                    size(4, bytes('Unknown')),
                     ckFormId('Parent Worldspace', ['WRLD', 'NULL']),
                     union('Parent', [
                         struct('Coordinates', [

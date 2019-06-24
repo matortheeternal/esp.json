@@ -1,7 +1,8 @@
 let {
-    addDef, uint32, opts, bytes, ckFormId, 
-    int16, struct, union, float, sortKey, 
-    array, def, format, uint16, subrecord
+    addDef, uint32, opts, bytes, size, 
+    ckFormId, int16, struct, union, float, 
+    sortKey, array, def, format, uint16, 
+    subrecord
 } = require('../helpers');
 
 module.exports = () => {
@@ -10,7 +11,7 @@ module.exports = () => {
             opts(uint32('Version'), {
                 "defaultNativeValue": 12
             }),
-            opts(bytes('Magic', 4), {
+            opts(size(4, bytes('Magic')), {
                 "defaultEditValue": "'3C A0 E9 A5'"
             }),
             ckFormId('Parent Worldspace', ['WRLD', 'NULL']),
@@ -92,7 +93,7 @@ module.exports = () => {
             }),
             opts(array('Edge Links', 
                 struct('Edge Link', [
-                    bytes('Unknown', 4),
+                    size(4, bytes('Unknown')),
                     ckFormId('Mesh', ['NAVM']),
                     int16('Triangle')
                 ])
@@ -104,7 +105,7 @@ module.exports = () => {
                     opts(int16('Triangle before door'), {
                         "linksToCallback": "TriangleLinksTo"
                     }),
-                    bytes('Unknown', 4),
+                    size(4, bytes('Unknown')),
                     ckFormId('Door', ['REFR'])
                 ]))
             , -1),
