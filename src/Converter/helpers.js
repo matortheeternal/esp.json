@@ -80,9 +80,15 @@ let newLine = function(str) {
 };
 
 let sizeLine = function(size, line, converter) {
-    if (!size) return line;
+    if (!size || size < 0) return line;
     converter.addRequires('size');
     return `size(${size}, ${line})`;
+};
+
+let prefixLine = function(prefix, line, converter) {
+    if (!prefix) return line;
+    converter.addRequires('prefix');
+    return `prefix(${prefix}, ${line})`;
 };
 
 let reqLine = function(required, line, converter) {
@@ -110,6 +116,6 @@ let resolveIntFn = function(intType) {
 
 module.exports = {
     args, indent, arr, inlineArr, mixedArr, stringify,
-    sizeLine, reqLine, newLine, optsLine, optsReq,
+    sizeLine, prefixLine, reqLine, newLine, optsLine, optsReq,
     resolveIntFn, lineBreak, tab
 };

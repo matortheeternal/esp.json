@@ -1,5 +1,11 @@
 let {subrecordAndField} = require('../converters'),
-    {args} = require('../helpers');
+    {prefixLine, sizeLine, args} = require('../helpers');
+
+let prefixes = {
+    '-1': 4,
+    '-2': 2,
+    '-4': 1
+};
 
 subrecordAndField('wbByteArray', [
     args.name,
@@ -10,6 +16,7 @@ subrecordAndField('wbByteArray', [
     args.identifier
 ], ({name, size}, converter) => {
     converter.addRequires('bytes');
-    let sizeArg = size ? ', ' + size : '';
-    return `bytes(${name + sizeArg})`;
+    let prefix = prefixes[size] || 0,
+        line = sizeLine(size, `bytes(${name})`, converter);
+    return prefixLine(prefix, line, converter);
 });

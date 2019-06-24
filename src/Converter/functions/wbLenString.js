@@ -9,6 +9,6 @@ subrecordAndField('wbLenString', [
     args.identifier,
     args.identifier
 ], ({name, size}, converter) => {
-    converter.addRequires('prefixLength', 'string');
-    return `prefixLength(${size}, string(${name}))`;
+    converter.addRequires('prefix', 'string');
+    return `prefix(${size || 4}, string(${name}))`;
 });

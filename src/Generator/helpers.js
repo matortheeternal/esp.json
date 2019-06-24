@@ -13,7 +13,7 @@ let sortKey = (sortKey, obj) => (obj.sortKey = sortKey) && obj;
 let format = (obj, format) => (obj.format = format) && obj;
 let div = value => ({ type: 'divide', value });
 let size = (size, obj) => ({ ...obj, size});
-let prefixLength = (prefixLength, obj) => ({ ...obj, prefixLength });
+let prefix = (prefix, obj) => ({ ...obj, prefix });
 let localized = (obj) => ({ ...obj, localized: true });
 
 // data structures
@@ -41,7 +41,7 @@ let union = (name, decider, elements) =>
 
 // variable length data
 let bytes = (name, size = 0) => ({ name, type: 'bytes', size });
-let unknown = (size = 0) => ({ name: 'Unknown', type: 'bytes', size });
+let unknown = () => ({ name: 'Unknown', type: 'bytes' });
 
 // strings
 let string = (name) => ({ name, type: 'string' });
@@ -61,7 +61,7 @@ let empty = name => ({ name, type: 'empty' });
 
 module.exports = {
     addDef, getDefs, clearDefs, IsSSE,
-    req, def, opts, sortKey, format, div, size, prefixLength, localized,
+    req, def, opts, sortKey, format, div, size, prefix, localized,
     record, subrecord,
     arrayOfSubrecord, arrayOfStruct, multiStruct, multiUnion,
     struct, array, union,
