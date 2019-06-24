@@ -1,6 +1,7 @@
 let {
     def, req, uint8, subrecord, struct, 
-    ckFormId, string, uint16, format, record
+    ckFormId, localized, string, uint16, format, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
@@ -38,7 +39,7 @@ module.exports = () => {
             subrecord('SNAM', ckFormId('Sound - Looping', ['SNDR'])),
             subrecord('VNAM', ckFormId('Sound - Activation', ['SNDR'])),
             subrecord('WNAM', ckFormId('Water Type', ['WATR'])),
-            subrecord('RNAM', string('Activate Text Override')),
+            subrecord('RNAM', localized(string('Activate Text Override'))),
             subrecord('FNAM', format(uint16('Flags'), {
                 0: 'No Displacement',
                 1: 'Ignored by Sandbox'

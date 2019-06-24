@@ -1,7 +1,7 @@
 let {
     def, req, float, ckFormId, uint8, 
     format, bytes, subrecord, struct, IsSSE, 
-    cstring, array, record
+    string, size, array, record
 } = require('../helpers');
 
 module.exports = game => {
@@ -60,7 +60,7 @@ module.exports = game => {
             ]),
             subrecord('MNAM', array('Distant LOD', 
                 struct('LOD', [
-                    cstring('Mesh', 260)
+                    size(260, string('Mesh'))
                 ])
             ))
         ]

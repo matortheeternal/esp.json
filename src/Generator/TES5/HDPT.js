@@ -1,6 +1,6 @@
 let {
     def, subrecord, uint8, format, uint32, 
-    ckFormId, arrayOfSubrecord, cstring, req, arrayOfStruct, 
+    ckFormId, arrayOfSubrecord, string, req, arrayOfStruct, 
     multiStruct, record
 } = require('../helpers');
 
@@ -39,7 +39,7 @@ module.exports = () => {
                         1: 'Tri',
                         2: 'Chargen Morph'
                     })),
-                    req(subrecord('NAM1', cstring('FileName')))
+                    req(subrecord('NAM1', string('FileName')))
                 ])
             ),
             subrecord('TNAM', ckFormId('Texture Set', ['TXST', 'NULL'])),

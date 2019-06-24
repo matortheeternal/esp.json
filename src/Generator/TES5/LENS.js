@@ -1,5 +1,5 @@
 let {
-    def, subrecord, float, uint32, cstring, 
+    def, subrecord, float, uint32, string, 
     format, struct, multiStruct, arrayOfSubrecord, record
 } = require('../helpers');
 
@@ -12,8 +12,8 @@ module.exports = () => {
             subrecord('LFSP', uint32('Count')),
             arrayOfSubrecord('Lens Flare Sprites', 
                 multiStruct('Flare', [
-                    subrecord('DNAM', cstring('Lens Flare Sprite ID')),
-                    subrecord('FNAM', cstring('Texture')),
+                    subrecord('DNAM', string('Lens Flare Sprite ID')),
+                    subrecord('FNAM', string('Texture')),
                     subrecord('LFSD', struct('Lens Flare Data', [
                         def('FloatColors', { name: 'Tint' }),
                         float('Width'),

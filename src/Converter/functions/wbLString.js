@@ -8,6 +8,6 @@ subrecordAndField('wbLString', [
     args.required,
     args.identifier
 ], ({name}, converter) => {
-    converter.addRequires('string');
-    return `string(${name})`;
+    converter.addRequires('localized', 'string');
+    return `localized(string(${name}))`;
 });

@@ -1,7 +1,7 @@
 let {
     def, req, subrecord, unknown, uint16, 
     format, ckFormId, uint32, uint8, int8, 
-    struct, bytes, multiStruct, arrayOfSubrecord, cstring, 
+    struct, bytes, multiStruct, arrayOfSubrecord, string, 
     record
 } = require('../helpers');
 
@@ -94,7 +94,7 @@ module.exports = () => {
                     format(uint16('Entry Points'), def('FurnitureEntryTypeFlags'))
                 ]))
             ),
-            subrecord('XMRK', cstring('Model FileName'))
+            subrecord('XMRK', string('Model FileName'))
         ]
     })
 };

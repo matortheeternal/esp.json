@@ -1,9 +1,9 @@
 let {
     def, uint16, format, uint8, bytes, 
-    uint32, subrecord, struct, cstring, ckFormId, 
-    arrayOfSubrecord, multiStruct, req, empty, sortKey, 
-    string, int32, formId, int16, multiUnion, 
-    record
+    uint32, subrecord, struct, string, size, 
+    ckFormId, arrayOfSubrecord, multiStruct, req, empty, 
+    sortKey, localized, int32, formId, int16, 
+    multiUnion, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -33,11 +33,11 @@ module.exports = () => {
                 bytes('Unknown', 4),
                 format(uint32('Type'), def('QuestTypeEnum'))
             ])),
-            subrecord('ENAM', cstring('Event', 4)),
+            subrecord('ENAM', size(4, string('Event'))),
             arrayOfSubrecord('Text Display Globals', 
                 subrecord('QTGL', ckFormId('Global', ['GLOB']))
             ),
-            subrecord('FLTR', cstring('Object Window Filter')),
+            subrecord('FLTR', string('Object Window Filter')),
             req(multiStruct('Quest Dialogue Conditions', [
                 def('CTDAs')
             ])),
@@ -62,7 +62,7 @@ module.exports = () => {
                                 1: 'Fail Quest'
                             })),
                             def('CTDAs'),
-                            subrecord('CNAM', string('Log Entry')),
+                            subrecord('CNAM', localized(string('Log Entry'))),
                             subrecord('NAM0', ckFormId('Next Quest', ['QUST'])),
                             subrecord('SCHR', bytes('Unused')),
                             subrecord('SCTX', bytes('Unused')),
@@ -77,7 +77,7 @@ module.exports = () => {
                     subrecord('FNAM', format(uint32('Flags'), {
                         0: 'ORed With Previous'
                     })),
-                    req(subrecord('NNAM', string('Display Text'))),
+                    req(subrecord('NNAM', localized(string('Display Text')))),
                     arrayOfSubrecord('Targets', 
                         multiStruct('Target', [
                             subrecord('QSTA', struct('Target', [
@@ -97,7 +97,7 @@ module.exports = () => {
                 multiUnion('Alias', [
                     req(sortKey([0], multiStruct('Alias', [
                         subrecord('ALST', uint32('Reference Alias ID')),
-                        subrecord('ALID', cstring('Alias Name')),
+                        subrecord('ALID', string('Alias Name')),
                         def('QUSTAliasFlags'),
                         subrecord('ALFI', format(int32('Force Into Alias When Filled'), def('QuestAliasToStr'))),
                         subrecord('ALFL', ckFormId('Specific Location', ['LCTN'])),
@@ -136,7 +136,7 @@ module.exports = () => {
                             }))
                         ]),
                         multiStruct('Find Matching Reference From Event', [
-                            subrecord('ALFE', cstring('From Event', 4)),
+                            subrecord('ALFE', size(4, string('From Event'))),
                             subrecord('ALFD', bytes('Event Data'))
                         ]),
                         def('CTDAs'),
@@ -165,7 +165,7 @@ module.exports = () => {
                     ]))),
                     req(sortKey([0], multiStruct('Alias', [
                         subrecord('ALLS', uint32('Location Alias ID')),
-                        subrecord('ALID', cstring('Alias Name')),
+                        subrecord('ALID', string('Alias Name')),
                         def('QUSTAliasFlags'),
                         subrecord('ALFI', format(int32('Force Into Alias When Filled'), def('QuestAliasToStr'))),
                         subrecord('ALFL', ckFormId('Specific Location', ['LCTN'])),
@@ -204,7 +204,7 @@ module.exports = () => {
                             }))
                         ]),
                         multiStruct('Find Matching Reference From Event', [
-                            subrecord('ALFE', cstring('From Event', 4)),
+                            subrecord('ALFE', size(4, string('From Event'))),
                             subrecord('ALFD', bytes('Event Data'))
                         ]),
                         def('CTDAs'),
@@ -233,7 +233,7 @@ module.exports = () => {
                     ])))
                 ])
             ),
-            req(subrecord('NNAM', cstring('Description'))),
+            req(subrecord('NNAM', string('Description'))),
             arrayOfSubrecord('Targets', 
                 multiStruct('Target', [
                     subrecord('QSTA', struct('Target', [

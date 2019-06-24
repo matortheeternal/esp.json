@@ -1,6 +1,6 @@
 let {
     def, req, uint16, format, float, 
-    ckFormId, subrecord, struct, cstring, bytes, 
+    ckFormId, subrecord, struct, string, bytes, 
     sortKey, multiStruct, uint32, record
 } = require('../helpers');
 
@@ -60,7 +60,7 @@ module.exports = () => {
                 ckFormId('Collision Layer', ['COLL', 'NULL'])
             ]))),
             req(sortKey([0], multiStruct('Muzzle Flash Model', [
-                subrecord('NAM1', cstring('Model FileName')),
+                subrecord('NAM1', string('Model FileName')),
                 subrecord('NAM2', bytes('Texture Files Hashes'))
             ]))),
             subrecord('VNAM', format(uint32('Sound Level'), def('SoundLevelEnum')))

@@ -1,5 +1,5 @@
 let {
-    def, req, subrecord, cstring, unknown, 
+    def, req, subrecord, string, unknown, 
     float, struct, ckFormId, uint32, arrayOfSubrecord, 
     multiStruct, record
 } = require('../helpers');
@@ -10,7 +10,7 @@ module.exports = () => {
             def('EDID'),
             def('FULL'),
             req(def('DESC')),
-            subrecord('ANAM', cstring('Abbreviation')),
+            subrecord('ANAM', string('Abbreviation')),
             subrecord('CNAM', unknown()),
             subrecord('AVSK', struct('Skill', [
                 float('Skill Use Mult'),

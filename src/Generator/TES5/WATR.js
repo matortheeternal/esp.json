@@ -1,5 +1,5 @@
 let {
-    def, subrecord, cstring, req, arrayOfSubrecord, 
+    def, subrecord, string, req, arrayOfSubrecord, 
     uint8, IsSSE, format, bytes, ckFormId, 
     uint16, float, struct, record
 } = require('../helpers');
@@ -10,7 +10,7 @@ module.exports = game => {
             def('EDID'),
             def('FULL'),
             arrayOfSubrecord('Unused', 
-                req(subrecord('NNAM', cstring('Noise Map')))
+                req(subrecord('NNAM', string('Noise Map')))
             ),
             subrecord('ANAM', uint8('Opacity')),
             subrecord('FNAM', format(uint8('Flags'), {
@@ -161,10 +161,10 @@ module.exports = game => {
                 float('Y'),
                 float('Z')
             ]))),
-            req(subrecord('NAM2', cstring('Noise Layer One - Noise Texture'))),
-            req(subrecord('NAM3', cstring('Noise Layer Two - Noise Texture'))),
-            req(subrecord('NAM4', cstring('Noise Layer Three - Noise Texture'))),
-            req(subrecord('NAM5', cstring('Flow Normals - Noise Texture')))
+            req(subrecord('NAM2', string('Noise Layer One - Noise Texture'))),
+            req(subrecord('NAM3', string('Noise Layer Two - Noise Texture'))),
+            req(subrecord('NAM4', string('Noise Layer Three - Noise Texture'))),
+            req(subrecord('NAM5', string('Flow Normals - Noise Texture')))
         ]
     })
 };

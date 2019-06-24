@@ -1,5 +1,5 @@
 let {functionConverter} = require('../converters'),
-    {args} = require('../helpers');
+    {sizeLine, args} = require('../helpers');
 
 functionConverter('wbStringForward', [
     args.sig,
@@ -11,7 +11,7 @@ functionConverter('wbStringForward', [
     args.identifier,
     args.identifier
 ], ({sig, name, size}, converter) => {
-    converter.addRequires('subrecord', 'cstring');
-    let sizeArg = size ? ', ' + size : '';
-    return `subrecord('${sig}', cstring(${name}${sizeArg}))`;
+    converter.addRequires('subrecord', 'string');
+    let line = sizeLine(size, `string(${name})`, converter);
+    return `subrecord('${sig}', ${line})`;
 });

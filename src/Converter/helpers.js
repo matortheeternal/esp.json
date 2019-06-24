@@ -79,6 +79,12 @@ let newLine = function(str) {
     return lineBreak + indent(str) + lineBreak;
 };
 
+let sizeLine = function(size, line, converter) {
+    if (!size) return line;
+    converter.addRequires('size');
+    return `size(${size}, ${line})`;
+};
+
 let reqLine = function(required, line, converter) {
     if (!required) return line;
     converter.addRequires('req');
@@ -104,6 +110,6 @@ let resolveIntFn = function(intType) {
 
 module.exports = {
     args, indent, arr, inlineArr, mixedArr, stringify,
-    reqLine, newLine, optsLine, optsReq,
+    sizeLine, reqLine, newLine, optsLine, optsReq,
     resolveIntFn, lineBreak, tab
 };

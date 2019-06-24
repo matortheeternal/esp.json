@@ -1,5 +1,5 @@
 let {
-    def, req, subrecord, uint16, cstring, 
+    def, req, subrecord, uint16, string, 
     bytes, multiStruct, ckFormId, arrayOfSubrecord, int32, 
     float, struct, div, format, record
 } = require('../helpers');
@@ -20,13 +20,13 @@ module.exports = () => {
             def('EITM'),
             subrecord('EAMT', uint16('Enchantment Amount')),
             multiStruct('Male world model', [
-                subrecord('MOD2', cstring('Model FileName')),
+                subrecord('MOD2', string('Model FileName')),
                 subrecord('MO2T', bytes('Texture Files Hashes')),
                 def('MO2S')
             ]),
             def('ICON'),
             multiStruct('Female world model', [
-                subrecord('MOD4', cstring('Model FileName')),
+                subrecord('MOD4', string('Model FileName')),
                 subrecord('MO4T', bytes('Texture Files Hashes')),
                 def('MO4S')
             ]),
@@ -35,7 +35,7 @@ module.exports = () => {
             def('DEST'),
             def('YNAM'),
             def('ZNAM'),
-            subrecord('BMCT', cstring('Ragdoll Constraint Template')),
+            subrecord('BMCT', string('Ragdoll Constraint Template')),
             def('ETYP'),
             subrecord('BIDS', ckFormId('Bash Impact Data Set', ['IPDS'])),
             subrecord('BAMT', ckFormId('Alternate Block Material', ['MATT'])),

@@ -1,7 +1,7 @@
 let {
     def, req, subrecord, ckFormId, int8, 
     format, sortKey, struct, array, bytes, 
-    float, uint32, int32, empty, cstring, 
+    float, uint32, int32, empty, string, 
     arrayOfSubrecord, uint16, multiStruct, record
 } = require('../helpers');
 
@@ -80,14 +80,14 @@ module.exports = () => {
                 ])
             ]))),
             subrecord('MNAM', empty('Male Marker')),
-            subrecord('ANAM', cstring('Male Skeletal Model')),
+            subrecord('ANAM', string('Male Skeletal Model')),
             def('MODT'),
             subrecord('FNAM', empty('Female Marker')),
-            subrecord('ANAM', cstring('Female Skeletal Model')),
+            subrecord('ANAM', string('Female Skeletal Model')),
             def('MODT'),
             subrecord('NAM2', empty('Marker NAM2 #1')),
             arrayOfSubrecord('Movement Type Names', 
-                subrecord('MTNM', cstring('Name'))
+                subrecord('MTNM', string('Name'))
             ),
             subrecord('VTCK', array('Voices', 
                 ckFormId('Voice', ['VTYP'])
@@ -149,7 +149,7 @@ module.exports = () => {
             subrecord('ONAM', ckFormId('Open Loot Sound', ['SNDR', 'NULL'])),
             subrecord('LNAM', ckFormId('Close Loot Sound', ['SNDR', 'NULL'])),
             arrayOfSubrecord('Biped Object Names', 
-                subrecord('NAME', cstring('Name'))
+                subrecord('NAME', string('Name'))
             ),
             arrayOfSubrecord('Movement Types', 
                 sortKey([0], multiStruct('Movement Types', [
@@ -175,7 +175,7 @@ module.exports = () => {
             ),
             subrecord('UNES', ckFormId('Unarmed Equip Slot', ['EQUP', 'NULL'])),
             arrayOfSubrecord('Phoneme Target Names', 
-                subrecord('PHTN', cstring('Name'))
+                subrecord('PHTN', string('Name'))
             ),
             def('PHWT'),
             subrecord('WKMV', ckFormId('Base Movement Default - Walk', ['MOVT', 'NULL'])),

@@ -1,5 +1,5 @@
 let {
-    def, uint8, cstring, format, subrecord, 
+    def, uint8, string, format, subrecord, 
     struct, req, arrayOfStruct, multiStruct, record
 } = require('../helpers');
 
@@ -11,7 +11,7 @@ module.exports = () => {
                 multiStruct('Model', [
                     req(subrecord('DATA', struct('Data', [
                         uint8('Percentage'),
-                        cstring('Model FileName'),
+                        string('Model FileName'),
                         format(uint8('Flags'), {
                             0: 'Has Collision Data'
                         })

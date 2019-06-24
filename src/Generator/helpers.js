@@ -12,6 +12,9 @@ let opts = (obj, opts) => ({ ...obj, ...opts });
 let sortKey = (sortKey, obj) => (obj.sortKey = sortKey) && obj;
 let format = (obj, format) => (obj.format = format) && obj;
 let div = value => ({ type: 'divide', value });
+let size = (size, obj) => ({ ...obj, size});
+let prefixLength = (prefixLength, obj) => ({ ...obj, prefixLength });
+let localized = (obj) => ({ ...obj, localized: true });
 
 // data structures
 let record = (signature, name, def) => addDef(signature,
@@ -39,8 +42,9 @@ let union = (name, decider, elements) =>
 // variable length data
 let bytes = (name, size = 0) => ({ name, type: 'bytes', size });
 let unknown = (size = 0) => ({ name: 'Unknown', type: 'bytes', size });
-let string = (name, maxSize = 0) => ({ name, type: 'string', maxSize });
-let cstring = (name, maxSize = 0) => ({ name, type: 'cstring', maxSize });
+
+// strings
+let string = (name) => ({ name, type: 'string' });
 
 // fixed length data
 let float = (name, formatter = '') => ({ name, type: 'float', formatter });
@@ -57,11 +61,11 @@ let empty = name => ({ name, type: 'empty' });
 
 module.exports = {
     addDef, getDefs, clearDefs, IsSSE,
-    req, def, opts, sortKey, format, div,
+    req, def, opts, sortKey, format, div, size, prefixLength, localized,
     record, subrecord,
     arrayOfSubrecord, arrayOfStruct, multiStruct, multiUnion,
     struct, array, union,
-    bytes, unknown, string, cstring,
+    bytes, unknown, string,
     float, int0, int8, uint8, int16, uint16, int32, uint32,
     formId, ckFormId, empty
 };

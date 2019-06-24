@@ -1,6 +1,6 @@
 let {
     def, req, subrecord, uint32, uint8, 
-    struct, format, cstring, ckFormId, array, 
+    struct, format, string, ckFormId, array, 
     record
 } = require('../helpers');
 
@@ -21,7 +21,7 @@ module.exports = () => {
                 1: 'Sensor',
                 2: 'Navmesh Obstacle'
             })),
-            req(subrecord('MNAM', cstring('Name'))),
+            req(subrecord('MNAM', string('Name'))),
             subrecord('INTV', uint32('Interactables Count')),
             subrecord('CNAM', array('Collides With', 
                 ckFormId('Forms', ['COLL'])

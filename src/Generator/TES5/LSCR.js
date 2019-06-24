@@ -1,6 +1,6 @@
 let {
     def, req, subrecord, ckFormId, float, 
-    int16, struct, cstring, record
+    int16, struct, string, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -29,7 +29,7 @@ module.exports = () => {
                 float('Y'),
                 float('Z')
             ])),
-            req(subrecord('MOD2', cstring('Camera Path')))
+            req(subrecord('MOD2', string('Camera Path')))
         ]
     })
 };

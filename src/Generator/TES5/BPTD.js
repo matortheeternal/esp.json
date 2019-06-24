@@ -1,5 +1,5 @@
 let {
-    def, subrecord, string, req, cstring, 
+    def, subrecord, localized, string, req, 
     float, uint8, format, int8, uint16, 
     ckFormId, int32, struct, bytes, arrayOfStruct, 
     sortKey, multiStruct, record
@@ -12,11 +12,11 @@ module.exports = () => {
             def('MODL'),
             req(arrayOfStruct('Body Parts', 
                 sortKey([2], multiStruct('Body Part', [
-                    req(subrecord('BPTN', string('Part Name'))),
-                    req(subrecord('PNAM', cstring('Pose Matching'))),
-                    req(subrecord('BPNN', cstring('Part Node'))),
-                    req(subrecord('BPNT', cstring('VATS Target'))),
-                    req(subrecord('BPNI', cstring('IK Data - Start Node'))),
+                    req(subrecord('BPTN', localized(string('Part Name')))),
+                    req(subrecord('PNAM', string('Pose Matching'))),
+                    req(subrecord('BPNN', string('Part Node'))),
+                    req(subrecord('BPNT', string('VATS Target'))),
+                    req(subrecord('BPNI', string('IK Data - Start Node'))),
                     req(subrecord('BPND', struct('', [
                         float('Damage Mult'),
                         format(uint8('Flags'), {
@@ -68,8 +68,8 @@ module.exports = () => {
                         bytes('Unknown', 2),
                         float('Limb Replacement Scale')
                     ]))),
-                    req(subrecord('NAM1', cstring('Limb Replacement Model'))),
-                    req(subrecord('NAM4', cstring('Gore Effects - Target Bone'))),
+                    req(subrecord('NAM1', string('Limb Replacement Model'))),
+                    req(subrecord('NAM4', string('Gore Effects - Target Bone'))),
                     subrecord('NAM5', bytes('Texture Files Hashes'))
                 ]))
             ))

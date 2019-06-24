@@ -1,5 +1,5 @@
 let {
-    def, subrecord, cstring, bytes, uint32, 
+    def, subrecord, string, bytes, uint32, 
     format, float, ckFormId, struct, req, 
     record
 } = require('../helpers');
@@ -8,11 +8,11 @@ module.exports = () => {
     record('EFSH', 'Effect Shader', {
         members: [
             def('EDID'),
-            subrecord('ICON', cstring('Fill Texture')),
-            subrecord('ICO2', cstring('Particle Shader Texture')),
-            subrecord('NAM7', cstring('Holes Texture')),
-            subrecord('NAM8', cstring('Membrane Palette Texture')),
-            subrecord('NAM9', cstring('Particle Palette Texture')),
+            subrecord('ICON', string('Fill Texture')),
+            subrecord('ICO2', string('Particle Shader Texture')),
+            subrecord('NAM7', string('Holes Texture')),
+            subrecord('NAM8', string('Membrane Palette Texture')),
+            subrecord('NAM9', string('Particle Palette Texture')),
             req(subrecord('DATA', struct('', [
                 bytes('Unknown', 4),
                 format(uint32('Membrane Shader - Source Blend Mode'), def('BlendModeEnum')),

@@ -1,14 +1,14 @@
 let {
-    addDef, string, def, uint8, format, 
-    opts, int32, float, array, union, 
-    sortKey, struct
+    addDef, prefixLength, string, def, uint8, 
+    format, opts, int32, float, array, 
+    union, sortKey, struct
 } = require('../helpers');
 
 module.exports = () => {
     addDef('ScriptProperties', 
         array('Properties', 
             sortKey([0], struct('Property', [
-                string('propertyName'),
+                prefixLength(2, string('propertyName')),
                 format(uint8('Type'), def('PropTypeEnum')),
                 opts(format(uint8('Flags'), {
                     0: '',
@@ -21,7 +21,7 @@ module.exports = () => {
                 union('Value', [
                     def('Null'),
                     def('ScriptPropertyObject'),
-                    opts(string('String'), {
+                    opts(prefixLength(2, string('String')), {
                         "encoding": "EncodingVMAD"
                     }),
                     int32('Int32'),
@@ -34,7 +34,7 @@ module.exports = () => {
                         def('ScriptPropertyObject')
                     , -1),
                     array('Array of String', 
-                        opts(string('Element'), {
+                        opts(prefixLength(2, string('Element')), {
                             "encoding": "EncodingVMAD"
                         })
                     , -1),

@@ -1,6 +1,6 @@
 let {
-    addDef, uint32, format, ckFormId, cstring, 
-    union, subrecord, struct
+    addDef, uint32, format, ckFormId, string, 
+    size, union, subrecord, struct
 } = require('../helpers');
 
 module.exports = () => {
@@ -12,7 +12,7 @@ module.exports = () => {
             }),
             union('Data', [
                 ckFormId('Topic', ['DIAL', 'NULL']),
-                cstring('Subtype', 4)
+                size(4, string('Subtype'))
             ])
         ]))
     );

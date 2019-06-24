@@ -1,6 +1,6 @@
 let {
     def, subrecord, uint32, format, float, 
-    cstring, array, opts, struct, ckFormId, 
+    string, array, opts, struct, ckFormId, 
     record
 } = require('../helpers');
 
@@ -15,8 +15,8 @@ module.exports = () => {
             })),
             subrecord('FLTV', float('Duration')),
             subrecord('DNAM', float('Fade-Out')),
-            subrecord('ANAM', cstring('Track FileName')),
-            subrecord('BNAM', cstring('Finale FileName')),
+            subrecord('ANAM', string('Track FileName')),
+            subrecord('BNAM', string('Finale FileName')),
             opts(subrecord('FNAM', array('Cue Points', 
                 float('Point')
             )), {

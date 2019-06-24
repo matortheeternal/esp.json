@@ -1,6 +1,6 @@
 let {
     addDef, float, ckFormId, uint32, format, 
-    subrecord, struct, cstring, sortKey, multiStruct
+    subrecord, struct, string, sortKey, multiStruct
 } = require('../helpers');
 
 module.exports = () => {
@@ -54,7 +54,7 @@ module.exports = () => {
                 float('Recovery Time'),
                 float('Stamina Mult')
             ])),
-            subrecord('ATKE', cstring('Attack Event'))
+            subrecord('ATKE', string('Attack Event'))
         ]))
     );
 };

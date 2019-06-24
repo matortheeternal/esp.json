@@ -1,6 +1,6 @@
 let {
     def, req, ckFormId, uint32, format, 
-    float, subrecord, struct, IsSSE, cstring, 
+    float, subrecord, struct, IsSSE, string, 
     record
 } = require('../helpers');
 
@@ -44,7 +44,7 @@ module.exports = game => {
                     uint32('Value')
                 ])))
             ]),
-            subrecord('ONAM', cstring('Short Name'))
+            subrecord('ONAM', string('Short Name'))
         ]
     })
 };

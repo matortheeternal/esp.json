@@ -1,8 +1,8 @@
 let {
     def, uint8, bytes, subrecord, struct, 
     req, ckFormId, uint32, float, array, 
-    multiStruct, arrayOfSubrecord, format, sortKey, string, 
-    uint16, record
+    multiStruct, arrayOfSubrecord, format, sortKey, localized, 
+    string, uint16, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -71,7 +71,7 @@ module.exports = () => {
                             float('Chance')
                         ]))
                     )),
-                    req(subrecord('RDMP', string('Map Name'))),
+                    req(subrecord('RDMP', localized(string('Map Name')))),
                     subrecord('RDOT', array('Objects', 
                         struct('Object', [
                             ckFormId('Object', [

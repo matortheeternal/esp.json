@@ -2,7 +2,7 @@ let {
     def, IsSSE, int16, ckFormId, struct, 
     array, opts, subrecord, arrayOfSubrecord, uint8, 
     format, bytes, req, multiStruct, float, 
-    cstring, int32, record
+    string, int32, record
 } = require('../helpers');
 
 module.exports = game => {
@@ -59,7 +59,7 @@ module.exports = game => {
                 float('Default Land Height'),
                 float('Default Water Height')
             ])),
-            subrecord('ICON', cstring('Map Image')),
+            subrecord('ICON', string('Map Image')),
             multiStruct('Cloud Model', [
                 def('MODL')
             ]),
@@ -112,11 +112,11 @@ module.exports = game => {
                 ])))
             ]),
             subrecord('ZNAM', ckFormId('Music', ['MUSC'])),
-            subrecord('NNAM', cstring('Canopy Shadow (unused)')),
-            subrecord('XNAM', cstring('Water Noise Texture')),
-            subrecord('TNAM', cstring('HD LOD Diffuse Texture')),
-            subrecord('UNAM', cstring('HD LOD Normal Texture')),
-            subrecord('XWEM', cstring('Water Environment Map (unused)')),
+            subrecord('NNAM', string('Canopy Shadow (unused)')),
+            subrecord('XNAM', string('Water Noise Texture')),
+            subrecord('TNAM', string('HD LOD Diffuse Texture')),
+            subrecord('UNAM', string('HD LOD Normal Texture')),
+            subrecord('XWEM', string('Water Environment Map (unused)')),
             def('OFST')
         ]
     })

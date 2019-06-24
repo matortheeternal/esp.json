@@ -3,12 +3,12 @@ let {subrecordAndField} = require('../converters'),
 
 subrecordAndField('wbLenString', [
     args.name,
-    args.number,
+    args.size,
     args.identifier,
     args.required,
     args.identifier,
     args.identifier
-], ({name}, converter) => {
-    converter.addRequires('string');
-    return `string(${name})`;
+], ({name, size}, converter) => {
+    converter.addRequires('prefixLength', 'string');
+    return `prefixLength(${size}, string(${name}))`;
 });

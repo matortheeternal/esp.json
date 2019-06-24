@@ -1,6 +1,6 @@
 let {
     IsSSE, float, uint32, def, format, 
-    subrecord, struct, req, bytes, cstring, 
+    subrecord, struct, req, bytes, string, 
     multiStruct, arrayOfSubrecord, ckFormId, array, unknown, 
     record
 } = require('../helpers');
@@ -20,11 +20,11 @@ module.exports = game => {
             ]))),
             subrecord('OFST', bytes('Unknown')),
             subrecord('DELE', bytes('Unknown')),
-            req(subrecord('CNAM', cstring('Author'))),
-            subrecord('SNAM', cstring('Description')),
+            req(subrecord('CNAM', string('Author'))),
+            subrecord('SNAM', string('Description')),
             arrayOfSubrecord('Master Files', 
                 multiStruct('Master File', [
-                    subrecord('MAST', cstring('FileName')),
+                    subrecord('MAST', string('FileName')),
                     subrecord('DATA', bytes('Unknown', 8))
                 ])
             ),

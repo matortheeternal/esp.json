@@ -1,7 +1,7 @@
 let {
     def, subrecord, unknown, uint16, format, 
     div, struct, ckFormId, uint8, arrayOfSubrecord, 
-    formId, uint32, bytes, string, cstring, 
+    formId, uint32, bytes, localized, string, 
     multiStruct, empty, record
 } = require('../helpers');
 
@@ -63,9 +63,9 @@ module.exports = () => {
                         }),
                         bytes('Unused', 3)
                     ])),
-                    subrecord('NAM1', string('Response Text')),
-                    subrecord('NAM2', cstring('Script Notes')),
-                    subrecord('NAM3', cstring('Edits')),
+                    subrecord('NAM1', localized(string('Response Text'))),
+                    subrecord('NAM2', string('Script Notes')),
+                    subrecord('NAM3', string('Edits')),
                     subrecord('SNAM', ckFormId('Idle Animations: Speaker', ['IDLE'])),
                     subrecord('LNAM', ckFormId('Idle Animations: Listener', ['IDLE']))
                 ])
@@ -78,7 +78,7 @@ module.exports = () => {
                     subrecord('NEXT', empty('Marker'))
                 ])
             ),
-            subrecord('RNAM', string('Prompt')),
+            subrecord('RNAM', localized(string('Prompt'))),
             subrecord('ANAM', ckFormId('Speaker', ['NPC_'])),
             subrecord('TWAT', ckFormId('Walk Away Topic', ['DIAL'])),
             subrecord('ONAM', ckFormId('Audio Output Override', ['SOPM']))

@@ -1,9 +1,9 @@
 let {
-    addDef, subrecord, string
+    addDef, subrecord, localized, string
 } = require('../helpers');
 
 module.exports = () => {
     addDef('DESC', 
-        subrecord('DESC', string('Description'))
+        subrecord('DESC', localized(string('Description')))
     );
 };

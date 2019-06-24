@@ -2,8 +2,8 @@ let {
     def, req, uint32, format, int16, 
     div, union, uint16, subrecord, struct, 
     ckFormId, int8, bytes, sortKey, arrayOfSubrecord, 
-    uint8, string, array, float, unknown, 
-    int32, multiStruct, record
+    uint8, localized, string, array, float, 
+    unknown, int32, multiStruct, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -123,7 +123,7 @@ module.exports = () => {
             def('KWDAs'),
             req(subrecord('CNAM', ckFormId('Class', ['CLAS']))),
             def('FULL'),
-            subrecord('SHRT', string('Short Name')),
+            subrecord('SHRT', localized(string('Short Name'))),
             subrecord('DATA', bytes('Marker')),
             req(subrecord('DNAM', struct('Player Skills', [
                 array('Skill Values', 

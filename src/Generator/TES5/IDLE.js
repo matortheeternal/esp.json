@@ -1,5 +1,5 @@
 let {
-    def, subrecord, cstring, ckFormId, array, 
+    def, subrecord, string, ckFormId, array, 
     uint8, struct, format, uint16, req, 
     record
 } = require('../helpers');
@@ -9,8 +9,8 @@ module.exports = () => {
         members: [
             def('EDID'),
             def('CTDAs'),
-            subrecord('DNAM', cstring('FileName')),
-            subrecord('ENAM', cstring('Animation Event')),
+            subrecord('DNAM', string('FileName')),
+            subrecord('ENAM', string('Animation Event')),
             subrecord('ANAM', array('Related Idle Animations', 
                 ckFormId('Related Idle Animation', [
                     'AACT',    'IDLE',    'NULL'

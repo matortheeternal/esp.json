@@ -1,6 +1,7 @@
 let {functionConverter} = require('../converters'),
-    {reqLine, args} = require('../helpers');
+    {sizeLine, reqLine, args} = require('../helpers');
 
+// Localized string with sort key support
 functionConverter('wbLStringKC', [
     args.sig,
     args.name,
@@ -11,8 +12,8 @@ functionConverter('wbLStringKC', [
     args.identifier,
     args.identifier
 ], ({name, sig, size, required}, converter) => {
-    converter.addRequires('subrecord', 'string');
-    let sizeArg = size ? ', ' + size : '',
-        line = `subrecord('${sig}', string(${name}${sizeArg}))`;
+    converter.addRequires('subrecord', 'localized', 'string');
+    let line = sizeLine(size, `localized(string(${name}))`, converter);
+    line = `subrecord('${sig}', ${line})`;
     return reqLine(required, line, converter);
 });

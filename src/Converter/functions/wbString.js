@@ -1,5 +1,5 @@
 let {subrecordAndField, functionConverter} = require('../converters'),
-    {args} = require('../helpers');
+    {sizeLine, args} = require('../helpers');
 
 subrecordAndField('wbString', [
     args.name,
@@ -10,9 +10,8 @@ subrecordAndField('wbString', [
     args.identifier,
     args.identifier
 ], ({name, size}, converter) => {
-    converter.addRequires('cstring');
-    let sizeArg = size ? ', ' + size : '';
-    return `cstring(${name}${sizeArg})`;
+    converter.addRequires('string');
+    return sizeLine(size, `string(${name})`, converter);
 });
 
 functionConverter('wbString', [
@@ -20,7 +19,6 @@ functionConverter('wbString', [
     args.name,
     args.size
 ], ({name, size}, converter) => {
-    converter.addRequires('cstring');
-    let sizeArg = size ? ', ' + size : '';
-    return `cstring(${name}${sizeArg})`;
+    converter.addRequires('string');
+    return sizeLine(size, `string(${name})`, converter);
 });

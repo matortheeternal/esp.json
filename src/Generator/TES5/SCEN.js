@@ -1,6 +1,6 @@
 let {
     def, subrecord, uint32, format, empty, 
-    cstring, multiStruct, unknown, req, arrayOfSubrecord, 
+    string, multiStruct, unknown, req, arrayOfSubrecord, 
     uint16, int32, float, ckFormId, record
 } = require('../helpers');
 
@@ -19,7 +19,7 @@ module.exports = () => {
             arrayOfSubrecord('Phases', 
                 multiStruct('Phase', [
                     subrecord('HNAM', empty('Marker Phase Start')),
-                    subrecord('NAM0', cstring('Name')),
+                    subrecord('NAM0', string('Name')),
                     multiStruct('Start Conditions', [
                         def('CTDAs')
                     ]),
@@ -72,7 +72,7 @@ module.exports = () => {
                         1: 'Package',
                         2: 'Timer'
                     })),
-                    subrecord('NAM0', cstring('Name')),
+                    subrecord('NAM0', string('Name')),
                     subrecord('ALID', int32('Actor ID')),
                     subrecord('LNAM', unknown()),
                     subrecord('INAM', uint32('Index')),

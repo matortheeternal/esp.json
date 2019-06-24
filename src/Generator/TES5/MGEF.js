@@ -1,7 +1,7 @@
 let {
     def, subrecord, ckFormId, arrayOfSubrecord, req, 
-    uint32, format, struct, array, string, 
-    record
+    uint32, format, struct, array, localized, 
+    string, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -30,7 +30,7 @@ module.exports = () => {
                     ckFormId('Sound', ['SNDR'])
                 ])
             )),
-            subrecord('DNAM', string('Magic Item Description')),
+            subrecord('DNAM', localized(string('Magic Item Description'))),
             def('CTDAs')
         ]
     })

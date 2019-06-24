@@ -1,7 +1,7 @@
 let {
     def, subrecord, float, req, ckFormId, 
-    uint8, format, uint16, struct, cstring, 
-    uint32, record
+    uint8, format, uint16, struct, string, 
+    size, uint32, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -132,7 +132,7 @@ module.exports = () => {
                     102: 'LeaveWaterBreath'
                 })
             ])),
-            subrecord('SNAM', cstring('Subtype Name', 4)),
+            subrecord('SNAM', size(4, string('Subtype Name'))),
             subrecord('TIFC', uint32('Info Count'))
         ]
     })

@@ -1,8 +1,8 @@
 let {
     def, req, uint8, format, subrecord, 
     struct, ckFormId, sortKey, bytes, union, 
-    int8, arrayOfStruct, multiStruct, string, uint16, 
-    float, cstring, uint32, empty, record
+    int8, arrayOfStruct, multiStruct, localized, string, 
+    uint16, float, uint32, empty, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -92,7 +92,7 @@ module.exports = () => {
                             6: 'string',
                             7: 'lstring'
                         })),
-                        subrecord('EPF2', string('Button Label')),
+                        subrecord('EPF2', localized(string('Button Label'))),
                         subrecord('EPF3', struct('Script Flags', [
                             format(uint16('Script Flags'), {
                                 0: 'Run Immediately',
@@ -110,8 +110,8 @@ module.exports = () => {
                             ckFormId('Leveled Item', ['LVLI']),
                             ckFormId('Spell', ['SPEL']),
                             ckFormId('Spell', ['SPEL']),
-                            cstring('Text'),
                             string('Text'),
+                            localized(string('Text')),
                             struct('Actor Value, Float', [
                                 format(uint32('Actor Value'), def('EPFDActorValueToStr')),
                                 float('Float')

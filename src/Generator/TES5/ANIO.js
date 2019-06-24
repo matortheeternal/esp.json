@@ -1,5 +1,5 @@
 let {
-    def, subrecord, cstring, record
+    def, subrecord, string, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -10,7 +10,7 @@ module.exports = () => {
         members: [
             def('EDID'),
             def('MODL'),
-            subrecord('BNAM', cstring('Unload Event'))
+            subrecord('BNAM', string('Unload Event'))
         ]
     })
 };

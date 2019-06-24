@@ -1,5 +1,5 @@
 let {
-    def, subrecord, ckFormId, cstring, float, 
+    def, subrecord, ckFormId, string, float, 
     req, struct, uint32, format, record
 } = require('../helpers');
 
@@ -8,7 +8,7 @@ module.exports = () => {
         members: [
             def('EDID'),
             subrecord('PNAM', ckFormId('Material Parent', ['MATT', 'NULL'])),
-            subrecord('MNAM', cstring('Material Name')),
+            subrecord('MNAM', string('Material Name')),
             subrecord('CNAM', struct('Havok Display Color', [
                 req(float('Red')),
                 req(float('Green')),

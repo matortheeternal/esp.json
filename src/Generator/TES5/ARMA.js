@@ -1,6 +1,6 @@
 let {
     def, subrecord, ckFormId, uint8, format, 
-    bytes, float, struct, req, cstring, 
+    bytes, float, struct, req, string, 
     multiStruct, arrayOfSubrecord, record
 } = require('../helpers');
 
@@ -27,22 +27,22 @@ module.exports = () => {
                 float('Weapon Adjust')
             ]))),
             req(multiStruct('Male world model', [
-                subrecord('MOD2', cstring('Model FileName')),
+                subrecord('MOD2', string('Model FileName')),
                 subrecord('MO2T', bytes('Texture Files Hashes')),
                 def('MO2S')
             ])),
             multiStruct('Female world model', [
-                subrecord('MOD3', cstring('Model FileName')),
+                subrecord('MOD3', string('Model FileName')),
                 subrecord('MO3T', bytes('Texture Files Hashes')),
                 def('MO3S')
             ]),
             multiStruct('Male 1st Person', [
-                subrecord('MOD4', cstring('Model FileName')),
+                subrecord('MOD4', string('Model FileName')),
                 subrecord('MO4T', bytes('Texture Files Hashes')),
                 def('MO4S')
             ]),
             multiStruct('Female 1st Person', [
-                subrecord('MOD5', cstring('Model FileName')),
+                subrecord('MOD5', string('Model FileName')),
                 subrecord('MO5T', bytes('Texture Files Hashes')),
                 def('MO5S')
             ]),

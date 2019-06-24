@@ -1,7 +1,7 @@
 let {
-    def, req, subrecord, string, uint8, 
-    format, bytes, int32, ckFormId, union, 
-    uint32, float, struct, record
+    def, req, subrecord, localized, string, 
+    uint8, format, bytes, int32, ckFormId, 
+    union, uint32, float, struct, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -13,7 +13,7 @@ module.exports = () => {
             def('FULL'),
             def('MODL'),
             def('ICON'),
-            req(subrecord('DESC', string('Book Text'))),
+            req(subrecord('DESC', localized(string('Book Text')))),
             def('DEST'),
             def('YNAM'),
             def('ZNAM'),
@@ -43,7 +43,7 @@ module.exports = () => {
                 float('Weight')
             ]))),
             subrecord('INAM', ckFormId('Inventory Art', ['STAT'])),
-            subrecord('CNAM', string('Description'))
+            subrecord('CNAM', localized(string('Description')))
         ]
     })
 };

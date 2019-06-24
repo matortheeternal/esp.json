@@ -1,5 +1,5 @@
 let {
-    def, subrecord, cstring, float, req, 
+    def, subrecord, string, float, req, 
     struct, record
 } = require('../helpers');
 
@@ -7,7 +7,7 @@ module.exports = () => {
     record('MOVT', 'Movement Type', {
         members: [
             def('EDID'),
-            subrecord('MNAM', cstring('Name')),
+            subrecord('MNAM', string('Name')),
             req(subrecord('SPED', struct('Default Data', [
                 float('Left Walk'),
                 float('Left Run'),

@@ -1,12 +1,13 @@
 let {
-    addDef, cstring, uint32, def, formId, 
-    bytes, opts, union, uint16, struct
+    addDef, string, size, uint32, def, 
+    formId, bytes, opts, union, uint16, 
+    struct
 } = require('../helpers');
 
 module.exports = () => {
     addDef('MainRecordHeader', 
         struct('Record Header', [
-            cstring('Signature', 4),
+            size(4, string('Signature')),
             uint32('Data Size'),
             def('RecordFlags'),
             formId('FormID'),

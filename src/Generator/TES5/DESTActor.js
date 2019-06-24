@@ -1,6 +1,6 @@
 let {
     addDef, int32, uint8, format, bytes, 
-    subrecord, struct, ckFormId, req, cstring, 
+    subrecord, struct, ckFormId, req, string, 
     sortKey, multiStruct, def, empty, arrayOfSubrecord
 } = require('../helpers');
 
@@ -33,7 +33,7 @@ module.exports = () => {
                         int32('Debris Count')
                     ]))),
                     sortKey([0], multiStruct('Model', [
-                        subrecord('DMDL', cstring('Model FileName'))
+                        subrecord('DMDL', string('Model FileName'))
                     ])),
                     def('DMDT'),
                     def('DMDSs'),

@@ -2,7 +2,7 @@ let {
     addDef, def, uint8, format, bytes, 
     float, ckFormId, union, uint16, opts, 
     int32, uint32, formId, subrecord, sortKey, 
-    struct, cstring, multiStruct
+    struct, string, multiStruct
 } = require('../helpers');
 
 module.exports = () => {
@@ -282,8 +282,8 @@ module.exports = () => {
                 ]),
                 int32('Parameter #3')
             ]))),
-            subrecord('CIS1', cstring('Parameter #1')),
-            subrecord('CIS2', cstring('Parameter #2'))
+            subrecord('CIS1', string('Parameter #1')),
+            subrecord('CIS2', string('Parameter #2'))
         ]))
     );
 };

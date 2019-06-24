@@ -2,7 +2,7 @@ let {
     def, uint32, format, uint8, bytes, 
     uint16, subrecord, struct, req, int8, 
     int32, float, ckFormId, array, multiStruct, 
-    cstring, union, unknown, arrayOfSubrecord, empty, 
+    string, union, unknown, arrayOfSubrecord, empty, 
     record
 } = require('../helpers');
 
@@ -85,7 +85,7 @@ module.exports = () => {
             multiStruct('Package Data', [
                 arrayOfSubrecord('Data Input Values', 
                     req(multiStruct('Value', [
-                        subrecord('ANAM', cstring('Type')),
+                        subrecord('ANAM', string('Type')),
                         subrecord('CNAM', union('Value', [
                             bytes('Unknown'),
                             format(uint8('Bool'), {
@@ -110,7 +110,7 @@ module.exports = () => {
             multiStruct('Procedure Tree', [
                 arrayOfSubrecord('Branches', 
                     req(multiStruct('Branch', [
-                        subrecord('ANAM', cstring('Branch Type')),
+                        subrecord('ANAM', string('Branch Type')),
                         req(def('CITC')),
                         def('CTDAsCount'),
                         subrecord('PRCB', struct('Root', [
@@ -120,7 +120,7 @@ module.exports = () => {
                                 1: 'Unknown 1'
                             })
                         ])),
-                        subrecord('PNAM', cstring('Procedure Type')),
+                        subrecord('PNAM', string('Procedure Type')),
                         subrecord('FNAM', format(uint32('Flags'), {
                             0: 'Success Completes Package'
                         })),

@@ -1,7 +1,7 @@
 let {
     def, ckFormId, int32, uint32, format, 
     subrecord, sortKey, struct, arrayOfSubrecord, req, 
-    uint8, uint16, float, string, cstring, 
+    uint8, uint16, float, localized, string, 
     arrayOfStruct, multiStruct, bytes, record
 } = require('../helpers');
 
@@ -85,9 +85,9 @@ module.exports = () => {
             arrayOfStruct('Ranks', 
                 sortKey([0], multiStruct('Rank', [
                     subrecord('RNAM', uint32('Rank#')),
-                    subrecord('MNAM', string('Male Title')),
-                    subrecord('FNAM', string('Female Title')),
-                    subrecord('INAM', cstring('Insignia Unused'))
+                    subrecord('MNAM', localized(string('Male Title'))),
+                    subrecord('FNAM', localized(string('Female Title'))),
+                    subrecord('INAM', string('Insignia Unused'))
                 ]))
             ),
             subrecord('VEND', ckFormId('Vendor Buy/Sell List', ['FLST'])),

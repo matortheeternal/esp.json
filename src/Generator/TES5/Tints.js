@@ -1,5 +1,5 @@
 let {
-    addDef, subrecord, uint16, cstring, def, 
+    addDef, subrecord, uint16, string, def, 
     format, ckFormId, multiStruct, arrayOfSubrecord, float
 } = require('../helpers');
 
@@ -10,7 +10,7 @@ module.exports = () => {
                 arrayOfSubrecord('Tint Layer', 
                     multiStruct('Texture', [
                         subrecord('TINI', uint16('Index')),
-                        subrecord('TINT', cstring('File Name')),
+                        subrecord('TINT', string('File Name')),
                         subrecord('TINP', format(uint16('Mask Type'), def('TintMaskTypeEnum'))),
                         subrecord('TIND', ckFormId('Preset Default', ['CLFM', 'NULL']))
                     ])
