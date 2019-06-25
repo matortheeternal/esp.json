@@ -64,8 +64,9 @@ let mixedArr = function(a, targetLength) {
     let s = '[';
     a.forEach((entry, index) => {
         if (index > 0) s += ',';
-        if (index % targetLength === 0) s += lineBreak;
-        s += indent(entry);
+        let newLine = index % targetLength === 0;
+        s += newLine ? lineBreak : ' ';
+        s += newLine ? indent(entry) : entry;
     });
     s += lineBreak + ']';
     return s;
