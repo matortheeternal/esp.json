@@ -1,0 +1,22 @@
+{
+  "$id": "esp.json/format/formatUnion.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Format Union",
+  "type": "object",
+  "required": ["type", "entry"],
+  "properties": {
+    "type": {
+      "constant": "formatUnion"
+    },
+    "decider": {
+      "$ref": "../shared/callback.schema.json",
+      "description": "Invoked to determine which format to use."
+    },
+    "formats": {
+      "type": "array",
+      "items": {
+        "$ref": "flags.schema.json"
+      }
+    }
+  }
+}

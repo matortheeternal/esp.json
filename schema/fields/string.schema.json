@@ -1,0 +1,25 @@
+{
+  "$id": "esp.json/fields/string.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "String",
+  "type": "object",
+  "required": ["type"],
+  "properties": {
+    "type": {
+      "constant": "string"
+    },
+    "size": {
+      "$ref": "../shared/size.schema.json"
+    },
+    "prefix": {
+      "$ref": "../shared/prefix.schema.json"
+    },
+    "localized": {
+      "constant": true,
+      "description": "Indicates a string has been localized using game localization files."
+    },
+    "name": {
+      "$ref": "../shared/name.schema.json"
+    }
+  }
+}

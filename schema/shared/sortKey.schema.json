@@ -1,0 +1,13 @@
+{
+  "$id": "esp.json/shared/sortKey.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Sort Key",
+  "description": "An array of indices corresponding to the elements to combine to create a sort key.",
+  "type": "array",
+  "minItems": 1,
+  "uniqueItems": true,
+  "items": {
+    "type": "integer",
+    "minimum": 0
+  }
+}

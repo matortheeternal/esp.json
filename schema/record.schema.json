@@ -1,0 +1,44 @@
+{
+  "$id": "esp.json/record.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "A representation of an esp.json record definition.",
+  "type": "object",
+  "required": ["signature", "type", "name", "def"],
+  "properties": {
+    "signature": {
+      "$ref": "shared/signature.schema.json"
+    },
+    "type": {
+      "const": "record"
+    },
+    "name": {
+      "type": "string"
+    },
+    "def": {
+      "oneOf": [{
+        "$ref": "shared/def.schema.json"
+      }, {
+        "type": "object",
+        "required": ["members"],
+        "properties": {
+          "flags": {
+            "oneOf": [
+              {
+                "$ref": "format/flags.schema.json"
+              },
+              {
+                "$ref": "format/formatUnion.schema.json"
+              }
+            ]
+          },
+          "members": {
+            "type": "array",
+            "items": {
+              "$ref": "member.schema.json"
+            }
+          }
+        }
+      }]
+    }
+  }
+}

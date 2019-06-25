@@ -1,0 +1,24 @@
+{
+  "$id": "esp.json/members/memberStruct.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Member Struct",
+  "type": "object",
+  "required": ["type", "members"],
+  "properties": {
+    "name": {
+      "$ref": "../shared/name.schema.json"
+    },
+    "type": {
+      "constant": "memberStruct"
+    },
+    "members": {
+      "type": "array",
+      "items": {
+        "$ref": "../member.schema.json"
+      }
+    },
+    "sortKey": {
+      "$ref": "../shared/sortKey.schema.json"
+    }
+  }
+}

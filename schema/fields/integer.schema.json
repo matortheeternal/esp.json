@@ -1,0 +1,48 @@
+{
+  "$id": "esp.json/fields/integer.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Integer",
+  "type": "object",
+  "required": ["type"],
+  "properties": {
+    "type": {
+      "oneOf": [
+        {
+          "constant": "int0",
+          "description": "0-bit integer",
+          "$comment": "This should be removed.  We should use the empty type instead."
+        },
+        {
+          "constant": "int8",
+          "description": "8-bit signed integer"
+        },
+        {
+          "constant": "int16",
+          "description": "16-bit signed integer"
+        },
+        {
+          "constant": "int32",
+          "description": "32-bit signed integer"
+        },
+        {
+          "constant": "uint8",
+          "description": "8-bit unsigned integer"
+        },
+        {
+          "constant": "uint16",
+          "description": "16-bit unsigned integer"
+        },
+        {
+          "constant": "uint32",
+          "description": "32-bit unsigned integer"
+        }
+      ]
+    },
+    "name": {
+      "$ref": "../shared/name.schema.json"
+    },
+    "format": {
+      "$ref": "../format.schema.json"
+    }
+  }
+}

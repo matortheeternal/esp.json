@@ -1,0 +1,26 @@
+{
+  "$id": "esp.json/format/flags.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "A representation of an esp.json flags definition.",
+  "type": "object",
+  "required": ["type", "flags"],
+  "properties": {
+    "type": {
+      "constant": "flags"
+    },
+    "flags": {
+      "type": "object",
+      "description": "Associates positive integer keys to flag labels.",
+      "patternProperties": {
+        "^[0-9]+$": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "showUnknown": {
+      "type": "boolean",
+      "description": "If set to true, unlabeled flags will be assigned labels in the format `Unknown ${Flag Ordinal + 1}`.  E.g. if no flags were labeled, and the data size was 4 bytes, you would have labels Unknown 1 through Unknown 32."
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "$id": "esp.json/fields/formId.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Form ID",
+  "type": "object",
+  "required": ["type"],
+  "properties": {
+    "type": {
+      "constant": "formId"
+    },
+    "name": {
+      "$ref": "../shared/name.schema.json"
+    },
+    "signatures": {
+      "type": "array",
+      "items": {
+        "$ref": "../shared/signature.schema.json"
+      }
+    }
+  }
+}

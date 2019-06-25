@@ -1,0 +1,21 @@
+{
+  "$id": "esp.json/fields/struct.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Struct",
+  "type": "object",
+  "required": ["type", "fields"],
+  "properties": {
+    "type": {
+      "constant": "struct"
+    },
+    "name": {
+      "$ref": "../shared/name.schema.json"
+    },
+    "fields": {
+      "$ref": "../field.schema.json"
+    },
+    "sortKey": {
+      "$ref": "../shared/sortKey.schema.json"
+    }
+  }
+}

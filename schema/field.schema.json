@@ -1,0 +1,31 @@
+{
+  "$id": "esp.json/subrecord.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Data",
+  "oneOf": [
+    {
+      "$ref": "fields/struct.schema.json"
+    },
+    {
+      "$ref": "fields/array.schema.json"
+    },
+    {
+      "$ref": "fields/formId.schema.json"
+    },
+    {
+      "$ref": "fields/float.schema.json"
+    },
+    {
+      "$ref": "fields/integer.schema.json"
+    },
+    {
+      "$ref": "fields/string.schema.json"
+    },
+    {
+      "$ref": "fields/bytes.schema.json"
+    },
+    {
+      "$ref": "fields/empty.schema.json"
+    }
+  ]
+}

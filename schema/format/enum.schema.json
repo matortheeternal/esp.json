@@ -1,0 +1,22 @@
+{
+  "$id": "esp.json/format/enum.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Enum",
+  "type": "object",
+  "required": ["type", "options"],
+  "properties": {
+    "type": {
+      "constant": "enum"
+    },
+    "options": {
+      "type": "object",
+      "description": "Associates positive integer keys to option labels.",
+      "patternProperties": {
+        "^[0-9]+$": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

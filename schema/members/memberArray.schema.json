@@ -1,0 +1,27 @@
+{
+  "$id": "esp.json/members/memberArray.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Member Array",
+  "type": "object",
+  "required": ["type", "member"],
+  "properties": {
+    "name": {
+      "$ref": "../shared/name.schema.json"
+    },
+    "type": {
+      "constant": "memberArray"
+    },
+    "sorted": {
+      "$ref": "../shared/sorted.schema.json"
+    },
+    "size": {
+      "$ref": "../shared/size.schema.json"
+    },
+    "prefix": {
+      "$ref": "../shared/prefix.schema.json"
+    },
+    "member": {
+      "$ref": "../member.schema.json"
+    }
+  }
+}

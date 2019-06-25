@@ -1,0 +1,17 @@
+{
+  "$id": "esp.json/shared/prefix.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Prefix",
+  "description": "The number of prefix bytes used to indicate the size of the data.",
+  "oneOf": [
+    {
+      "constant": 1
+    },
+    {
+      "constant": 2
+    },
+    {
+      "constant": 4
+    }
+  ]
+}

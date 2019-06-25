@@ -1,0 +1,7 @@
+{
+  "$id": "esp.json/shared/sorted.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Sorted",
+  "description": "If set to true, entries in the array should be sorted based on sort keys.",
+  "type": "boolean"
+}

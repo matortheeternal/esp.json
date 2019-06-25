@@ -1,0 +1,25 @@
+{
+  "$id": "esp.json/format.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Integer Format",
+  "oneOf": [
+    {
+      "title": "Reference",
+      "description": "A reference to a flags or enum esp.json definition.",
+      "type": "object",
+      "required": ["def"],
+      "additionalProperties": false,
+      "properties": {
+        "def": {
+          "$ref": "shared/def.schema.json"
+        }
+      }
+    },
+    {
+      "$ref": "format/flags.schema.json"
+    },
+    {
+      "$ref": "format/enum.schema.json"
+    }
+  ]
+}

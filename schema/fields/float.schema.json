@@ -1,0 +1,19 @@
+{
+  "$id": "esp.json/fields/float.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Integer",
+  "type": "object",
+  "required": ["type"],
+  "properties": {
+    "type": {
+      "constant": "float"
+    },
+    "name": {
+      "$ref": "../shared/name.schema.json"
+    },
+    "scale": {
+      "type": "number",
+      "description": "If provided, the floating point value is multiplied by the scale before it is presented to the user."
+    }
+  }
+}

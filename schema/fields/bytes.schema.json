@@ -1,0 +1,21 @@
+{
+  "$id": "esp.json/fields/bytes.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Bytes",
+  "type": "object",
+  "required": ["type", "size"],
+  "properties": {
+    "type": {
+      "constant": "bytes"
+    },
+    "size": {
+      "$ref": "../shared/size.schema.json"
+    },
+    "prefix": {
+      "$ref": "../shared/prefix.schema.json"
+    },
+    "name": {
+      "$ref": "../shared/name.schema.json"
+    }
+  }
+}

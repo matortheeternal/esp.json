@@ -1,0 +1,21 @@
+{
+  "$id": "esp.json/subrecord.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Subrecord",
+  "type": "object",
+  "required": ["signature", "type", "field"],
+  "properties": {
+    "signature": {
+      "$ref": "../shared/signature.schema.json"
+    },
+    "type": {
+      "constant": "subrecord"
+    },
+    "field": {
+      "$ref": "../field.schema.json"
+    },
+    "required": {
+      "$ref": "../shared/required.schema.json"
+    }
+  }
+}

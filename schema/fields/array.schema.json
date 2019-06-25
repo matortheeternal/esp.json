@@ -1,0 +1,27 @@
+{
+  "$id": "esp.json/fields/array.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Array",
+  "type": "object",
+  "required": ["type", "field"],
+  "properties": {
+    "type": {
+      "constant": "array"
+    },
+    "name": {
+      "$ref": "../shared/name.schema.json"
+    },
+    "sorted": {
+      "$ref": "../shared/sorted.schema.json"
+    },
+    "size": {
+      "$ref": "../shared/size.schema.json"
+    },
+    "prefix": {
+      "$ref": "../shared/prefix.schema.json"
+    },
+    "field": {
+      "$ref": "../field.schema.json"
+    }
+  }
+}

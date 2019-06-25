@@ -1,0 +1,39 @@
+{
+  "$id": "esp.json/member.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Member",
+  "description": "A representation of an esp.json member.  Members are subrecords or structures which contain one or more subrecords.",
+  "oneOf": [
+    {
+      "title": "Reference",
+      "type": "object",
+      "required": ["def"],
+      "additionalProperties": false,
+      "properties": {
+        "def": {
+          "$ref": "shared/def.schema.json"
+        },
+        "name": {
+          "type": "string",
+          "description": "Overrides the name of the referenced definition."
+        },
+        "signature": {
+          "$ref": "shared/signature.schema.json",
+          "description": "Overrides the signature of the referenced definition."
+        },
+        "required": {
+          "$ref": "shared/required.schema.json"
+        }
+      }
+    },
+    {
+      "$ref": "members/subrecord.schema.json"
+    },
+    {
+      "$ref": "members/memberStruct.schema.json"
+    },
+    {
+      "$ref": "members/memberArray.schema.json"
+    }
+  ]
+}
