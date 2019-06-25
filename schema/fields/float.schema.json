@@ -1,7 +1,7 @@
 {
   "$id": "esp.json/fields/float.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Integer",
+  "title": "Float",
   "type": "object",
   "required": ["type"],
   "properties": {

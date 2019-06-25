@@ -9,8 +9,7 @@
       "oneOf": [
         {
           "constant": "int0",
-          "description": "0-bit integer",
-          "$comment": "This should be removed.  We should use the empty type instead."
+          "description": "0-bit integer"
         },
         {
           "constant": "int8",

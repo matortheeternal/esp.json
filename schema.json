@@ -175,7 +175,7 @@
             "pattern": "^[A-Z]{1}[A-Z0-9_]{3}$"
         },
         "float": {
-            "title": "Integer",
+            "title": "Float",
             "type": "object",
             "required": [
                 "type"
@@ -204,8 +204,7 @@
                     "oneOf": [
                         {
                             "constant": "int0",
-                            "description": "0-bit integer",
-                            "$comment": "This should be removed.  We should use the empty type instead."
+                            "description": "0-bit integer"
                         },
                         {
                             "constant": "int8",
@@ -576,7 +575,7 @@
         "callback": {
             "title": "Callback",
             "type": "string",
-            "description": "An string which identifies a callback to invoke."
+            "description": "A string which identifies a callback to invoke."
         }
     }
 }
