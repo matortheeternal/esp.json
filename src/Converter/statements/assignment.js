@@ -1,7 +1,7 @@
 let {statementConverter, convertFunction} = require('../converters'),
     {newLine} = require('../helpers');
 
-let assignmentExpr = /^([a-z][a-z0-9]*)\s+:=\s+([a-z][a-z0-9]*)\(/i;
+let assignmentExpr = /^([a-z][a-z0-9_]*)\s*:=\s*([a-z][a-z0-9]*)\(/i;
 
 let resolveName = function(str) {
     return str.startsWith('wb') ? str.slice(2) : str;
