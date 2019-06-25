@@ -1,6 +1,7 @@
 let {
     def, req, subrecord, ckFormId, float, 
-    struct, array, arrayOfStruct, multiStruct, record
+    struct, sorted, array, arrayOfStruct, multiStruct, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
@@ -12,7 +13,7 @@ module.exports = () => {
             req(arrayOfStruct('Parts', 
                 multiStruct('Part', [
                     subrecord('ONAM', ckFormId('Static', ['STAT'])),
-                    subrecord('DATA', array('Placements', 
+                    subrecord('DATA', sorted(array('Placements', 
                         struct('Placement', [
                             struct('Position', [
                                 float('X'),
@@ -26,7 +27,7 @@ module.exports = () => {
                             ]),
                             float('Scale')
                         ])
-                    ))
+                    )))
                 ])
             ))
         ]

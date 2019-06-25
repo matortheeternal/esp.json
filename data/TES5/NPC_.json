@@ -180,6 +180,7 @@
                         ]
                     }
                 },
+                "sorted": true,
                 "required": true
             },
             {
@@ -280,7 +281,8 @@
                 "type": "subrecordArray",
                 "subrecord": {
                     "def": "AttackData"
-                }
+                },
+                "sorted": true
             },
             {
                 "signature": "SPOR",
@@ -370,6 +372,7 @@
                         ]
                     }
                 },
+                "sorted": true,
                 "required": true
             },
             {
@@ -447,8 +450,7 @@
                                 "name": "Skill",
                                 "type": "uint8"
                             },
-                            "type": "array",
-                            "size": 0
+                            "type": "array"
                         },
                         {
                             "name": "Skill Offsets",
@@ -456,8 +458,7 @@
                                 "name": "Skill",
                                 "type": "uint8"
                             },
-                            "type": "array",
-                            "size": 0
+                            "type": "array"
                         },
                         {
                             "name": "Health",
@@ -507,6 +508,7 @@
                         ]
                     }
                 },
+                "sorted": true,
                 "required": true
             },
             {
@@ -864,7 +866,8 @@
                     "sortKey": [
                         0
                     ]
-                }
+                },
+                "sorted": true
             }
         ]
     }

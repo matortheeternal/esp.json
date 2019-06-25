@@ -1,6 +1,6 @@
 let {
     addDef, int8, prefix, string, uint16, 
-    int16, sortKey, struct, array
+    int16, sortKey, struct, sorted, array
 } = require('../helpers');
 
 module.exports = () => {
@@ -8,7 +8,7 @@ module.exports = () => {
         struct('Script Fragments', [
             int8('Unknown'),
             prefix(2, string('FileName')),
-            array('Fragments', 
+            prefix(2, sorted(array('Fragments', 
                 sortKey([0], struct('Fragment', [
                     uint16('Fragment Index'),
                     int16('Unknown'),
@@ -16,7 +16,7 @@ module.exports = () => {
                     prefix(2, string('ScriptName')),
                     prefix(2, string('FragmentName'))
                 ]))
-            , -2)
+            )))
         ])
     );
 };

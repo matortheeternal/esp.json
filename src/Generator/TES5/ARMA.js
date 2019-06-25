@@ -1,7 +1,8 @@
 let {
     def, subrecord, ckFormId, uint8, flags, 
     format, bytes, size, float, struct, 
-    req, string, multiStruct, arrayOfSubrecord, record
+    req, string, multiStruct, sorted, arrayOfSubrecord, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
@@ -50,9 +51,9 @@ module.exports = () => {
             subrecord('NAM1', ckFormId('Female Skin texture', ['TXST', 'NULL'])),
             subrecord('NAM2', ckFormId('Male Skin Texture Swap List', ['FLST', 'NULL'])),
             subrecord('NAM3', ckFormId('Female Skin Texture Swap List', ['FLST', 'NULL'])),
-            arrayOfSubrecord('Additional Races', 
+            sorted(arrayOfSubrecord('Additional Races', 
                 subrecord('MODL', ckFormId('Race', ['RACE', 'NULL']))
-            ),
+            )),
             subrecord('SNDD', ckFormId('Footstep Sound', ['FSTS', 'NULL'])),
             subrecord('ONAM', ckFormId('Art Object', ['ARTO']))
         ]

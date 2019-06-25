@@ -328,8 +328,7 @@
                                     "def": "CloudSpeedToStr"
                                 }
                             },
-                            "type": "array",
-                            "size": 0
+                            "type": "array"
                         },
                         "includeFlag": "dfNotAlignable"
                     },
@@ -345,8 +344,7 @@
                                     "def": "CloudSpeedToStr"
                                 }
                             },
-                            "type": "array",
-                            "size": 0
+                            "type": "array"
                         },
                         "includeFlag": "dfNotAlignable"
                     }
@@ -361,8 +359,7 @@
                         "def": "WeatherColors",
                         "name": "Layer"
                     },
-                    "type": "array",
-                    "size": 0
+                    "type": "array"
                 },
                 "includeFlag": "dfNotAlignable"
             },
@@ -393,8 +390,7 @@
                             }
                         ]
                     },
-                    "type": "array",
-                    "size": 0
+                    "type": "array"
                 },
                 "includeFlag": "dfNotAlignable"
             },
@@ -716,7 +712,8 @@
                             "NULL"
                         ]
                     }
-                }
+                },
+                "sorted": true
             },
             {
                 "signature": "IMSP",

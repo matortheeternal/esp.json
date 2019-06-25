@@ -77,7 +77,6 @@
                     ]
                 },
                 "type": "array",
-                "size": 0,
                 "prefix": 4,
                 "includeFlag": "dfNotAlignable"
             },
@@ -188,7 +187,6 @@
                     ]
                 },
                 "type": "array",
-                "size": 0,
                 "prefix": 4,
                 "includeFlag": "dfNotAlignable"
             },
@@ -217,7 +215,6 @@
                     ]
                 },
                 "type": "array",
-                "size": 0,
                 "prefix": 4,
                 "includeFlag": "dfNotAlignable"
             },
@@ -251,7 +248,8 @@
                     ]
                 },
                 "type": "array",
-                "size": -1
+                "sorted": true,
+                "prefix": 4
             },
             {
                 "name": "Cover Triangles",
@@ -261,7 +259,6 @@
                     "linksToCallback": "TriangleLinksTo"
                 },
                 "type": "array",
-                "size": 0,
                 "prefix": 4,
                 "includeFlag": "dfNotAlignable"
             },
@@ -311,12 +308,10 @@
                         "linksToCallback": "TriangleLinksTo"
                     },
                     "type": "array",
-                    "size": 0,
                     "prefix": 4,
                     "includeFlag": "dfNotAlignable"
                 },
                 "type": "array",
-                "size": 0,
                 "includeFlag": "dfNotAlignable"
             }
         ]

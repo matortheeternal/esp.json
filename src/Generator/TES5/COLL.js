@@ -1,7 +1,7 @@
 let {
     def, req, subrecord, uint32, uint8, 
     struct, flags, format, string, ckFormId, 
-    array, record
+    sorted, array, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -23,9 +23,9 @@ module.exports = () => {
             }))),
             req(subrecord('MNAM', string('Name'))),
             subrecord('INTV', uint32('Interactables Count')),
-            subrecord('CNAM', array('Collides With', 
+            subrecord('CNAM', sorted(array('Collides With', 
                 ckFormId('Forms', ['COLL'])
-            ))
+            )))
         ]
     })
 };

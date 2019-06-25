@@ -1,9 +1,9 @@
 let {
     def, ckFormId, int32, enumeration, uint32, 
-    format, subrecord, sortKey, struct, arrayOfSubrecord, 
-    flags, req, uint8, uint16, float, 
-    localized, string, arrayOfStruct, multiStruct, bytes, 
-    size, record
+    format, subrecord, sortKey, struct, sorted, 
+    arrayOfSubrecord, flags, req, uint8, uint16, 
+    float, localized, string, arrayOfStruct, multiStruct, 
+    bytes, size, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -11,7 +11,7 @@ module.exports = () => {
         members: [
             def('EDID'),
             def('FULL'),
-            arrayOfSubrecord('Relations', 
+            sorted(arrayOfSubrecord('Relations', 
                 subrecord('XNAM', sortKey([0], struct('Relation', [
                     ckFormId('Faction', ['FACT', 'RACE']),
                     int32('Modifier'),
@@ -22,7 +22,7 @@ module.exports = () => {
                         3: 'Friend'
                     }))
                 ])))
-            ),
+            )),
             req(subrecord('DATA', struct('Flags', [
                 format(uint32('Flags'), flags({
                     0: 'Hidden From NPC',

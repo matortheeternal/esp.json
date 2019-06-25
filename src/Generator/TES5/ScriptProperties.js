@@ -1,12 +1,12 @@
 let {
     addDef, prefix, string, def, uint8, 
     format, enumeration, opts, int32, float, 
-    array, union, sortKey, struct
+    array, union, sortKey, struct, sorted
 } = require('../helpers');
 
 module.exports = () => {
     addDef('ScriptProperties', 
-        array('Properties', 
+        prefix(2, sorted(array('Properties', 
             sortKey([0], struct('Property', [
                 prefix(2, string('propertyName')),
                 format(uint8('Type'), def('PropTypeEnum')),
@@ -52,6 +52,6 @@ module.exports = () => {
                     ))
                 ])
             ]))
-        , -2)
+        )))
     );
 };

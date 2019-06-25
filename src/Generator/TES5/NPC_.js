@@ -2,9 +2,9 @@ let {
     flags, def, req, uint32, format, 
     int16, div, union, uint16, subrecord, 
     struct, ckFormId, int8, bytes, size, 
-    sortKey, arrayOfSubrecord, uint8, localized, string, 
-    array, float, unknown, int32, multiStruct, 
-    record
+    sortKey, sorted, arrayOfSubrecord, uint8, localized, 
+    string, array, float, unknown, int32, 
+    multiStruct, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -82,13 +82,13 @@ module.exports = () => {
                 int16('Health Offset'),
                 uint16('Bleedout Override')
             ]))),
-            req(arrayOfSubrecord('Factions', 
+            req(sorted(arrayOfSubrecord('Factions', 
                 subrecord('SNAM', sortKey([0], struct('Faction', [
                     ckFormId('Faction', ['FACT']),
                     int8('Rank'),
                     size(3, bytes('Unused'))
                 ])))
-            )),
+            ))),
             req(subrecord('INAM', ckFormId('Death item', ['LVLI']))),
             req(subrecord('VTCK', ckFormId('Voice', ['VTYP']))),
             subrecord('TPLT', ckFormId('Template', ['LVLN', 'NPC_'])),
@@ -99,21 +99,21 @@ module.exports = () => {
             req(subrecord('WNAM', ckFormId('Worn Armor', ['ARMO']))),
             req(subrecord('ANAM', ckFormId('Far away model', ['ARMO']))),
             req(subrecord('ATKR', ckFormId('Attack Race', ['RACE']))),
-            arrayOfSubrecord('Attacks', 
+            sorted(arrayOfSubrecord('Attacks', 
                 def('AttackData')
-            ),
+            )),
             req(subrecord('SPOR', ckFormId('Spectator override package list', ['FLST']))),
             req(subrecord('OCOR', ckFormId('Observe dead body override package list', ['FLST']))),
             req(subrecord('GWOR', ckFormId('Guard warn override package list', ['FLST']))),
             req(subrecord('ECOR', ckFormId('Combat override package list', ['FLST']))),
             subrecord('PRKZ', uint32('Perk Count')),
-            req(arrayOfSubrecord('Perks', 
+            req(sorted(arrayOfSubrecord('Perks', 
                 subrecord('PRKR', sortKey([0], struct('Perk', [
                     ckFormId('Perk', ['PERK']),
                     uint8('Rank'),
                     size(3, bytes('Unused'))
                 ])))
-            )),
+            ))),
             def('COCT'),
             def('CNTOs'),
             def('AIDT'),
@@ -141,9 +141,9 @@ module.exports = () => {
                 uint8('Geared up weapons'),
                 size(3, bytes('Unused'))
             ]))),
-            req(arrayOfSubrecord('Head Parts', 
+            req(sorted(arrayOfSubrecord('Head Parts', 
                 subrecord('PNAM', ckFormId('Head Part', ['HDPT']))
-            )),
+            ))),
             req(subrecord('HCLF', ckFormId('Hair Color', ['CLFM']))),
             req(subrecord('ZNAM', ckFormId('Combat Style', ['CSTY']))),
             req(subrecord('GNAM', ckFormId('Gift Filter', ['FLST']))),
@@ -190,7 +190,7 @@ module.exports = () => {
                 uint32('Eyes'),
                 uint32('Mouth')
             ])),
-            arrayOfSubrecord('Tint Layers', 
+            sorted(arrayOfSubrecord('Tint Layers', 
                 sortKey([0], multiStruct('Layer', [
                     subrecord('TINI', format(uint16('Tint Index'), def('TintLayerToStr'))),
                     subrecord('TINC', struct('Tint Color', [
@@ -202,7 +202,7 @@ module.exports = () => {
                     subrecord('TINV', format(uint32('Interpolation Value'), div(100))),
                     subrecord('TIAS', int16('Preset'))
                 ]))
-            )
+            ))
         ]
     })
 };

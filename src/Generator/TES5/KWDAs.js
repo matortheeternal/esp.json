@@ -1,11 +1,11 @@
 let {
-    addDef, ckFormId, subrecord, array
+    addDef, ckFormId, subrecord, sorted, array
 } = require('../helpers');
 
 module.exports = () => {
     addDef('KWDAs', 
-        subrecord('KWDA', array('Keywords', 
+        subrecord('KWDA', sorted(array('Keywords', 
             ckFormId('Keyword', ['KYWD', 'NULL'])
-        ))
+        )))
     );
 };

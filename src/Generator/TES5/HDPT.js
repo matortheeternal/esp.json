@@ -1,7 +1,7 @@
 let {
     flags, def, subrecord, uint8, format, 
-    enumeration, uint32, ckFormId, arrayOfSubrecord, string, 
-    req, arrayOfStruct, multiStruct, record
+    enumeration, uint32, ckFormId, sorted, arrayOfSubrecord, 
+    string, req, arrayOfStruct, multiStruct, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -29,9 +29,9 @@ module.exports = () => {
                 5: 'Scar',
                 6: 'Eyebrows'
             }))),
-            arrayOfSubrecord('Extra Parts', 
+            sorted(arrayOfSubrecord('Extra Parts', 
                 subrecord('HNAM', ckFormId('Part', ['HDPT']))
-            ),
+            )),
             arrayOfStruct('Parts', 
                 multiStruct('Part', [
                     subrecord('NAM0', format(uint32('Part Type'), enumeration({

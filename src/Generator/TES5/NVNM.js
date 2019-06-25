@@ -2,7 +2,7 @@ let {
     addDef, uint32, opts, bytes, size, 
     ckFormId, int16, struct, union, float, 
     sortKey, array, prefix, def, format, 
-    flags, uint16, subrecord
+    flags, uint16, sorted, subrecord
 } = require('../helpers');
 
 module.exports = () => {
@@ -100,7 +100,7 @@ module.exports = () => {
             )), {
                 "includeFlag": "dfNotAlignable"
             }),
-            array('Door Triangles', 
+            prefix(4, sorted(array('Door Triangles', 
                 sortKey([0, 2], struct('Door Triangle', [
                     opts(int16('Triangle before door'), {
                         "linksToCallback": "TriangleLinksTo"
@@ -108,7 +108,7 @@ module.exports = () => {
                     size(4, bytes('Unknown')),
                     ckFormId('Door', ['REFR'])
                 ]))
-            , -1),
+            ))),
             opts(prefix(4, array('Cover Triangles', 
                 opts(int16('Triangle'), {
                     "linksToCallback": "TriangleLinksTo"

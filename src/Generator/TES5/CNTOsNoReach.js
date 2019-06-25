@@ -1,11 +1,11 @@
 let {
-    addDef, def, arrayOfSubrecord, req
+    addDef, def, sorted, arrayOfSubrecord, req
 } = require('../helpers');
 
 module.exports = () => {
     addDef('CNTOsNoReach', 
-        req(arrayOfSubrecord('Items', 
+        req(sorted(arrayOfSubrecord('Items', 
             def('CNTONoReach')
-        ))
+        )))
     );
 };

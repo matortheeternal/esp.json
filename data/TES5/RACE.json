@@ -77,6 +77,7 @@
                                 ]
                             },
                             "type": "array",
+                            "sorted": true,
                             "size": 7
                         },
                         {
@@ -332,7 +333,8 @@
                         "name": "Name",
                         "type": "string"
                     }
-                }
+                },
+                "sorted": true
             },
             {
                 "signature": "VTCK",
@@ -346,8 +348,7 @@
                             "VTYP"
                         ]
                     },
-                    "type": "array",
-                    "size": 0
+                    "type": "array"
                 }
             },
             {
@@ -363,8 +364,7 @@
                             "ARMO"
                         ]
                     },
-                    "type": "array",
-                    "size": 0
+                    "type": "array"
                 }
             },
             {
@@ -380,8 +380,7 @@
                             "CLFM"
                         ]
                     },
-                    "type": "array",
-                    "size": 0
+                    "type": "array"
                 }
             },
             {
@@ -427,7 +426,8 @@
                 "type": "subrecordArray",
                 "subrecord": {
                     "def": "AttackData"
-                }
+                },
+                "sorted": true
             },
             {
                 "name": "Body Data",
@@ -480,6 +480,7 @@
                                         0
                                     ]
                                 },
+                                "sorted": true,
                                 "required": true
                             }
                         ],
@@ -524,6 +525,7 @@
                                         0
                                     ]
                                 },
+                                "sorted": true,
                                 "required": true
                             }
                         ],
@@ -546,7 +548,7 @@
                         ]
                     },
                     "type": "array",
-                    "size": 0
+                    "sorted": true
                 }
             },
             {
@@ -563,7 +565,7 @@
                         ]
                     },
                     "type": "array",
-                    "size": 0
+                    "sorted": true
                 }
             },
             {
@@ -781,7 +783,8 @@
                     "sortKey": [
                         0
                     ]
-                }
+                },
+                "sorted": true
             },
             {
                 "signature": "VNAM",
@@ -808,7 +811,8 @@
                             "NULL"
                         ]
                     }
-                }
+                },
+                "sorted": true
             },
             {
                 "signature": "UNES",
@@ -940,7 +944,8 @@
                                 "type": "subrecordArray",
                                 "subrecord": {
                                     "def": "HeadPart"
-                                }
+                                },
+                                "sorted": true
                             },
                             {
                                 "def": "Morphs"
@@ -959,7 +964,8 @@
                                             "NULL"
                                         ]
                                     }
-                                }
+                                },
+                                "sorted": true
                             },
                             {
                                 "name": "Available Hair Colors Male",
@@ -975,7 +981,8 @@
                                             "NULL"
                                         ]
                                     }
-                                }
+                                },
+                                "sorted": true
                             },
                             {
                                 "name": "Face Details Texture Set List Male",
@@ -991,7 +998,8 @@
                                             "NULL"
                                         ]
                                     }
-                                }
+                                },
+                                "sorted": true
                             },
                             {
                                 "signature": "DFTM",
@@ -1041,7 +1049,8 @@
                                 "type": "subrecordArray",
                                 "subrecord": {
                                     "def": "HeadPart"
-                                }
+                                },
+                                "sorted": true
                             },
                             {
                                 "def": "Morphs"
@@ -1060,7 +1069,8 @@
                                             "NULL"
                                         ]
                                     }
-                                }
+                                },
+                                "sorted": true
                             },
                             {
                                 "name": "Available Hair Colors Female",
@@ -1076,7 +1086,8 @@
                                             "NULL"
                                         ]
                                     }
-                                }
+                                },
+                                "sorted": true
                             },
                             {
                                 "name": "Face Details Texture Set List Female",
@@ -1092,7 +1103,8 @@
                                             "NULL"
                                         ]
                                     }
-                                }
+                                },
+                                "sorted": true
                             },
                             {
                                 "signature": "DFTF",

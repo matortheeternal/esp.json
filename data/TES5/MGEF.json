@@ -39,6 +39,7 @@
                         ]
                     }
                 },
+                "sorted": true,
                 "required": true
             },
             {
@@ -74,8 +75,7 @@
                             }
                         ]
                     },
-                    "type": "array",
-                    "size": 0
+                    "type": "array"
                 }
             },
             {

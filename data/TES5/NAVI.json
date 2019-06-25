@@ -63,7 +63,6 @@
                                     ]
                                 },
                                 "type": "array",
-                                "size": 0,
                                 "prefix": 4
                             },
                             {
@@ -76,7 +75,6 @@
                                     ]
                                 },
                                 "type": "array",
-                                "size": 0,
                                 "prefix": 4
                             },
                             {
@@ -100,7 +98,6 @@
                                     ]
                                 },
                                 "type": "array",
-                                "size": 0,
                                 "prefix": 4
                             },
                             {
@@ -189,11 +186,9 @@
                                     ]
                                 },
                                 "type": "array",
-                                "size": 0,
                                 "prefix": 4
                             },
                             "type": "array",
-                            "size": 0,
                             "prefix": 4
                         },
                         {
@@ -216,7 +211,6 @@
                                 ]
                             },
                             "type": "array",
-                            "size": 0,
                             "prefix": 4
                         }
                     ]
@@ -234,8 +228,7 @@
                             "NAVM"
                         ]
                     },
-                    "type": "array",
-                    "size": 0
+                    "type": "array"
                 }
             }
         ]

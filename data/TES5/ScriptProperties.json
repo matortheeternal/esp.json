@@ -71,7 +71,6 @@
                             "def": "ScriptPropertyObject"
                         },
                         "type": "array",
-                        "size": 0,
                         "prefix": 4
                     },
                     {
@@ -83,7 +82,6 @@
                             "encoding": "EncodingVMAD"
                         },
                         "type": "array",
-                        "size": 0,
                         "prefix": 4
                     },
                     {
@@ -93,7 +91,6 @@
                             "type": "int32"
                         },
                         "type": "array",
-                        "size": 0,
                         "prefix": 4
                     },
                     {
@@ -103,7 +100,6 @@
                             "type": "float"
                         },
                         "type": "array",
-                        "size": 0,
                         "prefix": 4
                     },
                     {
@@ -120,7 +116,6 @@
                             }
                         },
                         "type": "array",
-                        "size": 0,
                         "prefix": 4
                     }
                 ]
@@ -131,5 +126,6 @@
         ]
     },
     "type": "array",
-    "size": -2
+    "sorted": true,
+    "prefix": 2
 }

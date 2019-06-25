@@ -2,7 +2,8 @@ let {
     flags, subrecord, uint32, format, uint8, 
     struct, array, size, float, bytes, 
     ckFormId, def, int16, sortKey, multiStruct, 
-    uint16, multiUnion, arrayOfSubrecord, unknown, record
+    uint16, sorted, multiUnion, arrayOfSubrecord, unknown, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
@@ -57,7 +58,7 @@ module.exports = () => {
                     ))
                 ])
             ))),
-            arrayOfSubrecord('Layers', 
+            sorted(arrayOfSubrecord('Layers', 
                 multiUnion('Layer', [
                     sortKey([0], multiStruct('Base Layer', [
                         subrecord('BTXT', sortKey([1, 3], struct('Base Layer Header', [
@@ -74,16 +75,16 @@ module.exports = () => {
                             size(1, bytes('Unused')),
                             int16('Layer')
                         ]))),
-                        subrecord('VTXT', array('Alpha Layer Data', 
+                        subrecord('VTXT', sorted(array('Alpha Layer Data', 
                             sortKey([0], struct('Cell', [
                                 format(uint16('Position'), def('AtxtPosition')),
                                 size(2, bytes('Unused')),
                                 float('Opacity')
                             ]))
-                        ))
+                        )))
                     ]))
                 ])
-            ),
+            )),
             subrecord('VTEX', array('Textures', 
                 ckFormId('Texture', ['LTEX', 'NULL'])
             )),

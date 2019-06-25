@@ -2,8 +2,8 @@ let {
     def, flags, uint16, format, uint8, 
     bytes, size, uint32, subrecord, struct, 
     string, ckFormId, arrayOfSubrecord, multiStruct, req, 
-    empty, sortKey, localized, int32, formId, 
-    int16, enumeration, multiUnion, record
+    empty, sortKey, localized, sorted, int32, 
+    formId, int16, enumeration, multiUnion, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -43,7 +43,7 @@ module.exports = () => {
             ])),
             subrecord('NEXT', empty('Marker')),
             def('CTDAs'),
-            arrayOfSubrecord('Stages', 
+            sorted(arrayOfSubrecord('Stages', 
                 sortKey([0], multiStruct('Stage', [
                     subrecord('INDX', sortKey([0], struct('Stage Index', [
                         uint16('Stage Index'),
@@ -70,7 +70,7 @@ module.exports = () => {
                         ])
                     )
                 ]))
-            ),
+            )),
             arrayOfSubrecord('Objectives', 
                 multiStruct('Objective', [
                     subrecord('QOBJ', uint16('Objective Index')),

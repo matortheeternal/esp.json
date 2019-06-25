@@ -1,6 +1,6 @@
 let {
-    addDef, int16, opts, def, array, 
-    subrecord, struct, req
+    addDef, int16, opts, def, sorted, 
+    array, prefix, subrecord, struct, req
 } = require('../helpers');
 
 module.exports = () => {
@@ -12,9 +12,9 @@ module.exports = () => {
             opts(int16('Object Format'), {
                 "defaultNativeValue": 2
             }),
-            array('Scripts', 
+            prefix(2, sorted(array('Scripts', 
                 def('ScriptEntry')
-            , -2),
+            ))),
             def('ScriptFragmentsScen')
         ])))
     );

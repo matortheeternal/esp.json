@@ -2,7 +2,8 @@ let {
     def, subrecord, string, bytes, unknown, 
     ckFormId, req, uint8, format, array, 
     opts, multiStruct, float, struct, size, 
-    flags, uint32, enumeration, arrayOfSubrecord, record
+    flags, uint32, enumeration, arrayOfSubrecord, sorted, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
@@ -178,9 +179,9 @@ module.exports = () => {
                     }))
                 ]))
             ),
-            arrayOfSubrecord('Sky Statics', 
+            sorted(arrayOfSubrecord('Sky Statics', 
                 subrecord('TNAM', ckFormId('Static', ['STAT', 'NULL']))
-            ),
+            )),
             subrecord('IMSP', struct('Image Spaces', [
                 ckFormId('Sunrise', ['IMGS', 'NULL']),
                 ckFormId('Day', ['IMGS', 'NULL']),

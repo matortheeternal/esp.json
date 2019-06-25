@@ -276,7 +276,7 @@
                                             ]
                                         },
                                         "type": "array",
-                                        "size": 0
+                                        "sorted": true
                                     }
                                 }
                             ],
@@ -285,7 +285,8 @@
                             ]
                         }
                     ]
-                }
+                },
+                "sorted": true
             },
             {
                 "signature": "VTEX",
@@ -300,8 +301,7 @@
                             "NULL"
                         ]
                     },
-                    "type": "array",
-                    "size": 0
+                    "type": "array"
                 }
             },
             {

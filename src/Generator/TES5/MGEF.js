@@ -1,7 +1,7 @@
 let {
-    def, subrecord, ckFormId, arrayOfSubrecord, req, 
-    enumeration, uint32, format, struct, array, 
-    localized, string, record
+    def, subrecord, ckFormId, sorted, arrayOfSubrecord, 
+    req, enumeration, uint32, format, struct, 
+    array, localized, string, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -14,9 +14,9 @@ module.exports = () => {
             def('KSIZ'),
             def('KWDAs'),
             def('MGEFData'),
-            req(arrayOfSubrecord('Counter Effects', 
+            req(sorted(arrayOfSubrecord('Counter Effects', 
                 subrecord('ESCE', ckFormId('Effect', ['MGEF']))
-            )),
+            ))),
             subrecord('SNDD', array('Sounds', 
                 struct('', [
                     format(uint32('Type'), enumeration({

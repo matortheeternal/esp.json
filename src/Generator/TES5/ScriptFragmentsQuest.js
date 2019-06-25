@@ -1,7 +1,7 @@
 let {
     addDef, int8, uint16, prefix, string, 
-    int16, int32, sortKey, struct, array, 
-    opts
+    int16, int32, sortKey, struct, sorted, 
+    array, opts
 } = require('../helpers');
 
 module.exports = () => {
@@ -10,7 +10,7 @@ module.exports = () => {
             int8('Unknown'),
             uint16('FragmentCount'),
             prefix(2, string('FileName')),
-            array('Fragments', 
+            sorted(array('Fragments', 
                 sortKey([0, 2], struct('Fragment', [
                     uint16('Quest Stage'),
                     int16('Unknown'),
@@ -19,7 +19,7 @@ module.exports = () => {
                     prefix(2, string('ScriptName')),
                     prefix(2, string('FragmentName'))
                 ]))
-            )
+            ))
         ]), {
             "afterSet": "ScriptFragmentsQuestAfterSet"
         })
