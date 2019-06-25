@@ -5,11 +5,10 @@ functionConverter('wbFlagsList', [
     args.enum,
     { type: 'boolean', name: 'deleted' },
     { type: 'boolean', name: 'unknowns' }
-], (args, converter) => {
-    let flags = args.options;
-    if (args.deleted) flags[5] = `'Deleted'`;
-    flags[12] = `'Ignored'`;
-    if (!args.unknowns) return flags;
+], ({options, deleted, unknowns}, converter) => {
+    if (deleted) options[5] = `'Deleted'`;
+    options[12] = `'Ignored'`;
+    if (!unknowns) return options;
     converter.addRequires('flags', 'showUnknown');
-    return `showUnknown(flags(${stringify(flags)}))`;
+    return `showUnknown(flags(${stringify(options)}))`;
 });
