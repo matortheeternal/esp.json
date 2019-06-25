@@ -4,7 +4,7 @@ let defs = {};
 let addDef = (id, def) => defs[id] = def;
 let getDefs = () => defs;
 let clearDefs = () => defs = {};
-let IsSSE = (game, a, b) => game === 'SSE' ? a : b;
+let IsSSE = (game, options) => game === 'SSE' ? options[0] : options[1];
 
 // shared
 let req = obj => (obj.required = true) && obj;
