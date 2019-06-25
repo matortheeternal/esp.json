@@ -1,6 +1,8 @@
 let ParseError = require('./ParseError'),
     {optsReq} = require('./helpers');
 
+let functionExpr = /^(\w+)\s*\(/;
+
 let functions = {},
     statements = {};
 
@@ -66,13 +68,11 @@ let matchParsedArguments = function(args, fnArgs) {
 };
 
 let getFunctionName = function(converter) {
-    let functionName = Object.keys(functions).find(name => {
-        return converter.startsWith(name + '(');
-    });
-    if (!functionName) throw new ParseError('Unknown function.');
-    converter.advance(functionName.length);
-    if (!converter.chomp('('))
-        throw new ParseError('Expected function arguments.');
+    let match = converter.match(functionExpr);
+    if (!match) throw new ParseError('Expected function');
+    let functionName = match[1];
+    if (!functions[functionName]) throw new ParseError('Unknown function.');
+    converter.advance(match[0].length);
     return functionName;
 };
 

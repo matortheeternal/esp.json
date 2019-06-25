@@ -1,7 +1,7 @@
 let {typeParser} = require('../parsers'),
     {convertFunction} = require('../converters');
 
-let fnExpr = /^([a-z][a-z0-9]*)\(/i;
+let fnExpr = /^(\w+)\s*\(/i;
 
 typeParser('function', {
     test: parser => parser.match(fnExpr),
