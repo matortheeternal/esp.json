@@ -44,7 +44,7 @@ module.exports = game => {
                     format(uint8('Flags'), flags({
                         0: 'Use Land Data',
                         1: 'Use LOD Data',
-                        2: 'Don\'t Use Map Data',
+                        2: 'Use Map Data',
                         3: 'Use Water Data',
                         4: 'Use Climate Data',
                         5: 'Use Image Space Data (unused)',

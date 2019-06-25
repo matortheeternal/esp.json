@@ -24,9 +24,7 @@ module.exports = () => {
                     }),
                     int32('Integer'),
                     float('Float'),
-                    opts(size(4, bytes('Variable Name (unused)')), {
-                        "includeFlag": "dfZeroSortKey"
-                    }),
+                    format(uint32('Variable Name'), def('CTDAParam1StringToString')),
                     format(uint32('Sex'), def('SexEnum')),
                     format(int32('Actor Value'), def('ActorValueEnum')),
                     format(uint32('Crime Type'), def('CrimeTypeEnum')),
@@ -119,9 +117,7 @@ module.exports = () => {
                     }),
                     int32('Integer'),
                     float('Float'),
-                    opts(size(4, bytes('Variable Name (unused)')), {
-                        "includeFlag": "dfZeroSortKey"
-                    }),
+                    format(uint32('Variable Name'), def('CTDAParam2StringToString')),
                     format(uint32('Sex'), def('SexEnum')),
                     format(int32('Actor Value'), def('ActorValueEnum')),
                     format(uint32('Crime Type'), def('CrimeTypeEnum')),

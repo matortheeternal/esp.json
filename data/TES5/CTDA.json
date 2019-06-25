@@ -74,10 +74,11 @@
                                 "type": "float"
                             },
                             {
-                                "name": "Variable Name (unused)",
-                                "type": "bytes",
-                                "size": 4,
-                                "includeFlag": "dfZeroSortKey"
+                                "name": "Variable Name",
+                                "type": "uint32",
+                                "format": {
+                                    "def": "CTDAParam1StringToString"
+                                }
                             },
                             {
                                 "name": "Sex",
@@ -537,10 +538,11 @@
                                 "type": "float"
                             },
                             {
-                                "name": "Variable Name (unused)",
-                                "type": "bytes",
-                                "size": 4,
-                                "includeFlag": "dfZeroSortKey"
+                                "name": "Variable Name",
+                                "type": "uint32",
+                                "format": {
+                                    "def": "CTDAParam2StringToString"
+                                }
                             },
                             {
                                 "name": "Sex",

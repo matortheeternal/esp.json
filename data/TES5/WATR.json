@@ -103,14 +103,7 @@
                     ]
                 }
             },
-            {
-                "signature": "DATA",
-                "type": "subrecord",
-                "def": {
-                    "name": "Damage Per Second",
-                    "type": "uint16"
-                }
-            },
+            null,
             null,
             {
                 "signature": "GNAM",

@@ -29,7 +29,10 @@ module.exports = game => {
             subrecord('SNAM', ckFormId('Open Sound', ['SNDR', 'NULL'])),
             subrecord('XNAM', ckFormId('Spell', ['SPEL'])),
             subrecord('INAM', ckFormId('Image Space', ['IMGS'])),
-            subrecord('DATA', uint16('Damage Per Second')),
+            IsSSE(game, [
+                subrecord('DATA', uint16('Unused')),
+                subrecord('DATA', uint16('Damage Per Second'))
+            ]),
             IsSSE(game, [
                 req(subrecord('DNAM', struct('Visual Data', [
                     float('Unknown'),
