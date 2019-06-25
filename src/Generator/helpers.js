@@ -10,12 +10,16 @@ let req = obj => (obj.required = true) && obj;
 let def = (def, opts) => ({ def, ...opts });
 let opts = (obj, opts) => ({ ...obj, ...opts });
 let sortKey = (sortKey, obj) => (obj.sortKey = sortKey) && obj;
-let format = (obj, format) => (obj.format = format) && obj;
-let div = value => ({ type: 'divide', value });
-let size = (size, obj) => ({ ...obj, size});
-let prefix = (prefix, obj) => ({ ...obj, prefix });
 let localized = (obj) => ({ ...obj, localized: true });
 
+// variable size
+let sorted = obj => ({ ...obj, sorted: true });
+let size = (size, obj) => ({ ...obj, size});
+let prefix = (prefix, obj) => ({ ...obj, prefix });
+
+// number formatting
+let format = (obj, format) => (obj.format = format) && obj;
+let div = value => ({ type: 'divide', value });
 let flags = (flags) => ({ type: 'flags', flags });
 let enumeration = (options) => ({type: 'enum', options });
 
@@ -62,8 +66,9 @@ let empty = name => ({ name, type: 'empty' });
 
 module.exports = {
     addDef, getDefs, clearDefs, IsSSE,
-    req, def, opts, sortKey, format, div, size, prefix, localized,
-    flags, enumeration,
+    req, def, opts, sortKey, localized,
+    sorted, size, prefix,
+    format, div, flags, enumeration,
     record, subrecord,
     arrayOfSubrecord, arrayOfStruct, multiStruct, multiUnion,
     struct, array, union,

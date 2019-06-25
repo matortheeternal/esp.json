@@ -1,6 +1,7 @@
 let {subrecordAndField, functionConverter} = require('../converters'),
-    {args, newLine} = require('../helpers');
+    {args, sizeLine, newLine} = require('../helpers');
 
+// sorted array
 subrecordAndField('wbArrayS', [
     args.name,
     args.field,
@@ -12,9 +13,9 @@ subrecordAndField('wbArrayS', [
     args.identifier,
     args.identifier
 ], ({name, element, size}, converter) => {
-    converter.addRequires('array');
-    let sizeArg = size ? ', ' + size : '';
-    return `array(${name}, ${newLine(element)}${sizeArg})`;
+    converter.addRequires('sorted', 'array');
+    let line = `sorted(array(${name}, ${newLine(element)}))`;
+    return sizeLine(size, line, converter);
 });
 
 functionConverter('wbArrayS', [
@@ -27,8 +28,7 @@ functionConverter('wbArrayS', [
     args.identifier,
     args.identifier,
     args.identifier
-], ({name, element, size}, converter) => {
-    converter.addRequires('array');
-    let sizeArg = size ? ', ' + size : '';
-    return `array(${name}, ${newLine(element)}${sizeArg})`;
+], ({name, element}, converter) => {
+    converter.addRequires('sorted', 'array');
+    return `sorted(array(${name}, ${newLine(element)}))`;
 });

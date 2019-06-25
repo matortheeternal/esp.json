@@ -1,6 +1,7 @@
 let {functionConverter} = require('../converters'),
     {args, newLine} = require('../helpers');
 
+// subrecord array
 functionConverter('wbRArray', [
     { type: 'stringExpr', name: 'name' },
     args.member,

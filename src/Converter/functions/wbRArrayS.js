@@ -1,6 +1,7 @@
 let {functionConverter} = require('../converters'),
     {args, reqLine, newLine} = require('../helpers');
 
+// sorted subrecord array
 functionConverter('wbRArrayS', [
     args.name,
     args.member,
@@ -12,7 +13,7 @@ functionConverter('wbRArrayS', [
     args.identifier,
     args.identifier
 ], ({name, member, required}, converter) => {
-    converter.addRequires('arrayOfSubrecord');
-    let line = `arrayOfSubrecord(${name}, ${newLine(member)})`;
+    converter.addRequires('sorted', 'arrayOfSubrecord');
+    let line = `sorted(arrayOfSubrecord(${name}, ${newLine(member)}))`;
     return reqLine(required, line, converter);
 });
