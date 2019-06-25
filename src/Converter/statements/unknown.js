@@ -1,4 +1,6 @@
 require('./wbRecord');
+require('./wbRefRecord');
+
 let {statementConverter} = require('../converters');
 
 statementConverter('unknown', {
