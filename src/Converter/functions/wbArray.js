@@ -1,11 +1,5 @@
 let {subrecordAndField} = require('../converters'),
-    {args, sizeLine, prefixLine, newLine} = require('../helpers');
-
-let prefixes = {
-    '-1': 4,
-    '-2': 2,
-    '-4': 1
-};
+    {args, prefixSize, newLine} = require('../helpers');
 
 subrecordAndField('wbArray', [
     args.name,
@@ -19,10 +13,8 @@ subrecordAndField('wbArray', [
     args.identifier
 ], ({name, element, size}, converter) => {
     converter.addRequires('array');
-    let prefix = prefixes[size] || 0,
-        line = `array(${name}, ${newLine(element)})`;
-    line = sizeLine(size, line, converter);
-    return prefixLine(prefix, line, converter);
+    let line = `array(${name}, ${newLine(element)})`;
+    return prefixSize(size, line, converter);
 });
 
 // TODO: use labels?

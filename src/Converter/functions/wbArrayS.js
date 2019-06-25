@@ -1,5 +1,5 @@
 let {subrecordAndField, functionConverter} = require('../converters'),
-    {args, sizeLine, newLine} = require('../helpers');
+    {args, prefixSize, newLine} = require('../helpers');
 
 // sorted array
 subrecordAndField('wbArrayS', [
@@ -15,7 +15,7 @@ subrecordAndField('wbArrayS', [
 ], ({name, element, size}, converter) => {
     converter.addRequires('sorted', 'array');
     let line = `sorted(array(${name}, ${newLine(element)}))`;
-    return sizeLine(size, line, converter);
+    return prefixSize(size, line, converter);
 });
 
 functionConverter('wbArrayS', [

@@ -25,6 +25,12 @@ let args = {
     enum: { type: 'enum', name: 'options' }
 };
 
+let prefixes = {
+    '-1': 4,
+    '-2': 2,
+    '-4': 1
+};
+
 let intFunctions = {
     it0: 'int0',
     itU8: 'uint8',
@@ -91,6 +97,12 @@ let prefixLine = function(prefix, line, converter) {
     return `prefix(${prefix}, ${line})`;
 };
 
+let prefixSize = function(size, line, converter) {
+    let prefix = prefixes[size] || 0;
+    line = sizeLine(size, line, converter);
+    return prefixLine(prefix, line, converter);
+};
+
 let reqLine = function(required, line, converter) {
     if (!required) return line;
     converter.addRequires('req');
@@ -115,7 +127,7 @@ let resolveIntFn = function(intType) {
 };
 
 module.exports = {
-    args, indent, arr, inlineArr, mixedArr, stringify,
-    sizeLine, prefixLine, reqLine, newLine, optsLine, optsReq,
+    args, indent, arr, inlineArr, mixedArr, stringify, newLine,
+    sizeLine, prefixLine, prefixSize, reqLine, optsLine, optsReq,
     resolveIntFn, lineBreak, tab
 };

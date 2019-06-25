@@ -30,8 +30,8 @@ let record = (signature, name, def) => addDef(signature,
 
 let subrecord = (signature, def) =>
     ({ signature, type: 'subrecord', def });
-let arrayOfSubrecord = (name, subrecord, sortKey) =>
-    ({ name, type: 'subrecordArray', subrecord, sortKey });
+let arrayOfSubrecord = (name, subrecord) =>
+    ({ name, type: 'subrecordArray', subrecord });
 let arrayOfStruct = (name, entryName, subrecords) =>
     ({ name, type: 'structArray', entryName, subrecords });
 let multiStruct = (name, subrecords) =>
@@ -41,8 +41,8 @@ let multiUnion = (name, subrecords) =>
 
 let struct = (name, fields) =>
     ({ name, type: 'struct', fields });
-let array = (name, entryDef, size = 0) =>
-    ({ name, entryDef, type: 'array', size });
+let array = (name, entryDef) =>
+    ({ name, entryDef, type: 'array' });
 let union = (name, decider, elements) =>
     ({ name, type: 'union', decider, elements });
 
