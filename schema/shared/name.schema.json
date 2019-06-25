@@ -3,5 +3,6 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Name",
   "type": "string",
-  "description": "A name assigned to a data field."
+  "description": "A name assigned to a data field.",
+  "default": "Unknown"
 }

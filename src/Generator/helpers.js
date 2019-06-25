@@ -63,7 +63,7 @@ let uint32 = name => ({ name, type: 'uint32' });
 // special types
 let formId = name => ({ name, type: 'formId' });
 let ckFormId = (name, signatures) => ({ name, type: 'formId', signatures });
-let unknown = () => ({ name: 'Unknown', type: 'bytes' });
+let unknown = () => ({ type: 'bytes' });
 let empty = name => ({ name, type: 'empty' });
 
 module.exports = {
