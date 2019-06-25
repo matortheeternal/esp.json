@@ -8,6 +8,7 @@ let args = {
     member: { type: 'member', name: 'member' },
     fields: { type: 'array of field', name: 'fields' },
     members: { type: 'array of member', name: 'members' },
+    arrayOfFlags: { type: 'array of flags', name: 'flags' },
     identifier: { type: 'identifier' },
     required: { type: 'boolean', name: 'required' },
     boolean: { type: 'boolean' },
