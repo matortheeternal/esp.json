@@ -45,7 +45,45 @@
             {
                 "def": "KWDAs"
             },
-            null,
+            {
+                "signature": "DATA",
+                "type": "subrecord",
+                "def": {
+                    "name": "Data",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Projectile",
+                            "type": "formId",
+                            "signatures": [
+                                "PROJ",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Flags",
+                            "type": "uint32",
+                            "format": {
+                                "type": "flags",
+                                "flags": {
+                                    "0": "Ignores Normal Weapon Resistance",
+                                    "1": "Non-Playable",
+                                    "2": "Non-Bolt"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Damage",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Value",
+                            "type": "uint32"
+                        }
+                    ]
+                },
+                "required": true
+            },
             {
                 "signature": "ONAM",
                 "type": "subrecord",

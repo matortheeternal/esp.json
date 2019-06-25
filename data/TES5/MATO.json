@@ -22,7 +22,69 @@
                     }
                 }
             },
-            null
+            {
+                "signature": "DATA",
+                "type": "subrecord",
+                "def": {
+                    "name": "Directional Material Data",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Falloff Scale",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Falloff Bias",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Noise UV Scale",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Material UV Scale",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Projection Vector",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "X",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "Y",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "Z",
+                                    "type": "float"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Normal Dampener",
+                            "type": "float"
+                        },
+                        {
+                            "def": "FloatColors",
+                            "name": "Single Pass Color"
+                        },
+                        {
+                            "name": "Flags",
+                            "type": "uint32",
+                            "format": {
+                                "type": "flags",
+                                "flags": {
+                                    "0": "Single Pass"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "required": true
+            }
         ]
     }
 }

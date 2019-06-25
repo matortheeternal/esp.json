@@ -419,7 +419,52 @@
                     ]
                 }
             },
-            null,
+            {
+                "signature": "CRDT",
+                "type": "subrecord",
+                "def": {
+                    "name": "Critical Data",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Damage",
+                            "type": "uint16"
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 2
+                        },
+                        {
+                            "name": "% Mult",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Flags",
+                            "type": "uint8",
+                            "format": {
+                                "type": "flags",
+                                "flags": {
+                                    "0": "On Death"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 3
+                        },
+                        {
+                            "name": "Effect",
+                            "type": "formId",
+                            "signatures": [
+                                "SPEL",
+                                "NULL"
+                            ]
+                        }
+                    ]
+                }
+            },
             {
                 "signature": "VNAM",
                 "type": "subrecord",

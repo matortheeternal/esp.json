@@ -79,6 +79,7 @@
                 "signature": "INAM",
                 "type": "subrecord",
                 "def": {
+                    "name": "Unused",
                     "type": "uint32",
                     "format": {
                         "type": "flags",

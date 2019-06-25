@@ -51,7 +51,29 @@
             {
                 "def": "MODL"
             },
-            null,
+            {
+                "signature": "DNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Direction Material",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Max Angle (30-120)",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Material",
+                            "type": "formId",
+                            "signatures": [
+                                "MATO",
+                                "NULL"
+                            ]
+                        }
+                    ]
+                },
+                "required": true
+            },
             {
                 "signature": "MNAM",
                 "type": "subrecord",
