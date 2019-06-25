@@ -1,18 +1,19 @@
 let defs = {};
 
+// meta
 let addDef = (id, def) => defs[id] = def;
 let getDefs = () => defs;
 let clearDefs = () => defs = {};
 let IsSSE = (game, a, b) => game === 'SSE' ? a : b;
 
-// meta
+// shared
 let req = obj => (obj.required = true) && obj;
 let def = (def, opts) => ({ def, ...opts });
 let opts = (obj, opts) => ({ ...obj, ...opts });
 let sortKey = (sortKey, obj) => (obj.sortKey = sortKey) && obj;
-let localized = (obj) => ({ ...obj, localized: true });
 
-// variable size
+// arrays and strings
+let localized = (obj) => ({ ...obj, localized: true });
 let sorted = obj => ({ ...obj, sorted: true });
 let size = (size, obj) => ({ ...obj, size});
 let prefix = (prefix, obj) => ({ ...obj, prefix });
@@ -22,14 +23,16 @@ let format = (obj, format) => (obj.format = format) && obj;
 let div = value => ({ type: 'divide', value });
 let flags = (flags) => ({ type: 'flags', flags });
 let enumeration = (options) => ({type: 'enum', options });
+let formatUnion = (decider, formats) =>
+    ({ type: 'formatUnion', decider, formats, });
 
-// data structures
+// structures
 let record = (signature, name, def) => addDef(signature,
     ({ signature, type: 'record', name, def })
 );
-
 let subrecord = (signature, def) =>
     ({ signature, type: 'subrecord', def });
+
 let arrayOfSubrecord = (name, subrecord) =>
     ({ name, type: 'subrecordArray', subrecord });
 let arrayOfStruct = (name, entryName, subrecords) =>
@@ -68,7 +71,7 @@ module.exports = {
     addDef, getDefs, clearDefs, IsSSE,
     req, def, opts, sortKey, localized,
     sorted, size, prefix,
-    format, div, flags, enumeration,
+    format, div, flags, enumeration, formatUnion,
     record, subrecord,
     arrayOfSubrecord, arrayOfStruct, multiStruct, multiUnion,
     struct, array, union,
