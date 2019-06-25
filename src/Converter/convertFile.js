@@ -18,10 +18,10 @@ let convertProcedures = function(converter) {
 };
 
 let convertFile = function(filename, game) {
-    let filePath = path.resolve(__dirname, 'input', filename),
+    let filePath = path.resolve(__dirname, '..', '..', 'TES5Edit', filename),
         converter = new Converter(filePath);
     try {
-        let outputFolder = path.resolve(__dirname, 'output', game);
+        let outputFolder = path.resolve(__dirname, '..', 'Generator', game);
         if (!fs.existsSync(outputFolder)) fs.mkdirSync(outputFolder);
         converter.setOutputFolder(outputFolder);
         convertProcedures(converter);
