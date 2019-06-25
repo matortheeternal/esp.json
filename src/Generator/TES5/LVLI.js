@@ -1,7 +1,7 @@
 let {
     def, req, flags, subrecord, uint8, 
     format, ckFormId, uint16, bytes, size, 
-    sortKey, struct, multiStruct, sorted, arrayOfSubrecord, 
+    sortKey, struct, memberStruct, sorted, memberArray, 
     record
 } = require('../helpers');
 
@@ -19,8 +19,8 @@ module.exports = () => {
             }))),
             subrecord('LVLG', ckFormId('Global', ['GLOB'])),
             def('LLCT'),
-            req(sorted(arrayOfSubrecord('Leveled List Entries', 
-                sortKey([0], multiStruct('Leveled List Entry', [
+            req(sorted(memberArray('Leveled List Entries', 
+                sortKey([0], memberStruct('Leveled List Entry', [
                     subrecord('LVLO', sortKey([0, 2], struct('Base Data', [
                         uint16('Level'),
                         size(2, bytes('Unknown')),

@@ -1,10 +1,10 @@
 let {
-    addDef, def, multiStruct
+    addDef, def, memberStruct
 } = require('../helpers');
 
 module.exports = () => {
     addDef('Keywords', 
-        multiStruct('Keywords', [
+        memberStruct('Keywords', [
             def('KSIZ'),
             def('ReqKWDAs')
         ])

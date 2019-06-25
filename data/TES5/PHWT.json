@@ -1,11 +1,11 @@
 {
     "name": "FaceFX Phonemes",
-    "type": "multiStruct",
-    "subrecords": [
+    "type": "memberStruct",
+    "members": [
         {
             "name": "IY",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -13,8 +13,8 @@
         },
         {
             "name": "IH",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -22,8 +22,8 @@
         },
         {
             "name": "EH",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -31,8 +31,8 @@
         },
         {
             "name": "EY",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -40,8 +40,8 @@
         },
         {
             "name": "AE",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -49,8 +49,8 @@
         },
         {
             "name": "AA",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -58,8 +58,8 @@
         },
         {
             "name": "AW",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -67,8 +67,8 @@
         },
         {
             "name": "AY",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -76,8 +76,8 @@
         },
         {
             "name": "AH",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -85,8 +85,8 @@
         },
         {
             "name": "AO",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -94,8 +94,8 @@
         },
         {
             "name": "OY",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -103,8 +103,8 @@
         },
         {
             "name": "OW",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -112,8 +112,8 @@
         },
         {
             "name": "UH",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -121,8 +121,8 @@
         },
         {
             "name": "UW",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -130,8 +130,8 @@
         },
         {
             "name": "ER",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -139,8 +139,8 @@
         },
         {
             "name": "AX",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -148,8 +148,8 @@
         },
         {
             "name": "S",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -157,8 +157,8 @@
         },
         {
             "name": "SH",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -166,8 +166,8 @@
         },
         {
             "name": "Z",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -175,8 +175,8 @@
         },
         {
             "name": "ZH",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -184,8 +184,8 @@
         },
         {
             "name": "F",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -193,8 +193,8 @@
         },
         {
             "name": "TH",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -202,8 +202,8 @@
         },
         {
             "name": "V",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -211,8 +211,8 @@
         },
         {
             "name": "DH",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -220,8 +220,8 @@
         },
         {
             "name": "M",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -229,8 +229,8 @@
         },
         {
             "name": "N",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -238,8 +238,8 @@
         },
         {
             "name": "NG",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -247,8 +247,8 @@
         },
         {
             "name": "L",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -256,8 +256,8 @@
         },
         {
             "name": "R",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -265,8 +265,8 @@
         },
         {
             "name": "W",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -274,8 +274,8 @@
         },
         {
             "name": "Y",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -283,8 +283,8 @@
         },
         {
             "name": "HH",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -292,8 +292,8 @@
         },
         {
             "name": "B",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -301,8 +301,8 @@
         },
         {
             "name": "D",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -310,8 +310,8 @@
         },
         {
             "name": "JH",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -319,8 +319,8 @@
         },
         {
             "name": "G",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -328,8 +328,8 @@
         },
         {
             "name": "P",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -337,8 +337,8 @@
         },
         {
             "name": "T",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -346,8 +346,8 @@
         },
         {
             "name": "K",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -355,8 +355,8 @@
         },
         {
             "name": "CH",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -364,8 +364,8 @@
         },
         {
             "name": "SIL",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -373,8 +373,8 @@
         },
         {
             "name": "SHOTSIL",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }
@@ -382,8 +382,8 @@
         },
         {
             "name": "FLAP",
-            "type": "multiStruct",
-            "subrecords": [
+            "type": "memberStruct",
+            "members": [
                 {
                     "def": "PhonemeTargets"
                 }

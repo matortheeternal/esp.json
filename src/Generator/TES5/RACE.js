@@ -2,8 +2,8 @@ let {
     flags, def, req, subrecord, ckFormId, 
     int8, format, sortKey, struct, sorted, 
     array, size, bytes, float, enumeration, 
-    uint32, int32, empty, string, arrayOfSubrecord, 
-    uint16, multiStruct, record
+    uint32, int32, empty, string, memberArray, 
+    uint16, memberStruct, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -88,7 +88,7 @@ module.exports = () => {
             subrecord('ANAM', string('Female Skeletal Model')),
             def('MODT'),
             subrecord('NAM2', empty('Marker NAM2 #1')),
-            sorted(arrayOfSubrecord('Movement Type Names', 
+            sorted(memberArray('Movement Type Names', 
                 subrecord('MTNM', string('Name'))
             )),
             subrecord('VTCK', array('Voices', 
@@ -104,24 +104,24 @@ module.exports = () => {
             req(subrecord('PNAM', float('FaceGen - Main clamp'))),
             req(subrecord('UNAM', float('FaceGen - Face clamp'))),
             req(subrecord('ATKR', ckFormId('Attack Race', ['RACE']))),
-            sorted(arrayOfSubrecord('Attacks', 
+            sorted(memberArray('Attacks', 
                 def('AttackData')
             )),
-            req(multiStruct('Body Data', [
+            req(memberStruct('Body Data', [
                 req(subrecord('NAM1', empty('Body Data Marker'))),
-                req(multiStruct('Male Body Data', [
+                req(memberStruct('Male Body Data', [
                     subrecord('MNAM', empty('Male Data Marker')),
-                    req(sorted(arrayOfSubrecord('Parts', 
-                        sortKey([0], multiStruct('Part', [
+                    req(sorted(memberArray('Parts', 
+                        sortKey([0], memberStruct('Part', [
                             subrecord('INDX', format(uint32('Index'), def('BodyPartIndexEnum'))),
                             def('MODL')
                         ]))
                     )))
                 ])),
-                req(multiStruct('Female Body Data', [
+                req(memberStruct('Female Body Data', [
                     req(subrecord('FNAM', empty('Female Data Marker'))),
-                    req(sorted(arrayOfSubrecord('Parts', 
-                        sortKey([0], multiStruct('Part', [
+                    req(sorted(memberArray('Parts', 
+                        sortKey([0], memberStruct('Part', [
                             subrecord('INDX', format(uint32('Index'), def('BodyPartIndexEnum'))),
                             def('MODL')
                         ]))
@@ -137,11 +137,11 @@ module.exports = () => {
             subrecord('GNAM', ckFormId('Body Part Data', ['BPTD', 'NULL'])),
             subrecord('NAM2', empty('Marker NAM2 #2')),
             req(subrecord('NAM3', empty('Marker NAM3 #3'))),
-            req(multiStruct('Male Behavior Graph', [
+            req(memberStruct('Male Behavior Graph', [
                 subrecord('MNAM', empty('Male Data Marker')),
                 def('MODL')
             ])),
-            req(multiStruct('Female Behavior Graph', [
+            req(memberStruct('Female Behavior Graph', [
                 req(subrecord('FNAM', empty('Female Data Marker'))),
                 def('MODL')
             ])),
@@ -150,11 +150,11 @@ module.exports = () => {
             subrecord('NAM7', ckFormId('Decapitation FX', ['ARTO', 'NULL'])),
             subrecord('ONAM', ckFormId('Open Loot Sound', ['SNDR', 'NULL'])),
             subrecord('LNAM', ckFormId('Close Loot Sound', ['SNDR', 'NULL'])),
-            arrayOfSubrecord('Biped Object Names', 
+            memberArray('Biped Object Names', 
                 subrecord('NAME', string('Name'))
             ),
-            sorted(arrayOfSubrecord('Movement Types', 
-                sortKey([0], multiStruct('Movement Types', [
+            sorted(memberArray('Movement Types', 
+                sortKey([0], memberStruct('Movement Types', [
                     subrecord('MTYP', ckFormId('Movement Type', ['MOVT', 'NULL'])),
                     subrecord('SPED', struct('Override Values', [
                         float('Left - Walk'),
@@ -172,11 +172,11 @@ module.exports = () => {
                 ]))
             )),
             subrecord('VNAM', format(uint32('Equipment Flags'), def('EquipType'))),
-            sorted(arrayOfSubrecord('Equip Slots', 
+            sorted(memberArray('Equip Slots', 
                 subrecord('QNAM', ckFormId('Equip Slot', ['EQUP', 'NULL']))
             )),
             subrecord('UNES', ckFormId('Unarmed Equip Slot', ['EQUP', 'NULL'])),
-            arrayOfSubrecord('Phoneme Target Names', 
+            memberArray('Phoneme Target Names', 
                 subrecord('PHTN', string('Name'))
             ),
             def('PHWT'),
@@ -186,41 +186,41 @@ module.exports = () => {
             subrecord('FLMV', ckFormId('Base Movement Default - Fly', ['MOVT', 'NULL'])),
             subrecord('SNMV', ckFormId('Base Movement Default - Sneak', ['MOVT', 'NULL'])),
             subrecord('SPMV', ckFormId('Base Movement Default - Sprint', ['MOVT', 'NULL'])),
-            req(multiStruct('Head Data', [
+            req(memberStruct('Head Data', [
                 req(subrecord('NAM0', empty('Head Data Marker'))),
-                req(multiStruct('Male Head Data', [
+                req(memberStruct('Male Head Data', [
                     req(subrecord('MNAM', empty('Male Data Marker'))),
-                    sorted(arrayOfSubrecord('Head Parts', 
+                    sorted(memberArray('Head Parts', 
                         def('HeadPart')
                     )),
                     def('Morphs'),
-                    sorted(arrayOfSubrecord('Race Presets Male', 
+                    sorted(memberArray('Race Presets Male', 
                         subrecord('RPRM', ckFormId('Preset NPC', ['NPC_', 'NULL']))
                     )),
-                    sorted(arrayOfSubrecord('Available Hair Colors Male', 
+                    sorted(memberArray('Available Hair Colors Male', 
                         subrecord('AHCM', ckFormId('Hair Color', ['CLFM', 'NULL']))
                     )),
-                    sorted(arrayOfSubrecord('Face Details Texture Set List Male', 
+                    sorted(memberArray('Face Details Texture Set List Male', 
                         subrecord('FTSM', ckFormId('Texture Set', ['TXST', 'NULL']))
                     )),
                     subrecord('DFTM', ckFormId('Default Face Texture Male', ['TXST', 'NULL'])),
                     def('Tints'),
                     def('MODL')
                 ])),
-                req(multiStruct('Female Head Data', [
+                req(memberStruct('Female Head Data', [
                     req(subrecord('NAM0', empty('Head Data Marker'))),
                     req(subrecord('FNAM', empty('Female Data Marker'))),
-                    sorted(arrayOfSubrecord('Head Parts', 
+                    sorted(memberArray('Head Parts', 
                         def('HeadPart')
                     )),
                     def('Morphs'),
-                    sorted(arrayOfSubrecord('Race Presets Female', 
+                    sorted(memberArray('Race Presets Female', 
                         subrecord('RPRF', ckFormId('Preset NPC', ['NPC_', 'NULL']))
                     )),
-                    sorted(arrayOfSubrecord('Available Hair Colors Female', 
+                    sorted(memberArray('Available Hair Colors Female', 
                         subrecord('AHCF', ckFormId('Hair Color', ['CLFM', 'NULL']))
                     )),
-                    sorted(arrayOfSubrecord('Face Details Texture Set List Female', 
+                    sorted(memberArray('Face Details Texture Set List Female', 
                         subrecord('FTSF', ckFormId('Texture Set', ['TXST', 'NULL']))
                     )),
                     subrecord('DFTF', ckFormId('Default Face Texture Female', ['TXST', 'NULL'])),

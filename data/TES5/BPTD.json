@@ -12,15 +12,15 @@
             },
             {
                 "name": "Body Parts",
-                "type": "structArray",
-                "entryName": {
+                "type": "memberArray",
+                "member": {
                     "name": "Body Part",
-                    "type": "multiStruct",
-                    "subrecords": [
+                    "type": "memberStruct",
+                    "members": [
                         {
                             "signature": "BPTN",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Part Name",
                                 "type": "string",
                                 "localized": true
@@ -30,7 +30,7 @@
                         {
                             "signature": "PNAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Pose Matching",
                                 "type": "string"
                             },
@@ -39,7 +39,7 @@
                         {
                             "signature": "BPNN",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Part Node",
                                 "type": "string"
                             },
@@ -48,7 +48,7 @@
                         {
                             "signature": "BPNT",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "VATS Target",
                                 "type": "string"
                             },
@@ -57,7 +57,7 @@
                         {
                             "signature": "BPNI",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "IK Data - Start Node",
                                 "type": "string"
                             },
@@ -66,7 +66,7 @@
                         {
                             "signature": "BPND",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "",
                                 "type": "struct",
                                 "fields": [
@@ -261,7 +261,7 @@
                         {
                             "signature": "NAM1",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Limb Replacement Model",
                                 "type": "string"
                             },
@@ -270,7 +270,7 @@
                         {
                             "signature": "NAM4",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Gore Effects - Target Bone",
                                 "type": "string"
                             },
@@ -279,7 +279,7 @@
                         {
                             "signature": "NAM5",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Texture Files Hashes",
                                 "type": "bytes"
                             }

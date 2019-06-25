@@ -2,12 +2,12 @@ let {
     addDef, def, uint8, format, bytes, 
     size, float, ckFormId, union, uint16, 
     opts, int32, uint32, enumeration, formId, 
-    subrecord, sortKey, struct, string, multiStruct
+    subrecord, sortKey, struct, string, memberStruct
 } = require('../helpers');
 
 module.exports = () => {
     addDef('CTDA', 
-        sortKey([0], multiStruct('Condition', [
+        sortKey([0], memberStruct('Condition', [
             subrecord('CTDA', sortKey([3, 5], struct('', [
                 format(uint8('Type'), def('CtdaTypeToStr')),
                 size(3, bytes('Unused')),

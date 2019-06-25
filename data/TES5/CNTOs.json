@@ -1,7 +1,7 @@
 {
     "name": "Items",
-    "type": "subrecordArray",
-    "subrecord": {
+    "type": "memberArray",
+    "member": {
         "def": "CNTO"
     },
     "sorted": true,

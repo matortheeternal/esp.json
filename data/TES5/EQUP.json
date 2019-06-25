@@ -10,19 +10,19 @@
             {
                 "signature": "PNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Slot Parents",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "Can Be Equipped",
                         "type": "formId"
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "DATA",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Use All Parents",
                     "type": "uint32",
                     "format": {

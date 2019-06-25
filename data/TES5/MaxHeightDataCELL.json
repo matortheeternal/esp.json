@@ -1,7 +1,7 @@
 {
     "signature": "MHDT",
     "type": "subrecord",
-    "def": {
+    "field": {
         "name": "Max Height Data",
         "type": "struct",
         "fields": [
@@ -11,12 +11,12 @@
             },
             {
                 "name": "Rows",
-                "entryDef": {
+                "type": "array",
+                "field": {
                     "name": "Columns",
                     "type": "bytes",
                     "size": 32
                 },
-                "type": "array",
                 "size": 32
             }
         ]

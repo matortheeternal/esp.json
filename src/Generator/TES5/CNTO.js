@@ -1,11 +1,11 @@
 let {
     addDef, ckFormId, int32, subrecord, sortKey, 
-    struct, def, multiStruct
+    struct, def, memberStruct
 } = require('../helpers');
 
 module.exports = () => {
     addDef('CNTO', 
-        sortKey([0], multiStruct('Item', [
+        sortKey([0], memberStruct('Item', [
             subrecord('CNTO', sortKey([0], struct('Item', [
                 ckFormId('Item', [
                     'ARMO', 'AMMO', 'APPA', 'MISC', 'WEAP',

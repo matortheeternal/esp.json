@@ -1,9 +1,10 @@
 {
     "signature": "KWDA",
     "type": "subrecord",
-    "def": {
+    "field": {
         "name": "Keywords",
-        "entryDef": {
+        "type": "array",
+        "field": {
             "name": "Keyword",
             "type": "formId",
             "signatures": [
@@ -11,7 +12,6 @@
                 "NULL"
             ]
         },
-        "type": "array",
         "sorted": true
     }
 }

@@ -19,7 +19,7 @@
             {
                 "signature": "CNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Created Object",
                     "type": "formId"
                 }
@@ -27,7 +27,7 @@
             {
                 "signature": "BNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Workbench Keyword",
                     "type": "formId",
                     "signatures": [
@@ -38,7 +38,7 @@
             {
                 "signature": "NAM1",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Created Object Count",
                     "type": "uint16"
                 }

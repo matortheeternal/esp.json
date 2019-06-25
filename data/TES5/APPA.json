@@ -35,7 +35,7 @@
             {
                 "signature": "QUAL",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Quality",
                     "type": "int32",
                     "format": {
@@ -56,7 +56,7 @@
             {
                 "signature": "DATA",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Data",
                     "type": "struct",
                     "fields": [

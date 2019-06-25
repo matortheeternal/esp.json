@@ -28,29 +28,30 @@
         },
         {
             "name": "Triangles",
-            "entryDef": {
+            "type": "array",
+            "field": {
                 "name": "Triangle",
                 "type": "struct",
                 "fields": [
                     {
                         "name": "Vertices",
-                        "entryDef": {
+                        "type": "array",
+                        "field": {
                             "name": "Vertex",
                             "type": "int16"
                         },
-                        "type": "array",
                         "size": 3,
                         "includeFlag": "dfNotAlignable"
                     }
                 ]
             },
-            "type": "array",
             "prefix": 4,
             "includeFlag": "dfNotAlignable"
         },
         {
             "name": "Vertices",
-            "entryDef": {
+            "type": "array",
+            "field": {
                 "name": "Vertex",
                 "type": "struct",
                 "fields": [
@@ -68,7 +69,6 @@
                     }
                 ]
             },
-            "type": "array",
             "prefix": 4,
             "includeFlag": "dfNotAlignable"
         }

@@ -23,7 +23,7 @@
             {
                 "signature": "DATA",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Flags",
                     "type": "uint8",
                     "format": {
@@ -41,7 +41,7 @@
             {
                 "signature": "PNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Type",
                     "type": "uint32",
                     "format": {
@@ -60,11 +60,11 @@
             },
             {
                 "name": "Extra Parts",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "signature": "HNAM",
                     "type": "subrecord",
-                    "def": {
+                    "field": {
                         "name": "Part",
                         "type": "formId",
                         "signatures": [
@@ -76,15 +76,15 @@
             },
             {
                 "name": "Parts",
-                "type": "structArray",
-                "entryName": {
+                "type": "memberArray",
+                "member": {
                     "name": "Part",
-                    "type": "multiStruct",
-                    "subrecords": [
+                    "type": "memberStruct",
+                    "members": [
                         {
                             "signature": "NAM0",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Part Type",
                                 "type": "uint32",
                                 "format": {
@@ -100,7 +100,7 @@
                         {
                             "signature": "NAM1",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "FileName",
                                 "type": "string"
                             },
@@ -112,7 +112,7 @@
             {
                 "signature": "TNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Texture Set",
                     "type": "formId",
                     "signatures": [
@@ -124,7 +124,7 @@
             {
                 "signature": "CNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Color",
                     "type": "formId",
                     "signatures": [
@@ -136,7 +136,7 @@
             {
                 "signature": "RNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Valid Races",
                     "type": "formId",
                     "signatures": [

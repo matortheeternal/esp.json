@@ -1,12 +1,12 @@
 let {
     addDef, def, flags, int0, format, 
     empty, uint32, subrecord, struct, req, 
-    uint8, bytes, size, multiUnion
+    uint8, bytes, size, memberUnion
 } = require('../helpers');
 
 module.exports = () => {
     addDef('BODTBOD2', 
-        multiUnion('Biped Body Template', [
+        memberUnion('Biped Body Template', [
             req(subrecord('BOD2', struct('Biped Body Template', [
                 def('FirstPersonFlagsU32'),
                 format(int0('General Flags'), flags({

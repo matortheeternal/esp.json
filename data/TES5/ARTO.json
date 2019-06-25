@@ -17,7 +17,7 @@
             {
                 "signature": "DNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Art Type",
                     "type": "uint32",
                     "format": {

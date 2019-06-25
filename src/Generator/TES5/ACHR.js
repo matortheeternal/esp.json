@@ -1,7 +1,7 @@
 let {
     flags, showUnknown, def, subrecord, ckFormId, 
-    req, float, empty, unknown, multiStruct, 
-    int32, sortKey, struct, sorted, arrayOfSubrecord, 
+    req, float, empty, unknown, memberStruct, 
+    int32, sortKey, struct, sorted, memberArray, 
     uint8, format, array, record
 } = require('../helpers');
 
@@ -23,11 +23,11 @@ module.exports = () => {
             subrecord('XEZN', ckFormId('Encounter Zone', ['ECZN'])),
             def('XRGD'),
             def('XRGB'),
-            multiStruct('Patrol Data', [
+            memberStruct('Patrol Data', [
                 req(subrecord('XPRD', float('Idle Time'))),
                 req(subrecord('XPPA', empty('Patrol Script Marker'))),
                 req(subrecord('INAM', ckFormId('Idle', ['IDLE', 'NULL']))),
-                req(multiStruct('Unused', [
+                req(memberStruct('Unused', [
                     subrecord('SCHR', unknown()),
                     subrecord('SCDA', unknown()),
                     subrecord('SCTX', unknown()),
@@ -42,7 +42,7 @@ module.exports = () => {
             subrecord('XCNT', int32('Count')),
             subrecord('XRDS', float('Radius')),
             subrecord('XHLP', float('Health')),
-            sorted(arrayOfSubrecord('Linked References', 
+            sorted(memberArray('Linked References', 
                 subrecord('XLKR', sortKey([0], struct('Linked Reference', [
                     ckFormId('Keyword/Ref', [
                         'KYWD', 'PLYR', 'ACHR', 'REFR', 'PGRE',
@@ -56,11 +56,11 @@ module.exports = () => {
                     ])
                 ])))
             )),
-            multiStruct('Activate Parents', [
+            memberStruct('Activate Parents', [
                 subrecord('XAPD', format(uint8('Flags'), flags({
                     0: 'Parent Activate Only'
                 }))),
-                sorted(arrayOfSubrecord('Activate Parent Refs', 
+                sorted(memberArray('Activate Parent Refs', 
                     subrecord('XAPR', sortKey([0], struct('Activate Parent Ref', [
                         ckFormId('Reference', [
                             'PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD',

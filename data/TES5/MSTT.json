@@ -38,7 +38,7 @@
             {
                 "signature": "DATA",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Flags",
                     "type": "uint8",
                     "format": {
@@ -54,7 +54,7 @@
             {
                 "signature": "SNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Looping Sound",
                     "type": "formId",
                     "signatures": [

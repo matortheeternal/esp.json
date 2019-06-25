@@ -23,7 +23,7 @@
             {
                 "signature": "DATA",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Data",
                     "type": "struct",
                     "fields": [
@@ -194,12 +194,12 @@
             },
             {
                 "name": "Muzzle Flash Model",
-                "type": "multiStruct",
-                "subrecords": [
+                "type": "memberStruct",
+                "members": [
                     {
                         "signature": "NAM1",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Model FileName",
                             "type": "string"
                         }
@@ -207,7 +207,7 @@
                     {
                         "signature": "NAM2",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Texture Files Hashes",
                             "type": "bytes"
                         }
@@ -221,7 +221,7 @@
             {
                 "signature": "VNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Sound Level",
                     "type": "uint32",
                     "format": {

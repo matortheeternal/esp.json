@@ -1,7 +1,7 @@
 {
     "name": "Keywords",
-    "type": "multiStruct",
-    "subrecords": [
+    "type": "memberStruct",
+    "members": [
         {
             "def": "KSIZ"
         },

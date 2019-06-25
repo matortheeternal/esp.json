@@ -44,7 +44,7 @@
             {
                 "signature": "DATA",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "",
                     "type": "struct",
                     "fields": [
@@ -63,7 +63,7 @@
             {
                 "signature": "SOUL",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Contained Soul",
                     "type": "uint8",
                     "format": {
@@ -74,7 +74,7 @@
             {
                 "signature": "SLCP",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Maximum Capacity",
                     "type": "uint8",
                     "format": {
@@ -85,7 +85,7 @@
             {
                 "signature": "NAM0",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Linked To",
                     "type": "formId",
                     "signatures": [

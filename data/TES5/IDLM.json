@@ -21,7 +21,7 @@
             {
                 "signature": "IDLF",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Flags",
                     "type": "uint8",
                     "format": {
@@ -39,7 +39,7 @@
             {
                 "signature": "IDLC",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Animation Count",
                     "type": "uint8"
                 }
@@ -47,7 +47,7 @@
             {
                 "signature": "IDLT",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Idle Timer Setting",
                     "type": "float"
                 },
@@ -56,16 +56,16 @@
             {
                 "signature": "IDLA",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Animations",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "Animation",
                         "type": "formId",
                         "signatures": [
                             "IDLE"
                         ]
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {

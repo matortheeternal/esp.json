@@ -10,7 +10,7 @@
             {
                 "signature": "QNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Quest",
                     "type": "formId",
                     "signatures": [
@@ -21,11 +21,11 @@
             },
             {
                 "name": "Branches",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "signature": "BNAM",
                     "type": "subrecord",
-                    "def": {
+                    "field": {
                         "name": "Branch",
                         "type": "formId",
                         "signatures": [
@@ -36,15 +36,15 @@
             },
             {
                 "name": "Unknown TNAM",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "name": "Unknown",
-                    "type": "multiStruct",
-                    "subrecords": [
+                    "type": "memberStruct",
+                    "members": [
                         {
                             "signature": "TNAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Unknown",
                                 "type": "bytes"
                             }
@@ -55,7 +55,7 @@
             {
                 "signature": "ENAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -63,7 +63,7 @@
             {
                 "signature": "DNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }

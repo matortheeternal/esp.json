@@ -13,7 +13,7 @@
             {
                 "signature": "DATA",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Data",
                     "type": "struct",
                     "fields": [
@@ -112,7 +112,7 @@
             {
                 "signature": "MNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Image Space Modifier",
                     "type": "formId",
                     "signatures": [

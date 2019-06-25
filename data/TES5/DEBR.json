@@ -9,15 +9,15 @@
             },
             {
                 "name": "Models",
-                "type": "structArray",
-                "entryName": {
+                "type": "memberArray",
+                "member": {
                     "name": "Model",
-                    "type": "multiStruct",
-                    "subrecords": [
+                    "type": "memberStruct",
+                    "members": [
                         {
                             "signature": "DATA",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Data",
                                 "type": "struct",
                                 "fields": [

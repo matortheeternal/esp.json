@@ -12,11 +12,11 @@
             },
             {
                 "name": "Property Data",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "signature": "DNAM",
                     "type": "subrecord",
-                    "def": {
+                    "field": {
                         "name": "Data",
                         "type": "bytes"
                     }
@@ -25,7 +25,7 @@
             {
                 "signature": "DATA",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Directional Material Data",
                     "type": "struct",
                     "fields": [

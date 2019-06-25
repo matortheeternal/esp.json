@@ -17,7 +17,7 @@
             {
                 "signature": "ANAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Abbreviation",
                     "type": "string"
                 }
@@ -25,7 +25,7 @@
             {
                 "signature": "CNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -33,7 +33,7 @@
             {
                 "signature": "AVSK",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Skill",
                     "type": "struct",
                     "fields": [
@@ -58,15 +58,15 @@
             },
             {
                 "name": "Perk Tree",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "name": "Node",
-                    "type": "multiStruct",
-                    "subrecords": [
+                    "type": "memberStruct",
+                    "members": [
                         {
                             "signature": "PNAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Perk",
                                 "type": "formId",
                                 "signatures": [
@@ -78,7 +78,7 @@
                         {
                             "signature": "FNAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Unknown",
                                 "type": "bytes"
                             }
@@ -86,7 +86,7 @@
                         {
                             "signature": "XNAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Perk-Grid X",
                                 "type": "uint32"
                             }
@@ -94,7 +94,7 @@
                         {
                             "signature": "YNAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Perk-Grid Y",
                                 "type": "uint32"
                             }
@@ -102,7 +102,7 @@
                         {
                             "signature": "HNAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Horizontal Position",
                                 "type": "float"
                             }
@@ -110,7 +110,7 @@
                         {
                             "signature": "VNAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Vertical Position",
                                 "type": "float"
                             }
@@ -118,7 +118,7 @@
                         {
                             "signature": "SNAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Associated Skill",
                                 "type": "formId",
                                 "signatures": [
@@ -129,11 +129,11 @@
                         },
                         {
                             "name": "Connections",
-                            "type": "subrecordArray",
-                            "subrecord": {
+                            "type": "memberArray",
+                            "member": {
                                 "signature": "CNAM",
                                 "type": "subrecord",
-                                "def": {
+                                "field": {
                                     "name": "Line to Index",
                                     "type": "uint32"
                                 }
@@ -142,7 +142,7 @@
                         {
                             "signature": "INAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Index",
                                 "type": "uint32"
                             }

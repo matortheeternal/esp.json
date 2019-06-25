@@ -10,7 +10,7 @@
             {
                 "signature": "NAM1",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Data",
                     "type": "struct",
                     "fields": [
@@ -40,7 +40,7 @@
             {
                 "signature": "FNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -48,7 +48,7 @@
             {
                 "signature": "MNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Type",
                     "type": "uint32",
                     "format": {
@@ -63,7 +63,7 @@
             {
                 "signature": "CNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -71,7 +71,7 @@
             {
                 "signature": "SNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -79,13 +79,14 @@
             {
                 "signature": "ONAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Output Values",
                     "type": "struct",
                     "fields": [
                         {
                             "name": "Channels",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "name": "",
                                 "type": "struct",
                                 "fields": [
@@ -122,8 +123,7 @@
                                         "type": "uint8"
                                     }
                                 ]
-                            },
-                            "type": "array"
+                            }
                         }
                     ]
                 }
@@ -131,7 +131,7 @@
             {
                 "signature": "ANAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Attenuation Values",
                     "type": "struct",
                     "fields": [
@@ -150,11 +150,11 @@
                         },
                         {
                             "name": "Curve",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "name": "Value",
                                 "type": "uint8"
                             },
-                            "type": "array",
                             "size": 5
                         },
                         {

@@ -1,21 +1,21 @@
 {
     "name": "Tint Masks",
-    "type": "subrecordArray",
-    "subrecord": {
+    "type": "memberArray",
+    "member": {
         "name": "Tint Assets",
-        "type": "multiStruct",
-        "subrecords": [
+        "type": "memberStruct",
+        "members": [
             {
                 "name": "Tint Layer",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "name": "Texture",
-                    "type": "multiStruct",
-                    "subrecords": [
+                    "type": "memberStruct",
+                    "members": [
                         {
                             "signature": "TINI",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Index",
                                 "type": "uint16"
                             }
@@ -23,7 +23,7 @@
                         {
                             "signature": "TINT",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "File Name",
                                 "type": "string"
                             }
@@ -31,7 +31,7 @@
                         {
                             "signature": "TINP",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Mask Type",
                                 "type": "uint16",
                                 "format": {
@@ -42,7 +42,7 @@
                         {
                             "signature": "TIND",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Preset Default",
                                 "type": "formId",
                                 "signatures": [
@@ -56,15 +56,15 @@
             },
             {
                 "name": "Presets",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "name": "Preset",
-                    "type": "multiStruct",
-                    "subrecords": [
+                    "type": "memberStruct",
+                    "members": [
                         {
                             "signature": "TINC",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Color",
                                 "type": "formId",
                                 "signatures": [
@@ -76,7 +76,7 @@
                         {
                             "signature": "TINV",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Default Value",
                                 "type": "float"
                             }
@@ -84,7 +84,7 @@
                         {
                             "signature": "TIRS",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Index",
                                 "type": "uint16"
                             }

@@ -2,12 +2,12 @@ let {
     addDef, flags, uint32, format, float, 
     formId, ckFormId, union, req, def, 
     int32, uint16, bytes, size, struct, 
-    subrecord, multiStruct
+    subrecord, memberStruct
 } = require('../helpers');
 
 module.exports = () => {
     addDef('MGEFData', 
-        multiStruct('Magic Effect Data', [
+        memberStruct('Magic Effect Data', [
             req(subrecord('DATA', struct('Data', [
                 format(uint32('Flags'), flags({
                     0: 'Hostile',

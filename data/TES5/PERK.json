@@ -33,7 +33,7 @@
             {
                 "signature": "DATA",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Data",
                     "type": "struct",
                     "fields": [
@@ -85,7 +85,7 @@
             {
                 "signature": "NNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Next Perk",
                     "type": "formId",
                     "signatures": [
@@ -96,15 +96,15 @@
             },
             {
                 "name": "Effects",
-                "type": "structArray",
-                "entryName": {
+                "type": "memberArray",
+                "member": {
                     "name": "Effect",
-                    "type": "multiStruct",
-                    "subrecords": [
+                    "type": "memberStruct",
+                    "members": [
                         {
                             "signature": "PRKE",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Header",
                                 "type": "struct",
                                 "fields": [
@@ -139,7 +139,7 @@
                         {
                             "signature": "DATA",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Effect Data",
                                 "type": "union",
                                 "decider": [
@@ -231,15 +231,15 @@
                         },
                         {
                             "name": "Perk Conditions",
-                            "type": "structArray",
-                            "entryName": {
+                            "type": "memberArray",
+                            "member": {
                                 "name": "Perk Condition",
-                                "type": "multiStruct",
-                                "subrecords": [
+                                "type": "memberStruct",
+                                "members": [
                                     {
                                         "signature": "PRKC",
                                         "type": "subrecord",
-                                        "def": {
+                                        "field": {
                                             "name": "Run On (Tab Index)",
                                             "type": "int8"
                                         }
@@ -257,12 +257,12 @@
                         },
                         {
                             "name": "Function Parameters",
-                            "type": "multiStruct",
-                            "subrecords": [
+                            "type": "memberStruct",
+                            "members": [
                                 {
                                     "signature": "EPFT",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Type",
                                         "type": "uint8",
                                         "format": {
@@ -283,7 +283,7 @@
                                 {
                                     "signature": "EPF2",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Button Label",
                                         "type": "string",
                                         "localized": true
@@ -292,7 +292,7 @@
                                 {
                                     "signature": "EPF3",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Script Flags",
                                         "type": "struct",
                                         "fields": [
@@ -317,7 +317,7 @@
                                 {
                                     "signature": "EPFD",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Data",
                                         "type": "union",
                                         "decider": [
@@ -400,7 +400,7 @@
                         {
                             "signature": "PRKF",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "End Marker",
                                 "type": "empty"
                             },

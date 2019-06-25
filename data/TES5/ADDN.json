@@ -17,7 +17,7 @@
             {
                 "signature": "DATA",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Node Index",
                     "type": "int32"
                 }
@@ -25,7 +25,7 @@
             {
                 "signature": "SNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Sound",
                     "type": "formId",
                     "signatures": [
@@ -37,7 +37,7 @@
             {
                 "signature": "DNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Data",
                     "type": "struct",
                     "fields": [

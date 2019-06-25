@@ -1,8 +1,8 @@
 let {
     def, subrecord, string, bytes, unknown, 
     ckFormId, req, uint8, format, array, 
-    opts, multiStruct, float, struct, size, 
-    flags, uint32, enumeration, arrayOfSubrecord, sorted, 
+    opts, memberStruct, float, struct, size, 
+    flags, uint32, enumeration, memberArray, sorted, 
     record
 } = require('../helpers');
 
@@ -47,7 +47,7 @@ module.exports = () => {
             subrecord('MNAM', ckFormId('Precipitation Type', ['SPGD', 'NULL'])),
             req(subrecord('NNAM', ckFormId('Visual Effect', ['RFCT', 'NULL']))),
             subrecord('ONAM', bytes('Unused')),
-            multiStruct('Cloud Speed', [
+            memberStruct('Cloud Speed', [
                 opts(subrecord('RNAM', array('Y Speed', 
                     format(uint8('Layer'), def('CloudSpeedToStr'))
                 )), {
@@ -166,7 +166,7 @@ module.exports = () => {
                 30: '30',
                 31: '31'
             }))),
-            arrayOfSubrecord('Sounds', 
+            memberArray('Sounds', 
                 subrecord('SNAM', struct('Sound', [
                     ckFormId('Sound', [
                         'SNDR', 'SOUN', 'NULL'
@@ -179,7 +179,7 @@ module.exports = () => {
                     }))
                 ]))
             ),
-            sorted(arrayOfSubrecord('Sky Statics', 
+            sorted(memberArray('Sky Statics', 
                 subrecord('TNAM', ckFormId('Static', ['STAT', 'NULL']))
             )),
             subrecord('IMSP', struct('Image Spaces', [
@@ -194,7 +194,7 @@ module.exports = () => {
                 ckFormId('Sunset', ['VOLI', 'NULL']),
                 ckFormId('Night', ['VOLI', 'NULL'])
             ])),
-            req(multiStruct('Directional Ambient Lighting Colors', [
+            req(memberStruct('Directional Ambient Lighting Colors', [
                 subrecord('DALC', def('wbAmbientColors', { name: 'Sunrise' })),
                 subrecord('DALC', def('wbAmbientColors', { name: 'Day' })),
                 subrecord('DALC', def('wbAmbientColors', { name: 'Sunset' })),
@@ -202,7 +202,7 @@ module.exports = () => {
             ])),
             subrecord('NAM2', bytes('Unused')),
             subrecord('NAM3', bytes('Unused')),
-            multiStruct('Aurora', [
+            memberStruct('Aurora', [
                 def('MODL')
             ]),
             subrecord('GNAM', ckFormId('Sun Glare Lens Flare', ['LENS']))

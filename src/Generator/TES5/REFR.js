@@ -2,7 +2,7 @@ let {
     flags, showUnknown, formatUnion, def, subrecord, 
     ckFormId, req, float, struct, enumeration, 
     uint32, format, unknown, array, uint8, 
-    bytes, size, sorted, arrayOfSubrecord, multiStruct, 
+    bytes, size, sorted, memberArray, memberStruct, 
     empty, sortKey, int16, int32, record
 } = require('../helpers');
 
@@ -196,7 +196,7 @@ module.exports = () => {
                     float('q4')
                 ])
             ])),
-            multiStruct('Bound Data', [
+            memberStruct('Bound Data', [
                 subrecord('XRMR', struct('Header', [
                     uint8('Linked Rooms Count'),
                     format(uint8('Flags'), flags({
@@ -213,7 +213,7 @@ module.exports = () => {
                 ])),
                 subrecord('LNAM', ckFormId('Lighting Template', ['LGTM'])),
                 subrecord('INAM', ckFormId('Image Space', ['IMGS'])),
-                sorted(arrayOfSubrecord('Linked Rooms', 
+                sorted(memberArray('Linked Rooms', 
                     subrecord('XLRM', ckFormId('Linked Room', ['REFR']))
                 ))
             ]),
@@ -221,7 +221,7 @@ module.exports = () => {
             def('XRGD'),
             def('XRGB'),
             subrecord('XRDS', float('Radius')),
-            sorted(arrayOfSubrecord('Reflected/Refracted By', 
+            sorted(memberArray('Reflected/Refracted By', 
                 subrecord('XPWR', sortKey([0], struct('Water', [
                     ckFormId('Reference', ['REFR']),
                     format(uint32('Type'), flags({
@@ -230,7 +230,7 @@ module.exports = () => {
                     }))
                 ])))
             )),
-            sorted(arrayOfSubrecord('Lit Water', 
+            sorted(memberArray('Lit Water', 
                 subrecord('XLTW', ckFormId('Water', ['REFR']))
             )),
             subrecord('XEMI', ckFormId('Emittance', ['LIGH', 'REGN'])),
@@ -280,11 +280,11 @@ module.exports = () => {
             subrecord('XCZC', ckFormId('Unknown', ['CELL', 'NULL'])),
             def('XSCL'),
             subrecord('XSPC', ckFormId('Spawn Container', ['REFR'])),
-            multiStruct('Activate Parents', [
+            memberStruct('Activate Parents', [
                 subrecord('XAPD', format(uint8('Flags'), flags({
                     0: 'Parent Activate Only'
                 }))),
-                sorted(arrayOfSubrecord('Activate Parent Refs', 
+                sorted(memberArray('Activate Parent Refs', 
                     subrecord('XAPR', sortKey([0], struct('Activate Parent Ref', [
                         ckFormId('Reference', [
                             'PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD',
@@ -335,7 +335,7 @@ module.exports = () => {
                 'LCRT', 'LCTN', 'NULL'
             ])),
             def('XESP'),
-            arrayOfSubrecord('Linked References', 
+            memberArray('Linked References', 
                 req(subrecord('XLKR', struct('Linked Reference', [
                     ckFormId('Keyword/Ref', [
                         'KYWD', 'PLYR', 'ACHR', 'REFR', 'PGRE',
@@ -349,8 +349,8 @@ module.exports = () => {
                     ])
                 ])))
             ),
-            arrayOfSubrecord('Patrol', 
-                multiStruct('Data', [
+            memberArray('Patrol', 
+                memberStruct('Data', [
                     req(subrecord('XPRD', float('Idle Time'))),
                     req(subrecord('XPPA', empty('Patrol Script Marker'))),
                     req(subrecord('INAM', ckFormId('Idle', ['IDLE', 'NULL']))),
@@ -368,7 +368,7 @@ module.exports = () => {
             subrecord('XHTW', float('Head-Tracking Weight')),
             subrecord('XFVC', float('Favor Cost')),
             subrecord('ONAM', empty('Open by Default')),
-            multiStruct('Map Marker', [
+            memberStruct('Map Marker', [
                 subrecord('XMRK', empty('Map Marker Data')),
                 subrecord('FNAM', format(uint8('Map Flags'), flags({
                     0: 'Visible',

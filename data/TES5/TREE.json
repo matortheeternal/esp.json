@@ -27,7 +27,7 @@
             {
                 "signature": "PFIG",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Ingredient",
                     "type": "formId",
                     "signatures": [
@@ -42,7 +42,7 @@
             {
                 "signature": "SNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Harvest Sound",
                     "type": "formId",
                     "signatures": [
@@ -54,7 +54,7 @@
             {
                 "signature": "PFPC",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Ingredient Production",
                     "type": "struct",
                     "fields": [
@@ -83,7 +83,7 @@
             {
                 "signature": "CNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Tree Data",
                     "type": "struct",
                     "fields": [

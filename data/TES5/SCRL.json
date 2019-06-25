@@ -44,7 +44,7 @@
             {
                 "signature": "DATA",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Item",
                     "type": "struct",
                     "fields": [

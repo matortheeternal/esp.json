@@ -10,7 +10,7 @@
             {
                 "signature": "CNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Track Type",
                     "type": "uint32",
                     "format": {
@@ -26,7 +26,7 @@
             {
                 "signature": "FLTV",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Duration",
                     "type": "float"
                 }
@@ -34,7 +34,7 @@
             {
                 "signature": "DNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Fade-Out",
                     "type": "float"
                 }
@@ -42,7 +42,7 @@
             {
                 "signature": "ANAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Track FileName",
                     "type": "string"
                 }
@@ -50,7 +50,7 @@
             {
                 "signature": "BNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Finale FileName",
                     "type": "string"
                 }
@@ -58,20 +58,20 @@
             {
                 "signature": "FNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Cue Points",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "Point",
                         "type": "float"
-                    },
-                    "type": "array"
+                    }
                 },
                 "includeFlag": "dfNotAlignable"
             },
             {
                 "signature": "LNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Loop Data",
                     "type": "struct",
                     "fields": [
@@ -99,17 +99,17 @@
             {
                 "signature": "SNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Tracks",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "Track",
                         "type": "formId",
                         "signatures": [
                             "MUST",
                             "NULL"
                         ]
-                    },
-                    "type": "array"
+                    }
                 }
             }
         ]

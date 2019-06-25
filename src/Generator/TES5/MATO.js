@@ -1,5 +1,5 @@
 let {
-    def, subrecord, bytes, arrayOfSubrecord, float, 
+    def, subrecord, bytes, memberArray, float, 
     struct, flags, uint32, format, uint8, 
     size, req, IsSSE, record
 } = require('../helpers');
@@ -9,7 +9,7 @@ module.exports = game => {
         members: [
             def('EDID'),
             def('MODL'),
-            arrayOfSubrecord('Property Data', 
+            memberArray('Property Data', 
                 subrecord('DNAM', bytes('Data'))
             ),
             IsSSE(game, [

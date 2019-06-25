@@ -27,7 +27,7 @@
             {
                 "signature": "NNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Loading Screen NIF",
                     "type": "formId",
                     "signatures": [
@@ -40,7 +40,7 @@
             {
                 "signature": "SNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Initial Scale",
                     "type": "float"
                 }
@@ -48,7 +48,7 @@
             {
                 "signature": "RNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Initial Rotation",
                     "type": "struct",
                     "fields": [
@@ -70,7 +70,7 @@
             {
                 "signature": "ONAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Rotation Offset Constraints",
                     "type": "struct",
                     "fields": [
@@ -88,7 +88,7 @@
             {
                 "signature": "XNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Initial Translation Offset",
                     "type": "struct",
                     "fields": [
@@ -110,7 +110,7 @@
             {
                 "signature": "MOD2",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Camera Path",
                     "type": "string"
                 },

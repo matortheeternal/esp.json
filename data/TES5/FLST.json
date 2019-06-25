@@ -7,7 +7,7 @@
             {
                 "signature": "EDID",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Editor ID",
                     "type": "string"
                 },
@@ -15,11 +15,11 @@
             },
             {
                 "name": "FormIDs",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "signature": "LNAM",
                     "type": "subrecord",
-                    "def": {
+                    "field": {
                         "name": "FormID",
                         "type": "formId"
                     }

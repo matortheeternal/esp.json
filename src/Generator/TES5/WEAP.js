@@ -1,6 +1,6 @@
 let {
     flags, def, req, subrecord, uint16, 
-    ckFormId, string, bytes, multiStruct, uint32, 
+    ckFormId, string, bytes, memberStruct, uint32, 
     float, struct, uint8, format, size, 
     enumeration, int32, IsSSE, record
 } = require('../helpers');
@@ -29,7 +29,7 @@ module.exports = game => {
             def('KSIZ'),
             def('KWDAs'),
             def('DESC'),
-            multiStruct('Has Scope', [
+            memberStruct('Has Scope', [
                 subrecord('MOD3', string('Model FileName')),
                 subrecord('MO3T', bytes('Texture Files Hashes')),
                 def('MO3S')

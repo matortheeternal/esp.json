@@ -1,6 +1,6 @@
 let {
     def, ckFormId, int16, struct, subrecord, 
-    array, arrayOfSubrecord, float, record
+    array, memberArray, float, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -80,7 +80,7 @@ module.exports = () => {
             subrecord('RCSR', array('Reference Cell Static Reference', 
                 ckFormId('Ref', ['ACHR', 'REFR'])
             )),
-            arrayOfSubrecord('Actor Cell Encounter Cell', 
+            memberArray('Actor Cell Encounter Cell', 
                 subrecord('ACEC', struct('Unknown', [
                     ckFormId('Location', ['WRLD', 'CELL']),
                     array('Coordinates', 
@@ -91,7 +91,7 @@ module.exports = () => {
                     )
                 ]))
             ),
-            arrayOfSubrecord('Location Cell Encounter Cell', 
+            memberArray('Location Cell Encounter Cell', 
                 subrecord('LCEC', struct('Unknown', [
                     ckFormId('Location', ['WRLD', 'CELL']),
                     array('Coordinates', 
@@ -102,7 +102,7 @@ module.exports = () => {
                     )
                 ]))
             ),
-            arrayOfSubrecord('Reference Cell Encounter Cell', 
+            memberArray('Reference Cell Encounter Cell', 
                 subrecord('RCEC', struct('Unknown', [
                     ckFormId('Location', ['WRLD', 'CELL']),
                     array('Coordinates', 

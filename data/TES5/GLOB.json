@@ -17,7 +17,7 @@
             {
                 "signature": "FNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Type",
                     "type": "uint8",
                     "format": {
@@ -32,7 +32,7 @@
             {
                 "signature": "FLTV",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Value",
                     "type": "float"
                 },

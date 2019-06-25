@@ -1,6 +1,6 @@
 let {
     def, subrecord, unknown, formId, ckFormId, 
-    string, multiStruct, arrayOfSubrecord, localized, bytes, 
+    string, memberStruct, memberArray, localized, bytes, 
     size, enumeration, uint8, format, struct, 
     int8, div, uint16, record
 } = require('../helpers');
@@ -12,8 +12,8 @@ module.exports = () => {
             subrecord('CNAM', unknown()),
             subrecord('GNAM', formId('Category')),
             subrecord('SNAM', ckFormId('Alternate Sound For', ['SNDR', 'NULL'])),
-            arrayOfSubrecord('Sounds', 
-                multiStruct('Sound Files', [
+            memberArray('Sounds', 
+                memberStruct('Sound Files', [
                     subrecord('ANAM', string('File Name'))
                 ])
             ),

@@ -13,7 +13,7 @@
             {
                 "signature": "DATA",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "",
                     "type": "struct",
                     "fields": [
@@ -87,7 +87,7 @@
             {
                 "signature": "DNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Texture Set",
                     "type": "formId",
                     "signatures": [
@@ -98,7 +98,7 @@
             {
                 "signature": "ENAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Secondary Texture Set",
                     "type": "formId",
                     "signatures": [
@@ -109,7 +109,7 @@
             {
                 "signature": "SNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Sound 1",
                     "type": "formId",
                     "signatures": [
@@ -122,7 +122,7 @@
             {
                 "signature": "NAM1",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Sound 2",
                     "type": "formId",
                     "signatures": [
@@ -135,7 +135,7 @@
             {
                 "signature": "NAM2",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Hazard",
                     "type": "formId",
                     "signatures": [

@@ -1,11 +1,11 @@
 {
     "name": "Available Morphs",
-    "type": "multiStruct",
-    "subrecords": [
+    "type": "memberStruct",
+    "members": [
         {
             "signature": "MPAI",
             "type": "subrecord",
-            "def": {
+            "field": {
                 "name": "Unknown",
                 "type": "bytes"
             }
@@ -13,7 +13,7 @@
         {
             "signature": "MPAV",
             "type": "subrecord",
-            "def": {
+            "field": {
                 "name": "Nose Variants",
                 "type": "struct",
                 "fields": [
@@ -61,7 +61,7 @@
         {
             "signature": "MPAI",
             "type": "subrecord",
-            "def": {
+            "field": {
                 "name": "Unknown",
                 "type": "bytes"
             }
@@ -69,7 +69,7 @@
         {
             "signature": "MPAV",
             "type": "subrecord",
-            "def": {
+            "field": {
                 "name": "Brow Variants",
                 "type": "struct",
                 "fields": [
@@ -117,7 +117,7 @@
         {
             "signature": "MPAI",
             "type": "subrecord",
-            "def": {
+            "field": {
                 "name": "Unknown",
                 "type": "bytes"
             }
@@ -125,7 +125,7 @@
         {
             "signature": "MPAV",
             "type": "subrecord",
-            "def": {
+            "field": {
                 "name": "Eye Variants",
                 "type": "struct",
                 "fields": [
@@ -176,7 +176,7 @@
         {
             "signature": "MPAI",
             "type": "subrecord",
-            "def": {
+            "field": {
                 "name": "Unknown",
                 "type": "bytes"
             }
@@ -184,7 +184,7 @@
         {
             "signature": "MPAV",
             "type": "subrecord",
-            "def": {
+            "field": {
                 "name": "Lip Variants",
                 "type": "struct",
                 "fields": [

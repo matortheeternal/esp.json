@@ -1,11 +1,11 @@
 {
     "name": "Condition",
-    "type": "multiStruct",
-    "subrecords": [
+    "type": "memberStruct",
+    "members": [
         {
             "signature": "CTDA",
             "type": "subrecord",
-            "def": {
+            "field": {
                 "name": "",
                 "type": "struct",
                 "fields": [
@@ -1199,7 +1199,7 @@
         {
             "signature": "CIS1",
             "type": "subrecord",
-            "def": {
+            "field": {
                 "name": "Parameter #1",
                 "type": "string"
             }
@@ -1207,7 +1207,7 @@
         {
             "signature": "CIS2",
             "type": "subrecord",
-            "def": {
+            "field": {
                 "name": "Parameter #2",
                 "type": "string"
             }

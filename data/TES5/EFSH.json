@@ -10,7 +10,7 @@
             {
                 "signature": "ICON",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Fill Texture",
                     "type": "string"
                 }
@@ -18,7 +18,7 @@
             {
                 "signature": "ICO2",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Particle Shader Texture",
                     "type": "string"
                 }
@@ -26,7 +26,7 @@
             {
                 "signature": "NAM7",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Holes Texture",
                     "type": "string"
                 }
@@ -34,7 +34,7 @@
             {
                 "signature": "NAM8",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Membrane Palette Texture",
                     "type": "string"
                 }
@@ -42,7 +42,7 @@
             {
                 "signature": "NAM9",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Particle Palette Texture",
                     "type": "string"
                 }
@@ -50,7 +50,7 @@
             {
                 "signature": "DATA",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "",
                     "type": "struct",
                     "fields": [

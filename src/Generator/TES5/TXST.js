@@ -1,5 +1,5 @@
 let {
-    def, req, subrecord, string, multiStruct, 
+    def, req, subrecord, string, memberStruct, 
     flags, uint16, format, record
 } = require('../helpers');
 
@@ -8,7 +8,7 @@ module.exports = () => {
         members: [
             def('EDID'),
             req(def('OBND')),
-            multiStruct('Textures (RGB/A)', [
+            memberStruct('Textures (RGB/A)', [
                 subrecord('TX00', string('Difuse')),
                 subrecord('TX01', string('Normal/Gloss')),
                 subrecord('TX02', string('Environment Mask/Subsurface Tint')),

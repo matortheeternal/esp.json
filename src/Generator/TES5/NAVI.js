@@ -2,7 +2,7 @@ let {
     def, subrecord, uint32, ckFormId, bytes, 
     size, float, array, prefix, struct, 
     enumeration, uint8, format, union, int16, 
-    arrayOfSubrecord, record
+    memberArray, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -10,7 +10,7 @@ module.exports = () => {
         members: [
             def('EDID'),
             subrecord('NVER', uint32('Version')),
-            arrayOfSubrecord('Navigation Map Infos', 
+            memberArray('Navigation Map Infos', 
                 subrecord('NVMI', struct('Navigation Map Info', [
                     ckFormId('Navigation Mesh', ['NAVM']),
                     size(4, bytes('Unknown')),

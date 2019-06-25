@@ -17,7 +17,7 @@
             {
                 "signature": "HEDR",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Header",
                     "type": "struct",
                     "fields": [
@@ -43,7 +43,7 @@
             {
                 "signature": "OFST",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -51,7 +51,7 @@
             {
                 "signature": "DELE",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -59,7 +59,7 @@
             {
                 "signature": "CNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Author",
                     "type": "string"
                 },
@@ -68,22 +68,22 @@
             {
                 "signature": "SNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Description",
                     "type": "string"
                 }
             },
             {
                 "name": "Master Files",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "name": "Master File",
-                    "type": "multiStruct",
-                    "subrecords": [
+                    "type": "memberStruct",
+                    "members": [
                         {
                             "signature": "MAST",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "FileName",
                                 "type": "string"
                             }
@@ -91,7 +91,7 @@
                         {
                             "signature": "DATA",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Unknown",
                                 "type": "bytes",
                                 "size": 8
@@ -103,9 +103,10 @@
             {
                 "signature": "ONAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Overridden Forms",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "Form",
                         "type": "formId",
                         "signatures": [
@@ -122,14 +123,13 @@
                             "PCON",
                             "PFLA"
                         ]
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "SCRN",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Screenshot",
                     "type": "bytes"
                 }
@@ -137,7 +137,7 @@
             {
                 "signature": "INTV",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -145,7 +145,7 @@
             {
                 "signature": "INCC",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }

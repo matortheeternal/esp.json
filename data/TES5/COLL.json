@@ -14,7 +14,7 @@
             {
                 "signature": "BNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Index",
                     "type": "uint32"
                 }
@@ -22,7 +22,7 @@
             {
                 "signature": "FNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Debug Color",
                     "type": "struct",
                     "fields": [
@@ -49,7 +49,7 @@
             {
                 "signature": "GNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Flags",
                     "type": "uint32",
                     "format": {
@@ -65,7 +65,7 @@
             {
                 "signature": "MNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Name",
                     "type": "string"
                 },
@@ -74,7 +74,7 @@
             {
                 "signature": "INTV",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Interactables Count",
                     "type": "uint32"
                 }
@@ -82,16 +82,16 @@
             {
                 "signature": "CNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Collides With",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "Forms",
                         "type": "formId",
                         "signatures": [
                             "COLL"
                         ]
                     },
-                    "type": "array",
                     "sorted": true
                 }
             }

@@ -1,8 +1,8 @@
 let {
     flags, def, IsSSE, int16, ckFormId, 
     struct, array, prefix, opts, subrecord, 
-    arrayOfSubrecord, uint8, format, bytes, size, 
-    req, multiStruct, float, string, int32, 
+    memberArray, uint8, format, bytes, size, 
+    req, memberStruct, float, string, int32, 
     record
 } = require('../helpers');
 
@@ -14,7 +14,7 @@ module.exports = game => {
         }),
         members: [
             def('EDID'),
-            arrayOfSubrecord(IsSSE(game, ['Large References', 'Unused RNAM']), 
+            memberArray(IsSSE(game, ['Large References', 'Unused RNAM']), 
                 subrecord('RNAM', struct('Grid', [
                     int16('Y'),
                     int16('X'),
@@ -38,7 +38,7 @@ module.exports = game => {
             subrecord('LTMP', ckFormId('Interior Lighting', ['LGTM'])),
             subrecord('XEZN', ckFormId('Encounter Zone', ['ECZN', 'NULL'])),
             subrecord('XLCN', ckFormId('Location', ['LCTN', 'NULL'])),
-            multiStruct('Parent', [
+            memberStruct('Parent', [
                 subrecord('WNAM', ckFormId('Worldspace', ['WRLD'])),
                 req(subrecord('PNAM', struct('', [
                     format(uint8('Flags'), flags({
@@ -62,7 +62,7 @@ module.exports = game => {
                 float('Default Water Height')
             ])),
             subrecord('ICON', string('Map Image')),
-            multiStruct('Cloud Model', [
+            memberStruct('Cloud Model', [
                 def('MODL')
             ]),
             req(subrecord('MNAM', struct('Map Data', [
@@ -103,7 +103,7 @@ module.exports = game => {
                 6: 'Fixed Dimensions',
                 7: 'No Grass'
             }))),
-            multiStruct('Object Bounds', [
+            memberStruct('Object Bounds', [
                 req(subrecord('NAM0', struct('Min', [
                     req(float('X')),
                     req(float('Y'))

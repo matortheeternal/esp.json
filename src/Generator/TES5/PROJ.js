@@ -1,7 +1,7 @@
 let {
     def, req, flags, uint16, format, 
     enumeration, float, ckFormId, subrecord, struct, 
-    string, bytes, sortKey, multiStruct, uint32, 
+    string, bytes, sortKey, memberStruct, uint32, 
     record
 } = require('../helpers');
 
@@ -60,7 +60,7 @@ module.exports = () => {
                 ckFormId('Decal Data', ['TXST', 'NULL']),
                 ckFormId('Collision Layer', ['COLL', 'NULL'])
             ]))),
-            req(sortKey([0], multiStruct('Muzzle Flash Model', [
+            req(sortKey([0], memberStruct('Muzzle Flash Model', [
                 subrecord('NAM1', string('Model FileName')),
                 subrecord('NAM2', bytes('Texture Files Hashes'))
             ]))),

@@ -10,7 +10,7 @@
             {
                 "signature": "DNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Data Count",
                     "type": "struct",
                     "fields": [
@@ -307,324 +307,324 @@
             {
                 "signature": "BNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Blur Radius",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "def": "TimeInterpolator"
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "VNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Double Vision Strength",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "def": "TimeInterpolator"
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "TNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Tint Color",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "def": "ColorInterpolator"
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "NAM3",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Fade Color",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "def": "ColorInterpolator"
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "RNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Radial Blur Strength",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "def": "TimeInterpolator"
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "SNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Radial Blur Ramp Up",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "def": "TimeInterpolator"
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "UNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Radial Blur Start",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "def": "TimeInterpolator"
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "NAM1",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Radial Blur Ramp Down",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "def": "TimeInterpolator"
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "NAM2",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Radial Blur Down Start",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "def": "TimeInterpolator"
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "WNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "DoF Strength",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "def": "TimeInterpolator"
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "XNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "DoF Distance",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "def": "TimeInterpolator"
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "YNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "DoF Range",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "def": "TimeInterpolator"
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "NAM4",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Motion Blur Strength",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "def": "TimeInterpolator"
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "name": "HDR",
-                "type": "multiStruct",
-                "subrecords": [
+                "type": "memberStruct",
+                "members": [
                     {
                         "signature": "\u0000IAD",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Eye Adapt Speed Mult",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "def": "TimeInterpolator"
-                            },
-                            "type": "array"
+                            }
                         }
                     },
                     {
                         "signature": "@IAD",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Eye Adapt Speed Add",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "def": "TimeInterpolator"
-                            },
-                            "type": "array"
+                            }
                         }
                     },
                     {
                         "signature": "\u0001IAD",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Bloom Blur Radius Mult",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "def": "TimeInterpolator"
-                            },
-                            "type": "array"
+                            }
                         }
                     },
                     {
                         "signature": "AIAD",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Bloom Blur Radius Add",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "def": "TimeInterpolator"
-                            },
-                            "type": "array"
+                            }
                         }
                     },
                     {
                         "signature": "\u0002IAD",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Bloom Threshold Mult",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "def": "TimeInterpolator"
-                            },
-                            "type": "array"
+                            }
                         }
                     },
                     {
                         "signature": "BIAD",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Bloom Threshold Add",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "def": "TimeInterpolator"
-                            },
-                            "type": "array"
+                            }
                         }
                     },
                     {
                         "signature": "\u0003IAD",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Bloom Scale Mult",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "def": "TimeInterpolator"
-                            },
-                            "type": "array"
+                            }
                         }
                     },
                     {
                         "signature": "CIAD",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Bloom Scale Add",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "def": "TimeInterpolator"
-                            },
-                            "type": "array"
+                            }
                         }
                     },
                     {
                         "signature": "\u0004IAD",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Target Lum Min Mult",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "def": "TimeInterpolator"
-                            },
-                            "type": "array"
+                            }
                         }
                     },
                     {
                         "signature": "DIAD",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Target Lum Min Add",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "def": "TimeInterpolator"
-                            },
-                            "type": "array"
+                            }
                         }
                     },
                     {
                         "signature": "\u0005IAD",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Target Lum Max Mult",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "def": "TimeInterpolator"
-                            },
-                            "type": "array"
+                            }
                         }
                     },
                     {
                         "signature": "EIAD",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Target Lum Max Add",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "def": "TimeInterpolator"
-                            },
-                            "type": "array"
+                            }
                         }
                     },
                     {
                         "signature": "\u0006IAD",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Sunlight Scale Mult",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "def": "TimeInterpolator"
-                            },
-                            "type": "array"
+                            }
                         }
                     },
                     {
                         "signature": "FIAD",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Sunlight Scale Add",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "def": "TimeInterpolator"
-                            },
-                            "type": "array"
+                            }
                         }
                     },
                     {
                         "signature": "\u0007IAD",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Sky Scale Mult",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "def": "TimeInterpolator"
-                            },
-                            "type": "array"
+                            }
                         }
                     },
                     {
                         "signature": "GIAD",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Sky Scale Add",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "def": "TimeInterpolator"
-                            },
-                            "type": "array"
+                            }
                         }
                     }
                 ]
@@ -632,7 +632,7 @@
             {
                 "signature": "\bIAD",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -640,7 +640,7 @@
             {
                 "signature": "HIAD",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -648,7 +648,7 @@
             {
                 "signature": "\tIAD",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -656,7 +656,7 @@
             {
                 "signature": "IIAD",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -664,7 +664,7 @@
             {
                 "signature": "\nIAD",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -672,7 +672,7 @@
             {
                 "signature": "JIAD",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -680,7 +680,7 @@
             {
                 "signature": "\u000bIAD",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -688,7 +688,7 @@
             {
                 "signature": "KIAD",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -696,7 +696,7 @@
             {
                 "signature": "\fIAD",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -704,7 +704,7 @@
             {
                 "signature": "LIAD",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -712,7 +712,7 @@
             {
                 "signature": "\rIAD",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -720,7 +720,7 @@
             {
                 "signature": "MIAD",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -728,7 +728,7 @@
             {
                 "signature": "\u000eIAD",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -736,7 +736,7 @@
             {
                 "signature": "NIAD",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -744,7 +744,7 @@
             {
                 "signature": "\u000fIAD",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -752,7 +752,7 @@
             {
                 "signature": "OIAD",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -760,7 +760,7 @@
             {
                 "signature": "\u0010IAD",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -768,79 +768,79 @@
             {
                 "signature": "PIAD",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
             },
             {
                 "name": "Cinematic",
-                "type": "multiStruct",
-                "subrecords": [
+                "type": "memberStruct",
+                "members": [
                     {
                         "signature": "\u0011IAD",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Saturation Mult",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "def": "TimeInterpolator"
-                            },
-                            "type": "array"
+                            }
                         }
                     },
                     {
                         "signature": "QIAD",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Saturation Add",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "def": "TimeInterpolator"
-                            },
-                            "type": "array"
+                            }
                         }
                     },
                     {
                         "signature": "\u0012IAD",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Brightness Mult",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "def": "TimeInterpolator"
-                            },
-                            "type": "array"
+                            }
                         }
                     },
                     {
                         "signature": "RIAD",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Brightness Add",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "def": "TimeInterpolator"
-                            },
-                            "type": "array"
+                            }
                         }
                     },
                     {
                         "signature": "\u0013IAD",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Contrast Mult",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "def": "TimeInterpolator"
-                            },
-                            "type": "array"
+                            }
                         }
                     },
                     {
                         "signature": "SIAD",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Contrast Add",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "def": "TimeInterpolator"
-                            },
-                            "type": "array"
+                            }
                         }
                     }
                 ]
@@ -848,7 +848,7 @@
             {
                 "signature": "\u0014IAD",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -856,7 +856,7 @@
             {
                 "signature": "TIAD",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }

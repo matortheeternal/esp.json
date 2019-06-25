@@ -51,7 +51,7 @@
             {
                 "signature": "DATA",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Weight",
                     "type": "float"
                 },
@@ -60,7 +60,7 @@
             {
                 "signature": "ENIT",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Effect Data",
                     "type": "struct",
                     "fields": [

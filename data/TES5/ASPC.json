@@ -14,7 +14,7 @@
             {
                 "signature": "SNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Ambient Sound",
                     "type": "formId",
                     "signatures": [
@@ -25,7 +25,7 @@
             {
                 "signature": "RDAT",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Use Sound from Region (Interiors Only)",
                     "type": "formId",
                     "signatures": [
@@ -36,7 +36,7 @@
             {
                 "signature": "BNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Environment Type (reverb)",
                     "type": "formId",
                     "signatures": [

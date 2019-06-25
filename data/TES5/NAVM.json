@@ -22,7 +22,7 @@
             {
                 "signature": "ONAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -30,7 +30,7 @@
             {
                 "signature": "PNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -38,7 +38,7 @@
             {
                 "signature": "NNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }

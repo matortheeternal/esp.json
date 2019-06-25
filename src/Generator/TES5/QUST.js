@@ -1,9 +1,9 @@
 let {
     def, flags, uint16, format, uint8, 
     bytes, size, uint32, subrecord, struct, 
-    string, ckFormId, arrayOfSubrecord, multiStruct, req, 
+    string, ckFormId, memberArray, memberStruct, req, 
     empty, sortKey, localized, sorted, int32, 
-    formId, int16, enumeration, multiUnion, record
+    formId, int16, enumeration, memberUnion, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -34,17 +34,17 @@ module.exports = () => {
                 format(uint32('Type'), def('QuestTypeEnum'))
             ])),
             subrecord('ENAM', size(4, string('Event'))),
-            arrayOfSubrecord('Text Display Globals', 
+            memberArray('Text Display Globals', 
                 subrecord('QTGL', ckFormId('Global', ['GLOB']))
             ),
             subrecord('FLTR', string('Object Window Filter')),
-            req(multiStruct('Quest Dialogue Conditions', [
+            req(memberStruct('Quest Dialogue Conditions', [
                 def('CTDAs')
             ])),
             subrecord('NEXT', empty('Marker')),
             def('CTDAs'),
-            sorted(arrayOfSubrecord('Stages', 
-                sortKey([0], multiStruct('Stage', [
+            sorted(memberArray('Stages', 
+                sortKey([0], memberStruct('Stage', [
                     subrecord('INDX', sortKey([0], struct('Stage Index', [
                         uint16('Stage Index'),
                         format(uint8('Flags'), flags({
@@ -55,8 +55,8 @@ module.exports = () => {
                         })),
                         uint8('Unknown')
                     ]))),
-                    arrayOfSubrecord('Log Entries', 
-                        multiStruct('Log Entry', [
+                    memberArray('Log Entries', 
+                        memberStruct('Log Entry', [
                             subrecord('QSDT', format(uint8('Stage Flags'), flags({
                                 0: 'Complete Quest',
                                 1: 'Fail Quest'
@@ -71,15 +71,15 @@ module.exports = () => {
                     )
                 ]))
             )),
-            arrayOfSubrecord('Objectives', 
-                multiStruct('Objective', [
+            memberArray('Objectives', 
+                memberStruct('Objective', [
                     subrecord('QOBJ', uint16('Objective Index')),
                     subrecord('FNAM', format(uint32('Flags'), flags({
                         0: 'ORed With Previous'
                     }))),
                     req(subrecord('NNAM', localized(string('Display Text')))),
-                    arrayOfSubrecord('Targets', 
-                        multiStruct('Target', [
+                    memberArray('Targets', 
+                        memberStruct('Target', [
                             subrecord('QSTA', struct('Target', [
                                 format(int32('Alias'), def('QuestAliasToStr')),
                                 format(uint8('Flags'), flags({
@@ -93,9 +93,9 @@ module.exports = () => {
                 ])
             ),
             subrecord('ANAM', uint32('Next Alias ID')),
-            arrayOfSubrecord('Aliases', 
-                multiUnion('Alias', [
-                    req(sortKey([0], multiStruct('Alias', [
+            memberArray('Aliases', 
+                memberUnion('Alias', [
+                    req(sortKey([0], memberStruct('Alias', [
                         subrecord('ALST', uint32('Reference Alias ID')),
                         subrecord('ALID', string('Alias Name')),
                         def('QUSTAliasFlags'),
@@ -103,16 +103,16 @@ module.exports = () => {
                         subrecord('ALFL', ckFormId('Specific Location', ['LCTN'])),
                         subrecord('ALFR', formId('Forced Reference')),
                         subrecord('ALUA', ckFormId('Unique Actor', ['NPC_'])),
-                        multiStruct('Location Alias Reference', [
+                        memberStruct('Location Alias Reference', [
                             subrecord('ALFA', format(int32('Alias'), def('QuestAliasToStr'))),
                             subrecord('KNAM', ckFormId('Keyword', ['KYWD'])),
                             subrecord('ALRT', ckFormId('Ref Type', ['LCRT']))
                         ]),
-                        multiStruct('External Alias Reference', [
+                        memberStruct('External Alias Reference', [
                             subrecord('ALEQ', ckFormId('Quest', ['QUST'])),
                             subrecord('ALEA', format(int32('Alias'), def('QuestExternalAliasToStr')))
                         ]),
-                        multiStruct('Create Reference to Object', [
+                        memberStruct('Create Reference to Object', [
                             subrecord('ALCO', formId('Object')),
                             subrecord('ALCA', struct('Alias', [
                                 format(int16('Alias'), def('QuestAliasToStr')),
@@ -129,13 +129,13 @@ module.exports = () => {
                                 4: 'None'
                             })))
                         ]),
-                        multiStruct('Find Matching Reference Near Alias', [
+                        memberStruct('Find Matching Reference Near Alias', [
                             subrecord('ALNA', format(int32('Alias'), def('QuestAliasToStr'))),
                             subrecord('ALNT', format(uint32('Type'), enumeration({
                                 0: 'Linked Ref Child'
                             })))
                         ]),
-                        multiStruct('Find Matching Reference From Event', [
+                        memberStruct('Find Matching Reference From Event', [
                             subrecord('ALFE', size(4, string('From Event'))),
                             subrecord('ALFD', bytes('Event Data'))
                         ]),
@@ -149,13 +149,13 @@ module.exports = () => {
                         req(subrecord('GWOR', ckFormId('Guard warn override package list', ['FLST']))),
                         req(subrecord('ECOR', ckFormId('Combat override package list', ['FLST']))),
                         subrecord('ALDN', ckFormId('Display Name', ['MESG'])),
-                        arrayOfSubrecord('Alias Spells', 
+                        memberArray('Alias Spells', 
                             subrecord('ALSP', ckFormId('Spell', ['SPEL']))
                         ),
-                        arrayOfSubrecord('Alias Factions', 
+                        memberArray('Alias Factions', 
                             subrecord('ALFC', ckFormId('Faction', ['FACT']))
                         ),
-                        arrayOfSubrecord('Alias Package Data', 
+                        memberArray('Alias Package Data', 
                             subrecord('ALPC', ckFormId('Package', ['PACK']))
                         ),
                         subrecord('VTCK', ckFormId('Voice Types', [
@@ -163,7 +163,7 @@ module.exports = () => {
                         ])),
                         req(subrecord('ALED', empty('Alias End')))
                     ]))),
-                    req(sortKey([0], multiStruct('Alias', [
+                    req(sortKey([0], memberStruct('Alias', [
                         subrecord('ALLS', uint32('Location Alias ID')),
                         subrecord('ALID', string('Alias Name')),
                         def('QUSTAliasFlags'),
@@ -171,16 +171,16 @@ module.exports = () => {
                         subrecord('ALFL', ckFormId('Specific Location', ['LCTN'])),
                         subrecord('ALFR', formId('Forced Reference')),
                         subrecord('ALUA', ckFormId('Unique Actor', ['NPC_'])),
-                        multiStruct('Location Alias Reference', [
+                        memberStruct('Location Alias Reference', [
                             subrecord('ALFA', format(int32('Alias'), def('QuestAliasToStr'))),
                             subrecord('KNAM', ckFormId('Keyword', ['KYWD'])),
                             subrecord('ALRT', ckFormId('Ref Type', ['LCRT']))
                         ]),
-                        multiStruct('External Alias Reference', [
+                        memberStruct('External Alias Reference', [
                             subrecord('ALEQ', ckFormId('Quest', ['QUST'])),
                             subrecord('ALEA', format(int32('Alias'), def('QuestExternalAliasToStr')))
                         ]),
-                        multiStruct('Create Reference to Object', [
+                        memberStruct('Create Reference to Object', [
                             subrecord('ALCO', formId('Object')),
                             subrecord('ALCA', struct('Alias', [
                                 format(int16('Alias'), def('QuestAliasToStr')),
@@ -197,13 +197,13 @@ module.exports = () => {
                                 4: 'None'
                             })))
                         ]),
-                        multiStruct('Find Matching Reference Near Alias', [
+                        memberStruct('Find Matching Reference Near Alias', [
                             subrecord('ALNA', format(int32('Alias'), def('QuestAliasToStr'))),
                             subrecord('ALNT', format(uint32('Type'), enumeration({
                                 0: 'Linked Ref Child'
                             })))
                         ]),
-                        multiStruct('Find Matching Reference From Event', [
+                        memberStruct('Find Matching Reference From Event', [
                             subrecord('ALFE', size(4, string('From Event'))),
                             subrecord('ALFD', bytes('Event Data'))
                         ]),
@@ -217,13 +217,13 @@ module.exports = () => {
                         req(subrecord('GWOR', ckFormId('Guard warn override package list', ['FLST']))),
                         req(subrecord('ECOR', ckFormId('Combat override package list', ['FLST']))),
                         subrecord('ALDN', ckFormId('Display Name', ['MESG'])),
-                        arrayOfSubrecord('Alias Spells', 
+                        memberArray('Alias Spells', 
                             subrecord('ALSP', ckFormId('Spell', ['SPEL']))
                         ),
-                        arrayOfSubrecord('Alias Factions', 
+                        memberArray('Alias Factions', 
                             subrecord('ALFC', ckFormId('Faction', ['FACT']))
                         ),
-                        arrayOfSubrecord('Alias Package Data', 
+                        memberArray('Alias Package Data', 
                             subrecord('ALPC', ckFormId('Package', ['PACK']))
                         ),
                         subrecord('VTCK', ckFormId('Voice Types', [
@@ -234,8 +234,8 @@ module.exports = () => {
                 ])
             ),
             req(subrecord('NNAM', string('Description'))),
-            arrayOfSubrecord('Targets', 
-                multiStruct('Target', [
+            memberArray('Targets', 
+                memberStruct('Target', [
                     subrecord('QSTA', struct('Target', [
                         ckFormId('Target', [
                             'ACHR', 'REFR', 'PGRE', 'PHZD', 'PMIS',

@@ -1,6 +1,7 @@
 {
     "name": "Properties",
-    "entryDef": {
+    "type": "array",
+    "field": {
         "name": "Property",
         "type": "struct",
         "fields": [
@@ -67,44 +68,45 @@
                     },
                     {
                         "name": "Array of Object",
-                        "entryDef": {
+                        "type": "array",
+                        "field": {
                             "def": "ScriptPropertyObject"
                         },
-                        "type": "array",
                         "prefix": 4
                     },
                     {
                         "name": "Array of String",
-                        "entryDef": {
+                        "type": "array",
+                        "field": {
                             "name": "Element",
                             "type": "string",
                             "prefix": 2,
                             "encoding": "EncodingVMAD"
                         },
-                        "type": "array",
                         "prefix": 4
                     },
                     {
                         "name": "Array of Int32",
-                        "entryDef": {
+                        "type": "array",
+                        "field": {
                             "name": "Element",
                             "type": "int32"
                         },
-                        "type": "array",
                         "prefix": 4
                     },
                     {
                         "name": "Array of Float",
-                        "entryDef": {
+                        "type": "array",
+                        "field": {
                             "name": "Element",
                             "type": "float"
                         },
-                        "type": "array",
                         "prefix": 4
                     },
                     {
                         "name": "Array of Bool",
-                        "entryDef": {
+                        "type": "array",
+                        "field": {
                             "name": "Element",
                             "type": "uint8",
                             "format": {
@@ -115,7 +117,6 @@
                                 }
                             }
                         },
-                        "type": "array",
                         "prefix": 4
                     }
                 ]
@@ -125,7 +126,6 @@
             0
         ]
     },
-    "type": "array",
     "sorted": true,
     "prefix": 2
 }

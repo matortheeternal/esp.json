@@ -10,7 +10,7 @@
             {
                 "signature": "CNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -18,7 +18,7 @@
             {
                 "signature": "GNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Category",
                     "type": "formId"
                 }
@@ -26,7 +26,7 @@
             {
                 "signature": "SNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Alternate Sound For",
                     "type": "formId",
                     "signatures": [
@@ -37,15 +37,15 @@
             },
             {
                 "name": "Sounds",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "name": "Sound Files",
-                    "type": "multiStruct",
-                    "subrecords": [
+                    "type": "memberStruct",
+                    "members": [
                         {
                             "signature": "ANAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "File Name",
                                 "type": "string"
                             }
@@ -56,7 +56,7 @@
             {
                 "signature": "ONAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Output Model",
                     "type": "formId",
                     "signatures": [
@@ -68,7 +68,7 @@
             {
                 "signature": "FNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "String",
                     "type": "string",
                     "localized": true
@@ -80,7 +80,7 @@
             {
                 "signature": "LNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Values",
                     "type": "struct",
                     "fields": [
@@ -117,7 +117,7 @@
             {
                 "signature": "BNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Values",
                     "type": "struct",
                     "fields": [

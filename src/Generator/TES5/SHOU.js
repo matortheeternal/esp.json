@@ -1,6 +1,6 @@
 let {
     flags, def, ckFormId, float, subrecord, 
-    struct, arrayOfSubrecord, record
+    struct, memberArray, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -14,7 +14,7 @@ module.exports = () => {
             def('FULL'),
             def('MDOB'),
             def('DESC'),
-            arrayOfSubrecord('Words of Power', 
+            memberArray('Words of Power', 
                 subrecord('SNAM', struct('', [
                     ckFormId('Word', ['WOOP', 'NULL']),
                     ckFormId('Spell', ['SPEL', 'NULL']),

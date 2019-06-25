@@ -17,7 +17,7 @@
             {
                 "signature": "RCLR",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Map Color",
                     "type": "struct",
                     "fields": [
@@ -45,7 +45,7 @@
             {
                 "signature": "WNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Worldspace",
                     "type": "formId",
                     "signatures": [
@@ -55,15 +55,15 @@
             },
             {
                 "name": "Region Areas",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "name": "Region Area",
-                    "type": "multiStruct",
-                    "subrecords": [
+                    "type": "memberStruct",
+                    "members": [
                         {
                             "signature": "RPLI",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Edge Fall-off",
                                 "type": "uint32"
                             }
@@ -71,9 +71,10 @@
                         {
                             "signature": "RPLD",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Region Point List Data",
-                                "entryDef": {
+                                "type": "array",
+                                "field": {
                                     "name": "Point",
                                     "type": "struct",
                                     "fields": [
@@ -86,8 +87,7 @@
                                             "type": "float"
                                         }
                                     ]
-                                },
-                                "type": "array"
+                                }
                             }
                         }
                     ]
@@ -95,15 +95,15 @@
             },
             {
                 "name": "Region Data Entries",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "name": "Region Data Entry",
-                    "type": "multiStruct",
-                    "subrecords": [
+                    "type": "memberStruct",
+                    "members": [
                         {
                             "signature": "RDAT",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Data Header",
                                 "type": "struct",
                                 "fields": [
@@ -162,7 +162,7 @@
                         {
                             "signature": "RDMO",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Music",
                                 "type": "formId",
                                 "signatures": [
@@ -174,9 +174,10 @@
                         {
                             "signature": "RDSA",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Sounds",
-                                "entryDef": {
+                                "type": "array",
+                                "field": {
                                     "name": "Sound",
                                     "type": "struct",
                                     "fields": [
@@ -210,14 +211,13 @@
                                         0
                                     ]
                                 },
-                                "type": "array",
                                 "sorted": true
                             }
                         },
                         {
                             "signature": "RDMP",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Map Name",
                                 "type": "string",
                                 "localized": true
@@ -227,9 +227,10 @@
                         {
                             "signature": "RDOT",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Objects",
-                                "entryDef": {
+                                "type": "array",
+                                "field": {
                                     "name": "Object",
                                     "type": "struct",
                                     "fields": [
@@ -346,16 +347,16 @@
                                             "size": 4
                                         }
                                     ]
-                                },
-                                "type": "array"
+                                }
                             }
                         },
                         {
                             "signature": "RDGS",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Grasses",
-                                "entryDef": {
+                                "type": "array",
+                                "field": {
                                     "name": "Grass",
                                     "type": "struct",
                                     "fields": [
@@ -376,16 +377,16 @@
                                         0
                                     ]
                                 },
-                                "type": "array",
                                 "sorted": true
                             }
                         },
                         {
                             "signature": "RDWT",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Weather Types",
-                                "entryDef": {
+                                "type": "array",
+                                "field": {
                                     "name": "Weather Type",
                                     "type": "struct",
                                     "fields": [
@@ -413,7 +414,6 @@
                                         0
                                     ]
                                 },
-                                "type": "array",
                                 "sorted": true
                             }
                         }

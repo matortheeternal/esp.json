@@ -27,7 +27,7 @@
             {
                 "signature": "ACBS",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Configuration",
                     "type": "struct",
                     "fields": [
@@ -151,11 +151,11 @@
             },
             {
                 "name": "Factions",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "signature": "SNAM",
                     "type": "subrecord",
-                    "def": {
+                    "field": {
                         "name": "Faction",
                         "type": "struct",
                         "fields": [
@@ -187,7 +187,7 @@
             {
                 "signature": "INAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Death item",
                     "type": "formId",
                     "signatures": [
@@ -199,7 +199,7 @@
             {
                 "signature": "VTCK",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Voice",
                     "type": "formId",
                     "signatures": [
@@ -211,7 +211,7 @@
             {
                 "signature": "TPLT",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Template",
                     "type": "formId",
                     "signatures": [
@@ -223,7 +223,7 @@
             {
                 "signature": "RNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Race",
                     "type": "formId",
                     "signatures": [
@@ -244,7 +244,7 @@
             {
                 "signature": "WNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Worn Armor",
                     "type": "formId",
                     "signatures": [
@@ -256,7 +256,7 @@
             {
                 "signature": "ANAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Far away model",
                     "type": "formId",
                     "signatures": [
@@ -268,7 +268,7 @@
             {
                 "signature": "ATKR",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Attack Race",
                     "type": "formId",
                     "signatures": [
@@ -279,8 +279,8 @@
             },
             {
                 "name": "Attacks",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "def": "AttackData"
                 },
                 "sorted": true
@@ -288,7 +288,7 @@
             {
                 "signature": "SPOR",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Spectator override package list",
                     "type": "formId",
                     "signatures": [
@@ -300,7 +300,7 @@
             {
                 "signature": "OCOR",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Observe dead body override package list",
                     "type": "formId",
                     "signatures": [
@@ -312,7 +312,7 @@
             {
                 "signature": "GWOR",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Guard warn override package list",
                     "type": "formId",
                     "signatures": [
@@ -324,7 +324,7 @@
             {
                 "signature": "ECOR",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Combat override package list",
                     "type": "formId",
                     "signatures": [
@@ -336,18 +336,18 @@
             {
                 "signature": "PRKZ",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Perk Count",
                     "type": "uint32"
                 }
             },
             {
                 "name": "Perks",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "signature": "PRKR",
                     "type": "subrecord",
-                    "def": {
+                    "field": {
                         "name": "Perk",
                         "type": "struct",
                         "fields": [
@@ -387,11 +387,11 @@
             },
             {
                 "name": "Packages",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "signature": "PKID",
                     "type": "subrecord",
-                    "def": {
+                    "field": {
                         "name": "Package",
                         "type": "formId",
                         "signatures": [
@@ -409,7 +409,7 @@
             {
                 "signature": "CNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Class",
                     "type": "formId",
                     "signatures": [
@@ -424,7 +424,7 @@
             {
                 "signature": "SHRT",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Short Name",
                     "type": "string",
                     "localized": true
@@ -433,7 +433,7 @@
             {
                 "signature": "DATA",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Marker",
                     "type": "bytes"
                 }
@@ -441,25 +441,25 @@
             {
                 "signature": "DNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Player Skills",
                     "type": "struct",
                     "fields": [
                         {
                             "name": "Skill Values",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "name": "Skill",
                                 "type": "uint8"
-                            },
-                            "type": "array"
+                            }
                         },
                         {
                             "name": "Skill Offsets",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "name": "Skill",
                                 "type": "uint8"
-                            },
-                            "type": "array"
+                            }
                         },
                         {
                             "name": "Health",
@@ -497,11 +497,11 @@
             },
             {
                 "name": "Head Parts",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "signature": "PNAM",
                     "type": "subrecord",
-                    "def": {
+                    "field": {
                         "name": "Head Part",
                         "type": "formId",
                         "signatures": [
@@ -515,7 +515,7 @@
             {
                 "signature": "HCLF",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Hair Color",
                     "type": "formId",
                     "signatures": [
@@ -527,7 +527,7 @@
             {
                 "signature": "ZNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Combat Style",
                     "type": "formId",
                     "signatures": [
@@ -539,7 +539,7 @@
             {
                 "signature": "GNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Gift Filter",
                     "type": "formId",
                     "signatures": [
@@ -551,7 +551,7 @@
             {
                 "signature": "NAM5",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 },
@@ -560,7 +560,7 @@
             {
                 "signature": "NAM6",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Height",
                     "type": "float"
                 },
@@ -569,7 +569,7 @@
             {
                 "signature": "NAM7",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Weight",
                     "type": "float"
                 },
@@ -578,7 +578,7 @@
             {
                 "signature": "NAM8",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Sound Level",
                     "type": "uint32",
                     "format": {
@@ -592,7 +592,7 @@
             {
                 "signature": "CSCR",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Inherits Sounds From",
                     "type": "formId",
                     "signatures": [
@@ -604,7 +604,7 @@
             {
                 "signature": "DOFT",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Default outfit",
                     "type": "formId",
                     "signatures": [
@@ -616,7 +616,7 @@
             {
                 "signature": "SOFT",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Sleeping outfit",
                     "type": "formId",
                     "signatures": [
@@ -628,7 +628,7 @@
             {
                 "signature": "DPLT",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Default Package List",
                     "type": "formId",
                     "signatures": [
@@ -640,7 +640,7 @@
             {
                 "signature": "CRIF",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Crime faction",
                     "type": "formId",
                     "signatures": [
@@ -652,7 +652,7 @@
             {
                 "signature": "FTST",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Head texture",
                     "type": "formId",
                     "signatures": [
@@ -664,7 +664,7 @@
             {
                 "signature": "QNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Texture lighting",
                     "type": "struct",
                     "fields": [
@@ -689,7 +689,7 @@
             {
                 "signature": "NAM9",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Face morph",
                     "type": "struct",
                     "fields": [
@@ -776,7 +776,7 @@
             {
                 "signature": "NAMA",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Face parts",
                     "type": "struct",
                     "fields": [
@@ -801,15 +801,15 @@
             },
             {
                 "name": "Tint Layers",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "name": "Layer",
-                    "type": "multiStruct",
-                    "subrecords": [
+                    "type": "memberStruct",
+                    "members": [
                         {
                             "signature": "TINI",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Tint Index",
                                 "type": "uint16",
                                 "format": {
@@ -820,7 +820,7 @@
                         {
                             "signature": "TINC",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Tint Color",
                                 "type": "struct",
                                 "fields": [
@@ -846,7 +846,7 @@
                         {
                             "signature": "TINV",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Interpolation Value",
                                 "type": "uint32",
                                 "format": {
@@ -858,7 +858,7 @@
                         {
                             "signature": "TIAS",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Preset",
                                 "type": "int16"
                             }

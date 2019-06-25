@@ -1,11 +1,11 @@
 {
     "name": "Item",
-    "type": "multiStruct",
-    "subrecords": [
+    "type": "memberStruct",
+    "members": [
         {
             "signature": "CNTO",
             "type": "subrecord",
-            "def": {
+            "field": {
                 "name": "Item",
                 "type": "struct",
                 "fields": [

@@ -1,14 +1,14 @@
 {
     "name": "Data Inputs",
-    "type": "subrecordArray",
-    "subrecord": {
+    "type": "memberArray",
+    "member": {
         "name": "Data Input",
-        "type": "multiStruct",
-        "subrecords": [
+        "type": "memberStruct",
+        "members": [
             {
                 "signature": "UNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Index",
                     "type": "int8"
                 }
@@ -16,7 +16,7 @@
             {
                 "signature": "BNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Name",
                     "type": "string"
                 }
@@ -24,7 +24,7 @@
             {
                 "signature": "PNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Flags",
                     "type": "uint32",
                     "format": {

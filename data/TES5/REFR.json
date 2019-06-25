@@ -159,7 +159,7 @@
             {
                 "signature": "NAME",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Base",
                     "type": "formId",
                     "signatures": [
@@ -203,7 +203,7 @@
             {
                 "signature": "XMBO",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Bound Half Extents",
                     "type": "struct",
                     "fields": [
@@ -225,7 +225,7 @@
             {
                 "signature": "XPRM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Primitive",
                     "type": "struct",
                     "fields": [
@@ -295,7 +295,7 @@
             {
                 "signature": "XORD",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -303,7 +303,7 @@
             {
                 "signature": "XOCP",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Occlusion Plane Data",
                     "type": "struct",
                     "fields": [
@@ -369,9 +369,10 @@
             {
                 "signature": "XPOD",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Portal Data",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "References",
                         "type": "struct",
                         "fields": [
@@ -392,14 +393,13 @@
                                 ]
                             }
                         ]
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "XPTL",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Room Portal (unused)",
                     "type": "struct",
                     "fields": [
@@ -464,12 +464,12 @@
             },
             {
                 "name": "Bound Data",
-                "type": "multiStruct",
-                "subrecords": [
+                "type": "memberStruct",
+                "members": [
                     {
                         "signature": "XRMR",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Header",
                             "type": "struct",
                             "fields": [
@@ -505,7 +505,7 @@
                     {
                         "signature": "LNAM",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Lighting Template",
                             "type": "formId",
                             "signatures": [
@@ -516,7 +516,7 @@
                     {
                         "signature": "INAM",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Image Space",
                             "type": "formId",
                             "signatures": [
@@ -526,11 +526,11 @@
                     },
                     {
                         "name": "Linked Rooms",
-                        "type": "subrecordArray",
-                        "subrecord": {
+                        "type": "memberArray",
+                        "member": {
                             "signature": "XLRM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Linked Room",
                                 "type": "formId",
                                 "signatures": [
@@ -545,7 +545,7 @@
             {
                 "signature": "XMBP",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "MultiBound Primitive Marker",
                     "type": "empty"
                 }
@@ -559,18 +559,18 @@
             {
                 "signature": "XRDS",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Radius",
                     "type": "float"
                 }
             },
             {
                 "name": "Reflected/Refracted By",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "signature": "XPWR",
                     "type": "subrecord",
-                    "def": {
+                    "field": {
                         "name": "Water",
                         "type": "struct",
                         "fields": [
@@ -602,11 +602,11 @@
             },
             {
                 "name": "Lit Water",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "signature": "XLTW",
                     "type": "subrecord",
-                    "def": {
+                    "field": {
                         "name": "Water",
                         "type": "formId",
                         "signatures": [
@@ -619,7 +619,7 @@
             {
                 "signature": "XEMI",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Emittance",
                     "type": "formId",
                     "signatures": [
@@ -631,7 +631,7 @@
             {
                 "signature": "XLIG",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Light Data",
                     "type": "struct",
                     "fields": [
@@ -664,7 +664,7 @@
             {
                 "signature": "XALP",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Alpha",
                     "type": "struct",
                     "fields": [
@@ -682,7 +682,7 @@
             {
                 "signature": "XTEL",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Teleport Destination",
                     "type": "struct",
                     "fields": [
@@ -712,7 +712,7 @@
             {
                 "signature": "XTNM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Teleport Message Box",
                     "type": "formId",
                     "signatures": [
@@ -723,7 +723,7 @@
             {
                 "signature": "XMBR",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "MultiBound Reference",
                     "type": "formId",
                     "signatures": [
@@ -734,7 +734,7 @@
             {
                 "signature": "XWCN",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -742,7 +742,7 @@
             {
                 "signature": "XWCS",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -750,7 +750,7 @@
             {
                 "signature": "XWCU",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Water Velocity",
                     "type": "struct",
                     "fields": [
@@ -793,7 +793,7 @@
             {
                 "signature": "XCVL",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "struct",
                     "fields": [
@@ -817,7 +817,7 @@
             {
                 "signature": "XCZR",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "formId",
                     "signatures": [
@@ -839,7 +839,7 @@
             {
                 "signature": "XCZA",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -847,7 +847,7 @@
             {
                 "signature": "XCZC",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "formId",
                     "signatures": [
@@ -862,7 +862,7 @@
             {
                 "signature": "XSPC",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Spawn Container",
                     "type": "formId",
                     "signatures": [
@@ -872,12 +872,12 @@
             },
             {
                 "name": "Activate Parents",
-                "type": "multiStruct",
-                "subrecords": [
+                "type": "memberStruct",
+                "members": [
                     {
                         "signature": "XAPD",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Flags",
                             "type": "uint8",
                             "format": {
@@ -890,11 +890,11 @@
                     },
                     {
                         "name": "Activate Parent Refs",
-                        "type": "subrecordArray",
-                        "subrecord": {
+                        "type": "memberArray",
+                        "member": {
                             "signature": "XAPR",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Activate Parent Ref",
                                 "type": "struct",
                                 "fields": [
@@ -932,7 +932,7 @@
             {
                 "signature": "XLIB",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Leveled Item Base Object",
                     "type": "formId",
                     "signatures": [
@@ -946,7 +946,7 @@
             {
                 "signature": "XLCN",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Persistent Location",
                     "type": "formId",
                     "signatures": [
@@ -957,7 +957,7 @@
             {
                 "signature": "XTRI",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Collision Layer",
                     "type": "uint32"
                 }
@@ -965,7 +965,7 @@
             {
                 "signature": "XLOC",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Lock Data",
                     "type": "struct",
                     "fields": [
@@ -1026,7 +1026,7 @@
             {
                 "signature": "XEZN",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Encounter Zone",
                     "type": "formId",
                     "signatures": [
@@ -1037,7 +1037,7 @@
             {
                 "signature": "XNDP",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Navigation Door Link",
                     "type": "struct",
                     "fields": [
@@ -1066,23 +1066,23 @@
             {
                 "signature": "XLRT",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Location Ref Type",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "Ref",
                         "type": "formId",
                         "signatures": [
                             "LCRT",
                             "NULL"
                         ]
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "XIS2",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Ignored by Sandbox",
                     "type": "empty"
                 }
@@ -1093,7 +1093,7 @@
             {
                 "signature": "XCNT",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Item Count",
                     "type": "int32"
                 }
@@ -1101,7 +1101,7 @@
             {
                 "signature": "XCHG",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Charge",
                     "type": "float"
                 }
@@ -1109,7 +1109,7 @@
             {
                 "signature": "XLRL",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Location Reference",
                     "type": "formId",
                     "signatures": [
@@ -1124,11 +1124,11 @@
             },
             {
                 "name": "Linked References",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "signature": "XLKR",
                     "type": "subrecord",
-                    "def": {
+                    "field": {
                         "name": "Linked Reference",
                         "type": "struct",
                         "fields": [
@@ -1175,15 +1175,15 @@
             },
             {
                 "name": "Patrol",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "name": "Data",
-                    "type": "multiStruct",
-                    "subrecords": [
+                    "type": "memberStruct",
+                    "members": [
                         {
                             "signature": "XPRD",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Idle Time",
                                 "type": "float"
                             },
@@ -1192,7 +1192,7 @@
                         {
                             "signature": "XPPA",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Patrol Script Marker",
                                 "type": "empty"
                             },
@@ -1201,7 +1201,7 @@
                         {
                             "signature": "INAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Idle",
                                 "type": "formId",
                                 "signatures": [
@@ -1214,7 +1214,7 @@
                         {
                             "signature": "SCHR",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Unused",
                                 "type": "bytes"
                             }
@@ -1222,7 +1222,7 @@
                         {
                             "signature": "SCTX",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Unused",
                                 "type": "bytes"
                             }
@@ -1236,7 +1236,7 @@
             {
                 "signature": "XACT",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Action Flag",
                     "type": "uint32",
                     "format": {
@@ -1253,7 +1253,7 @@
             {
                 "signature": "XHTW",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Head-Tracking Weight",
                     "type": "float"
                 }
@@ -1261,7 +1261,7 @@
             {
                 "signature": "XFVC",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Favor Cost",
                     "type": "float"
                 }
@@ -1269,19 +1269,19 @@
             {
                 "signature": "ONAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Open by Default",
                     "type": "empty"
                 }
             },
             {
                 "name": "Map Marker",
-                "type": "multiStruct",
-                "subrecords": [
+                "type": "memberStruct",
+                "members": [
                     {
                         "signature": "XMRK",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Map Marker Data",
                             "type": "empty"
                         }
@@ -1289,7 +1289,7 @@
                     {
                         "signature": "FNAM",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Map Flags",
                             "type": "uint8",
                             "format": {
@@ -1309,7 +1309,7 @@
                     {
                         "signature": "TNAM",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "",
                             "type": "struct",
                             "fields": [
@@ -1334,7 +1334,7 @@
             {
                 "signature": "XATR",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Attach Ref",
                     "type": "formId",
                     "signatures": [

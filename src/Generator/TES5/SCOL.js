@@ -1,6 +1,6 @@
 let {
     def, req, subrecord, ckFormId, float, 
-    struct, sorted, array, arrayOfStruct, multiStruct, 
+    struct, sorted, array, memberArray, memberStruct, 
     record
 } = require('../helpers');
 
@@ -10,8 +10,8 @@ module.exports = () => {
             def('EDID'),
             req(def('OBND')),
             req(def('MODL')),
-            req(arrayOfStruct('Parts', 
-                multiStruct('Part', [
+            req(memberArray('Parts', 
+                memberStruct('Part', [
                     subrecord('ONAM', ckFormId('Static', ['STAT'])),
                     subrecord('DATA', sorted(array('Placements', 
                         struct('Placement', [

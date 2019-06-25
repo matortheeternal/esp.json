@@ -1,7 +1,7 @@
 let {
     def, req, subrecord, string, unknown, 
-    float, struct, ckFormId, uint32, arrayOfSubrecord, 
-    multiStruct, record
+    float, struct, ckFormId, uint32, memberArray, 
+    memberStruct, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -18,8 +18,8 @@ module.exports = () => {
                 float('Skill Improve Mult'),
                 float('Skill Improve Offset')
             ])),
-            arrayOfSubrecord('Perk Tree', 
-                multiStruct('Node', [
+            memberArray('Perk Tree', 
+                memberStruct('Node', [
                     subrecord('PNAM', ckFormId('Perk', ['PERK', 'NULL'])),
                     subrecord('FNAM', unknown()),
                     subrecord('XNAM', uint32('Perk-Grid X')),
@@ -27,7 +27,7 @@ module.exports = () => {
                     subrecord('HNAM', float('Horizontal Position')),
                     subrecord('VNAM', float('Vertical Position')),
                     subrecord('SNAM', ckFormId('Associated Skill', ['AVIF', 'NULL'])),
-                    arrayOfSubrecord('Connections', 
+                    memberArray('Connections', 
                         subrecord('CNAM', uint32('Line to Index'))
                     ),
                     subrecord('INAM', uint32('Index'))

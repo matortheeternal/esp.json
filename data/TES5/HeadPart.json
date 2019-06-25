@@ -1,11 +1,11 @@
 {
     "name": "Head Part",
-    "type": "multiStruct",
-    "subrecords": [
+    "type": "memberStruct",
+    "members": [
         {
             "signature": "INDX",
             "type": "subrecord",
-            "def": {
+            "field": {
                 "name": "Head Part Number",
                 "type": "uint32"
             }
@@ -13,7 +13,7 @@
         {
             "signature": "HEAD",
             "type": "subrecord",
-            "def": {
+            "field": {
                 "name": "Head",
                 "type": "formId",
                 "signatures": [

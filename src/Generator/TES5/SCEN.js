@@ -1,7 +1,7 @@
 let {
     def, flags, subrecord, uint32, format, 
-    empty, string, multiStruct, unknown, req, 
-    arrayOfSubrecord, enumeration, uint16, int32, float, 
+    empty, string, memberStruct, unknown, req, 
+    memberArray, enumeration, uint16, int32, float, 
     ckFormId, record
 } = require('../helpers');
 
@@ -17,18 +17,18 @@ module.exports = () => {
                 3: 'Repeat Conditions While True',
                 4: 'Interruptible'
             }))),
-            arrayOfSubrecord('Phases', 
-                multiStruct('Phase', [
+            memberArray('Phases', 
+                memberStruct('Phase', [
                     subrecord('HNAM', empty('Marker Phase Start')),
                     subrecord('NAM0', string('Name')),
-                    multiStruct('Start Conditions', [
+                    memberStruct('Start Conditions', [
                         def('CTDAs')
                     ]),
                     subrecord('NEXT', empty('Marker')),
-                    multiStruct('Completion Conditions', [
+                    memberStruct('Completion Conditions', [
                         def('CTDAs')
                     ]),
-                    req(multiStruct('Unused', [
+                    req(memberStruct('Unused', [
                         subrecord('SCHR', unknown()),
                         subrecord('SCDA', unknown()),
                         subrecord('SCTX', unknown()),
@@ -36,7 +36,7 @@ module.exports = () => {
                         subrecord('SCRO', unknown())
                     ])),
                     subrecord('NEXT', empty('Marker')),
-                    req(multiStruct('Unused', [
+                    req(memberStruct('Unused', [
                         subrecord('SCHR', unknown()),
                         subrecord('SCDA', unknown()),
                         subrecord('SCTX', unknown()),
@@ -47,8 +47,8 @@ module.exports = () => {
                     subrecord('HNAM', empty('Marker Phase End'))
                 ])
             ),
-            arrayOfSubrecord('Actors', 
-                multiStruct('Actor', [
+            memberArray('Actors', 
+                memberStruct('Actor', [
                     subrecord('ALID', uint32('Actor ID')),
                     subrecord('LNAM', format(uint32('Flags'), flags({
                         0: 'No Player Activation',
@@ -66,8 +66,8 @@ module.exports = () => {
                     })))
                 ])
             ),
-            arrayOfSubrecord('Actions', 
-                multiStruct('Action', [
+            memberArray('Actions', 
+                memberStruct('Action', [
                     subrecord('ANAM', format(uint16('Type'), enumeration({
                         0: 'Dialogue',
                         1: 'Package',
@@ -100,7 +100,7 @@ module.exports = () => {
                     subrecord('SNAM', uint32('Start Phase')),
                     subrecord('ENAM', uint32('End Phase')),
                     subrecord('SNAM', float('Timer Seconds')),
-                    arrayOfSubrecord('Packages', 
+                    memberArray('Packages', 
                         subrecord('PNAM', ckFormId('Package', ['PACK']))
                     ),
                     subrecord('DATA', ckFormId('Topic', ['DIAL', 'NULL'])),
@@ -109,7 +109,7 @@ module.exports = () => {
                     subrecord('DMIN', float('Looping - Min')),
                     subrecord('DEMO', format(uint32('Emotion Type'), def('EmotionTypeEnum'))),
                     subrecord('DEVA', uint32('Emotion Value')),
-                    req(multiStruct('Unused', [
+                    req(memberStruct('Unused', [
                         subrecord('SCHR', unknown()),
                         subrecord('SCDA', unknown()),
                         subrecord('SCTX', unknown()),
@@ -119,7 +119,7 @@ module.exports = () => {
                     subrecord('ANAM', empty('End Marker'))
                 ])
             ),
-            req(multiStruct('Unused', [
+            req(memberStruct('Unused', [
                 subrecord('SCHR', unknown()),
                 subrecord('SCDA', unknown()),
                 subrecord('SCTX', unknown()),
@@ -127,7 +127,7 @@ module.exports = () => {
                 subrecord('SCRO', unknown())
             ])),
             subrecord('NEXT', empty('Marker')),
-            req(multiStruct('Unused', [
+            req(memberStruct('Unused', [
                 subrecord('SCHR', unknown()),
                 subrecord('SCDA', unknown()),
                 subrecord('SCTX', unknown()),

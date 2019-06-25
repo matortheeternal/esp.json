@@ -10,7 +10,7 @@
             {
                 "signature": "MNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Name",
                     "type": "string"
                 }
@@ -18,7 +18,7 @@
             {
                 "signature": "SPED",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Default Data",
                     "type": "struct",
                     "fields": [
@@ -76,7 +76,7 @@
             {
                 "signature": "INAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Anim Change Thresholds",
                     "type": "struct",
                     "fields": [

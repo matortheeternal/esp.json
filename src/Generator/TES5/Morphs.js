@@ -1,11 +1,11 @@
 let {
     addDef, subrecord, bytes, def, size, 
-    struct, multiStruct
+    struct, memberStruct
 } = require('../helpers');
 
 module.exports = () => {
     addDef('Morphs', 
-        multiStruct('Available Morphs', [
+        memberStruct('Available Morphs', [
             subrecord('MPAI', bytes('Unknown')),
             subrecord('MPAV', struct('Nose Variants', [
                 def('NoseMorphFlags'),

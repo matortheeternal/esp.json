@@ -1,11 +1,11 @@
 {
     "name": "Icon 2 (female)",
-    "type": "multiStruct",
-    "subrecords": [
+    "type": "memberStruct",
+    "members": [
         {
             "signature": "ICO2",
             "type": "subrecord",
-            "def": {
+            "field": {
                 "name": "Large Icon FileName",
                 "type": "string"
             },
@@ -14,7 +14,7 @@
         {
             "signature": "MIC2",
             "type": "subrecord",
-            "def": {
+            "field": {
                 "name": "Small Icon FileName",
                 "type": "string"
             }

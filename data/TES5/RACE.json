@@ -30,7 +30,7 @@
             {
                 "signature": "WNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Skin",
                     "type": "formId",
                     "signatures": [
@@ -51,13 +51,14 @@
             {
                 "signature": "DATA",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "",
                     "type": "struct",
                     "fields": [
                         {
                             "name": "Skill Boosts",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "name": "Skill Boost",
                                 "type": "struct",
                                 "fields": [
@@ -77,7 +78,6 @@
                                     0
                                 ]
                             },
-                            "type": "array",
                             "sorted": true,
                             "size": 7
                         },
@@ -281,7 +281,7 @@
             {
                 "signature": "MNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Male Marker",
                     "type": "empty"
                 }
@@ -289,7 +289,7 @@
             {
                 "signature": "ANAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Male Skeletal Model",
                     "type": "string"
                 }
@@ -300,7 +300,7 @@
             {
                 "signature": "FNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Female Marker",
                     "type": "empty"
                 }
@@ -308,7 +308,7 @@
             {
                 "signature": "ANAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Female Skeletal Model",
                     "type": "string"
                 }
@@ -319,18 +319,18 @@
             {
                 "signature": "NAM2",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Marker NAM2 #1",
                     "type": "empty"
                 }
             },
             {
                 "name": "Movement Type Names",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "signature": "MTNM",
                     "type": "subrecord",
-                    "def": {
+                    "field": {
                         "name": "Name",
                         "type": "string"
                     }
@@ -340,54 +340,54 @@
             {
                 "signature": "VTCK",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Voices",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "Voice",
                         "type": "formId",
                         "signatures": [
                             "VTYP"
                         ]
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "DNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Decapitate Armors",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "Decapitate Armor",
                         "type": "formId",
                         "signatures": [
                             "NULL",
                             "ARMO"
                         ]
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "HCLF",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Default Hair Colors",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "Default Hair Color",
                         "type": "formId",
                         "signatures": [
                             "NULL",
                             "CLFM"
                         ]
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "TINL",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Total Number of Tints in List",
                     "type": "uint16"
                 }
@@ -395,7 +395,7 @@
             {
                 "signature": "PNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "FaceGen - Main clamp",
                     "type": "float"
                 },
@@ -404,7 +404,7 @@
             {
                 "signature": "UNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "FaceGen - Face clamp",
                     "type": "float"
                 },
@@ -413,7 +413,7 @@
             {
                 "signature": "ATKR",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Attack Race",
                     "type": "formId",
                     "signatures": [
@@ -424,20 +424,20 @@
             },
             {
                 "name": "Attacks",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "def": "AttackData"
                 },
                 "sorted": true
             },
             {
                 "name": "Body Data",
-                "type": "multiStruct",
-                "subrecords": [
+                "type": "memberStruct",
+                "members": [
                     {
                         "signature": "NAM1",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Body Data Marker",
                             "type": "empty"
                         },
@@ -445,27 +445,27 @@
                     },
                     {
                         "name": "Male Body Data",
-                        "type": "multiStruct",
-                        "subrecords": [
+                        "type": "memberStruct",
+                        "members": [
                             {
                                 "signature": "MNAM",
                                 "type": "subrecord",
-                                "def": {
+                                "field": {
                                     "name": "Male Data Marker",
                                     "type": "empty"
                                 }
                             },
                             {
                                 "name": "Parts",
-                                "type": "subrecordArray",
-                                "subrecord": {
+                                "type": "memberArray",
+                                "member": {
                                     "name": "Part",
-                                    "type": "multiStruct",
-                                    "subrecords": [
+                                    "type": "memberStruct",
+                                    "members": [
                                         {
                                             "signature": "INDX",
                                             "type": "subrecord",
-                                            "def": {
+                                            "field": {
                                                 "name": "Index",
                                                 "type": "uint32",
                                                 "format": {
@@ -489,12 +489,12 @@
                     },
                     {
                         "name": "Female Body Data",
-                        "type": "multiStruct",
-                        "subrecords": [
+                        "type": "memberStruct",
+                        "members": [
                             {
                                 "signature": "FNAM",
                                 "type": "subrecord",
-                                "def": {
+                                "field": {
                                     "name": "Female Data Marker",
                                     "type": "empty"
                                 },
@@ -502,15 +502,15 @@
                             },
                             {
                                 "name": "Parts",
-                                "type": "subrecordArray",
-                                "subrecord": {
+                                "type": "memberArray",
+                                "member": {
                                     "name": "Part",
-                                    "type": "multiStruct",
-                                    "subrecords": [
+                                    "type": "memberStruct",
+                                    "members": [
                                         {
                                             "signature": "INDX",
                                             "type": "subrecord",
-                                            "def": {
+                                            "field": {
                                                 "name": "Index",
                                                 "type": "uint32",
                                                 "format": {
@@ -538,9 +538,10 @@
             {
                 "signature": "HNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Hairs",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "Hair",
                         "type": "formId",
                         "signatures": [
@@ -548,16 +549,16 @@
                             "NULL"
                         ]
                     },
-                    "type": "array",
                     "sorted": true
                 }
             },
             {
                 "signature": "ENAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Eyes",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "Eye",
                         "type": "formId",
                         "signatures": [
@@ -565,14 +566,13 @@
                             "NULL"
                         ]
                     },
-                    "type": "array",
                     "sorted": true
                 }
             },
             {
                 "signature": "GNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Body Part Data",
                     "type": "formId",
                     "signatures": [
@@ -584,7 +584,7 @@
             {
                 "signature": "NAM2",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Marker NAM2 #2",
                     "type": "empty"
                 }
@@ -592,7 +592,7 @@
             {
                 "signature": "NAM3",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Marker NAM3 #3",
                     "type": "empty"
                 },
@@ -600,12 +600,12 @@
             },
             {
                 "name": "Male Behavior Graph",
-                "type": "multiStruct",
-                "subrecords": [
+                "type": "memberStruct",
+                "members": [
                     {
                         "signature": "MNAM",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Male Data Marker",
                             "type": "empty"
                         }
@@ -618,12 +618,12 @@
             },
             {
                 "name": "Female Behavior Graph",
-                "type": "multiStruct",
-                "subrecords": [
+                "type": "memberStruct",
+                "members": [
                     {
                         "signature": "FNAM",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Female Data Marker",
                             "type": "empty"
                         },
@@ -638,7 +638,7 @@
             {
                 "signature": "NAM4",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Material Type",
                     "type": "formId",
                     "signatures": [
@@ -650,7 +650,7 @@
             {
                 "signature": "NAM5",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Impact Data Set",
                     "type": "formId",
                     "signatures": [
@@ -662,7 +662,7 @@
             {
                 "signature": "NAM7",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Decapitation FX",
                     "type": "formId",
                     "signatures": [
@@ -674,7 +674,7 @@
             {
                 "signature": "ONAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Open Loot Sound",
                     "type": "formId",
                     "signatures": [
@@ -686,7 +686,7 @@
             {
                 "signature": "LNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Close Loot Sound",
                     "type": "formId",
                     "signatures": [
@@ -697,11 +697,11 @@
             },
             {
                 "name": "Biped Object Names",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "signature": "NAME",
                     "type": "subrecord",
-                    "def": {
+                    "field": {
                         "name": "Name",
                         "type": "string"
                     }
@@ -709,15 +709,15 @@
             },
             {
                 "name": "Movement Types",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "name": "Movement Types",
-                    "type": "multiStruct",
-                    "subrecords": [
+                    "type": "memberStruct",
+                    "members": [
                         {
                             "signature": "MTYP",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Movement Type",
                                 "type": "formId",
                                 "signatures": [
@@ -729,7 +729,7 @@
                         {
                             "signature": "SPED",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Override Values",
                                 "type": "struct",
                                 "fields": [
@@ -790,7 +790,7 @@
             {
                 "signature": "VNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Equipment Flags",
                     "type": "uint32",
                     "format": {
@@ -800,11 +800,11 @@
             },
             {
                 "name": "Equip Slots",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "signature": "QNAM",
                     "type": "subrecord",
-                    "def": {
+                    "field": {
                         "name": "Equip Slot",
                         "type": "formId",
                         "signatures": [
@@ -818,7 +818,7 @@
             {
                 "signature": "UNES",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unarmed Equip Slot",
                     "type": "formId",
                     "signatures": [
@@ -829,11 +829,11 @@
             },
             {
                 "name": "Phoneme Target Names",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "signature": "PHTN",
                     "type": "subrecord",
-                    "def": {
+                    "field": {
                         "name": "Name",
                         "type": "string"
                     }
@@ -845,7 +845,7 @@
             {
                 "signature": "WKMV",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Base Movement Default - Walk",
                     "type": "formId",
                     "signatures": [
@@ -857,7 +857,7 @@
             {
                 "signature": "RNMV",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Base Movement Default - Run",
                     "type": "formId",
                     "signatures": [
@@ -869,7 +869,7 @@
             {
                 "signature": "SWMV",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Base Movement Default - Swim",
                     "type": "formId",
                     "signatures": [
@@ -881,7 +881,7 @@
             {
                 "signature": "FLMV",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Base Movement Default - Fly",
                     "type": "formId",
                     "signatures": [
@@ -893,7 +893,7 @@
             {
                 "signature": "SNMV",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Base Movement Default - Sneak",
                     "type": "formId",
                     "signatures": [
@@ -905,7 +905,7 @@
             {
                 "signature": "SPMV",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Base Movement Default - Sprint",
                     "type": "formId",
                     "signatures": [
@@ -916,12 +916,12 @@
             },
             {
                 "name": "Head Data",
-                "type": "multiStruct",
-                "subrecords": [
+                "type": "memberStruct",
+                "members": [
                     {
                         "signature": "NAM0",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Head Data Marker",
                             "type": "empty"
                         },
@@ -929,12 +929,12 @@
                     },
                     {
                         "name": "Male Head Data",
-                        "type": "multiStruct",
-                        "subrecords": [
+                        "type": "memberStruct",
+                        "members": [
                             {
                                 "signature": "MNAM",
                                 "type": "subrecord",
-                                "def": {
+                                "field": {
                                     "name": "Male Data Marker",
                                     "type": "empty"
                                 },
@@ -942,8 +942,8 @@
                             },
                             {
                                 "name": "Head Parts",
-                                "type": "subrecordArray",
-                                "subrecord": {
+                                "type": "memberArray",
+                                "member": {
                                     "def": "HeadPart"
                                 },
                                 "sorted": true
@@ -953,11 +953,11 @@
                             },
                             {
                                 "name": "Race Presets Male",
-                                "type": "subrecordArray",
-                                "subrecord": {
+                                "type": "memberArray",
+                                "member": {
                                     "signature": "RPRM",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Preset NPC",
                                         "type": "formId",
                                         "signatures": [
@@ -970,11 +970,11 @@
                             },
                             {
                                 "name": "Available Hair Colors Male",
-                                "type": "subrecordArray",
-                                "subrecord": {
+                                "type": "memberArray",
+                                "member": {
                                     "signature": "AHCM",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Hair Color",
                                         "type": "formId",
                                         "signatures": [
@@ -987,11 +987,11 @@
                             },
                             {
                                 "name": "Face Details Texture Set List Male",
-                                "type": "subrecordArray",
-                                "subrecord": {
+                                "type": "memberArray",
+                                "member": {
                                     "signature": "FTSM",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Texture Set",
                                         "type": "formId",
                                         "signatures": [
@@ -1005,7 +1005,7 @@
                             {
                                 "signature": "DFTM",
                                 "type": "subrecord",
-                                "def": {
+                                "field": {
                                     "name": "Default Face Texture Male",
                                     "type": "formId",
                                     "signatures": [
@@ -1025,12 +1025,12 @@
                     },
                     {
                         "name": "Female Head Data",
-                        "type": "multiStruct",
-                        "subrecords": [
+                        "type": "memberStruct",
+                        "members": [
                             {
                                 "signature": "NAM0",
                                 "type": "subrecord",
-                                "def": {
+                                "field": {
                                     "name": "Head Data Marker",
                                     "type": "empty"
                                 },
@@ -1039,7 +1039,7 @@
                             {
                                 "signature": "FNAM",
                                 "type": "subrecord",
-                                "def": {
+                                "field": {
                                     "name": "Female Data Marker",
                                     "type": "empty"
                                 },
@@ -1047,8 +1047,8 @@
                             },
                             {
                                 "name": "Head Parts",
-                                "type": "subrecordArray",
-                                "subrecord": {
+                                "type": "memberArray",
+                                "member": {
                                     "def": "HeadPart"
                                 },
                                 "sorted": true
@@ -1058,11 +1058,11 @@
                             },
                             {
                                 "name": "Race Presets Female",
-                                "type": "subrecordArray",
-                                "subrecord": {
+                                "type": "memberArray",
+                                "member": {
                                     "signature": "RPRF",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Preset NPC",
                                         "type": "formId",
                                         "signatures": [
@@ -1075,11 +1075,11 @@
                             },
                             {
                                 "name": "Available Hair Colors Female",
-                                "type": "subrecordArray",
-                                "subrecord": {
+                                "type": "memberArray",
+                                "member": {
                                     "signature": "AHCF",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Hair Color",
                                         "type": "formId",
                                         "signatures": [
@@ -1092,11 +1092,11 @@
                             },
                             {
                                 "name": "Face Details Texture Set List Female",
-                                "type": "subrecordArray",
-                                "subrecord": {
+                                "type": "memberArray",
+                                "member": {
                                     "signature": "FTSF",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Texture Set",
                                         "type": "formId",
                                         "signatures": [
@@ -1110,7 +1110,7 @@
                             {
                                 "signature": "DFTF",
                                 "type": "subrecord",
-                                "def": {
+                                "field": {
                                     "name": "Default Face Texture Female",
                                     "type": "formId",
                                     "signatures": [
@@ -1134,7 +1134,7 @@
             {
                 "signature": "NAM8",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Morph race",
                     "type": "formId",
                     "signatures": [
@@ -1146,7 +1146,7 @@
             {
                 "signature": "RNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Armor race",
                     "type": "formId",
                     "signatures": [

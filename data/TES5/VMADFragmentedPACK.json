@@ -1,7 +1,7 @@
 {
     "signature": "VMAD",
     "type": "subrecord",
-    "def": {
+    "field": {
         "name": "Virtual Machine Adapter",
         "type": "struct",
         "fields": [
@@ -17,10 +17,10 @@
             },
             {
                 "name": "Scripts",
-                "entryDef": {
+                "type": "array",
+                "field": {
                     "def": "ScriptEntry"
                 },
-                "type": "array",
                 "sorted": true,
                 "prefix": 2
             },

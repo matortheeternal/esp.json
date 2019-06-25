@@ -17,15 +17,15 @@
             },
             {
                 "name": "Parts",
-                "type": "structArray",
-                "entryName": {
+                "type": "memberArray",
+                "member": {
                     "name": "Part",
-                    "type": "multiStruct",
-                    "subrecords": [
+                    "type": "memberStruct",
+                    "members": [
                         {
                             "signature": "ONAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Static",
                                 "type": "formId",
                                 "signatures": [
@@ -36,9 +36,10 @@
                         {
                             "signature": "DATA",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Placements",
-                                "entryDef": {
+                                "type": "array",
+                                "field": {
                                     "name": "Placement",
                                     "type": "struct",
                                     "fields": [
@@ -87,7 +88,6 @@
                                         }
                                     ]
                                 },
-                                "type": "array",
                                 "sorted": true
                             }
                         }

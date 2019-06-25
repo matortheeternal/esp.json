@@ -1,10 +1,10 @@
 let {
-    addDef, def, arrayOfSubrecord
+    addDef, def, memberArray
 } = require('../helpers');
 
 module.exports = () => {
     addDef('CTDAsCount', 
-        arrayOfSubrecord('Conditions', 
+        memberArray('Conditions', 
             def('CTDA')
         )
     );

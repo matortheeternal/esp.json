@@ -1,6 +1,6 @@
 let {
     def, uint8, string, flags, format, 
-    subrecord, struct, req, arrayOfStruct, multiStruct, 
+    subrecord, struct, req, memberArray, memberStruct, 
     record
 } = require('../helpers');
 
@@ -8,8 +8,8 @@ module.exports = () => {
     record('DEBR', 'Debris', {
         members: [
             def('EDID'),
-            req(arrayOfStruct('Models', 
-                multiStruct('Model', [
+            req(memberArray('Models', 
+                memberStruct('Model', [
                     req(subrecord('DATA', struct('Data', [
                         uint8('Percentage'),
                         string('Model FileName'),

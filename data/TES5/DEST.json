@@ -1,11 +1,11 @@
 {
     "name": "Destructible",
-    "type": "multiStruct",
-    "subrecords": [
+    "type": "memberStruct",
+    "members": [
         {
             "signature": "DEST",
             "type": "subrecord",
-            "def": {
+            "field": {
                 "name": "Header",
                 "type": "struct",
                 "fields": [
@@ -38,15 +38,15 @@
         },
         {
             "name": "Stages",
-            "type": "subrecordArray",
-            "subrecord": {
+            "type": "memberArray",
+            "member": {
                 "name": "Stage",
-                "type": "multiStruct",
-                "subrecords": [
+                "type": "memberStruct",
+                "members": [
                     {
                         "signature": "DSTD",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Destruction Stage Data",
                             "type": "struct",
                             "fields": [
@@ -105,12 +105,12 @@
                     },
                     {
                         "name": "Model",
-                        "type": "multiStruct",
-                        "subrecords": [
+                        "type": "memberStruct",
+                        "members": [
                             {
                                 "signature": "DMDL",
                                 "type": "subrecord",
-                                "def": {
+                                "field": {
                                     "name": "Model FileName",
                                     "type": "string"
                                 }
@@ -130,7 +130,7 @@
                     {
                         "signature": "DSTF",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "End Marker",
                             "type": "empty"
                         },

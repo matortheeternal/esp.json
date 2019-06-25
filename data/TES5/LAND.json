@@ -14,7 +14,7 @@
             {
                 "signature": "DATA",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Flags",
                     "type": "uint32",
                     "format": {
@@ -38,15 +38,17 @@
             {
                 "signature": "VNML",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Vertex Normals",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "Row",
                         "type": "struct",
                         "fields": [
                             {
                                 "name": "Columns",
-                                "entryDef": {
+                                "type": "array",
+                                "field": {
                                     "name": "Column",
                                     "type": "struct",
                                     "fields": [
@@ -64,19 +66,17 @@
                                         }
                                     ]
                                 },
-                                "type": "array",
                                 "size": 33
                             }
                         ]
                     },
-                    "type": "array",
                     "size": 33
                 }
             },
             {
                 "signature": "VHGT",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Vertext Height Map",
                     "type": "struct",
                     "fields": [
@@ -86,22 +86,22 @@
                         },
                         {
                             "name": "Rows",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "name": "Row",
                                 "type": "struct",
                                 "fields": [
                                     {
                                         "name": "Columns",
-                                        "entryDef": {
+                                        "type": "array",
+                                        "field": {
                                             "name": "Column",
                                             "type": "uint8"
                                         },
-                                        "type": "array",
                                         "size": 33
                                     }
                                 ]
                             },
-                            "type": "array",
                             "size": 33
                         },
                         {
@@ -115,15 +115,17 @@
             {
                 "signature": "VCLR",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Vertex Colours",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "Row",
                         "type": "struct",
                         "fields": [
                             {
                                 "name": "Columns",
-                                "entryDef": {
+                                "type": "array",
+                                "field": {
                                     "name": "Column",
                                     "type": "struct",
                                     "fields": [
@@ -141,30 +143,28 @@
                                         }
                                     ]
                                 },
-                                "type": "array",
                                 "size": 33
                             }
                         ]
                     },
-                    "type": "array",
                     "size": 33
                 }
             },
             {
                 "name": "Layers",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "name": "Layer",
-                    "type": "multiUnion",
-                    "subrecords": [
+                    "type": "memberUnion",
+                    "members": [
                         {
                             "name": "Base Layer",
-                            "type": "multiStruct",
-                            "subrecords": [
+                            "type": "memberStruct",
+                            "members": [
                                 {
                                     "signature": "BTXT",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Base Layer Header",
                                         "type": "struct",
                                         "fields": [
@@ -206,12 +206,12 @@
                         },
                         {
                             "name": "Alpha Layer",
-                            "type": "multiStruct",
-                            "subrecords": [
+                            "type": "memberStruct",
+                            "members": [
                                 {
                                     "signature": "ATXT",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Alpha Layer Header",
                                         "type": "struct",
                                         "fields": [
@@ -249,9 +249,10 @@
                                 {
                                     "signature": "VTXT",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Alpha Layer Data",
-                                        "entryDef": {
+                                        "type": "array",
+                                        "field": {
                                             "name": "Cell",
                                             "type": "struct",
                                             "fields": [
@@ -276,7 +277,6 @@
                                                 0
                                             ]
                                         },
-                                        "type": "array",
                                         "sorted": true
                                     }
                                 }
@@ -292,26 +292,26 @@
             {
                 "signature": "VTEX",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Textures",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "Texture",
                         "type": "formId",
                         "signatures": [
                             "LTEX",
                             "NULL"
                         ]
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "name": "Unknown",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "signature": "MPCD",
                     "type": "subrecord",
-                    "def": {
+                    "field": {
                         "name": "Unknown",
                         "type": "bytes"
                     }

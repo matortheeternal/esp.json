@@ -2,12 +2,12 @@ let {
     addDef, int32, uint8, enumeration, format, 
     bytes, size, subrecord, struct, flags, 
     ckFormId, req, string, def, sortKey, 
-    multiStruct, empty, arrayOfSubrecord
+    memberStruct, empty, memberArray
 } = require('../helpers');
 
 module.exports = () => {
     addDef('DEST', 
-        req(multiStruct('Destructible', [
+        req(memberStruct('Destructible', [
             subrecord('DEST', struct('Header', [
                 int32('Health'),
                 uint8('DEST Count'),
@@ -17,8 +17,8 @@ module.exports = () => {
                 })),
                 size(2, bytes('Unknown'))
             ])),
-            arrayOfSubrecord('Stages', 
-                req(multiStruct('Stage', [
+            memberArray('Stages', 
+                req(memberStruct('Stage', [
                     req(subrecord('DSTD', struct('Destruction Stage Data', [
                         uint8('Health %'),
                         uint8('Index'),
@@ -34,7 +34,7 @@ module.exports = () => {
                         ckFormId('Debris', ['DEBR', 'NULL']),
                         int32('Debris Count')
                     ]))),
-                    req(sortKey([0], multiStruct('Model', [
+                    req(sortKey([0], memberStruct('Model', [
                         subrecord('DMDL', string('Model FileName')),
                         def('DMDT'),
                         def('DMDSs')

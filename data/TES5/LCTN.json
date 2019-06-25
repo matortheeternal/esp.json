@@ -10,9 +10,10 @@
             {
                 "signature": "ACPR",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Actor Cell Persistent Reference",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "",
                         "type": "struct",
                         "fields": [
@@ -50,16 +51,16 @@
                                 "type": "int16"
                             }
                         ]
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "LCPR",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Location Cell Persistent Reference",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "",
                         "type": "struct",
                         "fields": [
@@ -97,32 +98,32 @@
                                 "type": "int16"
                             }
                         ]
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "RCPR",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Reference Cell Persistent Reference",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "Ref",
                         "type": "formId",
                         "signatures": [
                             "ACHR",
                             "REFR"
                         ]
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "ACUN",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Actor Cell Unique",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "",
                         "type": "struct",
                         "fields": [
@@ -149,16 +150,16 @@
                                 ]
                             }
                         ]
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "LCUN",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Location Cell Unique",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "",
                         "type": "struct",
                         "fields": [
@@ -185,31 +186,31 @@
                                 ]
                             }
                         ]
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "RCUN",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Reference Cell Unique",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "Actor",
                         "type": "formId",
                         "signatures": [
                             "NPC_"
                         ]
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "ACSR",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Actor Cell Static Reference",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "",
                         "type": "struct",
                         "fields": [
@@ -254,16 +255,16 @@
                                 "type": "int16"
                             }
                         ]
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "LCSR",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Location Cell Static Reference",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "",
                         "type": "struct",
                         "fields": [
@@ -308,33 +309,32 @@
                                 "type": "int16"
                             }
                         ]
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "RCSR",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Reference Cell Static Reference",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "Ref",
                         "type": "formId",
                         "signatures": [
                             "ACHR",
                             "REFR"
                         ]
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "name": "Actor Cell Encounter Cell",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "signature": "ACEC",
                     "type": "subrecord",
-                    "def": {
+                    "field": {
                         "name": "Unknown",
                         "type": "struct",
                         "fields": [
@@ -348,7 +348,8 @@
                             },
                             {
                                 "name": "Coordinates",
-                                "entryDef": {
+                                "type": "array",
+                                "field": {
                                     "name": "",
                                     "type": "struct",
                                     "fields": [
@@ -361,8 +362,7 @@
                                             "type": "int16"
                                         }
                                     ]
-                                },
-                                "type": "array"
+                                }
                             }
                         ]
                     }
@@ -370,11 +370,11 @@
             },
             {
                 "name": "Location Cell Encounter Cell",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "signature": "LCEC",
                     "type": "subrecord",
-                    "def": {
+                    "field": {
                         "name": "Unknown",
                         "type": "struct",
                         "fields": [
@@ -388,7 +388,8 @@
                             },
                             {
                                 "name": "Coordinates",
-                                "entryDef": {
+                                "type": "array",
+                                "field": {
                                     "name": "",
                                     "type": "struct",
                                     "fields": [
@@ -401,8 +402,7 @@
                                             "type": "int16"
                                         }
                                     ]
-                                },
-                                "type": "array"
+                                }
                             }
                         ]
                     }
@@ -410,11 +410,11 @@
             },
             {
                 "name": "Reference Cell Encounter Cell",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "signature": "RCEC",
                     "type": "subrecord",
-                    "def": {
+                    "field": {
                         "name": "Unknown",
                         "type": "struct",
                         "fields": [
@@ -428,7 +428,8 @@
                             },
                             {
                                 "name": "Coordinates",
-                                "entryDef": {
+                                "type": "array",
+                                "field": {
                                     "name": "",
                                     "type": "struct",
                                     "fields": [
@@ -441,8 +442,7 @@
                                             "type": "int16"
                                         }
                                     ]
-                                },
-                                "type": "array"
+                                }
                             }
                         ]
                     }
@@ -451,9 +451,10 @@
             {
                 "signature": "ACID",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Actor Cell Marker Reference",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "Ref",
                         "type": "formId",
                         "signatures": [
@@ -469,16 +470,16 @@
                             "PCON",
                             "PFLA"
                         ]
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "LCID",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Location Cell Marker Reference",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "Ref",
                         "type": "formId",
                         "signatures": [
@@ -494,16 +495,16 @@
                             "PCON",
                             "PFLA"
                         ]
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "ACEP",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Actor Cell Enable Point",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "",
                         "type": "struct",
                         "fields": [
@@ -550,16 +551,16 @@
                                 "type": "int16"
                             }
                         ]
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "LCEP",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Location Cell Enable Point",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "",
                         "type": "struct",
                         "fields": [
@@ -606,8 +607,7 @@
                                 "type": "int16"
                             }
                         ]
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
@@ -622,7 +622,7 @@
             {
                 "signature": "PNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Parent Location",
                     "type": "formId",
                     "signatures": [
@@ -634,7 +634,7 @@
             {
                 "signature": "NAM1",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Music",
                     "type": "formId",
                     "signatures": [
@@ -646,7 +646,7 @@
             {
                 "signature": "FNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unreported Crime Faction",
                     "type": "formId",
                     "signatures": [
@@ -657,7 +657,7 @@
             {
                 "signature": "MNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "World Location Marker Ref",
                     "type": "formId",
                     "signatures": [
@@ -669,7 +669,7 @@
             {
                 "signature": "RNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "World Location Radius",
                     "type": "float"
                 }
@@ -677,7 +677,7 @@
             {
                 "signature": "NAM0",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Horse Marker Ref",
                     "type": "formId",
                     "signatures": [

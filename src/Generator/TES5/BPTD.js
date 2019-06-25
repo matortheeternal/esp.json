@@ -2,7 +2,7 @@ let {
     def, subrecord, localized, string, req, 
     float, flags, uint8, format, enumeration, 
     int8, uint16, ckFormId, int32, struct, 
-    bytes, size, arrayOfStruct, sortKey, multiStruct, 
+    bytes, size, memberArray, sortKey, memberStruct, 
     record
 } = require('../helpers');
 
@@ -11,8 +11,8 @@ module.exports = () => {
         members: [
             def('EDID'),
             def('MODL'),
-            req(arrayOfStruct('Body Parts', 
-                sortKey([2], multiStruct('Body Part', [
+            req(memberArray('Body Parts', 
+                sortKey([2], memberStruct('Body Part', [
                     req(subrecord('BPTN', localized(string('Part Name')))),
                     req(subrecord('PNAM', string('Pose Matching'))),
                     req(subrecord('BPNN', string('Part Node'))),

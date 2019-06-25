@@ -41,7 +41,7 @@
             {
                 "signature": "PNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 },
@@ -50,7 +50,7 @@
             {
                 "signature": "SNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Looping Sound",
                     "type": "formId",
                     "signatures": [
@@ -61,7 +61,7 @@
             {
                 "signature": "FNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 },
@@ -70,7 +70,7 @@
             {
                 "signature": "VNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Voice Type",
                     "type": "formId",
                     "signatures": [

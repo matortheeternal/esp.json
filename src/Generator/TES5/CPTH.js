@@ -1,6 +1,6 @@
 let {
     def, ckFormId, subrecord, array, enumeration, 
-    uint8, format, arrayOfSubrecord, record
+    uint8, format, memberArray, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -19,7 +19,7 @@ module.exports = () => {
                 129: 'Disable',
                 130: 'Shot List'
             }))),
-            arrayOfSubrecord('Camera Shots', 
+            memberArray('Camera Shots', 
                 subrecord('SNAM', ckFormId('Camera Shot', ['CAMS']))
             )
         ]

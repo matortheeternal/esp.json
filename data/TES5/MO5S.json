@@ -1,9 +1,10 @@
 {
     "signature": "MO5S",
     "type": "subrecord",
-    "def": {
+    "field": {
         "name": "Alternate Textures",
-        "entryDef": {
+        "type": "array",
+        "field": {
             "name": "Alternate Texture",
             "type": "struct",
             "fields": [
@@ -29,7 +30,6 @@
                 2
             ]
         },
-        "type": "array",
         "sorted": true,
         "prefix": 4
     }

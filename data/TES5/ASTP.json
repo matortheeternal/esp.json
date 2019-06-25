@@ -10,7 +10,7 @@
             {
                 "signature": "MPRT",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Male Parent Title",
                     "type": "string"
                 }
@@ -18,7 +18,7 @@
             {
                 "signature": "FPRT",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Female Parent Title",
                     "type": "string"
                 }
@@ -26,7 +26,7 @@
             {
                 "signature": "MCHT",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Male Child Title",
                     "type": "string"
                 }
@@ -34,7 +34,7 @@
             {
                 "signature": "FCHT",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Female Child Title",
                     "type": "string"
                 }
@@ -42,7 +42,7 @@
             {
                 "signature": "DATA",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Flags",
                     "type": "uint32",
                     "format": {

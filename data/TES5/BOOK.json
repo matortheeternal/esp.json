@@ -26,7 +26,7 @@
             {
                 "signature": "DESC",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Book Text",
                     "type": "string",
                     "localized": true
@@ -51,7 +51,7 @@
             {
                 "signature": "DATA",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Data",
                     "type": "struct",
                     "fields": [
@@ -124,7 +124,7 @@
             {
                 "signature": "INAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Inventory Art",
                     "type": "formId",
                     "signatures": [
@@ -135,7 +135,7 @@
             {
                 "signature": "CNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Description",
                     "type": "string",
                     "localized": true

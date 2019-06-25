@@ -1,6 +1,6 @@
 let {
-    def, subrecord, ckFormId, req, arrayOfSubrecord, 
-    unknown, multiStruct, record
+    def, subrecord, ckFormId, req, memberArray, 
+    unknown, memberStruct, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -8,11 +8,11 @@ module.exports = () => {
         members: [
             def('EDID'),
             req(subrecord('QNAM', ckFormId('Quest', ['QUST']))),
-            arrayOfSubrecord('Branches', 
+            memberArray('Branches', 
                 subrecord('BNAM', ckFormId('Branch', ['DLBR']))
             ),
-            arrayOfSubrecord('Unknown TNAM', 
-                multiStruct('Unknown', [
+            memberArray('Unknown TNAM', 
+                memberStruct('Unknown', [
                     subrecord('TNAM', unknown())
                 ])
             ),

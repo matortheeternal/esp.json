@@ -10,7 +10,7 @@
             {
                 "signature": "CNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Intensity",
                     "type": "float"
                 }
@@ -18,7 +18,7 @@
             {
                 "signature": "DNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Custom Color - Contribution",
                     "type": "float"
                 }
@@ -26,7 +26,7 @@
             {
                 "signature": "ENAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Red",
                     "type": "float"
                 },
@@ -35,7 +35,7 @@
             {
                 "signature": "FNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Green",
                     "type": "float"
                 },
@@ -44,7 +44,7 @@
             {
                 "signature": "GNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Blue",
                     "type": "float"
                 },
@@ -53,7 +53,7 @@
             {
                 "signature": "HNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Density - Contribution",
                     "type": "float"
                 }
@@ -61,7 +61,7 @@
             {
                 "signature": "INAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Density - Size",
                     "type": "float"
                 }
@@ -69,7 +69,7 @@
             {
                 "signature": "JNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Density - Wind Speed",
                     "type": "float"
                 }
@@ -77,7 +77,7 @@
             {
                 "signature": "KNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Density - Falling Speed",
                     "type": "float"
                 }
@@ -85,7 +85,7 @@
             {
                 "signature": "LNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Phase Function - Contribution",
                     "type": "float"
                 }
@@ -93,7 +93,7 @@
             {
                 "signature": "MNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Phase Function - Scattering",
                     "type": "float"
                 }
@@ -101,7 +101,7 @@
             {
                 "signature": "NNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Sampling Repartition - Range Factor",
                     "type": "float"
                 }

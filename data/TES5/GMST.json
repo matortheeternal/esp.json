@@ -7,7 +7,7 @@
             {
                 "signature": "EDID",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Editor ID",
                     "type": "string"
                 },
@@ -16,7 +16,7 @@
             {
                 "signature": "DATA",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Value",
                     "type": "union",
                     "decider": [

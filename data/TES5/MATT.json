@@ -10,7 +10,7 @@
             {
                 "signature": "PNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Material Parent",
                     "type": "formId",
                     "signatures": [
@@ -22,7 +22,7 @@
             {
                 "signature": "MNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Material Name",
                     "type": "string"
                 }
@@ -30,7 +30,7 @@
             {
                 "signature": "CNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Havok Display Color",
                     "type": "struct",
                     "fields": [
@@ -55,7 +55,7 @@
             {
                 "signature": "BNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Buoyancy",
                     "type": "float"
                 }
@@ -63,7 +63,7 @@
             {
                 "signature": "FNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Flags",
                     "type": "uint32",
                     "format": {
@@ -78,7 +78,7 @@
             {
                 "signature": "HNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Havok Impact Data Set",
                     "type": "formId",
                     "signatures": [

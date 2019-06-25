@@ -24,7 +24,8 @@
         },
         {
             "name": "Fragments",
-            "entryDef": {
+            "type": "array",
+            "field": {
                 "name": "Fragment",
                 "type": "struct",
                 "fields": [
@@ -43,12 +44,12 @@
                         "prefix": 2
                     }
                 ]
-            },
-            "type": "array"
+            }
         },
         {
             "name": "Phase Fragments",
-            "entryDef": {
+            "type": "array",
+            "field": {
                 "name": "Phase Fragment",
                 "type": "struct",
                 "fields": [
@@ -95,7 +96,6 @@
                     1
                 ]
             },
-            "type": "array",
             "prefix": 2
         }
     ]

@@ -10,7 +10,7 @@
             {
                 "signature": "TNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Texture Set",
                     "type": "formId",
                     "signatures": [
@@ -22,7 +22,7 @@
             {
                 "signature": "MNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Material Type",
                     "type": "formId",
                     "signatures": [
@@ -35,7 +35,7 @@
             {
                 "signature": "HNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Havok Data",
                     "type": "struct",
                     "fields": [
@@ -54,18 +54,18 @@
             {
                 "signature": "SNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Texture Specular Exponent",
                     "type": "uint8"
                 }
             },
             {
                 "name": "Grasses",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "signature": "GNAM",
                     "type": "subrecord",
-                    "def": {
+                    "field": {
                         "name": "Grass",
                         "type": "formId",
                         "signatures": [
@@ -78,7 +78,7 @@
             {
                 "signature": "INAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unused",
                     "type": "uint32",
                     "format": {

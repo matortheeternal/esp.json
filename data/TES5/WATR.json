@@ -12,11 +12,11 @@
             },
             {
                 "name": "Unused",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "signature": "NNAM",
                     "type": "subrecord",
-                    "def": {
+                    "field": {
                         "name": "Noise Map",
                         "type": "string"
                     },
@@ -26,7 +26,7 @@
             {
                 "signature": "ANAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Opacity",
                     "type": "uint8"
                 }
@@ -34,7 +34,7 @@
             {
                 "signature": "FNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Flags",
                     "type": "uint8",
                     "format": {
@@ -55,7 +55,7 @@
             {
                 "signature": "MNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unused",
                     "type": "bytes"
                 }
@@ -63,7 +63,7 @@
             {
                 "signature": "TNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Material",
                     "type": "formId",
                     "signatures": [
@@ -74,7 +74,7 @@
             {
                 "signature": "SNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Open Sound",
                     "type": "formId",
                     "signatures": [
@@ -86,7 +86,7 @@
             {
                 "signature": "XNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Spell",
                     "type": "formId",
                     "signatures": [
@@ -97,7 +97,7 @@
             {
                 "signature": "INAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Image Space",
                     "type": "formId",
                     "signatures": [
@@ -108,7 +108,7 @@
             {
                 "signature": "DATA",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Damage Per Second",
                     "type": "uint16"
                 }
@@ -116,7 +116,7 @@
             {
                 "signature": "DNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Visual Data",
                     "type": "struct",
                     "fields": [
@@ -356,7 +356,7 @@
             {
                 "signature": "GNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unused",
                     "type": "bytes"
                 }
@@ -364,7 +364,7 @@
             {
                 "signature": "NAM0",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Linear Velocity",
                     "type": "struct",
                     "fields": [
@@ -387,7 +387,7 @@
             {
                 "signature": "NAM1",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Angular Velocity",
                     "type": "struct",
                     "fields": [
@@ -410,7 +410,7 @@
             {
                 "signature": "NAM2",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Noise Layer One - Noise Texture",
                     "type": "string"
                 },
@@ -419,7 +419,7 @@
             {
                 "signature": "NAM3",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Noise Layer Two - Noise Texture",
                     "type": "string"
                 },
@@ -428,7 +428,7 @@
             {
                 "signature": "NAM4",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Noise Layer Three - Noise Texture",
                     "type": "string"
                 },
@@ -437,7 +437,7 @@
             {
                 "signature": "NAM5",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Flow Normals - Noise Texture",
                     "type": "string"
                 },

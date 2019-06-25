@@ -13,7 +13,7 @@
             {
                 "signature": "DNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "FileName",
                     "type": "string"
                 }
@@ -21,7 +21,7 @@
             {
                 "signature": "ENAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Animation Event",
                     "type": "string"
                 }
@@ -29,9 +29,10 @@
             {
                 "signature": "ANAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Related Idle Animations",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "Related Idle Animation",
                         "type": "formId",
                         "signatures": [
@@ -39,14 +40,13 @@
                             "IDLE",
                             "NULL"
                         ]
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "DATA",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Data (unused)",
                     "type": "struct",
                     "fields": [

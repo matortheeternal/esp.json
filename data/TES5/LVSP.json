@@ -17,7 +17,7 @@
             {
                 "signature": "LVLF",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Flags",
                     "type": "uint8",
                     "format": {
@@ -35,15 +35,15 @@
             },
             {
                 "name": "Leveled List Entries",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "name": "Leveled List Entry",
-                    "type": "multiStruct",
-                    "subrecords": [
+                    "type": "memberStruct",
+                    "members": [
                         {
                             "signature": "LVLO",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Base Data",
                                 "type": "struct",
                                 "fields": [

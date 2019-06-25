@@ -2,9 +2,9 @@ let {
     flags, def, req, uint32, format, 
     int16, div, union, uint16, subrecord, 
     struct, ckFormId, int8, bytes, size, 
-    sortKey, sorted, arrayOfSubrecord, uint8, localized, 
+    sortKey, sorted, memberArray, uint8, localized, 
     string, array, float, unknown, int32, 
-    multiStruct, record
+    memberStruct, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -83,7 +83,7 @@ module.exports = () => {
                 int16('Health Offset'),
                 uint16('Bleedout Override')
             ]))),
-            req(sorted(arrayOfSubrecord('Factions', 
+            req(sorted(memberArray('Factions', 
                 subrecord('SNAM', sortKey([0], struct('Faction', [
                     ckFormId('Faction', ['FACT']),
                     int8('Rank'),
@@ -100,7 +100,7 @@ module.exports = () => {
             req(subrecord('WNAM', ckFormId('Worn Armor', ['ARMO']))),
             req(subrecord('ANAM', ckFormId('Far away model', ['ARMO']))),
             req(subrecord('ATKR', ckFormId('Attack Race', ['RACE']))),
-            sorted(arrayOfSubrecord('Attacks', 
+            sorted(memberArray('Attacks', 
                 def('AttackData')
             )),
             req(subrecord('SPOR', ckFormId('Spectator override package list', ['FLST']))),
@@ -108,7 +108,7 @@ module.exports = () => {
             req(subrecord('GWOR', ckFormId('Guard warn override package list', ['FLST']))),
             req(subrecord('ECOR', ckFormId('Combat override package list', ['FLST']))),
             subrecord('PRKZ', uint32('Perk Count')),
-            req(sorted(arrayOfSubrecord('Perks', 
+            req(sorted(memberArray('Perks', 
                 subrecord('PRKR', sortKey([0], struct('Perk', [
                     ckFormId('Perk', ['PERK']),
                     uint8('Rank'),
@@ -118,7 +118,7 @@ module.exports = () => {
             def('COCT'),
             def('CNTOs'),
             def('AIDT'),
-            arrayOfSubrecord('Packages', 
+            memberArray('Packages', 
                 subrecord('PKID', ckFormId('Package', ['PACK']))
             ),
             def('KSIZ'),
@@ -142,7 +142,7 @@ module.exports = () => {
                 uint8('Geared up weapons'),
                 size(3, bytes('Unused'))
             ]))),
-            req(sorted(arrayOfSubrecord('Head Parts', 
+            req(sorted(memberArray('Head Parts', 
                 subrecord('PNAM', ckFormId('Head Part', ['HDPT']))
             ))),
             req(subrecord('HCLF', ckFormId('Hair Color', ['CLFM']))),
@@ -191,8 +191,8 @@ module.exports = () => {
                 uint32('Eyes'),
                 uint32('Mouth')
             ])),
-            sorted(arrayOfSubrecord('Tint Layers', 
-                sortKey([0], multiStruct('Layer', [
+            sorted(memberArray('Tint Layers', 
+                sortKey([0], memberStruct('Layer', [
                     subrecord('TINI', format(uint16('Tint Index'), def('TintLayerToStr'))),
                     subrecord('TINC', struct('Tint Color', [
                         uint8('Red'),

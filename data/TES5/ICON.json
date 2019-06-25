@@ -1,11 +1,11 @@
 {
     "name": "Icon",
-    "type": "multiStruct",
-    "subrecords": [
+    "type": "memberStruct",
+    "members": [
         {
             "signature": "ICON",
             "type": "subrecord",
-            "def": {
+            "field": {
                 "name": "Large Icon FileName",
                 "type": "string"
             },
@@ -14,7 +14,7 @@
         {
             "signature": "MICO",
             "type": "subrecord",
-            "def": {
+            "field": {
                 "name": "Small Icon FileName",
                 "type": "string"
             }

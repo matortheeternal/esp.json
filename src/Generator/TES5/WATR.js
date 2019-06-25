@@ -1,5 +1,5 @@
 let {
-    def, subrecord, string, req, arrayOfSubrecord, 
+    def, subrecord, string, req, memberArray, 
     uint8, IsSSE, flags, format, bytes, 
     ckFormId, uint16, float, size, struct, 
     record
@@ -10,7 +10,7 @@ module.exports = game => {
         members: [
             def('EDID'),
             def('FULL'),
-            arrayOfSubrecord('Unused', 
+            memberArray('Unused', 
                 req(subrecord('NNAM', string('Noise Map')))
             ),
             subrecord('ANAM', uint8('Opacity')),

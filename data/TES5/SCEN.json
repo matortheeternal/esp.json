@@ -13,7 +13,7 @@
             {
                 "signature": "FNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Flags",
                     "type": "uint32",
                     "format": {
@@ -30,15 +30,15 @@
             },
             {
                 "name": "Phases",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "name": "Phase",
-                    "type": "multiStruct",
-                    "subrecords": [
+                    "type": "memberStruct",
+                    "members": [
                         {
                             "signature": "HNAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Marker Phase Start",
                                 "type": "empty"
                             }
@@ -46,15 +46,15 @@
                         {
                             "signature": "NAM0",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Name",
                                 "type": "string"
                             }
                         },
                         {
                             "name": "Start Conditions",
-                            "type": "multiStruct",
-                            "subrecords": [
+                            "type": "memberStruct",
+                            "members": [
                                 {
                                     "def": "CTDAs"
                                 }
@@ -63,15 +63,15 @@
                         {
                             "signature": "NEXT",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Marker",
                                 "type": "empty"
                             }
                         },
                         {
                             "name": "Completion Conditions",
-                            "type": "multiStruct",
-                            "subrecords": [
+                            "type": "memberStruct",
+                            "members": [
                                 {
                                     "def": "CTDAs"
                                 }
@@ -79,12 +79,12 @@
                         },
                         {
                             "name": "Unused",
-                            "type": "multiStruct",
-                            "subrecords": [
+                            "type": "memberStruct",
+                            "members": [
                                 {
                                     "signature": "SCHR",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Unknown",
                                         "type": "bytes"
                                     }
@@ -92,7 +92,7 @@
                                 {
                                     "signature": "SCDA",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Unknown",
                                         "type": "bytes"
                                     }
@@ -100,7 +100,7 @@
                                 {
                                     "signature": "SCTX",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Unknown",
                                         "type": "bytes"
                                     }
@@ -108,7 +108,7 @@
                                 {
                                     "signature": "QNAM",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Unknown",
                                         "type": "bytes"
                                     }
@@ -116,7 +116,7 @@
                                 {
                                     "signature": "SCRO",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Unknown",
                                         "type": "bytes"
                                     }
@@ -127,19 +127,19 @@
                         {
                             "signature": "NEXT",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Marker",
                                 "type": "empty"
                             }
                         },
                         {
                             "name": "Unused",
-                            "type": "multiStruct",
-                            "subrecords": [
+                            "type": "memberStruct",
+                            "members": [
                                 {
                                     "signature": "SCHR",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Unknown",
                                         "type": "bytes"
                                     }
@@ -147,7 +147,7 @@
                                 {
                                     "signature": "SCDA",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Unknown",
                                         "type": "bytes"
                                     }
@@ -155,7 +155,7 @@
                                 {
                                     "signature": "SCTX",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Unknown",
                                         "type": "bytes"
                                     }
@@ -163,7 +163,7 @@
                                 {
                                     "signature": "QNAM",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Unknown",
                                         "type": "bytes"
                                     }
@@ -171,7 +171,7 @@
                                 {
                                     "signature": "SCRO",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Unknown",
                                         "type": "bytes"
                                     }
@@ -182,7 +182,7 @@
                         {
                             "signature": "WNAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Editor Width",
                                 "type": "uint32"
                             }
@@ -190,7 +190,7 @@
                         {
                             "signature": "HNAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Marker Phase End",
                                 "type": "empty"
                             }
@@ -200,15 +200,15 @@
             },
             {
                 "name": "Actors",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "name": "Actor",
-                    "type": "multiStruct",
-                    "subrecords": [
+                    "type": "memberStruct",
+                    "members": [
                         {
                             "signature": "ALID",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Actor ID",
                                 "type": "uint32"
                             }
@@ -216,7 +216,7 @@
                         {
                             "signature": "LNAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Flags",
                                 "type": "uint32",
                                 "format": {
@@ -231,7 +231,7 @@
                         {
                             "signature": "DNAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Behaviour Flags",
                                 "type": "uint32",
                                 "format": {
@@ -254,15 +254,15 @@
             },
             {
                 "name": "Actions",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "name": "Action",
-                    "type": "multiStruct",
-                    "subrecords": [
+                    "type": "memberStruct",
+                    "members": [
                         {
                             "signature": "ANAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Type",
                                 "type": "uint16",
                                 "format": {
@@ -278,7 +278,7 @@
                         {
                             "signature": "NAM0",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Name",
                                 "type": "string"
                             }
@@ -286,7 +286,7 @@
                         {
                             "signature": "ALID",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Actor ID",
                                 "type": "int32"
                             }
@@ -294,7 +294,7 @@
                         {
                             "signature": "LNAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Unknown",
                                 "type": "bytes"
                             }
@@ -302,7 +302,7 @@
                         {
                             "signature": "INAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Index",
                                 "type": "uint32"
                             }
@@ -310,7 +310,7 @@
                         {
                             "signature": "FNAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Flags",
                                 "type": "uint32",
                                 "format": {
@@ -341,7 +341,7 @@
                         {
                             "signature": "SNAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Start Phase",
                                 "type": "uint32"
                             }
@@ -349,7 +349,7 @@
                         {
                             "signature": "ENAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "End Phase",
                                 "type": "uint32"
                             }
@@ -357,18 +357,18 @@
                         {
                             "signature": "SNAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Timer Seconds",
                                 "type": "float"
                             }
                         },
                         {
                             "name": "Packages",
-                            "type": "subrecordArray",
-                            "subrecord": {
+                            "type": "memberArray",
+                            "member": {
                                 "signature": "PNAM",
                                 "type": "subrecord",
-                                "def": {
+                                "field": {
                                     "name": "Package",
                                     "type": "formId",
                                     "signatures": [
@@ -380,7 +380,7 @@
                         {
                             "signature": "DATA",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Topic",
                                 "type": "formId",
                                 "signatures": [
@@ -392,7 +392,7 @@
                         {
                             "signature": "HTID",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Headtrack Actor ID",
                                 "type": "int32"
                             }
@@ -400,7 +400,7 @@
                         {
                             "signature": "DMAX",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Looping - Max",
                                 "type": "float"
                             }
@@ -408,7 +408,7 @@
                         {
                             "signature": "DMIN",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Looping - Min",
                                 "type": "float"
                             }
@@ -416,7 +416,7 @@
                         {
                             "signature": "DEMO",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Emotion Type",
                                 "type": "uint32",
                                 "format": {
@@ -427,19 +427,19 @@
                         {
                             "signature": "DEVA",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Emotion Value",
                                 "type": "uint32"
                             }
                         },
                         {
                             "name": "Unused",
-                            "type": "multiStruct",
-                            "subrecords": [
+                            "type": "memberStruct",
+                            "members": [
                                 {
                                     "signature": "SCHR",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Unknown",
                                         "type": "bytes"
                                     }
@@ -447,7 +447,7 @@
                                 {
                                     "signature": "SCDA",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Unknown",
                                         "type": "bytes"
                                     }
@@ -455,7 +455,7 @@
                                 {
                                     "signature": "SCTX",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Unknown",
                                         "type": "bytes"
                                     }
@@ -463,7 +463,7 @@
                                 {
                                     "signature": "QNAM",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Unknown",
                                         "type": "bytes"
                                     }
@@ -471,7 +471,7 @@
                                 {
                                     "signature": "SCRO",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Unknown",
                                         "type": "bytes"
                                     }
@@ -482,7 +482,7 @@
                         {
                             "signature": "ANAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "End Marker",
                                 "type": "empty"
                             }
@@ -492,12 +492,12 @@
             },
             {
                 "name": "Unused",
-                "type": "multiStruct",
-                "subrecords": [
+                "type": "memberStruct",
+                "members": [
                     {
                         "signature": "SCHR",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Unknown",
                             "type": "bytes"
                         }
@@ -505,7 +505,7 @@
                     {
                         "signature": "SCDA",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Unknown",
                             "type": "bytes"
                         }
@@ -513,7 +513,7 @@
                     {
                         "signature": "SCTX",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Unknown",
                             "type": "bytes"
                         }
@@ -521,7 +521,7 @@
                     {
                         "signature": "QNAM",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Unknown",
                             "type": "bytes"
                         }
@@ -529,7 +529,7 @@
                     {
                         "signature": "SCRO",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Unknown",
                             "type": "bytes"
                         }
@@ -540,19 +540,19 @@
             {
                 "signature": "NEXT",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Marker",
                     "type": "empty"
                 }
             },
             {
                 "name": "Unused",
-                "type": "multiStruct",
-                "subrecords": [
+                "type": "memberStruct",
+                "members": [
                     {
                         "signature": "SCHR",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Unknown",
                             "type": "bytes"
                         }
@@ -560,7 +560,7 @@
                     {
                         "signature": "SCDA",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Unknown",
                             "type": "bytes"
                         }
@@ -568,7 +568,7 @@
                     {
                         "signature": "SCTX",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Unknown",
                             "type": "bytes"
                         }
@@ -576,7 +576,7 @@
                     {
                         "signature": "QNAM",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Unknown",
                             "type": "bytes"
                         }
@@ -584,7 +584,7 @@
                     {
                         "signature": "SCRO",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Unknown",
                             "type": "bytes"
                         }
@@ -595,7 +595,7 @@
             {
                 "signature": "PNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Quest",
                     "type": "formId",
                     "signatures": [
@@ -606,7 +606,7 @@
             {
                 "signature": "INAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Last Action Index",
                     "type": "uint32"
                 }
@@ -614,7 +614,7 @@
             {
                 "signature": "VNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }

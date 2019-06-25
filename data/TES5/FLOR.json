@@ -33,7 +33,7 @@
             {
                 "signature": "PNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -41,7 +41,7 @@
             {
                 "signature": "RNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Activate Text Override",
                     "type": "string",
                     "localized": true
@@ -50,7 +50,7 @@
             {
                 "signature": "FNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -58,7 +58,7 @@
             {
                 "signature": "PFIG",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Ingredient",
                     "type": "formId",
                     "signatures": [
@@ -73,7 +73,7 @@
             {
                 "signature": "SNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Sound",
                     "type": "formId",
                     "signatures": [
@@ -85,7 +85,7 @@
             {
                 "signature": "PFPC",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Seasonal ingredient production",
                     "type": "struct",
                     "fields": [

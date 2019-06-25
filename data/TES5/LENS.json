@@ -10,7 +10,7 @@
             {
                 "signature": "CNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Color Influence",
                     "type": "float"
                 }
@@ -18,7 +18,7 @@
             {
                 "signature": "DNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Fade Distance Radius Scale",
                     "type": "float"
                 }
@@ -26,22 +26,22 @@
             {
                 "signature": "LFSP",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Count",
                     "type": "uint32"
                 }
             },
             {
                 "name": "Lens Flare Sprites",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "name": "Flare",
-                    "type": "multiStruct",
-                    "subrecords": [
+                    "type": "memberStruct",
+                    "members": [
                         {
                             "signature": "DNAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Lens Flare Sprite ID",
                                 "type": "string"
                             }
@@ -49,7 +49,7 @@
                         {
                             "signature": "FNAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Texture",
                                 "type": "string"
                             }
@@ -57,7 +57,7 @@
                         {
                             "signature": "LFSD",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Lens Flare Data",
                                 "type": "struct",
                                 "fields": [

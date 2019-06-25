@@ -10,7 +10,7 @@
             {
                 "signature": "ENAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -18,7 +18,7 @@
             {
                 "signature": "HNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "HDR",
                     "type": "struct",
                     "fields": [
@@ -64,7 +64,7 @@
             {
                 "signature": "CNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Cinematic",
                     "type": "struct",
                     "fields": [
@@ -86,7 +86,7 @@
             {
                 "signature": "TNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Tint",
                     "type": "struct",
                     "fields": [
@@ -104,7 +104,7 @@
             {
                 "signature": "DNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Depth of Field",
                     "type": "struct",
                     "fields": [

@@ -13,7 +13,7 @@
             {
                 "signature": "TNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Translation",
                     "type": "string",
                     "localized": true

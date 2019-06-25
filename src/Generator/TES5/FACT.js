@@ -1,9 +1,9 @@
 let {
     def, ckFormId, int32, enumeration, uint32, 
     format, subrecord, sortKey, struct, sorted, 
-    arrayOfSubrecord, flags, req, uint8, uint16, 
-    float, localized, string, arrayOfStruct, multiStruct, 
-    bytes, size, record
+    memberArray, flags, req, uint8, uint16, 
+    float, localized, string, memberStruct, bytes, 
+    size, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -11,7 +11,7 @@ module.exports = () => {
         members: [
             def('EDID'),
             def('FULL'),
-            sorted(arrayOfSubrecord('Relations', 
+            sorted(memberArray('Relations', 
                 subrecord('XNAM', sortKey([0], struct('Relation', [
                     ckFormId('Faction', ['FACT', 'RACE']),
                     int32('Modifier'),
@@ -83,8 +83,8 @@ module.exports = () => {
                 uint16('Escape'),
                 uint16('Werewolf')
             ]))),
-            arrayOfStruct('Ranks', 
-                sortKey([0], multiStruct('Rank', [
+            memberArray('Ranks', 
+                sortKey([0], memberStruct('Rank', [
                     subrecord('RNAM', uint32('Rank#')),
                     subrecord('MNAM', localized(string('Male Title'))),
                     subrecord('FNAM', localized(string('Female Title'))),

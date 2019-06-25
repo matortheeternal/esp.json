@@ -12,11 +12,11 @@
             },
             {
                 "name": "Relations",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "signature": "XNAM",
                     "type": "subrecord",
-                    "def": {
+                    "field": {
                         "name": "Relation",
                         "type": "struct",
                         "fields": [
@@ -56,7 +56,7 @@
             {
                 "signature": "DATA",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Flags",
                     "type": "struct",
                     "fields": [
@@ -108,7 +108,7 @@
             {
                 "signature": "JAIL",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Exterior Jail Marker",
                     "type": "formId",
                     "signatures": [
@@ -119,7 +119,7 @@
             {
                 "signature": "WAIT",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Follower Wait Marker",
                     "type": "formId",
                     "signatures": [
@@ -130,7 +130,7 @@
             {
                 "signature": "STOL",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Stolen Goods Container",
                     "type": "formId",
                     "signatures": [
@@ -141,7 +141,7 @@
             {
                 "signature": "PLCN",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Player Inventory Container",
                     "type": "formId",
                     "signatures": [
@@ -152,7 +152,7 @@
             {
                 "signature": "CRGR",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Shared Crime Faction List",
                     "type": "formId",
                     "signatures": [
@@ -163,7 +163,7 @@
             {
                 "signature": "JOUT",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Jail Outfit",
                     "type": "formId",
                     "signatures": [
@@ -174,7 +174,7 @@
             {
                 "signature": "CRVA",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Crime Values",
                     "type": "struct",
                     "fields": [
@@ -238,15 +238,15 @@
             },
             {
                 "name": "Ranks",
-                "type": "structArray",
-                "entryName": {
+                "type": "memberArray",
+                "member": {
                     "name": "Rank",
-                    "type": "multiStruct",
-                    "subrecords": [
+                    "type": "memberStruct",
+                    "members": [
                         {
                             "signature": "RNAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Rank#",
                                 "type": "uint32"
                             }
@@ -254,7 +254,7 @@
                         {
                             "signature": "MNAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Male Title",
                                 "type": "string",
                                 "localized": true
@@ -263,7 +263,7 @@
                         {
                             "signature": "FNAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Female Title",
                                 "type": "string",
                                 "localized": true
@@ -272,7 +272,7 @@
                         {
                             "signature": "INAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Insignia Unused",
                                 "type": "string"
                             }
@@ -286,7 +286,7 @@
             {
                 "signature": "VEND",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Vendor Buy/Sell List",
                     "type": "formId",
                     "signatures": [
@@ -297,7 +297,7 @@
             {
                 "signature": "VENC",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Merchant Container",
                     "type": "formId",
                     "signatures": [
@@ -308,7 +308,7 @@
             {
                 "signature": "VENV",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Vendor Values",
                     "type": "struct",
                     "fields": [

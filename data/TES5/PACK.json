@@ -13,7 +13,7 @@
             {
                 "signature": "PKDT",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Pack Data",
                     "type": "struct",
                     "fields": [
@@ -86,7 +86,7 @@
             {
                 "signature": "PSDT",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Schedule",
                     "type": "struct",
                     "fields": [
@@ -145,12 +145,12 @@
             },
             {
                 "name": "Idle Animations",
-                "type": "multiStruct",
-                "subrecords": [
+                "type": "memberStruct",
+                "members": [
                     {
                         "signature": "IDLF",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Flags",
                             "type": "uint8",
                             "format": {
@@ -168,7 +168,7 @@
                     {
                         "signature": "IDLC",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "",
                             "type": "struct",
                             "fields": [
@@ -188,7 +188,7 @@
                     {
                         "signature": "IDLT",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Idle Timer Setting",
                             "type": "float"
                         },
@@ -197,22 +197,22 @@
                     {
                         "signature": "IDLA",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Animations",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "name": "Animation",
                                 "type": "formId",
                                 "signatures": [
                                     "IDLE"
                                 ]
-                            },
-                            "type": "array"
+                            }
                         }
                     },
                     {
                         "signature": "IDLB",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Unknown",
                             "type": "bytes",
                             "size": 4
@@ -224,7 +224,7 @@
             {
                 "signature": "CNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Combat Style",
                     "type": "formId",
                     "signatures": [
@@ -235,7 +235,7 @@
             {
                 "signature": "QNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Owner Quest",
                     "type": "formId",
                     "signatures": [
@@ -246,7 +246,7 @@
             {
                 "signature": "PKCU",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Counter",
                     "type": "struct",
                     "fields": [
@@ -272,19 +272,19 @@
             },
             {
                 "name": "Package Data",
-                "type": "multiStruct",
-                "subrecords": [
+                "type": "memberStruct",
+                "members": [
                     {
                         "name": "Data Input Values",
-                        "type": "subrecordArray",
-                        "subrecord": {
+                        "type": "memberArray",
+                        "member": {
                             "name": "Value",
-                            "type": "multiStruct",
-                            "subrecords": [
+                            "type": "memberStruct",
+                            "members": [
                                 {
                                     "signature": "ANAM",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Type",
                                         "type": "string"
                                     }
@@ -292,7 +292,7 @@
                                 {
                                     "signature": "CNAM",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Value",
                                         "type": "union",
                                         "decider": [
@@ -325,7 +325,7 @@
                                 {
                                     "signature": "BNAM",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Unknown",
                                         "type": "bytes"
                                     }
@@ -339,7 +339,7 @@
                                 {
                                     "signature": "PTDA",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Target",
                                         "type": "struct",
                                         "fields": [
@@ -352,7 +352,7 @@
                                 {
                                     "signature": "TPIC",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Unknown",
                                         "type": "bytes"
                                     }
@@ -369,26 +369,26 @@
             {
                 "signature": "XNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Marker",
                     "type": "bytes"
                 }
             },
             {
                 "name": "Procedure Tree",
-                "type": "multiStruct",
-                "subrecords": [
+                "type": "memberStruct",
+                "members": [
                     {
                         "name": "Branches",
-                        "type": "subrecordArray",
-                        "subrecord": {
+                        "type": "memberArray",
+                        "member": {
                             "name": "Branch",
-                            "type": "multiStruct",
-                            "subrecords": [
+                            "type": "memberStruct",
+                            "members": [
                                 {
                                     "signature": "ANAM",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Branch Type",
                                         "type": "string"
                                     }
@@ -403,7 +403,7 @@
                                 {
                                     "signature": "PRCB",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Root",
                                         "type": "struct",
                                         "fields": [
@@ -428,7 +428,7 @@
                                 {
                                     "signature": "PNAM",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Procedure Type",
                                         "type": "string"
                                     }
@@ -436,7 +436,7 @@
                                 {
                                     "signature": "FNAM",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Flags",
                                         "type": "uint32",
                                         "format": {
@@ -449,11 +449,11 @@
                                 },
                                 {
                                     "name": "Data Input Indexes",
-                                    "type": "subrecordArray",
-                                    "subrecord": {
+                                    "type": "memberArray",
+                                    "member": {
                                         "signature": "PKC2",
                                         "type": "subrecord",
-                                        "def": {
+                                        "field": {
                                             "name": "Index",
                                             "type": "uint8"
                                         }
@@ -461,11 +461,11 @@
                                 },
                                 {
                                     "name": "Flags Override",
-                                    "type": "subrecordArray",
-                                    "subrecord": {
+                                    "type": "memberArray",
+                                    "member": {
                                         "signature": "PFO2",
                                         "type": "subrecord",
-                                        "def": {
+                                        "field": {
                                             "name": "Data",
                                             "type": "struct",
                                             "fields": [
@@ -521,11 +521,11 @@
                                 },
                                 {
                                     "name": "Unknown",
-                                    "type": "subrecordArray",
-                                    "subrecord": {
+                                    "type": "memberArray",
+                                    "member": {
                                         "signature": "PFOR",
                                         "type": "subrecord",
-                                        "def": {
+                                        "field": {
                                             "name": "Unknown",
                                             "type": "bytes"
                                         }
@@ -542,12 +542,12 @@
             },
             {
                 "name": "OnBegin",
-                "type": "multiStruct",
-                "subrecords": [
+                "type": "memberStruct",
+                "members": [
                     {
                         "signature": "POBA",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "OnBegin Marker",
                             "type": "empty"
                         },
@@ -556,7 +556,7 @@
                     {
                         "signature": "INAM",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Idle",
                             "type": "formId",
                             "signatures": [
@@ -569,7 +569,7 @@
                     {
                         "signature": "SCHR",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Unused",
                             "type": "bytes"
                         }
@@ -577,7 +577,7 @@
                     {
                         "signature": "SCTX",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Unused",
                             "type": "bytes"
                         }
@@ -585,7 +585,7 @@
                     {
                         "signature": "QNAM",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Unused",
                             "type": "bytes"
                         }
@@ -593,7 +593,7 @@
                     {
                         "signature": "TNAM",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Unused",
                             "type": "bytes"
                         }
@@ -605,12 +605,12 @@
             },
             {
                 "name": "OnEnd",
-                "type": "multiStruct",
-                "subrecords": [
+                "type": "memberStruct",
+                "members": [
                     {
                         "signature": "POEA",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "OnEnd Marker",
                             "type": "empty"
                         },
@@ -619,7 +619,7 @@
                     {
                         "signature": "INAM",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Idle",
                             "type": "formId",
                             "signatures": [
@@ -632,7 +632,7 @@
                     {
                         "signature": "SCHR",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Unused",
                             "type": "bytes"
                         }
@@ -640,7 +640,7 @@
                     {
                         "signature": "SCTX",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Unused",
                             "type": "bytes"
                         }
@@ -648,7 +648,7 @@
                     {
                         "signature": "QNAM",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Unused",
                             "type": "bytes"
                         }
@@ -656,7 +656,7 @@
                     {
                         "signature": "TNAM",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Unused",
                             "type": "bytes"
                         }
@@ -668,12 +668,12 @@
             },
             {
                 "name": "OnChange",
-                "type": "multiStruct",
-                "subrecords": [
+                "type": "memberStruct",
+                "members": [
                     {
                         "signature": "POCA",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "OnChange Marker",
                             "type": "empty"
                         },
@@ -682,7 +682,7 @@
                     {
                         "signature": "INAM",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Idle",
                             "type": "formId",
                             "signatures": [
@@ -695,7 +695,7 @@
                     {
                         "signature": "SCHR",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Unused",
                             "type": "bytes"
                         }
@@ -703,7 +703,7 @@
                     {
                         "signature": "SCDA",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Unused",
                             "type": "bytes"
                         }
@@ -711,7 +711,7 @@
                     {
                         "signature": "SCTX",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Unused",
                             "type": "bytes"
                         }
@@ -719,7 +719,7 @@
                     {
                         "signature": "QNAM",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Unused",
                             "type": "bytes"
                         }
@@ -727,7 +727,7 @@
                     {
                         "signature": "TNAM",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Unused",
                             "type": "bytes"
                         }

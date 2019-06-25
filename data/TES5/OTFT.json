@@ -10,9 +10,10 @@
             {
                 "signature": "INAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Items",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "Item",
                         "type": "formId",
                         "signatures": [
@@ -20,7 +21,6 @@
                             "LVLI"
                         ]
                     },
-                    "type": "array",
                     "sorted": true
                 }
             }

@@ -20,7 +20,7 @@
             {
                 "signature": "DATA",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -28,7 +28,7 @@
             {
                 "signature": "ENAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Response flags",
                     "type": "struct",
                     "fields": [
@@ -71,7 +71,7 @@
             {
                 "signature": "TPIC",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Topic",
                     "type": "formId",
                     "signatures": [
@@ -82,7 +82,7 @@
             {
                 "signature": "PNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Previous INFO",
                     "type": "formId",
                     "signatures": [
@@ -94,7 +94,7 @@
             {
                 "signature": "CNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Favor Level",
                     "type": "uint8",
                     "format": {
@@ -110,11 +110,11 @@
             },
             {
                 "name": "Link To",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "signature": "TCLT",
                     "type": "subrecord",
-                    "def": {
+                    "field": {
                         "name": "Response",
                         "type": "formId",
                         "signatures": [
@@ -128,22 +128,22 @@
             {
                 "signature": "DNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Response Data",
                     "type": "formId"
                 }
             },
             {
                 "name": "Responses",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "name": "Response",
-                    "type": "multiStruct",
-                    "subrecords": [
+                    "type": "memberStruct",
+                    "members": [
                         {
                             "signature": "TRDT",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Response Data",
                                 "type": "struct",
                                 "fields": [
@@ -201,7 +201,7 @@
                         {
                             "signature": "NAM1",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Response Text",
                                 "type": "string",
                                 "localized": true
@@ -210,7 +210,7 @@
                         {
                             "signature": "NAM2",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Script Notes",
                                 "type": "string"
                             }
@@ -218,7 +218,7 @@
                         {
                             "signature": "NAM3",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Edits",
                                 "type": "string"
                             }
@@ -226,7 +226,7 @@
                         {
                             "signature": "SNAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Idle Animations: Speaker",
                                 "type": "formId",
                                 "signatures": [
@@ -237,7 +237,7 @@
                         {
                             "signature": "LNAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Idle Animations: Listener",
                                 "type": "formId",
                                 "signatures": [
@@ -253,15 +253,15 @@
             },
             {
                 "name": "Unknown",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "name": "Unknown",
-                    "type": "multiStruct",
-                    "subrecords": [
+                    "type": "memberStruct",
+                    "members": [
                         {
                             "signature": "SCHR",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Unknown",
                                 "type": "bytes"
                             }
@@ -269,7 +269,7 @@
                         {
                             "signature": "QNAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Unknown",
                                 "type": "formId"
                             }
@@ -277,7 +277,7 @@
                         {
                             "signature": "NEXT",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Marker",
                                 "type": "empty"
                             }
@@ -288,7 +288,7 @@
             {
                 "signature": "RNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Prompt",
                     "type": "string",
                     "localized": true
@@ -297,7 +297,7 @@
             {
                 "signature": "ANAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Speaker",
                     "type": "formId",
                     "signatures": [
@@ -308,7 +308,7 @@
             {
                 "signature": "TWAT",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Walk Away Topic",
                     "type": "formId",
                     "signatures": [
@@ -319,7 +319,7 @@
             {
                 "signature": "ONAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Audio Output Override",
                     "type": "formId",
                     "signatures": [

@@ -13,23 +13,23 @@
             {
                 "signature": "ANAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Related Camera Paths",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "Related Camera Path",
                         "type": "formId",
                         "signatures": [
                             "CPTH",
                             "NULL"
                         ]
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "DATA",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Camera Zoom",
                     "type": "uint8",
                     "format": {
@@ -47,11 +47,11 @@
             },
             {
                 "name": "Camera Shots",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "signature": "SNAM",
                     "type": "subrecord",
-                    "def": {
+                    "field": {
                         "name": "Camera Shot",
                         "type": "formId",
                         "signatures": [

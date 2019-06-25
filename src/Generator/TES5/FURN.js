@@ -2,7 +2,7 @@ let {
     flags, def, req, subrecord, unknown, 
     uint16, format, ckFormId, uint32, enumeration, 
     uint8, int8, struct, bytes, size, 
-    multiStruct, arrayOfSubrecord, string, record
+    memberStruct, memberArray, string, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -79,8 +79,8 @@ module.exports = () => {
                 format(int8('Uses Skill'), def('SkillEnum'))
             ])),
             subrecord('NAM1', ckFormId('Associated Spell', ['SPEL'])),
-            arrayOfSubrecord('Markers', 
-                multiStruct('Marker', [
+            memberArray('Markers', 
+                memberStruct('Marker', [
                     subrecord('ENAM', uint32('Marker Index')),
                     subrecord('NAM0', struct('Disabled Entry Points', [
                         size(2, bytes('Unknown')),
@@ -89,7 +89,7 @@ module.exports = () => {
                     subrecord('FNMK', ckFormId('Marker Keyword', ['KYWD', 'NULL']))
                 ])
             ),
-            arrayOfSubrecord('Marker Entry Points', 
+            memberArray('Marker Entry Points', 
                 subrecord('FNPR', struct('Marker', [
                     format(uint16('Type'), def('FurnitureAnimTypeEnum')),
                     format(uint16('Entry Points'), def('FurnitureEntryTypeFlags'))

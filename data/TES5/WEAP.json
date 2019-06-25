@@ -36,7 +36,7 @@
             {
                 "signature": "EAMT",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Enchantment Amount",
                     "type": "uint16"
                 }
@@ -50,7 +50,7 @@
             {
                 "signature": "BIDS",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Block Bash Impact Data Set",
                     "type": "formId",
                     "signatures": [
@@ -62,7 +62,7 @@
             {
                 "signature": "BAMT",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Alternate Block Material",
                     "type": "formId",
                     "signatures": [
@@ -88,12 +88,12 @@
             },
             {
                 "name": "Has Scope",
-                "type": "multiStruct",
-                "subrecords": [
+                "type": "memberStruct",
+                "members": [
                     {
                         "signature": "MOD3",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Model FileName",
                             "type": "string"
                         }
@@ -101,7 +101,7 @@
                     {
                         "signature": "MO3T",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Texture Files Hashes",
                             "type": "bytes"
                         }
@@ -114,7 +114,7 @@
             {
                 "signature": "NNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unused",
                     "type": "bytes"
                 }
@@ -122,7 +122,7 @@
             {
                 "signature": "INAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Impact Data Set",
                     "type": "formId",
                     "signatures": [
@@ -134,7 +134,7 @@
             {
                 "signature": "WNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "1st Person Model Object",
                     "type": "formId",
                     "signatures": [
@@ -146,7 +146,7 @@
             {
                 "signature": "SNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Attack Sound",
                     "type": "formId",
                     "signatures": [
@@ -157,7 +157,7 @@
             {
                 "signature": "XNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Attack Sound 2D",
                     "type": "formId",
                     "signatures": [
@@ -168,7 +168,7 @@
             {
                 "signature": "NAM7",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Attack Loop Sound",
                     "type": "formId",
                     "signatures": [
@@ -179,7 +179,7 @@
             {
                 "signature": "TNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Attack Fail Sound",
                     "type": "formId",
                     "signatures": [
@@ -190,7 +190,7 @@
             {
                 "signature": "UNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Idle Sound",
                     "type": "formId",
                     "signatures": [
@@ -201,7 +201,7 @@
             {
                 "signature": "NAM9",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Equip Sound",
                     "type": "formId",
                     "signatures": [
@@ -212,7 +212,7 @@
             {
                 "signature": "NAM8",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unequip Sound",
                     "type": "formId",
                     "signatures": [
@@ -223,7 +223,7 @@
             {
                 "signature": "DATA",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Game Data",
                     "type": "struct",
                     "fields": [
@@ -245,7 +245,7 @@
             {
                 "signature": "DNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Data",
                     "type": "struct",
                     "fields": [
@@ -422,7 +422,7 @@
             {
                 "signature": "CRDT",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Critical Data",
                     "type": "struct",
                     "fields": [
@@ -468,7 +468,7 @@
             {
                 "signature": "VNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Detection Sound Level",
                     "type": "uint32",
                     "format": {
@@ -479,7 +479,7 @@
             {
                 "signature": "CNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Template",
                     "type": "formId",
                     "signatures": [

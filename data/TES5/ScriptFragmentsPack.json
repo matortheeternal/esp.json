@@ -25,7 +25,8 @@
         },
         {
             "name": "Fragments",
-            "entryDef": {
+            "type": "array",
+            "field": {
                 "name": "Fragment",
                 "type": "struct",
                 "fields": [
@@ -44,8 +45,7 @@
                         "prefix": 2
                     }
                 ]
-            },
-            "type": "array"
+            }
         }
     ]
 }

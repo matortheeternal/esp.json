@@ -26,7 +26,7 @@
             {
                 "signature": "NAME",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Base",
                     "type": "formId",
                     "signatures": [
@@ -38,7 +38,7 @@
             {
                 "signature": "XEZN",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Encounter Zone",
                     "type": "formId",
                     "signatures": [
@@ -54,12 +54,12 @@
             },
             {
                 "name": "Patrol Data",
-                "type": "multiStruct",
-                "subrecords": [
+                "type": "memberStruct",
+                "members": [
                     {
                         "signature": "XPRD",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Idle Time",
                             "type": "float"
                         },
@@ -68,7 +68,7 @@
                     {
                         "signature": "XPPA",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Patrol Script Marker",
                             "type": "empty"
                         },
@@ -77,7 +77,7 @@
                     {
                         "signature": "INAM",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Idle",
                             "type": "formId",
                             "signatures": [
@@ -89,12 +89,12 @@
                     },
                     {
                         "name": "Unused",
-                        "type": "multiStruct",
-                        "subrecords": [
+                        "type": "memberStruct",
+                        "members": [
                             {
                                 "signature": "SCHR",
                                 "type": "subrecord",
-                                "def": {
+                                "field": {
                                     "name": "Unknown",
                                     "type": "bytes"
                                 }
@@ -102,7 +102,7 @@
                             {
                                 "signature": "SCDA",
                                 "type": "subrecord",
-                                "def": {
+                                "field": {
                                     "name": "Unknown",
                                     "type": "bytes"
                                 }
@@ -110,7 +110,7 @@
                             {
                                 "signature": "SCTX",
                                 "type": "subrecord",
-                                "def": {
+                                "field": {
                                     "name": "Unknown",
                                     "type": "bytes"
                                 }
@@ -118,7 +118,7 @@
                             {
                                 "signature": "QNAM",
                                 "type": "subrecord",
-                                "def": {
+                                "field": {
                                     "name": "Unknown",
                                     "type": "bytes"
                                 }
@@ -126,7 +126,7 @@
                             {
                                 "signature": "SCRO",
                                 "type": "subrecord",
-                                "def": {
+                                "field": {
                                     "name": "Unknown",
                                     "type": "bytes"
                                 }
@@ -140,7 +140,7 @@
                     {
                         "signature": "TNAM",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Topic",
                             "type": "formId",
                             "signatures": [
@@ -157,7 +157,7 @@
             {
                 "signature": "XMRC",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Merchant Container",
                     "type": "formId",
                     "signatures": [
@@ -168,7 +168,7 @@
             {
                 "signature": "XCNT",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Count",
                     "type": "int32"
                 }
@@ -176,7 +176,7 @@
             {
                 "signature": "XRDS",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Radius",
                     "type": "float"
                 }
@@ -184,18 +184,18 @@
             {
                 "signature": "XHLP",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Health",
                     "type": "float"
                 }
             },
             {
                 "name": "Linked References",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "signature": "XLKR",
                     "type": "subrecord",
-                    "def": {
+                    "field": {
                         "name": "Linked Reference",
                         "type": "struct",
                         "fields": [
@@ -245,12 +245,12 @@
             },
             {
                 "name": "Activate Parents",
-                "type": "multiStruct",
-                "subrecords": [
+                "type": "memberStruct",
+                "members": [
                     {
                         "signature": "XAPD",
                         "type": "subrecord",
-                        "def": {
+                        "field": {
                             "name": "Flags",
                             "type": "uint8",
                             "format": {
@@ -263,11 +263,11 @@
                     },
                     {
                         "name": "Activate Parent Refs",
-                        "type": "subrecordArray",
-                        "subrecord": {
+                        "type": "memberArray",
+                        "member": {
                             "signature": "XAPR",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Activate Parent Ref",
                                 "type": "struct",
                                 "fields": [
@@ -305,7 +305,7 @@
             {
                 "signature": "XCLP",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Linked Reference Color",
                     "type": "struct",
                     "fields": [
@@ -323,7 +323,7 @@
             {
                 "signature": "XLCN",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Persistent Location",
                     "type": "formId",
                     "signatures": [
@@ -334,7 +334,7 @@
             {
                 "signature": "XLRL",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Location Reference",
                     "type": "formId",
                     "signatures": [
@@ -347,7 +347,7 @@
             {
                 "signature": "XIS2",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Ignored by Sandbox",
                     "type": "empty"
                 }
@@ -355,23 +355,23 @@
             {
                 "signature": "XLRT",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Location Ref Type",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "Ref",
                         "type": "formId",
                         "signatures": [
                             "LCRT",
                             "NULL"
                         ]
-                    },
-                    "type": "array"
+                    }
                 }
             },
             {
                 "signature": "XHOR",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Horse",
                     "type": "formId",
                     "signatures": [
@@ -382,7 +382,7 @@
             {
                 "signature": "XHTW",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Head-Tracking Weight",
                     "type": "float"
                 }
@@ -390,7 +390,7 @@
             {
                 "signature": "XFVC",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Favor Cost",
                     "type": "float"
                 }
@@ -404,7 +404,7 @@
             {
                 "signature": "XEMI",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Emittance",
                     "type": "formId",
                     "signatures": [
@@ -416,7 +416,7 @@
             {
                 "signature": "XMBR",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "MultiBound Reference",
                     "type": "formId",
                     "signatures": [
@@ -435,7 +435,7 @@
             {
                 "signature": "XIBS",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Ignored By Sandbox",
                     "type": "empty"
                 }

@@ -10,7 +10,7 @@
             {
                 "signature": "QNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Quest",
                     "type": "formId",
                     "signatures": [
@@ -22,7 +22,7 @@
             {
                 "signature": "TNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "uint32"
                 }
@@ -30,7 +30,7 @@
             {
                 "signature": "DNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Flags",
                     "type": "uint32",
                     "format": {
@@ -46,7 +46,7 @@
             {
                 "signature": "SNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Starting Topic",
                     "type": "formId",
                     "signatures": [

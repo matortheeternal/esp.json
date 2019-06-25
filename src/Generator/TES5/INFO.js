@@ -1,8 +1,8 @@
 let {
     flags, def, subrecord, unknown, uint16, 
     format, div, struct, ckFormId, enumeration, 
-    uint8, arrayOfSubrecord, formId, uint32, bytes, 
-    size, localized, string, multiStruct, empty, 
+    uint8, memberArray, formId, uint32, bytes, 
+    size, localized, string, memberStruct, empty, 
     record
 } = require('../helpers');
 
@@ -45,14 +45,14 @@ module.exports = () => {
                 2: 'Medium',
                 3: 'Large'
             }))),
-            arrayOfSubrecord('Link To', 
+            memberArray('Link To', 
                 subrecord('TCLT', ckFormId('Response', [
                     'DIAL', 'INFO', 'NULL'
                 ]))
             ),
             subrecord('DNAM', formId('Response Data')),
-            arrayOfSubrecord('Responses', 
-                multiStruct('Response', [
+            memberArray('Responses', 
+                memberStruct('Response', [
                     subrecord('TRDT', struct('Response Data', [
                         format(uint32('Emotion Type'), def('EmotionTypeEnum')),
                         uint32('Emotion Value'),
@@ -73,8 +73,8 @@ module.exports = () => {
                 ])
             ),
             def('CTDAs'),
-            arrayOfSubrecord('Unknown', 
-                multiStruct('Unknown', [
+            memberArray('Unknown', 
+                memberStruct('Unknown', [
                     subrecord('SCHR', unknown()),
                     subrecord('QNAM', formId('Unknown')),
                     subrecord('NEXT', empty('Marker'))

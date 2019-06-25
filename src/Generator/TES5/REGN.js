@@ -1,7 +1,7 @@
 let {
     flags, def, uint8, bytes, size, 
     subrecord, struct, req, ckFormId, uint32, 
-    float, array, multiStruct, arrayOfSubrecord, enumeration, 
+    float, array, memberStruct, memberArray, enumeration, 
     format, sortKey, sorted, localized, string, 
     uint16, record
 } = require('../helpers');
@@ -21,8 +21,8 @@ module.exports = () => {
                 size(1, bytes('Unknown'))
             ]))),
             subrecord('WNAM', ckFormId('Worldspace', ['WRLD'])),
-            arrayOfSubrecord('Region Areas', 
-                multiStruct('Region Area', [
+            memberArray('Region Areas', 
+                memberStruct('Region Area', [
                     subrecord('RPLI', uint32('Edge Fall-off')),
                     subrecord('RPLD', array('Region Point List Data', 
                         struct('Point', [
@@ -32,8 +32,8 @@ module.exports = () => {
                     ))
                 ])
             ),
-            sorted(arrayOfSubrecord('Region Data Entries', 
-                sortKey([0], multiStruct('Region Data Entry', [
+            sorted(memberArray('Region Data Entries', 
+                sortKey([0], memberStruct('Region Data Entry', [
                     subrecord('RDAT', sortKey([0], struct('Data Header', [
                         format(uint32('Type'), enumeration({
                             0: 'Unknown 0',

@@ -10,18 +10,18 @@
             {
                 "signature": "NVER",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Version",
                     "type": "uint32"
                 }
             },
             {
                 "name": "Navigation Map Infos",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "signature": "NVMI",
                     "type": "subrecord",
-                    "def": {
+                    "field": {
                         "name": "Navigation Map Info",
                         "type": "struct",
                         "fields": [
@@ -55,31 +55,32 @@
                             },
                             {
                                 "name": "Merged To",
-                                "entryDef": {
+                                "type": "array",
+                                "field": {
                                     "name": "Mesh",
                                     "type": "formId",
                                     "signatures": [
                                         "NAVM"
                                     ]
                                 },
-                                "type": "array",
                                 "prefix": 4
                             },
                             {
                                 "name": "Preferred Merges",
-                                "entryDef": {
+                                "type": "array",
+                                "field": {
                                     "name": "Mesh",
                                     "type": "formId",
                                     "signatures": [
                                         "NAVM"
                                     ]
                                 },
-                                "type": "array",
                                 "prefix": 4
                             },
                             {
                                 "name": "Linked Doors",
-                                "entryDef": {
+                                "type": "array",
+                                "field": {
                                     "name": "Door",
                                     "type": "struct",
                                     "fields": [
@@ -97,7 +98,6 @@
                                         }
                                     ]
                                 },
-                                "type": "array",
                                 "prefix": 4
                             },
                             {
@@ -170,30 +170,31 @@
             {
                 "signature": "NVPP",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Preferred Pathing",
                     "type": "struct",
                     "fields": [
                         {
                             "name": "NavMeshes",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "name": "Set",
-                                "entryDef": {
+                                "type": "array",
+                                "field": {
                                     "name": "",
                                     "type": "formId",
                                     "signatures": [
                                         "NAVM"
                                     ]
                                 },
-                                "type": "array",
                                 "prefix": 4
                             },
-                            "type": "array",
                             "prefix": 4
                         },
                         {
                             "name": "NavMesh Tree?",
-                            "entryDef": {
+                            "type": "array",
+                            "field": {
                                 "name": "",
                                 "type": "struct",
                                 "fields": [
@@ -210,7 +211,6 @@
                                     }
                                 ]
                             },
-                            "type": "array",
                             "prefix": 4
                         }
                     ]
@@ -219,16 +219,16 @@
             {
                 "signature": "NVSI",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "Navigation Mesh",
                         "type": "formId",
                         "signatures": [
                             "NAVM"
                         ]
-                    },
-                    "type": "array"
+                    }
                 }
             }
         ]

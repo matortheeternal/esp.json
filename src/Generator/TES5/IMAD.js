@@ -1,6 +1,6 @@
 let {
     def, flags, uint32, format, float, 
-    struct, subrecord, array, multiStruct, unknown, 
+    struct, subrecord, array, memberStruct, unknown, 
     record
 } = require('../helpers');
 
@@ -133,7 +133,7 @@ module.exports = () => {
             subrecord('NAM4', array('Motion Blur Strength', 
                 def('TimeInterpolator')
             )),
-            multiStruct('HDR', [
+            memberStruct('HDR', [
                 subrecord('\x00IAD', array('Eye Adapt Speed Mult', 
                     def('TimeInterpolator')
                 )),
@@ -201,7 +201,7 @@ module.exports = () => {
             subrecord('\x4FIAD', unknown()),
             subrecord('\x10IAD', unknown()),
             subrecord('\x50IAD', unknown()),
-            multiStruct('Cinematic', [
+            memberStruct('Cinematic', [
                 subrecord('\x11IAD', array('Saturation Mult', 
                     def('TimeInterpolator')
                 )),

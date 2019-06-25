@@ -2,8 +2,8 @@ let {
     def, uint32, format, enumeration, uint8, 
     bytes, size, uint16, subrecord, struct, 
     req, int8, int32, float, ckFormId, 
-    array, multiStruct, string, union, unknown, 
-    arrayOfSubrecord, flags, empty, record
+    array, memberStruct, string, union, unknown, 
+    memberArray, flags, empty, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -57,7 +57,7 @@ module.exports = () => {
                 int32('Duration (minutes)')
             ]))),
             def('CTDAs'),
-            req(multiStruct('Idle Animations', [
+            req(memberStruct('Idle Animations', [
                 subrecord('IDLF', format(uint8('Flags'), enumeration({
                     0: 'Unknown',
                     8: 'Random',
@@ -82,9 +82,9 @@ module.exports = () => {
                 ckFormId('Package Template', ['PACK', 'NULL']),
                 uint32('Version Counter (autoincremented)')
             ]))),
-            multiStruct('Package Data', [
-                arrayOfSubrecord('Data Input Values', 
-                    req(multiStruct('Value', [
+            memberStruct('Package Data', [
+                memberArray('Data Input Values', 
+                    req(memberStruct('Value', [
                         subrecord('ANAM', string('Type')),
                         subrecord('CNAM', union('Value', [
                             bytes('Unknown'),
@@ -107,9 +107,9 @@ module.exports = () => {
                 def('UNAMs')
             ]),
             subrecord('XNAM', bytes('Marker')),
-            multiStruct('Procedure Tree', [
-                arrayOfSubrecord('Branches', 
-                    req(multiStruct('Branch', [
+            memberStruct('Procedure Tree', [
+                memberArray('Branches', 
+                    req(memberStruct('Branch', [
                         subrecord('ANAM', string('Branch Type')),
                         req(def('CITC')),
                         def('CTDAsCount'),
@@ -124,10 +124,10 @@ module.exports = () => {
                         subrecord('FNAM', format(uint32('Flags'), flags({
                             0: 'Success Completes Package'
                         }))),
-                        arrayOfSubrecord('Data Input Indexes', 
+                        memberArray('Data Input Indexes', 
                             subrecord('PKC2', uint8('Index'))
                         ),
-                        arrayOfSubrecord('Flags Override', 
+                        memberArray('Flags Override', 
                             subrecord('PFO2', struct('Data', [
                                 format(uint32('Set General Flags'), def('PKDTFlags')),
                                 format(uint32('Clear General Flags'), def('PKDTFlags')),
@@ -142,14 +142,14 @@ module.exports = () => {
                                 size(3, bytes('Unknown'))
                             ]))
                         ),
-                        arrayOfSubrecord('Unknown', 
+                        memberArray('Unknown', 
                             subrecord('PFOR', unknown())
                         )
                     ]))
                 )
             ]),
             def('UNAMs'),
-            multiStruct('OnBegin', [
+            memberStruct('OnBegin', [
                 req(subrecord('POBA', empty('OnBegin Marker'))),
                 req(subrecord('INAM', ckFormId('Idle', ['IDLE', 'NULL']))),
                 subrecord('SCHR', bytes('Unused')),
@@ -158,7 +158,7 @@ module.exports = () => {
                 subrecord('TNAM', bytes('Unused')),
                 def('PDTOs')
             ]),
-            multiStruct('OnEnd', [
+            memberStruct('OnEnd', [
                 req(subrecord('POEA', empty('OnEnd Marker'))),
                 req(subrecord('INAM', ckFormId('Idle', ['IDLE', 'NULL']))),
                 subrecord('SCHR', bytes('Unused')),
@@ -167,7 +167,7 @@ module.exports = () => {
                 subrecord('TNAM', bytes('Unused')),
                 def('PDTOs')
             ]),
-            multiStruct('OnChange', [
+            memberStruct('OnChange', [
                 req(subrecord('POCA', empty('OnChange Marker'))),
                 req(subrecord('INAM', ckFormId('Idle', ['IDLE', 'NULL']))),
                 subrecord('SCHR', bytes('Unused')),

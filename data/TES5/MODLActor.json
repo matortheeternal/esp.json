@@ -1,11 +1,11 @@
 {
     "name": "Model",
-    "type": "multiStruct",
-    "subrecords": [
+    "type": "memberStruct",
+    "members": [
         {
             "signature": "MODL",
             "type": "subrecord",
-            "def": {
+            "field": {
                 "name": "Model FileName",
                 "type": "string"
             },

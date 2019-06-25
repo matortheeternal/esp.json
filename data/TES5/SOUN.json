@@ -14,7 +14,7 @@
             {
                 "signature": "FNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -22,7 +22,7 @@
             {
                 "signature": "SNDD",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -30,7 +30,7 @@
             {
                 "signature": "SDSC",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Sound Descriptor",
                     "type": "formId",
                     "signatures": [

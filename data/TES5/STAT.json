@@ -54,7 +54,7 @@
             {
                 "signature": "DNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Direction Material",
                     "type": "struct",
                     "fields": [
@@ -77,9 +77,10 @@
             {
                 "signature": "MNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Distant LOD",
-                    "entryDef": {
+                    "type": "array",
+                    "field": {
                         "name": "LOD",
                         "type": "struct",
                         "fields": [
@@ -89,8 +90,7 @@
                                 "size": 260
                             }
                         ]
-                    },
-                    "type": "array"
+                    }
                 }
             }
         ]

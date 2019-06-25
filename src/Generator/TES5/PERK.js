@@ -1,8 +1,8 @@
 let {
     flags, def, req, enumeration, uint8, 
     format, subrecord, struct, ckFormId, sortKey, 
-    bytes, size, union, int8, arrayOfStruct, 
-    multiStruct, localized, string, uint16, float, 
+    bytes, size, union, int8, memberArray, 
+    memberStruct, localized, string, uint16, float, 
     uint32, empty, record
 } = require('../helpers');
 
@@ -36,8 +36,8 @@ module.exports = () => {
                 }))
             ]))),
             subrecord('NNAM', ckFormId('Next Perk', ['PERK', 'NULL'])),
-            arrayOfStruct('Effects', 
-                sortKey([0, 1], multiStruct('Effect', [
+            memberArray('Effects', 
+                sortKey([0, 1], memberStruct('Effect', [
                     subrecord('PRKE', sortKey([1, 2, 0], struct('Header', [
                         format(uint8('Type'), enumeration({
                             0: 'Quest + Stage',
@@ -77,13 +77,13 @@ module.exports = () => {
                             uint8('Perk Condition Tab Count')
                         ]))
                     ]))),
-                    req(arrayOfStruct('Perk Conditions', 
-                        sortKey([0], multiStruct('Perk Condition', [
+                    req(memberArray('Perk Conditions', 
+                        sortKey([0], memberStruct('Perk Condition', [
                             subrecord('PRKC', int8('Run On (Tab Index)')),
                             req(def('CTDAs'))
                         ]))
                     )),
-                    req(multiStruct('Function Parameters', [
+                    req(memberStruct('Function Parameters', [
                         subrecord('EPFT', format(uint8('Type'), enumeration({
                             0: 'None',
                             1: 'Float',

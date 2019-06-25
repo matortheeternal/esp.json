@@ -13,7 +13,7 @@
             {
                 "signature": "FNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Flags",
                     "type": "uint32",
                     "format": {
@@ -28,7 +28,7 @@
             {
                 "signature": "PNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Parent",
                     "type": "formId",
                     "signatures": [
@@ -39,7 +39,7 @@
             {
                 "signature": "VNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Static Volume Multiplier",
                     "type": "uint16",
                     "format": {
@@ -51,7 +51,7 @@
             {
                 "signature": "UNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Default Menu Value",
                     "type": "uint16",
                     "format": {

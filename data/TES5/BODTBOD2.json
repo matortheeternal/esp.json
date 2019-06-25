@@ -1,11 +1,11 @@
 {
     "name": "Biped Body Template",
-    "type": "multiUnion",
-    "subrecords": [
+    "type": "memberUnion",
+    "members": [
         {
             "signature": "BOD2",
             "type": "subrecord",
-            "def": {
+            "field": {
                 "name": "Biped Body Template",
                 "type": "struct",
                 "fields": [
@@ -47,7 +47,7 @@
         {
             "signature": "BODT",
             "type": "subrecord",
-            "def": {
+            "field": {
                 "name": "Body Template",
                 "type": "struct",
                 "fields": [

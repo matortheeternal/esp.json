@@ -44,7 +44,7 @@
             {
                 "signature": "PNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Unknown",
                     "type": "bytes"
                 }
@@ -52,7 +52,7 @@
             {
                 "signature": "FNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Flags",
                     "type": "uint16",
                     "format": {
@@ -67,7 +67,7 @@
             {
                 "signature": "KNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Interaction Keyword",
                     "type": "formId",
                     "signatures": [
@@ -79,7 +79,7 @@
             {
                 "signature": "MNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Active Markers / Flags",
                     "type": "uint32",
                     "format": {
@@ -124,7 +124,7 @@
             {
                 "signature": "WBDT",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Workbench Data",
                     "type": "struct",
                     "fields": [
@@ -158,7 +158,7 @@
             {
                 "signature": "NAM1",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Associated Spell",
                     "type": "formId",
                     "signatures": [
@@ -168,15 +168,15 @@
             },
             {
                 "name": "Markers",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "name": "Marker",
-                    "type": "multiStruct",
-                    "subrecords": [
+                    "type": "memberStruct",
+                    "members": [
                         {
                             "signature": "ENAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Marker Index",
                                 "type": "uint32"
                             }
@@ -184,7 +184,7 @@
                         {
                             "signature": "NAM0",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Disabled Entry Points",
                                 "type": "struct",
                                 "fields": [
@@ -206,7 +206,7 @@
                         {
                             "signature": "FNMK",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Marker Keyword",
                                 "type": "formId",
                                 "signatures": [
@@ -220,11 +220,11 @@
             },
             {
                 "name": "Marker Entry Points",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "signature": "FNPR",
                     "type": "subrecord",
-                    "def": {
+                    "field": {
                         "name": "Marker",
                         "type": "struct",
                         "fields": [
@@ -249,7 +249,7 @@
             {
                 "signature": "XMRK",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Model FileName",
                     "type": "string"
                 }

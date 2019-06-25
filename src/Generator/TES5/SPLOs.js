@@ -1,10 +1,10 @@
 let {
-    addDef, def, sorted, arrayOfSubrecord, req
+    addDef, def, sorted, memberArray, req
 } = require('../helpers');
 
 module.exports = () => {
     addDef('SPLOs', 
-        req(sorted(arrayOfSubrecord('Actor Effects', 
+        req(sorted(memberArray('Actor Effects', 
             def('SPLO')
         )))
     );

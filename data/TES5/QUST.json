@@ -16,7 +16,7 @@
             {
                 "signature": "DNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "General",
                     "type": "struct",
                     "fields": [
@@ -68,7 +68,7 @@
             {
                 "signature": "ENAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Event",
                     "type": "string",
                     "size": 4
@@ -76,11 +76,11 @@
             },
             {
                 "name": "Text Display Globals",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "signature": "QTGL",
                     "type": "subrecord",
-                    "def": {
+                    "field": {
                         "name": "Global",
                         "type": "formId",
                         "signatures": [
@@ -92,15 +92,15 @@
             {
                 "signature": "FLTR",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Object Window Filter",
                     "type": "string"
                 }
             },
             {
                 "name": "Quest Dialogue Conditions",
-                "type": "multiStruct",
-                "subrecords": [
+                "type": "memberStruct",
+                "members": [
                     {
                         "def": "CTDAs"
                     }
@@ -110,7 +110,7 @@
             {
                 "signature": "NEXT",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Marker",
                     "type": "empty"
                 }
@@ -120,15 +120,15 @@
             },
             {
                 "name": "Stages",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "name": "Stage",
-                    "type": "multiStruct",
-                    "subrecords": [
+                    "type": "memberStruct",
+                    "members": [
                         {
                             "signature": "INDX",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Stage Index",
                                 "type": "struct",
                                 "fields": [
@@ -161,15 +161,15 @@
                         },
                         {
                             "name": "Log Entries",
-                            "type": "subrecordArray",
-                            "subrecord": {
+                            "type": "memberArray",
+                            "member": {
                                 "name": "Log Entry",
-                                "type": "multiStruct",
-                                "subrecords": [
+                                "type": "memberStruct",
+                                "members": [
                                     {
                                         "signature": "QSDT",
                                         "type": "subrecord",
-                                        "def": {
+                                        "field": {
                                             "name": "Stage Flags",
                                             "type": "uint8",
                                             "format": {
@@ -187,7 +187,7 @@
                                     {
                                         "signature": "CNAM",
                                         "type": "subrecord",
-                                        "def": {
+                                        "field": {
                                             "name": "Log Entry",
                                             "type": "string",
                                             "localized": true
@@ -196,7 +196,7 @@
                                     {
                                         "signature": "NAM0",
                                         "type": "subrecord",
-                                        "def": {
+                                        "field": {
                                             "name": "Next Quest",
                                             "type": "formId",
                                             "signatures": [
@@ -207,7 +207,7 @@
                                     {
                                         "signature": "SCHR",
                                         "type": "subrecord",
-                                        "def": {
+                                        "field": {
                                             "name": "Unused",
                                             "type": "bytes"
                                         }
@@ -215,7 +215,7 @@
                                     {
                                         "signature": "SCTX",
                                         "type": "subrecord",
-                                        "def": {
+                                        "field": {
                                             "name": "Unused",
                                             "type": "bytes"
                                         }
@@ -223,7 +223,7 @@
                                     {
                                         "signature": "QNAM",
                                         "type": "subrecord",
-                                        "def": {
+                                        "field": {
                                             "name": "Unused",
                                             "type": "bytes"
                                         }
@@ -240,15 +240,15 @@
             },
             {
                 "name": "Objectives",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "name": "Objective",
-                    "type": "multiStruct",
-                    "subrecords": [
+                    "type": "memberStruct",
+                    "members": [
                         {
                             "signature": "QOBJ",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Objective Index",
                                 "type": "uint16"
                             }
@@ -256,7 +256,7 @@
                         {
                             "signature": "FNAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Flags",
                                 "type": "uint32",
                                 "format": {
@@ -270,7 +270,7 @@
                         {
                             "signature": "NNAM",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Display Text",
                                 "type": "string",
                                 "localized": true
@@ -279,15 +279,15 @@
                         },
                         {
                             "name": "Targets",
-                            "type": "subrecordArray",
-                            "subrecord": {
+                            "type": "memberArray",
+                            "member": {
                                 "name": "Target",
-                                "type": "multiStruct",
-                                "subrecords": [
+                                "type": "memberStruct",
+                                "members": [
                                     {
                                         "signature": "QSTA",
                                         "type": "subrecord",
-                                        "def": {
+                                        "field": {
                                             "name": "Target",
                                             "type": "struct",
                                             "fields": [
@@ -328,26 +328,26 @@
             {
                 "signature": "ANAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Next Alias ID",
                     "type": "uint32"
                 }
             },
             {
                 "name": "Aliases",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "name": "Alias",
-                    "type": "multiUnion",
-                    "subrecords": [
+                    "type": "memberUnion",
+                    "members": [
                         {
                             "name": "Alias",
-                            "type": "multiStruct",
-                            "subrecords": [
+                            "type": "memberStruct",
+                            "members": [
                                 {
                                     "signature": "ALST",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Reference Alias ID",
                                         "type": "uint32"
                                     }
@@ -355,7 +355,7 @@
                                 {
                                     "signature": "ALID",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Alias Name",
                                         "type": "string"
                                     }
@@ -366,7 +366,7 @@
                                 {
                                     "signature": "ALFI",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Force Into Alias When Filled",
                                         "type": "int32",
                                         "format": {
@@ -377,7 +377,7 @@
                                 {
                                     "signature": "ALFL",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Specific Location",
                                         "type": "formId",
                                         "signatures": [
@@ -388,7 +388,7 @@
                                 {
                                     "signature": "ALFR",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Forced Reference",
                                         "type": "formId"
                                     }
@@ -396,7 +396,7 @@
                                 {
                                     "signature": "ALUA",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Unique Actor",
                                         "type": "formId",
                                         "signatures": [
@@ -406,12 +406,12 @@
                                 },
                                 {
                                     "name": "Location Alias Reference",
-                                    "type": "multiStruct",
-                                    "subrecords": [
+                                    "type": "memberStruct",
+                                    "members": [
                                         {
                                             "signature": "ALFA",
                                             "type": "subrecord",
-                                            "def": {
+                                            "field": {
                                                 "name": "Alias",
                                                 "type": "int32",
                                                 "format": {
@@ -422,7 +422,7 @@
                                         {
                                             "signature": "KNAM",
                                             "type": "subrecord",
-                                            "def": {
+                                            "field": {
                                                 "name": "Keyword",
                                                 "type": "formId",
                                                 "signatures": [
@@ -433,7 +433,7 @@
                                         {
                                             "signature": "ALRT",
                                             "type": "subrecord",
-                                            "def": {
+                                            "field": {
                                                 "name": "Ref Type",
                                                 "type": "formId",
                                                 "signatures": [
@@ -445,12 +445,12 @@
                                 },
                                 {
                                     "name": "External Alias Reference",
-                                    "type": "multiStruct",
-                                    "subrecords": [
+                                    "type": "memberStruct",
+                                    "members": [
                                         {
                                             "signature": "ALEQ",
                                             "type": "subrecord",
-                                            "def": {
+                                            "field": {
                                                 "name": "Quest",
                                                 "type": "formId",
                                                 "signatures": [
@@ -461,7 +461,7 @@
                                         {
                                             "signature": "ALEA",
                                             "type": "subrecord",
-                                            "def": {
+                                            "field": {
                                                 "name": "Alias",
                                                 "type": "int32",
                                                 "format": {
@@ -473,12 +473,12 @@
                                 },
                                 {
                                     "name": "Create Reference to Object",
-                                    "type": "multiStruct",
-                                    "subrecords": [
+                                    "type": "memberStruct",
+                                    "members": [
                                         {
                                             "signature": "ALCO",
                                             "type": "subrecord",
-                                            "def": {
+                                            "field": {
                                                 "name": "Object",
                                                 "type": "formId"
                                             }
@@ -486,7 +486,7 @@
                                         {
                                             "signature": "ALCA",
                                             "type": "subrecord",
-                                            "def": {
+                                            "field": {
                                                 "name": "Alias",
                                                 "type": "struct",
                                                 "fields": [
@@ -514,7 +514,7 @@
                                         {
                                             "signature": "ALCL",
                                             "type": "subrecord",
-                                            "def": {
+                                            "field": {
                                                 "name": "Level",
                                                 "type": "uint32",
                                                 "format": {
@@ -533,12 +533,12 @@
                                 },
                                 {
                                     "name": "Find Matching Reference Near Alias",
-                                    "type": "multiStruct",
-                                    "subrecords": [
+                                    "type": "memberStruct",
+                                    "members": [
                                         {
                                             "signature": "ALNA",
                                             "type": "subrecord",
-                                            "def": {
+                                            "field": {
                                                 "name": "Alias",
                                                 "type": "int32",
                                                 "format": {
@@ -549,7 +549,7 @@
                                         {
                                             "signature": "ALNT",
                                             "type": "subrecord",
-                                            "def": {
+                                            "field": {
                                                 "name": "Type",
                                                 "type": "uint32",
                                                 "format": {
@@ -564,12 +564,12 @@
                                 },
                                 {
                                     "name": "Find Matching Reference From Event",
-                                    "type": "multiStruct",
-                                    "subrecords": [
+                                    "type": "memberStruct",
+                                    "members": [
                                         {
                                             "signature": "ALFE",
                                             "type": "subrecord",
-                                            "def": {
+                                            "field": {
                                                 "name": "From Event",
                                                 "type": "string",
                                                 "size": 4
@@ -578,7 +578,7 @@
                                         {
                                             "signature": "ALFD",
                                             "type": "subrecord",
-                                            "def": {
+                                            "field": {
                                                 "name": "Event Data",
                                                 "type": "bytes"
                                             }
@@ -603,7 +603,7 @@
                                 {
                                     "signature": "SPOR",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Spectator override package list",
                                         "type": "formId",
                                         "signatures": [
@@ -615,7 +615,7 @@
                                 {
                                     "signature": "OCOR",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Observe dead body override package list",
                                         "type": "formId",
                                         "signatures": [
@@ -627,7 +627,7 @@
                                 {
                                     "signature": "GWOR",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Guard warn override package list",
                                         "type": "formId",
                                         "signatures": [
@@ -639,7 +639,7 @@
                                 {
                                     "signature": "ECOR",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Combat override package list",
                                         "type": "formId",
                                         "signatures": [
@@ -651,7 +651,7 @@
                                 {
                                     "signature": "ALDN",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Display Name",
                                         "type": "formId",
                                         "signatures": [
@@ -661,11 +661,11 @@
                                 },
                                 {
                                     "name": "Alias Spells",
-                                    "type": "subrecordArray",
-                                    "subrecord": {
+                                    "type": "memberArray",
+                                    "member": {
                                         "signature": "ALSP",
                                         "type": "subrecord",
-                                        "def": {
+                                        "field": {
                                             "name": "Spell",
                                             "type": "formId",
                                             "signatures": [
@@ -676,11 +676,11 @@
                                 },
                                 {
                                     "name": "Alias Factions",
-                                    "type": "subrecordArray",
-                                    "subrecord": {
+                                    "type": "memberArray",
+                                    "member": {
                                         "signature": "ALFC",
                                         "type": "subrecord",
-                                        "def": {
+                                        "field": {
                                             "name": "Faction",
                                             "type": "formId",
                                             "signatures": [
@@ -691,11 +691,11 @@
                                 },
                                 {
                                     "name": "Alias Package Data",
-                                    "type": "subrecordArray",
-                                    "subrecord": {
+                                    "type": "memberArray",
+                                    "member": {
                                         "signature": "ALPC",
                                         "type": "subrecord",
-                                        "def": {
+                                        "field": {
                                             "name": "Package",
                                             "type": "formId",
                                             "signatures": [
@@ -707,7 +707,7 @@
                                 {
                                     "signature": "VTCK",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Voice Types",
                                         "type": "formId",
                                         "signatures": [
@@ -720,7 +720,7 @@
                                 {
                                     "signature": "ALED",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Alias End",
                                         "type": "empty"
                                     },
@@ -734,12 +734,12 @@
                         },
                         {
                             "name": "Alias",
-                            "type": "multiStruct",
-                            "subrecords": [
+                            "type": "memberStruct",
+                            "members": [
                                 {
                                     "signature": "ALLS",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Location Alias ID",
                                         "type": "uint32"
                                     }
@@ -747,7 +747,7 @@
                                 {
                                     "signature": "ALID",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Alias Name",
                                         "type": "string"
                                     }
@@ -758,7 +758,7 @@
                                 {
                                     "signature": "ALFI",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Force Into Alias When Filled",
                                         "type": "int32",
                                         "format": {
@@ -769,7 +769,7 @@
                                 {
                                     "signature": "ALFL",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Specific Location",
                                         "type": "formId",
                                         "signatures": [
@@ -780,7 +780,7 @@
                                 {
                                     "signature": "ALFR",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Forced Reference",
                                         "type": "formId"
                                     }
@@ -788,7 +788,7 @@
                                 {
                                     "signature": "ALUA",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Unique Actor",
                                         "type": "formId",
                                         "signatures": [
@@ -798,12 +798,12 @@
                                 },
                                 {
                                     "name": "Location Alias Reference",
-                                    "type": "multiStruct",
-                                    "subrecords": [
+                                    "type": "memberStruct",
+                                    "members": [
                                         {
                                             "signature": "ALFA",
                                             "type": "subrecord",
-                                            "def": {
+                                            "field": {
                                                 "name": "Alias",
                                                 "type": "int32",
                                                 "format": {
@@ -814,7 +814,7 @@
                                         {
                                             "signature": "KNAM",
                                             "type": "subrecord",
-                                            "def": {
+                                            "field": {
                                                 "name": "Keyword",
                                                 "type": "formId",
                                                 "signatures": [
@@ -825,7 +825,7 @@
                                         {
                                             "signature": "ALRT",
                                             "type": "subrecord",
-                                            "def": {
+                                            "field": {
                                                 "name": "Ref Type",
                                                 "type": "formId",
                                                 "signatures": [
@@ -837,12 +837,12 @@
                                 },
                                 {
                                     "name": "External Alias Reference",
-                                    "type": "multiStruct",
-                                    "subrecords": [
+                                    "type": "memberStruct",
+                                    "members": [
                                         {
                                             "signature": "ALEQ",
                                             "type": "subrecord",
-                                            "def": {
+                                            "field": {
                                                 "name": "Quest",
                                                 "type": "formId",
                                                 "signatures": [
@@ -853,7 +853,7 @@
                                         {
                                             "signature": "ALEA",
                                             "type": "subrecord",
-                                            "def": {
+                                            "field": {
                                                 "name": "Alias",
                                                 "type": "int32",
                                                 "format": {
@@ -865,12 +865,12 @@
                                 },
                                 {
                                     "name": "Create Reference to Object",
-                                    "type": "multiStruct",
-                                    "subrecords": [
+                                    "type": "memberStruct",
+                                    "members": [
                                         {
                                             "signature": "ALCO",
                                             "type": "subrecord",
-                                            "def": {
+                                            "field": {
                                                 "name": "Object",
                                                 "type": "formId"
                                             }
@@ -878,7 +878,7 @@
                                         {
                                             "signature": "ALCA",
                                             "type": "subrecord",
-                                            "def": {
+                                            "field": {
                                                 "name": "Alias",
                                                 "type": "struct",
                                                 "fields": [
@@ -906,7 +906,7 @@
                                         {
                                             "signature": "ALCL",
                                             "type": "subrecord",
-                                            "def": {
+                                            "field": {
                                                 "name": "Level",
                                                 "type": "uint32",
                                                 "format": {
@@ -925,12 +925,12 @@
                                 },
                                 {
                                     "name": "Find Matching Reference Near Alias",
-                                    "type": "multiStruct",
-                                    "subrecords": [
+                                    "type": "memberStruct",
+                                    "members": [
                                         {
                                             "signature": "ALNA",
                                             "type": "subrecord",
-                                            "def": {
+                                            "field": {
                                                 "name": "Alias",
                                                 "type": "int32",
                                                 "format": {
@@ -941,7 +941,7 @@
                                         {
                                             "signature": "ALNT",
                                             "type": "subrecord",
-                                            "def": {
+                                            "field": {
                                                 "name": "Type",
                                                 "type": "uint32",
                                                 "format": {
@@ -956,12 +956,12 @@
                                 },
                                 {
                                     "name": "Find Matching Reference From Event",
-                                    "type": "multiStruct",
-                                    "subrecords": [
+                                    "type": "memberStruct",
+                                    "members": [
                                         {
                                             "signature": "ALFE",
                                             "type": "subrecord",
-                                            "def": {
+                                            "field": {
                                                 "name": "From Event",
                                                 "type": "string",
                                                 "size": 4
@@ -970,7 +970,7 @@
                                         {
                                             "signature": "ALFD",
                                             "type": "subrecord",
-                                            "def": {
+                                            "field": {
                                                 "name": "Event Data",
                                                 "type": "bytes"
                                             }
@@ -995,7 +995,7 @@
                                 {
                                     "signature": "SPOR",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Spectator override package list",
                                         "type": "formId",
                                         "signatures": [
@@ -1007,7 +1007,7 @@
                                 {
                                     "signature": "OCOR",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Observe dead body override package list",
                                         "type": "formId",
                                         "signatures": [
@@ -1019,7 +1019,7 @@
                                 {
                                     "signature": "GWOR",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Guard warn override package list",
                                         "type": "formId",
                                         "signatures": [
@@ -1031,7 +1031,7 @@
                                 {
                                     "signature": "ECOR",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Combat override package list",
                                         "type": "formId",
                                         "signatures": [
@@ -1043,7 +1043,7 @@
                                 {
                                     "signature": "ALDN",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Display Name",
                                         "type": "formId",
                                         "signatures": [
@@ -1053,11 +1053,11 @@
                                 },
                                 {
                                     "name": "Alias Spells",
-                                    "type": "subrecordArray",
-                                    "subrecord": {
+                                    "type": "memberArray",
+                                    "member": {
                                         "signature": "ALSP",
                                         "type": "subrecord",
-                                        "def": {
+                                        "field": {
                                             "name": "Spell",
                                             "type": "formId",
                                             "signatures": [
@@ -1068,11 +1068,11 @@
                                 },
                                 {
                                     "name": "Alias Factions",
-                                    "type": "subrecordArray",
-                                    "subrecord": {
+                                    "type": "memberArray",
+                                    "member": {
                                         "signature": "ALFC",
                                         "type": "subrecord",
-                                        "def": {
+                                        "field": {
                                             "name": "Faction",
                                             "type": "formId",
                                             "signatures": [
@@ -1083,11 +1083,11 @@
                                 },
                                 {
                                     "name": "Alias Package Data",
-                                    "type": "subrecordArray",
-                                    "subrecord": {
+                                    "type": "memberArray",
+                                    "member": {
                                         "signature": "ALPC",
                                         "type": "subrecord",
-                                        "def": {
+                                        "field": {
                                             "name": "Package",
                                             "type": "formId",
                                             "signatures": [
@@ -1099,7 +1099,7 @@
                                 {
                                     "signature": "VTCK",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Voice Types",
                                         "type": "formId",
                                         "signatures": [
@@ -1112,7 +1112,7 @@
                                 {
                                     "signature": "ALED",
                                     "type": "subrecord",
-                                    "def": {
+                                    "field": {
                                         "name": "Alias End",
                                         "type": "empty"
                                     },
@@ -1130,7 +1130,7 @@
             {
                 "signature": "NNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Description",
                     "type": "string"
                 },
@@ -1138,15 +1138,15 @@
             },
             {
                 "name": "Targets",
-                "type": "subrecordArray",
-                "subrecord": {
+                "type": "memberArray",
+                "member": {
                     "name": "Target",
-                    "type": "multiStruct",
-                    "subrecords": [
+                    "type": "memberStruct",
+                    "members": [
                         {
                             "signature": "QSTA",
                             "type": "subrecord",
-                            "def": {
+                            "field": {
                                 "name": "Target",
                                 "type": "struct",
                                 "fields": [

@@ -35,7 +35,7 @@
             {
                 "signature": "SNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Sound - Open",
                     "type": "formId",
                     "signatures": [
@@ -46,7 +46,7 @@
             {
                 "signature": "ANAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Sound - Close",
                     "type": "formId",
                     "signatures": [
@@ -57,7 +57,7 @@
             {
                 "signature": "BNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Sound - Loop",
                     "type": "formId",
                     "signatures": [
@@ -68,7 +68,7 @@
             {
                 "signature": "FNAM",
                 "type": "subrecord",
-                "def": {
+                "field": {
                     "name": "Flags",
                     "type": "uint8",
                     "format": {
