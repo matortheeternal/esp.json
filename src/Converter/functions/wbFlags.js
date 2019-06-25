@@ -2,6 +2,7 @@ let {functionConverter} = require('../converters'),
     {args, stringify} = require('../helpers');
 
 let convertFlags = ({flags}, converter) => {
+    if (typeof flags === 'string') return flags;
     converter.addRequires('flags');
     return `flags(${stringify(flags)})`;
 };

@@ -4,7 +4,8 @@ let {functionConverter} = require('../converters'),
 functionConverter('wbFormaterUnion', [
     args.identifier,
     args.arrayOfFlags
-], ([decider, flags], converter) => {
+], (args, converter) => {
     converter.addRequires('formatUnion');
+    let [decider, flags] = args.values;
     return `formatUnion('${decider}', ${flags})`;
 });

@@ -13,7 +13,7 @@ let opts = (obj, opts) => ({ ...obj, ...opts });
 let sortKey = (sortKey, obj) => (obj.sortKey = sortKey) && obj;
 
 // arrays and strings
-let localized = (obj) => ({ ...obj, localized: true });
+let localized = obj => ({ ...obj, localized: true });
 let sorted = obj => ({ ...obj, sorted: true });
 let size = (size, obj) => ({ ...obj, size});
 let prefix = (prefix, obj) => ({ ...obj, prefix });
@@ -21,8 +21,9 @@ let prefix = (prefix, obj) => ({ ...obj, prefix });
 // number formatting
 let format = (obj, format) => (obj.format = format) && obj;
 let div = value => ({ type: 'divide', value });
-let flags = (flags) => ({ type: 'flags', flags });
-let enumeration = (options) => ({type: 'enum', options });
+let flags = flags => ({ type: 'flags', flags });
+let showUnknown = obj => ({ ...obj, showUnknown: true });
+let enumeration = options => ({type: 'enum', options });
 let formatUnion = (decider, formats) =>
     ({ type: 'formatUnion', decider, formats, });
 
@@ -71,7 +72,7 @@ module.exports = {
     addDef, getDefs, clearDefs, IsSSE,
     req, def, opts, sortKey, localized,
     sorted, size, prefix,
-    format, div, flags, enumeration, formatUnion,
+    format, div, flags, showUnknown, enumeration, formatUnion,
     record, subrecord,
     arrayOfSubrecord, arrayOfStruct, multiStruct, multiUnion,
     struct, array, union,
