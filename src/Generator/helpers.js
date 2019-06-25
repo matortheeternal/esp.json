@@ -7,10 +7,10 @@ let clearDefs = () => defs = {};
 let IsSSE = (game, options) => game === 'SSE' ? options[0] : options[1];
 
 // shared
-let req = obj => (obj.required = true) && obj;
+let req = obj => ({ ...obj, required: true });
 let def = (def, opts) => ({ def, ...opts });
 let opts = (obj, opts) => ({ ...obj, ...opts });
-let sortKey = (sortKey, obj) => (obj.sortKey = sortKey) && obj;
+let sortKey = (sortKey, obj) => ({ ...obj, sortKey });
 
 // arrays and strings
 let localized = obj => ({ ...obj, localized: true });
@@ -19,7 +19,7 @@ let size = (size, obj) => ({ ...obj, size});
 let prefix = (prefix, obj) => ({ ...obj, prefix });
 
 // number formatting
-let format = (obj, format) => (obj.format = format) && obj;
+let format = (obj, format) => ({ ...obj, format });
 let div = value => ({ type: 'divide', value });
 let flags = flags => ({ type: 'flags', flags });
 let showUnknown = obj => ({ ...obj, showUnknown: true });
@@ -31,24 +31,22 @@ let formatUnion = (decider, formats) =>
 let record = (signature, name, def) => addDef(signature,
     ({ signature, type: 'record', name, def })
 );
-let subrecord = (signature, def) =>
-    ({ signature, type: 'subrecord', def });
+let subrecord = (signature, field) =>
+    ({ signature, type: 'subrecord', field });
 
-let arrayOfSubrecord = (name, subrecord) =>
-    ({ name, type: 'subrecordArray', subrecord });
-let arrayOfStruct = (name, entryName, subrecords) =>
-    ({ name, type: 'structArray', entryName, subrecords });
-let multiStruct = (name, subrecords) =>
-    ({ name, type: 'multiStruct', subrecords });
-let multiUnion = (name, subrecords) =>
-    ({ name, type: 'multiUnion', subrecords });
+let memberArray = (name, member) =>
+    ({ name, type: 'memberArray', member });
+let memberStruct = (name, members) =>
+    ({ name, type: 'memberStruct', members });
+let memberUnion = (name, members) =>
+    ({ name, type: 'memberUnion', members });
 
 let struct = (name, fields) =>
     ({ name, type: 'struct', fields });
-let array = (name, entryDef) =>
-    ({ name, entryDef, type: 'array' });
-let union = (name, decider, elements) =>
-    ({ name, type: 'union', decider, elements });
+let array = (name, field) =>
+    ({ name, type: 'array', field });
+let union = (name, decider, fields) =>
+    ({ name, type: 'union', decider, fields });
 
 // base types
 let string = (name) => ({ name, type: 'string' });
@@ -74,7 +72,7 @@ module.exports = {
     sorted, size, prefix,
     format, div, flags, showUnknown, enumeration, formatUnion,
     record, subrecord,
-    arrayOfSubrecord, arrayOfStruct, multiStruct, multiUnion,
+    memberArray, memberStruct, memberUnion,
     struct, array, union,
     bytes, string, float,
     int0, int8, uint8, int16, uint16, int32, uint32,

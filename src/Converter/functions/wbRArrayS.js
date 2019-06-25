@@ -13,7 +13,7 @@ functionConverter('wbRArrayS', [
     args.identifier,
     args.identifier
 ], ({name, member, required}, converter) => {
-    converter.addRequires('sorted', 'arrayOfSubrecord');
-    let line = `sorted(arrayOfSubrecord(${name}, ${newLine(member)}))`;
+    converter.addRequires('sorted', 'memberArray');
+    let line = `sorted(memberArray(${name}, ${newLine(member)}))`;
     return reqLine(required, line, converter);
 });

@@ -13,6 +13,6 @@ functionConverter('wbRStruct', [
     args.identifier,
     args.identifier
 ], ({name, members, required}, converter) => {
-    converter.addRequires('multiStruct');
-    return reqLine(required, `multiStruct(${name}, ${members})`, converter);
+    converter.addRequires('memberStruct');
+    return reqLine(required, `memberStruct(${name}, ${members})`, converter);
 });

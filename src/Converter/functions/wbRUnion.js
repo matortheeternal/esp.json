@@ -10,7 +10,7 @@ functionConverter('wbRUnion', [
     args.identifier,
     args.identifier
 ], ({name, members, required}, converter) => {
-    converter.addRequires('multiUnion');
-    let line = `multiUnion(${name}, ${members})`;
+    converter.addRequires('memberUnion');
+    let line = `memberUnion(${name}, ${members})`;
     return reqLine(required, line, converter);
 });

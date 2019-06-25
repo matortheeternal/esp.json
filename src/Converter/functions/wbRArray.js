@@ -11,6 +11,6 @@ functionConverter('wbRArray', [
     args.identifier,
     args.identifier
 ], ({name, member}, converter) => {
-    converter.addRequires('arrayOfSubrecord');
-    return `arrayOfSubrecord(${name}, ${newLine(member)})`;
+    converter.addRequires('memberArray');
+    return `memberArray(${name}, ${newLine(member)})`;
 });
