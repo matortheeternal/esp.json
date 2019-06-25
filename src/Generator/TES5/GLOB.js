@@ -6,7 +6,8 @@ let {
 module.exports = () => {
     record('GLOB', 'Global', {
         flags: flags({
-            6: 'Constant'
+            6: 'Constant',
+            12: 'Ignored'
         }),
         members: [
             def('EDID'),

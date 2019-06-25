@@ -7,7 +7,8 @@ let {
 module.exports = () => {
     record('RELA', 'Relationship', {
         flags: flags({
-            6: 'Secret'
+            6: 'Secret',
+            12: 'Ignored'
         }),
         members: [
             def('EDID'),

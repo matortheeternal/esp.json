@@ -9,7 +9,7 @@ module.exports = () => {
             def('EDID'),
             req(subrecord('DATA', struct('', [
                 ckFormId('Owner', [
-                    'NPC_',    'FACT',    'NULL'
+                    'NPC_', 'FACT', 'NULL'
                 ]),
                 ckFormId('Location', ['LCTN', 'NULL']),
                 int8('Rank'),

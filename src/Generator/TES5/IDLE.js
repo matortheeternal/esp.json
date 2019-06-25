@@ -13,7 +13,7 @@ module.exports = () => {
             subrecord('ENAM', string('Animation Event')),
             subrecord('ANAM', array('Related Idle Animations', 
                 ckFormId('Related Idle Animation', [
-                    'AACT',    'IDLE',    'NULL'
+                    'AACT', 'IDLE', 'NULL'
                 ])
             )),
             req(subrecord('DATA', struct('Data (unused)', [

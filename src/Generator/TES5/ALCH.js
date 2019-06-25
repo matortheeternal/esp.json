@@ -7,6 +7,7 @@ let {
 module.exports = () => {
     record('ALCH', 'Ingestible', {
         flags: flags({
+            12: 'Ignored',
             29: 'Medicine'
         }),
         members: [

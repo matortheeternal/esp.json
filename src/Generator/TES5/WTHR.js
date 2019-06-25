@@ -169,7 +169,7 @@ module.exports = () => {
             arrayOfSubrecord('Sounds', 
                 subrecord('SNAM', struct('Sound', [
                     ckFormId('Sound', [
-                        'SNDR',    'SOUN',    'NULL'
+                        'SNDR', 'SOUN', 'NULL'
                     ]),
                     format(uint32('Type'), enumeration({
                         0: 'Default',

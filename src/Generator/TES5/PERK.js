@@ -9,7 +9,8 @@ let {
 module.exports = () => {
     record('PERK', 'Perk', {
         flags: flags({
-            2: 'Non-Playable'
+            2: 'Non-Playable',
+            12: 'Ignored'
         }),
         members: [
             def('EDID'),

@@ -6,7 +6,8 @@ let {
 module.exports = () => {
     record('SHOU', 'Shout', {
         flags: flags({
-            7: 'Treat spells as powers'
+            7: 'Treat spells as powers',
+            12: 'Ignored'
         }),
         members: [
             def('EDID'),

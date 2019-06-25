@@ -18,7 +18,7 @@ module.exports = () => {
             subrecord('RNAM', localized(string('Activate Text Override'))),
             subrecord('FNAM', unknown()),
             subrecord('PFIG', ckFormId('Ingredient', [
-                'INGR',    'ALCH',    'LVLI',    'MISC',    'NULL'
+                'INGR', 'ALCH', 'LVLI', 'MISC', 'NULL'
             ])),
             subrecord('SNAM', ckFormId('Sound', ['SNDR', 'NULL'])),
             req(subrecord('PFPC', struct('Seasonal ingredient production', [

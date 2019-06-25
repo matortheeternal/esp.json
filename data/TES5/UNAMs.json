@@ -1,0 +1,40 @@
+{
+    "name": "Data Inputs",
+    "type": "subrecordArray",
+    "subrecord": {
+        "name": "Data Input",
+        "type": "multiStruct",
+        "subrecords": [
+            {
+                "signature": "UNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Index",
+                    "type": "int8"
+                }
+            },
+            {
+                "signature": "BNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Name",
+                    "type": "string"
+                }
+            },
+            {
+                "signature": "PNAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Public"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

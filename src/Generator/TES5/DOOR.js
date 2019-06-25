@@ -6,6 +6,7 @@ let {
 module.exports = () => {
     record('DOOR', 'Door', {
         flags: flags({
+            12: 'Ignored',
             15: 'Has Distant LOD',
             16: 'Random Anim Start',
             23: 'Is Marker'

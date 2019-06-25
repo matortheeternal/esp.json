@@ -48,7 +48,7 @@ module.exports = () => {
                     formId('Unused'),
                     ckFormId('Assoc. Item', ['LIGH', 'NULL']),
                     ckFormId('Assoc. Item', [
-                        'WEAP',    'ARMO',    'NULL'
+                        'WEAP', 'ARMO', 'NULL'
                     ]),
                     ckFormId('Assoc. Item', ['NPC_', 'NULL']),
                     ckFormId('Assoc. Item', ['HAZD', 'NULL']),

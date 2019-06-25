@@ -5,7 +5,7 @@ let {
 module.exports = () => {
     addDef('SPLO', 
         subrecord('SPLO', ckFormId('Actor Effect', [
-            'SPEL',    'SHOU',    'LVSP'
+            'SPEL', 'SHOU', 'LVSP'
         ]))
     );
 };

@@ -35,10 +35,10 @@ module.exports = () => {
             subrecord('DNAM', ckFormId('Texture Set', ['TXST'])),
             subrecord('ENAM', ckFormId('Secondary Texture Set', ['TXST'])),
             subrecord('SNAM', ckFormId('Sound 1', [
-                'SNDR',    'SOUN',    'NULL'
+                'SNDR', 'SOUN', 'NULL'
             ])),
             subrecord('NAM1', ckFormId('Sound 2', [
-                'SNDR',    'SOUN',    'NULL'
+                'SNDR', 'SOUN', 'NULL'
             ])),
             subrecord('NAM2', ckFormId('Hazard', ['HAZD', 'NULL']))
         ]

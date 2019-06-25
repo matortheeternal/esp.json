@@ -40,17 +40,17 @@ module.exports = () => {
                     format(uint32('Form Type'), def('FormTypeEnum')),
                     format(uint32('Critical Stage'), def('CriticalStageEnum')),
                     ckFormId('Object Reference', [
-                        'NULL',    'PLYR',    'ACHR',    'REFR',    'PGRE',
-                        'PHZD',    'PMIS',    'PARW',    'PBAR',    'PBEA',
-                        'PCON',    'PFLA'
+                        'NULL', 'PLYR', 'ACHR', 'REFR', 'PGRE',
+                        'PHZD', 'PMIS', 'PARW', 'PBAR', 'PBEA',
+                        'PCON', 'PFLA'
                     ]),
                     ckFormId('Inventory Object', [
-                        'ARMO',    'BOOK',    'MISC',    'WEAP',    'AMMO',
-                        'KEYM',    'ALCH',    'SCRL',    'SLGM',    'INGR',
-                        'FLST',    'LIGH',    'LVLI',    'COBJ'
+                        'ARMO', 'BOOK', 'MISC', 'WEAP', 'AMMO',
+                        'KEYM', 'ALCH', 'SCRL', 'SLGM', 'INGR',
+                        'FLST', 'LIGH', 'LVLI', 'COBJ'
                     ]),
                     ckFormId('Actor', [
-                        'NULL',    'PLYR',    'ACHR',    'REFR'
+                        'NULL', 'PLYR', 'ACHR', 'REFR'
                     ]),
                     ckFormId('Voice Type', ['VTYP', 'FLST']),
                     ckFormId('Idle', ['IDLE']),
@@ -67,11 +67,11 @@ module.exports = () => {
                     ckFormId('Encounter Zone', ['ECZN']),
                     ckFormId('Perk', ['PERK']),
                     ckFormId('Owner', [
-                        'NULL',    'FACT',    'NPC_'
+                        'NULL', 'FACT', 'NPC_'
                     ]),
                     ckFormId('Furniture', ['FURN', 'FLST']),
                     ckFormId('Effect Item', [
-                        'SPEL',    'ENCH',    'ALCH',    'INGR',    'SCRL'
+                        'SPEL', 'ENCH', 'ALCH', 'INGR', 'SCRL'
                     ]),
                     ckFormId('Base Effect', ['MGEF']),
                     ckFormId('Worldspace', ['WRLD', 'FLST']),
@@ -80,13 +80,13 @@ module.exports = () => {
                         "includeFlag": "dfZeroSortKey"
                     }),
                     ckFormId('Referenceable Object', [
-                        'NULL',    'NPC_',    'PROJ',    'TREE',    'SOUN',
-                        'ACTI',    'DOOR',    'STAT',    'FURN',    'CONT',
-                        'ARMO',    'AMMO',    'MISC',    'WEAP',    'BOOK',
-                        'KEYM',    'ALCH',    'LIGH',    'GRAS',    'ASPC',
-                        'IDLM',    'ARMA',    'MSTT',    'TACT',    'LVLI',
-                        'LVSP',    'SPEL',    'SCRL',    'SHOU',    'SLGM',
-                        'ENCH',    'FLOR',    'FLST'
+                        'NULL', 'NPC_', 'PROJ', 'TREE', 'SOUN',
+                        'ACTI', 'DOOR', 'STAT', 'FURN', 'CONT',
+                        'ARMO', 'AMMO', 'MISC', 'WEAP', 'BOOK',
+                        'KEYM', 'ALCH', 'LIGH', 'GRAS', 'ASPC',
+                        'IDLM', 'ARMA', 'MSTT', 'TACT', 'LVLI',
+                        'LVSP', 'SPEL', 'SCRL', 'SHOU', 'SLGM',
+                        'ENCH', 'FLOR', 'FLST'
                     ]),
                     ckFormId('Region', ['REGN']),
                     ckFormId('Keyword', ['KYWD', 'NULL']),
@@ -133,17 +133,17 @@ module.exports = () => {
                     format(uint32('Form Type'), def('FormTypeEnum')),
                     format(uint32('Critical Stage'), def('CriticalStageEnum')),
                     ckFormId('Object Reference', [
-                        'NULL',    'PLYR',    'ACHR',    'REFR',    'PGRE',
-                        'PHZD',    'PMIS',    'PARW',    'PBAR',    'PBEA',
-                        'PCON',    'PFLA'
+                        'NULL', 'PLYR', 'ACHR', 'REFR', 'PGRE',
+                        'PHZD', 'PMIS', 'PARW', 'PBAR', 'PBEA',
+                        'PCON', 'PFLA'
                     ]),
                     ckFormId('Inventory Object', [
-                        'ARMO',    'BOOK',    'MISC',    'WEAP',    'AMMO',
-                        'KEYM',    'ALCH',    'SCRL',    'SLGM',    'INGR',
-                        'FLST',    'LIGH',    'LVLI',    'COBJ'
+                        'ARMO', 'BOOK', 'MISC', 'WEAP', 'AMMO',
+                        'KEYM', 'ALCH', 'SCRL', 'SLGM', 'INGR',
+                        'FLST', 'LIGH', 'LVLI', 'COBJ'
                     ]),
                     ckFormId('Actor', [
-                        'NULL',    'PLYR',    'ACHR',    'REFR'
+                        'NULL', 'PLYR', 'ACHR', 'REFR'
                     ]),
                     ckFormId('Voice Type', ['VTYP', 'FLST']),
                     ckFormId('Idle', ['IDLE']),
@@ -160,11 +160,11 @@ module.exports = () => {
                     ckFormId('Encounter Zone', ['ECZN']),
                     ckFormId('Perk', ['PERK']),
                     ckFormId('Owner', [
-                        'NULL',    'FACT',    'NPC_'
+                        'NULL', 'FACT', 'NPC_'
                     ]),
                     ckFormId('Furniture', ['FURN', 'FLST']),
                     ckFormId('Effect Item', [
-                        'SPEL',    'ENCH',    'ALCH',    'INGR',    'SCRL'
+                        'SPEL', 'ENCH', 'ALCH', 'INGR', 'SCRL'
                     ]),
                     ckFormId('Base Effect', ['MGEF']),
                     ckFormId('Worldspace', ['WRLD', 'FLST']),
@@ -230,13 +230,13 @@ module.exports = () => {
                         format(uint32('Casting Type'), def('CastEnum'))
                     ]),
                     ckFormId('Referenceable Object', [
-                        'NULL',    'NPC_',    'PROJ',    'TREE',    'SOUN',
-                        'ACTI',    'DOOR',    'STAT',    'FURN',    'CONT',
-                        'ARMO',    'AMMO',    'MISC',    'WEAP',    'BOOK',
-                        'KEYM',    'ALCH',    'LIGH',    'GRAS',    'ASPC',
-                        'IDLM',    'ARMA',    'MSTT',    'TACT',    'FLST',
-                        'LVLI',    'LVSP',    'SPEL',    'SCRL',    'SHOU',
-                        'SLGM',    'ENCH'
+                        'NULL', 'NPC_', 'PROJ', 'TREE', 'SOUN',
+                        'ACTI', 'DOOR', 'STAT', 'FURN', 'CONT',
+                        'ARMO', 'AMMO', 'MISC', 'WEAP', 'BOOK',
+                        'KEYM', 'ALCH', 'LIGH', 'GRAS', 'ASPC',
+                        'IDLM', 'ARMA', 'MSTT', 'TACT', 'FLST',
+                        'LVLI', 'LVSP', 'SPEL', 'SCRL', 'SHOU',
+                        'SLGM', 'ENCH'
                     ]),
                     ckFormId('Region', ['REGN']),
                     ckFormId('Keyword', ['KYWD', 'NULL']),
@@ -275,9 +275,9 @@ module.exports = () => {
                 union('Reference', [
                     uint32('Unused'),
                     ckFormId('Reference', [
-                        'NULL',    'PLYR',    'ACHR',    'REFR',    'PGRE',
-                        'PHZD',    'PMIS',    'PARW',    'PBAR',    'PBEA',
-                        'PCON',    'PFLA'
+                        'NULL', 'PLYR', 'ACHR', 'REFR', 'PGRE',
+                        'PHZD', 'PMIS', 'PARW', 'PBAR', 'PBEA',
+                        'PCON', 'PFLA'
                     ])
                 ]),
                 int32('Parameter #3')

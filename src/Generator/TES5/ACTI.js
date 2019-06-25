@@ -10,6 +10,7 @@ module.exports = () => {
             6: 'Has Tree LOD',
             8: 'Must Update Anims',
             9: 'Hidden From Local Map',
+            12: 'Ignored',
             15: 'Has Distant LOD',
             16: 'Random Anim Start',
             17: 'Dangerous',

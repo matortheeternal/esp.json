@@ -6,6 +6,7 @@ let {
 module.exports = () => {
     record('IDLM', 'Idle Marker', {
         flags: flags({
+            12: 'Ignored',
             29: 'Child Can Use'
         }),
         members: [

@@ -9,6 +9,7 @@ let {
 module.exports = () => {
     record('RACE', 'Race', {
         flags: flags({
+            12: 'Ignored',
             19: 'Critter?'
         }),
         members: [

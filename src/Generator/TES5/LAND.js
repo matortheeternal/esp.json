@@ -9,6 +9,7 @@ let {
 module.exports = () => {
     record('LAND', 'Landscape', {
         flags: flags({
+            12: 'Ignored',
             18: 'Compressed'
         }),
         members: [

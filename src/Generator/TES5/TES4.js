@@ -9,8 +9,10 @@ module.exports = game => {
     record('TES4', 'Main File Header', {
         flags: flags({
             0: 'ESM',
+            5: 'Deleted',
             7: 'Localized',
-            9: IsSSE(game, ['ESL', ''])
+            9: IsSSE(game, ['ESL', '']),
+            12: 'Ignored'
         }),
         members: [
             req(subrecord('HEDR', struct('Header', [
@@ -30,9 +32,9 @@ module.exports = game => {
             ),
             subrecord('ONAM', array('Overridden Forms', 
                 ckFormId('Form', [
-                    'ACHR',    'LAND',    'NAVM',    'REFR',    'PGRE',
-                    'PHZD',    'PMIS',    'PARW',    'PBAR',    'PBEA',
-                    'PCON',    'PFLA'
+                    'ACHR', 'LAND', 'NAVM', 'REFR', 'PGRE',
+                    'PHZD', 'PMIS', 'PARW', 'PBAR', 'PBEA',
+                    'PCON', 'PFLA'
                 ])
             )),
             subrecord('SCRN', bytes('Screenshot')),

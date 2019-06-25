@@ -5,7 +5,7 @@ let {
 module.exports = () => {
     addDef('RecordFlags', 
         format(uint32('Record Flags'), flags({
-        
+            12: 'Ignored'
         }))
     );
 };

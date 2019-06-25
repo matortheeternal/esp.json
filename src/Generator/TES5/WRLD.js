@@ -9,6 +9,7 @@ let {
 module.exports = game => {
     record('WRLD', 'Worldspace', {
         flags: flags({
+            12: 'Ignored',
             19: 'Can\'t Wait'
         }),
         members: [

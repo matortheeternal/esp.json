@@ -10,8 +10,8 @@ module.exports = () => {
             subrecord('ACPR', array('Actor Cell Persistent Reference', 
                 struct('', [
                     ckFormId('Actor', [
-                        'PLYR',    'ACHR',    'REFR',    'PGRE',    'PHZD',
-                        'PMIS',    'PARW',    'PBAR',    'PBEA',    'PCON',
+                        'PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD',
+                        'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON',
                         'PFLA'
                     ]),
                     ckFormId('Location', ['WRLD', 'CELL']),
@@ -22,8 +22,8 @@ module.exports = () => {
             subrecord('LCPR', array('Location Cell Persistent Reference', 
                 struct('', [
                     ckFormId('Actor', [
-                        'PLYR',    'ACHR',    'REFR',    'PGRE',    'PHZD',
-                        'PMIS',    'PARW',    'PBAR',    'PBEA',    'PCON',
+                        'PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD',
+                        'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON',
                         'PFLA'
                     ]),
                     ckFormId('Location', ['WRLD', 'CELL']),
@@ -55,8 +55,8 @@ module.exports = () => {
                 struct('', [
                     ckFormId('Loc Ref Type', ['LCRT']),
                     ckFormId('Marker', [
-                        'PLYR',    'ACHR',    'REFR',    'PGRE',    'PHZD',
-                        'PMIS',    'PARW',    'PBAR',    'PBEA',    'PCON',
+                        'PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD',
+                        'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON',
                         'PFLA'
                     ]),
                     ckFormId('Location', ['WRLD', 'CELL']),
@@ -68,8 +68,8 @@ module.exports = () => {
                 struct('', [
                     ckFormId('Loc Ref Type', ['LCRT']),
                     ckFormId('Marker', [
-                        'PLYR',    'ACHR',    'REFR',    'PGRE',    'PHZD',
-                        'PMIS',    'PARW',    'PBAR',    'PBEA',    'PCON',
+                        'PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD',
+                        'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON',
                         'PFLA'
                     ]),
                     ckFormId('Location', ['WRLD', 'CELL']),
@@ -115,28 +115,28 @@ module.exports = () => {
             ),
             subrecord('ACID', array('Actor Cell Marker Reference', 
                 ckFormId('Ref', [
-                    'PLYR',    'ACHR',    'REFR',    'PGRE',    'PHZD',
-                    'PMIS',    'PARW',    'PBAR',    'PBEA',    'PCON',
+                    'PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD',
+                    'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON',
                     'PFLA'
                 ])
             )),
             subrecord('LCID', array('Location Cell Marker Reference', 
                 ckFormId('Ref', [
-                    'PLYR',    'ACHR',    'REFR',    'PGRE',    'PHZD',
-                    'PMIS',    'PARW',    'PBAR',    'PBEA',    'PCON',
+                    'PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD',
+                    'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON',
                     'PFLA'
                 ])
             )),
             subrecord('ACEP', array('Actor Cell Enable Point', 
                 struct('', [
                     ckFormId('Actor', [
-                        'PLYR',    'ACHR',    'REFR',    'PGRE',    'PHZD',
-                        'PMIS',    'PARW',    'PBAR',    'PBEA',    'PCON',
+                        'PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD',
+                        'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON',
                         'PFLA'
                     ]),
                     ckFormId('Ref', [
-                        'PLYR',    'ACHR',    'REFR',    'PGRE',    'PHZD',
-                        'PMIS',    'PARW',    'PBAR',    'PBEA',    'PCON',
+                        'PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD',
+                        'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON',
                         'PFLA'
                     ]),
                     int16('Grid Y'),
@@ -146,13 +146,13 @@ module.exports = () => {
             subrecord('LCEP', array('Location Cell Enable Point', 
                 struct('', [
                     ckFormId('Actor', [
-                        'PLYR',    'ACHR',    'REFR',    'PGRE',    'PHZD',
-                        'PMIS',    'PARW',    'PBAR',    'PBEA',    'PCON',
+                        'PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD',
+                        'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON',
                         'PFLA'
                     ]),
                     ckFormId('Ref', [
-                        'PLYR',    'ACHR',    'REFR',    'PGRE',    'PHZD',
-                        'PMIS',    'PARW',    'PBAR',    'PBEA',    'PCON',
+                        'PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD',
+                        'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON',
                         'PFLA'
                     ]),
                     int16('Grid Y'),

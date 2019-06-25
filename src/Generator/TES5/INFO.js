@@ -9,6 +9,7 @@ let {
 module.exports = () => {
     record('INFO', 'Dialog response', {
         flags: flags({
+            12: 'Ignored',
             13: 'Actor Changed'
         }),
         members: [
@@ -46,7 +47,7 @@ module.exports = () => {
             }))),
             arrayOfSubrecord('Link To', 
                 subrecord('TCLT', ckFormId('Response', [
-                    'DIAL',    'INFO',    'NULL'
+                    'DIAL', 'INFO', 'NULL'
                 ]))
             ),
             subrecord('DNAM', formId('Response Data')),

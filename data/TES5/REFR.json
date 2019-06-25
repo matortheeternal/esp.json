@@ -1,0 +1,1361 @@
+{
+    "signature": "REFR",
+    "type": "record",
+    "name": "Placed Object",
+    "def": {
+        "flags": {
+            "type": "formatUnion",
+            "decider": "REFRRecordFlagsDecider",
+            "formats": [
+                {
+                    "type": "flags",
+                    "flags": {
+                        "5": "Deleted",
+                        "10": "Persistent",
+                        "11": "Initially Disabled",
+                        "12": "Ignored",
+                        "16": "Is Full LOD",
+                        "26": "Filter (Collision Geometry)",
+                        "27": "Bounding Box (Collision Geometry)",
+                        "28": "Reflected By Auto Water",
+                        "30": "Ground",
+                        "31": "Multibound"
+                    },
+                    "showUnknown": true
+                },
+                {
+                    "type": "flags",
+                    "flags": {
+                        "5": "Deleted",
+                        "9": "Hidden From Local Map",
+                        "10": "Persistent",
+                        "11": "Initially Disabled",
+                        "12": "Ignored",
+                        "15": "Visible when distant",
+                        "16": "Is Full LOD",
+                        "26": "Filter (Collision Geometry)",
+                        "27": "Bounding Box (Collision Geometry)",
+                        "28": "Reflected By Auto Water",
+                        "29": "Don't Havok Settle",
+                        "30": "No Respawn",
+                        "31": "Multibound"
+                    },
+                    "showUnknown": true
+                },
+                {
+                    "type": "flags",
+                    "flags": {
+                        "5": "Deleted",
+                        "10": "Persistent",
+                        "11": "Initially Disabled",
+                        "12": "Ignored",
+                        "16": "Is Full LOD",
+                        "25": "No AI Acquire",
+                        "26": "Filter (Collision Geometry)",
+                        "27": "Bounding Box (Collision Geometry)",
+                        "28": "Reflected By Auto Water",
+                        "29": "Don't Havok Settle",
+                        "30": "Ground",
+                        "31": "Multibound"
+                    },
+                    "showUnknown": true
+                },
+                {
+                    "type": "flags",
+                    "flags": {
+                        "5": "Deleted",
+                        "6": "Hidden From Local Map",
+                        "8": "Inaccessible",
+                        "10": "Persistent",
+                        "11": "Initially Disabled",
+                        "12": "Ignored",
+                        "16": "Is Full LOD",
+                        "26": "Filter (Collision Geometry)",
+                        "27": "Bounding Box (Collision Geometry)",
+                        "28": "Reflected By Auto Water",
+                        "29": "Don't Havok Settle",
+                        "30": "No Respawn",
+                        "31": "Multibound"
+                    },
+                    "showUnknown": true
+                },
+                {
+                    "type": "flags",
+                    "flags": {
+                        "5": "Deleted",
+                        "8": "Doesn't Light Water",
+                        "9": "Casts Shadows",
+                        "10": "Persistent",
+                        "11": "Initially Disabled",
+                        "12": "Ignored",
+                        "16": "Never Fades",
+                        "17": "Doesn't Light Landscape",
+                        "25": "No AI Acquire",
+                        "28": "Reflected By Auto Water",
+                        "29": "Don't Havok Settle",
+                        "30": "No Respawn",
+                        "31": "Multibound"
+                    },
+                    "showUnknown": true
+                },
+                {
+                    "type": "flags",
+                    "flags": {
+                        "5": "Deleted",
+                        "9": "Motion Blur",
+                        "10": "Persistent",
+                        "11": "Initially Disabled",
+                        "12": "Ignored",
+                        "16": "Is Full LOD",
+                        "26": "Filter (Collision Geometry)",
+                        "27": "Bounding Box (Collision Geometry)",
+                        "28": "Reflected By Auto Water",
+                        "29": "Don't Havok Settle",
+                        "30": "No Respawn",
+                        "31": "Multibound"
+                    },
+                    "showUnknown": true
+                },
+                {
+                    "type": "flags",
+                    "flags": {
+                        "5": "Deleted",
+                        "10": "Persistent",
+                        "11": "Initially Disabled",
+                        "12": "Ignored",
+                        "16": "Is Full LOD",
+                        "28": "Reflected By Auto Water",
+                        "29": "Don't Havok Settle",
+                        "30": "No Respawn",
+                        "31": "Multibound"
+                    },
+                    "showUnknown": true
+                },
+                {
+                    "type": "flags",
+                    "flags": {
+                        "5": "Deleted",
+                        "10": "Persistent",
+                        "11": "Initially Disabled",
+                        "12": "Ignored",
+                        "16": "Is Full LOD",
+                        "25": "No AI Acquire",
+                        "28": "Reflected By Auto Water",
+                        "29": "Don't Havok Settle",
+                        "30": "No Respawn",
+                        "31": "Multibound"
+                    },
+                    "showUnknown": true
+                }
+            ]
+        },
+        "members": [
+            {
+                "def": "EDID"
+            },
+            {
+                "def": "VMAD"
+            },
+            {
+                "signature": "NAME",
+                "type": "subrecord",
+                "def": {
+                    "name": "Base",
+                    "type": "formId",
+                    "signatures": [
+                        "TREE",
+                        "SNDR",
+                        "ACTI",
+                        "DOOR",
+                        "STAT",
+                        "FURN",
+                        "CONT",
+                        "ARMO",
+                        "AMMO",
+                        "LVLN",
+                        "LVLC",
+                        "MISC",
+                        "WEAP",
+                        "BOOK",
+                        "KEYM",
+                        "ALCH",
+                        "LIGH",
+                        "GRAS",
+                        "ASPC",
+                        "IDLM",
+                        "ARMA",
+                        "INGR",
+                        "MSTT",
+                        "TACT",
+                        "TXST",
+                        "FLOR",
+                        "SLGM",
+                        "SCRL",
+                        "SOUN",
+                        "APPA",
+                        "SPEL",
+                        "ARTO",
+                        "ADDN"
+                    ]
+                },
+                "required": true
+            },
+            {
+                "signature": "XMBO",
+                "type": "subrecord",
+                "def": {
+                    "name": "Bound Half Extents",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "X",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Y",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Z",
+                            "type": "float"
+                        }
+                    ]
+                }
+            },
+            {
+                "signature": "XPRM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Primitive",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Bounds",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "X",
+                                    "type": "float",
+                                    "required": true
+                                },
+                                {
+                                    "name": "Y",
+                                    "type": "float",
+                                    "required": true
+                                },
+                                {
+                                    "name": "Z",
+                                    "type": "float",
+                                    "required": true
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Color",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "Red",
+                                    "type": "float",
+                                    "required": true
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "float",
+                                    "required": true
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "float",
+                                    "required": true
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Type",
+                            "type": "uint32",
+                            "format": {
+                                "type": "enum",
+                                "options": {
+                                    "0": "None",
+                                    "1": "Box",
+                                    "2": "Sphere",
+                                    "3": "Portal Box",
+                                    "4": "Unknown 4"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "signature": "XORD",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unknown",
+                    "type": "bytes"
+                }
+            },
+            {
+                "signature": "XOCP",
+                "type": "subrecord",
+                "def": {
+                    "name": "Occlusion Plane Data",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Size",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "Width",
+                                    "type": "float",
+                                    "required": true
+                                },
+                                {
+                                    "name": "Height",
+                                    "type": "float",
+                                    "required": true
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Position",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "X",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "Y",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "Z",
+                                    "type": "float"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Rotation (Quaternion?)",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "q1",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "q2",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "q3",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "q4",
+                                    "type": "float"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "signature": "XPOD",
+                "type": "subrecord",
+                "def": {
+                    "name": "Portal Data",
+                    "entryDef": {
+                        "name": "References",
+                        "type": "struct",
+                        "fields": [
+                            {
+                                "name": "Origin",
+                                "type": "formId",
+                                "signatures": [
+                                    "REFR",
+                                    "NULL"
+                                ]
+                            },
+                            {
+                                "name": "Destination",
+                                "type": "formId",
+                                "signatures": [
+                                    "REFR",
+                                    "NULL"
+                                ]
+                            }
+                        ]
+                    },
+                    "type": "array"
+                }
+            },
+            {
+                "signature": "XPTL",
+                "type": "subrecord",
+                "def": {
+                    "name": "Room Portal (unused)",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Size",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "Width",
+                                    "type": "float",
+                                    "required": true
+                                },
+                                {
+                                    "name": "Height",
+                                    "type": "float",
+                                    "required": true
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Position",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "X",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "Y",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "Z",
+                                    "type": "float"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Rotation (Quaternion?)",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "q1",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "q2",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "q3",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "q4",
+                                    "type": "float"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Bound Data",
+                "type": "multiStruct",
+                "subrecords": [
+                    {
+                        "signature": "XRMR",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Header",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "Linked Rooms Count",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Flags",
+                                    "type": "uint8",
+                                    "format": {
+                                        "type": "flags",
+                                        "flags": {
+                                            "0": "Unknown 1",
+                                            "1": "Unknown 2",
+                                            "2": "Unknown 3",
+                                            "3": "Unknown 4",
+                                            "4": "Unknown 5",
+                                            "5": "Unknown 6",
+                                            "6": "Has Image Space",
+                                            "7": "Has Lighting Template"
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "Unknown",
+                                    "type": "bytes",
+                                    "size": 2
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "signature": "LNAM",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Lighting Template",
+                            "type": "formId",
+                            "signatures": [
+                                "LGTM"
+                            ]
+                        }
+                    },
+                    {
+                        "signature": "INAM",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Image Space",
+                            "type": "formId",
+                            "signatures": [
+                                "IMGS"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "Linked Rooms",
+                        "type": "subrecordArray",
+                        "subrecord": {
+                            "signature": "XLRM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Linked Room",
+                                "type": "formId",
+                                "signatures": [
+                                    "REFR"
+                                ]
+                            }
+                        },
+                        "sorted": true
+                    }
+                ]
+            },
+            {
+                "signature": "XMBP",
+                "type": "subrecord",
+                "def": {
+                    "name": "MultiBound Primitive Marker",
+                    "type": "empty"
+                }
+            },
+            {
+                "def": "XRGD"
+            },
+            {
+                "def": "XRGB"
+            },
+            {
+                "signature": "XRDS",
+                "type": "subrecord",
+                "def": {
+                    "name": "Radius",
+                    "type": "float"
+                }
+            },
+            {
+                "name": "Reflected/Refracted By",
+                "type": "subrecordArray",
+                "subrecord": {
+                    "signature": "XPWR",
+                    "type": "subrecord",
+                    "def": {
+                        "name": "Water",
+                        "type": "struct",
+                        "fields": [
+                            {
+                                "name": "Reference",
+                                "type": "formId",
+                                "signatures": [
+                                    "REFR"
+                                ]
+                            },
+                            {
+                                "name": "Type",
+                                "type": "uint32",
+                                "format": {
+                                    "type": "flags",
+                                    "flags": {
+                                        "0": "Reflection",
+                                        "1": "Refraction"
+                                    }
+                                }
+                            }
+                        ],
+                        "sortKey": [
+                            0
+                        ]
+                    }
+                },
+                "sorted": true
+            },
+            {
+                "name": "Lit Water",
+                "type": "subrecordArray",
+                "subrecord": {
+                    "signature": "XLTW",
+                    "type": "subrecord",
+                    "def": {
+                        "name": "Water",
+                        "type": "formId",
+                        "signatures": [
+                            "REFR"
+                        ]
+                    }
+                },
+                "sorted": true
+            },
+            {
+                "signature": "XEMI",
+                "type": "subrecord",
+                "def": {
+                    "name": "Emittance",
+                    "type": "formId",
+                    "signatures": [
+                        "LIGH",
+                        "REGN"
+                    ]
+                }
+            },
+            {
+                "signature": "XLIG",
+                "type": "subrecord",
+                "def": {
+                    "name": "Light Data",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "FOV 90+/-",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Fade 1.35+/-",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 4
+                        },
+                        {
+                            "name": "Shadow Depth Bias",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 4
+                        }
+                    ]
+                },
+                "required": true
+            },
+            {
+                "signature": "XALP",
+                "type": "subrecord",
+                "def": {
+                    "name": "Alpha",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Cutoff",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Base",
+                            "type": "uint8"
+                        }
+                    ]
+                }
+            },
+            {
+                "signature": "XTEL",
+                "type": "subrecord",
+                "def": {
+                    "name": "Teleport Destination",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Door",
+                            "type": "formId",
+                            "signatures": [
+                                "REFR"
+                            ]
+                        },
+                        {
+                            "def": "PosRot"
+                        },
+                        {
+                            "name": "Flags",
+                            "type": "uint32",
+                            "format": {
+                                "type": "flags",
+                                "flags": {
+                                    "0": "No Alarm"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "signature": "XTNM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Teleport Message Box",
+                    "type": "formId",
+                    "signatures": [
+                        "MESG"
+                    ]
+                }
+            },
+            {
+                "signature": "XMBR",
+                "type": "subrecord",
+                "def": {
+                    "name": "MultiBound Reference",
+                    "type": "formId",
+                    "signatures": [
+                        "REFR"
+                    ]
+                }
+            },
+            {
+                "signature": "XWCN",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unknown",
+                    "type": "bytes"
+                }
+            },
+            {
+                "signature": "XWCS",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unknown",
+                    "type": "bytes"
+                }
+            },
+            {
+                "signature": "XWCU",
+                "type": "subrecord",
+                "def": {
+                    "name": "Water Velocity",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "X Offset",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Y Offset",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Z Offset",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 4
+                        },
+                        {
+                            "name": "X Angle",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Y Angle",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Z Angle",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": "bytes"
+                        }
+                    ]
+                }
+            },
+            {
+                "signature": "XCVL",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unknown",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 4
+                        },
+                        {
+                            "name": "X Angle",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 4
+                        }
+                    ]
+                }
+            },
+            {
+                "signature": "XCZR",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unknown",
+                    "type": "formId",
+                    "signatures": [
+                        "PLYR",
+                        "ACHR",
+                        "REFR",
+                        "PGRE",
+                        "PHZD",
+                        "PMIS",
+                        "PARW",
+                        "PBAR",
+                        "PBEA",
+                        "PCON",
+                        "PFLA",
+                        "NULL"
+                    ]
+                }
+            },
+            {
+                "signature": "XCZA",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unknown",
+                    "type": "bytes"
+                }
+            },
+            {
+                "signature": "XCZC",
+                "type": "subrecord",
+                "def": {
+                    "name": "Unknown",
+                    "type": "formId",
+                    "signatures": [
+                        "CELL",
+                        "NULL"
+                    ]
+                }
+            },
+            {
+                "def": "XSCL"
+            },
+            {
+                "signature": "XSPC",
+                "type": "subrecord",
+                "def": {
+                    "name": "Spawn Container",
+                    "type": "formId",
+                    "signatures": [
+                        "REFR"
+                    ]
+                }
+            },
+            {
+                "name": "Activate Parents",
+                "type": "multiStruct",
+                "subrecords": [
+                    {
+                        "signature": "XAPD",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Flags",
+                            "type": "uint8",
+                            "format": {
+                                "type": "flags",
+                                "flags": {
+                                    "0": "Parent Activate Only"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "Activate Parent Refs",
+                        "type": "subrecordArray",
+                        "subrecord": {
+                            "signature": "XAPR",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Activate Parent Ref",
+                                "type": "struct",
+                                "fields": [
+                                    {
+                                        "name": "Reference",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "PLYR",
+                                            "ACHR",
+                                            "REFR",
+                                            "PGRE",
+                                            "PHZD",
+                                            "PMIS",
+                                            "PARW",
+                                            "PBAR",
+                                            "PBEA",
+                                            "PCON",
+                                            "PFLA"
+                                        ]
+                                    },
+                                    {
+                                        "name": "Delay",
+                                        "type": "float"
+                                    }
+                                ],
+                                "sortKey": [
+                                    0
+                                ]
+                            }
+                        },
+                        "sorted": true
+                    }
+                ]
+            },
+            {
+                "signature": "XLIB",
+                "type": "subrecord",
+                "def": {
+                    "name": "Leveled Item Base Object",
+                    "type": "formId",
+                    "signatures": [
+                        "LVLI"
+                    ]
+                }
+            },
+            {
+                "def": "XLCM"
+            },
+            {
+                "signature": "XLCN",
+                "type": "subrecord",
+                "def": {
+                    "name": "Persistent Location",
+                    "type": "formId",
+                    "signatures": [
+                        "LCTN"
+                    ]
+                }
+            },
+            {
+                "signature": "XTRI",
+                "type": "subrecord",
+                "def": {
+                    "name": "Collision Layer",
+                    "type": "uint32"
+                }
+            },
+            {
+                "signature": "XLOC",
+                "type": "subrecord",
+                "def": {
+                    "name": "Lock Data",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Level",
+                            "type": "uint8",
+                            "format": {
+                                "type": "enum",
+                                "options": {
+                                    "1": "Novice",
+                                    "25": "Apprentice",
+                                    "50": "Adept",
+                                    "75": "Expert",
+                                    "100": "Master",
+                                    "255": "Requires Key"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 3
+                        },
+                        {
+                            "name": "Key",
+                            "type": "formId",
+                            "signatures": [
+                                "KEYM",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Flags",
+                            "type": "uint8",
+                            "format": {
+                                "type": "flags",
+                                "flags": {
+                                    "0": "",
+                                    "1": "",
+                                    "2": "Leveled Lock"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 3
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 8
+                        }
+                    ]
+                },
+                "required": true
+            },
+            {
+                "signature": "XEZN",
+                "type": "subrecord",
+                "def": {
+                    "name": "Encounter Zone",
+                    "type": "formId",
+                    "signatures": [
+                        "ECZN"
+                    ]
+                }
+            },
+            {
+                "signature": "XNDP",
+                "type": "subrecord",
+                "def": {
+                    "name": "Navigation Door Link",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Navigation Mesh",
+                            "type": "formId",
+                            "signatures": [
+                                "NAVM"
+                            ]
+                        },
+                        {
+                            "name": "Teleport Marker Triangle",
+                            "type": "int16",
+                            "format": {
+                                "def": "REFRNavmeshTriangleToStr"
+                            }
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 2
+                        }
+                    ]
+                }
+            },
+            {
+                "signature": "XLRT",
+                "type": "subrecord",
+                "def": {
+                    "name": "Location Ref Type",
+                    "entryDef": {
+                        "name": "Ref",
+                        "type": "formId",
+                        "signatures": [
+                            "LCRT",
+                            "NULL"
+                        ]
+                    },
+                    "type": "array"
+                }
+            },
+            {
+                "signature": "XIS2",
+                "type": "subrecord",
+                "def": {
+                    "name": "Ignored by Sandbox",
+                    "type": "empty"
+                }
+            },
+            {
+                "def": "Ownership"
+            },
+            {
+                "signature": "XCNT",
+                "type": "subrecord",
+                "def": {
+                    "name": "Item Count",
+                    "type": "int32"
+                }
+            },
+            {
+                "signature": "XCHG",
+                "type": "subrecord",
+                "def": {
+                    "name": "Charge",
+                    "type": "float"
+                }
+            },
+            {
+                "signature": "XLRL",
+                "type": "subrecord",
+                "def": {
+                    "name": "Location Reference",
+                    "type": "formId",
+                    "signatures": [
+                        "LCRT",
+                        "LCTN",
+                        "NULL"
+                    ]
+                }
+            },
+            {
+                "def": "XESP"
+            },
+            {
+                "name": "Linked References",
+                "type": "subrecordArray",
+                "subrecord": {
+                    "signature": "XLKR",
+                    "type": "subrecord",
+                    "def": {
+                        "name": "Linked Reference",
+                        "type": "struct",
+                        "fields": [
+                            {
+                                "name": "Keyword/Ref",
+                                "type": "formId",
+                                "signatures": [
+                                    "KYWD",
+                                    "PLYR",
+                                    "ACHR",
+                                    "REFR",
+                                    "PGRE",
+                                    "PHZD",
+                                    "PMIS",
+                                    "PARW",
+                                    "PBAR",
+                                    "PBEA",
+                                    "PCON",
+                                    "PFLA",
+                                    "NULL"
+                                ]
+                            },
+                            {
+                                "name": "Ref",
+                                "type": "formId",
+                                "signatures": [
+                                    "PLYR",
+                                    "ACHR",
+                                    "REFR",
+                                    "PGRE",
+                                    "PHZD",
+                                    "PMIS",
+                                    "PARW",
+                                    "PBAR",
+                                    "PBEA",
+                                    "PCON",
+                                    "PFLA"
+                                ]
+                            }
+                        ]
+                    },
+                    "required": true
+                }
+            },
+            {
+                "name": "Patrol",
+                "type": "subrecordArray",
+                "subrecord": {
+                    "name": "Data",
+                    "type": "multiStruct",
+                    "subrecords": [
+                        {
+                            "signature": "XPRD",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Idle Time",
+                                "type": "float"
+                            },
+                            "required": true
+                        },
+                        {
+                            "signature": "XPPA",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Patrol Script Marker",
+                                "type": "empty"
+                            },
+                            "required": true
+                        },
+                        {
+                            "signature": "INAM",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Idle",
+                                "type": "formId",
+                                "signatures": [
+                                    "IDLE",
+                                    "NULL"
+                                ]
+                            },
+                            "required": true
+                        },
+                        {
+                            "signature": "SCHR",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Unused",
+                                "type": "bytes"
+                            }
+                        },
+                        {
+                            "signature": "SCTX",
+                            "type": "subrecord",
+                            "def": {
+                                "name": "Unused",
+                                "type": "bytes"
+                            }
+                        },
+                        {
+                            "def": "PDTOs"
+                        }
+                    ]
+                }
+            },
+            {
+                "signature": "XACT",
+                "type": "subrecord",
+                "def": {
+                    "name": "Action Flag",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Use Default",
+                            "1": "Activate",
+                            "2": "Open",
+                            "3": "Open by Default"
+                        }
+                    }
+                }
+            },
+            {
+                "signature": "XHTW",
+                "type": "subrecord",
+                "def": {
+                    "name": "Head-Tracking Weight",
+                    "type": "float"
+                }
+            },
+            {
+                "signature": "XFVC",
+                "type": "subrecord",
+                "def": {
+                    "name": "Favor Cost",
+                    "type": "float"
+                }
+            },
+            {
+                "signature": "ONAM",
+                "type": "subrecord",
+                "def": {
+                    "name": "Open by Default",
+                    "type": "empty"
+                }
+            },
+            {
+                "name": "Map Marker",
+                "type": "multiStruct",
+                "subrecords": [
+                    {
+                        "signature": "XMRK",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Map Marker Data",
+                            "type": "empty"
+                        }
+                    },
+                    {
+                        "signature": "FNAM",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "Map Flags",
+                            "type": "uint8",
+                            "format": {
+                                "type": "flags",
+                                "flags": {
+                                    "0": "Visible",
+                                    "1": "Can Travel To",
+                                    "2": "\"Show All\" Hidden"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "def": "FULL",
+                        "required": true
+                    },
+                    {
+                        "signature": "TNAM",
+                        "type": "subrecord",
+                        "def": {
+                            "name": "",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "Type",
+                                    "type": "uint8",
+                                    "format": {
+                                        "def": "MapMarkerEnum"
+                                    }
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        "required": true
+                    }
+                ]
+            },
+            {
+                "signature": "XATR",
+                "type": "subrecord",
+                "def": {
+                    "name": "Attach Ref",
+                    "type": "formId",
+                    "signatures": [
+                        "REFR",
+                        "PGRE",
+                        "PHZD",
+                        "PMIS",
+                        "PARW",
+                        "PBAR",
+                        "PBEA",
+                        "PCON",
+                        "PFLA"
+                    ]
+                }
+            },
+            {
+                "def": "XLOD"
+            },
+            {
+                "def": "DataPosRot"
+            }
+        ]
+    }
+}

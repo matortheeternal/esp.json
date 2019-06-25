@@ -18,16 +18,16 @@ module.exports = () => {
             })),
             union('Target', [
                 ckFormId('Reference', [
-                    'NULL',    'PLYR',    'ACHR',    'REFR',    'PGRE',
-                    'PHZD',    'PMIS',    'PARW',    'PBAR',    'PBEA',
-                    'PCON',    'PFLA'
+                    'NULL', 'PLYR', 'ACHR', 'REFR', 'PGRE',
+                    'PHZD', 'PMIS', 'PARW', 'PBAR', 'PBEA',
+                    'PCON', 'PFLA'
                 ]),
                 ckFormId('Object ID', [
-                    'NULL',    'ACTI',    'DOOR',    'STAT',    'MSTT',
-                    'FURN',    'SPEL',    'SCRL',    'NPC_',    'CONT',
-                    'ARMO',    'AMMO',    'MISC',    'WEAP',    'BOOK',
-                    'KEYM',    'ALCH',    'INGR',    'LIGH',    'FACT',
-                    'FLST',    'IDLM',    'SHOU',    'SOUN',    'TXST',
+                    'NULL', 'ACTI', 'DOOR', 'STAT', 'MSTT',
+                    'FURN', 'SPEL', 'SCRL', 'NPC_', 'CONT',
+                    'ARMO', 'AMMO', 'MISC', 'WEAP', 'BOOK',
+                    'KEYM', 'ALCH', 'INGR', 'LIGH', 'FACT',
+                    'FLST', 'IDLM', 'SHOU', 'SOUN', 'TXST',
                     'PROJ'
                 ]),
                 format(uint32('Object Type'), def('ObjectTypeEnum')),

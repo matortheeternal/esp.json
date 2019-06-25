@@ -8,7 +8,8 @@ let {
 module.exports = game => {
     record('WEAP', 'Weapon', {
         flags: flags({
-            2: 'Non-Playable'
+            2: 'Non-Playable',
+            12: 'Ignored'
         }),
         members: [
             def('EDID'),

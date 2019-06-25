@@ -7,8 +7,8 @@ module.exports = () => {
     addDef('XESP', 
         subrecord('XESP', struct('Enable Parent', [
             ckFormId('Reference', [
-                'PLYR',    'ACHR',    'REFR',    'PGRE',    'PHZD',
-                'PMIS',    'PARW',    'PBAR',    'PBEA',    'PCON',
+                'PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD',
+                'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON',
                 'PFLA'
             ]),
             format(uint8('Flags'), flags({

@@ -7,7 +7,7 @@ module.exports = () => {
     addDef('COED', 
         subrecord('COED', sortKey([2], struct('Extra Data', [
             ckFormId('Owner', [
-                'NPC_',    'FACT',    'NULL'
+                'NPC_', 'FACT', 'NULL'
             ]),
             union('Global Variable / Required Rank', [
                 size(4, bytes('Unused')),

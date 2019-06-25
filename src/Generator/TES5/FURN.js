@@ -9,6 +9,7 @@ module.exports = () => {
     record('FURN', 'Furniture', {
         flags: flags({
             7: 'Is Perch',
+            12: 'Ignored',
             15: 'Has Distant LOD',
             16: 'Random Anim Start',
             23: 'Is Marker',

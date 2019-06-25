@@ -25,9 +25,9 @@ module.exports = () => {
                         uint16('Level'),
                         size(2, bytes('Unknown')),
                         ckFormId('Reference', [
-                            'ARMO',    'AMMO',    'APPA',    'MISC',    'WEAP',
-                            'BOOK',    'LVLI',    'KEYM',    'ALCH',    'LIGH',
-                            'INGR',    'SLGM',    'SCRL'
+                            'ARMO', 'AMMO', 'APPA', 'MISC', 'WEAP',
+                            'BOOK', 'LVLI', 'KEYM', 'ALCH', 'LIGH',
+                            'INGR', 'SLGM', 'SCRL'
                         ]),
                         uint16('Count'),
                         size(2, bytes('Unknown'))

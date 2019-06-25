@@ -11,6 +11,7 @@ module.exports = () => {
     record('NPC_', 'Non-Player Character (Actor)', {
         flags: flags({
             10: 'Unknown 10',
+            12: 'Ignored',
             18: 'Compressed',
             19: 'Unknown 19',
             29: 'Bleedout Override'

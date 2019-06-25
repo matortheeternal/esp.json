@@ -11,7 +11,7 @@ module.exports = () => {
                 float('Damage Mult'),
                 float('Attack Chance'),
                 ckFormId('Attack Spell', [
-                    'SPEL',    'SHOU',    'NULL'
+                    'SPEL', 'SHOU', 'NULL'
                 ]),
                 format(uint32('Attack Flags'), flags({
                     0: 'Ignore Weapon',

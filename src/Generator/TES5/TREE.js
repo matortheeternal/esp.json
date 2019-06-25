@@ -6,6 +6,7 @@ let {
 module.exports = () => {
     record('TREE', 'Tree', {
         flags: flags({
+            12: 'Ignored',
             15: 'Has Distant LOD'
         }),
         members: [
@@ -14,7 +15,7 @@ module.exports = () => {
             req(def('OBND')),
             def('MODL'),
             subrecord('PFIG', ckFormId('Ingredient', [
-                'INGR',    'ALCH',    'MISC',    'LVLI',    'NULL'
+                'INGR', 'ALCH', 'MISC', 'LVLI', 'NULL'
             ])),
             subrecord('SNAM', ckFormId('Harvest Sound', ['SNDR', 'NULL'])),
             subrecord('PFPC', struct('Ingredient Production', [

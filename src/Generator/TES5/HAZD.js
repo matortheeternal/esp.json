@@ -25,7 +25,7 @@ module.exports = () => {
                     4: 'Drop to Ground'
                 })),
                 ckFormId('Spell', [
-                    'SPEL',    'ENCH',    'NULL'
+                    'SPEL', 'ENCH', 'NULL'
                 ]),
                 ckFormId('Light', ['LIGH', 'NULL']),
                 ckFormId('Impact Data Set', ['IPDS', 'NULL']),

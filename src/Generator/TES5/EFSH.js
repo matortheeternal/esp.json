@@ -92,7 +92,7 @@ module.exports = () => {
                 float('Addon Models - Scale In Time'),
                 float('Addon Models - Scale Out Time'),
                 ckFormId('Ambient Sound', [
-                    'SNDR',    'SOUN',    'NULL'
+                    'SNDR', 'SOUN', 'NULL'
                 ]),
                 def('ByteColors', { name: 'Fill/Texture Effect - Color Key 2' }),
                 def('ByteColors', { name: 'Fill/Texture Effect - Color Key 3' }),

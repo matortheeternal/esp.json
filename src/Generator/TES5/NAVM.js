@@ -5,6 +5,7 @@ let {
 module.exports = () => {
     record('NAVM', 'Navigation Mesh', {
         flags: flags({
+            12: 'Ignored',
             18: 'Compressed',
             26: 'AutoGen',
             31: 'NavmeshGenCell'

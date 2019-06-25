@@ -159,7 +159,7 @@ module.exports = () => {
                             subrecord('ALPC', ckFormId('Package', ['PACK']))
                         ),
                         subrecord('VTCK', ckFormId('Voice Types', [
-                            'NPC_',    'FLST',    'NULL'
+                            'NPC_', 'FLST', 'NULL'
                         ])),
                         req(subrecord('ALED', empty('Alias End')))
                     ]))),
@@ -227,7 +227,7 @@ module.exports = () => {
                             subrecord('ALPC', ckFormId('Package', ['PACK']))
                         ),
                         subrecord('VTCK', ckFormId('Voice Types', [
-                            'NPC_',    'FLST',    'NULL'
+                            'NPC_', 'FLST', 'NULL'
                         ])),
                         req(subrecord('ALED', empty('Alias End')))
                     ])))
@@ -238,8 +238,8 @@ module.exports = () => {
                 multiStruct('Target', [
                     subrecord('QSTA', struct('Target', [
                         ckFormId('Target', [
-                            'ACHR',    'REFR',    'PGRE',    'PHZD',    'PMIS',
-                            'PARW',    'PBAR',    'PBEA',    'PCON',    'PFLA'
+                            'ACHR', 'REFR', 'PGRE', 'PHZD', 'PMIS',
+                            'PARW', 'PBAR', 'PBEA', 'PCON', 'PFLA'
                         ]),
                         format(uint8('Flags'), flags({
                             0: 'Compass Marker Ignores Locks'

@@ -9,7 +9,8 @@ let {
 module.exports = () => {
     record('REGN', 'Region', {
         flags: flags({
-            6: 'Border Region'
+            6: 'Border Region',
+            12: 'Ignored'
         }),
         members: [
             def('EDID'),
@@ -76,7 +77,7 @@ module.exports = () => {
                     subrecord('RDOT', array('Objects', 
                         struct('Object', [
                             ckFormId('Object', [
-                                'TREE',    'FLOR',    'STAT',    'LTEX',    'MSTT'
+                                'TREE', 'FLOR', 'STAT', 'LTEX', 'MSTT'
                             ]),
                             format(uint16('Parent Index'), def('HideFFFF')),
                             size(2, bytes('Unknown')),

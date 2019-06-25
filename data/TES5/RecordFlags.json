@@ -3,6 +3,8 @@
     "type": "uint32",
     "format": {
         "type": "flags",
-        "flags": {}
+        "flags": {
+            "12": "Ignored"
+        }
     }
 }

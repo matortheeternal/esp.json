@@ -7,6 +7,7 @@ module.exports = () => {
     record('TACT', 'Talking Activator', {
         flags: flags({
             9: 'Hidden From Local Map',
+            12: 'Ignored',
             16: 'Random Anim Start',
             17: 'Radio Station'
         }),
