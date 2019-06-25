@@ -1,0 +1,582 @@
+{
+    "$id": "esp.json/gameDefinitionFile.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Game Definition File",
+    "additionalProperties": false,
+    "patternProperties": {
+        "\\w+": {
+            "$ref": "#/definitions/definitionFile"
+        }
+    },
+    "definitions": {
+        "definitionFile": {
+            "title": "Definition File",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/field"
+                },
+                {
+                    "$ref": "#/definitions/member"
+                },
+                {
+                    "$ref": "#/definitions/record"
+                },
+                {
+                    "$ref": "#/definitions/format"
+                }
+            ]
+        },
+        "field": {
+            "title": "Data",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/struct"
+                },
+                {
+                    "$ref": "#/definitions/array"
+                },
+                {
+                    "$ref": "#/definitions/formId"
+                },
+                {
+                    "$ref": "#/definitions/float"
+                },
+                {
+                    "$ref": "#/definitions/integer"
+                },
+                {
+                    "$ref": "#/definitions/string"
+                },
+                {
+                    "$ref": "#/definitions/bytes"
+                },
+                {
+                    "$ref": "#/definitions/empty"
+                }
+            ]
+        },
+        "struct": {
+            "title": "Struct",
+            "type": "object",
+            "required": [
+                "type",
+                "fields"
+            ],
+            "properties": {
+                "type": {
+                    "constant": "struct"
+                },
+                "name": {
+                    "$ref": "#/definitions/name"
+                },
+                "fields": {
+                    "$ref": "#/definitions/field"
+                },
+                "sortKey": {
+                    "$ref": "#/definitions/sortKey"
+                }
+            }
+        },
+        "name": {
+            "title": "Name",
+            "type": "string",
+            "description": "A name assigned to a data field.",
+            "default": "Unknown"
+        },
+        "sortKey": {
+            "title": "Sort Key",
+            "description": "An array of indices corresponding to the elements to combine to create a sort key.",
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "type": "integer",
+                "minimum": 0
+            }
+        },
+        "array": {
+            "title": "Array",
+            "type": "object",
+            "required": [
+                "type",
+                "field"
+            ],
+            "properties": {
+                "type": {
+                    "constant": "array"
+                },
+                "name": {
+                    "$ref": "#/definitions/name"
+                },
+                "sorted": {
+                    "$ref": "#/definitions/sorted"
+                },
+                "size": {
+                    "$ref": "#/definitions/size"
+                },
+                "prefix": {
+                    "$ref": "#/definitions/prefix"
+                },
+                "field": {
+                    "$ref": "#/definitions/field"
+                }
+            }
+        },
+        "sorted": {
+            "title": "Sorted",
+            "description": "If set to true, entries in the array should be sorted based on sort keys.",
+            "type": "boolean"
+        },
+        "size": {
+            "title": "Size",
+            "description": "The fixed size of the data.",
+            "type": "integer",
+            "minimum": 1
+        },
+        "prefix": {
+            "title": "Prefix",
+            "description": "The number of prefix bytes used to indicate the size of the data.",
+            "oneOf": [
+                {
+                    "constant": 1
+                },
+                {
+                    "constant": 2
+                },
+                {
+                    "constant": 4
+                }
+            ]
+        },
+        "formId": {
+            "title": "Form ID",
+            "type": "object",
+            "required": [
+                "type"
+            ],
+            "properties": {
+                "type": {
+                    "constant": "formId"
+                },
+                "name": {
+                    "$ref": "#/definitions/name"
+                },
+                "signatures": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/signature"
+                    }
+                }
+            }
+        },
+        "signature": {
+            "description": "A Bethesda record or subrecord signature.",
+            "type": "string",
+            "pattern": "^[A-Z]{1}[A-Z0-9_]{3}$"
+        },
+        "float": {
+            "title": "Integer",
+            "type": "object",
+            "required": [
+                "type"
+            ],
+            "properties": {
+                "type": {
+                    "constant": "float"
+                },
+                "name": {
+                    "$ref": "#/definitions/name"
+                },
+                "scale": {
+                    "type": "number",
+                    "description": "If provided, the floating point value is multiplied by the scale before it is presented to the user."
+                }
+            }
+        },
+        "integer": {
+            "title": "Integer",
+            "type": "object",
+            "required": [
+                "type"
+            ],
+            "properties": {
+                "type": {
+                    "oneOf": [
+                        {
+                            "constant": "int0",
+                            "description": "0-bit integer",
+                            "$comment": "This should be removed.  We should use the empty type instead."
+                        },
+                        {
+                            "constant": "int8",
+                            "description": "8-bit signed integer"
+                        },
+                        {
+                            "constant": "int16",
+                            "description": "16-bit signed integer"
+                        },
+                        {
+                            "constant": "int32",
+                            "description": "32-bit signed integer"
+                        },
+                        {
+                            "constant": "uint8",
+                            "description": "8-bit unsigned integer"
+                        },
+                        {
+                            "constant": "uint16",
+                            "description": "16-bit unsigned integer"
+                        },
+                        {
+                            "constant": "uint32",
+                            "description": "32-bit unsigned integer"
+                        }
+                    ]
+                },
+                "name": {
+                    "$ref": "#/definitions/name"
+                },
+                "format": {
+                    "$ref": "#/definitions/format"
+                }
+            }
+        },
+        "format": {
+            "title": "Integer Format",
+            "oneOf": [
+                {
+                    "title": "Reference",
+                    "description": "A reference to a flags or enum esp.json definition.",
+                    "type": "object",
+                    "required": [
+                        "def"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "def": {
+                            "$ref": "#/definitions/def"
+                        }
+                    }
+                },
+                {
+                    "$ref": "#/definitions/flags"
+                },
+                {
+                    "$ref": "#/definitions/enum"
+                }
+            ]
+        },
+        "def": {
+            "description": "A reference to another esp.json definition.",
+            "type": "string"
+        },
+        "flags": {
+            "description": "A representation of an esp.json flags definition.",
+            "type": "object",
+            "required": [
+                "type",
+                "flags"
+            ],
+            "properties": {
+                "type": {
+                    "constant": "flags"
+                },
+                "flags": {
+                    "type": "object",
+                    "description": "Associates positive integer keys to flag labels.",
+                    "patternProperties": {
+                        "^[0-9]+$": {
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "showUnknown": {
+                    "type": "boolean",
+                    "description": "If set to true, unlabeled flags will be assigned labels in the format `Unknown ${Flag Ordinal + 1}`.  E.g. if no flags were labeled, and the data size was 4 bytes, you would have labels Unknown 1 through Unknown 32."
+                }
+            }
+        },
+        "enum": {
+            "title": "Enum",
+            "type": "object",
+            "required": [
+                "type",
+                "options"
+            ],
+            "properties": {
+                "type": {
+                    "constant": "enum"
+                },
+                "options": {
+                    "type": "object",
+                    "description": "Associates positive integer keys to option labels.",
+                    "patternProperties": {
+                        "^[0-9]+$": {
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            }
+        },
+        "string": {
+            "title": "String",
+            "type": "object",
+            "required": [
+                "type"
+            ],
+            "properties": {
+                "type": {
+                    "constant": "string"
+                },
+                "size": {
+                    "$ref": "#/definitions/size"
+                },
+                "prefix": {
+                    "$ref": "#/definitions/prefix"
+                },
+                "localized": {
+                    "constant": true,
+                    "description": "Indicates a string has been localized using game localization files."
+                },
+                "name": {
+                    "$ref": "#/definitions/name"
+                }
+            }
+        },
+        "bytes": {
+            "title": "Bytes",
+            "type": "object",
+            "required": [
+                "type",
+                "size"
+            ],
+            "properties": {
+                "type": {
+                    "constant": "bytes"
+                },
+                "size": {
+                    "$ref": "#/definitions/size"
+                },
+                "prefix": {
+                    "$ref": "#/definitions/prefix"
+                },
+                "name": {
+                    "$ref": "#/definitions/name"
+                }
+            }
+        },
+        "empty": {
+            "title": "Empty",
+            "type": "object",
+            "required": [
+                "type"
+            ],
+            "properties": {
+                "type": {
+                    "constant": "empty"
+                }
+            }
+        },
+        "member": {
+            "title": "Member",
+            "description": "A representation of an esp.json member.  Members are subrecords or structures which contain one or more subrecords.",
+            "oneOf": [
+                {
+                    "title": "Reference",
+                    "type": "object",
+                    "required": [
+                        "def"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "def": {
+                            "$ref": "#/definitions/def"
+                        },
+                        "name": {
+                            "type": "string",
+                            "description": "Overrides the name of the referenced definition."
+                        },
+                        "signature": {
+                            "$ref": "#/definitions/signature",
+                            "description": "Overrides the signature of the referenced definition."
+                        },
+                        "required": {
+                            "$ref": "#/definitions/required"
+                        }
+                    }
+                },
+                {
+                    "$ref": "#/definitions/subrecord"
+                },
+                {
+                    "$ref": "#/definitions/memberStruct"
+                },
+                {
+                    "$ref": "#/definitions/memberArray"
+                }
+            ]
+        },
+        "required": {
+            "description": "If set to true, the entity should be created when creating a new instance of its parent object, and removing the entity should not be allowed.",
+            "type": "boolean"
+        },
+        "subrecord": {
+            "title": "Subrecord",
+            "type": "object",
+            "required": [
+                "signature",
+                "type",
+                "field"
+            ],
+            "properties": {
+                "signature": {
+                    "$ref": "#/definitions/signature"
+                },
+                "type": {
+                    "constant": "subrecord"
+                },
+                "field": {
+                    "$ref": "#/definitions/field"
+                },
+                "required": {
+                    "$ref": "#/definitions/required"
+                }
+            }
+        },
+        "memberStruct": {
+            "title": "Member Struct",
+            "type": "object",
+            "required": [
+                "type",
+                "members"
+            ],
+            "properties": {
+                "name": {
+                    "$ref": "#/definitions/name"
+                },
+                "type": {
+                    "constant": "memberStruct"
+                },
+                "members": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/member"
+                    }
+                },
+                "sortKey": {
+                    "$ref": "#/definitions/sortKey"
+                }
+            }
+        },
+        "memberArray": {
+            "title": "Member Array",
+            "type": "object",
+            "required": [
+                "type",
+                "member"
+            ],
+            "properties": {
+                "name": {
+                    "$ref": "#/definitions/name"
+                },
+                "type": {
+                    "constant": "memberArray"
+                },
+                "sorted": {
+                    "$ref": "#/definitions/sorted"
+                },
+                "size": {
+                    "$ref": "#/definitions/size"
+                },
+                "prefix": {
+                    "$ref": "#/definitions/prefix"
+                },
+                "member": {
+                    "$ref": "#/definitions/member"
+                }
+            }
+        },
+        "record": {
+            "description": "A representation of an esp.json record definition.",
+            "type": "object",
+            "required": [
+                "signature",
+                "type",
+                "name",
+                "def"
+            ],
+            "properties": {
+                "signature": {
+                    "$ref": "#/definitions/signature"
+                },
+                "type": {
+                    "const": "record"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "def": {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/def"
+                        },
+                        {
+                            "type": "object",
+                            "required": [
+                                "members"
+                            ],
+                            "properties": {
+                                "flags": {
+                                    "oneOf": [
+                                        {
+                                            "$ref": "#/definitions/flags"
+                                        },
+                                        {
+                                            "$ref": "#/definitions/formatUnion"
+                                        }
+                                    ]
+                                },
+                                "members": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/member"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "formatUnion": {
+            "title": "Format Union",
+            "type": "object",
+            "required": [
+                "type",
+                "entry"
+            ],
+            "properties": {
+                "type": {
+                    "constant": "formatUnion"
+                },
+                "decider": {
+                    "$ref": "#/definitions/callback",
+                    "description": "Invoked to determine which format to use."
+                },
+                "formats": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/flags"
+                    }
+                }
+            }
+        },
+        "callback": {
+            "title": "Callback",
+            "type": "string",
+            "description": "An string which identifies a callback to invoke."
+        }
+    }
+}
