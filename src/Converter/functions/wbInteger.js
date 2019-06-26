@@ -20,6 +20,17 @@ subrecordAndField('wbInteger', [
     args.integerFormat,
     args.identifier,
     args.boolean,
+    args.boolean,
+    args.identifier,
+    args.identifier
+], wbIntegerConvert);
+
+subrecordAndField('wbInteger', [
+    { type: 'stringExpr', name: 'name' },
+    args.intType,
+    args.integerFormat,
+    args.identifier,
+    args.boolean,
     args.identifier,
     args.identifier,
     args.number
