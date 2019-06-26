@@ -284,7 +284,7 @@
                     "type": "object",
                     "description": "Associates positive integer keys to flag labels.",
                     "patternProperties": {
-                        "^[0-9]+$": {
+                        "^(0|[1-9][0-9]*)$": {
                             "type": "string"
                         }
                     },
@@ -311,8 +311,12 @@
                     "type": "object",
                     "description": "Associates positive integer keys to option labels.",
                     "patternProperties": {
-                        "^[0-9]+$": {
+                        "^(0|-?[1-9][0-9]*)$": {
                             "type": "string"
+                        },
+                        "^[A-Z]{1}[A-Z0-9_]{3}$": {
+                            "type": "string",
+                            "description": "A signature string."
                         }
                     },
                     "additionalProperties": false
