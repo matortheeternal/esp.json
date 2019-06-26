@@ -336,7 +336,7 @@
                     "$ref": "#/definitions/prefix"
                 },
                 "localized": {
-                    "constant": true,
+                    "type": "boolean",
                     "description": "Indicates a string has been localized using game localization files."
                 },
                 "name": {
@@ -499,55 +499,100 @@
         },
         "record": {
             "description": "A representation of an esp.json record definition.",
-            "type": "object",
-            "required": [
-                "signature",
-                "type",
-                "name",
-                "def"
-            ],
-            "properties": {
-                "signature": {
-                    "$ref": "#/definitions/signature"
-                },
-                "type": {
-                    "const": "record"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "def": {
-                    "oneOf": [
-                        {
-                            "$ref": "#/definitions/def"
+            "oneOf": [
+                {
+                    "type": "object",
+                    "required": [
+                        "signature",
+                        "type",
+                        "name",
+                        "def"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "signature": {
+                            "$ref": "#/definitions/signature"
                         },
-                        {
-                            "type": "object",
-                            "required": [
-                                "members"
-                            ],
-                            "properties": {
-                                "flags": {
-                                    "oneOf": [
-                                        {
-                                            "$ref": "#/definitions/flags"
-                                        },
-                                        {
-                                            "$ref": "#/definitions/formatUnion"
-                                        }
-                                    ]
+                        "type": {
+                            "const": "record"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "def": {
+                            "$ref": "#/definitions/def"
+                        }
+                    }
+                },
+                {
+                    "type": "object",
+                    "required": [
+                        "signature",
+                        "type",
+                        "name",
+                        "members"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "signature": {
+                            "$ref": "#/definitions/signature"
+                        },
+                        "type": {
+                            "const": "record"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "flags": {
+                            "oneOf": [
+                                {
+                                    "$ref": "#/definitions/flags"
                                 },
-                                "members": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/definitions/member"
-                                    }
+                                {
+                                    "$ref": "#/definitions/formatUnion"
                                 }
+                            ]
+                        },
+                        "members": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/member"
                             }
                         }
-                    ]
+                    }
+                },
+                {
+                    "title": "Partial Record Definition",
+                    "description": "This is a record definition that is used as a base for other record definitions.  It does not actually define a specific record to parse - hence the signature and name properties being ommitted.",
+                    "type": "object",
+                    "required": [
+                        "type",
+                        "members"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "type": {
+                            "const": "record"
+                        },
+                        "flags": {
+                            "oneOf": [
+                                {
+                                    "$ref": "#/definitions/flags"
+                                },
+                                {
+                                    "$ref": "#/definitions/formatUnion"
+                                }
+                            ]
+                        },
+                        "members": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/member"
+                            }
+                        }
+                    }
                 }
-            }
+            ]
         },
         "formatUnion": {
             "title": "Format Union",

@@ -2,43 +2,85 @@
   "$id": "esp.json/record.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "A representation of an esp.json record definition.",
-  "type": "object",
-  "required": ["signature", "type", "name", "def"],
-  "properties": {
-    "signature": {
-      "$ref": "shared/signature.schema.json"
+  "oneOf": [
+    {
+      "type": "object",
+      "required": ["signature", "type", "name", "def"],
+      "additionalProperties": false,
+      "properties": {
+        "signature": {
+          "$ref": "shared/signature.schema.json"
+        },
+        "type": {
+          "const": "record"
+        },
+        "name": {
+          "type": "string"
+        },
+        "def": {
+          "$ref": "shared/def.schema.json"
+        }
+      }
     },
-    "type": {
-      "const": "record"
-    },
-    "name": {
-      "type": "string"
-    },
-    "def": {
-      "oneOf": [{
-        "$ref": "shared/def.schema.json"
-      }, {
-        "type": "object",
-        "required": ["members"],
-        "properties": {
-          "flags": {
-            "oneOf": [
-              {
-                "$ref": "format/flags.schema.json"
-              },
-              {
-                "$ref": "format/formatUnion.schema.json"
-              }
-            ]
-          },
-          "members": {
-            "type": "array",
-            "items": {
-              "$ref": "member.schema.json"
+    {
+      "type": "object",
+      "required": ["signature", "type", "name", "members"],
+      "additionalProperties": false,
+      "properties": {
+        "signature": {
+          "$ref": "shared/signature.schema.json"
+        },
+        "type": {
+          "const": "record"
+        },
+        "name": {
+          "type": "string"
+        },
+        "flags": {
+          "oneOf": [
+            {
+              "$ref": "format/flags.schema.json"
+            },
+            {
+              "$ref": "format/formatUnion.schema.json"
             }
+          ]
+        },
+        "members": {
+          "type": "array",
+          "items": {
+            "$ref": "member.schema.json"
           }
         }
-      }]
+      }
+    },
+    {
+      "title": "Partial Record Definition",
+      "description": "This is a record definition that is used as a base for other record definitions.  It does not actually define a specific record to parse - hence the signature and name properties being ommitted.",
+      "type": "object",
+      "required": ["type", "members"],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "record"
+        },
+        "flags": {
+          "oneOf": [
+            {
+              "$ref": "format/flags.schema.json"
+            },
+            {
+              "$ref": "format/formatUnion.schema.json"
+            }
+          ]
+        },
+        "members": {
+          "type": "array",
+          "items": {
+            "$ref": "member.schema.json"
+          }
+        }
+      }
     }
-  }
+  ]
 }

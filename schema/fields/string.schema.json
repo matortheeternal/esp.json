@@ -15,7 +15,7 @@
       "$ref": "../shared/prefix.schema.json"
     },
     "localized": {
-      "constant": true,
+      "type": "boolean",
       "description": "Indicates a string has been localized using game localization files."
     },
     "name": {
