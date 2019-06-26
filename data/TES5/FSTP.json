@@ -1,0 +1,32 @@
+{
+    "signature": "FSTP",
+    "type": "record",
+    "name": "Footstep",
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "signature": "DATA",
+            "type": "subrecord",
+            "field": {
+                "name": "Impact Data Set",
+                "type": "formId",
+                "signatures": [
+                    "IPDS",
+                    "NULL"
+                ]
+            },
+            "required": true
+        },
+        {
+            "signature": "ANAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Tag",
+                "type": "string"
+            },
+            "required": true
+        }
+    ]
+}

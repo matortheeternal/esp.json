@@ -1,0 +1,56 @@
+{
+    "signature": "FSTS",
+    "type": "record",
+    "name": "Footstep Set",
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "signature": "XCNT",
+            "type": "subrecord",
+            "field": {
+                "name": "Count",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Walk Forward Sets",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Run Forward Sets",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Walk Forward Alternate Sets",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Run Forward Alternate Sets",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Walk Forward Alternate 2 Sets",
+                        "type": "uint32"
+                    }
+                ]
+            },
+            "required": true
+        },
+        {
+            "signature": "DATA",
+            "type": "subrecord",
+            "field": {
+                "name": "Footstep Sets",
+                "type": "array",
+                "field": {
+                    "name": "Footstep",
+                    "type": "formId",
+                    "signatures": [
+                        "FSTP"
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,72 @@
+{
+    "signature": "SMEN",
+    "type": "record",
+    "name": "Story Manager Event Node",
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "signature": "PNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Parent ",
+                "type": "formId",
+                "signatures": [
+                    "SMQN",
+                    "SMBN",
+                    "SMEN",
+                    "NULL"
+                ]
+            }
+        },
+        {
+            "signature": "SNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Previous Sibling ",
+                "type": "formId",
+                "signatures": [
+                    "SMQN",
+                    "SMBN",
+                    "SMEN",
+                    "NULL"
+                ]
+            }
+        },
+        {
+            "def": "CITC",
+            "required": true
+        },
+        {
+            "def": "CTDAsCount"
+        },
+        {
+            "signature": "DNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Flags",
+                "type": "uint32",
+                "format": {
+                    "def": "SMNodeFlags"
+                }
+            }
+        },
+        {
+            "signature": "XNAM",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        },
+        {
+            "signature": "ENAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Type",
+                "type": "string",
+                "size": 4
+            }
+        }
+    ]
+}
