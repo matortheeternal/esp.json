@@ -5,6 +5,11 @@ let path = require('path'),
     {convertStatement} = require('./converters');
 
 class Converter extends Parser {
+    constructor(filePath) {
+        super(filePath);
+        this._store = {};
+    }
+
     newOutput(filename, game) {
         console.log(`Creating ${filename}`);
         this._gameMode = `gm${game}`;
@@ -63,9 +68,19 @@ class Converter extends Parser {
     }
 
     saveOutput() {
+        if (this.skipping) return;
         let text = this.getOutputText(),
             filePath = path.resolve(this.outputFolder, this.output.filename);
         fs.writeFileSync(filePath, text);
+    }
+
+    storeData(name, data) {
+        if (this.skipping) return;
+        this._store[name] = data;
+    }
+
+    getData(name) {
+        return this._store[name];
     }
 
     convertRegions({start, end}) {
