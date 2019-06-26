@@ -1,11 +1,9 @@
-let {functionConverter} = require('../converters'),
+let {subrecordAndField} = require('../converters'),
     {args} = require('../helpers');
 
-functionConverter('wbAmbientColors', [
-    args.sig,
+subrecordAndField('wbAmbientColors', [
     args.name
 ], ({sig, name}, converter) => {
-    converter.addRequires('subrecord', 'def');
-    let defArg = `def('wbAmbientColors', { name: ${name} })`;
-    return `subrecord('${sig}', ${defArg})`;
+    converter.addRequires('def');
+    return `def('wbAmbientColors', { name: ${name} })`;
 });
