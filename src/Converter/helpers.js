@@ -105,6 +105,12 @@ let prefixSize = function(size, line, converter) {
     return prefixLine(prefix, line, converter);
 };
 
+let scaleLine = function(scale, line, converter) {
+    if (scale !== 1) return line;
+    converter.addRequires('scale');
+    return `scale(${scale}, ${line})`;
+};
+
 let reqLine = function(required, line, converter) {
     if (!required) return line;
     converter.addRequires('req');
@@ -130,6 +136,7 @@ let resolveIntFn = function(intType) {
 
 module.exports = {
     args, indent, arr, inlineArr, mixedArr, stringify, newLine,
-    sizeLine, prefixLine, prefixSize, reqLine, optsLine, optsReq,
+    sizeLine, prefixLine, prefixSize, scaleLine,
+    reqLine, optsLine, optsReq,
     resolveIntFn, lineBreak, tab
 };
