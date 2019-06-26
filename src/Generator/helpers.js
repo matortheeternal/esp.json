@@ -21,6 +21,7 @@ let prefix = (prefix, obj) => ({ ...obj, prefix });
 // number formatting
 let format = (obj, format) => ({ ...obj, format });
 let div = value => ({ type: 'divide', value });
+let scale = (scale, obj) => ({ ...obj, scale });
 let flags = flags => ({ type: 'flags', flags });
 let showUnknown = obj => ({ ...obj, showUnknown: true });
 let enumeration = options => ({type: 'enum', options });
@@ -70,7 +71,7 @@ module.exports = {
     addDef, getDefs, clearDefs, IsSSE,
     req, def, opts, sortKey, localized,
     sorted, size, prefix,
-    format, div, flags, showUnknown, enumeration, formatUnion,
+    format, div, scale, flags, showUnknown, enumeration, formatUnion,
     record, subrecord,
     memberArray, memberStruct, memberUnion,
     struct, array, union,
