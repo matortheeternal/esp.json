@@ -5,13 +5,18 @@ let path = require('path'),
     {convertStatement} = require('./converters');
 
 class Converter extends Parser {
-    newOutput(filename) {
+    newOutput(filename, game) {
         console.log(`Creating ${filename}`);
+        this._gameMode = `gm${game}`;
         this.output = {
             filename: filename,
             requires: [],
             text: ''
         };
+    }
+
+    get gameMode() {
+        return this._gameMode;
     }
 
     setOutputFolder(outputFolder) {
