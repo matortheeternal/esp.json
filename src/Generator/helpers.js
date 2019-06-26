@@ -30,7 +30,7 @@ let formatUnion = (decider, formats) =>
 
 // structures
 let record = (signature, name, def) => addDef(signature,
-    ({ signature, type: 'record', name, def })
+    { signature, type: 'record', name, ...def }
 );
 let subrecord = (signature, field) =>
     ({ signature, type: 'subrecord', field });
