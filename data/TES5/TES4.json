@@ -2,154 +2,150 @@
     "signature": "TES4",
     "type": "record",
     "name": "Main File Header",
-    "def": {
+    "flags": {
+        "type": "flags",
         "flags": {
-            "type": "flags",
-            "flags": {
-                "0": "ESM",
-                "5": "Deleted",
-                "7": "Localized",
-                "9": "",
-                "12": "Ignored"
+            "0": "ESM",
+            "5": "Deleted",
+            "7": "Localized",
+            "9": "",
+            "12": "Ignored"
+        }
+    },
+    "members": [
+        {
+            "signature": "HEDR",
+            "type": "subrecord",
+            "field": {
+                "name": "Header",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Version",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Number of Records",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Next Object ID",
+                        "type": "uint32",
+                        "format": {
+                            "def": "NextObjectIDToString"
+                        }
+                    }
+                ]
+            },
+            "required": true
+        },
+        {
+            "signature": "OFST",
+            "type": "subrecord",
+            "field": {
+                "name": "Unknown",
+                "type": "bytes"
             }
         },
-        "members": [
-            {
-                "signature": "HEDR",
-                "type": "subrecord",
-                "field": {
-                    "name": "Header",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Version",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Number of Records",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Next Object ID",
-                            "type": "uint32",
-                            "format": {
-                                "def": "NextObjectIDToString"
-                            }
+        {
+            "signature": "DELE",
+            "type": "subrecord",
+            "field": {
+                "name": "Unknown",
+                "type": "bytes"
+            }
+        },
+        {
+            "signature": "CNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Author",
+                "type": "string"
+            },
+            "required": true
+        },
+        {
+            "signature": "SNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Description",
+                "type": "string"
+            }
+        },
+        {
+            "name": "Master Files",
+            "type": "memberArray",
+            "member": {
+                "name": "Master File",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "MAST",
+                        "type": "subrecord",
+                        "field": {
+                            "name": "FileName",
+                            "type": "string"
                         }
-                    ]
-                },
-                "required": true
-            },
-            {
-                "signature": "OFST",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "DELE",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "CNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Author",
-                    "type": "string"
-                },
-                "required": true
-            },
-            {
-                "signature": "SNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Description",
-                    "type": "string"
-                }
-            },
-            {
-                "name": "Master Files",
-                "type": "memberArray",
-                "member": {
-                    "name": "Master File",
-                    "type": "memberStruct",
-                    "members": [
-                        {
-                            "signature": "MAST",
-                            "type": "subrecord",
-                            "field": {
-                                "name": "FileName",
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "signature": "DATA",
-                            "type": "subrecord",
-                            "field": {
-                                "name": "Unknown",
-                                "type": "bytes",
-                                "size": 8
-                            }
+                    },
+                    {
+                        "signature": "DATA",
+                        "type": "subrecord",
+                        "field": {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 8
                         }
-                    ]
-                }
-            },
-            {
-                "signature": "ONAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Overridden Forms",
-                    "type": "array",
-                    "field": {
-                        "name": "Form",
-                        "type": "formId",
-                        "signatures": [
-                            "ACHR",
-                            "LAND",
-                            "NAVM",
-                            "REFR",
-                            "PGRE",
-                            "PHZD",
-                            "PMIS",
-                            "PARW",
-                            "PBAR",
-                            "PBEA",
-                            "PCON",
-                            "PFLA"
-                        ]
                     }
-                }
-            },
-            {
-                "signature": "SCRN",
-                "type": "subrecord",
+                ]
+            }
+        },
+        {
+            "signature": "ONAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Overridden Forms",
+                "type": "array",
                 "field": {
-                    "name": "Screenshot",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "INTV",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "INCC",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
+                    "name": "Form",
+                    "type": "formId",
+                    "signatures": [
+                        "ACHR",
+                        "LAND",
+                        "NAVM",
+                        "REFR",
+                        "PGRE",
+                        "PHZD",
+                        "PMIS",
+                        "PARW",
+                        "PBAR",
+                        "PBEA",
+                        "PCON",
+                        "PFLA"
+                    ]
                 }
             }
-        ]
-    }
+        },
+        {
+            "signature": "SCRN",
+            "type": "subrecord",
+            "field": {
+                "name": "Screenshot",
+                "type": "bytes"
+            }
+        },
+        {
+            "signature": "INTV",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        },
+        {
+            "signature": "INCC",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        }
+    ]
 }

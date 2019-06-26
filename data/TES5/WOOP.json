@@ -2,24 +2,22 @@
     "signature": "WOOP",
     "type": "record",
     "name": "Word of Power",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "def": "FULL"
+        },
+        {
+            "signature": "TNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Translation",
+                "type": "string",
+                "localized": true
             },
-            {
-                "def": "FULL"
-            },
-            {
-                "signature": "TNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Translation",
-                    "type": "string",
-                    "localized": true
-                },
-                "required": true
-            }
-        ]
-    }
+            "required": true
+        }
+    ]
 }

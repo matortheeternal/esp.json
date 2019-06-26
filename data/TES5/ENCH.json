@@ -2,98 +2,96 @@
     "signature": "ENCH",
     "type": "record",
     "name": "Object Effect",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "def": "OBND",
-                "required": true
-            },
-            {
-                "def": "FULL"
-            },
-            {
-                "signature": "ENIT",
-                "type": "subrecord",
-                "field": {
-                    "name": "Effect Data",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Enchantment Cost",
-                            "type": "int32"
-                        },
-                        {
-                            "name": "Flags",
-                            "type": "uint32",
-                            "format": {
-                                "type": "flags",
-                                "flags": {
-                                    "0": "No Auto-Calc",
-                                    "1": "",
-                                    "2": "Extend Duration On Recast"
-                                }
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "def": "OBND",
+            "required": true
+        },
+        {
+            "def": "FULL"
+        },
+        {
+            "signature": "ENIT",
+            "type": "subrecord",
+            "field": {
+                "name": "Effect Data",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Enchantment Cost",
+                        "type": "int32"
+                    },
+                    {
+                        "name": "Flags",
+                        "type": "uint32",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "No Auto-Calc",
+                                "1": "",
+                                "2": "Extend Duration On Recast"
                             }
-                        },
-                        {
-                            "name": "Cast Type",
-                            "type": "uint32",
-                            "format": {
-                                "def": "CastEnum"
-                            }
-                        },
-                        {
-                            "name": "Enchantment Amount",
-                            "type": "int32"
-                        },
-                        {
-                            "name": "Target Type",
-                            "type": "uint32",
-                            "format": {
-                                "def": "TargetEnum"
-                            }
-                        },
-                        {
-                            "name": "Enchant Type",
-                            "type": "uint32",
-                            "format": {
-                                "type": "enum",
-                                "options": {
-                                    "6": "Enchantment",
-                                    "12": "Staff Enchantment"
-                                }
-                            }
-                        },
-                        {
-                            "name": "Charge Time",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Base Enchantment",
-                            "type": "formId",
-                            "signatures": [
-                                "ENCH",
-                                "NULL"
-                            ]
-                        },
-                        {
-                            "name": "Worn Restrictions",
-                            "type": "formId",
-                            "signatures": [
-                                "FLST",
-                                "NULL"
-                            ]
                         }
-                    ]
-                },
-                "required": true
+                    },
+                    {
+                        "name": "Cast Type",
+                        "type": "uint32",
+                        "format": {
+                            "def": "CastEnum"
+                        }
+                    },
+                    {
+                        "name": "Enchantment Amount",
+                        "type": "int32"
+                    },
+                    {
+                        "name": "Target Type",
+                        "type": "uint32",
+                        "format": {
+                            "def": "TargetEnum"
+                        }
+                    },
+                    {
+                        "name": "Enchant Type",
+                        "type": "uint32",
+                        "format": {
+                            "type": "enum",
+                            "options": {
+                                "6": "Enchantment",
+                                "12": "Staff Enchantment"
+                            }
+                        }
+                    },
+                    {
+                        "name": "Charge Time",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Base Enchantment",
+                        "type": "formId",
+                        "signatures": [
+                            "ENCH",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "name": "Worn Restrictions",
+                        "type": "formId",
+                        "signatures": [
+                            "FLST",
+                            "NULL"
+                        ]
+                    }
+                ]
             },
-            {
-                "def": "Effects",
-                "required": true
-            }
-        ]
-    }
+            "required": true
+        },
+        {
+            "def": "Effects",
+            "required": true
+        }
+    ]
 }

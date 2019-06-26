@@ -2,29 +2,27 @@
     "signature": "ANIO",
     "type": "record",
     "name": "Animated Object",
-    "def": {
+    "flags": {
+        "type": "flags",
         "flags": {
-            "type": "flags",
-            "flags": {
-                "9": "Unknown 9",
-                "12": "Ignored"
-            }
+            "9": "Unknown 9",
+            "12": "Ignored"
+        }
+    },
+    "members": [
+        {
+            "def": "EDID"
         },
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "def": "MODL"
-            },
-            {
-                "signature": "BNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unload Event",
-                    "type": "string"
-                }
+        {
+            "def": "MODL"
+        },
+        {
+            "signature": "BNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Unload Event",
+                "type": "string"
             }
-        ]
-    }
+        }
+    ]
 }

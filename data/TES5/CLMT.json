@@ -1,0 +1,129 @@
+{
+    "signature": "CLMT",
+    "type": "record",
+    "name": "Climate",
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "signature": "WLST",
+            "type": "subrecord",
+            "field": {
+                "name": "Weather Types",
+                "type": "array",
+                "field": {
+                    "name": "Weather Type",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Weather",
+                            "type": "formId",
+                            "signatures": [
+                                "WTHR",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Chance",
+                            "type": "int32"
+                        },
+                        {
+                            "name": "Global",
+                            "type": "formId",
+                            "signatures": [
+                                "GLOB",
+                                "NULL"
+                            ]
+                        }
+                    ],
+                    "sortKey": [
+                        0
+                    ]
+                },
+                "sorted": true
+            }
+        },
+        {
+            "signature": "FNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Sun Texture",
+                "type": "string"
+            }
+        },
+        {
+            "signature": "GNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Sun Glare Texture",
+                "type": "string"
+            }
+        },
+        {
+            "def": "MODL"
+        },
+        {
+            "signature": "TNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Timing",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Sunrise",
+                        "type": "struct",
+                        "fields": [
+                            {
+                                "name": "Begin",
+                                "type": "uint8",
+                                "format": {
+                                    "def": "ClmtTime"
+                                }
+                            },
+                            {
+                                "name": "End",
+                                "type": "uint8",
+                                "format": {
+                                    "def": "ClmtTime"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Sunset",
+                        "type": "struct",
+                        "fields": [
+                            {
+                                "name": "Begin",
+                                "type": "uint8",
+                                "format": {
+                                    "def": "ClmtTime"
+                                }
+                            },
+                            {
+                                "name": "End",
+                                "type": "uint8",
+                                "format": {
+                                    "def": "ClmtTime"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Volatility",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "Moons / Phase Length",
+                        "type": "uint8",
+                        "format": {
+                            "def": "ClmtMoonsPhaseLength"
+                        }
+                    }
+                ]
+            },
+            "required": true
+        }
+    ]
+}

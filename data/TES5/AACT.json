@@ -2,14 +2,12 @@
     "signature": "AACT",
     "type": "record",
     "name": "Action",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "def": "CNAM"
-            }
-        ]
-    }
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "def": "CNAM"
+        }
+    ]
 }

@@ -70,14 +70,14 @@ module.exports = () => {
                     4: 'Allow Mounted Combat'
                 })),
                 struct('Mount Data', [
-                    req(float('Offset X')),
+                    req(req(float('Offset X'))),
                     float('Offset Y'),
                     float('Unknown'),
-                    req(float('Unknown')),
+                    req(req(float('Unknown'))),
                     float('Unknown'),
-                    req(float('Unknown')),
+                    req(req(float('Unknown'))),
                     float('Unknown'),
-                    req(float('Unknown')),
+                    req(req(float('Unknown'))),
                     float('Unknown')
                 ])
             ]))),
@@ -101,8 +101,8 @@ module.exports = () => {
                 ckFormId('Default Hair Color', ['NULL', 'CLFM'])
             )),
             subrecord('TINL', uint16('Total Number of Tints in List')),
-            req(subrecord('PNAM', float('FaceGen - Main clamp'))),
-            req(subrecord('UNAM', float('FaceGen - Face clamp'))),
+            req(subrecord('PNAM', req(float('FaceGen - Main clamp')))),
+            req(subrecord('UNAM', req(float('FaceGen - Face clamp')))),
             req(subrecord('ATKR', ckFormId('Attack Race', ['RACE']))),
             sorted(memberArray('Attacks', 
                 def('AttackData')

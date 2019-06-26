@@ -2,91 +2,89 @@
     "signature": "MATT",
     "type": "record",
     "name": "Material Type",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "signature": "PNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Material Parent",
-                    "type": "formId",
-                    "signatures": [
-                        "MATT",
-                        "NULL"
-                    ]
-                }
-            },
-            {
-                "signature": "MNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Material Name",
-                    "type": "string"
-                }
-            },
-            {
-                "signature": "CNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Havok Display Color",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Red",
-                            "type": "float",
-                            "required": true
-                        },
-                        {
-                            "name": "Green",
-                            "type": "float",
-                            "required": true
-                        },
-                        {
-                            "name": "Blue",
-                            "type": "float",
-                            "required": true
-                        }
-                    ]
-                }
-            },
-            {
-                "signature": "BNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Buoyancy",
-                    "type": "float"
-                }
-            },
-            {
-                "signature": "FNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Flags",
-                    "type": "uint32",
-                    "format": {
-                        "type": "flags",
-                        "flags": {
-                            "0": "Stair Material",
-                            "1": "Arrows Stick"
-                        }
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "signature": "PNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Material Parent",
+                "type": "formId",
+                "signatures": [
+                    "MATT",
+                    "NULL"
+                ]
+            }
+        },
+        {
+            "signature": "MNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Material Name",
+                "type": "string"
+            }
+        },
+        {
+            "signature": "CNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Havok Display Color",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Red",
+                        "type": "float",
+                        "required": true
+                    },
+                    {
+                        "name": "Green",
+                        "type": "float",
+                        "required": true
+                    },
+                    {
+                        "name": "Blue",
+                        "type": "float",
+                        "required": true
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "BNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Buoyancy",
+                "type": "float"
+            }
+        },
+        {
+            "signature": "FNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Flags",
+                "type": "uint32",
+                "format": {
+                    "type": "flags",
+                    "flags": {
+                        "0": "Stair Material",
+                        "1": "Arrows Stick"
                     }
                 }
-            },
-            {
-                "signature": "HNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Havok Impact Data Set",
-                    "type": "formId",
-                    "signatures": [
-                        "IPDS",
-                        "NULL"
-                    ]
-                }
             }
-        ]
-    }
+        },
+        {
+            "signature": "HNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Havok Impact Data Set",
+                "type": "formId",
+                "signatures": [
+                    "IPDS",
+                    "NULL"
+                ]
+            }
+        }
+    ]
 }

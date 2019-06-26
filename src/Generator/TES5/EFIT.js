@@ -6,7 +6,7 @@ let {
 module.exports = () => {
     addDef('EFIT', 
         subrecord('EFIT', sortKey([3, 4], struct('', [
-            req(float('Magnitude')),
+            req(req(float('Magnitude'))),
             uint32('Area'),
             uint32('Duration')
         ])))

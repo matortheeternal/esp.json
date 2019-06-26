@@ -2,96 +2,94 @@
     "signature": "AMMO",
     "type": "record",
     "name": "Ammunition",
-    "def": {
+    "flags": {
+        "type": "flags",
         "flags": {
-            "type": "flags",
-            "flags": {
-                "2": "Non-Playable",
-                "12": "Ignored"
-            }
+            "2": "Non-Playable",
+            "12": "Ignored"
+        }
+    },
+    "members": [
+        {
+            "def": "EDID"
         },
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "def": "OBND",
-                "required": true
-            },
-            {
-                "def": "FULL"
-            },
-            {
-                "def": "MODL"
-            },
-            {
-                "def": "ICON"
-            },
-            {
-                "def": "DEST"
-            },
-            {
-                "def": "YNAM"
-            },
-            {
-                "def": "ZNAM"
-            },
-            {
-                "def": "DESC"
-            },
-            {
-                "def": "KSIZ"
-            },
-            {
-                "def": "KWDAs"
-            },
-            {
-                "signature": "DATA",
-                "type": "subrecord",
-                "field": {
-                    "name": "Data",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Projectile",
-                            "type": "formId",
-                            "signatures": [
-                                "PROJ",
-                                "NULL"
-                            ]
-                        },
-                        {
-                            "name": "Flags",
-                            "type": "uint32",
-                            "format": {
-                                "type": "flags",
-                                "flags": {
-                                    "0": "Ignores Normal Weapon Resistance",
-                                    "1": "Non-Playable",
-                                    "2": "Non-Bolt"
-                                }
+        {
+            "def": "OBND",
+            "required": true
+        },
+        {
+            "def": "FULL"
+        },
+        {
+            "def": "MODL"
+        },
+        {
+            "def": "ICON"
+        },
+        {
+            "def": "DEST"
+        },
+        {
+            "def": "YNAM"
+        },
+        {
+            "def": "ZNAM"
+        },
+        {
+            "def": "DESC"
+        },
+        {
+            "def": "KSIZ"
+        },
+        {
+            "def": "KWDAs"
+        },
+        {
+            "signature": "DATA",
+            "type": "subrecord",
+            "field": {
+                "name": "Data",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Projectile",
+                        "type": "formId",
+                        "signatures": [
+                            "PROJ",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "name": "Flags",
+                        "type": "uint32",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "Ignores Normal Weapon Resistance",
+                                "1": "Non-Playable",
+                                "2": "Non-Bolt"
                             }
-                        },
-                        {
-                            "name": "Damage",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Value",
-                            "type": "uint32"
                         }
-                    ]
-                },
-                "required": true
+                    },
+                    {
+                        "name": "Damage",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Value",
+                        "type": "uint32"
+                    }
+                ]
             },
-            {
-                "signature": "ONAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Short Name",
-                    "type": "string"
-                }
+            "required": true
+        },
+        {
+            "signature": "ONAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Short Name",
+                "type": "string"
             }
-        ]
-    }
+        }
+    ]
 }

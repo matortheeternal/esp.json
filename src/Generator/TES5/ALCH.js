@@ -23,7 +23,7 @@ module.exports = () => {
             def('YNAM'),
             def('ZNAM'),
             def('ETYP'),
-            req(subrecord('DATA', float('Weight'))),
+            req(subrecord('DATA', req(float('Weight')))),
             req(subrecord('ENIT', struct('Effect Data', [
                 int32('Value'),
                 format(uint32('Flags'), flags({

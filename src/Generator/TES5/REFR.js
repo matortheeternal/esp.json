@@ -137,14 +137,14 @@ module.exports = () => {
             ])),
             subrecord('XPRM', struct('Primitive', [
                 struct('Bounds', [
-                    req(float('X')),
-                    req(float('Y')),
-                    req(float('Z'))
+                    req(req(float('X'))),
+                    req(req(float('Y'))),
+                    req(req(float('Z')))
                 ]),
                 struct('Color', [
-                    req(float('Red')),
-                    req(float('Green')),
-                    req(float('Blue'))
+                    req(req(float('Red'))),
+                    req(req(float('Green'))),
+                    req(req(float('Blue')))
                 ]),
                 float('Unknown'),
                 format(uint32('Type'), enumeration({
@@ -158,8 +158,8 @@ module.exports = () => {
             subrecord('XORD', unknown()),
             subrecord('XOCP', struct('Occlusion Plane Data', [
                 struct('Size', [
-                    req(float('Width')),
-                    req(float('Height'))
+                    req(req(float('Width'))),
+                    req(req(float('Height')))
                 ]),
                 struct('Position', [
                     float('X'),
@@ -181,8 +181,8 @@ module.exports = () => {
             )),
             subrecord('XPTL', struct('Room Portal (unused)', [
                 struct('Size', [
-                    req(float('Width')),
-                    req(float('Height'))
+                    req(req(float('Width'))),
+                    req(req(float('Height')))
                 ]),
                 struct('Position', [
                     float('X'),
@@ -351,7 +351,7 @@ module.exports = () => {
             ),
             memberArray('Patrol', 
                 memberStruct('Data', [
-                    req(subrecord('XPRD', float('Idle Time'))),
+                    req(subrecord('XPRD', req(float('Idle Time')))),
                     req(subrecord('XPPA', empty('Patrol Script Marker'))),
                     req(subrecord('INAM', ckFormId('Idle', ['IDLE', 'NULL']))),
                     subrecord('SCHR', bytes('Unused')),

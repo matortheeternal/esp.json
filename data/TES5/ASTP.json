@@ -2,57 +2,55 @@
     "signature": "ASTP",
     "type": "record",
     "name": "Association Type",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "signature": "MPRT",
-                "type": "subrecord",
-                "field": {
-                    "name": "Male Parent Title",
-                    "type": "string"
-                }
-            },
-            {
-                "signature": "FPRT",
-                "type": "subrecord",
-                "field": {
-                    "name": "Female Parent Title",
-                    "type": "string"
-                }
-            },
-            {
-                "signature": "MCHT",
-                "type": "subrecord",
-                "field": {
-                    "name": "Male Child Title",
-                    "type": "string"
-                }
-            },
-            {
-                "signature": "FCHT",
-                "type": "subrecord",
-                "field": {
-                    "name": "Female Child Title",
-                    "type": "string"
-                }
-            },
-            {
-                "signature": "DATA",
-                "type": "subrecord",
-                "field": {
-                    "name": "Flags",
-                    "type": "uint32",
-                    "format": {
-                        "type": "flags",
-                        "flags": {
-                            "0": "Family Association"
-                        }
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "signature": "MPRT",
+            "type": "subrecord",
+            "field": {
+                "name": "Male Parent Title",
+                "type": "string"
+            }
+        },
+        {
+            "signature": "FPRT",
+            "type": "subrecord",
+            "field": {
+                "name": "Female Parent Title",
+                "type": "string"
+            }
+        },
+        {
+            "signature": "MCHT",
+            "type": "subrecord",
+            "field": {
+                "name": "Male Child Title",
+                "type": "string"
+            }
+        },
+        {
+            "signature": "FCHT",
+            "type": "subrecord",
+            "field": {
+                "name": "Female Child Title",
+                "type": "string"
+            }
+        },
+        {
+            "signature": "DATA",
+            "type": "subrecord",
+            "field": {
+                "name": "Flags",
+                "type": "uint32",
+                "format": {
+                    "type": "flags",
+                    "flags": {
+                        "0": "Family Association"
                     }
                 }
             }
-        ]
-    }
+        }
+    ]
 }

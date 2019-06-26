@@ -2,152 +2,149 @@
     "signature": "SNDR",
     "type": "record",
     "name": "Sound Descriptor",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "signature": "CNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "GNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Category",
-                    "type": "formId"
-                }
-            },
-            {
-                "signature": "SNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Alternate Sound For",
-                    "type": "formId",
-                    "signatures": [
-                        "SNDR",
-                        "NULL"
-                    ]
-                }
-            },
-            {
-                "name": "Sounds",
-                "type": "memberArray",
-                "member": {
-                    "name": "Sound Files",
-                    "type": "memberStruct",
-                    "members": [
-                        {
-                            "signature": "ANAM",
-                            "type": "subrecord",
-                            "field": {
-                                "name": "File Name",
-                                "type": "string"
-                            }
-                        }
-                    ]
-                }
-            },
-            {
-                "signature": "ONAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Output Model",
-                    "type": "formId",
-                    "signatures": [
-                        "SOPM",
-                        "NULL"
-                    ]
-                }
-            },
-            {
-                "signature": "FNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "String",
-                    "type": "string",
-                    "localized": true
-                }
-            },
-            {
-                "def": "CTDAs"
-            },
-            {
-                "signature": "LNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Values",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Unknown",
-                            "type": "bytes",
-                            "size": 1
-                        },
-                        {
-                            "name": "Looping",
-                            "type": "uint8",
-                            "format": {
-                                "type": "enum",
-                                "options": {
-                                    "0": "None",
-                                    "8": "Loop",
-                                    "16": "Envelope Fast",
-                                    "32": "Envelope Slow"
-                                }
-                            }
-                        },
-                        {
-                            "name": "Unknown",
-                            "type": "bytes",
-                            "size": 1
-                        },
-                        {
-                            "name": "Rumble Send Value = (Small / 7) + ((Big / 7) * 16)",
-                            "type": "uint8"
-                        }
-                    ]
-                }
-            },
-            {
-                "signature": "BNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Values",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "% Frequency Shift",
-                            "type": "int8"
-                        },
-                        {
-                            "name": "% Frequency Variance",
-                            "type": "int8"
-                        },
-                        {
-                            "name": "Priority",
-                            "type": "uint8"
-                        },
-                        {
-                            "name": "db Variance",
-                            "type": "uint8"
-                        },
-                        {
-                            "name": "Static Attenuation (db)",
-                            "type": "uint16",
-                            "format": {
-                                "type": "divide",
-                                "value": 100
-                            }
-                        }
-                    ]
-                }
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "signature": "CNAM",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
             }
-        ]
-    }
+        },
+        {
+            "signature": "GNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Category",
+                "type": "formId"
+            }
+        },
+        {
+            "signature": "SNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Alternate Sound For",
+                "type": "formId",
+                "signatures": [
+                    "SNDR",
+                    "NULL"
+                ]
+            }
+        },
+        {
+            "name": "Sounds",
+            "type": "memberArray",
+            "member": {
+                "name": "Sound Files",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "ANAM",
+                        "type": "subrecord",
+                        "field": {
+                            "name": "File Name",
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "ONAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Output Model",
+                "type": "formId",
+                "signatures": [
+                    "SOPM",
+                    "NULL"
+                ]
+            }
+        },
+        {
+            "signature": "FNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "String",
+                "type": "string",
+                "localized": true
+            }
+        },
+        {
+            "def": "CTDAs"
+        },
+        {
+            "signature": "LNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Values",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 1
+                    },
+                    {
+                        "name": "Looping",
+                        "type": "uint8",
+                        "format": {
+                            "type": "enum",
+                            "options": {
+                                "0": "None",
+                                "8": "Loop",
+                                "16": "Envelope Fast",
+                                "32": "Envelope Slow"
+                            }
+                        }
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 1
+                    },
+                    {
+                        "name": "Rumble Send Value = (Small / 7) + ((Big / 7) * 16)",
+                        "type": "uint8"
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "BNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Values",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "% Frequency Shift",
+                        "type": "int8"
+                    },
+                    {
+                        "name": "% Frequency Variance",
+                        "type": "int8"
+                    },
+                    {
+                        "name": "Priority",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "db Variance",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "Static Attenuation (db)",
+                        "type": "uint16",
+                        "format": {
+                            "type": "divide",
+                            "value": 100
+                        }
+                    }
+                ]
+            }
+        }
+    ]
 }

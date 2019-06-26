@@ -2,135 +2,275 @@
     "signature": "REGN",
     "type": "record",
     "name": "Region",
-    "def": {
+    "flags": {
+        "type": "flags",
         "flags": {
-            "type": "flags",
-            "flags": {
-                "6": "Border Region",
-                "12": "Ignored"
+            "6": "Border Region",
+            "12": "Ignored"
+        }
+    },
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "signature": "RCLR",
+            "type": "subrecord",
+            "field": {
+                "name": "Map Color",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Red",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "Green",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "Blue",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 1
+                    }
+                ]
+            },
+            "required": true
+        },
+        {
+            "signature": "WNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Worldspace",
+                "type": "formId",
+                "signatures": [
+                    "WRLD"
+                ]
             }
         },
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "signature": "RCLR",
-                "type": "subrecord",
-                "field": {
-                    "name": "Map Color",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Red",
-                            "type": "uint8"
-                        },
-                        {
-                            "name": "Green",
-                            "type": "uint8"
-                        },
-                        {
-                            "name": "Blue",
-                            "type": "uint8"
-                        },
-                        {
-                            "name": "Unknown",
-                            "type": "bytes",
-                            "size": 1
+        {
+            "name": "Region Areas",
+            "type": "memberArray",
+            "member": {
+                "name": "Region Area",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "RPLI",
+                        "type": "subrecord",
+                        "field": {
+                            "name": "Edge Fall-off",
+                            "type": "uint32"
                         }
-                    ]
-                },
-                "required": true
-            },
-            {
-                "signature": "WNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Worldspace",
-                    "type": "formId",
-                    "signatures": [
-                        "WRLD"
-                    ]
-                }
-            },
-            {
-                "name": "Region Areas",
-                "type": "memberArray",
-                "member": {
-                    "name": "Region Area",
-                    "type": "memberStruct",
-                    "members": [
-                        {
-                            "signature": "RPLI",
-                            "type": "subrecord",
+                    },
+                    {
+                        "signature": "RPLD",
+                        "type": "subrecord",
+                        "field": {
+                            "name": "Region Point List Data",
+                            "type": "array",
                             "field": {
-                                "name": "Edge Fall-off",
-                                "type": "uint32"
-                            }
-                        },
-                        {
-                            "signature": "RPLD",
-                            "type": "subrecord",
-                            "field": {
-                                "name": "Region Point List Data",
-                                "type": "array",
-                                "field": {
-                                    "name": "Point",
-                                    "type": "struct",
-                                    "fields": [
-                                        {
-                                            "name": "X",
-                                            "type": "float"
-                                        },
-                                        {
-                                            "name": "Y",
-                                            "type": "float"
-                                        }
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                }
-            },
-            {
-                "name": "Region Data Entries",
-                "type": "memberArray",
-                "member": {
-                    "name": "Region Data Entry",
-                    "type": "memberStruct",
-                    "members": [
-                        {
-                            "signature": "RDAT",
-                            "type": "subrecord",
-                            "field": {
-                                "name": "Data Header",
+                                "name": "Point",
                                 "type": "struct",
                                 "fields": [
                                     {
-                                        "name": "Type",
+                                        "name": "X",
+                                        "type": "float"
+                                    },
+                                    {
+                                        "name": "Y",
+                                        "type": "float"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Region Data Entries",
+            "type": "memberArray",
+            "member": {
+                "name": "Region Data Entry",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "RDAT",
+                        "type": "subrecord",
+                        "field": {
+                            "name": "Data Header",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "Type",
+                                    "type": "uint32",
+                                    "format": {
+                                        "type": "enum",
+                                        "options": {
+                                            "0": "Unknown 0",
+                                            "1": "Unknown 1",
+                                            "2": "Objects",
+                                            "3": "Weather",
+                                            "4": "Map",
+                                            "5": "Land",
+                                            "6": "Grass",
+                                            "7": "Sound",
+                                            "8": "Imposter",
+                                            "9": "Unknown 10",
+                                            "10": "Unknown 11",
+                                            "11": "Unknown 12",
+                                            "12": "Unknown 13",
+                                            "13": "Unknown 14",
+                                            "14": "Unknown 15",
+                                            "15": "Unknown 16"
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "Flags",
+                                    "type": "uint8",
+                                    "format": {
+                                        "type": "flags",
+                                        "flags": {
+                                            "0": "Override"
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "Priority",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unknown",
+                                    "type": "bytes"
+                                }
+                            ],
+                            "sortKey": [
+                                0
+                            ]
+                        }
+                    },
+                    {
+                        "def": "ICON"
+                    },
+                    {
+                        "signature": "RDMO",
+                        "type": "subrecord",
+                        "field": {
+                            "name": "Music",
+                            "type": "formId",
+                            "signatures": [
+                                "MUSC"
+                            ]
+                        },
+                        "required": true
+                    },
+                    {
+                        "signature": "RDSA",
+                        "type": "subrecord",
+                        "field": {
+                            "name": "Sounds",
+                            "type": "array",
+                            "field": {
+                                "name": "Sound",
+                                "type": "struct",
+                                "fields": [
+                                    {
+                                        "name": "Sound",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "SNDR",
+                                            "NULL"
+                                        ]
+                                    },
+                                    {
+                                        "name": "Flags",
                                         "type": "uint32",
                                         "format": {
-                                            "type": "enum",
-                                            "options": {
-                                                "0": "Unknown 0",
-                                                "1": "Unknown 1",
-                                                "2": "Objects",
-                                                "3": "Weather",
-                                                "4": "Map",
-                                                "5": "Land",
-                                                "6": "Grass",
-                                                "7": "Sound",
-                                                "8": "Imposter",
-                                                "9": "Unknown 10",
-                                                "10": "Unknown 11",
-                                                "11": "Unknown 12",
-                                                "12": "Unknown 13",
-                                                "13": "Unknown 14",
-                                                "14": "Unknown 15",
-                                                "15": "Unknown 16"
+                                            "type": "flags",
+                                            "flags": {
+                                                "0": "Pleasant",
+                                                "1": "Cloudy",
+                                                "2": "Rainy",
+                                                "3": "Snowy"
                                             }
                                         }
+                                    },
+                                    {
+                                        "name": "Chance",
+                                        "type": "float"
+                                    }
+                                ],
+                                "sortKey": [
+                                    0
+                                ]
+                            },
+                            "sorted": true
+                        }
+                    },
+                    {
+                        "signature": "RDMP",
+                        "type": "subrecord",
+                        "field": {
+                            "name": "Map Name",
+                            "type": "string",
+                            "localized": true
+                        },
+                        "required": true
+                    },
+                    {
+                        "signature": "RDOT",
+                        "type": "subrecord",
+                        "field": {
+                            "name": "Objects",
+                            "type": "array",
+                            "field": {
+                                "name": "Object",
+                                "type": "struct",
+                                "fields": [
+                                    {
+                                        "name": "Object",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "TREE",
+                                            "FLOR",
+                                            "STAT",
+                                            "LTEX",
+                                            "MSTT"
+                                        ]
+                                    },
+                                    {
+                                        "name": "Parent Index",
+                                        "type": "uint16",
+                                        "format": {
+                                            "def": "HideFFFF"
+                                        }
+                                    },
+                                    {
+                                        "name": "Unknown",
+                                        "type": "bytes",
+                                        "size": 2
+                                    },
+                                    {
+                                        "name": "Density",
+                                        "type": "float"
+                                    },
+                                    {
+                                        "name": "Clustering",
+                                        "type": "uint8"
+                                    },
+                                    {
+                                        "name": "Min Slope",
+                                        "type": "uint8"
+                                    },
+                                    {
+                                        "name": "Max Slope",
+                                        "type": "uint8"
                                     },
                                     {
                                         "name": "Flags",
@@ -138,292 +278,150 @@
                                         "format": {
                                             "type": "flags",
                                             "flags": {
-                                                "0": "Override"
+                                                "0": "Conform to slope",
+                                                "1": "Paint Vertices",
+                                                "2": "Size Variance +/-",
+                                                "3": "X +/-",
+                                                "4": "Y +/-",
+                                                "5": "Z +/-",
+                                                "6": "Tree",
+                                                "7": "Huge Rock"
                                             }
                                         }
                                     },
                                     {
-                                        "name": "Priority",
-                                        "type": "uint8"
+                                        "name": "Radius wrt Parent",
+                                        "type": "uint16"
+                                    },
+                                    {
+                                        "name": "Radius",
+                                        "type": "uint16"
+                                    },
+                                    {
+                                        "name": "Min Height",
+                                        "type": "float"
+                                    },
+                                    {
+                                        "name": "Max Height",
+                                        "type": "float"
+                                    },
+                                    {
+                                        "name": "Sink",
+                                        "type": "float"
+                                    },
+                                    {
+                                        "name": "Sink Variance",
+                                        "type": "float"
+                                    },
+                                    {
+                                        "name": "Size Variance",
+                                        "type": "float"
+                                    },
+                                    {
+                                        "name": "Angle Variance",
+                                        "type": "struct",
+                                        "fields": [
+                                            {
+                                                "name": "X",
+                                                "type": "uint16"
+                                            },
+                                            {
+                                                "name": "Y",
+                                                "type": "uint16"
+                                            },
+                                            {
+                                                "name": "Z",
+                                                "type": "uint16"
+                                            }
+                                        ]
                                     },
                                     {
                                         "name": "Unknown",
-                                        "type": "bytes"
+                                        "type": "bytes",
+                                        "size": 2
+                                    },
+                                    {
+                                        "name": "Unknown",
+                                        "type": "bytes",
+                                        "size": 4
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "signature": "RDGS",
+                        "type": "subrecord",
+                        "field": {
+                            "name": "Grasses",
+                            "type": "array",
+                            "field": {
+                                "name": "Grass",
+                                "type": "struct",
+                                "fields": [
+                                    {
+                                        "name": "Grass",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "GRAS"
+                                        ]
+                                    },
+                                    {
+                                        "name": "Unknown",
+                                        "type": "bytes",
+                                        "size": 4
                                     }
                                 ],
                                 "sortKey": [
                                     0
                                 ]
-                            }
-                        },
-                        {
-                            "def": "ICON"
-                        },
-                        {
-                            "signature": "RDMO",
-                            "type": "subrecord",
+                            },
+                            "sorted": true
+                        }
+                    },
+                    {
+                        "signature": "RDWT",
+                        "type": "subrecord",
+                        "field": {
+                            "name": "Weather Types",
+                            "type": "array",
                             "field": {
-                                "name": "Music",
-                                "type": "formId",
-                                "signatures": [
-                                    "MUSC"
+                                "name": "Weather Type",
+                                "type": "struct",
+                                "fields": [
+                                    {
+                                        "name": "Weather",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "WTHR"
+                                        ]
+                                    },
+                                    {
+                                        "name": "Chance",
+                                        "type": "uint32"
+                                    },
+                                    {
+                                        "name": "Global",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "GLOB",
+                                            "NULL"
+                                        ]
+                                    }
+                                ],
+                                "sortKey": [
+                                    0
                                 ]
                             },
-                            "required": true
-                        },
-                        {
-                            "signature": "RDSA",
-                            "type": "subrecord",
-                            "field": {
-                                "name": "Sounds",
-                                "type": "array",
-                                "field": {
-                                    "name": "Sound",
-                                    "type": "struct",
-                                    "fields": [
-                                        {
-                                            "name": "Sound",
-                                            "type": "formId",
-                                            "signatures": [
-                                                "SNDR",
-                                                "NULL"
-                                            ]
-                                        },
-                                        {
-                                            "name": "Flags",
-                                            "type": "uint32",
-                                            "format": {
-                                                "type": "flags",
-                                                "flags": {
-                                                    "0": "Pleasant",
-                                                    "1": "Cloudy",
-                                                    "2": "Rainy",
-                                                    "3": "Snowy"
-                                                }
-                                            }
-                                        },
-                                        {
-                                            "name": "Chance",
-                                            "type": "float"
-                                        }
-                                    ],
-                                    "sortKey": [
-                                        0
-                                    ]
-                                },
-                                "sorted": true
-                            }
-                        },
-                        {
-                            "signature": "RDMP",
-                            "type": "subrecord",
-                            "field": {
-                                "name": "Map Name",
-                                "type": "string",
-                                "localized": true
-                            },
-                            "required": true
-                        },
-                        {
-                            "signature": "RDOT",
-                            "type": "subrecord",
-                            "field": {
-                                "name": "Objects",
-                                "type": "array",
-                                "field": {
-                                    "name": "Object",
-                                    "type": "struct",
-                                    "fields": [
-                                        {
-                                            "name": "Object",
-                                            "type": "formId",
-                                            "signatures": [
-                                                "TREE",
-                                                "FLOR",
-                                                "STAT",
-                                                "LTEX",
-                                                "MSTT"
-                                            ]
-                                        },
-                                        {
-                                            "name": "Parent Index",
-                                            "type": "uint16",
-                                            "format": {
-                                                "def": "HideFFFF"
-                                            }
-                                        },
-                                        {
-                                            "name": "Unknown",
-                                            "type": "bytes",
-                                            "size": 2
-                                        },
-                                        {
-                                            "name": "Density",
-                                            "type": "float"
-                                        },
-                                        {
-                                            "name": "Clustering",
-                                            "type": "uint8"
-                                        },
-                                        {
-                                            "name": "Min Slope",
-                                            "type": "uint8"
-                                        },
-                                        {
-                                            "name": "Max Slope",
-                                            "type": "uint8"
-                                        },
-                                        {
-                                            "name": "Flags",
-                                            "type": "uint8",
-                                            "format": {
-                                                "type": "flags",
-                                                "flags": {
-                                                    "0": "Conform to slope",
-                                                    "1": "Paint Vertices",
-                                                    "2": "Size Variance +/-",
-                                                    "3": "X +/-",
-                                                    "4": "Y +/-",
-                                                    "5": "Z +/-",
-                                                    "6": "Tree",
-                                                    "7": "Huge Rock"
-                                                }
-                                            }
-                                        },
-                                        {
-                                            "name": "Radius wrt Parent",
-                                            "type": "uint16"
-                                        },
-                                        {
-                                            "name": "Radius",
-                                            "type": "uint16"
-                                        },
-                                        {
-                                            "name": "Min Height",
-                                            "type": "float"
-                                        },
-                                        {
-                                            "name": "Max Height",
-                                            "type": "float"
-                                        },
-                                        {
-                                            "name": "Sink",
-                                            "type": "float"
-                                        },
-                                        {
-                                            "name": "Sink Variance",
-                                            "type": "float"
-                                        },
-                                        {
-                                            "name": "Size Variance",
-                                            "type": "float"
-                                        },
-                                        {
-                                            "name": "Angle Variance",
-                                            "type": "struct",
-                                            "fields": [
-                                                {
-                                                    "name": "X",
-                                                    "type": "uint16"
-                                                },
-                                                {
-                                                    "name": "Y",
-                                                    "type": "uint16"
-                                                },
-                                                {
-                                                    "name": "Z",
-                                                    "type": "uint16"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "name": "Unknown",
-                                            "type": "bytes",
-                                            "size": 2
-                                        },
-                                        {
-                                            "name": "Unknown",
-                                            "type": "bytes",
-                                            "size": 4
-                                        }
-                                    ]
-                                }
-                            }
-                        },
-                        {
-                            "signature": "RDGS",
-                            "type": "subrecord",
-                            "field": {
-                                "name": "Grasses",
-                                "type": "array",
-                                "field": {
-                                    "name": "Grass",
-                                    "type": "struct",
-                                    "fields": [
-                                        {
-                                            "name": "Grass",
-                                            "type": "formId",
-                                            "signatures": [
-                                                "GRAS"
-                                            ]
-                                        },
-                                        {
-                                            "name": "Unknown",
-                                            "type": "bytes",
-                                            "size": 4
-                                        }
-                                    ],
-                                    "sortKey": [
-                                        0
-                                    ]
-                                },
-                                "sorted": true
-                            }
-                        },
-                        {
-                            "signature": "RDWT",
-                            "type": "subrecord",
-                            "field": {
-                                "name": "Weather Types",
-                                "type": "array",
-                                "field": {
-                                    "name": "Weather Type",
-                                    "type": "struct",
-                                    "fields": [
-                                        {
-                                            "name": "Weather",
-                                            "type": "formId",
-                                            "signatures": [
-                                                "WTHR"
-                                            ]
-                                        },
-                                        {
-                                            "name": "Chance",
-                                            "type": "uint32"
-                                        },
-                                        {
-                                            "name": "Global",
-                                            "type": "formId",
-                                            "signatures": [
-                                                "GLOB",
-                                                "NULL"
-                                            ]
-                                        }
-                                    ],
-                                    "sortKey": [
-                                        0
-                                    ]
-                                },
-                                "sorted": true
-                            }
+                            "sorted": true
                         }
-                    ],
-                    "sortKey": [
-                        0
-                    ]
-                },
-                "sorted": true
-            }
-        ]
-    }
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            },
+            "sorted": true
+        }
+    ]
 }

@@ -2,69 +2,67 @@
     "signature": "KEYM",
     "type": "record",
     "name": "Key",
-    "def": {
+    "flags": {
+        "type": "flags",
         "flags": {
-            "type": "flags",
-            "flags": {
-                "2": "Non-Playable",
-                "12": "Ignored"
-            }
+            "2": "Non-Playable",
+            "12": "Ignored"
+        }
+    },
+    "members": [
+        {
+            "def": "EDID"
         },
-        "members": [
-            {
-                "def": "EDID"
+        {
+            "def": "VMAD"
+        },
+        {
+            "def": "OBND",
+            "required": true
+        },
+        {
+            "def": "FULL",
+            "required": true
+        },
+        {
+            "def": "MODL"
+        },
+        {
+            "def": "ICON"
+        },
+        {
+            "def": "DEST"
+        },
+        {
+            "def": "YNAM"
+        },
+        {
+            "def": "ZNAM"
+        },
+        {
+            "def": "KSIZ"
+        },
+        {
+            "def": "KWDAs"
+        },
+        {
+            "signature": "DATA",
+            "type": "subrecord",
+            "field": {
+                "name": "",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Value",
+                        "type": "int32"
+                    },
+                    {
+                        "name": "Weight",
+                        "type": "float"
+                    }
+                ]
             },
-            {
-                "def": "VMAD"
-            },
-            {
-                "def": "OBND",
-                "required": true
-            },
-            {
-                "def": "FULL",
-                "required": true
-            },
-            {
-                "def": "MODL"
-            },
-            {
-                "def": "ICON"
-            },
-            {
-                "def": "DEST"
-            },
-            {
-                "def": "YNAM"
-            },
-            {
-                "def": "ZNAM"
-            },
-            {
-                "def": "KSIZ"
-            },
-            {
-                "def": "KWDAs"
-            },
-            {
-                "signature": "DATA",
-                "type": "subrecord",
-                "field": {
-                    "name": "",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Value",
-                            "type": "int32"
-                        },
-                        {
-                            "name": "Weight",
-                            "type": "float"
-                        }
-                    ]
-                },
-                "required": true
-            }
-        ]
-    }
+            "required": true
+        }
+    ]
 }

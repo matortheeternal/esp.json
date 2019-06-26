@@ -2,273 +2,271 @@
     "signature": "ARMA",
     "type": "record",
     "name": "Armor Addon",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "def": "BODTBOD2"
+        },
+        {
+            "signature": "RNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Race",
+                "type": "formId",
+                "signatures": [
+                    "RACE"
+                ]
+            }
+        },
+        {
+            "signature": "DNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Data",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Male Priority",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "Female Priority",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "Weight slider - Male",
+                        "type": "uint8",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "Unknown 0",
+                                "1": "Enabled"
+                            }
+                        }
+                    },
+                    {
+                        "name": "Weight slider - Female",
+                        "type": "uint8",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "Unknown 0",
+                                "1": "Enabled"
+                            }
+                        }
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 2
+                    },
+                    {
+                        "name": "Detection Sound Value",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 1
+                    },
+                    {
+                        "name": "Weapon Adjust",
+                        "type": "float"
+                    }
+                ]
             },
-            {
-                "def": "BODTBOD2"
-            },
-            {
-                "signature": "RNAM",
+            "required": true
+        },
+        {
+            "name": "Male world model",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "MOD2",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Model FileName",
+                        "type": "string"
+                    }
+                },
+                {
+                    "signature": "MO2T",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Texture Files Hashes",
+                        "type": "bytes"
+                    }
+                },
+                {
+                    "def": "MO2S"
+                }
+            ],
+            "required": true
+        },
+        {
+            "name": "Female world model",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "MOD3",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Model FileName",
+                        "type": "string"
+                    }
+                },
+                {
+                    "signature": "MO3T",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Texture Files Hashes",
+                        "type": "bytes"
+                    }
+                },
+                {
+                    "def": "MO3S"
+                }
+            ]
+        },
+        {
+            "name": "Male 1st Person",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "MOD4",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Model FileName",
+                        "type": "string"
+                    }
+                },
+                {
+                    "signature": "MO4T",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Texture Files Hashes",
+                        "type": "bytes"
+                    }
+                },
+                {
+                    "def": "MO4S"
+                }
+            ]
+        },
+        {
+            "name": "Female 1st Person",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "MOD5",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Model FileName",
+                        "type": "string"
+                    }
+                },
+                {
+                    "signature": "MO5T",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Texture Files Hashes",
+                        "type": "bytes"
+                    }
+                },
+                {
+                    "def": "MO5S"
+                }
+            ]
+        },
+        {
+            "signature": "NAM0",
+            "type": "subrecord",
+            "field": {
+                "name": "Male Skin Texture",
+                "type": "formId",
+                "signatures": [
+                    "TXST",
+                    "NULL"
+                ]
+            }
+        },
+        {
+            "signature": "NAM1",
+            "type": "subrecord",
+            "field": {
+                "name": "Female Skin texture",
+                "type": "formId",
+                "signatures": [
+                    "TXST",
+                    "NULL"
+                ]
+            }
+        },
+        {
+            "signature": "NAM2",
+            "type": "subrecord",
+            "field": {
+                "name": "Male Skin Texture Swap List",
+                "type": "formId",
+                "signatures": [
+                    "FLST",
+                    "NULL"
+                ]
+            }
+        },
+        {
+            "signature": "NAM3",
+            "type": "subrecord",
+            "field": {
+                "name": "Female Skin Texture Swap List",
+                "type": "formId",
+                "signatures": [
+                    "FLST",
+                    "NULL"
+                ]
+            }
+        },
+        {
+            "name": "Additional Races",
+            "type": "memberArray",
+            "member": {
+                "signature": "MODL",
                 "type": "subrecord",
                 "field": {
                     "name": "Race",
                     "type": "formId",
                     "signatures": [
-                        "RACE"
+                        "RACE",
+                        "NULL"
                     ]
                 }
             },
-            {
-                "signature": "DNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Data",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Male Priority",
-                            "type": "uint8"
-                        },
-                        {
-                            "name": "Female Priority",
-                            "type": "uint8"
-                        },
-                        {
-                            "name": "Weight slider - Male",
-                            "type": "uint8",
-                            "format": {
-                                "type": "flags",
-                                "flags": {
-                                    "0": "Unknown 0",
-                                    "1": "Enabled"
-                                }
-                            }
-                        },
-                        {
-                            "name": "Weight slider - Female",
-                            "type": "uint8",
-                            "format": {
-                                "type": "flags",
-                                "flags": {
-                                    "0": "Unknown 0",
-                                    "1": "Enabled"
-                                }
-                            }
-                        },
-                        {
-                            "name": "Unknown",
-                            "type": "bytes",
-                            "size": 2
-                        },
-                        {
-                            "name": "Detection Sound Value",
-                            "type": "uint8"
-                        },
-                        {
-                            "name": "Unknown",
-                            "type": "bytes",
-                            "size": 1
-                        },
-                        {
-                            "name": "Weapon Adjust",
-                            "type": "float"
-                        }
-                    ]
-                },
-                "required": true
-            },
-            {
-                "name": "Male world model",
-                "type": "memberStruct",
-                "members": [
-                    {
-                        "signature": "MOD2",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Model FileName",
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "signature": "MO2T",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Texture Files Hashes",
-                            "type": "bytes"
-                        }
-                    },
-                    {
-                        "def": "MO2S"
-                    }
-                ],
-                "required": true
-            },
-            {
-                "name": "Female world model",
-                "type": "memberStruct",
-                "members": [
-                    {
-                        "signature": "MOD3",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Model FileName",
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "signature": "MO3T",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Texture Files Hashes",
-                            "type": "bytes"
-                        }
-                    },
-                    {
-                        "def": "MO3S"
-                    }
+            "sorted": true
+        },
+        {
+            "signature": "SNDD",
+            "type": "subrecord",
+            "field": {
+                "name": "Footstep Sound",
+                "type": "formId",
+                "signatures": [
+                    "FSTS",
+                    "NULL"
                 ]
-            },
-            {
-                "name": "Male 1st Person",
-                "type": "memberStruct",
-                "members": [
-                    {
-                        "signature": "MOD4",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Model FileName",
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "signature": "MO4T",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Texture Files Hashes",
-                            "type": "bytes"
-                        }
-                    },
-                    {
-                        "def": "MO4S"
-                    }
-                ]
-            },
-            {
-                "name": "Female 1st Person",
-                "type": "memberStruct",
-                "members": [
-                    {
-                        "signature": "MOD5",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Model FileName",
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "signature": "MO5T",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Texture Files Hashes",
-                            "type": "bytes"
-                        }
-                    },
-                    {
-                        "def": "MO5S"
-                    }
-                ]
-            },
-            {
-                "signature": "NAM0",
-                "type": "subrecord",
-                "field": {
-                    "name": "Male Skin Texture",
-                    "type": "formId",
-                    "signatures": [
-                        "TXST",
-                        "NULL"
-                    ]
-                }
-            },
-            {
-                "signature": "NAM1",
-                "type": "subrecord",
-                "field": {
-                    "name": "Female Skin texture",
-                    "type": "formId",
-                    "signatures": [
-                        "TXST",
-                        "NULL"
-                    ]
-                }
-            },
-            {
-                "signature": "NAM2",
-                "type": "subrecord",
-                "field": {
-                    "name": "Male Skin Texture Swap List",
-                    "type": "formId",
-                    "signatures": [
-                        "FLST",
-                        "NULL"
-                    ]
-                }
-            },
-            {
-                "signature": "NAM3",
-                "type": "subrecord",
-                "field": {
-                    "name": "Female Skin Texture Swap List",
-                    "type": "formId",
-                    "signatures": [
-                        "FLST",
-                        "NULL"
-                    ]
-                }
-            },
-            {
-                "name": "Additional Races",
-                "type": "memberArray",
-                "member": {
-                    "signature": "MODL",
-                    "type": "subrecord",
-                    "field": {
-                        "name": "Race",
-                        "type": "formId",
-                        "signatures": [
-                            "RACE",
-                            "NULL"
-                        ]
-                    }
-                },
-                "sorted": true
-            },
-            {
-                "signature": "SNDD",
-                "type": "subrecord",
-                "field": {
-                    "name": "Footstep Sound",
-                    "type": "formId",
-                    "signatures": [
-                        "FSTS",
-                        "NULL"
-                    ]
-                }
-            },
-            {
-                "signature": "ONAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Art Object",
-                    "type": "formId",
-                    "signatures": [
-                        "ARTO"
-                    ]
-                }
             }
-        ]
-    }
+        },
+        {
+            "signature": "ONAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Art Object",
+                "type": "formId",
+                "signatures": [
+                    "ARTO"
+                ]
+            }
+        }
+    ]
 }

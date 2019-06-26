@@ -2,123 +2,122 @@
     "signature": "ALCH",
     "type": "record",
     "name": "Ingestible",
-    "def": {
+    "flags": {
+        "type": "flags",
         "flags": {
-            "type": "flags",
-            "flags": {
-                "12": "Ignored",
-                "29": "Medicine"
-            }
+            "12": "Ignored",
+            "29": "Medicine"
+        }
+    },
+    "members": [
+        {
+            "def": "EDID"
         },
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "def": "OBND",
+        {
+            "def": "OBND",
+            "required": true
+        },
+        {
+            "def": "FULL"
+        },
+        {
+            "def": "KSIZ"
+        },
+        {
+            "def": "KWDAs"
+        },
+        {
+            "def": "DESC"
+        },
+        {
+            "def": "MODL"
+        },
+        {
+            "def": "DEST"
+        },
+        {
+            "def": "ICON"
+        },
+        {
+            "def": "YNAM"
+        },
+        {
+            "def": "ZNAM"
+        },
+        {
+            "def": "ETYP"
+        },
+        {
+            "signature": "DATA",
+            "type": "subrecord",
+            "field": {
+                "name": "Weight",
+                "type": "float",
                 "required": true
             },
-            {
-                "def": "FULL"
-            },
-            {
-                "def": "KSIZ"
-            },
-            {
-                "def": "KWDAs"
-            },
-            {
-                "def": "DESC"
-            },
-            {
-                "def": "MODL"
-            },
-            {
-                "def": "DEST"
-            },
-            {
-                "def": "ICON"
-            },
-            {
-                "def": "YNAM"
-            },
-            {
-                "def": "ZNAM"
-            },
-            {
-                "def": "ETYP"
-            },
-            {
-                "signature": "DATA",
-                "type": "subrecord",
-                "field": {
-                    "name": "Weight",
-                    "type": "float"
-                },
-                "required": true
-            },
-            {
-                "signature": "ENIT",
-                "type": "subrecord",
-                "field": {
-                    "name": "Effect Data",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Value",
-                            "type": "int32"
-                        },
-                        {
-                            "name": "Flags",
-                            "type": "uint32",
-                            "format": {
-                                "type": "flags",
-                                "flags": {
-                                    "0": "No Auto-Calc",
-                                    "1": "Food Item",
-                                    "2": "Unknown 3",
-                                    "3": "Unknown 4",
-                                    "4": "Unknown 5",
-                                    "5": "Unknown 6",
-                                    "6": "Unknown 7",
-                                    "7": "Unknown 8",
-                                    "8": "Unknown 9",
-                                    "9": "Unknown 10",
-                                    "10": "Unknown 11",
-                                    "11": "Unknown 12",
-                                    "12": "Unknown 13",
-                                    "13": "Unknown 14",
-                                    "14": "Unknown 15",
-                                    "15": "Unknown 16",
-                                    "16": "Medicine",
-                                    "17": "Poison"
-                                }
+            "required": true
+        },
+        {
+            "signature": "ENIT",
+            "type": "subrecord",
+            "field": {
+                "name": "Effect Data",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Value",
+                        "type": "int32"
+                    },
+                    {
+                        "name": "Flags",
+                        "type": "uint32",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "No Auto-Calc",
+                                "1": "Food Item",
+                                "2": "Unknown 3",
+                                "3": "Unknown 4",
+                                "4": "Unknown 5",
+                                "5": "Unknown 6",
+                                "6": "Unknown 7",
+                                "7": "Unknown 8",
+                                "8": "Unknown 9",
+                                "9": "Unknown 10",
+                                "10": "Unknown 11",
+                                "11": "Unknown 12",
+                                "12": "Unknown 13",
+                                "13": "Unknown 14",
+                                "14": "Unknown 15",
+                                "15": "Unknown 16",
+                                "16": "Medicine",
+                                "17": "Poison"
                             }
-                        },
-                        {
-                            "name": "Addiction",
-                            "type": "formId"
-                        },
-                        {
-                            "name": "Addiction Chance",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Sound - Consume",
-                            "type": "formId",
-                            "signatures": [
-                                "SNDR",
-                                "NULL"
-                            ]
                         }
-                    ]
-                },
-                "required": true
+                    },
+                    {
+                        "name": "Addiction",
+                        "type": "formId"
+                    },
+                    {
+                        "name": "Addiction Chance",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Sound - Consume",
+                        "type": "formId",
+                        "signatures": [
+                            "SNDR",
+                            "NULL"
+                        ]
+                    }
+                ]
             },
-            {
-                "def": "Effects",
-                "required": true
-            }
-        ]
-    }
+            "required": true
+        },
+        {
+            "def": "Effects",
+            "required": true
+        }
+    ]
 }

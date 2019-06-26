@@ -2,47 +2,42 @@
     "signature": "NAVM",
     "type": "record",
     "name": "Navigation Mesh",
-    "def": {
+    "flags": {
+        "type": "flags",
         "flags": {
-            "type": "flags",
-            "flags": {
-                "12": "Ignored",
-                "18": "Compressed",
-                "26": "AutoGen",
-                "31": "NavmeshGenCell"
+            "12": "Ignored",
+            "18": "Compressed",
+            "26": "AutoGen",
+            "31": "NavmeshGenCell"
+        }
+    },
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "def": "NVNM"
+        },
+        {
+            "signature": "ONAM",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
             }
         },
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "def": "NVNM"
-            },
-            {
-                "signature": "ONAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "PNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "NNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
+        {
+            "signature": "PNAM",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
             }
-        ]
-    }
+        },
+        {
+            "signature": "NNAM",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        }
+    ]
 }

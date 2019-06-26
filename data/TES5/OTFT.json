@@ -2,28 +2,26 @@
     "signature": "OTFT",
     "type": "record",
     "name": "Outfit",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "signature": "INAM",
-                "type": "subrecord",
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "signature": "INAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Items",
+                "type": "array",
                 "field": {
-                    "name": "Items",
-                    "type": "array",
-                    "field": {
-                        "name": "Item",
-                        "type": "formId",
-                        "signatures": [
-                            "ARMO",
-                            "LVLI"
-                        ]
-                    },
-                    "sorted": true
-                }
+                    "name": "Item",
+                    "type": "formId",
+                    "signatures": [
+                        "ARMO",
+                        "LVLI"
+                    ]
+                },
+                "sorted": true
             }
-        ]
-    }
+        }
+    ]
 }

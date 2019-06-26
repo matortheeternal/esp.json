@@ -2,11 +2,9 @@
     "signature": "HAIR",
     "type": "record",
     "name": "HAIR",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
-            }
-        ]
-    }
+    "members": [
+        {
+            "def": "EDID"
+        }
+    ]
 }

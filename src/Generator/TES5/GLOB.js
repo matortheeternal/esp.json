@@ -16,7 +16,7 @@ module.exports = () => {
             }))), {
                 "defaultEditValue": "'Float'"
             }),
-            req(subrecord('FLTV', float('Value')))
+            req(subrecord('FLTV', req(float('Value'))))
         ]
     })
 };

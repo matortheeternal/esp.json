@@ -2,71 +2,69 @@
     "signature": "SCRL",
     "type": "record",
     "name": "Scroll",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "def": "OBND",
+            "required": true
+        },
+        {
+            "def": "FULL"
+        },
+        {
+            "def": "KSIZ"
+        },
+        {
+            "def": "KWDAs"
+        },
+        {
+            "def": "MDOB"
+        },
+        {
+            "def": "ETYP"
+        },
+        {
+            "def": "DESC"
+        },
+        {
+            "def": "MODL"
+        },
+        {
+            "def": "DEST"
+        },
+        {
+            "def": "YNAM"
+        },
+        {
+            "def": "ZNAM"
+        },
+        {
+            "signature": "DATA",
+            "type": "subrecord",
+            "field": {
+                "name": "Item",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Value",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Weight",
+                        "type": "float"
+                    }
+                ]
             },
-            {
-                "def": "OBND",
-                "required": true
-            },
-            {
-                "def": "FULL"
-            },
-            {
-                "def": "KSIZ"
-            },
-            {
-                "def": "KWDAs"
-            },
-            {
-                "def": "MDOB"
-            },
-            {
-                "def": "ETYP"
-            },
-            {
-                "def": "DESC"
-            },
-            {
-                "def": "MODL"
-            },
-            {
-                "def": "DEST"
-            },
-            {
-                "def": "YNAM"
-            },
-            {
-                "def": "ZNAM"
-            },
-            {
-                "signature": "DATA",
-                "type": "subrecord",
-                "field": {
-                    "name": "Item",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Value",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Weight",
-                            "type": "float"
-                        }
-                    ]
-                },
-                "required": true
-            },
-            {
-                "def": "SPIT"
-            },
-            {
-                "def": "Effects",
-                "required": true
-            }
-        ]
-    }
+            "required": true
+        },
+        {
+            "def": "SPIT"
+        },
+        {
+            "def": "Effects",
+            "required": true
+        }
+    ]
 }

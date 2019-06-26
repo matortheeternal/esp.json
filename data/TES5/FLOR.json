@@ -2,113 +2,109 @@
     "signature": "FLOR",
     "type": "record",
     "name": "Flora",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "def": "VMAD"
-            },
-            {
-                "def": "OBND",
-                "required": true
-            },
-            {
-                "def": "FULL",
-                "required": true
-            },
-            {
-                "def": "MODL"
-            },
-            {
-                "def": "DEST"
-            },
-            {
-                "def": "KSIZ"
-            },
-            {
-                "def": "KWDAs"
-            },
-            {
-                "signature": "PNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "RNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Activate Text Override",
-                    "type": "string",
-                    "localized": true
-                }
-            },
-            {
-                "signature": "FNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "PFIG",
-                "type": "subrecord",
-                "field": {
-                    "name": "Ingredient",
-                    "type": "formId",
-                    "signatures": [
-                        "INGR",
-                        "ALCH",
-                        "LVLI",
-                        "MISC",
-                        "NULL"
-                    ]
-                }
-            },
-            {
-                "signature": "SNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Sound",
-                    "type": "formId",
-                    "signatures": [
-                        "SNDR",
-                        "NULL"
-                    ]
-                }
-            },
-            {
-                "signature": "PFPC",
-                "type": "subrecord",
-                "field": {
-                    "name": "Seasonal ingredient production",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Spring",
-                            "type": "uint8"
-                        },
-                        {
-                            "name": "Summer ",
-                            "type": "uint8"
-                        },
-                        {
-                            "name": "Fall",
-                            "type": "uint8"
-                        },
-                        {
-                            "name": "Winter",
-                            "type": "uint8"
-                        }
-                    ]
-                },
-                "required": true
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "def": "VMAD"
+        },
+        {
+            "def": "OBND",
+            "required": true
+        },
+        {
+            "def": "FULL",
+            "required": true
+        },
+        {
+            "def": "MODL"
+        },
+        {
+            "def": "DEST"
+        },
+        {
+            "def": "KSIZ"
+        },
+        {
+            "def": "KWDAs"
+        },
+        {
+            "signature": "PNAM",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
             }
-        ]
-    }
+        },
+        {
+            "signature": "RNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Activate Text Override",
+                "type": "string",
+                "localized": true
+            }
+        },
+        {
+            "signature": "FNAM",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        },
+        {
+            "signature": "PFIG",
+            "type": "subrecord",
+            "field": {
+                "name": "Ingredient",
+                "type": "formId",
+                "signatures": [
+                    "INGR",
+                    "ALCH",
+                    "LVLI",
+                    "MISC",
+                    "NULL"
+                ]
+            }
+        },
+        {
+            "signature": "SNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Sound",
+                "type": "formId",
+                "signatures": [
+                    "SNDR",
+                    "NULL"
+                ]
+            }
+        },
+        {
+            "signature": "PFPC",
+            "type": "subrecord",
+            "field": {
+                "name": "Seasonal ingredient production",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Spring",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "Summer ",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "Fall",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "Winter",
+                        "type": "uint8"
+                    }
+                ]
+            },
+            "required": true
+        }
+    ]
 }

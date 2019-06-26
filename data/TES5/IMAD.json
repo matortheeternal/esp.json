@@ -2,865 +2,843 @@
     "signature": "IMAD",
     "type": "record",
     "name": "Image Space Adapter",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "signature": "DNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Data Count",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Flags",
-                            "type": "uint32",
-                            "format": {
-                                "type": "flags",
-                                "flags": {
-                                    "0": "Animatable"
-                                }
-                            }
-                        },
-                        {
-                            "name": "Duration",
-                            "type": "float"
-                        },
-                        {
-                            "name": "HDR",
-                            "type": "struct",
-                            "fields": [
-                                {
-                                    "name": "Eye Adapt Speed Mult",
-                                    "type": "uint32"
-                                },
-                                {
-                                    "name": "Eye Adapt Speed Add",
-                                    "type": "uint32"
-                                },
-                                {
-                                    "name": "Bloom Blur Radius Mult",
-                                    "type": "uint32"
-                                },
-                                {
-                                    "name": "Bloom Blur Radius Add",
-                                    "type": "uint32"
-                                },
-                                {
-                                    "name": "Bloom Threshold Mult",
-                                    "type": "uint32"
-                                },
-                                {
-                                    "name": "Bloom Threshold Add",
-                                    "type": "uint32"
-                                },
-                                {
-                                    "name": "Bloom Scale Mult",
-                                    "type": "uint32"
-                                },
-                                {
-                                    "name": "Bloom Scale Add",
-                                    "type": "uint32"
-                                },
-                                {
-                                    "name": "Target Lum Min Mult",
-                                    "type": "uint32"
-                                },
-                                {
-                                    "name": "Target Lum Min Add",
-                                    "type": "uint32"
-                                },
-                                {
-                                    "name": "Target Lum Max Mult",
-                                    "type": "uint32"
-                                },
-                                {
-                                    "name": "Target Lum Max Add",
-                                    "type": "uint32"
-                                },
-                                {
-                                    "name": "Sunlight Scale Mult",
-                                    "type": "uint32"
-                                },
-                                {
-                                    "name": "Sunlight Scale Add",
-                                    "type": "uint32"
-                                },
-                                {
-                                    "name": "Sky Scale Mult",
-                                    "type": "uint32"
-                                },
-                                {
-                                    "name": "Sky Scale Add",
-                                    "type": "uint32"
-                                }
-                            ]
-                        },
-                        {
-                            "name": "Unknown08 Mult",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Unknown48 Add",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Unknown09 Mult",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Unknown49 Add",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Unknown0A Mult",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Unknown4A Add",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Unknown0B Mult",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Unknown4B Add",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Unknown0C Mult",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Unknown4C Add",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Unknown0D Mult",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Unknown4D Add",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Unknown0E Mult",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Unknown4E Add",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Unknown0F Mult",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Unknown4F Add",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Unknown10 Mult",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Unknown50 Add",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Cinematic",
-                            "type": "struct",
-                            "fields": [
-                                {
-                                    "name": "Saturation Mult",
-                                    "type": "uint32"
-                                },
-                                {
-                                    "name": "Saturation Add",
-                                    "type": "uint32"
-                                },
-                                {
-                                    "name": "Brightness Mult",
-                                    "type": "uint32"
-                                },
-                                {
-                                    "name": "Brightness Add",
-                                    "type": "uint32"
-                                },
-                                {
-                                    "name": "Contrast Mult",
-                                    "type": "uint32"
-                                },
-                                {
-                                    "name": "Contrast Add",
-                                    "type": "uint32"
-                                }
-                            ]
-                        },
-                        {
-                            "name": "Unknown14 Mult",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Unknown54 Add",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Tint Color",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Blur Radius",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Double Vision Strength",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Radial Blur Strength",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Radial Blur Ramp Up",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Radial Blur Start",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Radial Blur Flags",
-                            "type": "uint32",
-                            "format": {
-                                "type": "flags",
-                                "flags": {
-                                    "0": "Use Target"
-                                }
-                            }
-                        },
-                        {
-                            "name": "Radial Blur Center X",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Radial Blur Center Y",
-                            "type": "float"
-                        },
-                        {
-                            "name": "DoF Strength",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "DoF Distance",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "DoF Range",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "DoF Flags",
-                            "type": "uint32",
-                            "format": {
-                                "type": "flags",
-                                "flags": {
-                                    "0": "Use Target",
-                                    "1": "Unknown 2",
-                                    "2": "Unknown 3",
-                                    "3": "Unknown 4",
-                                    "4": "Unknown 5",
-                                    "5": "Unknown 6",
-                                    "6": "Unknown 7",
-                                    "7": "Unknown 8",
-                                    "8": "Mode - Front",
-                                    "9": "Mode - Back",
-                                    "10": "No Sky",
-                                    "11": "Blur Radius Bit 2",
-                                    "12": "Blur Radius Bit 1",
-                                    "13": "Blur Radius Bit 0"
-                                }
-                            }
-                        },
-                        {
-                            "name": "Radial Blur Ramp Down",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Radial Blur Down Start",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Fade Color",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Motion Blur Strength",
-                            "type": "uint32"
-                        }
-                    ]
-                }
-            },
-            {
-                "signature": "BNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Blur Radius",
-                    "type": "array",
-                    "field": {
-                        "def": "TimeInterpolator"
-                    }
-                }
-            },
-            {
-                "signature": "VNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Double Vision Strength",
-                    "type": "array",
-                    "field": {
-                        "def": "TimeInterpolator"
-                    }
-                }
-            },
-            {
-                "signature": "TNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Tint Color",
-                    "type": "array",
-                    "field": {
-                        "def": "ColorInterpolator"
-                    }
-                }
-            },
-            {
-                "signature": "NAM3",
-                "type": "subrecord",
-                "field": {
-                    "name": "Fade Color",
-                    "type": "array",
-                    "field": {
-                        "def": "ColorInterpolator"
-                    }
-                }
-            },
-            {
-                "signature": "RNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Radial Blur Strength",
-                    "type": "array",
-                    "field": {
-                        "def": "TimeInterpolator"
-                    }
-                }
-            },
-            {
-                "signature": "SNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Radial Blur Ramp Up",
-                    "type": "array",
-                    "field": {
-                        "def": "TimeInterpolator"
-                    }
-                }
-            },
-            {
-                "signature": "UNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Radial Blur Start",
-                    "type": "array",
-                    "field": {
-                        "def": "TimeInterpolator"
-                    }
-                }
-            },
-            {
-                "signature": "NAM1",
-                "type": "subrecord",
-                "field": {
-                    "name": "Radial Blur Ramp Down",
-                    "type": "array",
-                    "field": {
-                        "def": "TimeInterpolator"
-                    }
-                }
-            },
-            {
-                "signature": "NAM2",
-                "type": "subrecord",
-                "field": {
-                    "name": "Radial Blur Down Start",
-                    "type": "array",
-                    "field": {
-                        "def": "TimeInterpolator"
-                    }
-                }
-            },
-            {
-                "signature": "WNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "DoF Strength",
-                    "type": "array",
-                    "field": {
-                        "def": "TimeInterpolator"
-                    }
-                }
-            },
-            {
-                "signature": "XNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "DoF Distance",
-                    "type": "array",
-                    "field": {
-                        "def": "TimeInterpolator"
-                    }
-                }
-            },
-            {
-                "signature": "YNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "DoF Range",
-                    "type": "array",
-                    "field": {
-                        "def": "TimeInterpolator"
-                    }
-                }
-            },
-            {
-                "signature": "NAM4",
-                "type": "subrecord",
-                "field": {
-                    "name": "Motion Blur Strength",
-                    "type": "array",
-                    "field": {
-                        "def": "TimeInterpolator"
-                    }
-                }
-            },
-            {
-                "name": "HDR",
-                "type": "memberStruct",
-                "members": [
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "signature": "DNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Data Count",
+                "type": "struct",
+                "fields": [
                     {
-                        "signature": "\u0000IAD",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Eye Adapt Speed Mult",
-                            "type": "array",
-                            "field": {
-                                "def": "TimeInterpolator"
+                        "name": "Flags",
+                        "type": "uint32",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "Animatable"
                             }
                         }
                     },
                     {
-                        "signature": "@IAD",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Eye Adapt Speed Add",
-                            "type": "array",
-                            "field": {
-                                "def": "TimeInterpolator"
+                        "name": "Duration",
+                        "type": "float"
+                    },
+                    {
+                        "name": "HDR",
+                        "type": "struct",
+                        "fields": [
+                            {
+                                "name": "Eye Adapt Speed Mult",
+                                "type": "uint32"
+                            },
+                            {
+                                "name": "Eye Adapt Speed Add",
+                                "type": "uint32"
+                            },
+                            {
+                                "name": "Bloom Blur Radius Mult",
+                                "type": "uint32"
+                            },
+                            {
+                                "name": "Bloom Blur Radius Add",
+                                "type": "uint32"
+                            },
+                            {
+                                "name": "Bloom Threshold Mult",
+                                "type": "uint32"
+                            },
+                            {
+                                "name": "Bloom Threshold Add",
+                                "type": "uint32"
+                            },
+                            {
+                                "name": "Bloom Scale Mult",
+                                "type": "uint32"
+                            },
+                            {
+                                "name": "Bloom Scale Add",
+                                "type": "uint32"
+                            },
+                            {
+                                "name": "Target Lum Min Mult",
+                                "type": "uint32"
+                            },
+                            {
+                                "name": "Target Lum Min Add",
+                                "type": "uint32"
+                            },
+                            {
+                                "name": "Target Lum Max Mult",
+                                "type": "uint32"
+                            },
+                            {
+                                "name": "Target Lum Max Add",
+                                "type": "uint32"
+                            },
+                            {
+                                "name": "Sunlight Scale Mult",
+                                "type": "uint32"
+                            },
+                            {
+                                "name": "Sunlight Scale Add",
+                                "type": "uint32"
+                            },
+                            {
+                                "name": "Sky Scale Mult",
+                                "type": "uint32"
+                            },
+                            {
+                                "name": "Sky Scale Add",
+                                "type": "uint32"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Unknown08 Mult",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Unknown48 Add",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Unknown09 Mult",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Unknown49 Add",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Unknown0A Mult",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Unknown4A Add",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Unknown0B Mult",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Unknown4B Add",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Unknown0C Mult",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Unknown4C Add",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Unknown0D Mult",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Unknown4D Add",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Unknown0E Mult",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Unknown4E Add",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Unknown0F Mult",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Unknown4F Add",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Unknown10 Mult",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Unknown50 Add",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Cinematic",
+                        "type": "struct",
+                        "fields": [
+                            {
+                                "name": "Saturation Mult",
+                                "type": "uint32"
+                            },
+                            {
+                                "name": "Saturation Add",
+                                "type": "uint32"
+                            },
+                            {
+                                "name": "Brightness Mult",
+                                "type": "uint32"
+                            },
+                            {
+                                "name": "Brightness Add",
+                                "type": "uint32"
+                            },
+                            {
+                                "name": "Contrast Mult",
+                                "type": "uint32"
+                            },
+                            {
+                                "name": "Contrast Add",
+                                "type": "uint32"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Unknown14 Mult",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Unknown54 Add",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Tint Color",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Blur Radius",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Double Vision Strength",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Radial Blur Strength",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Radial Blur Ramp Up",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Radial Blur Start",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Radial Blur Flags",
+                        "type": "uint32",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "Use Target"
                             }
                         }
                     },
                     {
-                        "signature": "\u0001IAD",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Bloom Blur Radius Mult",
-                            "type": "array",
-                            "field": {
-                                "def": "TimeInterpolator"
+                        "name": "Radial Blur Center X",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Radial Blur Center Y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "DoF Strength",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "DoF Distance",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "DoF Range",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "DoF Flags",
+                        "type": "uint32",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "Use Target",
+                                "1": "Unknown 2",
+                                "2": "Unknown 3",
+                                "3": "Unknown 4",
+                                "4": "Unknown 5",
+                                "5": "Unknown 6",
+                                "6": "Unknown 7",
+                                "7": "Unknown 8",
+                                "8": "Mode - Front",
+                                "9": "Mode - Back",
+                                "10": "No Sky",
+                                "11": "Blur Radius Bit 2",
+                                "12": "Blur Radius Bit 1",
+                                "13": "Blur Radius Bit 0"
                             }
                         }
                     },
                     {
-                        "signature": "AIAD",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Bloom Blur Radius Add",
-                            "type": "array",
-                            "field": {
-                                "def": "TimeInterpolator"
-                            }
-                        }
+                        "name": "Radial Blur Ramp Down",
+                        "type": "uint32"
                     },
                     {
-                        "signature": "\u0002IAD",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Bloom Threshold Mult",
-                            "type": "array",
-                            "field": {
-                                "def": "TimeInterpolator"
-                            }
-                        }
+                        "name": "Radial Blur Down Start",
+                        "type": "uint32"
                     },
                     {
-                        "signature": "BIAD",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Bloom Threshold Add",
-                            "type": "array",
-                            "field": {
-                                "def": "TimeInterpolator"
-                            }
-                        }
+                        "name": "Fade Color",
+                        "type": "uint32"
                     },
                     {
-                        "signature": "\u0003IAD",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Bloom Scale Mult",
-                            "type": "array",
-                            "field": {
-                                "def": "TimeInterpolator"
-                            }
-                        }
-                    },
-                    {
-                        "signature": "CIAD",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Bloom Scale Add",
-                            "type": "array",
-                            "field": {
-                                "def": "TimeInterpolator"
-                            }
-                        }
-                    },
-                    {
-                        "signature": "\u0004IAD",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Target Lum Min Mult",
-                            "type": "array",
-                            "field": {
-                                "def": "TimeInterpolator"
-                            }
-                        }
-                    },
-                    {
-                        "signature": "DIAD",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Target Lum Min Add",
-                            "type": "array",
-                            "field": {
-                                "def": "TimeInterpolator"
-                            }
-                        }
-                    },
-                    {
-                        "signature": "\u0005IAD",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Target Lum Max Mult",
-                            "type": "array",
-                            "field": {
-                                "def": "TimeInterpolator"
-                            }
-                        }
-                    },
-                    {
-                        "signature": "EIAD",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Target Lum Max Add",
-                            "type": "array",
-                            "field": {
-                                "def": "TimeInterpolator"
-                            }
-                        }
-                    },
-                    {
-                        "signature": "\u0006IAD",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Sunlight Scale Mult",
-                            "type": "array",
-                            "field": {
-                                "def": "TimeInterpolator"
-                            }
-                        }
-                    },
-                    {
-                        "signature": "FIAD",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Sunlight Scale Add",
-                            "type": "array",
-                            "field": {
-                                "def": "TimeInterpolator"
-                            }
-                        }
-                    },
-                    {
-                        "signature": "\u0007IAD",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Sky Scale Mult",
-                            "type": "array",
-                            "field": {
-                                "def": "TimeInterpolator"
-                            }
-                        }
-                    },
-                    {
-                        "signature": "GIAD",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Sky Scale Add",
-                            "type": "array",
-                            "field": {
-                                "def": "TimeInterpolator"
-                            }
-                        }
+                        "name": "Motion Blur Strength",
+                        "type": "uint32"
                     }
                 ]
-            },
-            {
-                "signature": "\bIAD",
-                "type": "subrecord",
+            }
+        },
+        {
+            "signature": "BNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Blur Radius",
+                "type": "array",
                 "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "HIAD",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "\tIAD",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "IIAD",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "\nIAD",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "JIAD",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "\u000bIAD",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "KIAD",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "\fIAD",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "LIAD",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "\rIAD",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "MIAD",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "\u000eIAD",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "NIAD",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "\u000fIAD",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "OIAD",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "\u0010IAD",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "PIAD",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "name": "Cinematic",
-                "type": "memberStruct",
-                "members": [
-                    {
-                        "signature": "\u0011IAD",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Saturation Mult",
-                            "type": "array",
-                            "field": {
-                                "def": "TimeInterpolator"
-                            }
-                        }
-                    },
-                    {
-                        "signature": "QIAD",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Saturation Add",
-                            "type": "array",
-                            "field": {
-                                "def": "TimeInterpolator"
-                            }
-                        }
-                    },
-                    {
-                        "signature": "\u0012IAD",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Brightness Mult",
-                            "type": "array",
-                            "field": {
-                                "def": "TimeInterpolator"
-                            }
-                        }
-                    },
-                    {
-                        "signature": "RIAD",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Brightness Add",
-                            "type": "array",
-                            "field": {
-                                "def": "TimeInterpolator"
-                            }
-                        }
-                    },
-                    {
-                        "signature": "\u0013IAD",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Contrast Mult",
-                            "type": "array",
-                            "field": {
-                                "def": "TimeInterpolator"
-                            }
-                        }
-                    },
-                    {
-                        "signature": "SIAD",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Contrast Add",
-                            "type": "array",
-                            "field": {
-                                "def": "TimeInterpolator"
-                            }
-                        }
-                    }
-                ]
-            },
-            {
-                "signature": "\u0014IAD",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "TIAD",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
+                    "def": "TimeInterpolator"
                 }
             }
-        ]
-    }
+        },
+        {
+            "signature": "VNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Double Vision Strength",
+                "type": "array",
+                "field": {
+                    "def": "TimeInterpolator"
+                }
+            }
+        },
+        {
+            "signature": "TNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Tint Color",
+                "type": "array",
+                "field": {
+                    "def": "ColorInterpolator"
+                }
+            }
+        },
+        {
+            "signature": "NAM3",
+            "type": "subrecord",
+            "field": {
+                "name": "Fade Color",
+                "type": "array",
+                "field": {
+                    "def": "ColorInterpolator"
+                }
+            }
+        },
+        {
+            "signature": "RNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Radial Blur Strength",
+                "type": "array",
+                "field": {
+                    "def": "TimeInterpolator"
+                }
+            }
+        },
+        {
+            "signature": "SNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Radial Blur Ramp Up",
+                "type": "array",
+                "field": {
+                    "def": "TimeInterpolator"
+                }
+            }
+        },
+        {
+            "signature": "UNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Radial Blur Start",
+                "type": "array",
+                "field": {
+                    "def": "TimeInterpolator"
+                }
+            }
+        },
+        {
+            "signature": "NAM1",
+            "type": "subrecord",
+            "field": {
+                "name": "Radial Blur Ramp Down",
+                "type": "array",
+                "field": {
+                    "def": "TimeInterpolator"
+                }
+            }
+        },
+        {
+            "signature": "NAM2",
+            "type": "subrecord",
+            "field": {
+                "name": "Radial Blur Down Start",
+                "type": "array",
+                "field": {
+                    "def": "TimeInterpolator"
+                }
+            }
+        },
+        {
+            "signature": "WNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "DoF Strength",
+                "type": "array",
+                "field": {
+                    "def": "TimeInterpolator"
+                }
+            }
+        },
+        {
+            "signature": "XNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "DoF Distance",
+                "type": "array",
+                "field": {
+                    "def": "TimeInterpolator"
+                }
+            }
+        },
+        {
+            "signature": "YNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "DoF Range",
+                "type": "array",
+                "field": {
+                    "def": "TimeInterpolator"
+                }
+            }
+        },
+        {
+            "signature": "NAM4",
+            "type": "subrecord",
+            "field": {
+                "name": "Motion Blur Strength",
+                "type": "array",
+                "field": {
+                    "def": "TimeInterpolator"
+                }
+            }
+        },
+        {
+            "name": "HDR",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "\u0000IAD",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Eye Adapt Speed Mult",
+                        "type": "array",
+                        "field": {
+                            "def": "TimeInterpolator"
+                        }
+                    }
+                },
+                {
+                    "signature": "@IAD",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Eye Adapt Speed Add",
+                        "type": "array",
+                        "field": {
+                            "def": "TimeInterpolator"
+                        }
+                    }
+                },
+                {
+                    "signature": "\u0001IAD",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Bloom Blur Radius Mult",
+                        "type": "array",
+                        "field": {
+                            "def": "TimeInterpolator"
+                        }
+                    }
+                },
+                {
+                    "signature": "AIAD",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Bloom Blur Radius Add",
+                        "type": "array",
+                        "field": {
+                            "def": "TimeInterpolator"
+                        }
+                    }
+                },
+                {
+                    "signature": "\u0002IAD",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Bloom Threshold Mult",
+                        "type": "array",
+                        "field": {
+                            "def": "TimeInterpolator"
+                        }
+                    }
+                },
+                {
+                    "signature": "BIAD",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Bloom Threshold Add",
+                        "type": "array",
+                        "field": {
+                            "def": "TimeInterpolator"
+                        }
+                    }
+                },
+                {
+                    "signature": "\u0003IAD",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Bloom Scale Mult",
+                        "type": "array",
+                        "field": {
+                            "def": "TimeInterpolator"
+                        }
+                    }
+                },
+                {
+                    "signature": "CIAD",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Bloom Scale Add",
+                        "type": "array",
+                        "field": {
+                            "def": "TimeInterpolator"
+                        }
+                    }
+                },
+                {
+                    "signature": "\u0004IAD",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Target Lum Min Mult",
+                        "type": "array",
+                        "field": {
+                            "def": "TimeInterpolator"
+                        }
+                    }
+                },
+                {
+                    "signature": "DIAD",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Target Lum Min Add",
+                        "type": "array",
+                        "field": {
+                            "def": "TimeInterpolator"
+                        }
+                    }
+                },
+                {
+                    "signature": "\u0005IAD",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Target Lum Max Mult",
+                        "type": "array",
+                        "field": {
+                            "def": "TimeInterpolator"
+                        }
+                    }
+                },
+                {
+                    "signature": "EIAD",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Target Lum Max Add",
+                        "type": "array",
+                        "field": {
+                            "def": "TimeInterpolator"
+                        }
+                    }
+                },
+                {
+                    "signature": "\u0006IAD",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Sunlight Scale Mult",
+                        "type": "array",
+                        "field": {
+                            "def": "TimeInterpolator"
+                        }
+                    }
+                },
+                {
+                    "signature": "FIAD",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Sunlight Scale Add",
+                        "type": "array",
+                        "field": {
+                            "def": "TimeInterpolator"
+                        }
+                    }
+                },
+                {
+                    "signature": "\u0007IAD",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Sky Scale Mult",
+                        "type": "array",
+                        "field": {
+                            "def": "TimeInterpolator"
+                        }
+                    }
+                },
+                {
+                    "signature": "GIAD",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Sky Scale Add",
+                        "type": "array",
+                        "field": {
+                            "def": "TimeInterpolator"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "\bIAD",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        },
+        {
+            "signature": "HIAD",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        },
+        {
+            "signature": "\tIAD",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        },
+        {
+            "signature": "IIAD",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        },
+        {
+            "signature": "\nIAD",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        },
+        {
+            "signature": "JIAD",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        },
+        {
+            "signature": "\u000bIAD",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        },
+        {
+            "signature": "KIAD",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        },
+        {
+            "signature": "\fIAD",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        },
+        {
+            "signature": "LIAD",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        },
+        {
+            "signature": "\rIAD",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        },
+        {
+            "signature": "MIAD",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        },
+        {
+            "signature": "\u000eIAD",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        },
+        {
+            "signature": "NIAD",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        },
+        {
+            "signature": "\u000fIAD",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        },
+        {
+            "signature": "OIAD",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        },
+        {
+            "signature": "\u0010IAD",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        },
+        {
+            "signature": "PIAD",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        },
+        {
+            "name": "Cinematic",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "\u0011IAD",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Saturation Mult",
+                        "type": "array",
+                        "field": {
+                            "def": "TimeInterpolator"
+                        }
+                    }
+                },
+                {
+                    "signature": "QIAD",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Saturation Add",
+                        "type": "array",
+                        "field": {
+                            "def": "TimeInterpolator"
+                        }
+                    }
+                },
+                {
+                    "signature": "\u0012IAD",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Brightness Mult",
+                        "type": "array",
+                        "field": {
+                            "def": "TimeInterpolator"
+                        }
+                    }
+                },
+                {
+                    "signature": "RIAD",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Brightness Add",
+                        "type": "array",
+                        "field": {
+                            "def": "TimeInterpolator"
+                        }
+                    }
+                },
+                {
+                    "signature": "\u0013IAD",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Contrast Mult",
+                        "type": "array",
+                        "field": {
+                            "def": "TimeInterpolator"
+                        }
+                    }
+                },
+                {
+                    "signature": "SIAD",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Contrast Add",
+                        "type": "array",
+                        "field": {
+                            "def": "TimeInterpolator"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "\u0014IAD",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        },
+        {
+            "signature": "TIAD",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        }
+    ]
 }

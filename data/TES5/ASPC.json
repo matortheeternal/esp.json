@@ -2,48 +2,46 @@
     "signature": "ASPC",
     "type": "record",
     "name": "Acoustic Space",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "def": "OBND",
-                "required": true
-            },
-            {
-                "signature": "SNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Ambient Sound",
-                    "type": "formId",
-                    "signatures": [
-                        "SNDR"
-                    ]
-                }
-            },
-            {
-                "signature": "RDAT",
-                "type": "subrecord",
-                "field": {
-                    "name": "Use Sound from Region (Interiors Only)",
-                    "type": "formId",
-                    "signatures": [
-                        "REGN"
-                    ]
-                }
-            },
-            {
-                "signature": "BNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Environment Type (reverb)",
-                    "type": "formId",
-                    "signatures": [
-                        "REVB"
-                    ]
-                }
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "def": "OBND",
+            "required": true
+        },
+        {
+            "signature": "SNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Ambient Sound",
+                "type": "formId",
+                "signatures": [
+                    "SNDR"
+                ]
             }
-        ]
-    }
+        },
+        {
+            "signature": "RDAT",
+            "type": "subrecord",
+            "field": {
+                "name": "Use Sound from Region (Interiors Only)",
+                "type": "formId",
+                "signatures": [
+                    "REGN"
+                ]
+            }
+        },
+        {
+            "signature": "BNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Environment Type (reverb)",
+                "type": "formId",
+                "signatures": [
+                    "REVB"
+                ]
+            }
+        }
+    ]
 }

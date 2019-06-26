@@ -2,491 +2,489 @@
     "signature": "WEAP",
     "type": "record",
     "name": "Weapon",
-    "def": {
+    "flags": {
+        "type": "flags",
         "flags": {
-            "type": "flags",
-            "flags": {
-                "2": "Non-Playable",
-                "12": "Ignored"
+            "2": "Non-Playable",
+            "12": "Ignored"
+        }
+    },
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "def": "VMAD"
+        },
+        {
+            "def": "OBND",
+            "required": true
+        },
+        {
+            "def": "FULL"
+        },
+        {
+            "def": "MODL"
+        },
+        {
+            "def": "ICON"
+        },
+        {
+            "def": "EITM"
+        },
+        {
+            "signature": "EAMT",
+            "type": "subrecord",
+            "field": {
+                "name": "Enchantment Amount",
+                "type": "uint16"
             }
         },
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "def": "VMAD"
-            },
-            {
-                "def": "OBND",
-                "required": true
-            },
-            {
-                "def": "FULL"
-            },
-            {
-                "def": "MODL"
-            },
-            {
-                "def": "ICON"
-            },
-            {
-                "def": "EITM"
-            },
-            {
-                "signature": "EAMT",
-                "type": "subrecord",
-                "field": {
-                    "name": "Enchantment Amount",
-                    "type": "uint16"
+        {
+            "def": "DEST"
+        },
+        {
+            "def": "ETYP"
+        },
+        {
+            "signature": "BIDS",
+            "type": "subrecord",
+            "field": {
+                "name": "Block Bash Impact Data Set",
+                "type": "formId",
+                "signatures": [
+                    "IPDS",
+                    "NULL"
+                ]
+            }
+        },
+        {
+            "signature": "BAMT",
+            "type": "subrecord",
+            "field": {
+                "name": "Alternate Block Material",
+                "type": "formId",
+                "signatures": [
+                    "MATT",
+                    "NULL"
+                ]
+            }
+        },
+        {
+            "def": "YNAM"
+        },
+        {
+            "def": "ZNAM"
+        },
+        {
+            "def": "KSIZ"
+        },
+        {
+            "def": "KWDAs"
+        },
+        {
+            "def": "DESC"
+        },
+        {
+            "name": "Has Scope",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "MOD3",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Model FileName",
+                        "type": "string"
+                    }
+                },
+                {
+                    "signature": "MO3T",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Texture Files Hashes",
+                        "type": "bytes"
+                    }
+                },
+                {
+                    "def": "MO3S"
                 }
-            },
-            {
-                "def": "DEST"
-            },
-            {
-                "def": "ETYP"
-            },
-            {
-                "signature": "BIDS",
-                "type": "subrecord",
-                "field": {
-                    "name": "Block Bash Impact Data Set",
-                    "type": "formId",
-                    "signatures": [
-                        "IPDS",
-                        "NULL"
-                    ]
-                }
-            },
-            {
-                "signature": "BAMT",
-                "type": "subrecord",
-                "field": {
-                    "name": "Alternate Block Material",
-                    "type": "formId",
-                    "signatures": [
-                        "MATT",
-                        "NULL"
-                    ]
-                }
-            },
-            {
-                "def": "YNAM"
-            },
-            {
-                "def": "ZNAM"
-            },
-            {
-                "def": "KSIZ"
-            },
-            {
-                "def": "KWDAs"
-            },
-            {
-                "def": "DESC"
-            },
-            {
-                "name": "Has Scope",
-                "type": "memberStruct",
-                "members": [
+            ]
+        },
+        {
+            "signature": "NNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Unused",
+                "type": "bytes"
+            }
+        },
+        {
+            "signature": "INAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Impact Data Set",
+                "type": "formId",
+                "signatures": [
+                    "IPDS",
+                    "NULL"
+                ]
+            }
+        },
+        {
+            "signature": "WNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "1st Person Model Object",
+                "type": "formId",
+                "signatures": [
+                    "STAT",
+                    "NULL"
+                ]
+            }
+        },
+        {
+            "signature": "SNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Attack Sound",
+                "type": "formId",
+                "signatures": [
+                    "SNDR"
+                ]
+            }
+        },
+        {
+            "signature": "XNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Attack Sound 2D",
+                "type": "formId",
+                "signatures": [
+                    "SNDR"
+                ]
+            }
+        },
+        {
+            "signature": "NAM7",
+            "type": "subrecord",
+            "field": {
+                "name": "Attack Loop Sound",
+                "type": "formId",
+                "signatures": [
+                    "SNDR"
+                ]
+            }
+        },
+        {
+            "signature": "TNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Attack Fail Sound",
+                "type": "formId",
+                "signatures": [
+                    "SNDR"
+                ]
+            }
+        },
+        {
+            "signature": "UNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Idle Sound",
+                "type": "formId",
+                "signatures": [
+                    "SNDR"
+                ]
+            }
+        },
+        {
+            "signature": "NAM9",
+            "type": "subrecord",
+            "field": {
+                "name": "Equip Sound",
+                "type": "formId",
+                "signatures": [
+                    "SNDR"
+                ]
+            }
+        },
+        {
+            "signature": "NAM8",
+            "type": "subrecord",
+            "field": {
+                "name": "Unequip Sound",
+                "type": "formId",
+                "signatures": [
+                    "SNDR"
+                ]
+            }
+        },
+        {
+            "signature": "DATA",
+            "type": "subrecord",
+            "field": {
+                "name": "Game Data",
+                "type": "struct",
+                "fields": [
                     {
-                        "signature": "MOD3",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Model FileName",
-                            "type": "string"
-                        }
+                        "name": "Value",
+                        "type": "uint32"
                     },
                     {
-                        "signature": "MO3T",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Texture Files Hashes",
-                            "type": "bytes"
-                        }
+                        "name": "Weight",
+                        "type": "float"
                     },
                     {
-                        "def": "MO3S"
+                        "name": "Damage",
+                        "type": "uint16"
                     }
                 ]
-            },
-            {
-                "signature": "NNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unused",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "INAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Impact Data Set",
-                    "type": "formId",
-                    "signatures": [
-                        "IPDS",
-                        "NULL"
-                    ]
-                }
-            },
-            {
-                "signature": "WNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "1st Person Model Object",
-                    "type": "formId",
-                    "signatures": [
-                        "STAT",
-                        "NULL"
-                    ]
-                }
-            },
-            {
-                "signature": "SNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Attack Sound",
-                    "type": "formId",
-                    "signatures": [
-                        "SNDR"
-                    ]
-                }
-            },
-            {
-                "signature": "XNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Attack Sound 2D",
-                    "type": "formId",
-                    "signatures": [
-                        "SNDR"
-                    ]
-                }
-            },
-            {
-                "signature": "NAM7",
-                "type": "subrecord",
-                "field": {
-                    "name": "Attack Loop Sound",
-                    "type": "formId",
-                    "signatures": [
-                        "SNDR"
-                    ]
-                }
-            },
-            {
-                "signature": "TNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Attack Fail Sound",
-                    "type": "formId",
-                    "signatures": [
-                        "SNDR"
-                    ]
-                }
-            },
-            {
-                "signature": "UNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Idle Sound",
-                    "type": "formId",
-                    "signatures": [
-                        "SNDR"
-                    ]
-                }
-            },
-            {
-                "signature": "NAM9",
-                "type": "subrecord",
-                "field": {
-                    "name": "Equip Sound",
-                    "type": "formId",
-                    "signatures": [
-                        "SNDR"
-                    ]
-                }
-            },
-            {
-                "signature": "NAM8",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unequip Sound",
-                    "type": "formId",
-                    "signatures": [
-                        "SNDR"
-                    ]
-                }
-            },
-            {
-                "signature": "DATA",
-                "type": "subrecord",
-                "field": {
-                    "name": "Game Data",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Value",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Weight",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Damage",
-                            "type": "uint16"
+            }
+        },
+        {
+            "signature": "DNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Data",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Animation Type",
+                        "type": "uint8",
+                        "format": {
+                            "def": "WeaponAnimTypeEnum"
                         }
-                    ]
-                }
-            },
-            {
-                "signature": "DNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Data",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Animation Type",
-                            "type": "uint8",
-                            "format": {
-                                "def": "WeaponAnimTypeEnum"
+                    },
+                    {
+                        "name": "Unused",
+                        "type": "bytes",
+                        "size": 3
+                    },
+                    {
+                        "name": "Speed",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Reach",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Flags",
+                        "type": "uint16",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "Ignores Normal Weapon Resistance",
+                                "1": "Automatic (unused)",
+                                "2": "Has Scope (unused)",
+                                "3": "Can't Drop",
+                                "4": "Hide Backpack (unused)",
+                                "5": "Embedded Weapon (unused)",
+                                "6": "Don't Use 1st Person IS Anim (unused)",
+                                "7": "Non-playable"
                             }
-                        },
-                        {
-                            "name": "Unused",
-                            "type": "bytes",
-                            "size": 3
-                        },
-                        {
-                            "name": "Speed",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Reach",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Flags",
-                            "type": "uint16",
-                            "format": {
-                                "type": "flags",
-                                "flags": {
-                                    "0": "Ignores Normal Weapon Resistance",
-                                    "1": "Automatic (unused)",
-                                    "2": "Has Scope (unused)",
-                                    "3": "Can't Drop",
-                                    "4": "Hide Backpack (unused)",
-                                    "5": "Embedded Weapon (unused)",
-                                    "6": "Don't Use 1st Person IS Anim (unused)",
-                                    "7": "Non-playable"
-                                }
-                            }
-                        },
-                        {
-                            "name": "Unused",
-                            "type": "bytes",
-                            "size": 2
-                        },
-                        {
-                            "name": "Sight FOV",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Unknown",
-                            "type": "bytes",
-                            "size": 4
-                        },
-                        {
-                            "name": "Base VATS To-Hit Chance",
-                            "type": "uint8"
-                        },
-                        {
-                            "name": "Attack Animation",
-                            "type": "uint8",
-                            "format": {
-                                "def": "AttackAnimationEnum"
-                            }
-                        },
-                        {
-                            "name": "# Projectiles",
-                            "type": "uint8"
-                        },
-                        {
-                            "name": "Embedded Weapon AV (unused)",
-                            "type": "uint8"
-                        },
-                        {
-                            "name": "Range Min",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Range Max",
-                            "type": "float"
-                        },
-                        {
-                            "name": "On Hit",
-                            "type": "uint32",
-                            "format": {
-                                "type": "enum",
-                                "options": {
-                                    "0": "No formula behaviour",
-                                    "1": "Dismember only",
-                                    "2": "Explode only",
-                                    "3": "No dismember/explode"
-                                }
-                            }
-                        },
-                        {
-                            "name": "Flags2",
-                            "type": "uint32",
-                            "format": {
-                                "type": "flags",
-                                "flags": {
-                                    "0": "Player Only",
-                                    "1": "NPCs Use Ammo",
-                                    "2": "No Jam After Reload (unused)",
-                                    "3": "Unknown 4",
-                                    "4": "Minor Crime",
-                                    "5": "Range Fixed",
-                                    "6": "Not Used in Normal Combat",
-                                    "7": "Unknown 8",
-                                    "8": "Don't Use 3rd Person IS Anim (unused)",
-                                    "9": "Burst Shot",
-                                    "10": "Rumble - Alternate",
-                                    "11": "Long Bursts",
-                                    "12": "Non-hostile",
-                                    "13": "Bound Weapon"
-                                }
-                            }
-                        },
-                        {
-                            "name": "Animation Attack Mult",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Unknown",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Rumble - Left Motor Strength",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Rumble - Right Motor Strength",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Rumble - Duration",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Unknown",
-                            "type": "bytes",
-                            "size": 12
-                        },
-                        {
-                            "name": "Skill",
-                            "type": "int32",
-                            "format": {
-                                "def": "SkillEnum"
-                            }
-                        },
-                        {
-                            "name": "Unknown",
-                            "type": "bytes",
-                            "size": 8
-                        },
-                        {
-                            "name": "Resist",
-                            "type": "int32",
-                            "format": {
-                                "def": "ActorValueEnum"
-                            }
-                        },
-                        {
-                            "name": "Unknown",
-                            "type": "bytes",
-                            "size": 4
-                        },
-                        {
-                            "name": "Stagger",
-                            "type": "float"
                         }
-                    ]
-                }
-            },
-            {
-                "signature": "CRDT",
-                "type": "subrecord",
-                "field": {
-                    "name": "Critical Data",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Damage",
-                            "type": "uint16"
-                        },
-                        {
-                            "name": "Unused",
-                            "type": "bytes",
-                            "size": 2
-                        },
-                        {
-                            "name": "% Mult",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Flags",
-                            "type": "uint8",
-                            "format": {
-                                "type": "flags",
-                                "flags": {
-                                    "0": "On Death"
-                                }
-                            }
-                        },
-                        {
-                            "name": "Unused",
-                            "type": "bytes",
-                            "size": 3
-                        },
-                        {
-                            "name": "Effect",
-                            "type": "formId",
-                            "signatures": [
-                                "SPEL",
-                                "NULL"
-                            ]
+                    },
+                    {
+                        "name": "Unused",
+                        "type": "bytes",
+                        "size": 2
+                    },
+                    {
+                        "name": "Sight FOV",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Base VATS To-Hit Chance",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "Attack Animation",
+                        "type": "uint8",
+                        "format": {
+                            "def": "AttackAnimationEnum"
                         }
-                    ]
-                }
-            },
-            {
-                "signature": "VNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Detection Sound Level",
-                    "type": "uint32",
-                    "format": {
-                        "def": "SoundlevelEnum"
+                    },
+                    {
+                        "name": "# Projectiles",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "Embedded Weapon AV (unused)",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "Range Min",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Range Max",
+                        "type": "float"
+                    },
+                    {
+                        "name": "On Hit",
+                        "type": "uint32",
+                        "format": {
+                            "type": "enum",
+                            "options": {
+                                "0": "No formula behaviour",
+                                "1": "Dismember only",
+                                "2": "Explode only",
+                                "3": "No dismember/explode"
+                            }
+                        }
+                    },
+                    {
+                        "name": "Flags2",
+                        "type": "uint32",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "Player Only",
+                                "1": "NPCs Use Ammo",
+                                "2": "No Jam After Reload (unused)",
+                                "3": "Unknown 4",
+                                "4": "Minor Crime",
+                                "5": "Range Fixed",
+                                "6": "Not Used in Normal Combat",
+                                "7": "Unknown 8",
+                                "8": "Don't Use 3rd Person IS Anim (unused)",
+                                "9": "Burst Shot",
+                                "10": "Rumble - Alternate",
+                                "11": "Long Bursts",
+                                "12": "Non-hostile",
+                                "13": "Bound Weapon"
+                            }
+                        }
+                    },
+                    {
+                        "name": "Animation Attack Mult",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Rumble - Left Motor Strength",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Rumble - Right Motor Strength",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Rumble - Duration",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 12
+                    },
+                    {
+                        "name": "Skill",
+                        "type": "int32",
+                        "format": {
+                            "def": "SkillEnum"
+                        }
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 8
+                    },
+                    {
+                        "name": "Resist",
+                        "type": "int32",
+                        "format": {
+                            "def": "ActorValueEnum"
+                        }
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Stagger",
+                        "type": "float"
                     }
-                }
-            },
-            {
-                "signature": "CNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Template",
-                    "type": "formId",
-                    "signatures": [
-                        "WEAP"
-                    ]
+                ]
+            }
+        },
+        {
+            "signature": "CRDT",
+            "type": "subrecord",
+            "field": {
+                "name": "Critical Data",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Damage",
+                        "type": "uint16"
+                    },
+                    {
+                        "name": "Unused",
+                        "type": "bytes",
+                        "size": 2
+                    },
+                    {
+                        "name": "% Mult",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Flags",
+                        "type": "uint8",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "On Death"
+                            }
+                        }
+                    },
+                    {
+                        "name": "Unused",
+                        "type": "bytes",
+                        "size": 3
+                    },
+                    {
+                        "name": "Effect",
+                        "type": "formId",
+                        "signatures": [
+                            "SPEL",
+                            "NULL"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "VNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Detection Sound Level",
+                "type": "uint32",
+                "format": {
+                    "def": "SoundlevelEnum"
                 }
             }
-        ]
-    }
+        },
+        {
+            "signature": "CNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Template",
+                "type": "formId",
+                "signatures": [
+                    "WEAP"
+                ]
+            }
+        }
+    ]
 }

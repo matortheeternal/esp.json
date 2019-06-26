@@ -2,61 +2,59 @@
     "signature": "SHOU",
     "type": "record",
     "name": "Shout",
-    "def": {
+    "flags": {
+        "type": "flags",
         "flags": {
-            "type": "flags",
-            "flags": {
-                "7": "Treat spells as powers",
-                "12": "Ignored"
-            }
+            "7": "Treat spells as powers",
+            "12": "Ignored"
+        }
+    },
+    "members": [
+        {
+            "def": "EDID"
         },
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "def": "FULL"
-            },
-            {
-                "def": "MDOB"
-            },
-            {
-                "def": "DESC"
-            },
-            {
-                "name": "Words of Power",
-                "type": "memberArray",
-                "member": {
-                    "signature": "SNAM",
-                    "type": "subrecord",
-                    "field": {
-                        "name": "",
-                        "type": "struct",
-                        "fields": [
-                            {
-                                "name": "Word",
-                                "type": "formId",
-                                "signatures": [
-                                    "WOOP",
-                                    "NULL"
-                                ]
-                            },
-                            {
-                                "name": "Spell",
-                                "type": "formId",
-                                "signatures": [
-                                    "SPEL",
-                                    "NULL"
-                                ]
-                            },
-                            {
-                                "name": "Recovery Time",
-                                "type": "float"
-                            }
-                        ]
-                    }
+        {
+            "def": "FULL"
+        },
+        {
+            "def": "MDOB"
+        },
+        {
+            "def": "DESC"
+        },
+        {
+            "name": "Words of Power",
+            "type": "memberArray",
+            "member": {
+                "signature": "SNAM",
+                "type": "subrecord",
+                "field": {
+                    "name": "",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Word",
+                            "type": "formId",
+                            "signatures": [
+                                "WOOP",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Spell",
+                            "type": "formId",
+                            "signatures": [
+                                "SPEL",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Recovery Time",
+                            "type": "float"
+                        }
+                    ]
                 }
             }
-        ]
-    }
+        }
+    ]
 }

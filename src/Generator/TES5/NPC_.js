@@ -149,8 +149,8 @@ module.exports = () => {
             req(subrecord('ZNAM', ckFormId('Combat Style', ['CSTY']))),
             req(subrecord('GNAM', ckFormId('Gift Filter', ['FLST']))),
             req(subrecord('NAM5', unknown())),
-            req(subrecord('NAM6', float('Height'))),
-            req(subrecord('NAM7', float('Weight'))),
+            req(subrecord('NAM6', req(float('Height')))),
+            req(subrecord('NAM7', req(float('Weight')))),
             subrecord('NAM8', format(uint32('Sound Level'), def('SoundLevelEnum'))),
             def('CSDTs'),
             req(subrecord('CSCR', ckFormId('Inherits Sounds From', ['NPC_']))),
@@ -160,9 +160,9 @@ module.exports = () => {
             req(subrecord('CRIF', ckFormId('Crime faction', ['FACT']))),
             req(subrecord('FTST', ckFormId('Head texture', ['TXST']))),
             subrecord('QNAM', struct('Texture lighting', [
-                req(float('Red')),
-                req(float('Green')),
-                req(float('Blue'))
+                req(req(float('Red'))),
+                req(req(float('Green'))),
+                req(req(float('Blue')))
             ])),
             req(subrecord('NAM9', struct('Face morph', [
                 float('Nose Long/Short'),

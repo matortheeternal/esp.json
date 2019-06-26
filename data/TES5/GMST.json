@@ -2,52 +2,50 @@
     "signature": "GMST",
     "type": "record",
     "name": "Game Setting",
-    "def": {
-        "members": [
-            {
-                "signature": "EDID",
-                "type": "subrecord",
-                "field": {
-                    "name": "Editor ID",
-                    "type": "string"
-                },
-                "required": true
+    "members": [
+        {
+            "signature": "EDID",
+            "type": "subrecord",
+            "field": {
+                "name": "Editor ID",
+                "type": "string"
             },
-            {
-                "signature": "DATA",
-                "type": "subrecord",
-                "field": {
-                    "name": "Value",
-                    "type": "union",
-                    "decider": [
-                        {
-                            "name": "Name",
-                            "type": "string",
-                            "localized": true
-                        },
-                        {
-                            "name": "Int",
-                            "type": "int32"
-                        },
-                        {
-                            "name": "Float",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Bool",
-                            "type": "uint32",
-                            "format": {
-                                "type": "enum",
-                                "options": {
-                                    "0": "False",
-                                    "1": "True"
-                                }
+            "required": true
+        },
+        {
+            "signature": "DATA",
+            "type": "subrecord",
+            "field": {
+                "name": "Value",
+                "type": "union",
+                "decider": [
+                    {
+                        "name": "Name",
+                        "type": "string",
+                        "localized": true
+                    },
+                    {
+                        "name": "Int",
+                        "type": "int32"
+                    },
+                    {
+                        "name": "Float",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Bool",
+                        "type": "uint32",
+                        "format": {
+                            "type": "enum",
+                            "options": {
+                                "0": "False",
+                                "1": "True"
                             }
                         }
-                    ]
-                },
-                "required": true
-            }
-        ]
-    }
+                    }
+                ]
+            },
+            "required": true
+        }
+    ]
 }

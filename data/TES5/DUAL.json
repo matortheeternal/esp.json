@@ -2,78 +2,76 @@
     "signature": "DUAL",
     "type": "record",
     "name": "Dual Cast Data",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "def": "OBND",
-                "required": true
-            },
-            {
-                "signature": "DATA",
-                "type": "subrecord",
-                "field": {
-                    "name": "Data",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Projectile",
-                            "type": "formId",
-                            "signatures": [
-                                "PROJ",
-                                "NULL"
-                            ]
-                        },
-                        {
-                            "name": "Explosion",
-                            "type": "formId",
-                            "signatures": [
-                                "EXPL",
-                                "NULL"
-                            ]
-                        },
-                        {
-                            "name": "Effect Shader",
-                            "type": "formId",
-                            "signatures": [
-                                "EFSH",
-                                "NULL"
-                            ]
-                        },
-                        {
-                            "name": "Hit Effect Art",
-                            "type": "formId",
-                            "signatures": [
-                                "ARTO",
-                                "NULL"
-                            ]
-                        },
-                        {
-                            "name": "Impact Data Set",
-                            "type": "formId",
-                            "signatures": [
-                                "IPDS",
-                                "NULL"
-                            ]
-                        },
-                        {
-                            "name": "Inherit Scale",
-                            "type": "uint32",
-                            "format": {
-                                "type": "flags",
-                                "flags": {
-                                    "0": "Hit Effect Art",
-                                    "1": "Projectile",
-                                    "2": "Explosion"
-                                }
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "def": "OBND",
+            "required": true
+        },
+        {
+            "signature": "DATA",
+            "type": "subrecord",
+            "field": {
+                "name": "Data",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Projectile",
+                        "type": "formId",
+                        "signatures": [
+                            "PROJ",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "name": "Explosion",
+                        "type": "formId",
+                        "signatures": [
+                            "EXPL",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "name": "Effect Shader",
+                        "type": "formId",
+                        "signatures": [
+                            "EFSH",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "name": "Hit Effect Art",
+                        "type": "formId",
+                        "signatures": [
+                            "ARTO",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "name": "Impact Data Set",
+                        "type": "formId",
+                        "signatures": [
+                            "IPDS",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "name": "Inherit Scale",
+                        "type": "uint32",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "Hit Effect Art",
+                                "1": "Projectile",
+                                "2": "Explosion"
                             }
                         }
-                    ]
-                },
-                "required": true
-            }
-        ]
-    }
+                    }
+                ]
+            },
+            "required": true
+        }
+    ]
 }

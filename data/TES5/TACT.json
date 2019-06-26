@@ -2,82 +2,78 @@
     "signature": "TACT",
     "type": "record",
     "name": "Talking Activator",
-    "def": {
+    "flags": {
+        "type": "flags",
         "flags": {
-            "type": "flags",
-            "flags": {
-                "9": "Hidden From Local Map",
-                "12": "Ignored",
-                "16": "Random Anim Start",
-                "17": "Radio Station"
+            "9": "Hidden From Local Map",
+            "12": "Ignored",
+            "16": "Random Anim Start",
+            "17": "Radio Station"
+        }
+    },
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "def": "VMAD"
+        },
+        {
+            "def": "OBND",
+            "required": true
+        },
+        {
+            "def": "FULL"
+        },
+        {
+            "def": "MODL"
+        },
+        {
+            "def": "DEST"
+        },
+        {
+            "def": "KSIZ"
+        },
+        {
+            "def": "KWDAs"
+        },
+        {
+            "signature": "PNAM",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            },
+            "required": true
+        },
+        {
+            "signature": "SNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Looping Sound",
+                "type": "formId",
+                "signatures": [
+                    "SNDR"
+                ]
             }
         },
-        "members": [
-            {
-                "def": "EDID"
+        {
+            "signature": "FNAM",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
             },
-            {
-                "def": "VMAD"
-            },
-            {
-                "def": "OBND",
-                "required": true
-            },
-            {
-                "def": "FULL"
-            },
-            {
-                "def": "MODL"
-            },
-            {
-                "def": "DEST"
-            },
-            {
-                "def": "KSIZ"
-            },
-            {
-                "def": "KWDAs"
-            },
-            {
-                "signature": "PNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                },
-                "required": true
-            },
-            {
-                "signature": "SNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Looping Sound",
-                    "type": "formId",
-                    "signatures": [
-                        "SNDR"
-                    ]
-                }
-            },
-            {
-                "signature": "FNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                },
-                "required": true
-            },
-            {
-                "signature": "VNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Voice Type",
-                    "type": "formId",
-                    "signatures": [
-                        "VTYP"
-                    ]
-                }
+            "required": true
+        },
+        {
+            "signature": "VNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Voice Type",
+                "type": "formId",
+                "signatures": [
+                    "VTYP"
+                ]
             }
-        ]
-    }
+        }
+    ]
 }

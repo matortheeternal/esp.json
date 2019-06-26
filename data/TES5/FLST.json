@@ -2,31 +2,29 @@
     "signature": "FLST",
     "type": "record",
     "name": "FormID List",
-    "def": {
-        "members": [
-            {
-                "signature": "EDID",
+    "members": [
+        {
+            "signature": "EDID",
+            "type": "subrecord",
+            "field": {
+                "name": "Editor ID",
+                "type": "string"
+            },
+            "required": true
+        },
+        {
+            "name": "FormIDs",
+            "type": "memberArray",
+            "member": {
+                "signature": "LNAM",
                 "type": "subrecord",
                 "field": {
-                    "name": "Editor ID",
-                    "type": "string"
-                },
-                "required": true
+                    "name": "FormID",
+                    "type": "formId"
+                }
             },
-            {
-                "name": "FormIDs",
-                "type": "memberArray",
-                "member": {
-                    "signature": "LNAM",
-                    "type": "subrecord",
-                    "field": {
-                        "name": "FormID",
-                        "type": "formId"
-                    }
-                },
-                "sorted": true,
-                "required": true
-            }
-        ]
-    }
+            "sorted": true,
+            "required": true
+        }
+    ]
 }

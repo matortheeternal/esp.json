@@ -2,72 +2,67 @@
     "signature": "DLVW",
     "type": "record",
     "name": "Dialog View",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "signature": "QNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Quest",
+                "type": "formId",
+                "signatures": [
+                    "QUST"
+                ]
             },
-            {
-                "signature": "QNAM",
+            "required": true
+        },
+        {
+            "name": "Branches",
+            "type": "memberArray",
+            "member": {
+                "signature": "BNAM",
                 "type": "subrecord",
                 "field": {
-                    "name": "Quest",
+                    "name": "Branch",
                     "type": "formId",
                     "signatures": [
-                        "QUST"
+                        "DLBR"
                     ]
-                },
-                "required": true
-            },
-            {
-                "name": "Branches",
-                "type": "memberArray",
-                "member": {
-                    "signature": "BNAM",
-                    "type": "subrecord",
-                    "field": {
-                        "name": "Branch",
-                        "type": "formId",
-                        "signatures": [
-                            "DLBR"
-                        ]
-                    }
-                }
-            },
-            {
-                "name": "Unknown TNAM",
-                "type": "memberArray",
-                "member": {
-                    "name": "Unknown",
-                    "type": "memberStruct",
-                    "members": [
-                        {
-                            "signature": "TNAM",
-                            "type": "subrecord",
-                            "field": {
-                                "name": "Unknown",
-                                "type": "bytes"
-                            }
-                        }
-                    ]
-                }
-            },
-            {
-                "signature": "ENAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "DNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
                 }
             }
-        ]
-    }
+        },
+        {
+            "name": "Unknown TNAM",
+            "type": "memberArray",
+            "member": {
+                "name": "Unknown",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "TNAM",
+                        "type": "subrecord",
+                        "field": {
+                            "type": "bytes"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "ENAM",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        },
+        {
+            "signature": "DNAM",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        }
+    ]
 }

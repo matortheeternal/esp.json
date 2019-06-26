@@ -2,149 +2,147 @@
     "signature": "HDPT",
     "type": "record",
     "name": "Head Part",
-    "def": {
+    "flags": {
+        "type": "flags",
         "flags": {
-            "type": "flags",
-            "flags": {
-                "2": "Non-Playable",
-                "12": "Ignored"
+            "2": "Non-Playable",
+            "12": "Ignored"
+        }
+    },
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "def": "FULL"
+        },
+        {
+            "def": "MODL"
+        },
+        {
+            "signature": "DATA",
+            "type": "subrecord",
+            "field": {
+                "name": "Flags",
+                "type": "uint8",
+                "format": {
+                    "type": "flags",
+                    "flags": {
+                        "0": "Playable",
+                        "1": "Male",
+                        "2": "Female",
+                        "3": "Is Extra Part",
+                        "4": "Use Solid Tint"
+                    }
+                }
             }
         },
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "def": "FULL"
-            },
-            {
-                "def": "MODL"
-            },
-            {
-                "signature": "DATA",
-                "type": "subrecord",
-                "field": {
-                    "name": "Flags",
-                    "type": "uint8",
-                    "format": {
-                        "type": "flags",
-                        "flags": {
-                            "0": "Playable",
-                            "1": "Male",
-                            "2": "Female",
-                            "3": "Is Extra Part",
-                            "4": "Use Solid Tint"
-                        }
+        {
+            "signature": "PNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Type",
+                "type": "uint32",
+                "format": {
+                    "type": "enum",
+                    "options": {
+                        "0": "Misc",
+                        "1": "Face",
+                        "2": "Eyes",
+                        "3": "Hair",
+                        "4": "Facial Hair",
+                        "5": "Scar",
+                        "6": "Eyebrows"
                     }
-                }
-            },
-            {
-                "signature": "PNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Type",
-                    "type": "uint32",
-                    "format": {
-                        "type": "enum",
-                        "options": {
-                            "0": "Misc",
-                            "1": "Face",
-                            "2": "Eyes",
-                            "3": "Hair",
-                            "4": "Facial Hair",
-                            "5": "Scar",
-                            "6": "Eyebrows"
-                        }
-                    }
-                }
-            },
-            {
-                "name": "Extra Parts",
-                "type": "memberArray",
-                "member": {
-                    "signature": "HNAM",
-                    "type": "subrecord",
-                    "field": {
-                        "name": "Part",
-                        "type": "formId",
-                        "signatures": [
-                            "HDPT"
-                        ]
-                    }
-                },
-                "sorted": true
-            },
-            {
-                "name": "Parts",
-                "type": "memberArray",
-                "member": {
-                    "name": "Part",
-                    "type": "memberStruct",
-                    "members": [
-                        {
-                            "signature": "NAM0",
-                            "type": "subrecord",
-                            "field": {
-                                "name": "Part Type",
-                                "type": "uint32",
-                                "format": {
-                                    "type": "enum",
-                                    "options": {
-                                        "0": "Race Morph",
-                                        "1": "Tri",
-                                        "2": "Chargen Morph"
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            "signature": "NAM1",
-                            "type": "subrecord",
-                            "field": {
-                                "name": "FileName",
-                                "type": "string"
-                            },
-                            "required": true
-                        }
-                    ]
-                }
-            },
-            {
-                "signature": "TNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Texture Set",
-                    "type": "formId",
-                    "signatures": [
-                        "TXST",
-                        "NULL"
-                    ]
-                }
-            },
-            {
-                "signature": "CNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Color",
-                    "type": "formId",
-                    "signatures": [
-                        "CLFM",
-                        "NULL"
-                    ]
-                }
-            },
-            {
-                "signature": "RNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Valid Races",
-                    "type": "formId",
-                    "signatures": [
-                        "FLST",
-                        "NULL"
-                    ]
                 }
             }
-        ]
-    }
+        },
+        {
+            "name": "Extra Parts",
+            "type": "memberArray",
+            "member": {
+                "signature": "HNAM",
+                "type": "subrecord",
+                "field": {
+                    "name": "Part",
+                    "type": "formId",
+                    "signatures": [
+                        "HDPT"
+                    ]
+                }
+            },
+            "sorted": true
+        },
+        {
+            "name": "Parts",
+            "type": "memberArray",
+            "member": {
+                "name": "Part",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "NAM0",
+                        "type": "subrecord",
+                        "field": {
+                            "name": "Part Type",
+                            "type": "uint32",
+                            "format": {
+                                "type": "enum",
+                                "options": {
+                                    "0": "Race Morph",
+                                    "1": "Tri",
+                                    "2": "Chargen Morph"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "signature": "NAM1",
+                        "type": "subrecord",
+                        "field": {
+                            "name": "FileName",
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "TNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Texture Set",
+                "type": "formId",
+                "signatures": [
+                    "TXST",
+                    "NULL"
+                ]
+            }
+        },
+        {
+            "signature": "CNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Color",
+                "type": "formId",
+                "signatures": [
+                    "CLFM",
+                    "NULL"
+                ]
+            }
+        },
+        {
+            "signature": "RNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Valid Races",
+                "type": "formId",
+                "signatures": [
+                    "FLST",
+                    "NULL"
+                ]
+            }
+        }
+    ]
 }

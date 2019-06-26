@@ -1,0 +1,92 @@
+{
+    "signature": "CLAS",
+    "type": "record",
+    "name": "Class",
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "def": "FULL",
+            "required": true
+        },
+        {
+            "def": "DESC",
+            "required": true
+        },
+        {
+            "def": "ICON"
+        },
+        {
+            "signature": "DATA",
+            "type": "subrecord",
+            "field": {
+                "name": "",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Teaches",
+                        "type": "int8",
+                        "format": {
+                            "type": "enum",
+                            "options": {
+                                "0": "One Handed",
+                                "1": "Two Handed",
+                                "2": "Archery",
+                                "3": "Block",
+                                "4": "Smithing",
+                                "5": "Heavy Armor",
+                                "6": "Light Armor",
+                                "7": "Pickpocket",
+                                "8": "Lockpicking",
+                                "9": "Sneak",
+                                "10": "Alchemy",
+                                "11": "Speech",
+                                "12": "Alteration",
+                                "13": "Conjuration",
+                                "14": "Destruction",
+                                "15": "Illusion",
+                                "16": "Restoration",
+                                "17": "Enchanting"
+                            }
+                        }
+                    },
+                    {
+                        "name": "Maximum training level",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "Skill Weights",
+                        "type": "array",
+                        "field": {
+                            "name": "Weight",
+                            "type": "uint8"
+                        }
+                    },
+                    {
+                        "name": "Bleedout Default",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Voice Points",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Attribute Weights",
+                        "type": "array",
+                        "field": {
+                            "name": "Weight",
+                            "type": "uint8"
+                        }
+                    }
+                ]
+            },
+            "required": true
+        }
+    ]
+}

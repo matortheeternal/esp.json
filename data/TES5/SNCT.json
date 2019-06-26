@@ -2,64 +2,62 @@
     "signature": "SNCT",
     "type": "record",
     "name": "Sound Category",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "def": "FULL"
-            },
-            {
-                "signature": "FNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Flags",
-                    "type": "uint32",
-                    "format": {
-                        "type": "flags",
-                        "flags": {
-                            "0": "Mute When Submerged",
-                            "1": "Should Appear on Menu"
-                        }
-                    }
-                }
-            },
-            {
-                "signature": "PNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Parent",
-                    "type": "formId",
-                    "signatures": [
-                        "SNCT"
-                    ]
-                }
-            },
-            {
-                "signature": "VNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Static Volume Multiplier",
-                    "type": "uint16",
-                    "format": {
-                        "type": "divide",
-                        "value": 65535
-                    }
-                }
-            },
-            {
-                "signature": "UNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Default Menu Value",
-                    "type": "uint16",
-                    "format": {
-                        "type": "divide",
-                        "value": 65535
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "def": "FULL"
+        },
+        {
+            "signature": "FNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Flags",
+                "type": "uint32",
+                "format": {
+                    "type": "flags",
+                    "flags": {
+                        "0": "Mute When Submerged",
+                        "1": "Should Appear on Menu"
                     }
                 }
             }
-        ]
-    }
+        },
+        {
+            "signature": "PNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Parent",
+                "type": "formId",
+                "signatures": [
+                    "SNCT"
+                ]
+            }
+        },
+        {
+            "signature": "VNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Static Volume Multiplier",
+                "type": "uint16",
+                "format": {
+                    "type": "divide",
+                    "value": 65535
+                }
+            }
+        },
+        {
+            "signature": "UNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Default Menu Value",
+                "type": "uint16",
+                "format": {
+                    "type": "divide",
+                    "value": 65535
+                }
+            }
+        }
+    ]
 }

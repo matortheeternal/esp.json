@@ -2,42 +2,41 @@
     "signature": "GLOB",
     "type": "record",
     "name": "Global",
-    "def": {
+    "flags": {
+        "type": "flags",
         "flags": {
-            "type": "flags",
-            "flags": {
-                "6": "Constant",
-                "12": "Ignored"
-            }
+            "6": "Constant",
+            "12": "Ignored"
+        }
+    },
+    "members": [
+        {
+            "def": "EDID"
         },
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "signature": "FNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Type",
-                    "type": "uint8",
-                    "format": {
-                        "type": "enum",
-                        "options": {
-                            "39": "Float"
-                        }
+        {
+            "signature": "FNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Type",
+                "type": "uint8",
+                "format": {
+                    "type": "enum",
+                    "options": {
+                        "39": "Float"
                     }
-                },
-                "defaultEditValue": "'Float'"
+                }
             },
-            {
-                "signature": "FLTV",
-                "type": "subrecord",
-                "field": {
-                    "name": "Value",
-                    "type": "float"
-                },
+            "defaultEditValue": "'Float'"
+        },
+        {
+            "signature": "FLTV",
+            "type": "subrecord",
+            "field": {
+                "name": "Value",
+                "type": "float",
                 "required": true
-            }
-        ]
-    }
+            },
+            "required": true
+        }
+    ]
 }

@@ -2,116 +2,114 @@
     "signature": "MUST",
     "type": "record",
     "name": "Music Track",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "signature": "CNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Track Type",
-                    "type": "uint32",
-                    "format": {
-                        "type": "enum",
-                        "options": {
-                            "603355331": "Palette",
-                            "1859641416": "Single Track",
-                            "2712257749": "Silent Track"
-                        }
-                    }
-                }
-            },
-            {
-                "signature": "FLTV",
-                "type": "subrecord",
-                "field": {
-                    "name": "Duration",
-                    "type": "float"
-                }
-            },
-            {
-                "signature": "DNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Fade-Out",
-                    "type": "float"
-                }
-            },
-            {
-                "signature": "ANAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Track FileName",
-                    "type": "string"
-                }
-            },
-            {
-                "signature": "BNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Finale FileName",
-                    "type": "string"
-                }
-            },
-            {
-                "signature": "FNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Cue Points",
-                    "type": "array",
-                    "field": {
-                        "name": "Point",
-                        "type": "float"
-                    }
-                },
-                "includeFlag": "dfNotAlignable"
-            },
-            {
-                "signature": "LNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Loop Data",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Loop Begins",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Loop Ends",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Loop Count",
-                            "type": "uint32"
-                        }
-                    ]
-                }
-            },
-            {
-                "def": "CITC"
-            },
-            {
-                "def": "CTDAsCount"
-            },
-            {
-                "signature": "SNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Tracks",
-                    "type": "array",
-                    "field": {
-                        "name": "Track",
-                        "type": "formId",
-                        "signatures": [
-                            "MUST",
-                            "NULL"
-                        ]
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "signature": "CNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Track Type",
+                "type": "uint32",
+                "format": {
+                    "type": "enum",
+                    "options": {
+                        "603355331": "Palette",
+                        "1859641416": "Single Track",
+                        "2712257749": "Silent Track"
                     }
                 }
             }
-        ]
-    }
+        },
+        {
+            "signature": "FLTV",
+            "type": "subrecord",
+            "field": {
+                "name": "Duration",
+                "type": "float"
+            }
+        },
+        {
+            "signature": "DNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Fade-Out",
+                "type": "float"
+            }
+        },
+        {
+            "signature": "ANAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Track FileName",
+                "type": "string"
+            }
+        },
+        {
+            "signature": "BNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Finale FileName",
+                "type": "string"
+            }
+        },
+        {
+            "signature": "FNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Cue Points",
+                "type": "array",
+                "field": {
+                    "name": "Point",
+                    "type": "float"
+                }
+            },
+            "includeFlag": "dfNotAlignable"
+        },
+        {
+            "signature": "LNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Loop Data",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Loop Begins",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Loop Ends",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Loop Count",
+                        "type": "uint32"
+                    }
+                ]
+            }
+        },
+        {
+            "def": "CITC"
+        },
+        {
+            "def": "CTDAsCount"
+        },
+        {
+            "signature": "SNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Tracks",
+                "type": "array",
+                "field": {
+                    "name": "Track",
+                    "type": "formId",
+                    "signatures": [
+                        "MUST",
+                        "NULL"
+                    ]
+                }
+            }
+        }
+    ]
 }

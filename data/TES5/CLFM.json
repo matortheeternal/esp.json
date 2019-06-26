@@ -2,40 +2,38 @@
     "signature": "CLFM",
     "type": "record",
     "name": "Color",
-    "def": {
+    "flags": {
+        "type": "flags",
         "flags": {
-            "type": "flags",
-            "flags": {
-                "2": "Non-Playable",
-                "12": "Ignored"
-            }
+            "2": "Non-Playable",
+            "12": "Ignored"
+        }
+    },
+    "members": [
+        {
+            "def": "EDID"
         },
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "def": "FULL"
-            },
-            {
-                "def": "CNAM",
-                "required": true
-            },
-            {
-                "signature": "FNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Playable",
-                    "type": "uint32",
-                    "format": {
-                        "type": "enum",
-                        "options": {
-                            "0": "False",
-                            "1": "True"
-                        }
+        {
+            "def": "FULL"
+        },
+        {
+            "def": "CNAM",
+            "required": true
+        },
+        {
+            "signature": "FNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Playable",
+                "type": "uint32",
+                "format": {
+                    "type": "enum",
+                    "options": {
+                        "0": "False",
+                        "1": "True"
                     }
                 }
             }
-        ]
-    }
+        }
+    ]
 }

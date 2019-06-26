@@ -2,120 +2,118 @@
     "signature": "LSCR",
     "type": "record",
     "name": "Load Screen",
-    "def": {
+    "flags": {
+        "type": "flags",
         "flags": {
-            "type": "flags",
-            "flags": {
-                "10": "Displays In Main Menu",
-                "12": "Ignored"
+            "10": "Displays In Main Menu",
+            "12": "Ignored"
+        }
+    },
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "def": "ICON"
+        },
+        {
+            "def": "DESC",
+            "required": true
+        },
+        {
+            "def": "CTDAs"
+        },
+        {
+            "signature": "NNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Loading Screen NIF",
+                "type": "formId",
+                "signatures": [
+                    "STAT",
+                    "NULL"
+                ]
+            },
+            "required": true
+        },
+        {
+            "signature": "SNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Initial Scale",
+                "type": "float"
             }
         },
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "def": "ICON"
-            },
-            {
-                "def": "DESC",
-                "required": true
-            },
-            {
-                "def": "CTDAs"
-            },
-            {
-                "signature": "NNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Loading Screen NIF",
-                    "type": "formId",
-                    "signatures": [
-                        "STAT",
-                        "NULL"
-                    ]
-                },
-                "required": true
-            },
-            {
-                "signature": "SNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Initial Scale",
-                    "type": "float"
-                }
-            },
-            {
-                "signature": "RNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Initial Rotation",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "X",
-                            "type": "int16"
-                        },
-                        {
-                            "name": "Y",
-                            "type": "int16"
-                        },
-                        {
-                            "name": "Z",
-                            "type": "int16"
-                        }
-                    ]
-                }
-            },
-            {
-                "signature": "ONAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Rotation Offset Constraints",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Min",
-                            "type": "int16"
-                        },
-                        {
-                            "name": "Max",
-                            "type": "int16"
-                        }
-                    ]
-                }
-            },
-            {
-                "signature": "XNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Initial Translation Offset",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "X",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Y",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Z",
-                            "type": "float"
-                        }
-                    ]
-                }
-            },
-            {
-                "signature": "MOD2",
-                "type": "subrecord",
-                "field": {
-                    "name": "Camera Path",
-                    "type": "string"
-                },
-                "required": true
+        {
+            "signature": "RNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Initial Rotation",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "X",
+                        "type": "int16"
+                    },
+                    {
+                        "name": "Y",
+                        "type": "int16"
+                    },
+                    {
+                        "name": "Z",
+                        "type": "int16"
+                    }
+                ]
             }
-        ]
-    }
+        },
+        {
+            "signature": "ONAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Rotation Offset Constraints",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Min",
+                        "type": "int16"
+                    },
+                    {
+                        "name": "Max",
+                        "type": "int16"
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "XNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Initial Translation Offset",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "X",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Z",
+                        "type": "float"
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "MOD2",
+            "type": "subrecord",
+            "field": {
+                "name": "Camera Path",
+                "type": "string"
+            },
+            "required": true
+        }
+    ]
 }

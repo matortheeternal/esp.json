@@ -2,221 +2,219 @@
     "signature": "ARMO",
     "type": "record",
     "name": "Armor",
-    "def": {
+    "flags": {
+        "type": "flags",
         "flags": {
-            "type": "flags",
-            "flags": {
-                "2": "Non-Playable",
-                "6": "Shield",
-                "10": "Unknown 10",
-                "12": "Ignored",
-                "15": "Unknown 15"
+            "2": "Non-Playable",
+            "6": "Shield",
+            "10": "Unknown 10",
+            "12": "Ignored",
+            "15": "Unknown 15"
+        }
+    },
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "def": "VMAD"
+        },
+        {
+            "def": "OBND",
+            "required": true
+        },
+        {
+            "def": "FULL"
+        },
+        {
+            "def": "EITM"
+        },
+        {
+            "signature": "EAMT",
+            "type": "subrecord",
+            "field": {
+                "name": "Enchantment Amount",
+                "type": "uint16"
             }
         },
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "def": "VMAD"
-            },
-            {
-                "def": "OBND",
-                "required": true
-            },
-            {
-                "def": "FULL"
-            },
-            {
-                "def": "EITM"
-            },
-            {
-                "signature": "EAMT",
-                "type": "subrecord",
-                "field": {
-                    "name": "Enchantment Amount",
-                    "type": "uint16"
-                }
-            },
-            {
-                "name": "Male world model",
-                "type": "memberStruct",
-                "members": [
-                    {
-                        "signature": "MOD2",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Model FileName",
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "signature": "MO2T",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Texture Files Hashes",
-                            "type": "bytes"
-                        }
-                    },
-                    {
-                        "def": "MO2S"
-                    }
-                ]
-            },
-            {
-                "def": "ICON"
-            },
-            {
-                "name": "Female world model",
-                "type": "memberStruct",
-                "members": [
-                    {
-                        "signature": "MOD4",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Model FileName",
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "signature": "MO4T",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Texture Files Hashes",
-                            "type": "bytes"
-                        }
-                    },
-                    {
-                        "def": "MO4S"
-                    }
-                ]
-            },
-            {
-                "def": "ICO2"
-            },
-            {
-                "def": "BODTBOD2"
-            },
-            {
-                "def": "DEST"
-            },
-            {
-                "def": "YNAM"
-            },
-            {
-                "def": "ZNAM"
-            },
-            {
-                "signature": "BMCT",
-                "type": "subrecord",
-                "field": {
-                    "name": "Ragdoll Constraint Template",
-                    "type": "string"
-                }
-            },
-            {
-                "def": "ETYP"
-            },
-            {
-                "signature": "BIDS",
-                "type": "subrecord",
-                "field": {
-                    "name": "Bash Impact Data Set",
-                    "type": "formId",
-                    "signatures": [
-                        "IPDS"
-                    ]
-                }
-            },
-            {
-                "signature": "BAMT",
-                "type": "subrecord",
-                "field": {
-                    "name": "Alternate Block Material",
-                    "type": "formId",
-                    "signatures": [
-                        "MATT"
-                    ]
-                }
-            },
-            {
-                "signature": "RNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Race",
-                    "type": "formId",
-                    "signatures": [
-                        "RACE"
-                    ]
-                }
-            },
-            {
-                "def": "KSIZ"
-            },
-            {
-                "def": "KWDAs"
-            },
-            {
-                "def": "DESC"
-            },
-            {
-                "name": "Armature",
-                "type": "memberArray",
-                "member": {
-                    "signature": "MODL",
+        {
+            "name": "Male world model",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "MOD2",
                     "type": "subrecord",
                     "field": {
                         "name": "Model FileName",
-                        "type": "formId",
-                        "signatures": [
-                            "ARMA",
-                            "NULL"
-                        ]
+                        "type": "string"
                     }
-                }
-            },
-            {
-                "signature": "DATA",
-                "type": "subrecord",
-                "field": {
-                    "name": "Data",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Value",
-                            "type": "int32"
-                        },
-                        {
-                            "name": "Weight",
-                            "type": "float"
-                        }
-                    ]
                 },
-                "required": true
-            },
-            {
-                "signature": "DNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Armor Rating",
-                    "type": "int32",
-                    "format": {
-                        "type": "divide",
-                        "value": 100
+                {
+                    "signature": "MO2T",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Texture Files Hashes",
+                        "type": "bytes"
                     }
+                },
+                {
+                    "def": "MO2S"
                 }
-            },
-            {
-                "signature": "TNAM",
+            ]
+        },
+        {
+            "def": "ICON"
+        },
+        {
+            "name": "Female world model",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "MOD4",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Model FileName",
+                        "type": "string"
+                    }
+                },
+                {
+                    "signature": "MO4T",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Texture Files Hashes",
+                        "type": "bytes"
+                    }
+                },
+                {
+                    "def": "MO4S"
+                }
+            ]
+        },
+        {
+            "def": "ICO2"
+        },
+        {
+            "def": "BODTBOD2"
+        },
+        {
+            "def": "DEST"
+        },
+        {
+            "def": "YNAM"
+        },
+        {
+            "def": "ZNAM"
+        },
+        {
+            "signature": "BMCT",
+            "type": "subrecord",
+            "field": {
+                "name": "Ragdoll Constraint Template",
+                "type": "string"
+            }
+        },
+        {
+            "def": "ETYP"
+        },
+        {
+            "signature": "BIDS",
+            "type": "subrecord",
+            "field": {
+                "name": "Bash Impact Data Set",
+                "type": "formId",
+                "signatures": [
+                    "IPDS"
+                ]
+            }
+        },
+        {
+            "signature": "BAMT",
+            "type": "subrecord",
+            "field": {
+                "name": "Alternate Block Material",
+                "type": "formId",
+                "signatures": [
+                    "MATT"
+                ]
+            }
+        },
+        {
+            "signature": "RNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Race",
+                "type": "formId",
+                "signatures": [
+                    "RACE"
+                ]
+            }
+        },
+        {
+            "def": "KSIZ"
+        },
+        {
+            "def": "KWDAs"
+        },
+        {
+            "def": "DESC"
+        },
+        {
+            "name": "Armature",
+            "type": "memberArray",
+            "member": {
+                "signature": "MODL",
                 "type": "subrecord",
                 "field": {
-                    "name": "Template Armor",
+                    "name": "Model FileName",
                     "type": "formId",
                     "signatures": [
-                        "ARMO"
+                        "ARMA",
+                        "NULL"
                     ]
                 }
             }
-        ]
-    }
+        },
+        {
+            "signature": "DATA",
+            "type": "subrecord",
+            "field": {
+                "name": "Data",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Value",
+                        "type": "int32"
+                    },
+                    {
+                        "name": "Weight",
+                        "type": "float"
+                    }
+                ]
+            },
+            "required": true
+        },
+        {
+            "signature": "DNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Armor Rating",
+                "type": "int32",
+                "format": {
+                    "type": "divide",
+                    "value": 100
+                }
+            }
+        },
+        {
+            "signature": "TNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Template Armor",
+                "type": "formId",
+                "signatures": [
+                    "ARMO"
+                ]
+            }
+        }
+    ]
 }

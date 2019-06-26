@@ -2,75 +2,73 @@
     "signature": "APPA",
     "type": "record",
     "name": "Alchemical Apparatus",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "def": "VMAD"
-            },
-            {
-                "def": "OBND",
-                "required": true
-            },
-            {
-                "def": "FULL"
-            },
-            {
-                "def": "MODL"
-            },
-            {
-                "def": "ICON"
-            },
-            {
-                "def": "DEST"
-            },
-            {
-                "def": "YNAM"
-            },
-            {
-                "def": "ZNAM"
-            },
-            {
-                "signature": "QUAL",
-                "type": "subrecord",
-                "field": {
-                    "name": "Quality",
-                    "type": "int32",
-                    "format": {
-                        "type": "enum",
-                        "options": {
-                            "0": "Novice",
-                            "1": "Apprentice",
-                            "2": "Journeyman",
-                            "3": "Expert",
-                            "4": "Master"
-                        }
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "def": "VMAD"
+        },
+        {
+            "def": "OBND",
+            "required": true
+        },
+        {
+            "def": "FULL"
+        },
+        {
+            "def": "MODL"
+        },
+        {
+            "def": "ICON"
+        },
+        {
+            "def": "DEST"
+        },
+        {
+            "def": "YNAM"
+        },
+        {
+            "def": "ZNAM"
+        },
+        {
+            "signature": "QUAL",
+            "type": "subrecord",
+            "field": {
+                "name": "Quality",
+                "type": "int32",
+                "format": {
+                    "type": "enum",
+                    "options": {
+                        "0": "Novice",
+                        "1": "Apprentice",
+                        "2": "Journeyman",
+                        "3": "Expert",
+                        "4": "Master"
                     }
                 }
-            },
-            {
-                "def": "DESC"
-            },
-            {
-                "signature": "DATA",
-                "type": "subrecord",
-                "field": {
-                    "name": "Data",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Value",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Weight",
-                            "type": "float"
-                        }
-                    ]
-                }
             }
-        ]
-    }
+        },
+        {
+            "def": "DESC"
+        },
+        {
+            "signature": "DATA",
+            "type": "subrecord",
+            "field": {
+                "name": "Data",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Value",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Weight",
+                        "type": "float"
+                    }
+                ]
+            }
+        }
+    ]
 }

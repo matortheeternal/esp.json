@@ -2,692 +2,690 @@
     "signature": "LCTN",
     "type": "record",
     "name": "Location",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "signature": "ACPR",
-                "type": "subrecord",
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "signature": "ACPR",
+            "type": "subrecord",
+            "field": {
+                "name": "Actor Cell Persistent Reference",
+                "type": "array",
                 "field": {
-                    "name": "Actor Cell Persistent Reference",
-                    "type": "array",
-                    "field": {
-                        "name": "",
-                        "type": "struct",
-                        "fields": [
-                            {
-                                "name": "Actor",
-                                "type": "formId",
-                                "signatures": [
-                                    "PLYR",
-                                    "ACHR",
-                                    "REFR",
-                                    "PGRE",
-                                    "PHZD",
-                                    "PMIS",
-                                    "PARW",
-                                    "PBAR",
-                                    "PBEA",
-                                    "PCON",
-                                    "PFLA"
-                                ]
-                            },
-                            {
-                                "name": "Location",
-                                "type": "formId",
-                                "signatures": [
-                                    "WRLD",
-                                    "CELL"
-                                ]
-                            },
-                            {
-                                "name": "Grid Y",
-                                "type": "int16"
-                            },
-                            {
-                                "name": "Grid X",
-                                "type": "int16"
-                            }
-                        ]
-                    }
-                }
-            },
-            {
-                "signature": "LCPR",
-                "type": "subrecord",
-                "field": {
-                    "name": "Location Cell Persistent Reference",
-                    "type": "array",
-                    "field": {
-                        "name": "",
-                        "type": "struct",
-                        "fields": [
-                            {
-                                "name": "Actor",
-                                "type": "formId",
-                                "signatures": [
-                                    "PLYR",
-                                    "ACHR",
-                                    "REFR",
-                                    "PGRE",
-                                    "PHZD",
-                                    "PMIS",
-                                    "PARW",
-                                    "PBAR",
-                                    "PBEA",
-                                    "PCON",
-                                    "PFLA"
-                                ]
-                            },
-                            {
-                                "name": "Location",
-                                "type": "formId",
-                                "signatures": [
-                                    "WRLD",
-                                    "CELL"
-                                ]
-                            },
-                            {
-                                "name": "Grid Y",
-                                "type": "int16"
-                            },
-                            {
-                                "name": "Grid X",
-                                "type": "int16"
-                            }
-                        ]
-                    }
-                }
-            },
-            {
-                "signature": "RCPR",
-                "type": "subrecord",
-                "field": {
-                    "name": "Reference Cell Persistent Reference",
-                    "type": "array",
-                    "field": {
-                        "name": "Ref",
-                        "type": "formId",
-                        "signatures": [
-                            "ACHR",
-                            "REFR"
-                        ]
-                    }
-                }
-            },
-            {
-                "signature": "ACUN",
-                "type": "subrecord",
-                "field": {
-                    "name": "Actor Cell Unique",
-                    "type": "array",
-                    "field": {
-                        "name": "",
-                        "type": "struct",
-                        "fields": [
-                            {
-                                "name": "Actor",
-                                "type": "formId",
-                                "signatures": [
-                                    "NPC_"
-                                ]
-                            },
-                            {
-                                "name": "Ref",
-                                "type": "formId",
-                                "signatures": [
-                                    "ACHR"
-                                ]
-                            },
-                            {
-                                "name": "Location",
-                                "type": "formId",
-                                "signatures": [
-                                    "LCTN",
-                                    "NULL"
-                                ]
-                            }
-                        ]
-                    }
-                }
-            },
-            {
-                "signature": "LCUN",
-                "type": "subrecord",
-                "field": {
-                    "name": "Location Cell Unique",
-                    "type": "array",
-                    "field": {
-                        "name": "",
-                        "type": "struct",
-                        "fields": [
-                            {
-                                "name": "Actor",
-                                "type": "formId",
-                                "signatures": [
-                                    "NPC_"
-                                ]
-                            },
-                            {
-                                "name": "Ref",
-                                "type": "formId",
-                                "signatures": [
-                                    "ACHR"
-                                ]
-                            },
-                            {
-                                "name": "Location",
-                                "type": "formId",
-                                "signatures": [
-                                    "LCTN",
-                                    "NULL"
-                                ]
-                            }
-                        ]
-                    }
-                }
-            },
-            {
-                "signature": "RCUN",
-                "type": "subrecord",
-                "field": {
-                    "name": "Reference Cell Unique",
-                    "type": "array",
-                    "field": {
-                        "name": "Actor",
-                        "type": "formId",
-                        "signatures": [
-                            "NPC_"
-                        ]
-                    }
-                }
-            },
-            {
-                "signature": "ACSR",
-                "type": "subrecord",
-                "field": {
-                    "name": "Actor Cell Static Reference",
-                    "type": "array",
-                    "field": {
-                        "name": "",
-                        "type": "struct",
-                        "fields": [
-                            {
-                                "name": "Loc Ref Type",
-                                "type": "formId",
-                                "signatures": [
-                                    "LCRT"
-                                ]
-                            },
-                            {
-                                "name": "Marker",
-                                "type": "formId",
-                                "signatures": [
-                                    "PLYR",
-                                    "ACHR",
-                                    "REFR",
-                                    "PGRE",
-                                    "PHZD",
-                                    "PMIS",
-                                    "PARW",
-                                    "PBAR",
-                                    "PBEA",
-                                    "PCON",
-                                    "PFLA"
-                                ]
-                            },
-                            {
-                                "name": "Location",
-                                "type": "formId",
-                                "signatures": [
-                                    "WRLD",
-                                    "CELL"
-                                ]
-                            },
-                            {
-                                "name": "Grid Y",
-                                "type": "int16"
-                            },
-                            {
-                                "name": "Grid X",
-                                "type": "int16"
-                            }
-                        ]
-                    }
-                }
-            },
-            {
-                "signature": "LCSR",
-                "type": "subrecord",
-                "field": {
-                    "name": "Location Cell Static Reference",
-                    "type": "array",
-                    "field": {
-                        "name": "",
-                        "type": "struct",
-                        "fields": [
-                            {
-                                "name": "Loc Ref Type",
-                                "type": "formId",
-                                "signatures": [
-                                    "LCRT"
-                                ]
-                            },
-                            {
-                                "name": "Marker",
-                                "type": "formId",
-                                "signatures": [
-                                    "PLYR",
-                                    "ACHR",
-                                    "REFR",
-                                    "PGRE",
-                                    "PHZD",
-                                    "PMIS",
-                                    "PARW",
-                                    "PBAR",
-                                    "PBEA",
-                                    "PCON",
-                                    "PFLA"
-                                ]
-                            },
-                            {
-                                "name": "Location",
-                                "type": "formId",
-                                "signatures": [
-                                    "WRLD",
-                                    "CELL"
-                                ]
-                            },
-                            {
-                                "name": "Grid Y",
-                                "type": "int16"
-                            },
-                            {
-                                "name": "Grid X",
-                                "type": "int16"
-                            }
-                        ]
-                    }
-                }
-            },
-            {
-                "signature": "RCSR",
-                "type": "subrecord",
-                "field": {
-                    "name": "Reference Cell Static Reference",
-                    "type": "array",
-                    "field": {
-                        "name": "Ref",
-                        "type": "formId",
-                        "signatures": [
-                            "ACHR",
-                            "REFR"
-                        ]
-                    }
-                }
-            },
-            {
-                "name": "Actor Cell Encounter Cell",
-                "type": "memberArray",
-                "member": {
-                    "signature": "ACEC",
-                    "type": "subrecord",
-                    "field": {
-                        "name": "Unknown",
-                        "type": "struct",
-                        "fields": [
-                            {
-                                "name": "Location",
-                                "type": "formId",
-                                "signatures": [
-                                    "WRLD",
-                                    "CELL"
-                                ]
-                            },
-                            {
-                                "name": "Coordinates",
-                                "type": "array",
-                                "field": {
-                                    "name": "",
-                                    "type": "struct",
-                                    "fields": [
-                                        {
-                                            "name": "Grid Y",
-                                            "type": "int16"
-                                        },
-                                        {
-                                            "name": "Grid X",
-                                            "type": "int16"
-                                        }
-                                    ]
-                                }
-                            }
-                        ]
-                    }
-                }
-            },
-            {
-                "name": "Location Cell Encounter Cell",
-                "type": "memberArray",
-                "member": {
-                    "signature": "LCEC",
-                    "type": "subrecord",
-                    "field": {
-                        "name": "Unknown",
-                        "type": "struct",
-                        "fields": [
-                            {
-                                "name": "Location",
-                                "type": "formId",
-                                "signatures": [
-                                    "WRLD",
-                                    "CELL"
-                                ]
-                            },
-                            {
-                                "name": "Coordinates",
-                                "type": "array",
-                                "field": {
-                                    "name": "",
-                                    "type": "struct",
-                                    "fields": [
-                                        {
-                                            "name": "Grid Y",
-                                            "type": "int16"
-                                        },
-                                        {
-                                            "name": "Grid X",
-                                            "type": "int16"
-                                        }
-                                    ]
-                                }
-                            }
-                        ]
-                    }
-                }
-            },
-            {
-                "name": "Reference Cell Encounter Cell",
-                "type": "memberArray",
-                "member": {
-                    "signature": "RCEC",
-                    "type": "subrecord",
-                    "field": {
-                        "name": "Unknown",
-                        "type": "struct",
-                        "fields": [
-                            {
-                                "name": "Location",
-                                "type": "formId",
-                                "signatures": [
-                                    "WRLD",
-                                    "CELL"
-                                ]
-                            },
-                            {
-                                "name": "Coordinates",
-                                "type": "array",
-                                "field": {
-                                    "name": "",
-                                    "type": "struct",
-                                    "fields": [
-                                        {
-                                            "name": "Grid Y",
-                                            "type": "int16"
-                                        },
-                                        {
-                                            "name": "Grid X",
-                                            "type": "int16"
-                                        }
-                                    ]
-                                }
-                            }
-                        ]
-                    }
-                }
-            },
-            {
-                "signature": "ACID",
-                "type": "subrecord",
-                "field": {
-                    "name": "Actor Cell Marker Reference",
-                    "type": "array",
-                    "field": {
-                        "name": "Ref",
-                        "type": "formId",
-                        "signatures": [
-                            "PLYR",
-                            "ACHR",
-                            "REFR",
-                            "PGRE",
-                            "PHZD",
-                            "PMIS",
-                            "PARW",
-                            "PBAR",
-                            "PBEA",
-                            "PCON",
-                            "PFLA"
-                        ]
-                    }
-                }
-            },
-            {
-                "signature": "LCID",
-                "type": "subrecord",
-                "field": {
-                    "name": "Location Cell Marker Reference",
-                    "type": "array",
-                    "field": {
-                        "name": "Ref",
-                        "type": "formId",
-                        "signatures": [
-                            "PLYR",
-                            "ACHR",
-                            "REFR",
-                            "PGRE",
-                            "PHZD",
-                            "PMIS",
-                            "PARW",
-                            "PBAR",
-                            "PBEA",
-                            "PCON",
-                            "PFLA"
-                        ]
-                    }
-                }
-            },
-            {
-                "signature": "ACEP",
-                "type": "subrecord",
-                "field": {
-                    "name": "Actor Cell Enable Point",
-                    "type": "array",
-                    "field": {
-                        "name": "",
-                        "type": "struct",
-                        "fields": [
-                            {
-                                "name": "Actor",
-                                "type": "formId",
-                                "signatures": [
-                                    "PLYR",
-                                    "ACHR",
-                                    "REFR",
-                                    "PGRE",
-                                    "PHZD",
-                                    "PMIS",
-                                    "PARW",
-                                    "PBAR",
-                                    "PBEA",
-                                    "PCON",
-                                    "PFLA"
-                                ]
-                            },
-                            {
-                                "name": "Ref",
-                                "type": "formId",
-                                "signatures": [
-                                    "PLYR",
-                                    "ACHR",
-                                    "REFR",
-                                    "PGRE",
-                                    "PHZD",
-                                    "PMIS",
-                                    "PARW",
-                                    "PBAR",
-                                    "PBEA",
-                                    "PCON",
-                                    "PFLA"
-                                ]
-                            },
-                            {
-                                "name": "Grid Y",
-                                "type": "int16"
-                            },
-                            {
-                                "name": "Grid X",
-                                "type": "int16"
-                            }
-                        ]
-                    }
-                }
-            },
-            {
-                "signature": "LCEP",
-                "type": "subrecord",
-                "field": {
-                    "name": "Location Cell Enable Point",
-                    "type": "array",
-                    "field": {
-                        "name": "",
-                        "type": "struct",
-                        "fields": [
-                            {
-                                "name": "Actor",
-                                "type": "formId",
-                                "signatures": [
-                                    "PLYR",
-                                    "ACHR",
-                                    "REFR",
-                                    "PGRE",
-                                    "PHZD",
-                                    "PMIS",
-                                    "PARW",
-                                    "PBAR",
-                                    "PBEA",
-                                    "PCON",
-                                    "PFLA"
-                                ]
-                            },
-                            {
-                                "name": "Ref",
-                                "type": "formId",
-                                "signatures": [
-                                    "PLYR",
-                                    "ACHR",
-                                    "REFR",
-                                    "PGRE",
-                                    "PHZD",
-                                    "PMIS",
-                                    "PARW",
-                                    "PBAR",
-                                    "PBEA",
-                                    "PCON",
-                                    "PFLA"
-                                ]
-                            },
-                            {
-                                "name": "Grid Y",
-                                "type": "int16"
-                            },
-                            {
-                                "name": "Grid X",
-                                "type": "int16"
-                            }
-                        ]
-                    }
-                }
-            },
-            {
-                "def": "FULL"
-            },
-            {
-                "def": "KSIZ"
-            },
-            {
-                "def": "KWDAs"
-            },
-            {
-                "signature": "PNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Parent Location",
-                    "type": "formId",
-                    "signatures": [
-                        "LCTN",
-                        "NULL"
+                    "name": "",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Actor",
+                            "type": "formId",
+                            "signatures": [
+                                "PLYR",
+                                "ACHR",
+                                "REFR",
+                                "PGRE",
+                                "PHZD",
+                                "PMIS",
+                                "PARW",
+                                "PBAR",
+                                "PBEA",
+                                "PCON",
+                                "PFLA"
+                            ]
+                        },
+                        {
+                            "name": "Location",
+                            "type": "formId",
+                            "signatures": [
+                                "WRLD",
+                                "CELL"
+                            ]
+                        },
+                        {
+                            "name": "Grid Y",
+                            "type": "int16"
+                        },
+                        {
+                            "name": "Grid X",
+                            "type": "int16"
+                        }
                     ]
                 }
-            },
-            {
-                "signature": "NAM1",
-                "type": "subrecord",
+            }
+        },
+        {
+            "signature": "LCPR",
+            "type": "subrecord",
+            "field": {
+                "name": "Location Cell Persistent Reference",
+                "type": "array",
                 "field": {
-                    "name": "Music",
-                    "type": "formId",
-                    "signatures": [
-                        "MUSC",
-                        "NULL"
+                    "name": "",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Actor",
+                            "type": "formId",
+                            "signatures": [
+                                "PLYR",
+                                "ACHR",
+                                "REFR",
+                                "PGRE",
+                                "PHZD",
+                                "PMIS",
+                                "PARW",
+                                "PBAR",
+                                "PBEA",
+                                "PCON",
+                                "PFLA"
+                            ]
+                        },
+                        {
+                            "name": "Location",
+                            "type": "formId",
+                            "signatures": [
+                                "WRLD",
+                                "CELL"
+                            ]
+                        },
+                        {
+                            "name": "Grid Y",
+                            "type": "int16"
+                        },
+                        {
+                            "name": "Grid X",
+                            "type": "int16"
+                        }
                     ]
                 }
-            },
-            {
-                "signature": "FNAM",
-                "type": "subrecord",
+            }
+        },
+        {
+            "signature": "RCPR",
+            "type": "subrecord",
+            "field": {
+                "name": "Reference Cell Persistent Reference",
+                "type": "array",
                 "field": {
-                    "name": "Unreported Crime Faction",
+                    "name": "Ref",
                     "type": "formId",
                     "signatures": [
-                        "FACT"
-                    ]
-                }
-            },
-            {
-                "signature": "MNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "World Location Marker Ref",
-                    "type": "formId",
-                    "signatures": [
-                        "REFR",
-                        "ACHR"
-                    ]
-                }
-            },
-            {
-                "signature": "RNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "World Location Radius",
-                    "type": "float"
-                }
-            },
-            {
-                "signature": "NAM0",
-                "type": "subrecord",
-                "field": {
-                    "name": "Horse Marker Ref",
-                    "type": "formId",
-                    "signatures": [
+                        "ACHR",
                         "REFR"
                     ]
                 }
-            },
-            {
-                "def": "CNAM"
             }
-        ]
-    }
+        },
+        {
+            "signature": "ACUN",
+            "type": "subrecord",
+            "field": {
+                "name": "Actor Cell Unique",
+                "type": "array",
+                "field": {
+                    "name": "",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Actor",
+                            "type": "formId",
+                            "signatures": [
+                                "NPC_"
+                            ]
+                        },
+                        {
+                            "name": "Ref",
+                            "type": "formId",
+                            "signatures": [
+                                "ACHR"
+                            ]
+                        },
+                        {
+                            "name": "Location",
+                            "type": "formId",
+                            "signatures": [
+                                "LCTN",
+                                "NULL"
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "signature": "LCUN",
+            "type": "subrecord",
+            "field": {
+                "name": "Location Cell Unique",
+                "type": "array",
+                "field": {
+                    "name": "",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Actor",
+                            "type": "formId",
+                            "signatures": [
+                                "NPC_"
+                            ]
+                        },
+                        {
+                            "name": "Ref",
+                            "type": "formId",
+                            "signatures": [
+                                "ACHR"
+                            ]
+                        },
+                        {
+                            "name": "Location",
+                            "type": "formId",
+                            "signatures": [
+                                "LCTN",
+                                "NULL"
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "signature": "RCUN",
+            "type": "subrecord",
+            "field": {
+                "name": "Reference Cell Unique",
+                "type": "array",
+                "field": {
+                    "name": "Actor",
+                    "type": "formId",
+                    "signatures": [
+                        "NPC_"
+                    ]
+                }
+            }
+        },
+        {
+            "signature": "ACSR",
+            "type": "subrecord",
+            "field": {
+                "name": "Actor Cell Static Reference",
+                "type": "array",
+                "field": {
+                    "name": "",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Loc Ref Type",
+                            "type": "formId",
+                            "signatures": [
+                                "LCRT"
+                            ]
+                        },
+                        {
+                            "name": "Marker",
+                            "type": "formId",
+                            "signatures": [
+                                "PLYR",
+                                "ACHR",
+                                "REFR",
+                                "PGRE",
+                                "PHZD",
+                                "PMIS",
+                                "PARW",
+                                "PBAR",
+                                "PBEA",
+                                "PCON",
+                                "PFLA"
+                            ]
+                        },
+                        {
+                            "name": "Location",
+                            "type": "formId",
+                            "signatures": [
+                                "WRLD",
+                                "CELL"
+                            ]
+                        },
+                        {
+                            "name": "Grid Y",
+                            "type": "int16"
+                        },
+                        {
+                            "name": "Grid X",
+                            "type": "int16"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "signature": "LCSR",
+            "type": "subrecord",
+            "field": {
+                "name": "Location Cell Static Reference",
+                "type": "array",
+                "field": {
+                    "name": "",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Loc Ref Type",
+                            "type": "formId",
+                            "signatures": [
+                                "LCRT"
+                            ]
+                        },
+                        {
+                            "name": "Marker",
+                            "type": "formId",
+                            "signatures": [
+                                "PLYR",
+                                "ACHR",
+                                "REFR",
+                                "PGRE",
+                                "PHZD",
+                                "PMIS",
+                                "PARW",
+                                "PBAR",
+                                "PBEA",
+                                "PCON",
+                                "PFLA"
+                            ]
+                        },
+                        {
+                            "name": "Location",
+                            "type": "formId",
+                            "signatures": [
+                                "WRLD",
+                                "CELL"
+                            ]
+                        },
+                        {
+                            "name": "Grid Y",
+                            "type": "int16"
+                        },
+                        {
+                            "name": "Grid X",
+                            "type": "int16"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "signature": "RCSR",
+            "type": "subrecord",
+            "field": {
+                "name": "Reference Cell Static Reference",
+                "type": "array",
+                "field": {
+                    "name": "Ref",
+                    "type": "formId",
+                    "signatures": [
+                        "ACHR",
+                        "REFR"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Actor Cell Encounter Cell",
+            "type": "memberArray",
+            "member": {
+                "signature": "ACEC",
+                "type": "subrecord",
+                "field": {
+                    "name": "Unknown",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Location",
+                            "type": "formId",
+                            "signatures": [
+                                "WRLD",
+                                "CELL"
+                            ]
+                        },
+                        {
+                            "name": "Coordinates",
+                            "type": "array",
+                            "field": {
+                                "name": "",
+                                "type": "struct",
+                                "fields": [
+                                    {
+                                        "name": "Grid Y",
+                                        "type": "int16"
+                                    },
+                                    {
+                                        "name": "Grid X",
+                                        "type": "int16"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Location Cell Encounter Cell",
+            "type": "memberArray",
+            "member": {
+                "signature": "LCEC",
+                "type": "subrecord",
+                "field": {
+                    "name": "Unknown",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Location",
+                            "type": "formId",
+                            "signatures": [
+                                "WRLD",
+                                "CELL"
+                            ]
+                        },
+                        {
+                            "name": "Coordinates",
+                            "type": "array",
+                            "field": {
+                                "name": "",
+                                "type": "struct",
+                                "fields": [
+                                    {
+                                        "name": "Grid Y",
+                                        "type": "int16"
+                                    },
+                                    {
+                                        "name": "Grid X",
+                                        "type": "int16"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Reference Cell Encounter Cell",
+            "type": "memberArray",
+            "member": {
+                "signature": "RCEC",
+                "type": "subrecord",
+                "field": {
+                    "name": "Unknown",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Location",
+                            "type": "formId",
+                            "signatures": [
+                                "WRLD",
+                                "CELL"
+                            ]
+                        },
+                        {
+                            "name": "Coordinates",
+                            "type": "array",
+                            "field": {
+                                "name": "",
+                                "type": "struct",
+                                "fields": [
+                                    {
+                                        "name": "Grid Y",
+                                        "type": "int16"
+                                    },
+                                    {
+                                        "name": "Grid X",
+                                        "type": "int16"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "signature": "ACID",
+            "type": "subrecord",
+            "field": {
+                "name": "Actor Cell Marker Reference",
+                "type": "array",
+                "field": {
+                    "name": "Ref",
+                    "type": "formId",
+                    "signatures": [
+                        "PLYR",
+                        "ACHR",
+                        "REFR",
+                        "PGRE",
+                        "PHZD",
+                        "PMIS",
+                        "PARW",
+                        "PBAR",
+                        "PBEA",
+                        "PCON",
+                        "PFLA"
+                    ]
+                }
+            }
+        },
+        {
+            "signature": "LCID",
+            "type": "subrecord",
+            "field": {
+                "name": "Location Cell Marker Reference",
+                "type": "array",
+                "field": {
+                    "name": "Ref",
+                    "type": "formId",
+                    "signatures": [
+                        "PLYR",
+                        "ACHR",
+                        "REFR",
+                        "PGRE",
+                        "PHZD",
+                        "PMIS",
+                        "PARW",
+                        "PBAR",
+                        "PBEA",
+                        "PCON",
+                        "PFLA"
+                    ]
+                }
+            }
+        },
+        {
+            "signature": "ACEP",
+            "type": "subrecord",
+            "field": {
+                "name": "Actor Cell Enable Point",
+                "type": "array",
+                "field": {
+                    "name": "",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Actor",
+                            "type": "formId",
+                            "signatures": [
+                                "PLYR",
+                                "ACHR",
+                                "REFR",
+                                "PGRE",
+                                "PHZD",
+                                "PMIS",
+                                "PARW",
+                                "PBAR",
+                                "PBEA",
+                                "PCON",
+                                "PFLA"
+                            ]
+                        },
+                        {
+                            "name": "Ref",
+                            "type": "formId",
+                            "signatures": [
+                                "PLYR",
+                                "ACHR",
+                                "REFR",
+                                "PGRE",
+                                "PHZD",
+                                "PMIS",
+                                "PARW",
+                                "PBAR",
+                                "PBEA",
+                                "PCON",
+                                "PFLA"
+                            ]
+                        },
+                        {
+                            "name": "Grid Y",
+                            "type": "int16"
+                        },
+                        {
+                            "name": "Grid X",
+                            "type": "int16"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "signature": "LCEP",
+            "type": "subrecord",
+            "field": {
+                "name": "Location Cell Enable Point",
+                "type": "array",
+                "field": {
+                    "name": "",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Actor",
+                            "type": "formId",
+                            "signatures": [
+                                "PLYR",
+                                "ACHR",
+                                "REFR",
+                                "PGRE",
+                                "PHZD",
+                                "PMIS",
+                                "PARW",
+                                "PBAR",
+                                "PBEA",
+                                "PCON",
+                                "PFLA"
+                            ]
+                        },
+                        {
+                            "name": "Ref",
+                            "type": "formId",
+                            "signatures": [
+                                "PLYR",
+                                "ACHR",
+                                "REFR",
+                                "PGRE",
+                                "PHZD",
+                                "PMIS",
+                                "PARW",
+                                "PBAR",
+                                "PBEA",
+                                "PCON",
+                                "PFLA"
+                            ]
+                        },
+                        {
+                            "name": "Grid Y",
+                            "type": "int16"
+                        },
+                        {
+                            "name": "Grid X",
+                            "type": "int16"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "def": "FULL"
+        },
+        {
+            "def": "KSIZ"
+        },
+        {
+            "def": "KWDAs"
+        },
+        {
+            "signature": "PNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Parent Location",
+                "type": "formId",
+                "signatures": [
+                    "LCTN",
+                    "NULL"
+                ]
+            }
+        },
+        {
+            "signature": "NAM1",
+            "type": "subrecord",
+            "field": {
+                "name": "Music",
+                "type": "formId",
+                "signatures": [
+                    "MUSC",
+                    "NULL"
+                ]
+            }
+        },
+        {
+            "signature": "FNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Unreported Crime Faction",
+                "type": "formId",
+                "signatures": [
+                    "FACT"
+                ]
+            }
+        },
+        {
+            "signature": "MNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "World Location Marker Ref",
+                "type": "formId",
+                "signatures": [
+                    "REFR",
+                    "ACHR"
+                ]
+            }
+        },
+        {
+            "signature": "RNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "World Location Radius",
+                "type": "float"
+            }
+        },
+        {
+            "signature": "NAM0",
+            "type": "subrecord",
+            "field": {
+                "name": "Horse Marker Ref",
+                "type": "formId",
+                "signatures": [
+                    "REFR"
+                ]
+            }
+        },
+        {
+            "def": "CNAM"
+        }
+    ]
 }

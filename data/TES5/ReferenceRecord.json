@@ -1,0 +1,288 @@
+{
+    "type": "record",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "5": "Deleted",
+            "7": "Turn Off Fire",
+            "10": "Persistent",
+            "11": "Initially Disabled",
+            "12": "Ignored",
+            "28": "Reflected By Auto Water",
+            "29": "Don't Havok Settle",
+            "30": "No Respawn"
+        },
+        "showUnknown": true
+    },
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "def": "VMAD"
+        },
+        {
+            "signature": "NAME",
+            "type": "subrecord",
+            "field": {
+                "name": "Projectile",
+                "type": "formId",
+                "signatures": [
+                    "PROJ",
+                    "HAZD"
+                ]
+            }
+        },
+        {
+            "signature": "XEZN",
+            "type": "subrecord",
+            "field": {
+                "name": "Encounter Zone",
+                "type": "formId",
+                "signatures": [
+                    "ECZN"
+                ]
+            }
+        },
+        {
+            "def": "Ownership"
+        },
+        {
+            "signature": "XHTW",
+            "type": "subrecord",
+            "field": {
+                "name": "Head-Tracking Weight",
+                "type": "float"
+            }
+        },
+        {
+            "signature": "XFVC",
+            "type": "subrecord",
+            "field": {
+                "name": "Favor Cost",
+                "type": "float"
+            }
+        },
+        {
+            "name": "Reflected/Refracted By",
+            "type": "memberArray",
+            "member": {
+                "signature": "XPWR",
+                "type": "subrecord",
+                "field": {
+                    "name": "Water",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Reference",
+                            "type": "formId",
+                            "signatures": [
+                                "REFR"
+                            ]
+                        },
+                        {
+                            "name": "Type",
+                            "type": "uint32",
+                            "format": {
+                                "type": "flags",
+                                "flags": {
+                                    "0": "Reflection",
+                                    "1": "Refraction"
+                                }
+                            }
+                        }
+                    ],
+                    "sortKey": [
+                        0
+                    ]
+                }
+            },
+            "sorted": true
+        },
+        {
+            "name": "Linked References",
+            "type": "memberArray",
+            "member": {
+                "signature": "XLKR",
+                "type": "subrecord",
+                "field": {
+                    "name": "Linked Reference",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Keyword/Ref",
+                            "type": "formId",
+                            "signatures": [
+                                "KYWD",
+                                "PLYR",
+                                "ACHR",
+                                "REFR",
+                                "PGRE",
+                                "PHZD",
+                                "PMIS",
+                                "PARW",
+                                "PBAR",
+                                "PBEA",
+                                "PCON",
+                                "PFLA",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Ref",
+                            "type": "formId",
+                            "signatures": [
+                                "PLYR",
+                                "ACHR",
+                                "REFR",
+                                "PGRE",
+                                "PHZD",
+                                "PMIS",
+                                "PARW",
+                                "PBAR",
+                                "PBEA",
+                                "PCON",
+                                "PFLA"
+                            ]
+                        }
+                    ],
+                    "sortKey": [
+                        0
+                    ]
+                }
+            },
+            "sorted": true
+        },
+        {
+            "name": "Activate Parents",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "XAPD",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Flags",
+                        "type": "uint8",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "Parent Activate Only"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "Activate Parent Refs",
+                    "type": "memberArray",
+                    "member": {
+                        "signature": "XAPR",
+                        "type": "subrecord",
+                        "field": {
+                            "name": "Activate Parent Ref",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "Reference",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "PLYR",
+                                        "ACHR",
+                                        "REFR",
+                                        "PGRE",
+                                        "PHZD",
+                                        "PMIS",
+                                        "PARW",
+                                        "PBAR",
+                                        "PBEA",
+                                        "PCON",
+                                        "PFLA"
+                                    ]
+                                },
+                                {
+                                    "name": "Delay",
+                                    "type": "float"
+                                }
+                            ],
+                            "sortKey": [
+                                0
+                            ]
+                        }
+                    },
+                    "sorted": true
+                }
+            ]
+        },
+        {
+            "def": "XESP"
+        },
+        {
+            "signature": "XEMI",
+            "type": "subrecord",
+            "field": {
+                "name": "Emittance",
+                "type": "formId",
+                "signatures": [
+                    "LIGH",
+                    "REGN"
+                ]
+            }
+        },
+        {
+            "signature": "XMBR",
+            "type": "subrecord",
+            "field": {
+                "name": "MultiBound Reference",
+                "type": "formId",
+                "signatures": [
+                    "REFR"
+                ]
+            }
+        },
+        {
+            "signature": "XIS2",
+            "type": "subrecord",
+            "field": {
+                "name": "Ignored by Sandbox",
+                "type": "empty"
+            }
+        },
+        {
+            "signature": "XLRT",
+            "type": "subrecord",
+            "field": {
+                "name": "Location Ref Type",
+                "type": "array",
+                "field": {
+                    "name": "Ref",
+                    "type": "formId",
+                    "signatures": [
+                        "LCRT",
+                        "NULL"
+                    ]
+                }
+            }
+        },
+        {
+            "signature": "XLRL",
+            "type": "subrecord",
+            "field": {
+                "name": "Location Reference",
+                "type": "formId",
+                "signatures": [
+                    "LCRT",
+                    "LCTN",
+                    "NULL"
+                ]
+            }
+        },
+        {
+            "def": "XLOD"
+        },
+        {
+            "def": "XSCL"
+        },
+        {
+            "def": "DataPosRot"
+        }
+    ]
+}

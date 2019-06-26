@@ -1,0 +1,219 @@
+{
+    "signature": "CSTY",
+    "type": "record",
+    "name": "Combat Style",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "12": "Ignored",
+            "19": "Allow Dual Wielding"
+        }
+    },
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "signature": "CSGD",
+            "type": "subrecord",
+            "field": {
+                "name": "General",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Offensive Mult",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Defensive Mult",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Group Offensive Mult",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Equipment Score Mult - Melee",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Equipment Score Mult - Magic",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Equipment Score Mult - Ranged",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Equipment Score Mult - Shout",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Equipment Score Mult - Unarmed",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Equipment Score Mult - Staff",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Avoid Threat Chance",
+                        "type": "float"
+                    }
+                ]
+            },
+            "required": true
+        },
+        {
+            "signature": "CSMD",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        },
+        {
+            "signature": "CSME",
+            "type": "subrecord",
+            "field": {
+                "name": "Melee",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Attack Staggered Mult",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Power Attack Staggered Mult",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Power Attack Blocking Mult",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Bash Mult",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Bash Recoil Mult",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Bash Attack Mult",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Bash Power Attack Mult",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Special Attack Mult",
+                        "type": "float"
+                    }
+                ]
+            },
+            "required": true
+        },
+        {
+            "signature": "CSCR",
+            "type": "subrecord",
+            "field": {
+                "name": "Close Range",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Circle Mult",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Fallback Mult",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Flank Distance",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Stalk Time",
+                        "type": "float"
+                    }
+                ]
+            },
+            "required": true
+        },
+        {
+            "signature": "CSLR",
+            "type": "subrecord",
+            "field": {
+                "name": "Long Range",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Strafe Mult",
+                        "type": "float"
+                    }
+                ]
+            },
+            "required": true
+        },
+        {
+            "signature": "CSFL",
+            "type": "subrecord",
+            "field": {
+                "name": "Flight",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Hover Chance",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Dive Bomb Chance",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Ground Attack Chance",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Hover Time",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Ground Attack Time",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Perch Attack Chance",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Perch Attack Time",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Flying Attack Chance",
+                        "type": "float"
+                    }
+                ]
+            },
+            "required": true
+        },
+        {
+            "signature": "DATA",
+            "type": "subrecord",
+            "field": {
+                "name": "Flags",
+                "type": "uint32",
+                "format": {
+                    "type": "flags",
+                    "flags": {
+                        "0": "Dueling",
+                        "1": "Flanking",
+                        "2": "Allow Dual Wielding"
+                    }
+                }
+            }
+        }
+    ]
+}

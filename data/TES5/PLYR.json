@@ -2,21 +2,19 @@
     "signature": "PLYR",
     "type": "record",
     "name": "Player Reference",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "signature": "PLYR",
+            "type": "subrecord",
+            "field": {
+                "name": "Player",
+                "type": "formId"
             },
-            {
-                "signature": "PLYR",
-                "type": "subrecord",
-                "field": {
-                    "name": "Player",
-                    "type": "formId"
-                },
-                "required": true,
-                "defaultNativeValue": 7
-            }
-        ]
-    }
+            "required": true,
+            "defaultNativeValue": 7
+        }
+    ]
 }

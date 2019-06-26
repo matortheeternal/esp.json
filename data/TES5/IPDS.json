@@ -2,43 +2,41 @@
     "signature": "IPDS",
     "type": "record",
     "name": "Impact Data Set",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "name": "Data",
+            "type": "memberArray",
+            "member": {
+                "signature": "PNAM",
+                "type": "subrecord",
+                "field": {
+                    "name": "",
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "Material",
+                            "type": "formId",
+                            "signatures": [
+                                "MATT"
+                            ]
+                        },
+                        {
+                            "name": "Impact",
+                            "type": "formId",
+                            "signatures": [
+                                "IPCT"
+                            ]
+                        }
+                    ],
+                    "sortKey": [
+                        0
+                    ]
+                }
             },
-            {
-                "name": "Data",
-                "type": "memberArray",
-                "member": {
-                    "signature": "PNAM",
-                    "type": "subrecord",
-                    "field": {
-                        "name": "",
-                        "type": "struct",
-                        "fields": [
-                            {
-                                "name": "Material",
-                                "type": "formId",
-                                "signatures": [
-                                    "MATT"
-                                ]
-                            },
-                            {
-                                "name": "Impact",
-                                "type": "formId",
-                                "signatures": [
-                                    "IPCT"
-                                ]
-                            }
-                        ],
-                        "sortKey": [
-                            0
-                        ]
-                    }
-                },
-                "sorted": true
-            }
-        ]
-    }
+            "sorted": true
+        }
+    ]
 }

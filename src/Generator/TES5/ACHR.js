@@ -24,7 +24,7 @@ module.exports = () => {
             def('XRGD'),
             def('XRGB'),
             memberStruct('Patrol Data', [
-                req(subrecord('XPRD', float('Idle Time'))),
+                req(subrecord('XPRD', req(float('Idle Time')))),
                 req(subrecord('XPPA', empty('Patrol Script Marker'))),
                 req(subrecord('INAM', ckFormId('Idle', ['IDLE', 'NULL']))),
                 req(memberStruct('Unused', [

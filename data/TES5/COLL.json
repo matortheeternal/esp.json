@@ -2,99 +2,97 @@
     "signature": "COLL",
     "type": "record",
     "name": "Collision Layer",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "def": "DESC",
+            "required": true
+        },
+        {
+            "signature": "BNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Index",
+                "type": "uint32"
+            }
+        },
+        {
+            "signature": "FNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Debug Color",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Red",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "Green",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "Blue",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "Unused",
+                        "type": "uint8"
+                    }
+                ]
             },
-            {
-                "def": "DESC",
-                "required": true
-            },
-            {
-                "signature": "BNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Index",
-                    "type": "uint32"
-                }
-            },
-            {
-                "signature": "FNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Debug Color",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Red",
-                            "type": "uint8"
-                        },
-                        {
-                            "name": "Green",
-                            "type": "uint8"
-                        },
-                        {
-                            "name": "Blue",
-                            "type": "uint8"
-                        },
-                        {
-                            "name": "Unused",
-                            "type": "uint8"
-                        }
-                    ]
-                },
-                "required": true
-            },
-            {
-                "signature": "GNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Flags",
-                    "type": "uint32",
-                    "format": {
-                        "type": "flags",
-                        "flags": {
-                            "0": "Trigger Volume",
-                            "1": "Sensor",
-                            "2": "Navmesh Obstacle"
-                        }
+            "required": true
+        },
+        {
+            "signature": "GNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Flags",
+                "type": "uint32",
+                "format": {
+                    "type": "flags",
+                    "flags": {
+                        "0": "Trigger Volume",
+                        "1": "Sensor",
+                        "2": "Navmesh Obstacle"
                     }
                 }
-            },
-            {
-                "signature": "MNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Name",
-                    "type": "string"
-                },
-                "required": true
-            },
-            {
-                "signature": "INTV",
-                "type": "subrecord",
-                "field": {
-                    "name": "Interactables Count",
-                    "type": "uint32"
-                }
-            },
-            {
-                "signature": "CNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Collides With",
-                    "type": "array",
-                    "field": {
-                        "name": "Forms",
-                        "type": "formId",
-                        "signatures": [
-                            "COLL"
-                        ]
-                    },
-                    "sorted": true
-                }
             }
-        ]
-    }
+        },
+        {
+            "signature": "MNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Name",
+                "type": "string"
+            },
+            "required": true
+        },
+        {
+            "signature": "INTV",
+            "type": "subrecord",
+            "field": {
+                "name": "Interactables Count",
+                "type": "uint32"
+            }
+        },
+        {
+            "signature": "CNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Collides With",
+                "type": "array",
+                "field": {
+                    "name": "Forms",
+                    "type": "formId",
+                    "signatures": [
+                        "COLL"
+                    ]
+                },
+                "sorted": true
+            }
+        }
+    ]
 }

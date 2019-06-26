@@ -1,0 +1,93 @@
+{
+    "signature": "CONT",
+    "type": "record",
+    "name": "Container",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "12": "Ignored",
+            "15": "Has Distant LOD",
+            "16": "Random Anim Start",
+            "25": "Obstacle",
+            "26": "NavMesh Generation - Filter",
+            "27": "NavMesh Generation - Bounding Box",
+            "30": "NavMesh Generation - Ground"
+        }
+    },
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "def": "VMAD"
+        },
+        {
+            "def": "OBND",
+            "required": true
+        },
+        {
+            "def": "FULL"
+        },
+        {
+            "def": "MODL"
+        },
+        {
+            "def": "COCT"
+        },
+        {
+            "def": "CNTOs"
+        },
+        {
+            "def": "DEST"
+        },
+        {
+            "signature": "DATA",
+            "type": "subrecord",
+            "field": {
+                "name": "",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Flags",
+                        "type": "uint8",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "Allow Sounds When Animation",
+                                "1": "Respawns",
+                                "2": "Show Owner"
+                            }
+                        }
+                    },
+                    {
+                        "name": "Weight",
+                        "type": "float"
+                    }
+                ]
+            },
+            "required": true
+        },
+        {
+            "signature": "SNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Sound - Open",
+                "type": "formId",
+                "signatures": [
+                    "SNDR"
+                ]
+            }
+        },
+        {
+            "signature": "QNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Sound - Close",
+                "type": "formId",
+                "signatures": [
+                    "SNDR"
+                ]
+            }
+        }
+    ]
+}

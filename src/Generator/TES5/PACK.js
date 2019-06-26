@@ -69,7 +69,7 @@ module.exports = () => {
                     uint8('Animation Count'),
                     size(3, bytes('Unknown'))
                 ]))),
-                req(subrecord('IDLT', float('Idle Timer Setting'))),
+                req(subrecord('IDLT', req(float('Idle Timer Setting')))),
                 subrecord('IDLA', array('Animations', 
                     ckFormId('Animation', ['IDLE'])
                 )),

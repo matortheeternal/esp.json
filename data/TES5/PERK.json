@@ -2,417 +2,415 @@
     "signature": "PERK",
     "type": "record",
     "name": "Perk",
-    "def": {
+    "flags": {
+        "type": "flags",
         "flags": {
-            "type": "flags",
-            "flags": {
-                "2": "Non-Playable",
-                "12": "Ignored"
-            }
+            "2": "Non-Playable",
+            "12": "Ignored"
+        }
+    },
+    "members": [
+        {
+            "def": "EDID"
         },
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "def": "VMADFragmentedPERK"
-            },
-            {
-                "def": "FULL"
-            },
-            {
-                "def": "DESC",
-                "required": true
-            },
-            {
-                "def": "ICON"
-            },
-            {
-                "def": "CTDAs"
-            },
-            {
-                "signature": "DATA",
-                "type": "subrecord",
-                "field": {
-                    "name": "Data",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Trait",
-                            "type": "uint8",
-                            "format": {
-                                "type": "enum",
-                                "options": {
-                                    "0": "False",
-                                    "1": "True"
-                                }
-                            }
-                        },
-                        {
-                            "name": "Level",
-                            "type": "uint8"
-                        },
-                        {
-                            "name": "Num Ranks",
-                            "type": "uint8"
-                        },
-                        {
-                            "name": "Playable",
-                            "type": "uint8",
-                            "format": {
-                                "type": "enum",
-                                "options": {
-                                    "0": "False",
-                                    "1": "True"
-                                }
-                            }
-                        },
-                        {
-                            "name": "Hidden",
-                            "type": "uint8",
-                            "format": {
-                                "type": "enum",
-                                "options": {
-                                    "0": "False",
-                                    "1": "True"
-                                }
+        {
+            "def": "VMADFragmentedPERK"
+        },
+        {
+            "def": "FULL"
+        },
+        {
+            "def": "DESC",
+            "required": true
+        },
+        {
+            "def": "ICON"
+        },
+        {
+            "def": "CTDAs"
+        },
+        {
+            "signature": "DATA",
+            "type": "subrecord",
+            "field": {
+                "name": "Data",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Trait",
+                        "type": "uint8",
+                        "format": {
+                            "type": "enum",
+                            "options": {
+                                "0": "False",
+                                "1": "True"
                             }
                         }
-                    ]
-                },
-                "required": true
-            },
-            {
-                "signature": "NNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Next Perk",
-                    "type": "formId",
-                    "signatures": [
-                        "PERK",
-                        "NULL"
-                    ]
-                }
-            },
-            {
-                "name": "Effects",
-                "type": "memberArray",
-                "member": {
-                    "name": "Effect",
-                    "type": "memberStruct",
-                    "members": [
-                        {
-                            "signature": "PRKE",
-                            "type": "subrecord",
-                            "field": {
-                                "name": "Header",
-                                "type": "struct",
-                                "fields": [
-                                    {
-                                        "name": "Type",
-                                        "type": "uint8",
-                                        "format": {
-                                            "type": "enum",
-                                            "options": {
-                                                "0": "Quest + Stage",
-                                                "1": "Ability",
-                                                "2": "Entry Point"
-                                            }
-                                        }
-                                    },
-                                    {
-                                        "name": "Rank",
-                                        "type": "uint8"
-                                    },
-                                    {
-                                        "name": "Priority",
-                                        "type": "uint8"
-                                    }
-                                ],
-                                "sortKey": [
-                                    1,
-                                    2,
-                                    0
-                                ]
+                    },
+                    {
+                        "name": "Level",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "Num Ranks",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "Playable",
+                        "type": "uint8",
+                        "format": {
+                            "type": "enum",
+                            "options": {
+                                "0": "False",
+                                "1": "True"
                             }
-                        },
-                        {
-                            "signature": "DATA",
-                            "type": "subrecord",
-                            "field": {
-                                "name": "Effect Data",
-                                "type": "union",
-                                "decider": [
-                                    {
-                                        "name": "Quest + Stage",
-                                        "type": "struct",
-                                        "fields": [
-                                            {
-                                                "name": "Quest",
-                                                "type": "formId",
-                                                "signatures": [
-                                                    "QUST"
-                                                ]
-                                            },
-                                            {
-                                                "name": "Quest Stage",
-                                                "type": "uint8",
-                                                "format": {
-                                                    "def": "PerkDATAQuestStageToStr"
-                                                }
-                                            },
-                                            {
-                                                "name": "Unused",
-                                                "type": "bytes",
-                                                "size": 3
-                                            }
-                                        ],
-                                        "sortKey": [
-                                            0,
-                                            1
-                                        ]
-                                    },
-                                    {
-                                        "name": "Ability",
-                                        "type": "formId",
-                                        "signatures": [
-                                            "SPEL"
-                                        ]
-                                    },
-                                    {
-                                        "name": "Entry Point",
-                                        "type": "struct",
-                                        "fields": [
-                                            {
-                                                "name": "Entry Point",
-                                                "type": "uint8",
-                                                "format": {
-                                                    "def": "EntryPointsEnum"
-                                                }
-                                            },
-                                            {
-                                                "name": "Function",
-                                                "type": "uint8",
-                                                "format": {
-                                                    "type": "enum",
-                                                    "options": {
-                                                        "0": "Unknown 0",
-                                                        "1": "Set Value",
-                                                        "2": "Add Value",
-                                                        "3": "Multiply Value",
-                                                        "4": "Add Range To Value",
-                                                        "5": "Add Actor Value Mult",
-                                                        "6": "Absolute Value",
-                                                        "7": "Negative Absolute Value",
-                                                        "8": "Add Leveled List",
-                                                        "9": "Add Activate Choice",
-                                                        "10": "Select Spell",
-                                                        "11": "Select Text",
-                                                        "12": "Set to Actor Value Mult",
-                                                        "13": "Multiply Actor Value Mult",
-                                                        "14": "Multiply 1 + Actor Value Mult",
-                                                        "15": "Set Text"
-                                                    }
-                                                }
-                                            },
-                                            {
-                                                "name": "Perk Condition Tab Count",
-                                                "type": "uint8"
-                                            }
-                                        ],
-                                        "sortKey": [
-                                            0,
-                                            1
-                                        ]
-                                    }
-                                ]
-                            },
-                            "required": true
-                        },
-                        {
-                            "name": "Perk Conditions",
-                            "type": "memberArray",
-                            "member": {
-                                "name": "Perk Condition",
-                                "type": "memberStruct",
-                                "members": [
-                                    {
-                                        "signature": "PRKC",
-                                        "type": "subrecord",
-                                        "field": {
-                                            "name": "Run On (Tab Index)",
-                                            "type": "int8"
+                        }
+                    },
+                    {
+                        "name": "Hidden",
+                        "type": "uint8",
+                        "format": {
+                            "type": "enum",
+                            "options": {
+                                "0": "False",
+                                "1": "True"
+                            }
+                        }
+                    }
+                ]
+            },
+            "required": true
+        },
+        {
+            "signature": "NNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Next Perk",
+                "type": "formId",
+                "signatures": [
+                    "PERK",
+                    "NULL"
+                ]
+            }
+        },
+        {
+            "name": "Effects",
+            "type": "memberArray",
+            "member": {
+                "name": "Effect",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "PRKE",
+                        "type": "subrecord",
+                        "field": {
+                            "name": "Header",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "Type",
+                                    "type": "uint8",
+                                    "format": {
+                                        "type": "enum",
+                                        "options": {
+                                            "0": "Quest + Stage",
+                                            "1": "Ability",
+                                            "2": "Entry Point"
                                         }
-                                    },
-                                    {
-                                        "def": "CTDAs",
-                                        "required": true
                                     }
-                                ],
-                                "sortKey": [
-                                    0
-                                ]
-                            },
-                            "required": true
+                                },
+                                {
+                                    "name": "Rank",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Priority",
+                                    "type": "uint8"
+                                }
+                            ],
+                            "sortKey": [
+                                1,
+                                2,
+                                0
+                            ]
+                        }
+                    },
+                    {
+                        "signature": "DATA",
+                        "type": "subrecord",
+                        "field": {
+                            "name": "Effect Data",
+                            "type": "union",
+                            "decider": [
+                                {
+                                    "name": "Quest + Stage",
+                                    "type": "struct",
+                                    "fields": [
+                                        {
+                                            "name": "Quest",
+                                            "type": "formId",
+                                            "signatures": [
+                                                "QUST"
+                                            ]
+                                        },
+                                        {
+                                            "name": "Quest Stage",
+                                            "type": "uint8",
+                                            "format": {
+                                                "def": "PerkDATAQuestStageToStr"
+                                            }
+                                        },
+                                        {
+                                            "name": "Unused",
+                                            "type": "bytes",
+                                            "size": 3
+                                        }
+                                    ],
+                                    "sortKey": [
+                                        0,
+                                        1
+                                    ]
+                                },
+                                {
+                                    "name": "Ability",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "SPEL"
+                                    ]
+                                },
+                                {
+                                    "name": "Entry Point",
+                                    "type": "struct",
+                                    "fields": [
+                                        {
+                                            "name": "Entry Point",
+                                            "type": "uint8",
+                                            "format": {
+                                                "def": "EntryPointsEnum"
+                                            }
+                                        },
+                                        {
+                                            "name": "Function",
+                                            "type": "uint8",
+                                            "format": {
+                                                "type": "enum",
+                                                "options": {
+                                                    "0": "Unknown 0",
+                                                    "1": "Set Value",
+                                                    "2": "Add Value",
+                                                    "3": "Multiply Value",
+                                                    "4": "Add Range To Value",
+                                                    "5": "Add Actor Value Mult",
+                                                    "6": "Absolute Value",
+                                                    "7": "Negative Absolute Value",
+                                                    "8": "Add Leveled List",
+                                                    "9": "Add Activate Choice",
+                                                    "10": "Select Spell",
+                                                    "11": "Select Text",
+                                                    "12": "Set to Actor Value Mult",
+                                                    "13": "Multiply Actor Value Mult",
+                                                    "14": "Multiply 1 + Actor Value Mult",
+                                                    "15": "Set Text"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "Perk Condition Tab Count",
+                                            "type": "uint8"
+                                        }
+                                    ],
+                                    "sortKey": [
+                                        0,
+                                        1
+                                    ]
+                                }
+                            ]
                         },
-                        {
-                            "name": "Function Parameters",
+                        "required": true
+                    },
+                    {
+                        "name": "Perk Conditions",
+                        "type": "memberArray",
+                        "member": {
+                            "name": "Perk Condition",
                             "type": "memberStruct",
                             "members": [
                                 {
-                                    "signature": "EPFT",
+                                    "signature": "PRKC",
                                     "type": "subrecord",
                                     "field": {
-                                        "name": "Type",
-                                        "type": "uint8",
-                                        "format": {
-                                            "type": "enum",
-                                            "options": {
-                                                "0": "None",
-                                                "1": "Float",
-                                                "2": "Float/AV,Float",
-                                                "3": "LVLI",
-                                                "4": "SPEL,lstring,flags",
-                                                "5": "SPEL",
-                                                "6": "string",
-                                                "7": "lstring"
-                                            }
-                                        }
+                                        "name": "Run On (Tab Index)",
+                                        "type": "int8"
                                     }
                                 },
                                 {
-                                    "signature": "EPF2",
-                                    "type": "subrecord",
-                                    "field": {
-                                        "name": "Button Label",
-                                        "type": "string",
-                                        "localized": true
-                                    }
-                                },
-                                {
-                                    "signature": "EPF3",
-                                    "type": "subrecord",
-                                    "field": {
-                                        "name": "Script Flags",
-                                        "type": "struct",
-                                        "fields": [
-                                            {
-                                                "name": "Script Flags",
-                                                "type": "uint16",
-                                                "format": {
-                                                    "type": "flags",
-                                                    "flags": {
-                                                        "0": "Run Immediately",
-                                                        "1": "Replace Default"
-                                                    }
-                                                }
-                                            },
-                                            {
-                                                "name": "Fragment Index",
-                                                "type": "uint16"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "signature": "EPFD",
-                                    "type": "subrecord",
-                                    "field": {
-                                        "name": "Data",
-                                        "type": "union",
-                                        "decider": [
-                                            {
-                                                "name": "Unknown",
-                                                "type": "bytes"
-                                            },
-                                            {
-                                                "name": "Float",
-                                                "type": "float"
-                                            },
-                                            {
-                                                "name": "Float, Float",
-                                                "type": "struct",
-                                                "fields": [
-                                                    {
-                                                        "name": "Float 1",
-                                                        "type": "float"
-                                                    },
-                                                    {
-                                                        "name": "Float 2",
-                                                        "type": "float"
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "name": "Leveled Item",
-                                                "type": "formId",
-                                                "signatures": [
-                                                    "LVLI"
-                                                ]
-                                            },
-                                            {
-                                                "name": "Spell",
-                                                "type": "formId",
-                                                "signatures": [
-                                                    "SPEL"
-                                                ]
-                                            },
-                                            {
-                                                "name": "Spell",
-                                                "type": "formId",
-                                                "signatures": [
-                                                    "SPEL"
-                                                ]
-                                            },
-                                            {
-                                                "name": "Text",
-                                                "type": "string"
-                                            },
-                                            {
-                                                "name": "Text",
-                                                "type": "string",
-                                                "localized": true
-                                            },
-                                            {
-                                                "name": "Actor Value, Float",
-                                                "type": "struct",
-                                                "fields": [
-                                                    {
-                                                        "name": "Actor Value",
-                                                        "type": "uint32",
-                                                        "format": {
-                                                            "def": "EPFDActorValueToStr"
-                                                        }
-                                                    },
-                                                    {
-                                                        "name": "Float",
-                                                        "type": "float"
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    },
+                                    "def": "CTDAs",
                                     "required": true
                                 }
                             ],
-                            "required": true
+                            "sortKey": [
+                                0
+                            ]
                         },
-                        {
-                            "signature": "PRKF",
-                            "type": "subrecord",
-                            "field": {
-                                "name": "End Marker",
-                                "type": "empty"
+                        "required": true
+                    },
+                    {
+                        "name": "Function Parameters",
+                        "type": "memberStruct",
+                        "members": [
+                            {
+                                "signature": "EPFT",
+                                "type": "subrecord",
+                                "field": {
+                                    "name": "Type",
+                                    "type": "uint8",
+                                    "format": {
+                                        "type": "enum",
+                                        "options": {
+                                            "0": "None",
+                                            "1": "Float",
+                                            "2": "Float/AV,Float",
+                                            "3": "LVLI",
+                                            "4": "SPEL,lstring,flags",
+                                            "5": "SPEL",
+                                            "6": "string",
+                                            "7": "lstring"
+                                        }
+                                    }
+                                }
                             },
-                            "required": true
-                        }
-                    ],
-                    "sortKey": [
-                        0,
-                        1
-                    ]
-                }
+                            {
+                                "signature": "EPF2",
+                                "type": "subrecord",
+                                "field": {
+                                    "name": "Button Label",
+                                    "type": "string",
+                                    "localized": true
+                                }
+                            },
+                            {
+                                "signature": "EPF3",
+                                "type": "subrecord",
+                                "field": {
+                                    "name": "Script Flags",
+                                    "type": "struct",
+                                    "fields": [
+                                        {
+                                            "name": "Script Flags",
+                                            "type": "uint16",
+                                            "format": {
+                                                "type": "flags",
+                                                "flags": {
+                                                    "0": "Run Immediately",
+                                                    "1": "Replace Default"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "Fragment Index",
+                                            "type": "uint16"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "signature": "EPFD",
+                                "type": "subrecord",
+                                "field": {
+                                    "name": "Data",
+                                    "type": "union",
+                                    "decider": [
+                                        {
+                                            "name": "Unknown",
+                                            "type": "bytes"
+                                        },
+                                        {
+                                            "name": "Float",
+                                            "type": "float"
+                                        },
+                                        {
+                                            "name": "Float, Float",
+                                            "type": "struct",
+                                            "fields": [
+                                                {
+                                                    "name": "Float 1",
+                                                    "type": "float"
+                                                },
+                                                {
+                                                    "name": "Float 2",
+                                                    "type": "float"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "Leveled Item",
+                                            "type": "formId",
+                                            "signatures": [
+                                                "LVLI"
+                                            ]
+                                        },
+                                        {
+                                            "name": "Spell",
+                                            "type": "formId",
+                                            "signatures": [
+                                                "SPEL"
+                                            ]
+                                        },
+                                        {
+                                            "name": "Spell",
+                                            "type": "formId",
+                                            "signatures": [
+                                                "SPEL"
+                                            ]
+                                        },
+                                        {
+                                            "name": "Text",
+                                            "type": "string"
+                                        },
+                                        {
+                                            "name": "Text",
+                                            "type": "string",
+                                            "localized": true
+                                        },
+                                        {
+                                            "name": "Actor Value, Float",
+                                            "type": "struct",
+                                            "fields": [
+                                                {
+                                                    "name": "Actor Value",
+                                                    "type": "uint32",
+                                                    "format": {
+                                                        "def": "EPFDActorValueToStr"
+                                                    }
+                                                },
+                                                {
+                                                    "name": "Float",
+                                                    "type": "float"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                "required": true
+                            }
+                        ],
+                        "required": true
+                    },
+                    {
+                        "signature": "PRKF",
+                        "type": "subrecord",
+                        "field": {
+                            "name": "End Marker",
+                            "type": "empty"
+                        },
+                        "required": true
+                    }
+                ],
+                "sortKey": [
+                    0,
+                    1
+                ]
             }
-        ]
-    }
+        }
+    ]
 }

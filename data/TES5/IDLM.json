@@ -2,75 +2,74 @@
     "signature": "IDLM",
     "type": "record",
     "name": "Idle Marker",
-    "def": {
+    "flags": {
+        "type": "flags",
         "flags": {
-            "type": "flags",
-            "flags": {
-                "12": "Ignored",
-                "29": "Child Can Use"
+            "12": "Ignored",
+            "29": "Child Can Use"
+        }
+    },
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "def": "OBND",
+            "required": true
+        },
+        {
+            "signature": "IDLF",
+            "type": "subrecord",
+            "field": {
+                "name": "Flags",
+                "type": "uint8",
+                "format": {
+                    "type": "flags",
+                    "flags": {
+                        "0": "Run in Sequence",
+                        "1": "Unknown 1",
+                        "2": "Do Once",
+                        "3": "Unknown 3",
+                        "4": "Ignored by Sandbox"
+                    }
+                }
             }
         },
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "def": "OBND",
-                "required": true
-            },
-            {
-                "signature": "IDLF",
-                "type": "subrecord",
-                "field": {
-                    "name": "Flags",
-                    "type": "uint8",
-                    "format": {
-                        "type": "flags",
-                        "flags": {
-                            "0": "Run in Sequence",
-                            "1": "Unknown 1",
-                            "2": "Do Once",
-                            "3": "Unknown 3",
-                            "4": "Ignored by Sandbox"
-                        }
-                    }
-                }
-            },
-            {
-                "signature": "IDLC",
-                "type": "subrecord",
-                "field": {
-                    "name": "Animation Count",
-                    "type": "uint8"
-                }
-            },
-            {
-                "signature": "IDLT",
-                "type": "subrecord",
-                "field": {
-                    "name": "Idle Timer Setting",
-                    "type": "float"
-                },
-                "required": true
-            },
-            {
-                "signature": "IDLA",
-                "type": "subrecord",
-                "field": {
-                    "name": "Animations",
-                    "type": "array",
-                    "field": {
-                        "name": "Animation",
-                        "type": "formId",
-                        "signatures": [
-                            "IDLE"
-                        ]
-                    }
-                }
-            },
-            {
-                "def": "MODL"
+        {
+            "signature": "IDLC",
+            "type": "subrecord",
+            "field": {
+                "name": "Animation Count",
+                "type": "uint8"
             }
-        ]
-    }
+        },
+        {
+            "signature": "IDLT",
+            "type": "subrecord",
+            "field": {
+                "name": "Idle Timer Setting",
+                "type": "float",
+                "required": true
+            },
+            "required": true
+        },
+        {
+            "signature": "IDLA",
+            "type": "subrecord",
+            "field": {
+                "name": "Animations",
+                "type": "array",
+                "field": {
+                    "name": "Animation",
+                    "type": "formId",
+                    "signatures": [
+                        "IDLE"
+                    ]
+                }
+            }
+        },
+        {
+            "def": "MODL"
+        }
+    ]
 }

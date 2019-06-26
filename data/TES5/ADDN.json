@@ -2,64 +2,62 @@
     "signature": "ADDN",
     "type": "record",
     "name": "Addon Node",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "def": "OBND",
-                "required": true
-            },
-            {
-                "def": "MODL"
-            },
-            {
-                "signature": "DATA",
-                "type": "subrecord",
-                "field": {
-                    "name": "Node Index",
-                    "type": "int32"
-                }
-            },
-            {
-                "signature": "SNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Sound",
-                    "type": "formId",
-                    "signatures": [
-                        "SNDR",
-                        "NULL"
-                    ]
-                }
-            },
-            {
-                "signature": "DNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Data",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Master Particle System Cap",
-                            "type": "uint16"
-                        },
-                        {
-                            "name": "Flags",
-                            "type": "uint16",
-                            "format": {
-                                "type": "enum",
-                                "options": {
-                                    "1": "Unknown 1",
-                                    "3": "Always Loaded"
-                                }
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "def": "OBND",
+            "required": true
+        },
+        {
+            "def": "MODL"
+        },
+        {
+            "signature": "DATA",
+            "type": "subrecord",
+            "field": {
+                "name": "Node Index",
+                "type": "int32"
+            }
+        },
+        {
+            "signature": "SNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Sound",
+                "type": "formId",
+                "signatures": [
+                    "SNDR",
+                    "NULL"
+                ]
+            }
+        },
+        {
+            "signature": "DNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Data",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Master Particle System Cap",
+                        "type": "uint16"
+                    },
+                    {
+                        "name": "Flags",
+                        "type": "uint16",
+                        "format": {
+                            "type": "enum",
+                            "options": {
+                                "1": "Unknown 1",
+                                "3": "Always Loaded"
                             }
                         }
-                    ]
-                },
-                "required": true
-            }
-        ]
-    }
+                    }
+                ]
+            },
+            "required": true
+        }
+    ]
 }

@@ -2,106 +2,104 @@
     "signature": "LENS",
     "type": "record",
     "name": "Lens Flare",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "signature": "CNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Color Influence",
-                    "type": "float"
-                }
-            },
-            {
-                "signature": "DNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Fade Distance Radius Scale",
-                    "type": "float"
-                }
-            },
-            {
-                "signature": "LFSP",
-                "type": "subrecord",
-                "field": {
-                    "name": "Count",
-                    "type": "uint32"
-                }
-            },
-            {
-                "name": "Lens Flare Sprites",
-                "type": "memberArray",
-                "member": {
-                    "name": "Flare",
-                    "type": "memberStruct",
-                    "members": [
-                        {
-                            "signature": "DNAM",
-                            "type": "subrecord",
-                            "field": {
-                                "name": "Lens Flare Sprite ID",
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "signature": "FNAM",
-                            "type": "subrecord",
-                            "field": {
-                                "name": "Texture",
-                                "type": "string"
-                            }
-                        },
-                        {
-                            "signature": "LFSD",
-                            "type": "subrecord",
-                            "field": {
-                                "name": "Lens Flare Data",
-                                "type": "struct",
-                                "fields": [
-                                    {
-                                        "def": "FloatColors",
-                                        "name": "Tint"
-                                    },
-                                    {
-                                        "name": "Width",
-                                        "type": "float"
-                                    },
-                                    {
-                                        "name": "Height",
-                                        "type": "float"
-                                    },
-                                    {
-                                        "name": "Position",
-                                        "type": "float"
-                                    },
-                                    {
-                                        "name": "Angular Fade",
-                                        "type": "float"
-                                    },
-                                    {
-                                        "name": "Opacity",
-                                        "type": "float"
-                                    },
-                                    {
-                                        "name": "Flags",
-                                        "type": "uint32",
-                                        "format": {
-                                            "type": "flags",
-                                            "flags": {
-                                                "0": "Rotates",
-                                                "1": "Shrinks When Occluded"
-                                            }
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "signature": "CNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Color Influence",
+                "type": "float"
+            }
+        },
+        {
+            "signature": "DNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Fade Distance Radius Scale",
+                "type": "float"
+            }
+        },
+        {
+            "signature": "LFSP",
+            "type": "subrecord",
+            "field": {
+                "name": "Count",
+                "type": "uint32"
+            }
+        },
+        {
+            "name": "Lens Flare Sprites",
+            "type": "memberArray",
+            "member": {
+                "name": "Flare",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "DNAM",
+                        "type": "subrecord",
+                        "field": {
+                            "name": "Lens Flare Sprite ID",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "signature": "FNAM",
+                        "type": "subrecord",
+                        "field": {
+                            "name": "Texture",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "signature": "LFSD",
+                        "type": "subrecord",
+                        "field": {
+                            "name": "Lens Flare Data",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "def": "FloatColors",
+                                    "name": "Tint"
+                                },
+                                {
+                                    "name": "Width",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "Height",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "Position",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "Angular Fade",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "Opacity",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "Flags",
+                                    "type": "uint32",
+                                    "format": {
+                                        "type": "flags",
+                                        "flags": {
+                                            "0": "Rotates",
+                                            "1": "Shrinks When Occluded"
                                         }
                                     }
-                                ]
-                            }
+                                }
+                            ]
                         }
-                    ]
-                }
+                    }
+                ]
             }
-        ]
-    }
+        }
+    ]
 }

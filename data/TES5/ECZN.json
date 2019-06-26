@@ -2,63 +2,61 @@
     "signature": "ECZN",
     "type": "record",
     "name": "Encounter Zone",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "signature": "DATA",
-                "type": "subrecord",
-                "field": {
-                    "name": "",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Owner",
-                            "type": "formId",
-                            "signatures": [
-                                "NPC_",
-                                "FACT",
-                                "NULL"
-                            ]
-                        },
-                        {
-                            "name": "Location",
-                            "type": "formId",
-                            "signatures": [
-                                "LCTN",
-                                "NULL"
-                            ]
-                        },
-                        {
-                            "name": "Rank",
-                            "type": "int8"
-                        },
-                        {
-                            "name": "Min Level",
-                            "type": "int8"
-                        },
-                        {
-                            "name": "Flags",
-                            "type": "uint8",
-                            "format": {
-                                "type": "flags",
-                                "flags": {
-                                    "0": "Never Resets",
-                                    "1": "Match PC Below Minimum Level",
-                                    "2": "Disable Combat Boundary"
-                                }
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "signature": "DATA",
+            "type": "subrecord",
+            "field": {
+                "name": "",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Owner",
+                        "type": "formId",
+                        "signatures": [
+                            "NPC_",
+                            "FACT",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "name": "Location",
+                        "type": "formId",
+                        "signatures": [
+                            "LCTN",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "name": "Rank",
+                        "type": "int8"
+                    },
+                    {
+                        "name": "Min Level",
+                        "type": "int8"
+                    },
+                    {
+                        "name": "Flags",
+                        "type": "uint8",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "Never Resets",
+                                "1": "Match PC Below Minimum Level",
+                                "2": "Disable Combat Boundary"
                             }
-                        },
-                        {
-                            "name": "Max Level",
-                            "type": "int8"
                         }
-                    ]
-                },
-                "required": true
-            }
-        ]
-    }
+                    },
+                    {
+                        "name": "Max Level",
+                        "type": "int8"
+                    }
+                ]
+            },
+            "required": true
+        }
+    ]
 }

@@ -2,101 +2,99 @@
     "signature": "MOVT",
     "type": "record",
     "name": "Movement Type",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "signature": "MNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Name",
-                    "type": "string"
-                }
-            },
-            {
-                "signature": "SPED",
-                "type": "subrecord",
-                "field": {
-                    "name": "Default Data",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Left Walk",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Left Run",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Right Walk",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Right Run",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Forward Walk",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Forward Run",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Back Walk",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Back Run",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Rotate in Place Walk",
-                            "type": "float",
-                            "required": true
-                        },
-                        {
-                            "name": "Rotate in Place Run",
-                            "type": "float",
-                            "required": true
-                        },
-                        {
-                            "name": "Rotate while Moving Run",
-                            "type": "float",
-                            "required": true
-                        }
-                    ]
-                },
-                "required": true
-            },
-            {
-                "signature": "INAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Anim Change Thresholds",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Directional",
-                            "type": "float",
-                            "required": true
-                        },
-                        {
-                            "name": "Movement Speed",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Rotation Speed",
-                            "type": "float",
-                            "required": true
-                        }
-                    ]
-                }
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "signature": "MNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Name",
+                "type": "string"
             }
-        ]
-    }
+        },
+        {
+            "signature": "SPED",
+            "type": "subrecord",
+            "field": {
+                "name": "Default Data",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Left Walk",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Left Run",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Right Walk",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Right Run",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Forward Walk",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Forward Run",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Back Walk",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Back Run",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Rotate in Place Walk",
+                        "type": "float",
+                        "required": true
+                    },
+                    {
+                        "name": "Rotate in Place Run",
+                        "type": "float",
+                        "required": true
+                    },
+                    {
+                        "name": "Rotate while Moving Run",
+                        "type": "float",
+                        "required": true
+                    }
+                ]
+            },
+            "required": true
+        },
+        {
+            "signature": "INAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Anim Change Thresholds",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Directional",
+                        "type": "float",
+                        "required": true
+                    },
+                    {
+                        "name": "Movement Speed",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Rotation Speed",
+                        "type": "float",
+                        "required": true
+                    }
+                ]
+            }
+        }
+    ]
 }

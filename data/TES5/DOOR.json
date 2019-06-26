@@ -2,88 +2,86 @@
     "signature": "DOOR",
     "type": "record",
     "name": "Door",
-    "def": {
+    "flags": {
+        "type": "flags",
         "flags": {
-            "type": "flags",
-            "flags": {
-                "12": "Ignored",
-                "15": "Has Distant LOD",
-                "16": "Random Anim Start",
-                "23": "Is Marker"
+            "12": "Ignored",
+            "15": "Has Distant LOD",
+            "16": "Random Anim Start",
+            "23": "Is Marker"
+        }
+    },
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "def": "VMAD"
+        },
+        {
+            "def": "OBND",
+            "required": true
+        },
+        {
+            "def": "FULL"
+        },
+        {
+            "def": "MODL"
+        },
+        {
+            "def": "DEST"
+        },
+        {
+            "signature": "SNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Sound - Open",
+                "type": "formId",
+                "signatures": [
+                    "SNDR"
+                ]
             }
         },
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "def": "VMAD"
-            },
-            {
-                "def": "OBND",
-                "required": true
-            },
-            {
-                "def": "FULL"
-            },
-            {
-                "def": "MODL"
-            },
-            {
-                "def": "DEST"
-            },
-            {
-                "signature": "SNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Sound - Open",
-                    "type": "formId",
-                    "signatures": [
-                        "SNDR"
-                    ]
-                }
-            },
-            {
-                "signature": "ANAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Sound - Close",
-                    "type": "formId",
-                    "signatures": [
-                        "SNDR"
-                    ]
-                }
-            },
-            {
-                "signature": "BNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Sound - Loop",
-                    "type": "formId",
-                    "signatures": [
-                        "SNDR"
-                    ]
-                }
-            },
-            {
-                "signature": "FNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Flags",
-                    "type": "uint8",
-                    "format": {
-                        "type": "flags",
-                        "flags": {
-                            "0": "",
-                            "1": "Automatic",
-                            "2": "Hidden",
-                            "3": "Minimal Use",
-                            "4": "Sliding",
-                            "5": "Do Not Open in Combat Search"
-                        }
+        {
+            "signature": "ANAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Sound - Close",
+                "type": "formId",
+                "signatures": [
+                    "SNDR"
+                ]
+            }
+        },
+        {
+            "signature": "BNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Sound - Loop",
+                "type": "formId",
+                "signatures": [
+                    "SNDR"
+                ]
+            }
+        },
+        {
+            "signature": "FNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Flags",
+                "type": "uint8",
+                "format": {
+                    "type": "flags",
+                    "flags": {
+                        "0": "",
+                        "1": "Automatic",
+                        "2": "Hidden",
+                        "3": "Minimal Use",
+                        "4": "Sliding",
+                        "5": "Do Not Open in Combat Search"
                     }
                 }
             }
-        ]
-    }
+        }
+    ]
 }

@@ -2,99 +2,97 @@
     "signature": "SCOL",
     "type": "record",
     "name": "Static Collection",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "def": "OBND",
-                "required": true
-            },
-            {
-                "def": "MODL",
-                "required": true
-            },
-            {
-                "name": "Parts",
-                "type": "memberArray",
-                "member": {
-                    "name": "Part",
-                    "type": "memberStruct",
-                    "members": [
-                        {
-                            "signature": "ONAM",
-                            "type": "subrecord",
-                            "field": {
-                                "name": "Static",
-                                "type": "formId",
-                                "signatures": [
-                                    "STAT"
-                                ]
-                            }
-                        },
-                        {
-                            "signature": "DATA",
-                            "type": "subrecord",
-                            "field": {
-                                "name": "Placements",
-                                "type": "array",
-                                "field": {
-                                    "name": "Placement",
-                                    "type": "struct",
-                                    "fields": [
-                                        {
-                                            "name": "Position",
-                                            "type": "struct",
-                                            "fields": [
-                                                {
-                                                    "name": "X",
-                                                    "type": "float"
-                                                },
-                                                {
-                                                    "name": "Y",
-                                                    "type": "float"
-                                                },
-                                                {
-                                                    "name": "Z",
-                                                    "type": "float"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "name": "Rotation",
-                                            "type": "struct",
-                                            "fields": [
-                                                {
-                                                    "name": "X",
-                                                    "type": "float",
-                                                    "required": true
-                                                },
-                                                {
-                                                    "name": "Y",
-                                                    "type": "float",
-                                                    "required": true
-                                                },
-                                                {
-                                                    "name": "Z",
-                                                    "type": "float",
-                                                    "required": true
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "name": "Scale",
-                                            "type": "float"
-                                        }
-                                    ]
-                                },
-                                "sorted": true
-                            }
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "def": "OBND",
+            "required": true
+        },
+        {
+            "def": "MODL",
+            "required": true
+        },
+        {
+            "name": "Parts",
+            "type": "memberArray",
+            "member": {
+                "name": "Part",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "ONAM",
+                        "type": "subrecord",
+                        "field": {
+                            "name": "Static",
+                            "type": "formId",
+                            "signatures": [
+                                "STAT"
+                            ]
                         }
-                    ]
-                },
-                "required": true
-            }
-        ]
-    }
+                    },
+                    {
+                        "signature": "DATA",
+                        "type": "subrecord",
+                        "field": {
+                            "name": "Placements",
+                            "type": "array",
+                            "field": {
+                                "name": "Placement",
+                                "type": "struct",
+                                "fields": [
+                                    {
+                                        "name": "Position",
+                                        "type": "struct",
+                                        "fields": [
+                                            {
+                                                "name": "X",
+                                                "type": "float"
+                                            },
+                                            {
+                                                "name": "Y",
+                                                "type": "float"
+                                            },
+                                            {
+                                                "name": "Z",
+                                                "type": "float"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "Rotation",
+                                        "type": "struct",
+                                        "fields": [
+                                            {
+                                                "name": "X",
+                                                "type": "float",
+                                                "required": true
+                                            },
+                                            {
+                                                "name": "Y",
+                                                "type": "float",
+                                                "required": true
+                                            },
+                                            {
+                                                "name": "Z",
+                                                "type": "float",
+                                                "required": true
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "Scale",
+                                        "type": "float"
+                                    }
+                                ]
+                            },
+                            "sorted": true
+                        }
+                    }
+                ]
+            },
+            "required": true
+        }
+    ]
 }

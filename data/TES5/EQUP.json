@@ -2,38 +2,36 @@
     "signature": "EQUP",
     "type": "record",
     "name": "Equip Type",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "signature": "PNAM",
-                "type": "subrecord",
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "signature": "PNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Slot Parents",
+                "type": "array",
                 "field": {
-                    "name": "Slot Parents",
-                    "type": "array",
-                    "field": {
-                        "name": "Can Be Equipped",
-                        "type": "formId"
-                    }
+                    "name": "Can Be Equipped",
+                    "type": "formId"
                 }
-            },
-            {
-                "signature": "DATA",
-                "type": "subrecord",
-                "field": {
-                    "name": "Use All Parents",
-                    "type": "uint32",
-                    "format": {
-                        "type": "enum",
-                        "options": {
-                            "0": "False",
-                            "1": "True"
-                        }
+            }
+        },
+        {
+            "signature": "DATA",
+            "type": "subrecord",
+            "field": {
+                "name": "Use All Parents",
+                "type": "uint32",
+                "format": {
+                    "type": "enum",
+                    "options": {
+                        "0": "False",
+                        "1": "True"
                     }
                 }
             }
-        ]
-    }
+        }
+    ]
 }

@@ -11,9 +11,9 @@ module.exports = () => {
             subrecord('PNAM', ckFormId('Material Parent', ['MATT', 'NULL'])),
             subrecord('MNAM', string('Material Name')),
             subrecord('CNAM', struct('Havok Display Color', [
-                req(float('Red')),
-                req(float('Green')),
-                req(float('Blue'))
+                req(req(float('Red'))),
+                req(req(float('Green'))),
+                req(req(float('Blue')))
             ])),
             subrecord('BNAM', float('Buoyancy')),
             subrecord('FNAM', format(uint32('Flags'), flags({

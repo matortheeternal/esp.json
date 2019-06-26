@@ -2,97 +2,95 @@
     "signature": "SLGM",
     "type": "record",
     "name": "Soul Gem",
-    "def": {
+    "flags": {
+        "type": "flags",
         "flags": {
-            "type": "flags",
-            "flags": {
-                "12": "Ignored",
-                "17": "Can Hold NPC Soul"
+            "12": "Ignored",
+            "17": "Can Hold NPC Soul"
+        }
+    },
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "def": "OBND"
+        },
+        {
+            "def": "FULL"
+        },
+        {
+            "def": "MODL"
+        },
+        {
+            "def": "ICON"
+        },
+        {
+            "def": "DEST"
+        },
+        {
+            "def": "YNAM"
+        },
+        {
+            "def": "ZNAM"
+        },
+        {
+            "def": "KSIZ"
+        },
+        {
+            "def": "KWDAs"
+        },
+        {
+            "signature": "DATA",
+            "type": "subrecord",
+            "field": {
+                "name": "",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Value",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Weight",
+                        "type": "float"
+                    }
+                ]
+            },
+            "required": true
+        },
+        {
+            "signature": "SOUL",
+            "type": "subrecord",
+            "field": {
+                "name": "Contained Soul",
+                "type": "uint8",
+                "format": {
+                    "def": "SoulGemEnum"
+                }
             }
         },
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "def": "OBND"
-            },
-            {
-                "def": "FULL"
-            },
-            {
-                "def": "MODL"
-            },
-            {
-                "def": "ICON"
-            },
-            {
-                "def": "DEST"
-            },
-            {
-                "def": "YNAM"
-            },
-            {
-                "def": "ZNAM"
-            },
-            {
-                "def": "KSIZ"
-            },
-            {
-                "def": "KWDAs"
-            },
-            {
-                "signature": "DATA",
-                "type": "subrecord",
-                "field": {
-                    "name": "",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Value",
-                            "type": "uint32"
-                        },
-                        {
-                            "name": "Weight",
-                            "type": "float"
-                        }
-                    ]
-                },
-                "required": true
-            },
-            {
-                "signature": "SOUL",
-                "type": "subrecord",
-                "field": {
-                    "name": "Contained Soul",
-                    "type": "uint8",
-                    "format": {
-                        "def": "SoulGemEnum"
-                    }
-                }
-            },
-            {
-                "signature": "SLCP",
-                "type": "subrecord",
-                "field": {
-                    "name": "Maximum Capacity",
-                    "type": "uint8",
-                    "format": {
-                        "def": "SoulGemEnum"
-                    }
-                }
-            },
-            {
-                "signature": "NAM0",
-                "type": "subrecord",
-                "field": {
-                    "name": "Linked To",
-                    "type": "formId",
-                    "signatures": [
-                        "SLGM"
-                    ]
+        {
+            "signature": "SLCP",
+            "type": "subrecord",
+            "field": {
+                "name": "Maximum Capacity",
+                "type": "uint8",
+                "format": {
+                    "def": "SoulGemEnum"
                 }
             }
-        ]
-    }
+        },
+        {
+            "signature": "NAM0",
+            "type": "subrecord",
+            "field": {
+                "name": "Linked To",
+                "type": "formId",
+                "signatures": [
+                    "SLGM"
+                ]
+            }
+        }
+    ]
 }

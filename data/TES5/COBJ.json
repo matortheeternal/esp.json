@@ -2,47 +2,45 @@
     "signature": "COBJ",
     "type": "record",
     "name": "Constructible Object",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "def": "COCT"
-            },
-            {
-                "def": "CNTOsNoReach"
-            },
-            {
-                "def": "CTDAs"
-            },
-            {
-                "signature": "CNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Created Object",
-                    "type": "formId"
-                }
-            },
-            {
-                "signature": "BNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Workbench Keyword",
-                    "type": "formId",
-                    "signatures": [
-                        "KYWD"
-                    ]
-                }
-            },
-            {
-                "signature": "NAM1",
-                "type": "subrecord",
-                "field": {
-                    "name": "Created Object Count",
-                    "type": "uint16"
-                }
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "def": "COCT"
+        },
+        {
+            "def": "CNTOsNoReach"
+        },
+        {
+            "def": "CTDAs"
+        },
+        {
+            "signature": "CNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Created Object",
+                "type": "formId"
             }
-        ]
-    }
+        },
+        {
+            "signature": "BNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Workbench Keyword",
+                "type": "formId",
+                "signatures": [
+                    "KYWD"
+                ]
+            }
+        },
+        {
+            "signature": "NAM1",
+            "type": "subrecord",
+            "field": {
+                "name": "Created Object Count",
+                "type": "uint16"
+            }
+        }
+    ]
 }

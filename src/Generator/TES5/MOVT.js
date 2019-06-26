@@ -17,14 +17,14 @@ module.exports = () => {
                 float('Forward Run'),
                 float('Back Walk'),
                 float('Back Run'),
-                req(float('Rotate in Place Walk')),
-                req(float('Rotate in Place Run')),
-                req(float('Rotate while Moving Run'))
+                req(req(float('Rotate in Place Walk'))),
+                req(req(float('Rotate in Place Run'))),
+                req(req(float('Rotate while Moving Run')))
             ]))),
             subrecord('INAM', struct('Anim Change Thresholds', [
-                req(float('Directional')),
+                req(req(float('Directional'))),
                 float('Movement Speed'),
-                req(float('Rotation Speed'))
+                req(req(float('Rotation Speed')))
             ]))
         ]
     })

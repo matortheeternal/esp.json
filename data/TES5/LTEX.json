@@ -2,93 +2,91 @@
     "signature": "LTEX",
     "type": "record",
     "name": "Landscape Texture",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "signature": "TNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Texture Set",
+                "type": "formId",
+                "signatures": [
+                    "TXST"
+                ]
             },
-            {
-                "signature": "TNAM",
+            "required": true
+        },
+        {
+            "signature": "MNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Material Type",
+                "type": "formId",
+                "signatures": [
+                    "MATT",
+                    "NULL"
+                ]
+            },
+            "required": true
+        },
+        {
+            "signature": "HNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Havok Data",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Friction",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "Restitution",
+                        "type": "uint8"
+                    }
+                ]
+            },
+            "required": true
+        },
+        {
+            "signature": "SNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Texture Specular Exponent",
+                "type": "uint8"
+            }
+        },
+        {
+            "name": "Grasses",
+            "type": "memberArray",
+            "member": {
+                "signature": "GNAM",
                 "type": "subrecord",
                 "field": {
-                    "name": "Texture Set",
+                    "name": "Grass",
                     "type": "formId",
                     "signatures": [
-                        "TXST"
+                        "GRAS"
                     ]
-                },
-                "required": true
-            },
-            {
-                "signature": "MNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Material Type",
-                    "type": "formId",
-                    "signatures": [
-                        "MATT",
-                        "NULL"
-                    ]
-                },
-                "required": true
-            },
-            {
-                "signature": "HNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Havok Data",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Friction",
-                            "type": "uint8"
-                        },
-                        {
-                            "name": "Restitution",
-                            "type": "uint8"
-                        }
-                    ]
-                },
-                "required": true
-            },
-            {
-                "signature": "SNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Texture Specular Exponent",
-                    "type": "uint8"
                 }
             },
-            {
-                "name": "Grasses",
-                "type": "memberArray",
-                "member": {
-                    "signature": "GNAM",
-                    "type": "subrecord",
-                    "field": {
-                        "name": "Grass",
-                        "type": "formId",
-                        "signatures": [
-                            "GRAS"
-                        ]
-                    }
-                },
-                "sorted": true
-            },
-            {
-                "signature": "INAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unused",
-                    "type": "uint32",
-                    "format": {
-                        "type": "flags",
-                        "flags": {
-                            "0": "Is Snow"
-                        }
+            "sorted": true
+        },
+        {
+            "signature": "INAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Unused",
+                "type": "uint32",
+                "format": {
+                    "type": "flags",
+                    "flags": {
+                        "0": "Is Snow"
                     }
                 }
             }
-        ]
-    }
+        }
+    ]
 }

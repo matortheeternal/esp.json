@@ -2,11 +2,9 @@
     "signature": "CLDC",
     "type": "record",
     "name": "CLDC",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
-            }
-        ]
-    }
+    "members": [
+        {
+            "def": "EDID"
+        }
+    ]
 }

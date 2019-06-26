@@ -105,12 +105,12 @@ module.exports = game => {
             }))),
             memberStruct('Object Bounds', [
                 req(subrecord('NAM0', struct('Min', [
-                    req(float('X')),
-                    req(float('Y'))
+                    req(req(float('X'))),
+                    req(req(float('Y')))
                 ]))),
                 req(subrecord('NAM9', struct('Max', [
-                    req(float('X')),
-                    req(float('Y'))
+                    req(req(float('X'))),
+                    req(req(float('Y')))
                 ])))
             ]),
             subrecord('ZNAM', ckFormId('Music', ['MUSC'])),

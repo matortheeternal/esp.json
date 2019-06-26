@@ -2,59 +2,57 @@
     "signature": "DLBR",
     "type": "record",
     "name": "Dialog Branch",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "signature": "QNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Quest",
+                "type": "formId",
+                "signatures": [
+                    "QUST"
+                ]
             },
-            {
-                "signature": "QNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Quest",
-                    "type": "formId",
-                    "signatures": [
-                        "QUST"
-                    ]
-                },
-                "required": true
-            },
-            {
-                "signature": "TNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "uint32"
-                }
-            },
-            {
-                "signature": "DNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Flags",
-                    "type": "uint32",
-                    "format": {
-                        "type": "flags",
-                        "flags": {
-                            "0": "Top-Level",
-                            "1": "Blocking",
-                            "2": "Exclusive"
-                        }
+            "required": true
+        },
+        {
+            "signature": "TNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Unknown",
+                "type": "uint32"
+            }
+        },
+        {
+            "signature": "DNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Flags",
+                "type": "uint32",
+                "format": {
+                    "type": "flags",
+                    "flags": {
+                        "0": "Top-Level",
+                        "1": "Blocking",
+                        "2": "Exclusive"
                     }
                 }
-            },
-            {
-                "signature": "SNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Starting Topic",
-                    "type": "formId",
-                    "signatures": [
-                        "DIAL"
-                    ]
-                },
-                "required": true
             }
-        ]
-    }
+        },
+        {
+            "signature": "SNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Starting Topic",
+                "type": "formId",
+                "signatures": [
+                    "DIAL"
+                ]
+            },
+            "required": true
+        }
+    ]
 }

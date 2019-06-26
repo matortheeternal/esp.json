@@ -20,7 +20,7 @@ module.exports = () => {
                 4: 'Ignored by Sandbox'
             }))),
             subrecord('IDLC', uint8('Animation Count')),
-            req(subrecord('IDLT', float('Idle Timer Setting'))),
+            req(subrecord('IDLT', req(float('Idle Timer Setting')))),
             subrecord('IDLA', array('Animations', 
                 ckFormId('Animation', ['IDLE'])
             )),

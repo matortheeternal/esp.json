@@ -2,168 +2,163 @@
     "signature": "SOPM",
     "type": "record",
     "name": "Sound Output Model",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "signature": "NAM1",
-                "type": "subrecord",
-                "field": {
-                    "name": "Data",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Flags",
-                            "type": "uint8",
-                            "format": {
-                                "type": "flags",
-                                "flags": {
-                                    "0": "Attenuates With Distance",
-                                    "1": "Allows Rumble"
-                                }
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "signature": "NAM1",
+            "type": "subrecord",
+            "field": {
+                "name": "Data",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Flags",
+                        "type": "uint8",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "Attenuates With Distance",
+                                "1": "Allows Rumble"
                             }
-                        },
-                        {
-                            "name": "Unknown",
-                            "type": "bytes",
-                            "size": 2
-                        },
-                        {
-                            "name": "Reverb Send %",
-                            "type": "uint8"
                         }
-                    ]
-                }
-            },
-            {
-                "signature": "FNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "MNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Type",
-                    "type": "uint32",
-                    "format": {
-                        "type": "enum",
-                        "options": {
-                            "0": "Uses HRTF",
-                            "1": "Defined Speaker Output"
-                        }
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 2
+                    },
+                    {
+                        "name": "Reverb Send %",
+                        "type": "uint8"
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "FNAM",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        },
+        {
+            "signature": "MNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Type",
+                "type": "uint32",
+                "format": {
+                    "type": "enum",
+                    "options": {
+                        "0": "Uses HRTF",
+                        "1": "Defined Speaker Output"
                     }
                 }
-            },
-            {
-                "signature": "CNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "SNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Unknown",
-                    "type": "bytes"
-                }
-            },
-            {
-                "signature": "ONAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Output Values",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Channels",
-                            "type": "array",
-                            "field": {
-                                "name": "",
-                                "type": "struct",
-                                "fields": [
-                                    {
-                                        "name": "L",
-                                        "type": "uint8"
-                                    },
-                                    {
-                                        "name": "R",
-                                        "type": "uint8"
-                                    },
-                                    {
-                                        "name": "C",
-                                        "type": "uint8"
-                                    },
-                                    {
-                                        "name": "LFE",
-                                        "type": "uint8"
-                                    },
-                                    {
-                                        "name": "RL",
-                                        "type": "uint8"
-                                    },
-                                    {
-                                        "name": "RR",
-                                        "type": "uint8"
-                                    },
-                                    {
-                                        "name": "BL",
-                                        "type": "uint8"
-                                    },
-                                    {
-                                        "name": "BR",
-                                        "type": "uint8"
-                                    }
-                                ]
-                            }
-                        }
-                    ]
-                }
-            },
-            {
-                "signature": "ANAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Attenuation Values",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Unknown",
-                            "type": "bytes",
-                            "size": 4
-                        },
-                        {
-                            "name": "Min Distance",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Max Distance",
-                            "type": "float"
-                        },
-                        {
-                            "name": "Curve",
-                            "type": "array",
-                            "field": {
-                                "name": "Value",
-                                "type": "uint8"
-                            },
-                            "size": 5
-                        },
-                        {
-                            "name": "Unknown",
-                            "type": "bytes"
-                        }
-                    ]
-                }
             }
-        ]
-    }
+        },
+        {
+            "signature": "CNAM",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        },
+        {
+            "signature": "SNAM",
+            "type": "subrecord",
+            "field": {
+                "type": "bytes"
+            }
+        },
+        {
+            "signature": "ONAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Output Values",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Channels",
+                        "type": "array",
+                        "field": {
+                            "name": "",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "L",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "R",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "C",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "LFE",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "RL",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "RR",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "BL",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "BR",
+                                    "type": "uint8"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "ANAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Attenuation Values",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Min Distance",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Max Distance",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Curve",
+                        "type": "array",
+                        "field": {
+                            "name": "Value",
+                            "type": "uint8"
+                        },
+                        "size": 5
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes"
+                    }
+                ]
+            }
+        }
+    ]
 }

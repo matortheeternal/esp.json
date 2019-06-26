@@ -2,104 +2,102 @@
     "signature": "TXST",
     "type": "record",
     "name": "Texture Set",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "def": "OBND",
-                "required": true
-            },
-            {
-                "name": "Textures (RGB/A)",
-                "type": "memberStruct",
-                "members": [
-                    {
-                        "signature": "TX00",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Difuse",
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "signature": "TX01",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Normal/Gloss",
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "signature": "TX02",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Environment Mask/Subsurface Tint",
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "signature": "TX03",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Glow/Detail Map",
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "signature": "TX04",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Height",
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "signature": "TX05",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Environment",
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "signature": "TX06",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Multilayer",
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "signature": "TX07",
-                        "type": "subrecord",
-                        "field": {
-                            "name": "Backlight Mask/Specular",
-                            "type": "string"
-                        }
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "def": "OBND",
+            "required": true
+        },
+        {
+            "name": "Textures (RGB/A)",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "TX00",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Difuse",
+                        "type": "string"
                     }
-                ]
-            },
-            {
-                "def": "DODT"
-            },
-            {
-                "signature": "DNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Flags",
-                    "type": "uint16",
-                    "format": {
-                        "type": "flags",
-                        "flags": {
-                            "0": "No Specular Map",
-                            "1": "Facegen Textures",
-                            "2": "Has Model Space Normal Map"
-                        }
+                },
+                {
+                    "signature": "TX01",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Normal/Gloss",
+                        "type": "string"
+                    }
+                },
+                {
+                    "signature": "TX02",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Environment Mask/Subsurface Tint",
+                        "type": "string"
+                    }
+                },
+                {
+                    "signature": "TX03",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Glow/Detail Map",
+                        "type": "string"
+                    }
+                },
+                {
+                    "signature": "TX04",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Height",
+                        "type": "string"
+                    }
+                },
+                {
+                    "signature": "TX05",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Environment",
+                        "type": "string"
+                    }
+                },
+                {
+                    "signature": "TX06",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Multilayer",
+                        "type": "string"
+                    }
+                },
+                {
+                    "signature": "TX07",
+                    "type": "subrecord",
+                    "field": {
+                        "name": "Backlight Mask/Specular",
+                        "type": "string"
+                    }
+                }
+            ]
+        },
+        {
+            "def": "DODT"
+        },
+        {
+            "signature": "DNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Flags",
+                "type": "uint16",
+                "format": {
+                    "type": "flags",
+                    "flags": {
+                        "0": "No Specular Map",
+                        "1": "Facegen Textures",
+                        "2": "Has Model Space Normal Map"
                     }
                 }
             }
-        ]
-    }
+        }
+    ]
 }

@@ -9,7 +9,7 @@ module.exports = () => {
         members: [
             def('EDID'),
             def('FULL'),
-            req(subrecord('PNAM', float('Priority'))),
+            req(subrecord('PNAM', req(float('Priority')))),
             subrecord('BNAM', ckFormId('Branch', ['DLBR', 'NULL'])),
             req(subrecord('QNAM', ckFormId('Quest', ['QUST', 'NULL']))),
             subrecord('DATA', struct('Data', [

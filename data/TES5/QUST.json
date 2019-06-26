@@ -2,202 +2,455 @@
     "signature": "QUST",
     "type": "record",
     "name": "Quest",
-    "def": {
-        "members": [
-            {
-                "def": "EDID"
-            },
-            {
-                "def": "VMADFragmentedQUST"
-            },
-            {
-                "def": "FULL"
-            },
-            {
-                "signature": "DNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "General",
-                    "type": "struct",
-                    "fields": [
-                        {
-                            "name": "Flags",
-                            "type": "uint16",
-                            "format": {
-                                "type": "flags",
-                                "flags": {
-                                    "0": "Start Game Enabled",
-                                    "1": "Unknown 2",
-                                    "2": "Unknown 3",
-                                    "3": "Allow repeated stages",
-                                    "4": "Unknown 5",
-                                    "5": "Unknown 6",
-                                    "6": "Unknown 7",
-                                    "7": "Unknown 8",
-                                    "8": "Run Once",
-                                    "9": "Exclude from dialogue export",
-                                    "10": "Warn on alias fill failure",
-                                    "11": "Unknown 12",
-                                    "12": "Unknown 13"
-                                }
-                            }
-                        },
-                        {
-                            "name": "Priority",
-                            "type": "uint8"
-                        },
-                        {
-                            "name": "Form Version",
-                            "type": "uint8"
-                        },
-                        {
-                            "name": "Unknown",
-                            "type": "bytes",
-                            "size": 4
-                        },
-                        {
-                            "name": "Type",
-                            "type": "uint32",
-                            "format": {
-                                "def": "QuestTypeEnum"
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "def": "VMADFragmentedQUST"
+        },
+        {
+            "def": "FULL"
+        },
+        {
+            "signature": "DNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "General",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Flags",
+                        "type": "uint16",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "Start Game Enabled",
+                                "1": "Unknown 2",
+                                "2": "Unknown 3",
+                                "3": "Allow repeated stages",
+                                "4": "Unknown 5",
+                                "5": "Unknown 6",
+                                "6": "Unknown 7",
+                                "7": "Unknown 8",
+                                "8": "Run Once",
+                                "9": "Exclude from dialogue export",
+                                "10": "Warn on alias fill failure",
+                                "11": "Unknown 12",
+                                "12": "Unknown 13"
                             }
                         }
+                    },
+                    {
+                        "name": "Priority",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "Form Version",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Type",
+                        "type": "uint32",
+                        "format": {
+                            "def": "QuestTypeEnum"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "ENAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Event",
+                "type": "string",
+                "size": 4
+            }
+        },
+        {
+            "name": "Text Display Globals",
+            "type": "memberArray",
+            "member": {
+                "signature": "QTGL",
+                "type": "subrecord",
+                "field": {
+                    "name": "Global",
+                    "type": "formId",
+                    "signatures": [
+                        "GLOB"
                     ]
                 }
-            },
-            {
-                "signature": "ENAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Event",
-                    "type": "string",
-                    "size": 4
+            }
+        },
+        {
+            "signature": "FLTR",
+            "type": "subrecord",
+            "field": {
+                "name": "Object Window Filter",
+                "type": "string"
+            }
+        },
+        {
+            "name": "Quest Dialogue Conditions",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "def": "CTDAs"
                 }
-            },
-            {
-                "name": "Text Display Globals",
-                "type": "memberArray",
-                "member": {
-                    "signature": "QTGL",
-                    "type": "subrecord",
-                    "field": {
-                        "name": "Global",
-                        "type": "formId",
-                        "signatures": [
-                            "GLOB"
-                        ]
-                    }
-                }
-            },
-            {
-                "signature": "FLTR",
-                "type": "subrecord",
-                "field": {
-                    "name": "Object Window Filter",
-                    "type": "string"
-                }
-            },
-            {
-                "name": "Quest Dialogue Conditions",
+            ],
+            "required": true
+        },
+        {
+            "signature": "NEXT",
+            "type": "subrecord",
+            "field": {
+                "name": "Marker",
+                "type": "empty"
+            }
+        },
+        {
+            "def": "CTDAs"
+        },
+        {
+            "name": "Stages",
+            "type": "memberArray",
+            "member": {
+                "name": "Stage",
                 "type": "memberStruct",
                 "members": [
                     {
-                        "def": "CTDAs"
-                    }
-                ],
-                "required": true
-            },
-            {
-                "signature": "NEXT",
-                "type": "subrecord",
-                "field": {
-                    "name": "Marker",
-                    "type": "empty"
-                }
-            },
-            {
-                "def": "CTDAs"
-            },
-            {
-                "name": "Stages",
-                "type": "memberArray",
-                "member": {
-                    "name": "Stage",
-                    "type": "memberStruct",
-                    "members": [
-                        {
-                            "signature": "INDX",
-                            "type": "subrecord",
-                            "field": {
-                                "name": "Stage Index",
-                                "type": "struct",
-                                "fields": [
-                                    {
-                                        "name": "Stage Index",
-                                        "type": "uint16"
-                                    },
-                                    {
-                                        "name": "Flags",
+                        "signature": "INDX",
+                        "type": "subrecord",
+                        "field": {
+                            "name": "Stage Index",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "Stage Index",
+                                    "type": "uint16"
+                                },
+                                {
+                                    "name": "Flags",
+                                    "type": "uint8",
+                                    "format": {
+                                        "type": "flags",
+                                        "flags": {
+                                            "0": "Unknown 1",
+                                            "1": "Start Up Stage",
+                                            "2": "Shut Down Stage",
+                                            "3": "Keep Instance Data From Here On"
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "Unknown",
+                                    "type": "uint8"
+                                }
+                            ],
+                            "sortKey": [
+                                0
+                            ]
+                        }
+                    },
+                    {
+                        "name": "Log Entries",
+                        "type": "memberArray",
+                        "member": {
+                            "name": "Log Entry",
+                            "type": "memberStruct",
+                            "members": [
+                                {
+                                    "signature": "QSDT",
+                                    "type": "subrecord",
+                                    "field": {
+                                        "name": "Stage Flags",
                                         "type": "uint8",
                                         "format": {
                                             "type": "flags",
                                             "flags": {
-                                                "0": "Unknown 1",
-                                                "1": "Start Up Stage",
-                                                "2": "Shut Down Stage",
-                                                "3": "Keep Instance Data From Here On"
+                                                "0": "Complete Quest",
+                                                "1": "Fail Quest"
                                             }
                                         }
-                                    },
-                                    {
-                                        "name": "Unknown",
-                                        "type": "uint8"
                                     }
-                                ],
-                                "sortKey": [
-                                    0
-                                ]
+                                },
+                                {
+                                    "def": "CTDAs"
+                                },
+                                {
+                                    "signature": "CNAM",
+                                    "type": "subrecord",
+                                    "field": {
+                                        "name": "Log Entry",
+                                        "type": "string",
+                                        "localized": true
+                                    }
+                                },
+                                {
+                                    "signature": "NAM0",
+                                    "type": "subrecord",
+                                    "field": {
+                                        "name": "Next Quest",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "QUST"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "signature": "SCHR",
+                                    "type": "subrecord",
+                                    "field": {
+                                        "name": "Unused",
+                                        "type": "bytes"
+                                    }
+                                },
+                                {
+                                    "signature": "SCTX",
+                                    "type": "subrecord",
+                                    "field": {
+                                        "name": "Unused",
+                                        "type": "bytes"
+                                    }
+                                },
+                                {
+                                    "signature": "QNAM",
+                                    "type": "subrecord",
+                                    "field": {
+                                        "name": "Unused",
+                                        "type": "bytes"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            },
+            "sorted": true
+        },
+        {
+            "name": "Objectives",
+            "type": "memberArray",
+            "member": {
+                "name": "Objective",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "QOBJ",
+                        "type": "subrecord",
+                        "field": {
+                            "name": "Objective Index",
+                            "type": "uint16"
+                        }
+                    },
+                    {
+                        "signature": "FNAM",
+                        "type": "subrecord",
+                        "field": {
+                            "name": "Flags",
+                            "type": "uint32",
+                            "format": {
+                                "type": "flags",
+                                "flags": {
+                                    "0": "ORed With Previous"
+                                }
                             }
+                        }
+                    },
+                    {
+                        "signature": "NNAM",
+                        "type": "subrecord",
+                        "field": {
+                            "name": "Display Text",
+                            "type": "string",
+                            "localized": true
                         },
-                        {
-                            "name": "Log Entries",
-                            "type": "memberArray",
-                            "member": {
-                                "name": "Log Entry",
+                        "required": true
+                    },
+                    {
+                        "name": "Targets",
+                        "type": "memberArray",
+                        "member": {
+                            "name": "Target",
+                            "type": "memberStruct",
+                            "members": [
+                                {
+                                    "signature": "QSTA",
+                                    "type": "subrecord",
+                                    "field": {
+                                        "name": "Target",
+                                        "type": "struct",
+                                        "fields": [
+                                            {
+                                                "name": "Alias",
+                                                "type": "int32",
+                                                "format": {
+                                                    "def": "QuestAliasToStr"
+                                                }
+                                            },
+                                            {
+                                                "name": "Flags",
+                                                "type": "uint8",
+                                                "format": {
+                                                    "type": "flags",
+                                                    "flags": {
+                                                        "0": "Compass Marker Ignores Locks"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "name": "Unused",
+                                                "type": "bytes",
+                                                "size": 3
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "def": "CTDAs"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "ANAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Next Alias ID",
+                "type": "uint32"
+            }
+        },
+        {
+            "name": "Aliases",
+            "type": "memberArray",
+            "member": {
+                "name": "Alias",
+                "type": "memberUnion",
+                "members": [
+                    {
+                        "name": "Alias",
+                        "type": "memberStruct",
+                        "members": [
+                            {
+                                "signature": "ALST",
+                                "type": "subrecord",
+                                "field": {
+                                    "name": "Reference Alias ID",
+                                    "type": "uint32"
+                                }
+                            },
+                            {
+                                "signature": "ALID",
+                                "type": "subrecord",
+                                "field": {
+                                    "name": "Alias Name",
+                                    "type": "string"
+                                }
+                            },
+                            {
+                                "def": "QUSTAliasFlags"
+                            },
+                            {
+                                "signature": "ALFI",
+                                "type": "subrecord",
+                                "field": {
+                                    "name": "Force Into Alias When Filled",
+                                    "type": "int32",
+                                    "format": {
+                                        "def": "QuestAliasToStr"
+                                    }
+                                }
+                            },
+                            {
+                                "signature": "ALFL",
+                                "type": "subrecord",
+                                "field": {
+                                    "name": "Specific Location",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "LCTN"
+                                    ]
+                                }
+                            },
+                            {
+                                "signature": "ALFR",
+                                "type": "subrecord",
+                                "field": {
+                                    "name": "Forced Reference",
+                                    "type": "formId"
+                                }
+                            },
+                            {
+                                "signature": "ALUA",
+                                "type": "subrecord",
+                                "field": {
+                                    "name": "Unique Actor",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "NPC_"
+                                    ]
+                                }
+                            },
+                            {
+                                "name": "Location Alias Reference",
                                 "type": "memberStruct",
                                 "members": [
                                     {
-                                        "signature": "QSDT",
+                                        "signature": "ALFA",
                                         "type": "subrecord",
                                         "field": {
-                                            "name": "Stage Flags",
-                                            "type": "uint8",
+                                            "name": "Alias",
+                                            "type": "int32",
                                             "format": {
-                                                "type": "flags",
-                                                "flags": {
-                                                    "0": "Complete Quest",
-                                                    "1": "Fail Quest"
-                                                }
+                                                "def": "QuestAliasToStr"
                                             }
                                         }
                                     },
                                     {
-                                        "def": "CTDAs"
-                                    },
-                                    {
-                                        "signature": "CNAM",
+                                        "signature": "KNAM",
                                         "type": "subrecord",
                                         "field": {
-                                            "name": "Log Entry",
-                                            "type": "string",
-                                            "localized": true
+                                            "name": "Keyword",
+                                            "type": "formId",
+                                            "signatures": [
+                                                "KYWD"
+                                            ]
                                         }
                                     },
                                     {
-                                        "signature": "NAM0",
+                                        "signature": "ALRT",
                                         "type": "subrecord",
                                         "field": {
-                                            "name": "Next Quest",
+                                            "name": "Ref Type",
+                                            "type": "formId",
+                                            "signatures": [
+                                                "LCRT"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "External Alias Reference",
+                                "type": "memberStruct",
+                                "members": [
+                                    {
+                                        "signature": "ALEQ",
+                                        "type": "subrecord",
+                                        "field": {
+                                            "name": "Quest",
                                             "type": "formId",
                                             "signatures": [
                                                 "QUST"
@@ -205,991 +458,736 @@
                                         }
                                     },
                                     {
-                                        "signature": "SCHR",
+                                        "signature": "ALEA",
                                         "type": "subrecord",
                                         "field": {
-                                            "name": "Unused",
-                                            "type": "bytes"
-                                        }
-                                    },
-                                    {
-                                        "signature": "SCTX",
-                                        "type": "subrecord",
-                                        "field": {
-                                            "name": "Unused",
-                                            "type": "bytes"
-                                        }
-                                    },
-                                    {
-                                        "signature": "QNAM",
-                                        "type": "subrecord",
-                                        "field": {
-                                            "name": "Unused",
-                                            "type": "bytes"
+                                            "name": "Alias",
+                                            "type": "int32",
+                                            "format": {
+                                                "def": "QuestExternalAliasToStr"
+                                            }
                                         }
                                     }
                                 ]
-                            }
-                        }
-                    ],
-                    "sortKey": [
-                        0
-                    ]
-                },
-                "sorted": true
-            },
-            {
-                "name": "Objectives",
-                "type": "memberArray",
-                "member": {
-                    "name": "Objective",
-                    "type": "memberStruct",
-                    "members": [
-                        {
-                            "signature": "QOBJ",
-                            "type": "subrecord",
-                            "field": {
-                                "name": "Objective Index",
-                                "type": "uint16"
-                            }
-                        },
-                        {
-                            "signature": "FNAM",
-                            "type": "subrecord",
-                            "field": {
-                                "name": "Flags",
-                                "type": "uint32",
-                                "format": {
-                                    "type": "flags",
-                                    "flags": {
-                                        "0": "ORed With Previous"
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            "signature": "NNAM",
-                            "type": "subrecord",
-                            "field": {
-                                "name": "Display Text",
-                                "type": "string",
-                                "localized": true
                             },
-                            "required": true
-                        },
-                        {
-                            "name": "Targets",
-                            "type": "memberArray",
-                            "member": {
-                                "name": "Target",
+                            {
+                                "name": "Create Reference to Object",
                                 "type": "memberStruct",
                                 "members": [
                                     {
-                                        "signature": "QSTA",
+                                        "signature": "ALCO",
                                         "type": "subrecord",
                                         "field": {
-                                            "name": "Target",
+                                            "name": "Object",
+                                            "type": "formId"
+                                        }
+                                    },
+                                    {
+                                        "signature": "ALCA",
+                                        "type": "subrecord",
+                                        "field": {
+                                            "name": "Alias",
                                             "type": "struct",
                                             "fields": [
                                                 {
                                                     "name": "Alias",
-                                                    "type": "int32",
+                                                    "type": "int16",
                                                     "format": {
                                                         "def": "QuestAliasToStr"
                                                     }
                                                 },
                                                 {
-                                                    "name": "Flags",
-                                                    "type": "uint8",
+                                                    "name": "Create",
+                                                    "type": "uint16",
                                                     "format": {
-                                                        "type": "flags",
-                                                        "flags": {
-                                                            "0": "Compass Marker Ignores Locks"
+                                                        "type": "enum",
+                                                        "options": {
+                                                            "0": "At",
+                                                            "32768": "In"
                                                         }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "signature": "ALCL",
+                                        "type": "subrecord",
+                                        "field": {
+                                            "name": "Level",
+                                            "type": "uint32",
+                                            "format": {
+                                                "type": "enum",
+                                                "options": {
+                                                    "0": "Easy",
+                                                    "1": "Medium",
+                                                    "2": "Hard",
+                                                    "3": "Very Hard",
+                                                    "4": "None"
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Find Matching Reference Near Alias",
+                                "type": "memberStruct",
+                                "members": [
+                                    {
+                                        "signature": "ALNA",
+                                        "type": "subrecord",
+                                        "field": {
+                                            "name": "Alias",
+                                            "type": "int32",
+                                            "format": {
+                                                "def": "QuestAliasToStr"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "signature": "ALNT",
+                                        "type": "subrecord",
+                                        "field": {
+                                            "name": "Type",
+                                            "type": "uint32",
+                                            "format": {
+                                                "type": "enum",
+                                                "options": {
+                                                    "0": "Linked Ref Child"
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Find Matching Reference From Event",
+                                "type": "memberStruct",
+                                "members": [
+                                    {
+                                        "signature": "ALFE",
+                                        "type": "subrecord",
+                                        "field": {
+                                            "name": "From Event",
+                                            "type": "string",
+                                            "size": 4
+                                        }
+                                    },
+                                    {
+                                        "signature": "ALFD",
+                                        "type": "subrecord",
+                                        "field": {
+                                            "name": "Event Data",
+                                            "type": "bytes"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "def": "CTDAs"
+                            },
+                            {
+                                "def": "KSIZ"
+                            },
+                            {
+                                "def": "KWDAs"
+                            },
+                            {
+                                "def": "COCT"
+                            },
+                            {
+                                "def": "CNTOs"
+                            },
+                            {
+                                "signature": "SPOR",
+                                "type": "subrecord",
+                                "field": {
+                                    "name": "Spectator override package list",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "FLST"
+                                    ]
+                                },
+                                "required": true
+                            },
+                            {
+                                "signature": "OCOR",
+                                "type": "subrecord",
+                                "field": {
+                                    "name": "Observe dead body override package list",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "FLST"
+                                    ]
+                                },
+                                "required": true
+                            },
+                            {
+                                "signature": "GWOR",
+                                "type": "subrecord",
+                                "field": {
+                                    "name": "Guard warn override package list",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "FLST"
+                                    ]
+                                },
+                                "required": true
+                            },
+                            {
+                                "signature": "ECOR",
+                                "type": "subrecord",
+                                "field": {
+                                    "name": "Combat override package list",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "FLST"
+                                    ]
+                                },
+                                "required": true
+                            },
+                            {
+                                "signature": "ALDN",
+                                "type": "subrecord",
+                                "field": {
+                                    "name": "Display Name",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "MESG"
+                                    ]
+                                }
+                            },
+                            {
+                                "name": "Alias Spells",
+                                "type": "memberArray",
+                                "member": {
+                                    "signature": "ALSP",
+                                    "type": "subrecord",
+                                    "field": {
+                                        "name": "Spell",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "SPEL"
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Alias Factions",
+                                "type": "memberArray",
+                                "member": {
+                                    "signature": "ALFC",
+                                    "type": "subrecord",
+                                    "field": {
+                                        "name": "Faction",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "FACT"
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Alias Package Data",
+                                "type": "memberArray",
+                                "member": {
+                                    "signature": "ALPC",
+                                    "type": "subrecord",
+                                    "field": {
+                                        "name": "Package",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "PACK"
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "signature": "VTCK",
+                                "type": "subrecord",
+                                "field": {
+                                    "name": "Voice Types",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "NPC_",
+                                        "FLST",
+                                        "NULL"
+                                    ]
+                                }
+                            },
+                            {
+                                "signature": "ALED",
+                                "type": "subrecord",
+                                "field": {
+                                    "name": "Alias End",
+                                    "type": "empty"
+                                },
+                                "required": true
+                            }
+                        ],
+                        "sortKey": [
+                            0
+                        ],
+                        "required": true
+                    },
+                    {
+                        "name": "Alias",
+                        "type": "memberStruct",
+                        "members": [
+                            {
+                                "signature": "ALLS",
+                                "type": "subrecord",
+                                "field": {
+                                    "name": "Location Alias ID",
+                                    "type": "uint32"
+                                }
+                            },
+                            {
+                                "signature": "ALID",
+                                "type": "subrecord",
+                                "field": {
+                                    "name": "Alias Name",
+                                    "type": "string"
+                                }
+                            },
+                            {
+                                "def": "QUSTAliasFlags"
+                            },
+                            {
+                                "signature": "ALFI",
+                                "type": "subrecord",
+                                "field": {
+                                    "name": "Force Into Alias When Filled",
+                                    "type": "int32",
+                                    "format": {
+                                        "def": "QuestAliasToStr"
+                                    }
+                                }
+                            },
+                            {
+                                "signature": "ALFL",
+                                "type": "subrecord",
+                                "field": {
+                                    "name": "Specific Location",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "LCTN"
+                                    ]
+                                }
+                            },
+                            {
+                                "signature": "ALFR",
+                                "type": "subrecord",
+                                "field": {
+                                    "name": "Forced Reference",
+                                    "type": "formId"
+                                }
+                            },
+                            {
+                                "signature": "ALUA",
+                                "type": "subrecord",
+                                "field": {
+                                    "name": "Unique Actor",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "NPC_"
+                                    ]
+                                }
+                            },
+                            {
+                                "name": "Location Alias Reference",
+                                "type": "memberStruct",
+                                "members": [
+                                    {
+                                        "signature": "ALFA",
+                                        "type": "subrecord",
+                                        "field": {
+                                            "name": "Alias",
+                                            "type": "int32",
+                                            "format": {
+                                                "def": "QuestAliasToStr"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "signature": "KNAM",
+                                        "type": "subrecord",
+                                        "field": {
+                                            "name": "Keyword",
+                                            "type": "formId",
+                                            "signatures": [
+                                                "KYWD"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "signature": "ALRT",
+                                        "type": "subrecord",
+                                        "field": {
+                                            "name": "Ref Type",
+                                            "type": "formId",
+                                            "signatures": [
+                                                "LCRT"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "External Alias Reference",
+                                "type": "memberStruct",
+                                "members": [
+                                    {
+                                        "signature": "ALEQ",
+                                        "type": "subrecord",
+                                        "field": {
+                                            "name": "Quest",
+                                            "type": "formId",
+                                            "signatures": [
+                                                "QUST"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "signature": "ALEA",
+                                        "type": "subrecord",
+                                        "field": {
+                                            "name": "Alias",
+                                            "type": "int32",
+                                            "format": {
+                                                "def": "QuestExternalAliasToStr"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Create Reference to Object",
+                                "type": "memberStruct",
+                                "members": [
+                                    {
+                                        "signature": "ALCO",
+                                        "type": "subrecord",
+                                        "field": {
+                                            "name": "Object",
+                                            "type": "formId"
+                                        }
+                                    },
+                                    {
+                                        "signature": "ALCA",
+                                        "type": "subrecord",
+                                        "field": {
+                                            "name": "Alias",
+                                            "type": "struct",
+                                            "fields": [
+                                                {
+                                                    "name": "Alias",
+                                                    "type": "int16",
+                                                    "format": {
+                                                        "def": "QuestAliasToStr"
                                                     }
                                                 },
                                                 {
-                                                    "name": "Unused",
-                                                    "type": "bytes",
-                                                    "size": 3
+                                                    "name": "Create",
+                                                    "type": "uint16",
+                                                    "format": {
+                                                        "type": "enum",
+                                                        "options": {
+                                                            "0": "At",
+                                                            "32768": "In"
+                                                        }
+                                                    }
                                                 }
                                             ]
                                         }
                                     },
                                     {
-                                        "def": "CTDAs"
+                                        "signature": "ALCL",
+                                        "type": "subrecord",
+                                        "field": {
+                                            "name": "Level",
+                                            "type": "uint32",
+                                            "format": {
+                                                "type": "enum",
+                                                "options": {
+                                                    "0": "Easy",
+                                                    "1": "Medium",
+                                                    "2": "Hard",
+                                                    "3": "Very Hard",
+                                                    "4": "None"
+                                                }
+                                            }
+                                        }
                                     }
                                 ]
-                            }
-                        }
-                    ]
-                }
-            },
-            {
-                "signature": "ANAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Next Alias ID",
-                    "type": "uint32"
-                }
-            },
-            {
-                "name": "Aliases",
-                "type": "memberArray",
-                "member": {
-                    "name": "Alias",
-                    "type": "memberUnion",
-                    "members": [
-                        {
-                            "name": "Alias",
-                            "type": "memberStruct",
-                            "members": [
-                                {
-                                    "signature": "ALST",
-                                    "type": "subrecord",
-                                    "field": {
-                                        "name": "Reference Alias ID",
-                                        "type": "uint32"
-                                    }
-                                },
-                                {
-                                    "signature": "ALID",
-                                    "type": "subrecord",
-                                    "field": {
-                                        "name": "Alias Name",
-                                        "type": "string"
-                                    }
-                                },
-                                {
-                                    "def": "QUSTAliasFlags"
-                                },
-                                {
-                                    "signature": "ALFI",
-                                    "type": "subrecord",
-                                    "field": {
-                                        "name": "Force Into Alias When Filled",
-                                        "type": "int32",
-                                        "format": {
-                                            "def": "QuestAliasToStr"
-                                        }
-                                    }
-                                },
-                                {
-                                    "signature": "ALFL",
-                                    "type": "subrecord",
-                                    "field": {
-                                        "name": "Specific Location",
-                                        "type": "formId",
-                                        "signatures": [
-                                            "LCTN"
-                                        ]
-                                    }
-                                },
-                                {
-                                    "signature": "ALFR",
-                                    "type": "subrecord",
-                                    "field": {
-                                        "name": "Forced Reference",
-                                        "type": "formId"
-                                    }
-                                },
-                                {
-                                    "signature": "ALUA",
-                                    "type": "subrecord",
-                                    "field": {
-                                        "name": "Unique Actor",
-                                        "type": "formId",
-                                        "signatures": [
-                                            "NPC_"
-                                        ]
-                                    }
-                                },
-                                {
-                                    "name": "Location Alias Reference",
-                                    "type": "memberStruct",
-                                    "members": [
-                                        {
-                                            "signature": "ALFA",
-                                            "type": "subrecord",
-                                            "field": {
-                                                "name": "Alias",
-                                                "type": "int32",
-                                                "format": {
-                                                    "def": "QuestAliasToStr"
-                                                }
-                                            }
-                                        },
-                                        {
-                                            "signature": "KNAM",
-                                            "type": "subrecord",
-                                            "field": {
-                                                "name": "Keyword",
-                                                "type": "formId",
-                                                "signatures": [
-                                                    "KYWD"
-                                                ]
-                                            }
-                                        },
-                                        {
-                                            "signature": "ALRT",
-                                            "type": "subrecord",
-                                            "field": {
-                                                "name": "Ref Type",
-                                                "type": "formId",
-                                                "signatures": [
-                                                    "LCRT"
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "name": "External Alias Reference",
-                                    "type": "memberStruct",
-                                    "members": [
-                                        {
-                                            "signature": "ALEQ",
-                                            "type": "subrecord",
-                                            "field": {
-                                                "name": "Quest",
-                                                "type": "formId",
-                                                "signatures": [
-                                                    "QUST"
-                                                ]
-                                            }
-                                        },
-                                        {
-                                            "signature": "ALEA",
-                                            "type": "subrecord",
-                                            "field": {
-                                                "name": "Alias",
-                                                "type": "int32",
-                                                "format": {
-                                                    "def": "QuestExternalAliasToStr"
-                                                }
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "name": "Create Reference to Object",
-                                    "type": "memberStruct",
-                                    "members": [
-                                        {
-                                            "signature": "ALCO",
-                                            "type": "subrecord",
-                                            "field": {
-                                                "name": "Object",
-                                                "type": "formId"
-                                            }
-                                        },
-                                        {
-                                            "signature": "ALCA",
-                                            "type": "subrecord",
-                                            "field": {
-                                                "name": "Alias",
-                                                "type": "struct",
-                                                "fields": [
-                                                    {
-                                                        "name": "Alias",
-                                                        "type": "int16",
-                                                        "format": {
-                                                            "def": "QuestAliasToStr"
-                                                        }
-                                                    },
-                                                    {
-                                                        "name": "Create",
-                                                        "type": "uint16",
-                                                        "format": {
-                                                            "type": "enum",
-                                                            "options": {
-                                                                "0": "At",
-                                                                "32768": "In"
-                                                            }
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        },
-                                        {
-                                            "signature": "ALCL",
-                                            "type": "subrecord",
-                                            "field": {
-                                                "name": "Level",
-                                                "type": "uint32",
-                                                "format": {
-                                                    "type": "enum",
-                                                    "options": {
-                                                        "0": "Easy",
-                                                        "1": "Medium",
-                                                        "2": "Hard",
-                                                        "3": "Very Hard",
-                                                        "4": "None"
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "name": "Find Matching Reference Near Alias",
-                                    "type": "memberStruct",
-                                    "members": [
-                                        {
-                                            "signature": "ALNA",
-                                            "type": "subrecord",
-                                            "field": {
-                                                "name": "Alias",
-                                                "type": "int32",
-                                                "format": {
-                                                    "def": "QuestAliasToStr"
-                                                }
-                                            }
-                                        },
-                                        {
-                                            "signature": "ALNT",
-                                            "type": "subrecord",
-                                            "field": {
-                                                "name": "Type",
-                                                "type": "uint32",
-                                                "format": {
-                                                    "type": "enum",
-                                                    "options": {
-                                                        "0": "Linked Ref Child"
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "name": "Find Matching Reference From Event",
-                                    "type": "memberStruct",
-                                    "members": [
-                                        {
-                                            "signature": "ALFE",
-                                            "type": "subrecord",
-                                            "field": {
-                                                "name": "From Event",
-                                                "type": "string",
-                                                "size": 4
-                                            }
-                                        },
-                                        {
-                                            "signature": "ALFD",
-                                            "type": "subrecord",
-                                            "field": {
-                                                "name": "Event Data",
-                                                "type": "bytes"
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "def": "CTDAs"
-                                },
-                                {
-                                    "def": "KSIZ"
-                                },
-                                {
-                                    "def": "KWDAs"
-                                },
-                                {
-                                    "def": "COCT"
-                                },
-                                {
-                                    "def": "CNTOs"
-                                },
-                                {
-                                    "signature": "SPOR",
-                                    "type": "subrecord",
-                                    "field": {
-                                        "name": "Spectator override package list",
-                                        "type": "formId",
-                                        "signatures": [
-                                            "FLST"
-                                        ]
-                                    },
-                                    "required": true
-                                },
-                                {
-                                    "signature": "OCOR",
-                                    "type": "subrecord",
-                                    "field": {
-                                        "name": "Observe dead body override package list",
-                                        "type": "formId",
-                                        "signatures": [
-                                            "FLST"
-                                        ]
-                                    },
-                                    "required": true
-                                },
-                                {
-                                    "signature": "GWOR",
-                                    "type": "subrecord",
-                                    "field": {
-                                        "name": "Guard warn override package list",
-                                        "type": "formId",
-                                        "signatures": [
-                                            "FLST"
-                                        ]
-                                    },
-                                    "required": true
-                                },
-                                {
-                                    "signature": "ECOR",
-                                    "type": "subrecord",
-                                    "field": {
-                                        "name": "Combat override package list",
-                                        "type": "formId",
-                                        "signatures": [
-                                            "FLST"
-                                        ]
-                                    },
-                                    "required": true
-                                },
-                                {
-                                    "signature": "ALDN",
-                                    "type": "subrecord",
-                                    "field": {
-                                        "name": "Display Name",
-                                        "type": "formId",
-                                        "signatures": [
-                                            "MESG"
-                                        ]
-                                    }
-                                },
-                                {
-                                    "name": "Alias Spells",
-                                    "type": "memberArray",
-                                    "member": {
-                                        "signature": "ALSP",
-                                        "type": "subrecord",
-                                        "field": {
-                                            "name": "Spell",
-                                            "type": "formId",
-                                            "signatures": [
-                                                "SPEL"
-                                            ]
-                                        }
-                                    }
-                                },
-                                {
-                                    "name": "Alias Factions",
-                                    "type": "memberArray",
-                                    "member": {
-                                        "signature": "ALFC",
-                                        "type": "subrecord",
-                                        "field": {
-                                            "name": "Faction",
-                                            "type": "formId",
-                                            "signatures": [
-                                                "FACT"
-                                            ]
-                                        }
-                                    }
-                                },
-                                {
-                                    "name": "Alias Package Data",
-                                    "type": "memberArray",
-                                    "member": {
-                                        "signature": "ALPC",
-                                        "type": "subrecord",
-                                        "field": {
-                                            "name": "Package",
-                                            "type": "formId",
-                                            "signatures": [
-                                                "PACK"
-                                            ]
-                                        }
-                                    }
-                                },
-                                {
-                                    "signature": "VTCK",
-                                    "type": "subrecord",
-                                    "field": {
-                                        "name": "Voice Types",
-                                        "type": "formId",
-                                        "signatures": [
-                                            "NPC_",
-                                            "FLST",
-                                            "NULL"
-                                        ]
-                                    }
-                                },
-                                {
-                                    "signature": "ALED",
-                                    "type": "subrecord",
-                                    "field": {
-                                        "name": "Alias End",
-                                        "type": "empty"
-                                    },
-                                    "required": true
-                                }
-                            ],
-                            "sortKey": [
-                                0
-                            ],
-                            "required": true
-                        },
-                        {
-                            "name": "Alias",
-                            "type": "memberStruct",
-                            "members": [
-                                {
-                                    "signature": "ALLS",
-                                    "type": "subrecord",
-                                    "field": {
-                                        "name": "Location Alias ID",
-                                        "type": "uint32"
-                                    }
-                                },
-                                {
-                                    "signature": "ALID",
-                                    "type": "subrecord",
-                                    "field": {
-                                        "name": "Alias Name",
-                                        "type": "string"
-                                    }
-                                },
-                                {
-                                    "def": "QUSTAliasFlags"
-                                },
-                                {
-                                    "signature": "ALFI",
-                                    "type": "subrecord",
-                                    "field": {
-                                        "name": "Force Into Alias When Filled",
-                                        "type": "int32",
-                                        "format": {
-                                            "def": "QuestAliasToStr"
-                                        }
-                                    }
-                                },
-                                {
-                                    "signature": "ALFL",
-                                    "type": "subrecord",
-                                    "field": {
-                                        "name": "Specific Location",
-                                        "type": "formId",
-                                        "signatures": [
-                                            "LCTN"
-                                        ]
-                                    }
-                                },
-                                {
-                                    "signature": "ALFR",
-                                    "type": "subrecord",
-                                    "field": {
-                                        "name": "Forced Reference",
-                                        "type": "formId"
-                                    }
-                                },
-                                {
-                                    "signature": "ALUA",
-                                    "type": "subrecord",
-                                    "field": {
-                                        "name": "Unique Actor",
-                                        "type": "formId",
-                                        "signatures": [
-                                            "NPC_"
-                                        ]
-                                    }
-                                },
-                                {
-                                    "name": "Location Alias Reference",
-                                    "type": "memberStruct",
-                                    "members": [
-                                        {
-                                            "signature": "ALFA",
-                                            "type": "subrecord",
-                                            "field": {
-                                                "name": "Alias",
-                                                "type": "int32",
-                                                "format": {
-                                                    "def": "QuestAliasToStr"
-                                                }
-                                            }
-                                        },
-                                        {
-                                            "signature": "KNAM",
-                                            "type": "subrecord",
-                                            "field": {
-                                                "name": "Keyword",
-                                                "type": "formId",
-                                                "signatures": [
-                                                    "KYWD"
-                                                ]
-                                            }
-                                        },
-                                        {
-                                            "signature": "ALRT",
-                                            "type": "subrecord",
-                                            "field": {
-                                                "name": "Ref Type",
-                                                "type": "formId",
-                                                "signatures": [
-                                                    "LCRT"
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "name": "External Alias Reference",
-                                    "type": "memberStruct",
-                                    "members": [
-                                        {
-                                            "signature": "ALEQ",
-                                            "type": "subrecord",
-                                            "field": {
-                                                "name": "Quest",
-                                                "type": "formId",
-                                                "signatures": [
-                                                    "QUST"
-                                                ]
-                                            }
-                                        },
-                                        {
-                                            "signature": "ALEA",
-                                            "type": "subrecord",
-                                            "field": {
-                                                "name": "Alias",
-                                                "type": "int32",
-                                                "format": {
-                                                    "def": "QuestExternalAliasToStr"
-                                                }
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "name": "Create Reference to Object",
-                                    "type": "memberStruct",
-                                    "members": [
-                                        {
-                                            "signature": "ALCO",
-                                            "type": "subrecord",
-                                            "field": {
-                                                "name": "Object",
-                                                "type": "formId"
-                                            }
-                                        },
-                                        {
-                                            "signature": "ALCA",
-                                            "type": "subrecord",
-                                            "field": {
-                                                "name": "Alias",
-                                                "type": "struct",
-                                                "fields": [
-                                                    {
-                                                        "name": "Alias",
-                                                        "type": "int16",
-                                                        "format": {
-                                                            "def": "QuestAliasToStr"
-                                                        }
-                                                    },
-                                                    {
-                                                        "name": "Create",
-                                                        "type": "uint16",
-                                                        "format": {
-                                                            "type": "enum",
-                                                            "options": {
-                                                                "0": "At",
-                                                                "32768": "In"
-                                                            }
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        },
-                                        {
-                                            "signature": "ALCL",
-                                            "type": "subrecord",
-                                            "field": {
-                                                "name": "Level",
-                                                "type": "uint32",
-                                                "format": {
-                                                    "type": "enum",
-                                                    "options": {
-                                                        "0": "Easy",
-                                                        "1": "Medium",
-                                                        "2": "Hard",
-                                                        "3": "Very Hard",
-                                                        "4": "None"
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "name": "Find Matching Reference Near Alias",
-                                    "type": "memberStruct",
-                                    "members": [
-                                        {
-                                            "signature": "ALNA",
-                                            "type": "subrecord",
-                                            "field": {
-                                                "name": "Alias",
-                                                "type": "int32",
-                                                "format": {
-                                                    "def": "QuestAliasToStr"
-                                                }
-                                            }
-                                        },
-                                        {
-                                            "signature": "ALNT",
-                                            "type": "subrecord",
-                                            "field": {
-                                                "name": "Type",
-                                                "type": "uint32",
-                                                "format": {
-                                                    "type": "enum",
-                                                    "options": {
-                                                        "0": "Linked Ref Child"
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "name": "Find Matching Reference From Event",
-                                    "type": "memberStruct",
-                                    "members": [
-                                        {
-                                            "signature": "ALFE",
-                                            "type": "subrecord",
-                                            "field": {
-                                                "name": "From Event",
-                                                "type": "string",
-                                                "size": 4
-                                            }
-                                        },
-                                        {
-                                            "signature": "ALFD",
-                                            "type": "subrecord",
-                                            "field": {
-                                                "name": "Event Data",
-                                                "type": "bytes"
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "def": "CTDAs"
-                                },
-                                {
-                                    "def": "KSIZ"
-                                },
-                                {
-                                    "def": "KWDAs"
-                                },
-                                {
-                                    "def": "COCT"
-                                },
-                                {
-                                    "def": "CNTOs"
-                                },
-                                {
-                                    "signature": "SPOR",
-                                    "type": "subrecord",
-                                    "field": {
-                                        "name": "Spectator override package list",
-                                        "type": "formId",
-                                        "signatures": [
-                                            "FLST"
-                                        ]
-                                    },
-                                    "required": true
-                                },
-                                {
-                                    "signature": "OCOR",
-                                    "type": "subrecord",
-                                    "field": {
-                                        "name": "Observe dead body override package list",
-                                        "type": "formId",
-                                        "signatures": [
-                                            "FLST"
-                                        ]
-                                    },
-                                    "required": true
-                                },
-                                {
-                                    "signature": "GWOR",
-                                    "type": "subrecord",
-                                    "field": {
-                                        "name": "Guard warn override package list",
-                                        "type": "formId",
-                                        "signatures": [
-                                            "FLST"
-                                        ]
-                                    },
-                                    "required": true
-                                },
-                                {
-                                    "signature": "ECOR",
-                                    "type": "subrecord",
-                                    "field": {
-                                        "name": "Combat override package list",
-                                        "type": "formId",
-                                        "signatures": [
-                                            "FLST"
-                                        ]
-                                    },
-                                    "required": true
-                                },
-                                {
-                                    "signature": "ALDN",
-                                    "type": "subrecord",
-                                    "field": {
-                                        "name": "Display Name",
-                                        "type": "formId",
-                                        "signatures": [
-                                            "MESG"
-                                        ]
-                                    }
-                                },
-                                {
-                                    "name": "Alias Spells",
-                                    "type": "memberArray",
-                                    "member": {
-                                        "signature": "ALSP",
-                                        "type": "subrecord",
-                                        "field": {
-                                            "name": "Spell",
-                                            "type": "formId",
-                                            "signatures": [
-                                                "SPEL"
-                                            ]
-                                        }
-                                    }
-                                },
-                                {
-                                    "name": "Alias Factions",
-                                    "type": "memberArray",
-                                    "member": {
-                                        "signature": "ALFC",
-                                        "type": "subrecord",
-                                        "field": {
-                                            "name": "Faction",
-                                            "type": "formId",
-                                            "signatures": [
-                                                "FACT"
-                                            ]
-                                        }
-                                    }
-                                },
-                                {
-                                    "name": "Alias Package Data",
-                                    "type": "memberArray",
-                                    "member": {
-                                        "signature": "ALPC",
-                                        "type": "subrecord",
-                                        "field": {
-                                            "name": "Package",
-                                            "type": "formId",
-                                            "signatures": [
-                                                "PACK"
-                                            ]
-                                        }
-                                    }
-                                },
-                                {
-                                    "signature": "VTCK",
-                                    "type": "subrecord",
-                                    "field": {
-                                        "name": "Voice Types",
-                                        "type": "formId",
-                                        "signatures": [
-                                            "NPC_",
-                                            "FLST",
-                                            "NULL"
-                                        ]
-                                    }
-                                },
-                                {
-                                    "signature": "ALED",
-                                    "type": "subrecord",
-                                    "field": {
-                                        "name": "Alias End",
-                                        "type": "empty"
-                                    },
-                                    "required": true
-                                }
-                            ],
-                            "sortKey": [
-                                0
-                            ],
-                            "required": true
-                        }
-                    ]
-                }
-            },
-            {
-                "signature": "NNAM",
-                "type": "subrecord",
-                "field": {
-                    "name": "Description",
-                    "type": "string"
-                },
-                "required": true
-            },
-            {
-                "name": "Targets",
-                "type": "memberArray",
-                "member": {
-                    "name": "Target",
-                    "type": "memberStruct",
-                    "members": [
-                        {
-                            "signature": "QSTA",
-                            "type": "subrecord",
-                            "field": {
-                                "name": "Target",
-                                "type": "struct",
-                                "fields": [
+                            },
+                            {
+                                "name": "Find Matching Reference Near Alias",
+                                "type": "memberStruct",
+                                "members": [
                                     {
-                                        "name": "Target",
-                                        "type": "formId",
-                                        "signatures": [
-                                            "ACHR",
-                                            "REFR",
-                                            "PGRE",
-                                            "PHZD",
-                                            "PMIS",
-                                            "PARW",
-                                            "PBAR",
-                                            "PBEA",
-                                            "PCON",
-                                            "PFLA"
-                                        ]
-                                    },
-                                    {
-                                        "name": "Flags",
-                                        "type": "uint8",
-                                        "format": {
-                                            "type": "flags",
-                                            "flags": {
-                                                "0": "Compass Marker Ignores Locks"
+                                        "signature": "ALNA",
+                                        "type": "subrecord",
+                                        "field": {
+                                            "name": "Alias",
+                                            "type": "int32",
+                                            "format": {
+                                                "def": "QuestAliasToStr"
                                             }
                                         }
                                     },
                                     {
-                                        "name": "Unknown",
-                                        "type": "bytes",
-                                        "size": 3
+                                        "signature": "ALNT",
+                                        "type": "subrecord",
+                                        "field": {
+                                            "name": "Type",
+                                            "type": "uint32",
+                                            "format": {
+                                                "type": "enum",
+                                                "options": {
+                                                    "0": "Linked Ref Child"
+                                                }
+                                            }
+                                        }
                                     }
                                 ]
+                            },
+                            {
+                                "name": "Find Matching Reference From Event",
+                                "type": "memberStruct",
+                                "members": [
+                                    {
+                                        "signature": "ALFE",
+                                        "type": "subrecord",
+                                        "field": {
+                                            "name": "From Event",
+                                            "type": "string",
+                                            "size": 4
+                                        }
+                                    },
+                                    {
+                                        "signature": "ALFD",
+                                        "type": "subrecord",
+                                        "field": {
+                                            "name": "Event Data",
+                                            "type": "bytes"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "def": "CTDAs"
+                            },
+                            {
+                                "def": "KSIZ"
+                            },
+                            {
+                                "def": "KWDAs"
+                            },
+                            {
+                                "def": "COCT"
+                            },
+                            {
+                                "def": "CNTOs"
+                            },
+                            {
+                                "signature": "SPOR",
+                                "type": "subrecord",
+                                "field": {
+                                    "name": "Spectator override package list",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "FLST"
+                                    ]
+                                },
+                                "required": true
+                            },
+                            {
+                                "signature": "OCOR",
+                                "type": "subrecord",
+                                "field": {
+                                    "name": "Observe dead body override package list",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "FLST"
+                                    ]
+                                },
+                                "required": true
+                            },
+                            {
+                                "signature": "GWOR",
+                                "type": "subrecord",
+                                "field": {
+                                    "name": "Guard warn override package list",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "FLST"
+                                    ]
+                                },
+                                "required": true
+                            },
+                            {
+                                "signature": "ECOR",
+                                "type": "subrecord",
+                                "field": {
+                                    "name": "Combat override package list",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "FLST"
+                                    ]
+                                },
+                                "required": true
+                            },
+                            {
+                                "signature": "ALDN",
+                                "type": "subrecord",
+                                "field": {
+                                    "name": "Display Name",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "MESG"
+                                    ]
+                                }
+                            },
+                            {
+                                "name": "Alias Spells",
+                                "type": "memberArray",
+                                "member": {
+                                    "signature": "ALSP",
+                                    "type": "subrecord",
+                                    "field": {
+                                        "name": "Spell",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "SPEL"
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Alias Factions",
+                                "type": "memberArray",
+                                "member": {
+                                    "signature": "ALFC",
+                                    "type": "subrecord",
+                                    "field": {
+                                        "name": "Faction",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "FACT"
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Alias Package Data",
+                                "type": "memberArray",
+                                "member": {
+                                    "signature": "ALPC",
+                                    "type": "subrecord",
+                                    "field": {
+                                        "name": "Package",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "PACK"
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "signature": "VTCK",
+                                "type": "subrecord",
+                                "field": {
+                                    "name": "Voice Types",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "NPC_",
+                                        "FLST",
+                                        "NULL"
+                                    ]
+                                }
+                            },
+                            {
+                                "signature": "ALED",
+                                "type": "subrecord",
+                                "field": {
+                                    "name": "Alias End",
+                                    "type": "empty"
+                                },
+                                "required": true
                             }
-                        },
-                        {
-                            "def": "CTDAs"
-                        }
-                    ]
-                }
+                        ],
+                        "sortKey": [
+                            0
+                        ],
+                        "required": true
+                    }
+                ]
             }
-        ]
-    }
+        },
+        {
+            "signature": "NNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Description",
+                "type": "string"
+            },
+            "required": true
+        },
+        {
+            "name": "Targets",
+            "type": "memberArray",
+            "member": {
+                "name": "Target",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "QSTA",
+                        "type": "subrecord",
+                        "field": {
+                            "name": "Target",
+                            "type": "struct",
+                            "fields": [
+                                {
+                                    "name": "Target",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "ACHR",
+                                        "REFR",
+                                        "PGRE",
+                                        "PHZD",
+                                        "PMIS",
+                                        "PARW",
+                                        "PBAR",
+                                        "PBEA",
+                                        "PCON",
+                                        "PFLA"
+                                    ]
+                                },
+                                {
+                                    "name": "Flags",
+                                    "type": "uint8",
+                                    "format": {
+                                        "type": "flags",
+                                        "flags": {
+                                            "0": "Compass Marker Ignores Locks"
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "Unknown",
+                                    "type": "bytes",
+                                    "size": 3
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "def": "CTDAs"
+                    }
+                ]
+            }
+        }
+    ]
 }

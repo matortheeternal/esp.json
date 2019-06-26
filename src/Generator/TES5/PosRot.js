@@ -11,9 +11,9 @@ module.exports = () => {
                 float('Z')
             ]),
             struct('Rotation', [
-                req(float('X')),
-                req(float('Y')),
-                req(float('Z'))
+                req(req(float('X'))),
+                req(req(float('Y'))),
+                req(req(float('Z')))
             ])
         ])
     );
