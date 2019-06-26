@@ -1,5 +1,5 @@
 let {subrecordAndField, functionConverter} = require('../converters'),
-    {args} = require('../helpers');
+    {args, scaleLine, reqLine} = require('../helpers');
 
 subrecordAndField('wbFloat', [
     args.name,
@@ -11,9 +11,11 @@ subrecordAndField('wbFloat', [
     args.identifier,
     args.number,
     args.identifier
-], ({name}, converter) => {
+], ({name, scale, required}, converter) => {
     converter.addRequires('float');
-    return `float(${name})`;
+    let line = `float(${name})`;
+    line = scaleLine(scale, line, converter);
+    return reqLine(required, line, converter);
 });
 
 functionConverter('wbFloat', [
@@ -25,7 +27,8 @@ functionConverter('wbFloat', [
     args.identifier,
     args.number,
     args.identifier
-], ({name}, converter) => {
+], ({name, required}, converter) => {
     converter.addRequires('float');
-    return `float(${name})`;
+    let line = `float(${name})`;
+    return reqLine(required, line, converter);
 });
