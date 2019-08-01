@@ -12,7 +12,10 @@
       "$ref": "../shared/name.schema.json"
     },
     "fields": {
-      "$ref": "../field.schema.json"
+      "type": "array",
+      "items": {
+        "$ref": "../field.schema.json"
+      }
     },
     "sortKey": {
       "$ref": "../shared/sortKey.schema.json"
