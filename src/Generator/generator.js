@@ -4,8 +4,10 @@ let fs = require('fs'),
 
 let buildDefs = function(defGame, folderName) {
     let generatorFolder = path.resolve(__dirname, folderName);
+    if (!fs.lstatSync(generatorFolder).isDirectory()) return;
     fs.readdirSync(generatorFolder).forEach(file => {
         let filePath = path.resolve(generatorFolder, file);
+        if (fs.lstatSync(filePath).isDirectory()) return;
         require(filePath)(defGame);
     });
 };
@@ -27,7 +29,9 @@ let saveIndividualDefs = function(game) {
 
 let generate = function(game, options = {}) {
     clearDefs();
-    buildDefs(game, options.buildFrom || game);
+    let defsFolder = options.buildFrom || game;
+    buildDefs(game, defsFolder);
+    buildDefs(game, path.join(defsFolder, 'extra'));
     saveDefs(game);
     if (options.saveIndividualDefs) saveIndividualDefs(game);
 };
