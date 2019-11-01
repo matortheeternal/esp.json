@@ -3,6 +3,12 @@
     "type": "struct",
     "fields": [
         {
+            "name": "Signature",
+            "type": "string",
+            "size": 4,
+            "inheritFrom": "signature"
+        },
+        {
             "name": "Group Size",
             "type": "uint32"
         },

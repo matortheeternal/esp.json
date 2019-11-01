@@ -3,7 +3,7 @@ let {
     float, uint32, format, sortKey, struct,
     sorted, memberArray, uint8, memberStruct, empty,
     array, addDef
-} = require('../helpers');
+} = require('../../helpers');
 
 module.exports = () => {
     addDef('ReferenceRecord', {

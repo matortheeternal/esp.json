@@ -2,6 +2,7 @@ let defs = {};
 
 // meta
 let addDef = (id, def) => defs[id] = def;
+let deleteDef = id => delete defs[id];
 let getDefs = () => defs;
 let clearDefs = () => defs = {};
 let IsSSE = (game, options) => game === 'SSE' ? options[0] : options[1];
@@ -11,6 +12,7 @@ let req = obj => ({ ...obj, required: true });
 let def = (def, opts) => ({ def, ...opts });
 let opts = (obj, opts) => ({ ...obj, ...opts });
 let sortKey = (sortKey, obj) => ({ ...obj, sortKey });
+let inherit = (inheritFrom, obj) => ({ ...obj, inheritFrom});
 
 // arrays and strings
 let localized = obj => ({ ...obj, localized: true });
@@ -68,9 +70,9 @@ let unknown = () => ({ type: 'bytes' });
 let empty = name => ({ name, type: 'empty' });
 
 module.exports = {
-    addDef, getDefs, clearDefs, IsSSE,
-    req, def, opts, sortKey, localized,
-    sorted, size, prefix,
+    addDef, deleteDef, getDefs, clearDefs, IsSSE,
+    req, def, opts, sortKey, inherit,
+    localized, sorted, size, prefix,
     format, div, scale, flags, showUnknown, enumeration, formatUnion,
     record, subrecord,
     memberArray, memberStruct, memberUnion,
