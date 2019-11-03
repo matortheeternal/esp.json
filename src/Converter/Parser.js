@@ -66,7 +66,7 @@ class Parser {
             this.chomp(',');
             this.next();
         }
-        console.log(`Parsed array: ${entries}`);
+        //console.log(`Parsed array: ${entries}`);
         return entries;
     }
 

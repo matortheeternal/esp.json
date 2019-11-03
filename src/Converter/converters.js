@@ -34,11 +34,13 @@ let statementConverter = function(name, converter) {
 
 let convertStatement = function(converter) {
     let match = null;
-    let stConverter = Object.values(statements).find(s => {
-        match = s.test(converter);
+    let stKey = Object.keys(statements).find(key => {
+        match = statements[key].test(converter);
         return Boolean(match);
     });
+    let stConverter = stKey && statements[stKey];
     if (!stConverter) throw new ParseError('Error parsing statement.');
+    console.log('Parsing statement', stKey);
     converter.advance(match[0].length);
     converter.next();
     if (!stConverter.convert) return;
@@ -50,7 +52,7 @@ let parseArguments = function(args, fnArgs, converter) {
         let arg = fnArgs[i],
             value = converter.parseType(arg.type, arg);
         if (value === undefined) return false;
-        console.log(`Parsed argument ${i}, ${arg.type}: ${value}`);
+        //console.log(`Parsed argument ${i}, ${arg.type}: ${value}`);
         args[i] = arg;
         args.values[i] = value;
         if (arg.name) args[arg.name] = value;
@@ -95,7 +97,7 @@ let findConverter = function(functionName, args, converter) {
 
 let convertFunction = function(converter, functionName) {
     if (!functionName) functionName = getFunctionName(converter);
-    console.log(`Parsing function ${functionName}`);
+    //console.log(`Parsing function ${functionName}`);
     let opts = {},
         args = [];
     args.values = [];
