@@ -1,6 +1,6 @@
 let {typeParser} = require('../parsers');
 
-let mathExpr = /^([0-9]+|[\/*+-]|[A-Za-z]+)+/,
+let mathExpr = /^(-?[0-9]+(?:\.[0-9]+)?|[\/*+-]|[A-Za-z]+)+/,
     numberExpr = /^-?[0-9]+(?:\.[0-9]+)?/;
 
 let signNames = {
