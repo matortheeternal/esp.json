@@ -82,7 +82,8 @@
                     {
                         "name": "Level",
                         "type": "union",
-                        "decider": [
+                        "decider": "NPCLevelDecider",
+                        "fields": [
                             {
                                 "name": "Level",
                                 "type": "int16"

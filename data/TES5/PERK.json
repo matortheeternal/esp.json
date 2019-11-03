@@ -141,7 +141,8 @@
                         "field": {
                             "name": "Effect Data",
                             "type": "union",
-                            "decider": [
+                            "decider": "PerkDATADecider",
+                            "fields": [
                                 {
                                     "name": "Quest + Stage",
                                     "type": "struct",
@@ -319,7 +320,8 @@
                                 "field": {
                                     "name": "Data",
                                     "type": "union",
-                                    "decider": [
+                                    "decider": "EPFDDecider",
+                                    "fields": [
                                         {
                                             "name": "Unknown",
                                             "type": "bytes"

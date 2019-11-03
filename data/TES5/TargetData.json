@@ -21,7 +21,8 @@
         {
             "name": "Target",
             "type": "union",
-            "decider": [
+            "decider": "TypeDecider",
+            "fields": [
                 {
                     "name": "Reference",
                     "type": "formId",

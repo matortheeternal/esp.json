@@ -10,7 +10,7 @@ module.exports = () => {
                 0: 'Topic Ref',
                 1: 'Topic Subtype'
             })),
-            union('Data', [
+            union('Data', 'TypeDecider', [
                 ckFormId('Topic', ['DIAL', 'NULL']),
                 size(4, string('Subtype'))
             ])

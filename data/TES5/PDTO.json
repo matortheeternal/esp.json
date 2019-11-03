@@ -19,7 +19,8 @@
             {
                 "name": "Data",
                 "type": "union",
-                "decider": [
+                "decider": "TypeDecider",
+                "fields": [
                     {
                         "name": "Topic",
                         "type": "formId",

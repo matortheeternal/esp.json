@@ -90,7 +90,8 @@
                     {
                         "name": "Teaches",
                         "type": "union",
-                        "decider": [
+                        "decider": "BOOKTeachesDecider",
+                        "fields": [
                             {
                                 "name": "Skill",
                                 "type": "int32",

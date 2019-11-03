@@ -5,7 +5,7 @@ let {
 
 module.exports = () => {
     addDef('ScriptPropertyObject', 
-        union('Object Union', [
+        union('Object Union', 'ScriptObjFormatDecider', [
             sortKey([1], struct('Object v2', [
                 uint16('Unused'),
                 opts(format(int16('Alias'), def('ScriptObjectAliasToStr')), {

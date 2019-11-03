@@ -16,7 +16,7 @@ module.exports = () => {
                 5: 'Unknown 5',
                 6: 'Self'
             })),
-            union('Target', [
+            union('Target', 'TypeDecider', [
                 ckFormId('Reference', [
                     'NULL', 'PLYR', 'ACHR', 'REFR', 'PGRE',
                     'PHZD', 'PMIS', 'PARW', 'PBAR', 'PBEA',

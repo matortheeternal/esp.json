@@ -18,7 +18,8 @@
             "field": {
                 "name": "Value",
                 "type": "union",
-                "decider": [
+                "decider": "GMSTUnionDecider",
+                "fields": [
                     {
                         "name": "Name",
                         "type": "string",

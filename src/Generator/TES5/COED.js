@@ -9,7 +9,7 @@ module.exports = () => {
             ckFormId('Owner', [
                 'NPC_', 'FACT', 'NULL'
             ]),
-            union('Global Variable / Required Rank', [
+            union('Global Variable / Required Rank', 'COEDOwnerDecider', [
                 size(4, bytes('Unused')),
                 ckFormId('Global Variable', ['GLOB', 'NULL']),
                 int32('Required Rank')

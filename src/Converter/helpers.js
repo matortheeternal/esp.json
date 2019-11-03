@@ -10,6 +10,7 @@ let args = {
     members: { type: 'array of member', name: 'members' },
     arrayOfFlags: { type: 'array of flags', name: 'flags' },
     identifier: { type: 'identifier' },
+    decider: { type: 'identifier', name: 'decider' },
     required: { type: 'boolean', name: 'required' },
     boolean: { type: 'boolean' },
     string: { type: 'string' },

@@ -8,7 +8,7 @@ module.exports = () => {
     record('GMST', 'Game Setting', {
         members: [
             req(subrecord('EDID', string('Editor ID'))),
-            req(subrecord('DATA', union('Value', [
+            req(subrecord('DATA', union('Value', 'GMSTUnionDecider', [
                 localized(string('Name')),
                 int32('Int'),
                 float('Float'),

@@ -113,7 +113,8 @@
                         {
                             "name": "Island",
                             "type": "union",
-                            "decider": [
+                            "decider": "NAVIIslandDataDecider",
+                            "fields": [
                                 {
                                     "def": "Null"
                                 },
@@ -138,7 +139,8 @@
                         {
                             "name": "Parent",
                             "type": "union",
-                            "decider": [
+                            "decider": "NAVIParentDecider",
+                            "fields": [
                                 {
                                     "name": "Coordinates",
                                     "type": "struct",

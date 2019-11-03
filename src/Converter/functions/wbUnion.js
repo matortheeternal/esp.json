@@ -3,13 +3,13 @@ let {subrecordAndField} = require('../converters'),
 
 subrecordAndField('wbUnion', [
     args.name,
-    args.identifier,
+    args.decider,
     args.members,
     args.identifier,
     args.required,
     args.identifier,
     args.identifier
-], ({name, members}, converter) => {
+], ({name, decider, members}, converter) => {
     converter.addRequires('union');
-    return `union(${name}, ${members})`;
+    return `union(${name}, '${decider}', ${members})`;
 });

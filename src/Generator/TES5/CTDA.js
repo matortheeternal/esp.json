@@ -11,13 +11,13 @@ module.exports = () => {
             subrecord('CTDA', sortKey([3, 5], struct('', [
                 format(uint8('Type'), def('CtdaTypeToStr')),
                 size(3, bytes('Unused')),
-                union('Comparison Value', [
+                union('Comparison Value', 'CTDACompValueDecider', [
                     float('Comparison Value - Float'),
                     ckFormId('Comparison Value - Global', ['GLOB'])
                 ]),
                 format(uint16('Function'), def('CTDAFunctionToStr')),
                 size(2, bytes('Unused')),
-                union('Parameter #1', [
+                union('Parameter #1', 'CTDAParam1Decider', [
                     size(4, bytes('Unknown')),
                     opts(size(4, bytes('None')), {
                         "includeFlag": "dfZeroSortKey"
@@ -110,7 +110,7 @@ module.exports = () => {
                     formId('Event Data'),
                     ckFormId('Knowable', ['MGEF', 'WOOP'])
                 ]),
-                union('Parameter #2', [
+                union('Parameter #2', 'CTDAParam2Decider', [
                     size(4, bytes('Unknown')),
                     opts(size(4, bytes('None')), {
                         "includeFlag": "dfZeroSortKey"
@@ -165,7 +165,7 @@ module.exports = () => {
                     ckFormId('Base Effect', ['MGEF']),
                     ckFormId('Worldspace', ['WRLD', 'FLST']),
                     format(uint32('VATS Value Function'), def('VATSValueFunctionEnum')),
-                    union('VATS Value Param', [
+                    union('VATS Value Param', 'CTDAParam2VATSValueParamDecider', [
                         ckFormId('Weapon', ['WEAP']),
                         ckFormId('Weapon List', ['FLST']),
                         ckFormId('Target', ['NPC_']),
@@ -268,7 +268,7 @@ module.exports = () => {
                     6: 'Package Data',
                     7: 'Event Data'
                 })),
-                union('Reference', [
+                union('Reference', 'CTDAReferenceDecider', [
                     uint32('Unused'),
                     ckFormId('Reference', [
                         'NULL', 'PLYR', 'ACHR', 'REFR', 'PGRE',

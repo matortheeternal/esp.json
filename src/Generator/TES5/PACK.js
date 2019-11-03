@@ -86,7 +86,7 @@ module.exports = () => {
                 memberArray('Data Input Values', 
                     req(memberStruct('Value', [
                         subrecord('ANAM', string('Type')),
-                        subrecord('CNAM', union('Value', [
+                        subrecord('CNAM', union('Value', 'PubPackCNAMDecider', [
                             bytes('Unknown'),
                             format(uint8('Bool'), enumeration({
                                 0: 'False',

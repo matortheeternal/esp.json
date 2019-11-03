@@ -15,7 +15,8 @@
             {
                 "name": "Location Value",
                 "type": "union",
-                "decider": [
+                "decider": "TypeDecider",
+                "fields": [
                     {
                         "name": "Reference",
                         "type": "formId",

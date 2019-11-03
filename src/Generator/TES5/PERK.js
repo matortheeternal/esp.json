@@ -47,7 +47,7 @@ module.exports = () => {
                         uint8('Rank'),
                         uint8('Priority')
                     ]))),
-                    req(subrecord('DATA', union('Effect Data', [
+                    req(subrecord('DATA', union('Effect Data', 'PerkDATADecider', [
                         sortKey([0, 1], struct('Quest + Stage', [
                             ckFormId('Quest', ['QUST']),
                             format(uint8('Quest Stage'), def('PerkDATAQuestStageToStr')),
@@ -102,7 +102,7 @@ module.exports = () => {
                             })),
                             uint16('Fragment Index')
                         ])),
-                        req(subrecord('EPFD', union('Data', [
+                        req(subrecord('EPFD', union('Data', 'EPFDDecider', [
                             bytes('Unknown'),
                             float('Float'),
                             struct('Float, Float', [

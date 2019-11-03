@@ -36,7 +36,7 @@ module.exports = () => {
                     255: 'Note/Scroll'
                 })),
                 size(2, bytes('Unused')),
-                union('Teaches', [
+                union('Teaches', 'BOOKTeachesDecider', [
                     format(int32('Skill'), def('SkillEnum')),
                     ckFormId('Spell', ['SPEL', 'NULL'])
                 ]),

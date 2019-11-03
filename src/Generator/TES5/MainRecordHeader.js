@@ -11,7 +11,7 @@ module.exports = () => {
             uint32('Data Size'),
             def('RecordFlags'),
             formId('FormID'),
-            union('Version Control Info 1', [
+            union('Version Control Info 1', 'FormVer44Decider', [
                 opts(size(4, bytes('Version Control Info 1')), {
                     "toStr": "VCI1ToStrBeforeFO4"
                 }),

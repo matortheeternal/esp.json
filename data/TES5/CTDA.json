@@ -24,7 +24,8 @@
                     {
                         "name": "Comparison Value",
                         "type": "union",
-                        "decider": [
+                        "decider": "CTDACompValueDecider",
+                        "fields": [
                             {
                                 "name": "Comparison Value - Float",
                                 "type": "float"
@@ -53,7 +54,8 @@
                     {
                         "name": "Parameter #1",
                         "type": "union",
-                        "decider": [
+                        "decider": "CTDAParam1Decider",
+                        "fields": [
                             {
                                 "name": "Unknown",
                                 "type": "bytes",
@@ -517,7 +519,8 @@
                     {
                         "name": "Parameter #2",
                         "type": "union",
-                        "decider": [
+                        "decider": "CTDAParam2Decider",
+                        "fields": [
                             {
                                 "name": "Unknown",
                                 "type": "bytes",
@@ -814,7 +817,8 @@
                             {
                                 "name": "VATS Value Param",
                                 "type": "union",
-                                "decider": [
+                                "decider": "CTDAParam2VATSValueParamDecider",
+                                "fields": [
                                     {
                                         "name": "Weapon",
                                         "type": "formId",
@@ -1160,7 +1164,8 @@
                     {
                         "name": "Reference",
                         "type": "union",
-                        "decider": [
+                        "decider": "CTDAReferenceDecider",
+                        "fields": [
                             {
                                 "name": "Unused",
                                 "type": "uint32"

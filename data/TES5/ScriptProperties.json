@@ -34,7 +34,8 @@
             {
                 "name": "Value",
                 "type": "union",
-                "decider": [
+                "decider": "ScriptPropertyDecider",
+                "fields": [
                     {
                         "def": "Null"
                     },

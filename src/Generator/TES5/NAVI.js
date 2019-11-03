@@ -34,13 +34,13 @@ module.exports = () => {
                         0: 'False',
                         1: 'True'
                     })),
-                    union('Island', [
+                    union('Island', 'NAVIIslandDataDecider', [
                         def('Null'),
                         def('NAVIslandData')
                     ]),
                     size(4, bytes('Unknown')),
                     ckFormId('Parent Worldspace', ['WRLD', 'NULL']),
-                    union('Parent', [
+                    union('Parent', 'NAVIParentDecider', [
                         struct('Coordinates', [
                             int16('Grid Y'),
                             int16('Grid X')

@@ -57,7 +57,7 @@ module.exports = () => {
                 })),
                 int16('Magicka Offset'),
                 int16('Stamina Offset'),
-                req(union('Level', [
+                req(union('Level', 'NPCLevelDecider', [
                     int16('Level'),
                     format(int16('Level Mult'), div(1000))
                 ])),

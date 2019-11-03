@@ -8,7 +8,7 @@ module.exports = () => {
     addDef('PLDT', 
         subrecord('PLDT', struct('Location', [
             format(int32('Type'), def('LocationEnum')),
-            union('Location Value', [
+            union('Location Value', 'TypeDecider', [
                 ckFormId('Reference', [
                     'NULL', 'DOOR', 'PLYR', 'ACHR', 'REFR',
                     'PGRE', 'PHZD', 'PMIS', 'PARW', 'PBAR',

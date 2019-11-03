@@ -15,7 +15,7 @@ module.exports = () => {
                 "defaultEditValue": "'3C A0 E9 A5'"
             }),
             ckFormId('Parent Worldspace', ['WRLD', 'NULL']),
-            union('Parent', [
+            union('Parent', 'NVNMParentDecider', [
                 struct('Coordinates', [
                     int16('Grid Y'),
                     int16('Grid X')

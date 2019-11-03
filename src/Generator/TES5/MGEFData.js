@@ -44,7 +44,7 @@ module.exports = () => {
                     31: 'Unknown 32'
                 })),
                 float('Base Cost'),
-                req(union('Assoc. Item', [
+                req(union('Assoc. Item', 'MGEFAssocItemDecider', [
                     formId('Unused'),
                     ckFormId('Assoc. Item', ['LIGH', 'NULL']),
                     ckFormId('Assoc. Item', [

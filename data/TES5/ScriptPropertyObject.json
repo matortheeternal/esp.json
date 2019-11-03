@@ -1,7 +1,8 @@
 {
     "name": "Object Union",
     "type": "union",
-    "decider": [
+    "decider": "ScriptObjFormatDecider",
+    "fields": [
         {
             "name": "Object v2",
             "type": "struct",

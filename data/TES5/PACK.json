@@ -295,7 +295,8 @@
                                 "field": {
                                     "name": "Value",
                                     "type": "union",
-                                    "decider": [
+                                    "decider": "PubPackCNAMDecider",
+                                    "fields": [
                                         {
                                             "name": "Unknown",
                                             "type": "bytes"

@@ -27,7 +27,8 @@
             {
                 "name": "Parent",
                 "type": "union",
-                "decider": [
+                "decider": "NVNMParentDecider",
+                "fields": [
                     {
                         "name": "Coordinates",
                         "type": "struct",

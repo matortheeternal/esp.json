@@ -57,7 +57,8 @@
                     {
                         "name": "Assoc. Item",
                         "type": "union",
-                        "decider": [
+                        "decider": "MGEFAssocItemDecider",
+                        "fields": [
                             {
                                 "name": "Unused",
                                 "type": "formId"
