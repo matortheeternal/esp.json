@@ -47,6 +47,8 @@ require('./statements/wbRefRecord');
 require('./statements/ReferenceRecord');
 require('./statements/loadList');
 require('./statements/ifGameMode');
+require('./statements/ifSimpleRecords');
+require('./statements/elseBegin');
 require('./statements/MakeVarRecs');
 require('./statements/CombineVarRecs');
 require('./statements/assignment');
