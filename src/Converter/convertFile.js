@@ -4,7 +4,7 @@ let path = require('path'),
 
 let convertProcedures = function(converter) {
     converter.convertRegions({
-        start: /procedure Define\w+;[\s\S]+?^begin/m,
+        start: /procedure Define\w+?[a-z];[\s\S]+?^begin/m,
         end: /^end;/
     });
 };
