@@ -101,6 +101,7 @@ let convertFunction = function(converter, functionName) {
     args.values = [];
     let fnConverter = findConverter(functionName, args, converter);
     if (converter.chomp('.')) opts = convertFunction(converter);
+    converter.chomp(';');
     return fnConverter.convert(args, converter, opts);
 };
 
