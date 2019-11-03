@@ -31,3 +31,16 @@ subrecordAndField('wbArray', [
     converter.addRequires('array');
     return `array(${name}, ${newLine(element)})`;
 });
+
+subrecordAndField('wbArray', [
+    args.name,
+    args.field,
+    args.identifier, // count callback
+    args.identifier,
+    args.boolean,
+    args.identifier,
+    args.identifier
+], ({name, element}, converter) => {
+    converter.addRequires('array');
+    return `array(${name}, ${newLine(element)})`;
+});
