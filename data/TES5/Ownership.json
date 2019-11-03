@@ -1,0 +1,27 @@
+{
+    "name": "Ownership",
+    "type": "memberStruct",
+    "members": [
+        {
+            "signature": "XOWN",
+            "type": "subrecord",
+            "field": {
+                "name": "Owner",
+                "type": "formId",
+                "signatures": [
+                    "FACT",
+                    "ACHR",
+                    "NPC_"
+                ]
+            }
+        },
+        {
+            "signature": "XRNK",
+            "type": "subrecord",
+            "field": {
+                "name": "Faction rank",
+                "type": "int32"
+            }
+        }
+    ]
+}

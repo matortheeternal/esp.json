@@ -1,0 +1,143 @@
+{
+    "signature": "LIGH",
+    "type": "record",
+    "name": "Light",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "12": "Ignored",
+            "16": "Random Anim Start",
+            "17": "Portal-strict",
+            "25": "Obstacle"
+        }
+    },
+    "members": [
+        {
+            "def": "EDID"
+        },
+        {
+            "def": "VMAD"
+        },
+        {
+            "def": "OBND",
+            "required": true
+        },
+        {
+            "def": "MODL"
+        },
+        {
+            "def": "DEST"
+        },
+        {
+            "def": "FULL"
+        },
+        {
+            "def": "ICON"
+        },
+        {
+            "signature": "DATA",
+            "type": "subrecord",
+            "field": {
+                "name": "",
+                "type": "struct",
+                "fields": [
+                    {
+                        "name": "Time",
+                        "type": "int32"
+                    },
+                    {
+                        "name": "Radius",
+                        "type": "uint32"
+                    },
+                    {
+                        "def": "ByteColors"
+                    },
+                    {
+                        "name": "Flags",
+                        "type": "uint32",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "Dynamic",
+                                "1": "Can be Carried",
+                                "2": "Negative",
+                                "3": "Flicker",
+                                "4": "Unknown",
+                                "5": "Off By Default",
+                                "6": "Flicker Slow",
+                                "7": "Pulse",
+                                "8": "Pulse Slow",
+                                "9": "Spot Light",
+                                "10": "Shadow Spotlight",
+                                "11": "Shadow Hemisphere",
+                                "12": "Shadow Omnidirectional",
+                                "13": "Portal-strict"
+                            }
+                        }
+                    },
+                    {
+                        "name": "Falloff Exponent",
+                        "type": "float"
+                    },
+                    {
+                        "name": "FOV",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Near Clip",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Flicker Effect",
+                        "type": "struct",
+                        "fields": [
+                            {
+                                "name": "Period",
+                                "type": "float",
+                                "required": true
+                            },
+                            {
+                                "name": "Intensity Amplitude",
+                                "type": "float"
+                            },
+                            {
+                                "name": "Movement Amplitude",
+                                "type": "float"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Value",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Weight",
+                        "type": "float"
+                    }
+                ]
+            },
+            "required": true
+        },
+        {
+            "signature": "FNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Fade value",
+                "type": "float",
+                "required": true
+            },
+            "required": true
+        },
+        {
+            "signature": "SNAM",
+            "type": "subrecord",
+            "field": {
+                "name": "Sound",
+                "type": "formId",
+                "signatures": [
+                    "SNDR"
+                ]
+            }
+        }
+    ]
+}
