@@ -8,6 +8,7 @@ class Converter extends Parser {
     constructor(filePath) {
         super(filePath);
         this._store = {};
+        this.outputFiles = [];
     }
 
     newOutput(filename, game) {
@@ -67,8 +68,14 @@ class Converter extends Parser {
         ].join(lineBreak);
     }
 
-    saveOutput() {
+    repeatOutput() {
+        return this.outputFiles.includes(this.output.filename);
+    }
+
+    saveOutput(noOverwrite = false) {
         if (this.skipping) return;
+        if (noOverwrite && this.repeatOutput()) return;
+        this.outputFiles.push(this.output.filename);
         let text = this.getOutputText(),
             filePath = path.resolve(this.outputFolder, this.output.filename);
         fs.writeFileSync(filePath, text);

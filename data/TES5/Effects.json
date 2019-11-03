@@ -1,0 +1,20 @@
+{
+    "name": "Effects",
+    "type": "memberArray",
+    "member": {
+        "name": "Effect",
+        "type": "memberStruct",
+        "members": [
+            {
+                "def": "EFID"
+            },
+            {
+                "def": "EFIT"
+            },
+            {
+                "def": "CTDAs"
+            }
+        ]
+    },
+    "required": true
+}
