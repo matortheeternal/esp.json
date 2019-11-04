@@ -1,6 +1,6 @@
 let {
     addDef, struct, bytes, uint8, size
-} = require('../helpers');
+} = require('../../helpers');
 
 module.exports = () => {
     addDef('ByteColors',

@@ -1,6 +1,6 @@
 let {
     addDef, struct, float, req, scale
-} = require('../helpers');
+} = require('../../helpers');
 
 module.exports = () => {
     addDef('FloatColors',

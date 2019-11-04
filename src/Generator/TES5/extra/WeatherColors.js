@@ -1,6 +1,6 @@
 let {
     addDef, def, struct
-} = require('../helpers');
+} = require('../../helpers');
 
 module.exports = () => {
     addDef('WeatherColors',
