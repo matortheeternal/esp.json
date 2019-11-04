@@ -2,7 +2,6 @@ let defs = {};
 
 // meta
 let addDef = (id, def) => defs[id] = def;
-let deleteDef = id => delete defs[id];
 let getDefs = () => defs;
 let clearDefs = () => defs = {};
 let IsSSE = (game, options) => game === 'SSE' ? options[0] : options[1];
@@ -70,7 +69,7 @@ let unknown = () => ({ type: 'bytes' });
 let empty = name => ({ name, type: 'empty' });
 
 module.exports = {
-    addDef, deleteDef, getDefs, clearDefs, IsSSE,
+    addDef, getDefs, clearDefs, IsSSE,
     req, def, opts, sortKey, inherit,
     localized, sorted, size, prefix,
     format, div, scale, flags, showUnknown, enumeration, formatUnion,
