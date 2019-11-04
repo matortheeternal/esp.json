@@ -14,15 +14,15 @@
     },
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "FULL"
+            "id": "FULL"
         },
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Flags",
                 "type": "uint16",
                 "format": {
@@ -44,10 +44,10 @@
         {
             "signature": "XCLC",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Grid",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "X",
                         "type": "int32"
@@ -76,20 +76,20 @@
         {
             "signature": "XCLL",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Lighting",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
-                        "def": "ByteColors",
+                        "id": "ByteColors",
                         "name": "Ambient Color"
                     },
                     {
-                        "def": "ByteColors",
+                        "id": "ByteColors",
                         "name": "Directional Color"
                     },
                     {
-                        "def": "ByteColors",
+                        "id": "ByteColors",
                         "name": "Fog Color Near"
                     },
                     {
@@ -121,11 +121,11 @@
                         "type": "float"
                     },
                     {
-                        "def": "AmbientColors",
+                        "id": "AmbientColors",
                         "name": "Ambient Colors"
                     },
                     {
-                        "def": "ByteColors",
+                        "id": "ByteColors",
                         "name": "Fog Color Far"
                     },
                     {
@@ -165,15 +165,15 @@
             "required": true
         },
         {
-            "def": "TVDT"
+            "id": "TVDT"
         },
         {
-            "def": "MaxHeightDataCELL"
+            "id": "MaxHeightDataCELL"
         },
         {
             "signature": "LTMP",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Lighting Template",
                 "type": "formId",
                 "signatures": [
@@ -186,7 +186,7 @@
         {
             "signature": "LNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Unknown",
                 "type": "bytes"
             }
@@ -194,7 +194,7 @@
         {
             "signature": "XCLW",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Water Height",
                 "type": "float",
                 "required": true
@@ -204,7 +204,7 @@
         {
             "signature": "XNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Water Noise Texture",
                 "type": "string"
             }
@@ -212,10 +212,10 @@
         {
             "signature": "XCLR",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Regions",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Region",
                     "type": "formId",
                     "signatures": [
@@ -228,7 +228,7 @@
         {
             "signature": "XLCN",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Location",
                 "type": "formId",
                 "signatures": [
@@ -239,7 +239,7 @@
         {
             "signature": "XWCN",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Unknown",
                 "type": "bytes"
             }
@@ -247,7 +247,7 @@
         {
             "signature": "XWCS",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Unknown",
                 "type": "bytes"
             }
@@ -255,10 +255,10 @@
         {
             "signature": "XWCU",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Water Velocity",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "X Offset",
                         "type": "float"
@@ -298,7 +298,7 @@
         {
             "signature": "XCWT",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Water",
                 "type": "formId",
                 "signatures": [
@@ -307,12 +307,12 @@
             }
         },
         {
-            "def": "Ownership"
+            "id": "Ownership"
         },
         {
             "signature": "XILL",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Lock List",
                 "type": "formId",
                 "signatures": [
@@ -324,7 +324,7 @@
         {
             "signature": "XWEM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Water Environment Map",
                 "type": "string"
             }
@@ -332,7 +332,7 @@
         {
             "signature": "XCCM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Sky/Weather from Region",
                 "type": "formId",
                 "signatures": [
@@ -343,7 +343,7 @@
         {
             "signature": "XCAS",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Acoustic Space",
                 "type": "formId",
                 "signatures": [
@@ -354,7 +354,7 @@
         {
             "signature": "XEZN",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Encounter Zone",
                 "type": "formId",
                 "signatures": [
@@ -365,7 +365,7 @@
         {
             "signature": "XCMO",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Music Type",
                 "type": "formId",
                 "signatures": [
@@ -376,7 +376,7 @@
         {
             "signature": "XCIM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Image Space",
                 "type": "formId",
                 "signatures": [

@@ -4,30 +4,30 @@
     "name": "Sound Marker",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "OBND",
+            "id": "OBND",
             "required": true
         },
         {
             "signature": "FNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "type": "bytes"
             }
         },
         {
             "signature": "SNDD",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "type": "bytes"
             }
         },
         {
             "signature": "SDSC",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Sound Descriptor",
                 "type": "formId",
                 "signatures": [

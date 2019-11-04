@@ -11,42 +11,42 @@
     },
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "OBND"
+            "id": "OBND"
         },
         {
-            "def": "FULL"
+            "id": "FULL"
         },
         {
-            "def": "MODL"
+            "id": "MODL"
         },
         {
-            "def": "ICON"
+            "id": "ICON"
         },
         {
-            "def": "DEST"
+            "id": "DEST"
         },
         {
-            "def": "YNAM"
+            "id": "YNAM"
         },
         {
-            "def": "ZNAM"
+            "id": "ZNAM"
         },
         {
-            "def": "KSIZ"
+            "id": "KSIZ"
         },
         {
-            "def": "KWDAs"
+            "id": "KWDAs"
         },
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Value",
                         "type": "uint32"
@@ -62,29 +62,29 @@
         {
             "signature": "SOUL",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Contained Soul",
                 "type": "uint8",
                 "format": {
-                    "def": "SoulGemEnum"
+                    "id": "SoulGemEnum"
                 }
             }
         },
         {
             "signature": "SLCP",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Maximum Capacity",
                 "type": "uint8",
                 "format": {
-                    "def": "SoulGemEnum"
+                    "id": "SoulGemEnum"
                 }
             }
         },
         {
             "signature": "NAM0",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Linked To",
                 "type": "formId",
                 "signatures": [

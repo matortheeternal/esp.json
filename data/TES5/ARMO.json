@@ -14,25 +14,25 @@
     },
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "VMAD"
+            "id": "VMAD"
         },
         {
-            "def": "OBND",
+            "id": "OBND",
             "required": true
         },
         {
-            "def": "FULL"
+            "id": "FULL"
         },
         {
-            "def": "EITM"
+            "id": "EITM"
         },
         {
             "signature": "EAMT",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Enchantment Amount",
                 "type": "uint16"
             }
@@ -44,7 +44,7 @@
                 {
                     "signature": "MOD2",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Model FileName",
                         "type": "string"
                     }
@@ -52,18 +52,18 @@
                 {
                     "signature": "MO2T",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Texture Files Hashes",
                         "type": "bytes"
                     }
                 },
                 {
-                    "def": "MO2S"
+                    "id": "MO2S"
                 }
             ]
         },
         {
-            "def": "ICON"
+            "id": "ICON"
         },
         {
             "name": "Female world model",
@@ -72,7 +72,7 @@
                 {
                     "signature": "MOD4",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Model FileName",
                         "type": "string"
                     }
@@ -80,46 +80,46 @@
                 {
                     "signature": "MO4T",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Texture Files Hashes",
                         "type": "bytes"
                     }
                 },
                 {
-                    "def": "MO4S"
+                    "id": "MO4S"
                 }
             ]
         },
         {
-            "def": "ICO2"
+            "id": "ICO2"
         },
         {
-            "def": "BODTBOD2"
+            "id": "BODTBOD2"
         },
         {
-            "def": "DEST"
+            "id": "DEST"
         },
         {
-            "def": "YNAM"
+            "id": "YNAM"
         },
         {
-            "def": "ZNAM"
+            "id": "ZNAM"
         },
         {
             "signature": "BMCT",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Ragdoll Constraint Template",
                 "type": "string"
             }
         },
         {
-            "def": "ETYP"
+            "id": "ETYP"
         },
         {
             "signature": "BIDS",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Bash Impact Data Set",
                 "type": "formId",
                 "signatures": [
@@ -130,7 +130,7 @@
         {
             "signature": "BAMT",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Alternate Block Material",
                 "type": "formId",
                 "signatures": [
@@ -141,7 +141,7 @@
         {
             "signature": "RNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Race",
                 "type": "formId",
                 "signatures": [
@@ -150,13 +150,13 @@
             }
         },
         {
-            "def": "KSIZ"
+            "id": "KSIZ"
         },
         {
-            "def": "KWDAs"
+            "id": "KWDAs"
         },
         {
-            "def": "DESC"
+            "id": "DESC"
         },
         {
             "name": "Armature",
@@ -164,7 +164,7 @@
             "member": {
                 "signature": "MODL",
                 "type": "subrecord",
-                "field": {
+                "element": {
                     "name": "Model FileName",
                     "type": "formId",
                     "signatures": [
@@ -177,10 +177,10 @@
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Value",
                         "type": "int32"
@@ -196,7 +196,7 @@
         {
             "signature": "DNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Armor Rating",
                 "type": "int32",
                 "format": {
@@ -208,7 +208,7 @@
         {
             "signature": "TNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Template Armor",
                 "type": "formId",
                 "signatures": [

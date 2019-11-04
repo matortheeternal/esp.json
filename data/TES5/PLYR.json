@@ -4,12 +4,12 @@
     "name": "Player Reference",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "signature": "PLYR",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Player",
                 "type": "formId"
             },

@@ -5,7 +5,7 @@
         {
             "signature": "ICON",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Large Icon FileName",
                 "type": "string"
             },
@@ -14,7 +14,7 @@
         {
             "signature": "MICO",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Small Icon FileName",
                 "type": "string"
             }

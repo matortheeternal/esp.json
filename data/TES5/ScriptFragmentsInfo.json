@@ -1,7 +1,7 @@
 {
     "name": "Script Fragments",
     "type": "struct",
-    "fields": [
+    "elements": [
         {
             "name": "Unknown",
             "type": "int8"
@@ -25,10 +25,10 @@
         {
             "name": "Fragments",
             "type": "array",
-            "field": {
+            "element": {
                 "name": "Fragment",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Unknown",
                         "type": "int8"

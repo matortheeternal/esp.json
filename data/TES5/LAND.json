@@ -13,7 +13,7 @@
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Flags",
                 "type": "uint32",
                 "format": {
@@ -37,20 +37,20 @@
         {
             "signature": "VNML",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Vertex Normals",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Row",
                     "type": "struct",
-                    "fields": [
+                    "elements": [
                         {
                             "name": "Columns",
                             "type": "array",
-                            "field": {
+                            "element": {
                                 "name": "Column",
                                 "type": "struct",
-                                "fields": [
+                                "elements": [
                                     {
                                         "name": "X",
                                         "type": "uint8"
@@ -75,10 +75,10 @@
         {
             "signature": "VHGT",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Vertext Height Map",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Offset",
                         "type": "float"
@@ -86,14 +86,14 @@
                     {
                         "name": "Rows",
                         "type": "array",
-                        "field": {
+                        "element": {
                             "name": "Row",
                             "type": "struct",
-                            "fields": [
+                            "elements": [
                                 {
                                     "name": "Columns",
                                     "type": "array",
-                                    "field": {
+                                    "element": {
                                         "name": "Column",
                                         "type": "uint8"
                                     },
@@ -114,20 +114,20 @@
         {
             "signature": "VCLR",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Vertex Colours",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Row",
                     "type": "struct",
-                    "fields": [
+                    "elements": [
                         {
                             "name": "Columns",
                             "type": "array",
-                            "field": {
+                            "element": {
                                 "name": "Column",
                                 "type": "struct",
-                                "fields": [
+                                "elements": [
                                     {
                                         "name": "X",
                                         "type": "uint8"
@@ -163,10 +163,10 @@
                             {
                                 "signature": "BTXT",
                                 "type": "subrecord",
-                                "field": {
+                                "element": {
                                     "name": "Base Layer Header",
                                     "type": "struct",
-                                    "fields": [
+                                    "elements": [
                                         {
                                             "name": "Texture",
                                             "type": "formId",
@@ -179,7 +179,7 @@
                                             "name": "Quadrant",
                                             "type": "uint8",
                                             "format": {
-                                                "def": "QuadrantEnum"
+                                                "id": "QuadrantEnum"
                                             }
                                         },
                                         {
@@ -210,10 +210,10 @@
                             {
                                 "signature": "ATXT",
                                 "type": "subrecord",
-                                "field": {
+                                "element": {
                                     "name": "Alpha Layer Header",
                                     "type": "struct",
-                                    "fields": [
+                                    "elements": [
                                         {
                                             "name": "Texture",
                                             "type": "formId",
@@ -226,7 +226,7 @@
                                             "name": "Quadrant",
                                             "type": "uint8",
                                             "format": {
-                                                "def": "QuadrantEnum"
+                                                "id": "QuadrantEnum"
                                             }
                                         },
                                         {
@@ -248,18 +248,18 @@
                             {
                                 "signature": "VTXT",
                                 "type": "subrecord",
-                                "field": {
+                                "element": {
                                     "name": "Alpha Layer Data",
                                     "type": "array",
-                                    "field": {
+                                    "element": {
                                         "name": "Cell",
                                         "type": "struct",
-                                        "fields": [
+                                        "elements": [
                                             {
                                                 "name": "Position",
                                                 "type": "uint16",
                                                 "format": {
-                                                    "def": "AtxtPosition"
+                                                    "id": "AtxtPosition"
                                                 }
                                             },
                                             {
@@ -291,10 +291,10 @@
         {
             "signature": "VTEX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Textures",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Texture",
                     "type": "formId",
                     "signatures": [
@@ -310,7 +310,7 @@
             "member": {
                 "signature": "MPCD",
                 "type": "subrecord",
-                "field": {
+                "element": {
                     "type": "bytes"
                 }
             }

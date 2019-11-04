@@ -16,37 +16,37 @@
     },
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "VMAD"
+            "id": "VMAD"
         },
         {
-            "def": "OBND",
+            "id": "OBND",
             "required": true
         },
         {
-            "def": "FULL"
+            "id": "FULL"
         },
         {
-            "def": "MODL"
+            "id": "MODL"
         },
         {
-            "def": "COCT"
+            "id": "COCT"
         },
         {
-            "def": "CNTOs"
+            "id": "CNTOs"
         },
         {
-            "def": "DEST"
+            "id": "DEST"
         },
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Flags",
                         "type": "uint8",
@@ -70,7 +70,7 @@
         {
             "signature": "SNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Sound - Open",
                 "type": "formId",
                 "signatures": [
@@ -81,7 +81,7 @@
         {
             "signature": "QNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Sound - Close",
                 "type": "formId",
                 "signatures": [

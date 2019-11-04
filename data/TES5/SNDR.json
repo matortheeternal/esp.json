@@ -4,19 +4,19 @@
     "name": "Sound Descriptor",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "signature": "CNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "type": "bytes"
             }
         },
         {
             "signature": "GNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Category",
                 "type": "formId"
             }
@@ -24,7 +24,7 @@
         {
             "signature": "SNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Alternate Sound For",
                 "type": "formId",
                 "signatures": [
@@ -43,7 +43,7 @@
                     {
                         "signature": "ANAM",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "File Name",
                             "type": "string"
                         }
@@ -54,7 +54,7 @@
         {
             "signature": "ONAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Output Model",
                 "type": "formId",
                 "signatures": [
@@ -66,22 +66,22 @@
         {
             "signature": "FNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "String",
                 "type": "string",
                 "localized": true
             }
         },
         {
-            "def": "CTDAs"
+            "id": "CTDAs"
         },
         {
             "signature": "LNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Values",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Unknown",
                         "type": "bytes",
@@ -115,10 +115,10 @@
         {
             "signature": "BNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Values",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "% Frequency Shift",
                         "type": "int8"

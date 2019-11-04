@@ -5,10 +5,10 @@
         {
             "signature": "CNTO",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Item",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Item",
                         "type": "formId",
@@ -39,7 +39,7 @@
             }
         },
         {
-            "def": "COED"
+            "id": "COED"
         }
     ],
     "sortKey": [

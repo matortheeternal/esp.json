@@ -4,12 +4,12 @@
     "name": "Dialog View",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "signature": "QNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Quest",
                 "type": "formId",
                 "signatures": [
@@ -24,7 +24,7 @@
             "member": {
                 "signature": "BNAM",
                 "type": "subrecord",
-                "field": {
+                "element": {
                     "name": "Branch",
                     "type": "formId",
                     "signatures": [
@@ -43,7 +43,7 @@
                     {
                         "signature": "TNAM",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "type": "bytes"
                         }
                     }
@@ -53,14 +53,14 @@
         {
             "signature": "ENAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "type": "bytes"
             }
         },
         {
             "signature": "DNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "type": "bytes"
             }
         }

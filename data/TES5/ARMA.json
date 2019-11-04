@@ -4,15 +4,15 @@
     "name": "Armor Addon",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "BODTBOD2"
+            "id": "BODTBOD2"
         },
         {
             "signature": "RNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Race",
                 "type": "formId",
                 "signatures": [
@@ -23,10 +23,10 @@
         {
             "signature": "DNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Male Priority",
                         "type": "uint8"
@@ -86,7 +86,7 @@
                 {
                     "signature": "MOD2",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Model FileName",
                         "type": "string"
                     }
@@ -94,13 +94,13 @@
                 {
                     "signature": "MO2T",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Texture Files Hashes",
                         "type": "bytes"
                     }
                 },
                 {
-                    "def": "MO2S"
+                    "id": "MO2S"
                 }
             ],
             "required": true
@@ -112,7 +112,7 @@
                 {
                     "signature": "MOD3",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Model FileName",
                         "type": "string"
                     }
@@ -120,13 +120,13 @@
                 {
                     "signature": "MO3T",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Texture Files Hashes",
                         "type": "bytes"
                     }
                 },
                 {
-                    "def": "MO3S"
+                    "id": "MO3S"
                 }
             ]
         },
@@ -137,7 +137,7 @@
                 {
                     "signature": "MOD4",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Model FileName",
                         "type": "string"
                     }
@@ -145,13 +145,13 @@
                 {
                     "signature": "MO4T",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Texture Files Hashes",
                         "type": "bytes"
                     }
                 },
                 {
-                    "def": "MO4S"
+                    "id": "MO4S"
                 }
             ]
         },
@@ -162,7 +162,7 @@
                 {
                     "signature": "MOD5",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Model FileName",
                         "type": "string"
                     }
@@ -170,20 +170,20 @@
                 {
                     "signature": "MO5T",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Texture Files Hashes",
                         "type": "bytes"
                     }
                 },
                 {
-                    "def": "MO5S"
+                    "id": "MO5S"
                 }
             ]
         },
         {
             "signature": "NAM0",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Male Skin Texture",
                 "type": "formId",
                 "signatures": [
@@ -195,7 +195,7 @@
         {
             "signature": "NAM1",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Female Skin texture",
                 "type": "formId",
                 "signatures": [
@@ -207,7 +207,7 @@
         {
             "signature": "NAM2",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Male Skin Texture Swap List",
                 "type": "formId",
                 "signatures": [
@@ -219,7 +219,7 @@
         {
             "signature": "NAM3",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Female Skin Texture Swap List",
                 "type": "formId",
                 "signatures": [
@@ -234,7 +234,7 @@
             "member": {
                 "signature": "MODL",
                 "type": "subrecord",
-                "field": {
+                "element": {
                     "name": "Race",
                     "type": "formId",
                     "signatures": [
@@ -248,7 +248,7 @@
         {
             "signature": "SNDD",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Footstep Sound",
                 "type": "formId",
                 "signatures": [
@@ -260,7 +260,7 @@
         {
             "signature": "ONAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Art Object",
                 "type": "formId",
                 "signatures": [

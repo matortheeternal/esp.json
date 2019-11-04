@@ -11,7 +11,7 @@
     },
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "name": "Unused RNAM",
@@ -19,10 +19,10 @@
             "member": {
                 "signature": "RNAM",
                 "type": "subrecord",
-                "field": {
+                "element": {
                     "name": "Grid",
                     "type": "struct",
-                    "fields": [
+                    "elements": [
                         {
                             "name": "Y",
                             "type": "int16"
@@ -34,10 +34,10 @@
                         {
                             "name": "References",
                             "type": "array",
-                            "field": {
+                            "element": {
                                 "name": "Reference",
                                 "type": "struct",
-                                "fields": [
+                                "elements": [
                                     {
                                         "name": "Ref",
                                         "type": "formId",
@@ -63,18 +63,18 @@
             }
         },
         {
-            "def": "MaxHeightDataWRLD"
+            "id": "MaxHeightDataWRLD"
         },
         {
-            "def": "FULL"
+            "id": "FULL"
         },
         {
             "signature": "WCTR",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Fixed Dimensions Center Cell",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "X",
                         "type": "int16"
@@ -89,7 +89,7 @@
         {
             "signature": "LTMP",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Interior Lighting",
                 "type": "formId",
                 "signatures": [
@@ -100,7 +100,7 @@
         {
             "signature": "XEZN",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Encounter Zone",
                 "type": "formId",
                 "signatures": [
@@ -112,7 +112,7 @@
         {
             "signature": "XLCN",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Location",
                 "type": "formId",
                 "signatures": [
@@ -128,7 +128,7 @@
                 {
                     "signature": "WNAM",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Worldspace",
                         "type": "formId",
                         "signatures": [
@@ -139,10 +139,10 @@
                 {
                     "signature": "PNAM",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "",
                         "type": "struct",
-                        "fields": [
+                        "elements": [
                             {
                                 "name": "Flags",
                                 "type": "uint8",
@@ -173,7 +173,7 @@
         {
             "signature": "CNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Climate",
                 "type": "formId",
                 "signatures": [
@@ -184,7 +184,7 @@
         {
             "signature": "NAM2",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Water",
                 "type": "formId",
                 "signatures": [
@@ -195,7 +195,7 @@
         {
             "signature": "NAM3",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "LOD Water Type",
                 "type": "formId",
                 "signatures": [
@@ -206,7 +206,7 @@
         {
             "signature": "NAM4",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "LOD Water Height",
                 "type": "float"
             }
@@ -214,10 +214,10 @@
         {
             "signature": "DNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Land Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Default Land Height",
                         "type": "float"
@@ -232,7 +232,7 @@
         {
             "signature": "ICON",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Map Image",
                 "type": "string"
             }
@@ -242,21 +242,21 @@
             "type": "memberStruct",
             "members": [
                 {
-                    "def": "MODL"
+                    "id": "MODL"
                 }
             ]
         },
         {
             "signature": "MNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Map Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Usable Dimensions",
                         "type": "struct",
-                        "fields": [
+                        "elements": [
                             {
                                 "name": "X",
                                 "type": "int32"
@@ -270,11 +270,11 @@
                     {
                         "name": "Cell Coordinates",
                         "type": "struct",
-                        "fields": [
+                        "elements": [
                             {
                                 "name": "NW Cell",
                                 "type": "struct",
-                                "fields": [
+                                "elements": [
                                     {
                                         "name": "X",
                                         "type": "int16"
@@ -288,7 +288,7 @@
                             {
                                 "name": "SE Cell",
                                 "type": "struct",
-                                "fields": [
+                                "elements": [
                                     {
                                         "name": "X",
                                         "type": "int16"
@@ -304,7 +304,7 @@
                     {
                         "name": "Camera Data",
                         "type": "struct",
-                        "fields": [
+                        "elements": [
                             {
                                 "name": "Min Height",
                                 "type": "float"
@@ -326,10 +326,10 @@
         {
             "signature": "ONAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "World Map Offset Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "World Map Scale",
                         "type": "float"
@@ -353,7 +353,7 @@
         {
             "signature": "NAMA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Distant LOD Multiplier",
                 "type": "float"
             }
@@ -361,7 +361,7 @@
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Flags",
                 "type": "uint8",
                 "format": {
@@ -386,10 +386,10 @@
                 {
                     "signature": "NAM0",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Min",
                         "type": "struct",
-                        "fields": [
+                        "elements": [
                             {
                                 "name": "X",
                                 "type": "float",
@@ -407,10 +407,10 @@
                 {
                     "signature": "NAM9",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Max",
                         "type": "struct",
-                        "fields": [
+                        "elements": [
                             {
                                 "name": "X",
                                 "type": "float",
@@ -430,7 +430,7 @@
         {
             "signature": "ZNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Music",
                 "type": "formId",
                 "signatures": [
@@ -441,7 +441,7 @@
         {
             "signature": "NNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Canopy Shadow (unused)",
                 "type": "string"
             }
@@ -449,7 +449,7 @@
         {
             "signature": "XNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Water Noise Texture",
                 "type": "string"
             }
@@ -457,7 +457,7 @@
         {
             "signature": "TNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "HD LOD Diffuse Texture",
                 "type": "string"
             }
@@ -465,7 +465,7 @@
         {
             "signature": "UNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "HD LOD Normal Texture",
                 "type": "string"
             }
@@ -473,13 +473,13 @@
         {
             "signature": "XWEM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Water Environment Map (unused)",
                 "type": "string"
             }
         },
         {
-            "def": "OFST"
+            "id": "OFST"
         }
     ]
 }

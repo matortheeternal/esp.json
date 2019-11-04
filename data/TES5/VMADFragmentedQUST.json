@@ -1,10 +1,10 @@
 {
     "signature": "VMAD",
     "type": "subrecord",
-    "field": {
+    "element": {
         "name": "Virtual Machine Adapter",
         "type": "struct",
-        "fields": [
+        "elements": [
             {
                 "name": "Version",
                 "type": "int16",
@@ -18,24 +18,24 @@
             {
                 "name": "Scripts",
                 "type": "array",
-                "field": {
-                    "def": "ScriptEntry"
+                "element": {
+                    "id": "ScriptEntry"
                 },
                 "sorted": true,
                 "prefix": 2
             },
             {
-                "def": "ScriptFragmentsQuest"
+                "id": "ScriptFragmentsQuest"
             },
             {
                 "name": "Aliases",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Alias",
                     "type": "struct",
-                    "fields": [
+                    "elements": [
                         {
-                            "def": "ScriptPropertyObject"
+                            "id": "ScriptPropertyObject"
                         },
                         {
                             "name": "Version",
@@ -50,8 +50,8 @@
                         {
                             "name": "Alias Scripts",
                             "type": "array",
-                            "field": {
-                                "def": "ScriptEntry"
+                            "element": {
+                                "id": "ScriptEntry"
                             },
                             "sorted": true,
                             "prefix": 2

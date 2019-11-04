@@ -1,13 +1,13 @@
 {
     "signature": "OFST",
     "type": "subrecord",
-    "field": {
+    "element": {
         "name": "Offset Data",
         "type": "array",
-        "field": {
+        "element": {
             "name": "Rows",
             "type": "array",
-            "field": {
+            "element": {
                 "name": "Offset",
                 "type": "uint32"
             }

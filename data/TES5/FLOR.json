@@ -4,42 +4,42 @@
     "name": "Flora",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "VMAD"
+            "id": "VMAD"
         },
         {
-            "def": "OBND",
+            "id": "OBND",
             "required": true
         },
         {
-            "def": "FULL",
+            "id": "FULL",
             "required": true
         },
         {
-            "def": "MODL"
+            "id": "MODL"
         },
         {
-            "def": "DEST"
+            "id": "DEST"
         },
         {
-            "def": "KSIZ"
+            "id": "KSIZ"
         },
         {
-            "def": "KWDAs"
+            "id": "KWDAs"
         },
         {
             "signature": "PNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "type": "bytes"
             }
         },
         {
             "signature": "RNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Activate Text Override",
                 "type": "string",
                 "localized": true
@@ -48,14 +48,14 @@
         {
             "signature": "FNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "type": "bytes"
             }
         },
         {
             "signature": "PFIG",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Ingredient",
                 "type": "formId",
                 "signatures": [
@@ -70,7 +70,7 @@
         {
             "signature": "SNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Sound",
                 "type": "formId",
                 "signatures": [
@@ -82,10 +82,10 @@
         {
             "signature": "PFPC",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Seasonal ingredient production",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Spring",
                         "type": "uint8"

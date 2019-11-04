@@ -4,12 +4,12 @@
     "name": "Music Track",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "signature": "CNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Track Type",
                 "type": "uint32",
                 "format": {
@@ -25,7 +25,7 @@
         {
             "signature": "FLTV",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Duration",
                 "type": "float"
             }
@@ -33,7 +33,7 @@
         {
             "signature": "DNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Fade-Out",
                 "type": "float"
             }
@@ -41,7 +41,7 @@
         {
             "signature": "ANAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Track FileName",
                 "type": "string"
             }
@@ -49,7 +49,7 @@
         {
             "signature": "BNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Finale FileName",
                 "type": "string"
             }
@@ -57,10 +57,10 @@
         {
             "signature": "FNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cue Points",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Point",
                     "type": "float"
                 }
@@ -70,10 +70,10 @@
         {
             "signature": "LNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Loop Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Loop Begins",
                         "type": "float"
@@ -90,18 +90,18 @@
             }
         },
         {
-            "def": "CITC"
+            "id": "CITC"
         },
         {
-            "def": "CTDAsCount"
+            "id": "CTDAsCount"
         },
         {
             "signature": "SNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Tracks",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Track",
                     "type": "formId",
                     "signatures": [

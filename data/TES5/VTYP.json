@@ -4,12 +4,12 @@
     "name": "Voice Type",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "signature": "DNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Flags",
                 "type": "uint8",
                 "format": {

@@ -4,15 +4,15 @@
     "name": "Encounter Zone",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Owner",
                         "type": "formId",

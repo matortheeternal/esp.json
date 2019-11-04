@@ -12,5 +12,5 @@ module.exports = () => {
     // DATAPosRot -> DataPosRot
     defs.DataPosRot = defs.DATAPosRot;
     delete defs.DATAPosRot;
-    last(defs.ACHR.members).def = 'DataPosRot';
+    last(defs.ACHR.members).id = 'DataPosRot';
 };

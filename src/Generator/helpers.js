@@ -8,7 +8,7 @@ let IsSSE = (game, options) => game === 'SSE' ? options[0] : options[1];
 
 // shared
 let req = obj => ({ ...obj, required: true });
-let def = (def, opts) => ({ def, ...opts });
+let def = (id, opts) => ({ id, ...opts });
 let opts = (obj, opts) => ({ ...obj, ...opts });
 let sortKey = (sortKey, obj) => ({ ...obj, sortKey });
 let inherit = (inheritFrom, obj) => ({ ...obj, inheritFrom});
@@ -33,8 +33,8 @@ let formatUnion = (decider, formats) =>
 let record = (signature, name, def) => addDef(signature,
     { signature, type: 'record', name, ...def }
 );
-let subrecord = (signature, field) =>
-    ({ signature, type: 'subrecord', field });
+let subrecord = (signature, element) =>
+    ({ signature, type: 'subrecord', element });
 
 let memberArray = (name, member) =>
     ({ name, type: 'memberArray', member });
@@ -43,12 +43,12 @@ let memberStruct = (name, members) =>
 let memberUnion = (name, members) =>
     ({ name, type: 'memberUnion', members });
 
-let struct = (name, fields) =>
-    ({ name, type: 'struct', fields });
-let array = (name, field) =>
-    ({ name, type: 'array', field });
-let union = (name, decider, fields) =>
-    ({ name, type: 'union', decider, fields });
+let struct = (name, elements) =>
+    ({ name, type: 'struct', elements });
+let array = (name, element) =>
+    ({ name, type: 'array', element });
+let union = (name, decider, elements) =>
+    ({ name, type: 'union', decider, elements });
 
 // base types
 let string = (name) => ({ name, type: 'string' });

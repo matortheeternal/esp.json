@@ -8,7 +8,7 @@
             {
                 "signature": "UNAM",
                 "type": "subrecord",
-                "field": {
+                "element": {
                     "name": "Index",
                     "type": "int8"
                 }
@@ -16,7 +16,7 @@
             {
                 "signature": "BNAM",
                 "type": "subrecord",
-                "field": {
+                "element": {
                     "name": "Name",
                     "type": "string"
                 }
@@ -24,7 +24,7 @@
             {
                 "signature": "PNAM",
                 "type": "subrecord",
-                "field": {
+                "element": {
                     "name": "Flags",
                     "type": "uint32",
                     "format": {

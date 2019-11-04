@@ -1,10 +1,10 @@
 {
     "signature": "DODT",
     "type": "subrecord",
-    "field": {
+    "element": {
         "name": "Decal Data",
         "type": "struct",
-        "fields": [
+        "elements": [
             {
                 "name": "Min Width",
                 "type": "float"
@@ -32,7 +32,7 @@
             {
                 "name": "Parallax",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Scale",
                         "type": "float"
@@ -62,7 +62,7 @@
                 "size": 2
             },
             {
-                "def": "ByteColors",
+                "id": "ByteColors",
                 "name": "Color"
             }
         ]

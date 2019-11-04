@@ -1,10 +1,10 @@
 {
     "signature": "KWDA",
     "type": "subrecord",
-    "field": {
+    "element": {
         "name": "Keywords",
         "type": "array",
-        "field": {
+        "element": {
             "name": "Keyword",
             "type": "formId",
             "signatures": [

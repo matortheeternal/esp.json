@@ -4,12 +4,12 @@
     "name": "Navigation Mesh Info Map",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "signature": "NVER",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Version",
                 "type": "uint32"
             }
@@ -20,10 +20,10 @@
             "member": {
                 "signature": "NVMI",
                 "type": "subrecord",
-                "field": {
+                "element": {
                     "name": "Navigation Map Info",
                     "type": "struct",
-                    "fields": [
+                    "elements": [
                         {
                             "name": "Navigation Mesh",
                             "type": "formId",
@@ -55,7 +55,7 @@
                         {
                             "name": "Merged To",
                             "type": "array",
-                            "field": {
+                            "element": {
                                 "name": "Mesh",
                                 "type": "formId",
                                 "signatures": [
@@ -67,7 +67,7 @@
                         {
                             "name": "Preferred Merges",
                             "type": "array",
-                            "field": {
+                            "element": {
                                 "name": "Mesh",
                                 "type": "formId",
                                 "signatures": [
@@ -79,10 +79,10 @@
                         {
                             "name": "Linked Doors",
                             "type": "array",
-                            "field": {
+                            "element": {
                                 "name": "Door",
                                 "type": "struct",
-                                "fields": [
+                                "elements": [
                                     {
                                         "name": "Unknown",
                                         "type": "bytes",
@@ -114,12 +114,12 @@
                             "name": "Island",
                             "type": "union",
                             "decider": "NAVIIslandDataDecider",
-                            "fields": [
+                            "elements": [
                                 {
-                                    "def": "Null"
+                                    "id": "Null"
                                 },
                                 {
-                                    "def": "NAVIslandData"
+                                    "id": "NAVIslandData"
                                 }
                             ]
                         },
@@ -140,11 +140,11 @@
                             "name": "Parent",
                             "type": "union",
                             "decider": "NAVIParentDecider",
-                            "fields": [
+                            "elements": [
                                 {
                                     "name": "Coordinates",
                                     "type": "struct",
-                                    "fields": [
+                                    "elements": [
                                         {
                                             "name": "Grid Y",
                                             "type": "int16"
@@ -171,17 +171,17 @@
         {
             "signature": "NVPP",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Preferred Pathing",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "NavMeshes",
                         "type": "array",
-                        "field": {
+                        "element": {
                             "name": "Set",
                             "type": "array",
-                            "field": {
+                            "element": {
                                 "name": "",
                                 "type": "formId",
                                 "signatures": [
@@ -195,10 +195,10 @@
                     {
                         "name": "NavMesh Tree?",
                         "type": "array",
-                        "field": {
+                        "element": {
                             "name": "",
                             "type": "struct",
-                            "fields": [
+                            "elements": [
                                 {
                                     "name": "NavMesh",
                                     "type": "formId",
@@ -220,10 +220,10 @@
         {
             "signature": "NVSI",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Unknown",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Navigation Mesh",
                     "type": "formId",
                     "signatures": [

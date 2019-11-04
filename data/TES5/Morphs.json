@@ -5,7 +5,7 @@
         {
             "signature": "MPAI",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Unknown",
                 "type": "bytes"
             }
@@ -13,12 +13,12 @@
         {
             "signature": "MPAV",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Nose Variants",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
-                        "def": "NoseMorphFlags"
+                        "id": "NoseMorphFlags"
                     },
                     {
                         "name": "Unknown",
@@ -61,7 +61,7 @@
         {
             "signature": "MPAI",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Unknown",
                 "type": "bytes"
             }
@@ -69,12 +69,12 @@
         {
             "signature": "MPAV",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Brow Variants",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
-                        "def": "BrowMorphFlags"
+                        "id": "BrowMorphFlags"
                     },
                     {
                         "name": "Unknown",
@@ -117,7 +117,7 @@
         {
             "signature": "MPAI",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Unknown",
                 "type": "bytes"
             }
@@ -125,15 +125,15 @@
         {
             "signature": "MPAV",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Eye Variants",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
-                        "def": "EyesMorphFlags01"
+                        "id": "EyesMorphFlags01"
                     },
                     {
-                        "def": "EyesMorphFlags02"
+                        "id": "EyesMorphFlags02"
                     },
                     {
                         "name": "Unknown",
@@ -176,7 +176,7 @@
         {
             "signature": "MPAI",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Unknown",
                 "type": "bytes"
             }
@@ -184,12 +184,12 @@
         {
             "signature": "MPAV",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Lip Variants",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
-                        "def": "LipMorphFlags"
+                        "id": "LipMorphFlags"
                     },
                     {
                         "name": "Unknown",

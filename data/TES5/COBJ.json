@@ -4,21 +4,21 @@
     "name": "Constructible Object",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "COCT"
+            "id": "COCT"
         },
         {
-            "def": "CNTOsNoReach"
+            "id": "CNTOsNoReach"
         },
         {
-            "def": "CTDAs"
+            "id": "CTDAs"
         },
         {
             "signature": "CNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Created Object",
                 "type": "formId"
             }
@@ -26,7 +26,7 @@
         {
             "signature": "BNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Workbench Keyword",
                 "type": "formId",
                 "signatures": [
@@ -37,7 +37,7 @@
         {
             "signature": "NAM1",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Created Object Count",
                 "type": "uint16"
             }

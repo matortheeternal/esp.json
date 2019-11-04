@@ -4,15 +4,15 @@
     "name": "Sound Category",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "FULL"
+            "id": "FULL"
         },
         {
             "signature": "FNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Flags",
                 "type": "uint32",
                 "format": {
@@ -27,7 +27,7 @@
         {
             "signature": "PNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Parent",
                 "type": "formId",
                 "signatures": [
@@ -38,7 +38,7 @@
         {
             "signature": "VNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Static Volume Multiplier",
                 "type": "uint16",
                 "format": {
@@ -50,7 +50,7 @@
         {
             "signature": "UNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Default Menu Value",
                 "type": "uint16",
                 "format": {

@@ -4,15 +4,15 @@
     "name": "Footstep Set",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "signature": "XCNT",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Count",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Walk Forward Sets",
                         "type": "uint32"
@@ -40,10 +40,10 @@
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Footstep Sets",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Footstep",
                     "type": "formId",
                     "signatures": [

@@ -13,29 +13,29 @@
     },
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "NVNM"
+            "id": "NVNM"
         },
         {
             "signature": "ONAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "type": "bytes"
             }
         },
         {
             "signature": "PNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "type": "bytes"
             }
         },
         {
             "signature": "NNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "type": "bytes"
             }
         }

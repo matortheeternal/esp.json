@@ -5,10 +5,10 @@
         {
             "signature": "ATKD",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Attack Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Damage Mult",
                         "type": "float"
@@ -105,7 +105,7 @@
         {
             "signature": "ATKE",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Attack Event",
                 "type": "string"
             }

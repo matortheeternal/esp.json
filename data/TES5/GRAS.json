@@ -4,22 +4,22 @@
     "name": "Grass",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "OBND",
+            "id": "OBND",
             "required": true
         },
         {
-            "def": "MODL"
+            "id": "MODL"
         },
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Density",
                         "type": "uint8"

@@ -1,10 +1,10 @@
 {
     "signature": "PDTO",
     "type": "subrecord",
-    "field": {
+    "element": {
         "name": "Topic Data",
         "type": "struct",
-        "fields": [
+        "elements": [
             {
                 "name": "Type",
                 "type": "uint32",
@@ -20,7 +20,7 @@
                 "name": "Data",
                 "type": "union",
                 "decider": "TypeDecider",
-                "fields": [
+                "elements": [
                     {
                         "name": "Topic",
                         "type": "formId",

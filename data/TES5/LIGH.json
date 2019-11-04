@@ -13,34 +13,34 @@
     },
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "VMAD"
+            "id": "VMAD"
         },
         {
-            "def": "OBND",
+            "id": "OBND",
             "required": true
         },
         {
-            "def": "MODL"
+            "id": "MODL"
         },
         {
-            "def": "DEST"
+            "id": "DEST"
         },
         {
-            "def": "FULL"
+            "id": "FULL"
         },
         {
-            "def": "ICON"
+            "id": "ICON"
         },
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Time",
                         "type": "int32"
@@ -50,7 +50,7 @@
                         "type": "uint32"
                     },
                     {
-                        "def": "ByteColors"
+                        "id": "ByteColors"
                     },
                     {
                         "name": "Flags",
@@ -90,7 +90,7 @@
                     {
                         "name": "Flicker Effect",
                         "type": "struct",
-                        "fields": [
+                        "elements": [
                             {
                                 "name": "Period",
                                 "type": "float",
@@ -121,7 +121,7 @@
         {
             "signature": "FNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Fade value",
                 "type": "float",
                 "required": true
@@ -131,7 +131,7 @@
         {
             "signature": "SNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Sound",
                 "type": "formId",
                 "signatures": [

@@ -23,37 +23,37 @@
     },
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "VMAD"
+            "id": "VMAD"
         },
         {
-            "def": "OBND",
+            "id": "OBND",
             "required": true
         },
         {
-            "def": "FULL"
+            "id": "FULL"
         },
         {
-            "def": "MODL"
+            "id": "MODL"
         },
         {
-            "def": "DEST"
+            "id": "DEST"
         },
         {
-            "def": "KSIZ"
+            "id": "KSIZ"
         },
         {
-            "def": "KWDAs"
+            "id": "KWDAs"
         },
         {
             "signature": "PNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Marker Color",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Red",
                         "type": "uint8"
@@ -76,7 +76,7 @@
         {
             "signature": "SNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Sound - Looping",
                 "type": "formId",
                 "signatures": [
@@ -87,7 +87,7 @@
         {
             "signature": "VNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Sound - Activation",
                 "type": "formId",
                 "signatures": [
@@ -98,7 +98,7 @@
         {
             "signature": "WNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Water Type",
                 "type": "formId",
                 "signatures": [
@@ -109,7 +109,7 @@
         {
             "signature": "RNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Activate Text Override",
                 "type": "string",
                 "localized": true
@@ -118,7 +118,7 @@
         {
             "signature": "FNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Flags",
                 "type": "uint16",
                 "format": {
@@ -133,7 +133,7 @@
         {
             "signature": "KNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Interaction Keyword",
                 "type": "formId",
                 "signatures": [

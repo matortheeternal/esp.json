@@ -4,15 +4,15 @@
     "name": "Outfit",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "signature": "INAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Items",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Item",
                     "type": "formId",
                     "signatures": [

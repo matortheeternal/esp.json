@@ -1,10 +1,10 @@
 {
     "signature": "MHDT",
     "type": "subrecord",
-    "field": {
+    "element": {
         "name": "Max Height Data",
         "type": "struct",
-        "fields": [
+        "elements": [
             {
                 "name": "Offset",
                 "type": "float"
@@ -12,7 +12,7 @@
             {
                 "name": "Rows",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Columns",
                     "type": "bytes",
                     "size": 32

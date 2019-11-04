@@ -11,15 +11,15 @@
     },
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "signature": "CSGD",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "General",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Offensive Mult",
                         "type": "float"
@@ -67,17 +67,17 @@
         {
             "signature": "CSMD",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "type": "bytes"
             }
         },
         {
             "signature": "CSME",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Melee",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Attack Staggered Mult",
                         "type": "float"
@@ -117,10 +117,10 @@
         {
             "signature": "CSCR",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Close Range",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Circle Mult",
                         "type": "float"
@@ -144,10 +144,10 @@
         {
             "signature": "CSLR",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Long Range",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Strafe Mult",
                         "type": "float"
@@ -159,10 +159,10 @@
         {
             "signature": "CSFL",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Flight",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Hover Chance",
                         "type": "float"
@@ -202,7 +202,7 @@
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Flags",
                 "type": "uint32",
                 "format": {

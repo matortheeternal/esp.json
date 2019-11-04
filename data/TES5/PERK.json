@@ -11,31 +11,31 @@
     },
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "VMADFragmentedPERK"
+            "id": "VMADFragmentedPERK"
         },
         {
-            "def": "FULL"
+            "id": "FULL"
         },
         {
-            "def": "DESC",
+            "id": "DESC",
             "required": true
         },
         {
-            "def": "ICON"
+            "id": "ICON"
         },
         {
-            "def": "CTDAs"
+            "id": "CTDAs"
         },
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Trait",
                         "type": "uint8",
@@ -84,7 +84,7 @@
         {
             "signature": "NNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Next Perk",
                 "type": "formId",
                 "signatures": [
@@ -103,10 +103,10 @@
                     {
                         "signature": "PRKE",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Header",
                             "type": "struct",
-                            "fields": [
+                            "elements": [
                                 {
                                     "name": "Type",
                                     "type": "uint8",
@@ -138,15 +138,15 @@
                     {
                         "signature": "DATA",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Effect Data",
                             "type": "union",
                             "decider": "PerkDATADecider",
-                            "fields": [
+                            "elements": [
                                 {
                                     "name": "Quest + Stage",
                                     "type": "struct",
-                                    "fields": [
+                                    "elements": [
                                         {
                                             "name": "Quest",
                                             "type": "formId",
@@ -158,7 +158,7 @@
                                             "name": "Quest Stage",
                                             "type": "uint8",
                                             "format": {
-                                                "def": "PerkDATAQuestStageToStr"
+                                                "id": "PerkDATAQuestStageToStr"
                                             }
                                         },
                                         {
@@ -182,12 +182,12 @@
                                 {
                                     "name": "Entry Point",
                                     "type": "struct",
-                                    "fields": [
+                                    "elements": [
                                         {
                                             "name": "Entry Point",
                                             "type": "uint8",
                                             "format": {
-                                                "def": "EntryPointsEnum"
+                                                "id": "EntryPointsEnum"
                                             }
                                         },
                                         {
@@ -239,13 +239,13 @@
                                 {
                                     "signature": "PRKC",
                                     "type": "subrecord",
-                                    "field": {
+                                    "element": {
                                         "name": "Run On (Tab Index)",
                                         "type": "int8"
                                     }
                                 },
                                 {
-                                    "def": "CTDAs",
+                                    "id": "CTDAs",
                                     "required": true
                                 }
                             ],
@@ -262,7 +262,7 @@
                             {
                                 "signature": "EPFT",
                                 "type": "subrecord",
-                                "field": {
+                                "element": {
                                     "name": "Type",
                                     "type": "uint8",
                                     "format": {
@@ -283,7 +283,7 @@
                             {
                                 "signature": "EPF2",
                                 "type": "subrecord",
-                                "field": {
+                                "element": {
                                     "name": "Button Label",
                                     "type": "string",
                                     "localized": true
@@ -292,10 +292,10 @@
                             {
                                 "signature": "EPF3",
                                 "type": "subrecord",
-                                "field": {
+                                "element": {
                                     "name": "Script Flags",
                                     "type": "struct",
-                                    "fields": [
+                                    "elements": [
                                         {
                                             "name": "Script Flags",
                                             "type": "uint16",
@@ -317,11 +317,11 @@
                             {
                                 "signature": "EPFD",
                                 "type": "subrecord",
-                                "field": {
+                                "element": {
                                     "name": "Data",
                                     "type": "union",
                                     "decider": "EPFDDecider",
-                                    "fields": [
+                                    "elements": [
                                         {
                                             "name": "Unknown",
                                             "type": "bytes"
@@ -333,7 +333,7 @@
                                         {
                                             "name": "Float, Float",
                                             "type": "struct",
-                                            "fields": [
+                                            "elements": [
                                                 {
                                                     "name": "Float 1",
                                                     "type": "float"
@@ -377,12 +377,12 @@
                                         {
                                             "name": "Actor Value, Float",
                                             "type": "struct",
-                                            "fields": [
+                                            "elements": [
                                                 {
                                                     "name": "Actor Value",
                                                     "type": "uint32",
                                                     "format": {
-                                                        "def": "EPFDActorValueToStr"
+                                                        "id": "EPFDActorValueToStr"
                                                     }
                                                 },
                                                 {
@@ -401,7 +401,7 @@
                     {
                         "signature": "PRKF",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "End Marker",
                             "type": "empty"
                         },

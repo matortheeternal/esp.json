@@ -4,12 +4,12 @@
     "name": "Landscape Texture",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "signature": "TNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Texture Set",
                 "type": "formId",
                 "signatures": [
@@ -21,7 +21,7 @@
         {
             "signature": "MNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Material Type",
                 "type": "formId",
                 "signatures": [
@@ -34,10 +34,10 @@
         {
             "signature": "HNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Havok Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Friction",
                         "type": "uint8"
@@ -53,7 +53,7 @@
         {
             "signature": "SNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Texture Specular Exponent",
                 "type": "uint8"
             }
@@ -64,7 +64,7 @@
             "member": {
                 "signature": "GNAM",
                 "type": "subrecord",
-                "field": {
+                "element": {
                     "name": "Grass",
                     "type": "formId",
                     "signatures": [
@@ -77,7 +77,7 @@
         {
             "signature": "INAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Unused",
                 "type": "uint32",
                 "format": {

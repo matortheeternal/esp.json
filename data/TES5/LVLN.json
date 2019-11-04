@@ -4,19 +4,19 @@
     "name": "Leveled NPC",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "OBND",
+            "id": "OBND",
             "required": true
         },
         {
-            "def": "LVLD"
+            "id": "LVLD"
         },
         {
             "signature": "LVLF",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Flags",
                 "type": "uint8",
                 "format": {
@@ -31,7 +31,7 @@
         {
             "signature": "LVLG",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Global",
                 "type": "formId",
                 "signatures": [
@@ -40,7 +40,7 @@
             }
         },
         {
-            "def": "LLCT"
+            "id": "LLCT"
         },
         {
             "name": "Leveled List Entries",
@@ -52,10 +52,10 @@
                     {
                         "signature": "LVLO",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Base Data",
                             "type": "struct",
-                            "fields": [
+                            "elements": [
                                 {
                                     "name": "Level",
                                     "type": "int16"
@@ -90,7 +90,7 @@
                         }
                     },
                     {
-                        "def": "COED"
+                        "id": "COED"
                     }
                 ],
                 "sortKey": [
@@ -101,7 +101,7 @@
             "required": true
         },
         {
-            "def": "MODL"
+            "id": "MODL"
         }
     ]
 }

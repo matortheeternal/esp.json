@@ -4,19 +4,19 @@
     "name": "Addon Node",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "OBND",
+            "id": "OBND",
             "required": true
         },
         {
-            "def": "MODL"
+            "id": "MODL"
         },
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Node Index",
                 "type": "int32"
             }
@@ -24,7 +24,7 @@
         {
             "signature": "SNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Sound",
                 "type": "formId",
                 "signatures": [
@@ -36,10 +36,10 @@
         {
             "signature": "DNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Master Particle System Cap",
                         "type": "uint16"

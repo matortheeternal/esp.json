@@ -4,12 +4,12 @@
     "name": "Volumetric Lighting",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "signature": "CNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Intensity",
                 "type": "float"
             }
@@ -17,7 +17,7 @@
         {
             "signature": "DNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Custom Color - Contribution",
                 "type": "float"
             }
@@ -25,7 +25,7 @@
         {
             "signature": "ENAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Red",
                 "type": "float",
                 "required": true
@@ -35,7 +35,7 @@
         {
             "signature": "FNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Green",
                 "type": "float",
                 "required": true
@@ -45,7 +45,7 @@
         {
             "signature": "GNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Blue",
                 "type": "float",
                 "required": true
@@ -55,7 +55,7 @@
         {
             "signature": "HNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Density - Contribution",
                 "type": "float"
             }
@@ -63,7 +63,7 @@
         {
             "signature": "INAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Density - Size",
                 "type": "float"
             }
@@ -71,7 +71,7 @@
         {
             "signature": "JNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Density - Wind Speed",
                 "type": "float"
             }
@@ -79,7 +79,7 @@
         {
             "signature": "KNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Density - Falling Speed",
                 "type": "float"
             }
@@ -87,7 +87,7 @@
         {
             "signature": "LNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Phase Function - Contribution",
                 "type": "float"
             }
@@ -95,7 +95,7 @@
         {
             "signature": "MNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Phase Function - Scattering",
                 "type": "float"
             }
@@ -103,7 +103,7 @@
         {
             "signature": "NNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Sampling Repartition - Range Factor",
                 "type": "float"
             }

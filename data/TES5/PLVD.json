@@ -1,22 +1,22 @@
 {
     "signature": "PLVD",
     "type": "subrecord",
-    "field": {
+    "element": {
         "name": "Location",
         "type": "struct",
-        "fields": [
+        "elements": [
             {
                 "name": "Type",
                 "type": "int32",
                 "format": {
-                    "def": "LocationEnum"
+                    "id": "LocationEnum"
                 }
             },
             {
                 "name": "Location Value",
                 "type": "union",
                 "decider": "TypeDecider",
-                "fields": [
+                "elements": [
                     {
                         "name": "Reference",
                         "type": "formId",
@@ -87,7 +87,7 @@
                         "name": "Object Type",
                         "type": "uint32",
                         "format": {
-                            "def": "ObjectTypeEnum"
+                            "id": "ObjectTypeEnum"
                         }
                     },
                     {
@@ -107,14 +107,14 @@
                         "name": "Alias",
                         "type": "int32",
                         "format": {
-                            "def": "PackageLocationAliasToStr"
+                            "id": "PackageLocationAliasToStr"
                         }
                     },
                     {
                         "name": "Reference",
                         "type": "int32",
                         "format": {
-                            "def": "PackageLocationAliasToStr"
+                            "id": "PackageLocationAliasToStr"
                         }
                     },
                     {

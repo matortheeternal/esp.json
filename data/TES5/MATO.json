@@ -4,10 +4,10 @@
     "name": "Material Object",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "MODL"
+            "id": "MODL"
         },
         {
             "name": "Property Data",
@@ -15,7 +15,7 @@
             "member": {
                 "signature": "DNAM",
                 "type": "subrecord",
-                "field": {
+                "element": {
                     "name": "Data",
                     "type": "bytes"
                 }
@@ -24,10 +24,10 @@
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Directional Material Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Falloff Scale",
                         "type": "float"
@@ -47,7 +47,7 @@
                     {
                         "name": "Projection Vector",
                         "type": "struct",
-                        "fields": [
+                        "elements": [
                             {
                                 "name": "X",
                                 "type": "float"
@@ -67,7 +67,7 @@
                         "type": "float"
                     },
                     {
-                        "def": "FloatColors",
+                        "id": "FloatColors",
                         "name": "Single Pass Color"
                     },
                     {

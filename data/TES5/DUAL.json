@@ -4,19 +4,19 @@
     "name": "Dual Cast Data",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "OBND",
+            "id": "OBND",
             "required": true
         },
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Projectile",
                         "type": "formId",

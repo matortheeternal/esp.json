@@ -4,36 +4,36 @@
     "name": "Spell",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "OBND",
+            "id": "OBND",
             "required": true
         },
         {
-            "def": "FULL"
+            "id": "FULL"
         },
         {
-            "def": "KSIZ"
+            "id": "KSIZ"
         },
         {
-            "def": "KWDAs"
+            "id": "KWDAs"
         },
         {
-            "def": "MDOB"
+            "id": "MDOB"
         },
         {
-            "def": "ETYP"
+            "id": "ETYP"
         },
         {
-            "def": "DESC",
+            "id": "DESC",
             "required": true
         },
         {
-            "def": "SPIT"
+            "id": "SPIT"
         },
         {
-            "def": "Effects",
+            "id": "Effects",
             "required": true
         }
     ]

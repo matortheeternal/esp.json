@@ -11,46 +11,46 @@
     },
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "VMAD"
+            "id": "VMAD"
         },
         {
-            "def": "OBND",
+            "id": "OBND",
             "required": true
         },
         {
-            "def": "FULL"
+            "id": "FULL"
         },
         {
-            "def": "MODL"
+            "id": "MODL"
         },
         {
-            "def": "ICON"
+            "id": "ICON"
         },
         {
-            "def": "DEST"
+            "id": "DEST"
         },
         {
-            "def": "YNAM"
+            "id": "YNAM"
         },
         {
-            "def": "ZNAM"
+            "id": "ZNAM"
         },
         {
-            "def": "KSIZ"
+            "id": "KSIZ"
         },
         {
-            "def": "KWDAs"
+            "id": "KWDAs"
         },
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Value",
                         "type": "int32"

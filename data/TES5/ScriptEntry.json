@@ -1,17 +1,17 @@
 {
     "name": "Script",
     "type": "struct",
-    "fields": [
+    "elements": [
         {
             "name": "ScriptName",
             "type": "string",
             "prefix": 2
         },
         {
-            "def": "ScriptFlags"
+            "id": "ScriptFlags"
         },
         {
-            "def": "ScriptProperties"
+            "id": "ScriptProperties"
         }
     ],
     "sortKey": [

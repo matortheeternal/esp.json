@@ -1,10 +1,10 @@
 {
     "signature": "EFIT",
     "type": "subrecord",
-    "field": {
+    "element": {
         "name": "",
         "type": "struct",
-        "fields": [
+        "elements": [
             {
                 "name": "Magnitude",
                 "type": "float",

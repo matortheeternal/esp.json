@@ -4,12 +4,12 @@
     "name": "Story Manager Quest Node",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "signature": "PNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Parent ",
                 "type": "formId",
                 "signatures": [
@@ -23,7 +23,7 @@
         {
             "signature": "SNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Previous Sibling ",
                 "type": "formId",
                 "signatures": [
@@ -35,24 +35,24 @@
             }
         },
         {
-            "def": "CITC",
+            "id": "CITC",
             "required": true
         },
         {
-            "def": "CTDAsCount"
+            "id": "CTDAsCount"
         },
         {
             "signature": "DNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Flags",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Node Flags",
                         "type": "uint16",
                         "format": {
-                            "def": "SMNodeFlags"
+                            "id": "SMNodeFlags"
                         }
                     },
                     {
@@ -73,7 +73,7 @@
         {
             "signature": "XNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Max concurrent quests",
                 "type": "uint32"
             }
@@ -81,7 +81,7 @@
         {
             "signature": "MNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Num quests to run",
                 "type": "uint32"
             }
@@ -89,7 +89,7 @@
         {
             "signature": "QNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Quest Count",
                 "type": "uint32"
             }
@@ -104,7 +104,7 @@
                     {
                         "signature": "NNAM",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Quest",
                             "type": "formId",
                             "signatures": [
@@ -115,14 +115,14 @@
                     {
                         "signature": "FNAM",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "type": "bytes"
                         }
                     },
                     {
                         "signature": "RNAM",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Hours until reset",
                             "type": "float",
                             "required": true

@@ -11,22 +11,22 @@
     },
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "VMAD"
+            "id": "VMAD"
         },
         {
-            "def": "OBND",
+            "id": "OBND",
             "required": true
         },
         {
-            "def": "MODL"
+            "id": "MODL"
         },
         {
             "signature": "PFIG",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Ingredient",
                 "type": "formId",
                 "signatures": [
@@ -41,7 +41,7 @@
         {
             "signature": "SNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Harvest Sound",
                 "type": "formId",
                 "signatures": [
@@ -53,10 +53,10 @@
         {
             "signature": "PFPC",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Ingredient Production",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Spring",
                         "type": "uint8"
@@ -77,15 +77,15 @@
             }
         },
         {
-            "def": "FULL"
+            "id": "FULL"
         },
         {
             "signature": "CNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Tree Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Trunk Flexibility",
                         "type": "float"

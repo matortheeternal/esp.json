@@ -6,7 +6,7 @@
         {
             "signature": "EDID",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Editor ID",
                 "type": "string"
             },
@@ -18,7 +18,7 @@
             "member": {
                 "signature": "LNAM",
                 "type": "subrecord",
-                "field": {
+                "element": {
                     "name": "FormID",
                     "type": "formId"
                 }

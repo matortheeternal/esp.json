@@ -11,16 +11,16 @@
     },
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "FULL",
+            "id": "FULL",
             "required": true
         },
         {
             "signature": "ICON",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Texture",
                 "type": "string"
             },
@@ -29,7 +29,7 @@
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Flags",
                 "type": "uint8",
                 "format": {

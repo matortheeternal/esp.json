@@ -4,15 +4,15 @@
     "name": "Shader Particle Geometry",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Gravity Velocity",
                         "type": "float"
@@ -75,7 +75,7 @@
         {
             "signature": "ICON",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Particle Texture",
                 "type": "string"
             }

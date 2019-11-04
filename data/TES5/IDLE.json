@@ -4,15 +4,15 @@
     "name": "Idle Animation",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "CTDAs"
+            "id": "CTDAs"
         },
         {
             "signature": "DNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "FileName",
                 "type": "string"
             }
@@ -20,7 +20,7 @@
         {
             "signature": "ENAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Animation Event",
                 "type": "string"
             }
@@ -28,10 +28,10 @@
         {
             "signature": "ANAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Related Idle Animations",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Related Idle Animation",
                     "type": "formId",
                     "signatures": [
@@ -45,14 +45,14 @@
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Data (unused)",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Looping seconds (both 255 forever)",
                         "type": "struct",
-                        "fields": [
+                        "elements": [
                             {
                                 "name": "Min",
                                 "type": "uint8"

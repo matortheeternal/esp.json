@@ -4,25 +4,25 @@
     "name": "Magic Effect",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "VMAD"
+            "id": "VMAD"
         },
         {
-            "def": "FULL"
+            "id": "FULL"
         },
         {
-            "def": "MDOB"
+            "id": "MDOB"
         },
         {
-            "def": "KSIZ"
+            "id": "KSIZ"
         },
         {
-            "def": "KWDAs"
+            "id": "KWDAs"
         },
         {
-            "def": "MGEFData"
+            "id": "MGEFData"
         },
         {
             "name": "Counter Effects",
@@ -30,7 +30,7 @@
             "member": {
                 "signature": "ESCE",
                 "type": "subrecord",
-                "field": {
+                "element": {
                     "name": "Effect",
                     "type": "formId",
                     "signatures": [
@@ -44,13 +44,13 @@
         {
             "signature": "SNDD",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Sounds",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "",
                     "type": "struct",
-                    "fields": [
+                    "elements": [
                         {
                             "name": "Type",
                             "type": "uint32",
@@ -80,14 +80,14 @@
         {
             "signature": "DNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Magic Item Description",
                 "type": "string",
                 "localized": true
             }
         },
         {
-            "def": "CTDAs"
+            "id": "CTDAs"
         }
     ]
 }

@@ -1,10 +1,10 @@
 {
     "signature": "CNAM",
     "type": "subrecord",
-    "field": {
+    "element": {
         "name": "Color",
         "type": "struct",
-        "fields": [
+        "elements": [
             {
                 "name": "Red",
                 "type": "uint8"

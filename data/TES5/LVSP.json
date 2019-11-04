@@ -4,19 +4,19 @@
     "name": "Leveled Spell",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "OBND",
+            "id": "OBND",
             "required": true
         },
         {
-            "def": "LVLD"
+            "id": "LVLD"
         },
         {
             "signature": "LVLF",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Flags",
                 "type": "uint8",
                 "format": {
@@ -30,7 +30,7 @@
             }
         },
         {
-            "def": "LLCT"
+            "id": "LLCT"
         },
         {
             "name": "Leveled List Entries",
@@ -42,10 +42,10 @@
                     {
                         "signature": "LVLO",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Base Data",
                             "type": "struct",
-                            "fields": [
+                            "elements": [
                                 {
                                     "name": "Level",
                                     "type": "uint16"

@@ -1,21 +1,21 @@
 {
     "name": "",
     "type": "struct",
-    "fields": [
+    "elements": [
         {
-            "def": "ByteColors",
+            "id": "ByteColors",
             "name": "Sunrise"
         },
         {
-            "def": "ByteColors",
+            "id": "ByteColors",
             "name": "Day"
         },
         {
-            "def": "ByteColors",
+            "id": "ByteColors",
             "name": "Sunset"
         },
         {
-            "def": "ByteColors",
+            "id": "ByteColors",
             "name": "Night"
         }
     ]

@@ -1,7 +1,7 @@
 {
     "name": "Island Data",
     "type": "struct",
-    "fields": [
+    "elements": [
         {
             "name": "Min X",
             "type": "float"
@@ -29,14 +29,14 @@
         {
             "name": "Triangles",
             "type": "array",
-            "field": {
+            "element": {
                 "name": "Triangle",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Vertices",
                         "type": "array",
-                        "field": {
+                        "element": {
                             "name": "Vertex",
                             "type": "int16"
                         },
@@ -51,10 +51,10 @@
         {
             "name": "Vertices",
             "type": "array",
-            "field": {
+            "element": {
                 "name": "Vertex",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "X",
                         "type": "float"

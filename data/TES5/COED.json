@@ -1,10 +1,10 @@
 {
     "signature": "COED",
     "type": "subrecord",
-    "field": {
+    "element": {
         "name": "Extra Data",
         "type": "struct",
-        "fields": [
+        "elements": [
             {
                 "name": "Owner",
                 "type": "formId",
@@ -18,7 +18,7 @@
                 "name": "Global Variable / Required Rank",
                 "type": "union",
                 "decider": "COEDOwnerDecider",
-                "fields": [
+                "elements": [
                     {
                         "name": "Unused",
                         "type": "bytes",

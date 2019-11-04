@@ -1,11 +1,11 @@
 {
     "name": "Position/Rotation",
     "type": "struct",
-    "fields": [
+    "elements": [
         {
             "name": "Position",
             "type": "struct",
-            "fields": [
+            "elements": [
                 {
                     "name": "X",
                     "type": "float"
@@ -23,7 +23,7 @@
         {
             "name": "Rotation",
             "type": "struct",
-            "fields": [
+            "elements": [
                 {
                     "name": "X",
                     "type": "float",

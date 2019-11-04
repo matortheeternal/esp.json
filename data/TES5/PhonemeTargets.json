@@ -1,10 +1,10 @@
 {
     "signature": "PHWT",
     "type": "subrecord",
-    "field": {
+    "element": {
         "name": "Phoneme Target Weight",
         "type": "struct",
-        "fields": [
+        "elements": [
             {
                 "name": "Aah / LipBigAah",
                 "type": "float"

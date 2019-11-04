@@ -1,10 +1,10 @@
 {
     "signature": "OBND",
     "type": "subrecord",
-    "field": {
+    "element": {
         "name": "Object Bounds",
         "type": "struct",
-        "fields": [
+        "elements": [
             {
                 "name": "X1",
                 "type": "int16"

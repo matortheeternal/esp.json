@@ -5,7 +5,7 @@
         {
             "signature": "CSDT",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Type",
                 "type": "uint32",
                 "format": {
@@ -48,7 +48,7 @@
                     {
                         "signature": "CSDI",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Sound",
                             "type": "formId",
                             "signatures": [
@@ -61,7 +61,7 @@
                     {
                         "signature": "CSDC",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Sound Chance",
                             "type": "uint8"
                         }

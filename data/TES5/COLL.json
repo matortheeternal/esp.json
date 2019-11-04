@@ -4,16 +4,16 @@
     "name": "Collision Layer",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "DESC",
+            "id": "DESC",
             "required": true
         },
         {
             "signature": "BNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Index",
                 "type": "uint32"
             }
@@ -21,10 +21,10 @@
         {
             "signature": "FNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Debug Color",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Red",
                         "type": "uint8"
@@ -48,7 +48,7 @@
         {
             "signature": "GNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Flags",
                 "type": "uint32",
                 "format": {
@@ -64,7 +64,7 @@
         {
             "signature": "MNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Name",
                 "type": "string"
             },
@@ -73,7 +73,7 @@
         {
             "signature": "INTV",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Interactables Count",
                 "type": "uint32"
             }
@@ -81,10 +81,10 @@
         {
             "signature": "CNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Collides With",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Forms",
                     "type": "formId",
                     "signatures": [

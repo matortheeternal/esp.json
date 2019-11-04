@@ -5,15 +5,15 @@
         {
             "signature": "CTDA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Type",
                         "type": "uint8",
                         "format": {
-                            "def": "CtdaTypeToStr"
+                            "id": "CtdaTypeToStr"
                         }
                     },
                     {
@@ -25,7 +25,7 @@
                         "name": "Comparison Value",
                         "type": "union",
                         "decider": "CTDACompValueDecider",
-                        "fields": [
+                        "elements": [
                             {
                                 "name": "Comparison Value - Float",
                                 "type": "float"
@@ -43,7 +43,7 @@
                         "name": "Function",
                         "type": "uint16",
                         "format": {
-                            "def": "CTDAFunctionToStr"
+                            "id": "CTDAFunctionToStr"
                         }
                     },
                     {
@@ -55,7 +55,7 @@
                         "name": "Parameter #1",
                         "type": "union",
                         "decider": "CTDAParam1Decider",
-                        "fields": [
+                        "elements": [
                             {
                                 "name": "Unknown",
                                 "type": "bytes",
@@ -79,35 +79,35 @@
                                 "name": "Variable Name",
                                 "type": "uint32",
                                 "format": {
-                                    "def": "CTDAParam1StringToString"
+                                    "id": "CTDAParam1StringToString"
                                 }
                             },
                             {
                                 "name": "Sex",
                                 "type": "uint32",
                                 "format": {
-                                    "def": "SexEnum"
+                                    "id": "SexEnum"
                                 }
                             },
                             {
                                 "name": "Actor Value",
                                 "type": "int32",
                                 "format": {
-                                    "def": "ActorValueEnum"
+                                    "id": "ActorValueEnum"
                                 }
                             },
                             {
                                 "name": "Crime Type",
                                 "type": "uint32",
                                 "format": {
-                                    "def": "CrimeTypeEnum"
+                                    "id": "CrimeTypeEnum"
                                 }
                             },
                             {
                                 "name": "Axis",
                                 "type": "uint32",
                                 "format": {
-                                    "def": "AxisEnum"
+                                    "id": "AxisEnum"
                                 }
                             },
                             {
@@ -119,14 +119,14 @@
                                 "name": "Misc Stat",
                                 "type": "uint32",
                                 "format": {
-                                    "def": "MiscStatEnum"
+                                    "id": "MiscStatEnum"
                                 }
                             },
                             {
                                 "name": "Alignment",
                                 "type": "uint32",
                                 "format": {
-                                    "def": "AlignmentEnum"
+                                    "id": "AlignmentEnum"
                                 }
                             },
                             {
@@ -140,14 +140,14 @@
                                 "name": "Form Type",
                                 "type": "uint32",
                                 "format": {
-                                    "def": "FormTypeEnum"
+                                    "id": "FormTypeEnum"
                                 }
                             },
                             {
                                 "name": "Critical Stage",
                                 "type": "uint32",
                                 "format": {
-                                    "def": "CriticalStageEnum"
+                                    "id": "CriticalStageEnum"
                                 }
                             },
                             {
@@ -344,7 +344,7 @@
                                 "name": "VATS Value Function",
                                 "type": "uint32",
                                 "format": {
-                                    "def": "VATSValueFunctionEnum"
+                                    "id": "VATSValueFunctionEnum"
                                 }
                             },
                             {
@@ -410,14 +410,14 @@
                                 "name": "Player Action",
                                 "type": "uint32",
                                 "format": {
-                                    "def": "AdvanceActionEnum"
+                                    "id": "AdvanceActionEnum"
                                 }
                             },
                             {
                                 "name": "Casting Type",
                                 "type": "uint32",
                                 "format": {
-                                    "def": "CastingSourceEnum"
+                                    "id": "CastingSourceEnum"
                                 }
                             },
                             {
@@ -445,7 +445,7 @@
                                 "name": "Alias",
                                 "type": "int32",
                                 "format": {
-                                    "def": "ConditionAliasToStr"
+                                    "id": "ConditionAliasToStr"
                                 }
                             },
                             {
@@ -463,7 +463,7 @@
                                 "name": "Furniture Anim",
                                 "type": "uint32",
                                 "format": {
-                                    "def": "FurnitureAnimTypeEnum"
+                                    "id": "FurnitureAnimTypeEnum"
                                 }
                             },
                             {
@@ -492,14 +492,14 @@
                                 "name": "Ward State",
                                 "type": "uint32",
                                 "format": {
-                                    "def": "WardStateEnum"
+                                    "id": "WardStateEnum"
                                 }
                             },
                             {
                                 "name": "Event",
                                 "type": "uint32",
                                 "format": {
-                                    "def": "EventFunctionAndMemberToStr"
+                                    "id": "EventFunctionAndMemberToStr"
                                 }
                             },
                             {
@@ -520,7 +520,7 @@
                         "name": "Parameter #2",
                         "type": "union",
                         "decider": "CTDAParam2Decider",
-                        "fields": [
+                        "elements": [
                             {
                                 "name": "Unknown",
                                 "type": "bytes",
@@ -544,56 +544,56 @@
                                 "name": "Variable Name",
                                 "type": "uint32",
                                 "format": {
-                                    "def": "CTDAParam2StringToString"
+                                    "id": "CTDAParam2StringToString"
                                 }
                             },
                             {
                                 "name": "Sex",
                                 "type": "uint32",
                                 "format": {
-                                    "def": "SexEnum"
+                                    "id": "SexEnum"
                                 }
                             },
                             {
                                 "name": "Actor Value",
                                 "type": "int32",
                                 "format": {
-                                    "def": "ActorValueEnum"
+                                    "id": "ActorValueEnum"
                                 }
                             },
                             {
                                 "name": "Crime Type",
                                 "type": "uint32",
                                 "format": {
-                                    "def": "CrimeTypeEnum"
+                                    "id": "CrimeTypeEnum"
                                 }
                             },
                             {
                                 "name": "Axis",
                                 "type": "uint32",
                                 "format": {
-                                    "def": "AxisEnum"
+                                    "id": "AxisEnum"
                                 }
                             },
                             {
                                 "name": "Quest Stage",
                                 "type": "int32",
                                 "format": {
-                                    "def": "CTDAParam2QuestStageToStr"
+                                    "id": "CTDAParam2QuestStageToStr"
                                 }
                             },
                             {
                                 "name": "Misc Stat",
                                 "type": "uint32",
                                 "format": {
-                                    "def": "MiscStatEnum"
+                                    "id": "MiscStatEnum"
                                 }
                             },
                             {
                                 "name": "Alignment",
                                 "type": "uint32",
                                 "format": {
-                                    "def": "AlignmentEnum"
+                                    "id": "AlignmentEnum"
                                 }
                             },
                             {
@@ -607,14 +607,14 @@
                                 "name": "Form Type",
                                 "type": "uint32",
                                 "format": {
-                                    "def": "FormTypeEnum"
+                                    "id": "FormTypeEnum"
                                 }
                             },
                             {
                                 "name": "Critical Stage",
                                 "type": "uint32",
                                 "format": {
-                                    "def": "CriticalStageEnum"
+                                    "id": "CriticalStageEnum"
                                 }
                             },
                             {
@@ -811,14 +811,14 @@
                                 "name": "VATS Value Function",
                                 "type": "uint32",
                                 "format": {
-                                    "def": "VATSValueFunctionEnum"
+                                    "id": "VATSValueFunctionEnum"
                                 }
                             },
                             {
                                 "name": "VATS Value Param",
                                 "type": "union",
                                 "decider": "CTDAParam2VATSValueParamDecider",
-                                "fields": [
+                                "elements": [
                                     {
                                         "name": "Weapon",
                                         "type": "formId",
@@ -856,7 +856,7 @@
                                         "name": "Target Part",
                                         "type": "int32",
                                         "format": {
-                                            "def": "ActorValueEnum"
+                                            "id": "ActorValueEnum"
                                         }
                                     },
                                     {
@@ -934,7 +934,7 @@
                                         "name": "Weapon Type",
                                         "type": "uint32",
                                         "format": {
-                                            "def": "WeaponAnimTypeEnum"
+                                            "id": "WeaponAnimTypeEnum"
                                         }
                                     },
                                     {
@@ -969,14 +969,14 @@
                                         "name": "Delivery Type",
                                         "type": "uint32",
                                         "format": {
-                                            "def": "TargetEnum"
+                                            "id": "TargetEnum"
                                         }
                                     },
                                     {
                                         "name": "Casting Type",
                                         "type": "uint32",
                                         "format": {
-                                            "def": "CastEnum"
+                                            "id": "CastEnum"
                                         }
                                     }
                                 ]
@@ -1038,14 +1038,14 @@
                                 "name": "Player Action",
                                 "type": "uint32",
                                 "format": {
-                                    "def": "AdvanceActionEnum"
+                                    "id": "AdvanceActionEnum"
                                 }
                             },
                             {
                                 "name": "Casting Type",
                                 "type": "uint32",
                                 "format": {
-                                    "def": "CastingSourceEnum"
+                                    "id": "CastingSourceEnum"
                                 }
                             },
                             {
@@ -1073,7 +1073,7 @@
                                 "name": "Alias",
                                 "type": "int32",
                                 "format": {
-                                    "def": "ConditionAliasToStr"
+                                    "id": "ConditionAliasToStr"
                                 }
                             },
                             {
@@ -1091,7 +1091,7 @@
                                 "name": "Furniture Anim",
                                 "type": "uint32",
                                 "format": {
-                                    "def": "FurnitureAnimTypeEnum"
+                                    "id": "FurnitureAnimTypeEnum"
                                 }
                             },
                             {
@@ -1120,14 +1120,14 @@
                                 "name": "Ward State",
                                 "type": "uint32",
                                 "format": {
-                                    "def": "WardStateEnum"
+                                    "id": "WardStateEnum"
                                 }
                             },
                             {
                                 "name": "Event",
                                 "type": "uint32",
                                 "format": {
-                                    "def": "EventFunctionAndMemberToStr"
+                                    "id": "EventFunctionAndMemberToStr"
                                 }
                             },
                             {
@@ -1165,7 +1165,7 @@
                         "name": "Reference",
                         "type": "union",
                         "decider": "CTDAReferenceDecider",
-                        "fields": [
+                        "elements": [
                             {
                                 "name": "Unused",
                                 "type": "uint32"
@@ -1204,7 +1204,7 @@
         {
             "signature": "CIS1",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Parameter #1",
                 "type": "string"
             }
@@ -1212,7 +1212,7 @@
         {
             "signature": "CIS2",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Parameter #2",
                 "type": "string"
             }

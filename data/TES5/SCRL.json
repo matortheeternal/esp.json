@@ -4,49 +4,49 @@
     "name": "Scroll",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "OBND",
+            "id": "OBND",
             "required": true
         },
         {
-            "def": "FULL"
+            "id": "FULL"
         },
         {
-            "def": "KSIZ"
+            "id": "KSIZ"
         },
         {
-            "def": "KWDAs"
+            "id": "KWDAs"
         },
         {
-            "def": "MDOB"
+            "id": "MDOB"
         },
         {
-            "def": "ETYP"
+            "id": "ETYP"
         },
         {
-            "def": "DESC"
+            "id": "DESC"
         },
         {
-            "def": "MODL"
+            "id": "MODL"
         },
         {
-            "def": "DEST"
+            "id": "DEST"
         },
         {
-            "def": "YNAM"
+            "id": "YNAM"
         },
         {
-            "def": "ZNAM"
+            "id": "ZNAM"
         },
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Item",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Value",
                         "type": "uint32"
@@ -60,10 +60,10 @@
             "required": true
         },
         {
-            "def": "SPIT"
+            "id": "SPIT"
         },
         {
-            "def": "Effects",
+            "id": "Effects",
             "required": true
         }
     ]

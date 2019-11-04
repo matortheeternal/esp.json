@@ -11,15 +11,15 @@
     },
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "signature": "RCLR",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Map Color",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Red",
                         "type": "uint8"
@@ -44,7 +44,7 @@
         {
             "signature": "WNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Worldspace",
                 "type": "formId",
                 "signatures": [
@@ -62,7 +62,7 @@
                     {
                         "signature": "RPLI",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Edge Fall-off",
                             "type": "uint32"
                         }
@@ -70,13 +70,13 @@
                     {
                         "signature": "RPLD",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Region Point List Data",
                             "type": "array",
-                            "field": {
+                            "element": {
                                 "name": "Point",
                                 "type": "struct",
-                                "fields": [
+                                "elements": [
                                     {
                                         "name": "X",
                                         "type": "float"
@@ -102,10 +102,10 @@
                     {
                         "signature": "RDAT",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Data Header",
                             "type": "struct",
-                            "fields": [
+                            "elements": [
                                 {
                                     "name": "Type",
                                     "type": "uint32",
@@ -156,12 +156,12 @@
                         }
                     },
                     {
-                        "def": "ICON"
+                        "id": "ICON"
                     },
                     {
                         "signature": "RDMO",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Music",
                             "type": "formId",
                             "signatures": [
@@ -173,13 +173,13 @@
                     {
                         "signature": "RDSA",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Sounds",
                             "type": "array",
-                            "field": {
+                            "element": {
                                 "name": "Sound",
                                 "type": "struct",
-                                "fields": [
+                                "elements": [
                                     {
                                         "name": "Sound",
                                         "type": "formId",
@@ -216,7 +216,7 @@
                     {
                         "signature": "RDMP",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Map Name",
                             "type": "string",
                             "localized": true
@@ -226,13 +226,13 @@
                     {
                         "signature": "RDOT",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Objects",
                             "type": "array",
-                            "field": {
+                            "element": {
                                 "name": "Object",
                                 "type": "struct",
-                                "fields": [
+                                "elements": [
                                     {
                                         "name": "Object",
                                         "type": "formId",
@@ -248,7 +248,7 @@
                                         "name": "Parent Index",
                                         "type": "uint16",
                                         "format": {
-                                            "def": "HideFFFF"
+                                            "id": "HideFFFF"
                                         }
                                     },
                                     {
@@ -320,7 +320,7 @@
                                     {
                                         "name": "Angle Variance",
                                         "type": "struct",
-                                        "fields": [
+                                        "elements": [
                                             {
                                                 "name": "X",
                                                 "type": "uint16"
@@ -352,13 +352,13 @@
                     {
                         "signature": "RDGS",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Grasses",
                             "type": "array",
-                            "field": {
+                            "element": {
                                 "name": "Grass",
                                 "type": "struct",
-                                "fields": [
+                                "elements": [
                                     {
                                         "name": "Grass",
                                         "type": "formId",
@@ -382,13 +382,13 @@
                     {
                         "signature": "RDWT",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Weather Types",
                             "type": "array",
-                            "field": {
+                            "element": {
                                 "name": "Weather Type",
                                 "type": "struct",
-                                "fields": [
+                                "elements": [
                                     {
                                         "name": "Weather",
                                         "type": "formId",

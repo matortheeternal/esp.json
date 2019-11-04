@@ -1,10 +1,10 @@
 {
     "signature": "AIDT",
     "type": "subrecord",
-    "field": {
+    "element": {
         "name": "AI Data",
         "type": "struct",
-        "fields": [
+        "elements": [
             {
                 "name": "Aggression",
                 "type": "uint8",
@@ -81,7 +81,7 @@
             {
                 "name": "Aggro",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Aggro Radius Behavior",
                         "type": "uint8",

@@ -11,15 +11,15 @@
     },
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "MODL"
+            "id": "MODL"
         },
         {
             "signature": "BNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Unload Event",
                 "type": "string"
             }

@@ -16,10 +16,10 @@
         {
             "signature": "HEDR",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Header",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Version",
                         "type": "float"
@@ -32,7 +32,7 @@
                         "name": "Next Object ID",
                         "type": "uint32",
                         "format": {
-                            "def": "NextObjectIDToString"
+                            "id": "NextObjectIDToString"
                         }
                     }
                 ]
@@ -42,7 +42,7 @@
         {
             "signature": "OFST",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Unknown",
                 "type": "bytes"
             }
@@ -50,7 +50,7 @@
         {
             "signature": "DELE",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Unknown",
                 "type": "bytes"
             }
@@ -58,7 +58,7 @@
         {
             "signature": "CNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Author",
                 "type": "string"
             },
@@ -67,7 +67,7 @@
         {
             "signature": "SNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Description",
                 "type": "string"
             }
@@ -82,7 +82,7 @@
                     {
                         "signature": "MAST",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "FileName",
                             "type": "string"
                         }
@@ -90,7 +90,7 @@
                     {
                         "signature": "DATA",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Unknown",
                             "type": "bytes",
                             "size": 8
@@ -102,10 +102,10 @@
         {
             "signature": "ONAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Overridden Forms",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Form",
                     "type": "formId",
                     "signatures": [
@@ -128,7 +128,7 @@
         {
             "signature": "SCRN",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Screenshot",
                 "type": "bytes"
             }
@@ -136,14 +136,14 @@
         {
             "signature": "INTV",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "type": "bytes"
             }
         },
         {
             "signature": "INCC",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "type": "bytes"
             }
         }

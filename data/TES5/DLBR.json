@@ -4,12 +4,12 @@
     "name": "Dialog Branch",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "signature": "QNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Quest",
                 "type": "formId",
                 "signatures": [
@@ -21,7 +21,7 @@
         {
             "signature": "TNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Unknown",
                 "type": "uint32"
             }
@@ -29,7 +29,7 @@
         {
             "signature": "DNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Flags",
                 "type": "uint32",
                 "format": {
@@ -45,7 +45,7 @@
         {
             "signature": "SNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Starting Topic",
                 "type": "formId",
                 "signatures": [

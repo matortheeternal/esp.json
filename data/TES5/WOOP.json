@@ -4,15 +4,15 @@
     "name": "Word of Power",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "FULL"
+            "id": "FULL"
         },
         {
             "signature": "TNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Translation",
                 "type": "string",
                 "localized": true

@@ -4,18 +4,18 @@
     "name": "Location",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "signature": "ACPR",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Actor Cell Persistent Reference",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "",
                     "type": "struct",
-                    "fields": [
+                    "elements": [
                         {
                             "name": "Actor",
                             "type": "formId",
@@ -56,13 +56,13 @@
         {
             "signature": "LCPR",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Location Cell Persistent Reference",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "",
                     "type": "struct",
-                    "fields": [
+                    "elements": [
                         {
                             "name": "Actor",
                             "type": "formId",
@@ -103,10 +103,10 @@
         {
             "signature": "RCPR",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Reference Cell Persistent Reference",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Ref",
                     "type": "formId",
                     "signatures": [
@@ -119,13 +119,13 @@
         {
             "signature": "ACUN",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Actor Cell Unique",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "",
                     "type": "struct",
-                    "fields": [
+                    "elements": [
                         {
                             "name": "Actor",
                             "type": "formId",
@@ -155,13 +155,13 @@
         {
             "signature": "LCUN",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Location Cell Unique",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "",
                     "type": "struct",
-                    "fields": [
+                    "elements": [
                         {
                             "name": "Actor",
                             "type": "formId",
@@ -191,10 +191,10 @@
         {
             "signature": "RCUN",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Reference Cell Unique",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Actor",
                     "type": "formId",
                     "signatures": [
@@ -206,13 +206,13 @@
         {
             "signature": "ACSR",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Actor Cell Static Reference",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "",
                     "type": "struct",
-                    "fields": [
+                    "elements": [
                         {
                             "name": "Loc Ref Type",
                             "type": "formId",
@@ -260,13 +260,13 @@
         {
             "signature": "LCSR",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Location Cell Static Reference",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "",
                     "type": "struct",
-                    "fields": [
+                    "elements": [
                         {
                             "name": "Loc Ref Type",
                             "type": "formId",
@@ -314,10 +314,10 @@
         {
             "signature": "RCSR",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Reference Cell Static Reference",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Ref",
                     "type": "formId",
                     "signatures": [
@@ -333,10 +333,10 @@
             "member": {
                 "signature": "ACEC",
                 "type": "subrecord",
-                "field": {
+                "element": {
                     "name": "Unknown",
                     "type": "struct",
-                    "fields": [
+                    "elements": [
                         {
                             "name": "Location",
                             "type": "formId",
@@ -348,10 +348,10 @@
                         {
                             "name": "Coordinates",
                             "type": "array",
-                            "field": {
+                            "element": {
                                 "name": "",
                                 "type": "struct",
-                                "fields": [
+                                "elements": [
                                     {
                                         "name": "Grid Y",
                                         "type": "int16"
@@ -373,10 +373,10 @@
             "member": {
                 "signature": "LCEC",
                 "type": "subrecord",
-                "field": {
+                "element": {
                     "name": "Unknown",
                     "type": "struct",
-                    "fields": [
+                    "elements": [
                         {
                             "name": "Location",
                             "type": "formId",
@@ -388,10 +388,10 @@
                         {
                             "name": "Coordinates",
                             "type": "array",
-                            "field": {
+                            "element": {
                                 "name": "",
                                 "type": "struct",
-                                "fields": [
+                                "elements": [
                                     {
                                         "name": "Grid Y",
                                         "type": "int16"
@@ -413,10 +413,10 @@
             "member": {
                 "signature": "RCEC",
                 "type": "subrecord",
-                "field": {
+                "element": {
                     "name": "Unknown",
                     "type": "struct",
-                    "fields": [
+                    "elements": [
                         {
                             "name": "Location",
                             "type": "formId",
@@ -428,10 +428,10 @@
                         {
                             "name": "Coordinates",
                             "type": "array",
-                            "field": {
+                            "element": {
                                 "name": "",
                                 "type": "struct",
-                                "fields": [
+                                "elements": [
                                     {
                                         "name": "Grid Y",
                                         "type": "int16"
@@ -450,10 +450,10 @@
         {
             "signature": "ACID",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Actor Cell Marker Reference",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Ref",
                     "type": "formId",
                     "signatures": [
@@ -475,10 +475,10 @@
         {
             "signature": "LCID",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Location Cell Marker Reference",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Ref",
                     "type": "formId",
                     "signatures": [
@@ -500,13 +500,13 @@
         {
             "signature": "ACEP",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Actor Cell Enable Point",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "",
                     "type": "struct",
-                    "fields": [
+                    "elements": [
                         {
                             "name": "Actor",
                             "type": "formId",
@@ -556,13 +556,13 @@
         {
             "signature": "LCEP",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Location Cell Enable Point",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "",
                     "type": "struct",
-                    "fields": [
+                    "elements": [
                         {
                             "name": "Actor",
                             "type": "formId",
@@ -610,18 +610,18 @@
             }
         },
         {
-            "def": "FULL"
+            "id": "FULL"
         },
         {
-            "def": "KSIZ"
+            "id": "KSIZ"
         },
         {
-            "def": "KWDAs"
+            "id": "KWDAs"
         },
         {
             "signature": "PNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Parent Location",
                 "type": "formId",
                 "signatures": [
@@ -633,7 +633,7 @@
         {
             "signature": "NAM1",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Music",
                 "type": "formId",
                 "signatures": [
@@ -645,7 +645,7 @@
         {
             "signature": "FNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Unreported Crime Faction",
                 "type": "formId",
                 "signatures": [
@@ -656,7 +656,7 @@
         {
             "signature": "MNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "World Location Marker Ref",
                 "type": "formId",
                 "signatures": [
@@ -668,7 +668,7 @@
         {
             "signature": "RNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "World Location Radius",
                 "type": "float"
             }
@@ -676,7 +676,7 @@
         {
             "signature": "NAM0",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Horse Marker Ref",
                 "type": "formId",
                 "signatures": [
@@ -685,7 +685,7 @@
             }
         },
         {
-            "def": "CNAM"
+            "id": "CNAM"
         }
     ]
 }

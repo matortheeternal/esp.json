@@ -16,15 +16,15 @@
     },
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "VMAD"
+            "id": "VMAD"
         },
         {
             "signature": "NAME",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Projectile",
                 "type": "formId",
                 "signatures": [
@@ -36,7 +36,7 @@
         {
             "signature": "XEZN",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Encounter Zone",
                 "type": "formId",
                 "signatures": [
@@ -45,12 +45,12 @@
             }
         },
         {
-            "def": "Ownership"
+            "id": "Ownership"
         },
         {
             "signature": "XHTW",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Head-Tracking Weight",
                 "type": "float"
             }
@@ -58,7 +58,7 @@
         {
             "signature": "XFVC",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Favor Cost",
                 "type": "float"
             }
@@ -69,10 +69,10 @@
             "member": {
                 "signature": "XPWR",
                 "type": "subrecord",
-                "field": {
+                "element": {
                     "name": "Water",
                     "type": "struct",
-                    "fields": [
+                    "elements": [
                         {
                             "name": "Reference",
                             "type": "formId",
@@ -105,10 +105,10 @@
             "member": {
                 "signature": "XLKR",
                 "type": "subrecord",
-                "field": {
+                "element": {
                     "name": "Linked Reference",
                     "type": "struct",
-                    "fields": [
+                    "elements": [
                         {
                             "name": "Keyword/Ref",
                             "type": "formId",
@@ -160,7 +160,7 @@
                 {
                     "signature": "XAPD",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Flags",
                         "type": "uint8",
                         "format": {
@@ -177,10 +177,10 @@
                     "member": {
                         "signature": "XAPR",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Activate Parent Ref",
                             "type": "struct",
-                            "fields": [
+                            "elements": [
                                 {
                                     "name": "Reference",
                                     "type": "formId",
@@ -213,12 +213,12 @@
             ]
         },
         {
-            "def": "XESP"
+            "id": "XESP"
         },
         {
             "signature": "XEMI",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Emittance",
                 "type": "formId",
                 "signatures": [
@@ -230,7 +230,7 @@
         {
             "signature": "XMBR",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "MultiBound Reference",
                 "type": "formId",
                 "signatures": [
@@ -241,7 +241,7 @@
         {
             "signature": "XIS2",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Ignored by Sandbox",
                 "type": "empty"
             }
@@ -249,10 +249,10 @@
         {
             "signature": "XLRT",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Location Ref Type",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Ref",
                     "type": "formId",
                     "signatures": [
@@ -265,7 +265,7 @@
         {
             "signature": "XLRL",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Location Reference",
                 "type": "formId",
                 "signatures": [
@@ -276,13 +276,13 @@
             }
         },
         {
-            "def": "XLOD"
+            "id": "XLOD"
         },
         {
-            "def": "XSCL"
+            "id": "XSCL"
         },
         {
-            "def": "DataPosRot"
+            "id": "DataPosRot"
         }
     ]
 }

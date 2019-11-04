@@ -5,17 +5,17 @@
         {
             "signature": "MODL",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Model FileName",
                 "type": "string"
             },
             "required": true
         },
         {
-            "def": "MODT"
+            "id": "MODT"
         },
         {
-            "def": "MODS"
+            "id": "MODS"
         }
     ],
     "sortKey": [

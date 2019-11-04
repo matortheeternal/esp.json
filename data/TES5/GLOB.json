@@ -11,12 +11,12 @@
     },
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "signature": "FNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Type",
                 "type": "uint8",
                 "format": {
@@ -31,7 +31,7 @@
         {
             "signature": "FLTV",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Value",
                 "type": "float",
                 "required": true

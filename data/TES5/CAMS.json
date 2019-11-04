@@ -4,18 +4,18 @@
     "name": "Camera Shot",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "MODL"
+            "id": "MODL"
         },
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Action",
                         "type": "uint32",
@@ -73,7 +73,7 @@
                     {
                         "name": "Time Multipliers",
                         "type": "struct",
-                        "fields": [
+                        "elements": [
                             {
                                 "name": "Player",
                                 "type": "float"
@@ -111,7 +111,7 @@
         {
             "signature": "MNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Image Space Modifier",
                 "type": "formId",
                 "signatures": [

@@ -13,34 +13,34 @@
     },
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "VMAD"
+            "id": "VMAD"
         },
         {
-            "def": "OBND",
+            "id": "OBND",
             "required": true
         },
         {
-            "def": "FULL"
+            "id": "FULL"
         },
         {
-            "def": "MODL"
+            "id": "MODL"
         },
         {
-            "def": "DEST"
+            "id": "DEST"
         },
         {
-            "def": "KSIZ"
+            "id": "KSIZ"
         },
         {
-            "def": "KWDAs"
+            "id": "KWDAs"
         },
         {
             "signature": "PNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "type": "bytes"
             },
             "required": true
@@ -48,7 +48,7 @@
         {
             "signature": "SNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Looping Sound",
                 "type": "formId",
                 "signatures": [
@@ -59,7 +59,7 @@
         {
             "signature": "FNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "type": "bytes"
             },
             "required": true
@@ -67,7 +67,7 @@
         {
             "signature": "VNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Voice Type",
                 "type": "formId",
                 "signatures": [

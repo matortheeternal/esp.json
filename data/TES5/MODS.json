@@ -1,13 +1,13 @@
 {
     "signature": "MODS",
     "type": "subrecord",
-    "field": {
+    "element": {
         "name": "Alternate Textures",
         "type": "array",
-        "field": {
+        "element": {
             "name": "Alternate Texture",
             "type": "struct",
-            "fields": [
+            "elements": [
                 {
                     "name": "3D Name",
                     "type": "string",

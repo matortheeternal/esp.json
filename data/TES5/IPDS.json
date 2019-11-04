@@ -4,7 +4,7 @@
     "name": "Impact Data Set",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "name": "Data",
@@ -12,10 +12,10 @@
             "member": {
                 "signature": "PNAM",
                 "type": "subrecord",
-                "field": {
+                "element": {
                     "name": "",
                     "type": "struct",
-                    "fields": [
+                    "elements": [
                         {
                             "name": "Material",
                             "type": "formId",

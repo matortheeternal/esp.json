@@ -4,12 +4,12 @@
     "name": "Music Type",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "signature": "FNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Flags",
                 "type": "uint32",
                 "format": {
@@ -29,10 +29,10 @@
         {
             "signature": "PNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Priority",
                         "type": "uint16"
@@ -51,7 +51,7 @@
         {
             "signature": "WNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Fade Duration",
                 "type": "float"
             }
@@ -59,10 +59,10 @@
         {
             "signature": "TNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Music Tracks",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Track",
                     "type": "formId",
                     "signatures": [

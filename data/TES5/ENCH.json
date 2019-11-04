@@ -4,22 +4,22 @@
     "name": "Object Effect",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "OBND",
+            "id": "OBND",
             "required": true
         },
         {
-            "def": "FULL"
+            "id": "FULL"
         },
         {
             "signature": "ENIT",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Effect Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Enchantment Cost",
                         "type": "int32"
@@ -40,7 +40,7 @@
                         "name": "Cast Type",
                         "type": "uint32",
                         "format": {
-                            "def": "CastEnum"
+                            "id": "CastEnum"
                         }
                     },
                     {
@@ -51,7 +51,7 @@
                         "name": "Target Type",
                         "type": "uint32",
                         "format": {
-                            "def": "TargetEnum"
+                            "id": "TargetEnum"
                         }
                     },
                     {
@@ -90,7 +90,7 @@
             "required": true
         },
         {
-            "def": "Effects",
+            "id": "Effects",
             "required": true
         }
     ]

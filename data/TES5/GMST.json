@@ -6,7 +6,7 @@
         {
             "signature": "EDID",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Editor ID",
                 "type": "string"
             },
@@ -15,11 +15,11 @@
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Value",
                 "type": "union",
                 "decider": "GMSTUnionDecider",
-                "fields": [
+                "elements": [
                     {
                         "name": "Name",
                         "type": "string",

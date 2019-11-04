@@ -4,12 +4,12 @@
     "name": "Footstep",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Impact Data Set",
                 "type": "formId",
                 "signatures": [
@@ -22,7 +22,7 @@
         {
             "signature": "ANAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Tag",
                 "type": "string"
             },

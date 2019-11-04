@@ -1,39 +1,39 @@
 {
     "name": "Directional Ambient Lighting Colors",
     "type": "struct",
-    "fields": [
+    "elements": [
         {
             "name": "Directional",
             "type": "struct",
-            "fields": [
+            "elements": [
                 {
-                    "def": "ByteColors",
+                    "id": "ByteColors",
                     "name": "X+"
                 },
                 {
-                    "def": "ByteColors",
+                    "id": "ByteColors",
                     "name": "X-"
                 },
                 {
-                    "def": "ByteColors",
+                    "id": "ByteColors",
                     "name": "Y+"
                 },
                 {
-                    "def": "ByteColors",
+                    "id": "ByteColors",
                     "name": "Y-"
                 },
                 {
-                    "def": "ByteColors",
+                    "id": "ByteColors",
                     "name": "Z+"
                 },
                 {
-                    "def": "ByteColors",
+                    "id": "ByteColors",
                     "name": "Z-"
                 }
             ]
         },
         {
-            "def": "ByteColors",
+            "id": "ByteColors",
             "name": "Specular"
         },
         {

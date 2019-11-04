@@ -1,14 +1,14 @@
 {
     "signature": "MHDT",
     "type": "subrecord",
-    "field": {
+    "element": {
         "name": "Max Height Data",
         "type": "struct",
-        "fields": [
+        "elements": [
             {
                 "name": "Min",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "X",
                         "type": "int16"
@@ -22,7 +22,7 @@
             {
                 "name": "Max",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "X",
                         "type": "int16"

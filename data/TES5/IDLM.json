@@ -11,16 +11,16 @@
     },
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "OBND",
+            "id": "OBND",
             "required": true
         },
         {
             "signature": "IDLF",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Flags",
                 "type": "uint8",
                 "format": {
@@ -38,7 +38,7 @@
         {
             "signature": "IDLC",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Animation Count",
                 "type": "uint8"
             }
@@ -46,7 +46,7 @@
         {
             "signature": "IDLT",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Idle Timer Setting",
                 "type": "float",
                 "required": true
@@ -56,10 +56,10 @@
         {
             "signature": "IDLA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Animations",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Animation",
                     "type": "formId",
                     "signatures": [
@@ -69,7 +69,7 @@
             }
         },
         {
-            "def": "MODL"
+            "id": "MODL"
         }
     ]
 }

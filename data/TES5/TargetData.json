@@ -1,7 +1,7 @@
 {
     "name": "Target Data",
     "type": "struct",
-    "fields": [
+    "elements": [
         {
             "name": "Type",
             "type": "int32",
@@ -22,7 +22,7 @@
             "name": "Target",
             "type": "union",
             "decider": "TypeDecider",
-            "fields": [
+            "elements": [
                 {
                     "name": "Reference",
                     "type": "formId",
@@ -77,7 +77,7 @@
                     "name": "Object Type",
                     "type": "uint32",
                     "format": {
-                        "def": "ObjectTypeEnum"
+                        "id": "ObjectTypeEnum"
                     }
                 },
                 {
@@ -88,7 +88,7 @@
                     "name": "Alias",
                     "type": "int32",
                     "format": {
-                        "def": "PackageLocationAliasToStr"
+                        "id": "PackageLocationAliasToStr"
                     }
                 },
                 {

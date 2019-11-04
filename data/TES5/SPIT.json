@@ -1,10 +1,10 @@
 {
     "signature": "SPIT",
     "type": "subrecord",
-    "field": {
+    "element": {
         "name": "Data",
         "type": "struct",
-        "fields": [
+        "elements": [
             {
                 "name": "Base Cost",
                 "type": "uint32"
@@ -79,14 +79,14 @@
                 "name": "Cast Type",
                 "type": "uint32",
                 "format": {
-                    "def": "CastEnum"
+                    "id": "CastEnum"
                 }
             },
             {
                 "name": "Target Type",
                 "type": "uint32",
                 "format": {
-                    "def": "TargetEnum"
+                    "id": "TargetEnum"
                 }
             },
             {

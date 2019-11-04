@@ -4,19 +4,19 @@
     "name": "Art Object",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "OBND",
+            "id": "OBND",
             "required": true
         },
         {
-            "def": "MODL"
+            "id": "MODL"
         },
         {
             "signature": "DNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Art Type",
                 "type": "uint32",
                 "format": {

@@ -4,15 +4,15 @@
     "name": "Visual Effect",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Effect Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Effect Art",
                         "type": "formId",

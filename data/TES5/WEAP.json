@@ -11,45 +11,45 @@
     },
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "VMAD"
+            "id": "VMAD"
         },
         {
-            "def": "OBND",
+            "id": "OBND",
             "required": true
         },
         {
-            "def": "FULL"
+            "id": "FULL"
         },
         {
-            "def": "MODL"
+            "id": "MODL"
         },
         {
-            "def": "ICON"
+            "id": "ICON"
         },
         {
-            "def": "EITM"
+            "id": "EITM"
         },
         {
             "signature": "EAMT",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Enchantment Amount",
                 "type": "uint16"
             }
         },
         {
-            "def": "DEST"
+            "id": "DEST"
         },
         {
-            "def": "ETYP"
+            "id": "ETYP"
         },
         {
             "signature": "BIDS",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Block Bash Impact Data Set",
                 "type": "formId",
                 "signatures": [
@@ -61,7 +61,7 @@
         {
             "signature": "BAMT",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Alternate Block Material",
                 "type": "formId",
                 "signatures": [
@@ -71,19 +71,19 @@
             }
         },
         {
-            "def": "YNAM"
+            "id": "YNAM"
         },
         {
-            "def": "ZNAM"
+            "id": "ZNAM"
         },
         {
-            "def": "KSIZ"
+            "id": "KSIZ"
         },
         {
-            "def": "KWDAs"
+            "id": "KWDAs"
         },
         {
-            "def": "DESC"
+            "id": "DESC"
         },
         {
             "name": "Has Scope",
@@ -92,7 +92,7 @@
                 {
                     "signature": "MOD3",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Model FileName",
                         "type": "string"
                     }
@@ -100,20 +100,20 @@
                 {
                     "signature": "MO3T",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Texture Files Hashes",
                         "type": "bytes"
                     }
                 },
                 {
-                    "def": "MO3S"
+                    "id": "MO3S"
                 }
             ]
         },
         {
             "signature": "NNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Unused",
                 "type": "bytes"
             }
@@ -121,7 +121,7 @@
         {
             "signature": "INAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Impact Data Set",
                 "type": "formId",
                 "signatures": [
@@ -133,7 +133,7 @@
         {
             "signature": "WNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "1st Person Model Object",
                 "type": "formId",
                 "signatures": [
@@ -145,7 +145,7 @@
         {
             "signature": "SNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Attack Sound",
                 "type": "formId",
                 "signatures": [
@@ -156,7 +156,7 @@
         {
             "signature": "XNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Attack Sound 2D",
                 "type": "formId",
                 "signatures": [
@@ -167,7 +167,7 @@
         {
             "signature": "NAM7",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Attack Loop Sound",
                 "type": "formId",
                 "signatures": [
@@ -178,7 +178,7 @@
         {
             "signature": "TNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Attack Fail Sound",
                 "type": "formId",
                 "signatures": [
@@ -189,7 +189,7 @@
         {
             "signature": "UNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Idle Sound",
                 "type": "formId",
                 "signatures": [
@@ -200,7 +200,7 @@
         {
             "signature": "NAM9",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Equip Sound",
                 "type": "formId",
                 "signatures": [
@@ -211,7 +211,7 @@
         {
             "signature": "NAM8",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Unequip Sound",
                 "type": "formId",
                 "signatures": [
@@ -222,10 +222,10 @@
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Game Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Value",
                         "type": "uint32"
@@ -244,15 +244,15 @@
         {
             "signature": "DNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Animation Type",
                         "type": "uint8",
                         "format": {
-                            "def": "WeaponAnimTypeEnum"
+                            "id": "WeaponAnimTypeEnum"
                         }
                     },
                     {
@@ -307,7 +307,7 @@
                         "name": "Attack Animation",
                         "type": "uint8",
                         "format": {
-                            "def": "AttackAnimationEnum"
+                            "id": "AttackAnimationEnum"
                         }
                     },
                     {
@@ -391,7 +391,7 @@
                         "name": "Skill",
                         "type": "int32",
                         "format": {
-                            "def": "SkillEnum"
+                            "id": "SkillEnum"
                         }
                     },
                     {
@@ -403,7 +403,7 @@
                         "name": "Resist",
                         "type": "int32",
                         "format": {
-                            "def": "ActorValueEnum"
+                            "id": "ActorValueEnum"
                         }
                     },
                     {
@@ -421,10 +421,10 @@
         {
             "signature": "CRDT",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Critical Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Damage",
                         "type": "uint16"
@@ -467,18 +467,18 @@
         {
             "signature": "VNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Detection Sound Level",
                 "type": "uint32",
                 "format": {
-                    "def": "SoundlevelEnum"
+                    "id": "SoundlevelEnum"
                 }
             }
         },
         {
             "signature": "CNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Template",
                 "type": "formId",
                 "signatures": [

@@ -5,7 +5,7 @@
         {
             "signature": "XOWN",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Owner",
                 "type": "formId",
                 "signatures": [
@@ -18,7 +18,7 @@
         {
             "signature": "XRNK",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Faction rank",
                 "type": "int32"
             }

@@ -4,19 +4,19 @@
     "name": "Message",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "DESC",
+            "id": "DESC",
             "required": true
         },
         {
-            "def": "FULL"
+            "id": "FULL"
         },
         {
             "signature": "INAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Icon (unused)",
                 "type": "formId",
                 "signatures": [
@@ -28,7 +28,7 @@
         {
             "signature": "QNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Owner Quest",
                 "type": "formId",
                 "signatures": [
@@ -39,7 +39,7 @@
         {
             "signature": "DNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Flags",
                 "type": "uint32",
                 "format": {
@@ -54,7 +54,7 @@
         {
             "signature": "TNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Display Time",
                 "type": "uint32"
             }
@@ -69,14 +69,14 @@
                     {
                         "signature": "ITXT",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Button Text",
                             "type": "string",
                             "localized": true
                         }
                     },
                     {
-                        "def": "CTDAs"
+                        "id": "CTDAs"
                     }
                 ]
             }

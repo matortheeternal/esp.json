@@ -4,28 +4,28 @@
     "name": "Book",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "VMAD"
+            "id": "VMAD"
         },
         {
-            "def": "OBND",
+            "id": "OBND",
             "required": true
         },
         {
-            "def": "FULL"
+            "id": "FULL"
         },
         {
-            "def": "MODL"
+            "id": "MODL"
         },
         {
-            "def": "ICON"
+            "id": "ICON"
         },
         {
             "signature": "DESC",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Book Text",
                 "type": "string",
                 "localized": true
@@ -33,27 +33,27 @@
             "required": true
         },
         {
-            "def": "DEST"
+            "id": "DEST"
         },
         {
-            "def": "YNAM"
+            "id": "YNAM"
         },
         {
-            "def": "ZNAM"
+            "id": "ZNAM"
         },
         {
-            "def": "KSIZ"
+            "id": "KSIZ"
         },
         {
-            "def": "KWDAs"
+            "id": "KWDAs"
         },
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Flags",
                         "type": "uint8",
@@ -91,12 +91,12 @@
                         "name": "Teaches",
                         "type": "union",
                         "decider": "BOOKTeachesDecider",
-                        "fields": [
+                        "elements": [
                             {
                                 "name": "Skill",
                                 "type": "int32",
                                 "format": {
-                                    "def": "SkillEnum"
+                                    "id": "SkillEnum"
                                 }
                             },
                             {
@@ -124,7 +124,7 @@
         {
             "signature": "INAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Inventory Art",
                 "type": "formId",
                 "signatures": [
@@ -135,7 +135,7 @@
         {
             "signature": "CNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Description",
                 "type": "string",
                 "localized": true

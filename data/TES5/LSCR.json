@@ -11,22 +11,22 @@
     },
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "ICON"
+            "id": "ICON"
         },
         {
-            "def": "DESC",
+            "id": "DESC",
             "required": true
         },
         {
-            "def": "CTDAs"
+            "id": "CTDAs"
         },
         {
             "signature": "NNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Loading Screen NIF",
                 "type": "formId",
                 "signatures": [
@@ -39,7 +39,7 @@
         {
             "signature": "SNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Initial Scale",
                 "type": "float"
             }
@@ -47,10 +47,10 @@
         {
             "signature": "RNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Initial Rotation",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "X",
                         "type": "int16"
@@ -69,10 +69,10 @@
         {
             "signature": "ONAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Rotation Offset Constraints",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Min",
                         "type": "int16"
@@ -87,10 +87,10 @@
         {
             "signature": "XNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Initial Translation Offset",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "X",
                         "type": "float"
@@ -109,7 +109,7 @@
         {
             "signature": "MOD2",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Camera Path",
                 "type": "string"
             },

@@ -1,10 +1,10 @@
 {
     "signature": "NVNM",
     "type": "subrecord",
-    "field": {
+    "element": {
         "name": "Geometry",
         "type": "struct",
-        "fields": [
+        "elements": [
             {
                 "name": "Version",
                 "type": "uint32",
@@ -28,11 +28,11 @@
                 "name": "Parent",
                 "type": "union",
                 "decider": "NVNMParentDecider",
-                "fields": [
+                "elements": [
                     {
                         "name": "Coordinates",
                         "type": "struct",
-                        "fields": [
+                        "elements": [
                             {
                                 "name": "Grid Y",
                                 "type": "int16"
@@ -55,10 +55,10 @@
             {
                 "name": "Vertices",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Vertex",
                     "type": "struct",
-                    "fields": [
+                    "elements": [
                         {
                             "name": "X",
                             "type": "float"
@@ -84,15 +84,15 @@
             {
                 "name": "Triangles",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Triangle",
                     "type": "struct",
-                    "fields": [
+                    "elements": [
                         {
                             "name": "Vertex 0",
                             "type": "int16",
                             "format": {
-                                "def": "VertexToStr0"
+                                "id": "VertexToStr0"
                             },
                             "linksToCallback": "VertexLinksTo"
                         },
@@ -100,7 +100,7 @@
                             "name": "Vertex 1",
                             "type": "int16",
                             "format": {
-                                "def": "VertexToStr1"
+                                "id": "VertexToStr1"
                             },
                             "linksToCallback": "VertexLinksTo"
                         },
@@ -108,7 +108,7 @@
                             "name": "Vertex 2",
                             "type": "int16",
                             "format": {
-                                "def": "VertexToStr2"
+                                "id": "VertexToStr2"
                             },
                             "linksToCallback": "VertexLinksTo"
                         },
@@ -116,7 +116,7 @@
                             "name": "Edge 0-1",
                             "type": "int16",
                             "format": {
-                                "def": "EdgeToStr0"
+                                "id": "EdgeToStr0"
                             },
                             "linksToCallback": "EdgeLinksTo0"
                         },
@@ -124,7 +124,7 @@
                             "name": "Edge 1-2",
                             "type": "int16",
                             "format": {
-                                "def": "EdgeToStr1"
+                                "id": "EdgeToStr1"
                             },
                             "linksToCallback": "EdgeLinksTo1"
                         },
@@ -132,7 +132,7 @@
                             "name": "Edge 2-0",
                             "type": "int16",
                             "format": {
-                                "def": "EdgeToStr2"
+                                "id": "EdgeToStr2"
                             },
                             "linksToCallback": "EdgeLinksTo2"
                         },
@@ -194,10 +194,10 @@
             {
                 "name": "Edge Links",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Edge Link",
                     "type": "struct",
-                    "fields": [
+                    "elements": [
                         {
                             "name": "Unknown",
                             "type": "bytes",
@@ -222,10 +222,10 @@
             {
                 "name": "Door Triangles",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Door Triangle",
                     "type": "struct",
-                    "fields": [
+                    "elements": [
                         {
                             "name": "Triangle before door",
                             "type": "int16",
@@ -255,7 +255,7 @@
             {
                 "name": "Cover Triangles",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Triangle",
                     "type": "int16",
                     "linksToCallback": "TriangleLinksTo"
@@ -302,10 +302,10 @@
             {
                 "name": "NavMeshGrid",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "NavMeshGridCell",
                     "type": "array",
-                    "field": {
+                    "element": {
                         "name": "Triangle",
                         "type": "int16",
                         "linksToCallback": "TriangleLinksTo"

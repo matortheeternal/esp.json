@@ -4,23 +4,23 @@
     "name": "Package",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "VMADFragmentedPACK"
+            "id": "VMADFragmentedPACK"
         },
         {
             "signature": "PKDT",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Pack Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "General Flags",
                         "type": "uint32",
                         "format": {
-                            "def": "PKDTFlags"
+                            "id": "PKDTFlags"
                         }
                     },
                     {
@@ -70,7 +70,7 @@
                         "name": "Interrupt Flags",
                         "type": "uint16",
                         "format": {
-                            "def": "PKDTInterruptFlags"
+                            "id": "PKDTInterruptFlags"
                         }
                     },
                     {
@@ -85,10 +85,10 @@
         {
             "signature": "PSDT",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Schedule",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Month",
                         "type": "int8"
@@ -140,7 +140,7 @@
             "required": true
         },
         {
-            "def": "CTDAs"
+            "id": "CTDAs"
         },
         {
             "name": "Idle Animations",
@@ -149,7 +149,7 @@
                 {
                     "signature": "IDLF",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Flags",
                         "type": "uint8",
                         "format": {
@@ -167,10 +167,10 @@
                 {
                     "signature": "IDLC",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "",
                         "type": "struct",
-                        "fields": [
+                        "elements": [
                             {
                                 "name": "Animation Count",
                                 "type": "uint8"
@@ -187,7 +187,7 @@
                 {
                     "signature": "IDLT",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Idle Timer Setting",
                         "type": "float",
                         "required": true
@@ -197,10 +197,10 @@
                 {
                     "signature": "IDLA",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Animations",
                         "type": "array",
-                        "field": {
+                        "element": {
                             "name": "Animation",
                             "type": "formId",
                             "signatures": [
@@ -212,7 +212,7 @@
                 {
                     "signature": "IDLB",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Unknown",
                         "type": "bytes",
                         "size": 4
@@ -224,7 +224,7 @@
         {
             "signature": "CNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Combat Style",
                 "type": "formId",
                 "signatures": [
@@ -235,7 +235,7 @@
         {
             "signature": "QNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Owner Quest",
                 "type": "formId",
                 "signatures": [
@@ -246,10 +246,10 @@
         {
             "signature": "PKCU",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Counter",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Data Input Count",
                         "type": "uint32"
@@ -284,7 +284,7 @@
                             {
                                 "signature": "ANAM",
                                 "type": "subrecord",
-                                "field": {
+                                "element": {
                                     "name": "Type",
                                     "type": "string"
                                 }
@@ -292,11 +292,11 @@
                             {
                                 "signature": "CNAM",
                                 "type": "subrecord",
-                                "field": {
+                                "element": {
                                     "name": "Value",
                                     "type": "union",
                                     "decider": "PubPackCNAMDecider",
-                                    "fields": [
+                                    "elements": [
                                         {
                                             "name": "Unknown",
                                             "type": "bytes"
@@ -326,25 +326,25 @@
                             {
                                 "signature": "BNAM",
                                 "type": "subrecord",
-                                "field": {
+                                "element": {
                                     "type": "bytes"
                                 }
                             },
                             {
-                                "def": "PDTOs"
+                                "id": "PDTOs"
                             },
                             {
-                                "def": "PLDT"
+                                "id": "PLDT"
                             },
                             {
                                 "signature": "PTDA",
                                 "type": "subrecord",
-                                "field": {
+                                "element": {
                                     "name": "Target",
                                     "type": "struct",
-                                    "fields": [
+                                    "elements": [
                                         {
-                                            "def": "TargetData"
+                                            "id": "TargetData"
                                         }
                                     ]
                                 }
@@ -352,7 +352,7 @@
                             {
                                 "signature": "TPIC",
                                 "type": "subrecord",
-                                "field": {
+                                "element": {
                                     "type": "bytes"
                                 }
                             }
@@ -361,14 +361,14 @@
                     }
                 },
                 {
-                    "def": "UNAMs"
+                    "id": "UNAMs"
                 }
             ]
         },
         {
             "signature": "XNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Marker",
                 "type": "bytes"
             }
@@ -387,25 +387,25 @@
                             {
                                 "signature": "ANAM",
                                 "type": "subrecord",
-                                "field": {
+                                "element": {
                                     "name": "Branch Type",
                                     "type": "string"
                                 }
                             },
                             {
-                                "def": "CITC",
+                                "id": "CITC",
                                 "required": true
                             },
                             {
-                                "def": "CTDAsCount"
+                                "id": "CTDAsCount"
                             },
                             {
                                 "signature": "PRCB",
                                 "type": "subrecord",
-                                "field": {
+                                "element": {
                                     "name": "Root",
                                     "type": "struct",
-                                    "fields": [
+                                    "elements": [
                                         {
                                             "name": "Branch Count",
                                             "type": "uint32"
@@ -427,7 +427,7 @@
                             {
                                 "signature": "PNAM",
                                 "type": "subrecord",
-                                "field": {
+                                "element": {
                                     "name": "Procedure Type",
                                     "type": "string"
                                 }
@@ -435,7 +435,7 @@
                             {
                                 "signature": "FNAM",
                                 "type": "subrecord",
-                                "field": {
+                                "element": {
                                     "name": "Flags",
                                     "type": "uint32",
                                     "format": {
@@ -452,7 +452,7 @@
                                 "member": {
                                     "signature": "PKC2",
                                     "type": "subrecord",
-                                    "field": {
+                                    "element": {
                                         "name": "Index",
                                         "type": "uint8"
                                     }
@@ -464,36 +464,36 @@
                                 "member": {
                                     "signature": "PFO2",
                                     "type": "subrecord",
-                                    "field": {
+                                    "element": {
                                         "name": "Data",
                                         "type": "struct",
-                                        "fields": [
+                                        "elements": [
                                             {
                                                 "name": "Set General Flags",
                                                 "type": "uint32",
                                                 "format": {
-                                                    "def": "PKDTFlags"
+                                                    "id": "PKDTFlags"
                                                 }
                                             },
                                             {
                                                 "name": "Clear General Flags",
                                                 "type": "uint32",
                                                 "format": {
-                                                    "def": "PKDTFlags"
+                                                    "id": "PKDTFlags"
                                                 }
                                             },
                                             {
                                                 "name": "Set Interrupt Flags",
                                                 "type": "uint16",
                                                 "format": {
-                                                    "def": "PKDTInterruptFlags"
+                                                    "id": "PKDTInterruptFlags"
                                                 }
                                             },
                                             {
                                                 "name": "Clear Interrupt Flags",
                                                 "type": "uint16",
                                                 "format": {
-                                                    "def": "PKDTInterruptFlags"
+                                                    "id": "PKDTInterruptFlags"
                                                 }
                                             },
                                             {
@@ -524,7 +524,7 @@
                                 "member": {
                                     "signature": "PFOR",
                                     "type": "subrecord",
-                                    "field": {
+                                    "element": {
                                         "type": "bytes"
                                     }
                                 }
@@ -536,7 +536,7 @@
             ]
         },
         {
-            "def": "UNAMs"
+            "id": "UNAMs"
         },
         {
             "name": "OnBegin",
@@ -545,7 +545,7 @@
                 {
                     "signature": "POBA",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "OnBegin Marker",
                         "type": "empty"
                     },
@@ -554,7 +554,7 @@
                 {
                     "signature": "INAM",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Idle",
                         "type": "formId",
                         "signatures": [
@@ -567,7 +567,7 @@
                 {
                     "signature": "SCHR",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Unused",
                         "type": "bytes"
                     }
@@ -575,7 +575,7 @@
                 {
                     "signature": "SCTX",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Unused",
                         "type": "bytes"
                     }
@@ -583,7 +583,7 @@
                 {
                     "signature": "QNAM",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Unused",
                         "type": "bytes"
                     }
@@ -591,13 +591,13 @@
                 {
                     "signature": "TNAM",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Unused",
                         "type": "bytes"
                     }
                 },
                 {
-                    "def": "PDTOs"
+                    "id": "PDTOs"
                 }
             ]
         },
@@ -608,7 +608,7 @@
                 {
                     "signature": "POEA",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "OnEnd Marker",
                         "type": "empty"
                     },
@@ -617,7 +617,7 @@
                 {
                     "signature": "INAM",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Idle",
                         "type": "formId",
                         "signatures": [
@@ -630,7 +630,7 @@
                 {
                     "signature": "SCHR",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Unused",
                         "type": "bytes"
                     }
@@ -638,7 +638,7 @@
                 {
                     "signature": "SCTX",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Unused",
                         "type": "bytes"
                     }
@@ -646,7 +646,7 @@
                 {
                     "signature": "QNAM",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Unused",
                         "type": "bytes"
                     }
@@ -654,13 +654,13 @@
                 {
                     "signature": "TNAM",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Unused",
                         "type": "bytes"
                     }
                 },
                 {
-                    "def": "PDTOs"
+                    "id": "PDTOs"
                 }
             ]
         },
@@ -671,7 +671,7 @@
                 {
                     "signature": "POCA",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "OnChange Marker",
                         "type": "empty"
                     },
@@ -680,7 +680,7 @@
                 {
                     "signature": "INAM",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Idle",
                         "type": "formId",
                         "signatures": [
@@ -693,7 +693,7 @@
                 {
                     "signature": "SCHR",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Unused",
                         "type": "bytes"
                     }
@@ -701,7 +701,7 @@
                 {
                     "signature": "SCDA",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Unused",
                         "type": "bytes"
                     }
@@ -709,7 +709,7 @@
                 {
                     "signature": "SCTX",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Unused",
                         "type": "bytes"
                     }
@@ -717,7 +717,7 @@
                 {
                     "signature": "QNAM",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Unused",
                         "type": "bytes"
                     }
@@ -725,13 +725,13 @@
                 {
                     "signature": "TNAM",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Unused",
                         "type": "bytes"
                     }
                 },
                 {
-                    "def": "PDTOs"
+                    "id": "PDTOs"
                 }
             ]
         }

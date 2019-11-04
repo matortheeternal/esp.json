@@ -1,12 +1,12 @@
 {
     "signature": "BODT",
     "type": "subrecord",
-    "field": {
+    "element": {
         "name": "Body Template",
         "type": "struct",
-        "fields": [
+        "elements": [
             {
-                "def": "FirstPersonFlagsU32"
+                "id": "FirstPersonFlagsU32"
             },
             {
                 "name": "General Flags",
@@ -34,7 +34,7 @@
                 "name": "Armor Type",
                 "type": "uint32",
                 "format": {
-                    "def": "ArmorTypeEnum"
+                    "id": "ArmorTypeEnum"
                 }
             }
         ]

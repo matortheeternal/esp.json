@@ -4,22 +4,22 @@
     "name": "Image Space",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "signature": "ENAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "type": "bytes"
             }
         },
         {
             "signature": "HNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "HDR",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Eye Adapt Speed",
                         "type": "float"
@@ -62,10 +62,10 @@
         {
             "signature": "CNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cinematic",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Saturation",
                         "type": "float"
@@ -84,16 +84,16 @@
         {
             "signature": "TNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Tint",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Amount",
                         "type": "float"
                     },
                     {
-                        "def": "FloatColors",
+                        "id": "FloatColors",
                         "name": "Color"
                     }
                 ]
@@ -102,10 +102,10 @@
         {
             "signature": "DNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Depth of Field",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Strength",
                         "type": "float"

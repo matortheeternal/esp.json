@@ -4,16 +4,16 @@
     "name": "Acoustic Space",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "OBND",
+            "id": "OBND",
             "required": true
         },
         {
             "signature": "SNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Ambient Sound",
                 "type": "formId",
                 "signatures": [
@@ -24,7 +24,7 @@
         {
             "signature": "RDAT",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Use Sound from Region (Interiors Only)",
                 "type": "formId",
                 "signatures": [
@@ -35,7 +35,7 @@
         {
             "signature": "BNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Environment Type (reverb)",
                 "type": "formId",
                 "signatures": [

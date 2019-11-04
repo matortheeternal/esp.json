@@ -4,14 +4,14 @@
     "name": "Static Collection",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "OBND",
+            "id": "OBND",
             "required": true
         },
         {
-            "def": "MODL",
+            "id": "MODL",
             "required": true
         },
         {
@@ -24,7 +24,7 @@
                     {
                         "signature": "ONAM",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Static",
                             "type": "formId",
                             "signatures": [
@@ -35,17 +35,17 @@
                     {
                         "signature": "DATA",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Placements",
                             "type": "array",
-                            "field": {
+                            "element": {
                                 "name": "Placement",
                                 "type": "struct",
-                                "fields": [
+                                "elements": [
                                     {
                                         "name": "Position",
                                         "type": "struct",
-                                        "fields": [
+                                        "elements": [
                                             {
                                                 "name": "X",
                                                 "type": "float"
@@ -63,7 +63,7 @@
                                     {
                                         "name": "Rotation",
                                         "type": "struct",
-                                        "fields": [
+                                        "elements": [
                                             {
                                                 "name": "X",
                                                 "type": "float",

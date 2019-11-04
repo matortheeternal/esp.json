@@ -1,10 +1,10 @@
 {
     "name": "Properties",
     "type": "array",
-    "field": {
+    "element": {
         "name": "Property",
         "type": "struct",
-        "fields": [
+        "elements": [
             {
                 "name": "propertyName",
                 "type": "string",
@@ -14,7 +14,7 @@
                 "name": "Type",
                 "type": "uint8",
                 "format": {
-                    "def": "PropTypeEnum"
+                    "id": "PropTypeEnum"
                 }
             },
             {
@@ -35,12 +35,12 @@
                 "name": "Value",
                 "type": "union",
                 "decider": "ScriptPropertyDecider",
-                "fields": [
+                "elements": [
                     {
-                        "def": "Null"
+                        "id": "Null"
                     },
                     {
-                        "def": "ScriptPropertyObject"
+                        "id": "ScriptPropertyObject"
                     },
                     {
                         "name": "String",
@@ -70,15 +70,15 @@
                     {
                         "name": "Array of Object",
                         "type": "array",
-                        "field": {
-                            "def": "ScriptPropertyObject"
+                        "element": {
+                            "id": "ScriptPropertyObject"
                         },
                         "prefix": 4
                     },
                     {
                         "name": "Array of String",
                         "type": "array",
-                        "field": {
+                        "element": {
                             "name": "Element",
                             "type": "string",
                             "prefix": 2,
@@ -89,7 +89,7 @@
                     {
                         "name": "Array of Int32",
                         "type": "array",
-                        "field": {
+                        "element": {
                             "name": "Element",
                             "type": "int32"
                         },
@@ -98,7 +98,7 @@
                     {
                         "name": "Array of Float",
                         "type": "array",
-                        "field": {
+                        "element": {
                             "name": "Element",
                             "type": "float"
                         },
@@ -107,7 +107,7 @@
                     {
                         "name": "Array of Bool",
                         "type": "array",
-                        "field": {
+                        "element": {
                             "name": "Element",
                             "type": "uint8",
                             "format": {

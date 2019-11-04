@@ -41,22 +41,22 @@
     },
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "OBND",
+            "id": "OBND",
             "required": true
         },
         {
-            "def": "MODL"
+            "id": "MODL"
         },
         {
             "signature": "DNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Direction Material",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Max Angle (30-120)",
                         "type": "float"
@@ -76,13 +76,13 @@
         {
             "signature": "MNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Distant LOD",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "LOD",
                     "type": "struct",
-                    "fields": [
+                    "elements": [
                         {
                             "name": "Mesh",
                             "type": "string",

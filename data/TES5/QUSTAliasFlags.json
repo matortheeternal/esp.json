@@ -1,10 +1,10 @@
 {
     "signature": "FNAM",
     "type": "subrecord",
-    "field": {
+    "element": {
         "name": "Alias Flags",
         "type": "struct",
-        "fields": [
+        "elements": [
             {
                 "name": "Flags",
                 "type": "uint16",

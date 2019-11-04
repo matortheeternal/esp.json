@@ -4,18 +4,18 @@
     "name": "Camera Path",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "CTDAs"
+            "id": "CTDAs"
         },
         {
             "signature": "ANAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Related Camera Paths",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Related Camera Path",
                     "type": "formId",
                     "signatures": [
@@ -28,7 +28,7 @@
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Camera Zoom",
                 "type": "uint8",
                 "format": {
@@ -50,7 +50,7 @@
             "member": {
                 "signature": "SNAM",
                 "type": "subrecord",
-                "field": {
+                "element": {
                     "name": "Camera Shot",
                     "type": "formId",
                     "signatures": [

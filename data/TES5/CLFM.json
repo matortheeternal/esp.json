@@ -11,19 +11,19 @@
     },
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "FULL"
+            "id": "FULL"
         },
         {
-            "def": "CNAM",
+            "id": "CNAM",
             "required": true
         },
         {
             "signature": "FNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Playable",
                 "type": "uint32",
                 "format": {

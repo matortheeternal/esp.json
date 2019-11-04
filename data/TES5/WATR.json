@@ -4,10 +4,10 @@
     "name": "Water",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "FULL"
+            "id": "FULL"
         },
         {
             "name": "Unused",
@@ -15,7 +15,7 @@
             "member": {
                 "signature": "NNAM",
                 "type": "subrecord",
-                "field": {
+                "element": {
                     "name": "Noise Map",
                     "type": "string"
                 },
@@ -25,7 +25,7 @@
         {
             "signature": "ANAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Opacity",
                 "type": "uint8"
             }
@@ -33,7 +33,7 @@
         {
             "signature": "FNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Flags",
                 "type": "uint8",
                 "format": {
@@ -54,7 +54,7 @@
         {
             "signature": "MNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Unused",
                 "type": "bytes"
             }
@@ -62,7 +62,7 @@
         {
             "signature": "TNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Material",
                 "type": "formId",
                 "signatures": [
@@ -73,7 +73,7 @@
         {
             "signature": "SNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Open Sound",
                 "type": "formId",
                 "signatures": [
@@ -85,7 +85,7 @@
         {
             "signature": "XNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Spell",
                 "type": "formId",
                 "signatures": [
@@ -96,7 +96,7 @@
         {
             "signature": "INAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Image Space",
                 "type": "formId",
                 "signatures": [
@@ -107,7 +107,7 @@
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Damage Per Second",
                 "type": "uint16"
             }
@@ -115,10 +115,10 @@
         {
             "signature": "DNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Visual Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Unknown",
                         "type": "float"
@@ -161,15 +161,15 @@
                         "type": "float"
                     },
                     {
-                        "def": "ByteColors",
+                        "id": "ByteColors",
                         "name": "Shallow Color"
                     },
                     {
-                        "def": "ByteColors",
+                        "id": "ByteColors",
                         "name": "Deep Color"
                     },
                     {
-                        "def": "ByteColors",
+                        "id": "ByteColors",
                         "name": "Reflection Color"
                     },
                     {
@@ -355,7 +355,7 @@
         {
             "signature": "GNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Unused",
                 "type": "bytes"
             }
@@ -363,10 +363,10 @@
         {
             "signature": "NAM0",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Linear Velocity",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "X",
                         "type": "float"
@@ -386,10 +386,10 @@
         {
             "signature": "NAM1",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Angular Velocity",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "X",
                         "type": "float"
@@ -409,7 +409,7 @@
         {
             "signature": "NAM2",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Noise Layer One - Noise Texture",
                 "type": "string"
             },
@@ -418,7 +418,7 @@
         {
             "signature": "NAM3",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Noise Layer Two - Noise Texture",
                 "type": "string"
             },
@@ -427,7 +427,7 @@
         {
             "signature": "NAM4",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Noise Layer Three - Noise Texture",
                 "type": "string"
             },
@@ -436,7 +436,7 @@
         {
             "signature": "NAM5",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Flow Normals - Noise Texture",
                 "type": "string"
             },

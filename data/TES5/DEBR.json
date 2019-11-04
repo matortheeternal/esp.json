@@ -4,7 +4,7 @@
     "name": "Debris",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "name": "Models",
@@ -16,10 +16,10 @@
                     {
                         "signature": "DATA",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Data",
                             "type": "struct",
-                            "fields": [
+                            "elements": [
                                 {
                                     "name": "Percentage",
                                     "type": "uint8"
@@ -43,7 +43,7 @@
                         "required": true
                     },
                     {
-                        "def": "MODT"
+                        "id": "MODT"
                     }
                 ]
             },

@@ -5,7 +5,7 @@
         {
             "signature": "INDX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Head Part Number",
                 "type": "uint32"
             }
@@ -13,7 +13,7 @@
         {
             "signature": "HEAD",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Head",
                 "type": "formId",
                 "signatures": [

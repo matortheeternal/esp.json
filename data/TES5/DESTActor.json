@@ -5,10 +5,10 @@
         {
             "signature": "DEST",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Header",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Health",
                         "type": "int32"
@@ -46,10 +46,10 @@
                     {
                         "signature": "DSTD",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Destruction Stage Data",
                             "type": "struct",
-                            "fields": [
+                            "elements": [
                                 {
                                     "name": "Health %",
                                     "type": "uint8"
@@ -109,7 +109,7 @@
                             {
                                 "signature": "DMDL",
                                 "type": "subrecord",
-                                "field": {
+                                "element": {
                                     "name": "Model FileName",
                                     "type": "string"
                                 }
@@ -120,15 +120,15 @@
                         ]
                     },
                     {
-                        "def": "DMDT"
+                        "id": "DMDT"
                     },
                     {
-                        "def": "DMDSs"
+                        "id": "DMDSs"
                     },
                     {
                         "signature": "DSTF",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "End Marker",
                             "type": "empty"
                         },

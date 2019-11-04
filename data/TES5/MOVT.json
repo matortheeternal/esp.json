@@ -4,12 +4,12 @@
     "name": "Movement Type",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "signature": "MNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Name",
                 "type": "string"
             }
@@ -17,10 +17,10 @@
         {
             "signature": "SPED",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Default Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Left Walk",
                         "type": "float"
@@ -75,10 +75,10 @@
         {
             "signature": "INAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Anim Change Thresholds",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Directional",
                         "type": "float",

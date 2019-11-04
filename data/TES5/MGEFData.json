@@ -5,10 +5,10 @@
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Flags",
                         "type": "uint32",
@@ -58,7 +58,7 @@
                         "name": "Assoc. Item",
                         "type": "union",
                         "decider": "MGEFAssocItemDecider",
-                        "fields": [
+                        "elements": [
                             {
                                 "name": "Unused",
                                 "type": "formId"
@@ -135,14 +135,14 @@
                         "name": "Magic Skill",
                         "type": "int32",
                         "format": {
-                            "def": "ActorValueEnum"
+                            "id": "ActorValueEnum"
                         }
                     },
                     {
                         "name": "Resist Value",
                         "type": "int32",
                         "format": {
-                            "def": "ActorValueEnum"
+                            "id": "ActorValueEnum"
                         }
                     },
                     {
@@ -189,7 +189,7 @@
                     {
                         "name": "Spellmaking",
                         "type": "struct",
-                        "fields": [
+                        "elements": [
                             {
                                 "name": "Area",
                                 "type": "uint32"
@@ -214,10 +214,10 @@
                         "required": true
                     },
                     {
-                        "def": "MGEFType"
+                        "id": "MGEFType"
                     },
                     {
-                        "def": "ActorValue"
+                        "id": "ActorValue"
                     },
                     {
                         "name": "Projectile",
@@ -239,21 +239,21 @@
                         "name": "Casting Type",
                         "type": "uint32",
                         "format": {
-                            "def": "CastEnum"
+                            "id": "CastEnum"
                         }
                     },
                     {
                         "name": "Delivery",
                         "type": "uint32",
                         "format": {
-                            "def": "TargetEnum"
+                            "id": "TargetEnum"
                         }
                     },
                     {
                         "name": "Second Actor Value",
                         "type": "int32",
                         "format": {
-                            "def": "ActorValueEnum"
+                            "id": "ActorValueEnum"
                         }
                     },
                     {
@@ -287,7 +287,7 @@
                     {
                         "name": "Dual Casting",
                         "type": "struct",
-                        "fields": [
+                        "elements": [
                             {
                                 "name": "Art",
                                 "type": "formId",
@@ -346,13 +346,13 @@
                         "name": "Casting Sound Level",
                         "type": "uint32",
                         "format": {
-                            "def": "SoundLevelEnum"
+                            "id": "SoundLevelEnum"
                         }
                     },
                     {
                         "name": "Script Effect AI",
                         "type": "struct",
-                        "fields": [
+                        "elements": [
                             {
                                 "name": "Score",
                                 "type": "float"

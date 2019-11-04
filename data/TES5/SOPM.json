@@ -4,15 +4,15 @@
     "name": "Sound Output Model",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "signature": "NAM1",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Flags",
                         "type": "uint8",
@@ -39,14 +39,14 @@
         {
             "signature": "FNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "type": "bytes"
             }
         },
         {
             "signature": "MNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Type",
                 "type": "uint32",
                 "format": {
@@ -61,31 +61,31 @@
         {
             "signature": "CNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "type": "bytes"
             }
         },
         {
             "signature": "SNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "type": "bytes"
             }
         },
         {
             "signature": "ONAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Output Values",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Channels",
                         "type": "array",
-                        "field": {
+                        "element": {
                             "name": "",
                             "type": "struct",
-                            "fields": [
+                            "elements": [
                                 {
                                     "name": "L",
                                     "type": "uint8"
@@ -127,10 +127,10 @@
         {
             "signature": "ANAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Attenuation Values",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Unknown",
                         "type": "bytes",
@@ -147,7 +147,7 @@
                     {
                         "name": "Curve",
                         "type": "array",
-                        "field": {
+                        "element": {
                             "name": "Value",
                             "type": "uint8"
                         },

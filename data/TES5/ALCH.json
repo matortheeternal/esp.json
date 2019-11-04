@@ -11,46 +11,46 @@
     },
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "OBND",
+            "id": "OBND",
             "required": true
         },
         {
-            "def": "FULL"
+            "id": "FULL"
         },
         {
-            "def": "KSIZ"
+            "id": "KSIZ"
         },
         {
-            "def": "KWDAs"
+            "id": "KWDAs"
         },
         {
-            "def": "DESC"
+            "id": "DESC"
         },
         {
-            "def": "MODL"
+            "id": "MODL"
         },
         {
-            "def": "DEST"
+            "id": "DEST"
         },
         {
-            "def": "ICON"
+            "id": "ICON"
         },
         {
-            "def": "YNAM"
+            "id": "YNAM"
         },
         {
-            "def": "ZNAM"
+            "id": "ZNAM"
         },
         {
-            "def": "ETYP"
+            "id": "ETYP"
         },
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Weight",
                 "type": "float",
                 "required": true
@@ -60,10 +60,10 @@
         {
             "signature": "ENIT",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Effect Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Value",
                         "type": "int32"
@@ -116,7 +116,7 @@
             "required": true
         },
         {
-            "def": "Effects",
+            "id": "Effects",
             "required": true
         }
     ]

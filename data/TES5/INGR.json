@@ -4,49 +4,49 @@
     "name": "Ingredient",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "VMAD"
+            "id": "VMAD"
         },
         {
-            "def": "OBND",
+            "id": "OBND",
             "required": true
         },
         {
-            "def": "FULL"
+            "id": "FULL"
         },
         {
-            "def": "KSIZ"
+            "id": "KSIZ"
         },
         {
-            "def": "KWDAs"
+            "id": "KWDAs"
         },
         {
-            "def": "MODL"
+            "id": "MODL"
         },
         {
-            "def": "ICON"
+            "id": "ICON"
         },
         {
-            "def": "DEST"
+            "id": "DEST"
         },
         {
-            "def": "ETYP"
+            "id": "ETYP"
         },
         {
-            "def": "YNAM"
+            "id": "YNAM"
         },
         {
-            "def": "ZNAM"
+            "id": "ZNAM"
         },
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Value",
                         "type": "int32"
@@ -62,10 +62,10 @@
         {
             "signature": "ENIT",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Effect Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Ingredient Value",
                         "type": "int32"
@@ -93,7 +93,7 @@
             "required": true
         },
         {
-            "def": "Effects",
+            "id": "Effects",
             "required": true
         }
     ]

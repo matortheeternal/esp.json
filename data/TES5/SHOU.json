@@ -11,16 +11,16 @@
     },
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "FULL"
+            "id": "FULL"
         },
         {
-            "def": "MDOB"
+            "id": "MDOB"
         },
         {
-            "def": "DESC"
+            "id": "DESC"
         },
         {
             "name": "Words of Power",
@@ -28,10 +28,10 @@
             "member": {
                 "signature": "SNAM",
                 "type": "subrecord",
-                "field": {
+                "element": {
                     "name": "",
                     "type": "struct",
-                    "fields": [
+                    "elements": [
                         {
                             "name": "Word",
                             "type": "formId",

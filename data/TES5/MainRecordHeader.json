@@ -1,7 +1,7 @@
 {
     "name": "Record Header",
     "type": "struct",
-    "fields": [
+    "elements": [
         {
             "name": "Signature",
             "type": "string",
@@ -13,7 +13,7 @@
             "type": "uint32"
         },
         {
-            "def": "RecordFlags"
+            "id": "RecordFlags"
         },
         {
             "name": "FormID",

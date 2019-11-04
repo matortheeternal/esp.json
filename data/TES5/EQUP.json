@@ -4,15 +4,15 @@
     "name": "Equip Type",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "signature": "PNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Slot Parents",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Can Be Equipped",
                     "type": "formId"
                 }
@@ -21,7 +21,7 @@
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Use All Parents",
                 "type": "uint32",
                 "format": {

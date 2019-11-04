@@ -4,10 +4,10 @@
     "name": "Body Part Data",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "MODL"
+            "id": "MODL"
         },
         {
             "name": "Body Parts",
@@ -19,7 +19,7 @@
                     {
                         "signature": "BPTN",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Part Name",
                             "type": "string",
                             "localized": true
@@ -29,7 +29,7 @@
                     {
                         "signature": "PNAM",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Pose Matching",
                             "type": "string"
                         },
@@ -38,7 +38,7 @@
                     {
                         "signature": "BPNN",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Part Node",
                             "type": "string"
                         },
@@ -47,7 +47,7 @@
                     {
                         "signature": "BPNT",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "VATS Target",
                             "type": "string"
                         },
@@ -56,7 +56,7 @@
                     {
                         "signature": "BPNI",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "IK Data - Start Node",
                             "type": "string"
                         },
@@ -65,10 +65,10 @@
                     {
                         "signature": "BPND",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "",
                             "type": "struct",
-                            "fields": [
+                            "elements": [
                                 {
                                     "name": "Damage Mult",
                                     "type": "float"
@@ -112,7 +112,7 @@
                                     "name": "Actor Value",
                                     "type": "int8",
                                     "format": {
-                                        "def": "ActorValueEnum"
+                                        "id": "ActorValueEnum"
                                     }
                                 },
                                 {
@@ -178,11 +178,11 @@
                                 {
                                     "name": "Gore Effects Positioning",
                                     "type": "struct",
-                                    "fields": [
+                                    "elements": [
                                         {
                                             "name": "Translate",
                                             "type": "struct",
-                                            "fields": [
+                                            "elements": [
                                                 {
                                                     "name": "X",
                                                     "type": "float"
@@ -200,7 +200,7 @@
                                         {
                                             "name": "Rotation",
                                             "type": "struct",
-                                            "fields": [
+                                            "elements": [
                                                 {
                                                     "name": "X",
                                                     "type": "float",
@@ -260,7 +260,7 @@
                     {
                         "signature": "NAM1",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Limb Replacement Model",
                             "type": "string"
                         },
@@ -269,7 +269,7 @@
                     {
                         "signature": "NAM4",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Gore Effects - Target Bone",
                             "type": "string"
                         },
@@ -278,7 +278,7 @@
                     {
                         "signature": "NAM5",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Texture Files Hashes",
                             "type": "bytes"
                         }

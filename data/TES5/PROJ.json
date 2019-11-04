@@ -4,28 +4,28 @@
     "name": "Projectile",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "OBND",
+            "id": "OBND",
             "required": true
         },
         {
-            "def": "FULL"
+            "id": "FULL"
         },
         {
-            "def": "MODL"
+            "id": "MODL"
         },
         {
-            "def": "DEST"
+            "id": "DEST"
         },
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Flags",
                         "type": "uint16",
@@ -198,7 +198,7 @@
                 {
                     "signature": "NAM1",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Model FileName",
                         "type": "string"
                     }
@@ -206,7 +206,7 @@
                 {
                     "signature": "NAM2",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Texture Files Hashes",
                         "type": "bytes"
                     }
@@ -220,11 +220,11 @@
         {
             "signature": "VNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Sound Level",
                 "type": "uint32",
                 "format": {
-                    "def": "SoundLevelEnum"
+                    "id": "SoundLevelEnum"
                 }
             }
         }

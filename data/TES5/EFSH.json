@@ -4,12 +4,12 @@
     "name": "Effect Shader",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "signature": "ICON",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Fill Texture",
                 "type": "string"
             }
@@ -17,7 +17,7 @@
         {
             "signature": "ICO2",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Particle Shader Texture",
                 "type": "string"
             }
@@ -25,7 +25,7 @@
         {
             "signature": "NAM7",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Holes Texture",
                 "type": "string"
             }
@@ -33,7 +33,7 @@
         {
             "signature": "NAM8",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Membrane Palette Texture",
                 "type": "string"
             }
@@ -41,7 +41,7 @@
         {
             "signature": "NAM9",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Particle Palette Texture",
                 "type": "string"
             }
@@ -49,10 +49,10 @@
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Unknown",
                         "type": "bytes",
@@ -62,25 +62,25 @@
                         "name": "Membrane Shader - Source Blend Mode",
                         "type": "uint32",
                         "format": {
-                            "def": "BlendModeEnum"
+                            "id": "BlendModeEnum"
                         }
                     },
                     {
                         "name": "Membrane Shader - Blend Operation",
                         "type": "uint32",
                         "format": {
-                            "def": "BlendOpEnum"
+                            "id": "BlendOpEnum"
                         }
                     },
                     {
                         "name": "Membrane Shader - Z Test Function",
                         "type": "uint32",
                         "format": {
-                            "def": "ZTestFuncEnum"
+                            "id": "ZTestFuncEnum"
                         }
                     },
                     {
-                        "def": "ByteColors",
+                        "id": "ByteColors",
                         "name": "Fill/Texture Effect - Color Key 1"
                     },
                     {
@@ -120,7 +120,7 @@
                         "type": "float"
                     },
                     {
-                        "def": "ByteColors",
+                        "id": "ByteColors",
                         "name": "Edge Effect - Color"
                     },
                     {
@@ -159,35 +159,35 @@
                         "name": "Membrane Shader - Dest Blend Mode",
                         "type": "uint32",
                         "format": {
-                            "def": "BlendModeEnum"
+                            "id": "BlendModeEnum"
                         }
                     },
                     {
                         "name": "Particle Shader - Source Blend Mode",
                         "type": "uint32",
                         "format": {
-                            "def": "BlendModeEnum"
+                            "id": "BlendModeEnum"
                         }
                     },
                     {
                         "name": "Particle Shader - Blend Operation",
                         "type": "uint32",
                         "format": {
-                            "def": "BlendOpEnum"
+                            "id": "BlendOpEnum"
                         }
                     },
                     {
                         "name": "Particle Shader - Z Test Function",
                         "type": "uint32",
                         "format": {
-                            "def": "ZTestFuncEnum"
+                            "id": "ZTestFuncEnum"
                         }
                     },
                     {
                         "name": "Particle Shader - Dest Blend Mode",
                         "type": "uint32",
                         "format": {
-                            "def": "BlendModeEnum"
+                            "id": "BlendModeEnum"
                         }
                     },
                     {
@@ -267,15 +267,15 @@
                         "type": "float"
                     },
                     {
-                        "def": "ByteColors",
+                        "id": "ByteColors",
                         "name": "Color Key 1 - Color"
                     },
                     {
-                        "def": "ByteColors",
+                        "id": "ByteColors",
                         "name": "Color Key 2 - Color"
                     },
                     {
-                        "def": "ByteColors",
+                        "id": "ByteColors",
                         "name": "Color Key 3 - Color"
                     },
                     {
@@ -351,7 +351,7 @@
                         "type": "float"
                     },
                     {
-                        "def": "ByteColors",
+                        "id": "ByteColors",
                         "name": "Edge Color"
                     },
                     {
@@ -400,17 +400,17 @@
                         ]
                     },
                     {
-                        "def": "ByteColors",
+                        "id": "ByteColors",
                         "name": "Fill/Texture Effect - Color Key 2"
                     },
                     {
-                        "def": "ByteColors",
+                        "id": "ByteColors",
                         "name": "Fill/Texture Effect - Color Key 3"
                     },
                     {
                         "name": "Fill/Texture Effect - Color Key Scale/Time",
                         "type": "struct",
-                        "fields": [
+                        "elements": [
                             {
                                 "name": "Color Key 1 - Scale",
                                 "type": "float"
@@ -452,7 +452,7 @@
                     {
                         "name": "Particle Shader Animated",
                         "type": "struct",
-                        "fields": [
+                        "elements": [
                             {
                                 "name": "Start Frame",
                                 "type": "uint32"

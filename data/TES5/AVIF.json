@@ -4,19 +4,19 @@
     "name": "Actor Value Information",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "FULL"
+            "id": "FULL"
         },
         {
-            "def": "DESC",
+            "id": "DESC",
             "required": true
         },
         {
             "signature": "ANAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Abbreviation",
                 "type": "string"
             }
@@ -24,17 +24,17 @@
         {
             "signature": "CNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "type": "bytes"
             }
         },
         {
             "signature": "AVSK",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Skill",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Skill Use Mult",
                         "type": "float"
@@ -64,7 +64,7 @@
                     {
                         "signature": "PNAM",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Perk",
                             "type": "formId",
                             "signatures": [
@@ -76,14 +76,14 @@
                     {
                         "signature": "FNAM",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "type": "bytes"
                         }
                     },
                     {
                         "signature": "XNAM",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Perk-Grid X",
                             "type": "uint32"
                         }
@@ -91,7 +91,7 @@
                     {
                         "signature": "YNAM",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Perk-Grid Y",
                             "type": "uint32"
                         }
@@ -99,7 +99,7 @@
                     {
                         "signature": "HNAM",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Horizontal Position",
                             "type": "float"
                         }
@@ -107,7 +107,7 @@
                     {
                         "signature": "VNAM",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Vertical Position",
                             "type": "float"
                         }
@@ -115,7 +115,7 @@
                     {
                         "signature": "SNAM",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Associated Skill",
                             "type": "formId",
                             "signatures": [
@@ -130,7 +130,7 @@
                         "member": {
                             "signature": "CNAM",
                             "type": "subrecord",
-                            "field": {
+                            "element": {
                                 "name": "Line to Index",
                                 "type": "uint32"
                             }
@@ -139,7 +139,7 @@
                     {
                         "signature": "INAM",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Index",
                             "type": "uint32"
                         }

@@ -4,18 +4,18 @@
     "name": "Default Object Manager",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "signature": "DNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Objects",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Object",
                     "type": "struct",
-                    "fields": [
+                    "elements": [
                         {
                             "name": "Use",
                             "type": "uint32",

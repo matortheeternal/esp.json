@@ -1,10 +1,10 @@
 {
     "signature": "XESP",
     "type": "subrecord",
-    "field": {
+    "element": {
         "name": "Enable Parent",
         "type": "struct",
-        "fields": [
+        "elements": [
             {
                 "name": "Reference",
                 "type": "formId",

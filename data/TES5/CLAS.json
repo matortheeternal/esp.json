@@ -4,26 +4,26 @@
     "name": "Class",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "FULL",
+            "id": "FULL",
             "required": true
         },
         {
-            "def": "DESC",
+            "id": "DESC",
             "required": true
         },
         {
-            "def": "ICON"
+            "id": "ICON"
         },
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Unknown",
                         "type": "bytes",
@@ -63,7 +63,7 @@
                     {
                         "name": "Skill Weights",
                         "type": "array",
-                        "field": {
+                        "element": {
                             "name": "Weight",
                             "type": "uint8"
                         }
@@ -79,7 +79,7 @@
                     {
                         "name": "Attribute Weights",
                         "type": "array",
-                        "field": {
+                        "element": {
                             "name": "Weight",
                             "type": "uint8"
                         }

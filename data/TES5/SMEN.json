@@ -4,12 +4,12 @@
     "name": "Story Manager Event Node",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "signature": "PNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Parent ",
                 "type": "formId",
                 "signatures": [
@@ -23,7 +23,7 @@
         {
             "signature": "SNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Previous Sibling ",
                 "type": "formId",
                 "signatures": [
@@ -35,34 +35,34 @@
             }
         },
         {
-            "def": "CITC",
+            "id": "CITC",
             "required": true
         },
         {
-            "def": "CTDAsCount"
+            "id": "CTDAsCount"
         },
         {
             "signature": "DNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Flags",
                 "type": "uint32",
                 "format": {
-                    "def": "SMNodeFlags"
+                    "id": "SMNodeFlags"
                 }
             }
         },
         {
             "signature": "XNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "type": "bytes"
             }
         },
         {
             "signature": "ENAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Type",
                 "type": "string",
                 "size": 4

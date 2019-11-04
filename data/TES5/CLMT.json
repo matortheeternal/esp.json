@@ -4,18 +4,18 @@
     "name": "Climate",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "signature": "WLST",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Weather Types",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Weather Type",
                     "type": "struct",
-                    "fields": [
+                    "elements": [
                         {
                             "name": "Weather",
                             "type": "formId",
@@ -47,7 +47,7 @@
         {
             "signature": "FNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Sun Texture",
                 "type": "string"
             }
@@ -55,37 +55,37 @@
         {
             "signature": "GNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Sun Glare Texture",
                 "type": "string"
             }
         },
         {
-            "def": "MODL"
+            "id": "MODL"
         },
         {
             "signature": "TNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Timing",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Sunrise",
                         "type": "struct",
-                        "fields": [
+                        "elements": [
                             {
                                 "name": "Begin",
                                 "type": "uint8",
                                 "format": {
-                                    "def": "ClmtTime"
+                                    "id": "ClmtTime"
                                 }
                             },
                             {
                                 "name": "End",
                                 "type": "uint8",
                                 "format": {
-                                    "def": "ClmtTime"
+                                    "id": "ClmtTime"
                                 }
                             }
                         ]
@@ -93,19 +93,19 @@
                     {
                         "name": "Sunset",
                         "type": "struct",
-                        "fields": [
+                        "elements": [
                             {
                                 "name": "Begin",
                                 "type": "uint8",
                                 "format": {
-                                    "def": "ClmtTime"
+                                    "id": "ClmtTime"
                                 }
                             },
                             {
                                 "name": "End",
                                 "type": "uint8",
                                 "format": {
-                                    "def": "ClmtTime"
+                                    "id": "ClmtTime"
                                 }
                             }
                         ]
@@ -118,7 +118,7 @@
                         "name": "Moons / Phase Length",
                         "type": "uint8",
                         "format": {
-                            "def": "ClmtMoonsPhaseLength"
+                            "id": "ClmtMoonsPhaseLength"
                         }
                     }
                 ]

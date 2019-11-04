@@ -4,12 +4,12 @@
     "name": "Weather",
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
             "signature": "\u00000TX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Texture Layer #0",
                 "type": "string"
             }
@@ -17,7 +17,7 @@
         {
             "signature": "\u00100TX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Texture Layer #1",
                 "type": "string"
             }
@@ -25,7 +25,7 @@
         {
             "signature": " 0TX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Texture Layer #2",
                 "type": "string"
             }
@@ -33,7 +33,7 @@
         {
             "signature": "00TX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Texture Layer #3",
                 "type": "string"
             }
@@ -41,7 +41,7 @@
         {
             "signature": "@0TX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Texture Layer #4",
                 "type": "string"
             }
@@ -49,7 +49,7 @@
         {
             "signature": "P0TX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Texture Layer #5",
                 "type": "string"
             }
@@ -57,7 +57,7 @@
         {
             "signature": "`0TX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Texture Layer #6",
                 "type": "string"
             }
@@ -65,7 +65,7 @@
         {
             "signature": "p0TX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Texture Layer #7",
                 "type": "string"
             }
@@ -73,7 +73,7 @@
         {
             "signature": "0TX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Texture Layer #8",
                 "type": "string"
             }
@@ -81,7 +81,7 @@
         {
             "signature": "0TX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Texture Layer #9",
                 "type": "string"
             }
@@ -89,7 +89,7 @@
         {
             "signature": ":0TX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Texture Layer #10",
                 "type": "string"
             }
@@ -97,7 +97,7 @@
         {
             "signature": ";0TX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Texture Layer #11",
                 "type": "string"
             }
@@ -105,7 +105,7 @@
         {
             "signature": "<0TX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Texture Layer #12",
                 "type": "string"
             }
@@ -113,7 +113,7 @@
         {
             "signature": "=0TX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Texture Layer #13",
                 "type": "string"
             }
@@ -121,7 +121,7 @@
         {
             "signature": ">0TX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Texture Layer #14",
                 "type": "string"
             }
@@ -129,7 +129,7 @@
         {
             "signature": "?0TX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Texture Layer #15",
                 "type": "string"
             }
@@ -137,7 +137,7 @@
         {
             "signature": "@0TX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Texture Layer #16",
                 "type": "string"
             }
@@ -145,7 +145,7 @@
         {
             "signature": "A0TX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Texture Layer #17",
                 "type": "string"
             }
@@ -153,7 +153,7 @@
         {
             "signature": "B0TX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Texture Layer #18",
                 "type": "string"
             }
@@ -161,7 +161,7 @@
         {
             "signature": "C0TX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Texture Layer #19",
                 "type": "string"
             }
@@ -169,7 +169,7 @@
         {
             "signature": "D0TX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Texture Layer #20",
                 "type": "string"
             }
@@ -177,7 +177,7 @@
         {
             "signature": "E0TX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Texture Layer #21",
                 "type": "string"
             }
@@ -185,7 +185,7 @@
         {
             "signature": "F0TX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Texture Layer #22",
                 "type": "string"
             }
@@ -193,7 +193,7 @@
         {
             "signature": "G0TX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Texture Layer #23",
                 "type": "string"
             }
@@ -201,7 +201,7 @@
         {
             "signature": "H0TX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Texture Layer #24",
                 "type": "string"
             }
@@ -209,7 +209,7 @@
         {
             "signature": "I0TX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Texture Layer #25",
                 "type": "string"
             }
@@ -217,7 +217,7 @@
         {
             "signature": "J0TX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Texture Layer #26",
                 "type": "string"
             }
@@ -225,7 +225,7 @@
         {
             "signature": "K0TX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Texture Layer #27",
                 "type": "string"
             }
@@ -233,7 +233,7 @@
         {
             "signature": "L0TX",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Texture Layer #28",
                 "type": "string"
             }
@@ -241,7 +241,7 @@
         {
             "signature": "DNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Unused",
                 "type": "bytes"
             }
@@ -249,7 +249,7 @@
         {
             "signature": "CNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Unused",
                 "type": "bytes"
             }
@@ -257,7 +257,7 @@
         {
             "signature": "ANAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Unused",
                 "type": "bytes"
             }
@@ -265,7 +265,7 @@
         {
             "signature": "BNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Unused",
                 "type": "bytes"
             }
@@ -273,14 +273,14 @@
         {
             "signature": "LNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "type": "bytes"
             }
         },
         {
             "signature": "MNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Precipitation Type",
                 "type": "formId",
                 "signatures": [
@@ -292,7 +292,7 @@
         {
             "signature": "NNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Visual Effect",
                 "type": "formId",
                 "signatures": [
@@ -305,7 +305,7 @@
         {
             "signature": "ONAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Unused",
                 "type": "bytes"
             }
@@ -317,14 +317,14 @@
                 {
                     "signature": "RNAM",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "Y Speed",
                         "type": "array",
-                        "field": {
+                        "element": {
                             "name": "Layer",
                             "type": "uint8",
                             "format": {
-                                "def": "CloudSpeedToStr"
+                                "id": "CloudSpeedToStr"
                             }
                         }
                     },
@@ -333,14 +333,14 @@
                 {
                     "signature": "QNAM",
                     "type": "subrecord",
-                    "field": {
+                    "element": {
                         "name": "X Speed",
                         "type": "array",
-                        "field": {
+                        "element": {
                             "name": "Layer",
                             "type": "uint8",
                             "format": {
-                                "def": "CloudSpeedToStr"
+                                "id": "CloudSpeedToStr"
                             }
                         }
                     },
@@ -351,11 +351,11 @@
         {
             "signature": "PNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Colors",
                 "type": "array",
-                "field": {
-                    "def": "WeatherColors",
+                "element": {
+                    "id": "WeatherColors",
                     "name": "Layer"
                 }
             },
@@ -364,13 +364,13 @@
         {
             "signature": "JNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Cloud Alphas",
                 "type": "array",
-                "field": {
+                "element": {
                     "name": "Layer",
                     "type": "struct",
-                    "fields": [
+                    "elements": [
                         {
                             "name": "Sunrise",
                             "type": "float"
@@ -395,76 +395,76 @@
         {
             "signature": "NAM0",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Weather Colors",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
-                        "def": "WeatherColors",
+                        "id": "WeatherColors",
                         "name": "Sky-Upper"
                     },
                     {
-                        "def": "WeatherColors",
+                        "id": "WeatherColors",
                         "name": "Fog Near"
                     },
                     {
-                        "def": "WeatherColors",
+                        "id": "WeatherColors",
                         "name": "Unknown"
                     },
                     {
-                        "def": "WeatherColors",
+                        "id": "WeatherColors",
                         "name": "Ambient"
                     },
                     {
-                        "def": "WeatherColors",
+                        "id": "WeatherColors",
                         "name": "Sunlight"
                     },
                     {
-                        "def": "WeatherColors",
+                        "id": "WeatherColors",
                         "name": "Sun"
                     },
                     {
-                        "def": "WeatherColors",
+                        "id": "WeatherColors",
                         "name": "Stars"
                     },
                     {
-                        "def": "WeatherColors",
+                        "id": "WeatherColors",
                         "name": "Sky-Lower"
                     },
                     {
-                        "def": "WeatherColors",
+                        "id": "WeatherColors",
                         "name": "Horizon"
                     },
                     {
-                        "def": "WeatherColors",
+                        "id": "WeatherColors",
                         "name": "Effect Lighting"
                     },
                     {
-                        "def": "WeatherColors",
+                        "id": "WeatherColors",
                         "name": "Cloud LOD Diffuse"
                     },
                     {
-                        "def": "WeatherColors",
+                        "id": "WeatherColors",
                         "name": "Cloud LOD Ambient"
                     },
                     {
-                        "def": "WeatherColors",
+                        "id": "WeatherColors",
                         "name": "Fog Far"
                     },
                     {
-                        "def": "WeatherColors",
+                        "id": "WeatherColors",
                         "name": "Sky Statics"
                     },
                     {
-                        "def": "WeatherColors",
+                        "id": "WeatherColors",
                         "name": "Water Multiplier"
                     },
                     {
-                        "def": "WeatherColors",
+                        "id": "WeatherColors",
                         "name": "Sun Glare"
                     },
                     {
-                        "def": "WeatherColors",
+                        "id": "WeatherColors",
                         "name": "Moon Glare"
                     }
                 ]
@@ -474,10 +474,10 @@
         {
             "signature": "FNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Fog Distance",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Day - Near",
                         "type": "float"
@@ -517,10 +517,10 @@
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Data",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Wind Speed",
                         "type": "uint8"
@@ -580,7 +580,7 @@
                     {
                         "name": "Lightning Color",
                         "type": "struct",
-                        "fields": [
+                        "elements": [
                             {
                                 "name": "Red",
                                 "type": "uint8"
@@ -618,7 +618,7 @@
         {
             "signature": "NAM1",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Disabled Cloud Layers",
                 "type": "uint32",
                 "format": {
@@ -666,10 +666,10 @@
             "member": {
                 "signature": "SNAM",
                 "type": "subrecord",
-                "field": {
+                "element": {
                     "name": "Sound",
                     "type": "struct",
-                    "fields": [
+                    "elements": [
                         {
                             "name": "Sound",
                             "type": "formId",
@@ -702,7 +702,7 @@
             "member": {
                 "signature": "TNAM",
                 "type": "subrecord",
-                "field": {
+                "element": {
                     "name": "Static",
                     "type": "formId",
                     "signatures": [
@@ -716,10 +716,10 @@
         {
             "signature": "IMSP",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Image Spaces",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Sunrise",
                         "type": "formId",
@@ -758,10 +758,10 @@
         {
             "signature": "HNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Volumetric Lighting",
                 "type": "struct",
-                "fields": [
+                "elements": [
                     {
                         "name": "Sunrise",
                         "type": "formId",
@@ -804,32 +804,32 @@
                 {
                     "signature": "DALC",
                     "type": "subrecord",
-                    "field": {
-                        "def": "AmbientColors",
+                    "element": {
+                        "id": "AmbientColors",
                         "name": "Sunrise"
                     }
                 },
                 {
                     "signature": "DALC",
                     "type": "subrecord",
-                    "field": {
-                        "def": "AmbientColors",
+                    "element": {
+                        "id": "AmbientColors",
                         "name": "Day"
                     }
                 },
                 {
                     "signature": "DALC",
                     "type": "subrecord",
-                    "field": {
-                        "def": "AmbientColors",
+                    "element": {
+                        "id": "AmbientColors",
                         "name": "Sunset"
                     }
                 },
                 {
                     "signature": "DALC",
                     "type": "subrecord",
-                    "field": {
-                        "def": "AmbientColors",
+                    "element": {
+                        "id": "AmbientColors",
                         "name": "Night"
                     }
                 }
@@ -839,7 +839,7 @@
         {
             "signature": "NAM2",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Unused",
                 "type": "bytes"
             }
@@ -847,7 +847,7 @@
         {
             "signature": "NAM3",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Unused",
                 "type": "bytes"
             }
@@ -857,14 +857,14 @@
             "type": "memberStruct",
             "members": [
                 {
-                    "def": "MODL"
+                    "id": "MODL"
                 }
             ]
         },
         {
             "signature": "GNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Sun Glare Lens Flare",
                 "type": "formId",
                 "signatures": [

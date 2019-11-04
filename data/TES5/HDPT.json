@@ -11,18 +11,18 @@
     },
     "members": [
         {
-            "def": "EDID"
+            "id": "EDID"
         },
         {
-            "def": "FULL"
+            "id": "FULL"
         },
         {
-            "def": "MODL"
+            "id": "MODL"
         },
         {
             "signature": "DATA",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Flags",
                 "type": "uint8",
                 "format": {
@@ -40,7 +40,7 @@
         {
             "signature": "PNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Type",
                 "type": "uint32",
                 "format": {
@@ -63,7 +63,7 @@
             "member": {
                 "signature": "HNAM",
                 "type": "subrecord",
-                "field": {
+                "element": {
                     "name": "Part",
                     "type": "formId",
                     "signatures": [
@@ -83,7 +83,7 @@
                     {
                         "signature": "NAM0",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "Part Type",
                             "type": "uint32",
                             "format": {
@@ -99,7 +99,7 @@
                     {
                         "signature": "NAM1",
                         "type": "subrecord",
-                        "field": {
+                        "element": {
                             "name": "FileName",
                             "type": "string"
                         },
@@ -111,7 +111,7 @@
         {
             "signature": "TNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Texture Set",
                 "type": "formId",
                 "signatures": [
@@ -123,7 +123,7 @@
         {
             "signature": "CNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Color",
                 "type": "formId",
                 "signatures": [
@@ -135,7 +135,7 @@
         {
             "signature": "RNAM",
             "type": "subrecord",
-            "field": {
+            "element": {
                 "name": "Valid Races",
                 "type": "formId",
                 "signatures": [
