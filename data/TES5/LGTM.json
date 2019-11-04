@@ -54,7 +54,7 @@
                         "type": "float"
                     },
                     {
-                        "def": "wbAmbientColors",
+                        "def": "AmbientColors",
                         "name": "Ambient Colors"
                     },
                     {
@@ -92,7 +92,7 @@
             "signature": "DALC",
             "type": "subrecord",
             "field": {
-                "def": "wbAmbientColors"
+                "def": "AmbientColors"
             }
         }
     ]

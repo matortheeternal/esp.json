@@ -805,7 +805,7 @@
                     "signature": "DALC",
                     "type": "subrecord",
                     "field": {
-                        "def": "wbAmbientColors",
+                        "def": "AmbientColors",
                         "name": "Sunrise"
                     }
                 },
@@ -813,7 +813,7 @@
                     "signature": "DALC",
                     "type": "subrecord",
                     "field": {
-                        "def": "wbAmbientColors",
+                        "def": "AmbientColors",
                         "name": "Day"
                     }
                 },
@@ -821,7 +821,7 @@
                     "signature": "DALC",
                     "type": "subrecord",
                     "field": {
-                        "def": "wbAmbientColors",
+                        "def": "AmbientColors",
                         "name": "Sunset"
                     }
                 },
@@ -829,7 +829,7 @@
                     "signature": "DALC",
                     "type": "subrecord",
                     "field": {
-                        "def": "wbAmbientColors",
+                        "def": "AmbientColors",
                         "name": "Night"
                     }
                 }
