@@ -49,7 +49,7 @@ module.exports = () => {
                 float('Directional Fade'),
                 float('Fog Clip Distance'),
                 float('Fog Power'),
-                def('wbAmbientColors', { name: 'Ambient Colors' }),
+                def('AmbientColors', { name: 'Ambient Colors' }),
                 def('ByteColors', { name: 'Fog Color Far' }),
                 float('Fog Max'),
                 float('Light Fade Begin'),

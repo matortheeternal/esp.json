@@ -195,10 +195,10 @@ module.exports = () => {
                 ckFormId('Night', ['VOLI', 'NULL'])
             ])),
             req(memberStruct('Directional Ambient Lighting Colors', [
-                subrecord('DALC', def('wbAmbientColors', { name: 'Sunrise' })),
-                subrecord('DALC', def('wbAmbientColors', { name: 'Day' })),
-                subrecord('DALC', def('wbAmbientColors', { name: 'Sunset' })),
-                subrecord('DALC', def('wbAmbientColors', { name: 'Night' }))
+                subrecord('DALC', def('AmbientColors', { name: 'Sunrise' })),
+                subrecord('DALC', def('AmbientColors', { name: 'Day' })),
+                subrecord('DALC', def('AmbientColors', { name: 'Sunset' })),
+                subrecord('DALC', def('AmbientColors', { name: 'Night' }))
             ])),
             subrecord('NAM2', bytes('Unused')),
             subrecord('NAM3', bytes('Unused')),

@@ -18,7 +18,7 @@ module.exports = () => {
                 float('Directional Fade'),
                 float('Fog Clip Dist'),
                 float('Fog Power'),
-                def('wbAmbientColors', { name: 'Ambient Colors' }),
+                def('AmbientColors', { name: 'Ambient Colors' }),
                 def('ByteColors', { name: 'Fog Color Far' }),
                 float('Fog Max'),
                 struct('Light Fade Distances', [
@@ -27,7 +27,7 @@ module.exports = () => {
                 ]),
                 size(4, bytes('Unknown'))
             ]))),
-            subrecord('DALC', def('wbAmbientColors', { name: undefined }))
+            subrecord('DALC', def('AmbientColors', { name: undefined }))
         ]
     })
 };
