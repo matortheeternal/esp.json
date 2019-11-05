@@ -4,6 +4,6 @@ let {
 
 module.exports = () => {
     record('PBAR', 'Placed Barrier', {
-        def: 'ReferenceRecord'
+        id: 'ReferenceRecord'
     })
 };

@@ -4,6 +4,6 @@ let {
 
 module.exports = () => {
     record('PHZD', 'Placed Hazard', {
-        def: 'ReferenceRecord'
+        id: 'ReferenceRecord'
     })
 };

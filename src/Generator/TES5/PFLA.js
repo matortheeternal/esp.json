@@ -4,6 +4,6 @@ let {
 
 module.exports = () => {
     record('PFLA', 'Placed Flame', {
-        def: 'ReferenceRecord'
+        id: 'ReferenceRecord'
     })
 };

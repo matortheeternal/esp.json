@@ -4,6 +4,6 @@ let {
 
 module.exports = () => {
     record('PARW', 'Placed Arrow', {
-        def: 'ReferenceRecord'
+        id: 'ReferenceRecord'
     })
 };

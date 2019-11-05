@@ -4,6 +4,6 @@ let {
 
 module.exports = () => {
     record('PBEA', 'Placed Beam', {
-        def: 'ReferenceRecord'
+        id: 'ReferenceRecord'
     })
 };

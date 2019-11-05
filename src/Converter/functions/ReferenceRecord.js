@@ -7,6 +7,6 @@ functionConverter('ReferenceRecord', [
 ], ({sig, name}, converter) => {
     converter.addRequires('record');
     return `record('${sig}', ${name}, ${stringify({
-        def: `'ReferenceRecord'`
+        id: `'ReferenceRecord'`
     })})`;
 });

@@ -4,6 +4,6 @@ let {
 
 module.exports = () => {
     record('PGRE', 'Placed Projectile', {
-        def: 'ReferenceRecord'
+        id: 'ReferenceRecord'
     })
 };

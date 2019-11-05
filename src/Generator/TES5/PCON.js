@@ -4,6 +4,6 @@ let {
 
 module.exports = () => {
     record('PCON', 'Placed Cone/Voice', {
-        def: 'ReferenceRecord'
+        id: 'ReferenceRecord'
     })
 };
