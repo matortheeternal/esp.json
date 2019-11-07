@@ -4,6 +4,18 @@ let defs = {};
 let addDef = (id, def) => defs[id] = def;
 let getDefs = () => defs;
 let clearDefs = () => defs = {};
+let forEachDef = (cb, a) => {
+    let target = a || Object.values(defs);
+    target.forEach(def => {
+        cb(def);
+        if (def.members) forEachDef(cb, def.members);
+        if (def.elements) forEachDef(cb, def.elements);
+        if (def.formats) forEachDef(cb, def.formats);
+        if (def.member) forEachDef(cb, [def.member]);
+        if (def.element) forEachDef(cb, [def.element]);
+        if (def.format) forEachDef(cb, [def.format]);
+    });
+};
 let IsSSE = (game, options) => game === 'SSE' ? options[0] : options[1];
 
 // shared
@@ -69,7 +81,7 @@ let unknown = () => ({ type: 'bytes' });
 let empty = name => ({ name, type: 'empty' });
 
 module.exports = {
-    addDef, getDefs, clearDefs, IsSSE,
+    addDef, getDefs, clearDefs, forEachDef, IsSSE,
     req, def, opts, sortKey, inherit,
     localized, sorted, size, prefix,
     format, div, scale, flags, showUnknown, enumeration, formatUnion,
