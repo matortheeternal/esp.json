@@ -78,14 +78,16 @@
                                 "name": "Begin",
                                 "type": "uint8",
                                 "format": {
-                                    "id": "ClmtTime"
+                                    "type": "function",
+                                    "function": "ClmtTimeFormat"
                                 }
                             },
                             {
                                 "name": "End",
                                 "type": "uint8",
                                 "format": {
-                                    "id": "ClmtTime"
+                                    "type": "function",
+                                    "function": "ClmtTimeFormat"
                                 }
                             }
                         ]
@@ -98,14 +100,16 @@
                                 "name": "Begin",
                                 "type": "uint8",
                                 "format": {
-                                    "id": "ClmtTime"
+                                    "type": "function",
+                                    "function": "ClmtTimeFormat"
                                 }
                             },
                             {
                                 "name": "End",
                                 "type": "uint8",
                                 "format": {
-                                    "id": "ClmtTime"
+                                    "type": "function",
+                                    "function": "ClmtTimeFormat"
                                 }
                             }
                         ]
@@ -118,7 +122,8 @@
                         "name": "Moons / Phase Length",
                         "type": "uint8",
                         "format": {
-                            "id": "ClmtMoonsPhaseLength"
+                            "type": "function",
+                            "function": "ClmtMoonsPhaseLengthFormat"
                         }
                     }
                 ]

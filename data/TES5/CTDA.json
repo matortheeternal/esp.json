@@ -13,7 +13,8 @@
                         "name": "Type",
                         "type": "uint8",
                         "format": {
-                            "id": "CtdaTypeToStr"
+                            "type": "function",
+                            "function": "CtdaTypeFormat"
                         }
                     },
                     {
@@ -43,7 +44,8 @@
                         "name": "Function",
                         "type": "uint16",
                         "format": {
-                            "id": "CTDAFunctionToStr"
+                            "type": "function",
+                            "function": "CTDAFunctionFormat"
                         }
                     },
                     {
@@ -79,7 +81,8 @@
                                 "name": "Variable Name",
                                 "type": "uint32",
                                 "format": {
-                                    "id": "CTDAParam1StringToString"
+                                    "type": "function",
+                                    "function": "CTDAParam1StringFormat"
                                 }
                             },
                             {
@@ -344,7 +347,7 @@
                                 "name": "VATS Value Function",
                                 "type": "uint32",
                                 "format": {
-                                    "id": "VATSValueFunctionEnum"
+                                    "id": "VatsValueFunctionEnum"
                                 }
                             },
                             {
@@ -445,7 +448,8 @@
                                 "name": "Alias",
                                 "type": "int32",
                                 "format": {
-                                    "id": "ConditionAliasToStr"
+                                    "type": "function",
+                                    "function": "ConditionAliasFormat"
                                 }
                             },
                             {
@@ -499,7 +503,8 @@
                                 "name": "Event",
                                 "type": "uint32",
                                 "format": {
-                                    "id": "EventFunctionAndMemberToStr"
+                                    "type": "function",
+                                    "function": "EventFunctionAndMemberFormat"
                                 }
                             },
                             {
@@ -544,7 +549,8 @@
                                 "name": "Variable Name",
                                 "type": "uint32",
                                 "format": {
-                                    "id": "CTDAParam2StringToString"
+                                    "type": "function",
+                                    "function": "CTDAParam2StringFormat"
                                 }
                             },
                             {
@@ -579,7 +585,8 @@
                                 "name": "Quest Stage",
                                 "type": "int32",
                                 "format": {
-                                    "id": "CTDAParam2QuestStageToStr"
+                                    "type": "function",
+                                    "function": "CTDAParam2QuestStageFormat"
                                 }
                             },
                             {
@@ -811,7 +818,7 @@
                                 "name": "VATS Value Function",
                                 "type": "uint32",
                                 "format": {
-                                    "id": "VATSValueFunctionEnum"
+                                    "id": "VatsValueFunctionEnum"
                                 }
                             },
                             {
@@ -1073,7 +1080,8 @@
                                 "name": "Alias",
                                 "type": "int32",
                                 "format": {
-                                    "id": "ConditionAliasToStr"
+                                    "type": "function",
+                                    "function": "ConditionAliasFormat"
                                 }
                             },
                             {
@@ -1127,7 +1135,8 @@
                                 "name": "Event",
                                 "type": "uint32",
                                 "format": {
-                                    "id": "EventFunctionAndMemberToStr"
+                                    "type": "function",
+                                    "function": "EventFunctionAndMemberFormat"
                                 }
                             },
                             {

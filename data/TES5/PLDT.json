@@ -106,14 +106,16 @@
                         "name": "Alias",
                         "type": "int32",
                         "format": {
-                            "id": "PackageLocationAliasToStr"
+                            "type": "function",
+                            "function": "PackageLocationAliasFormat"
                         }
                     },
                     {
                         "name": "Reference",
                         "type": "int32",
                         "format": {
-                            "id": "PackageLocationAliasToStr"
+                            "type": "function",
+                            "function": "PackageLocationAliasFormat"
                         }
                     },
                     {

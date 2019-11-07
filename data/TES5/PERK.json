@@ -158,7 +158,8 @@
                                             "name": "Quest Stage",
                                             "type": "uint8",
                                             "format": {
-                                                "id": "PerkDATAQuestStageToStr"
+                                                "type": "function",
+                                                "function": "PerkDATAQuestStageFormat"
                                             }
                                         },
                                         {
@@ -382,7 +383,8 @@
                                                     "name": "Actor Value",
                                                     "type": "uint32",
                                                     "format": {
-                                                        "id": "EPFDActorValueToStr"
+                                                        "type": "function",
+                                                        "function": "EPFDActorValueFormat"
                                                     }
                                                 },
                                                 {

@@ -92,7 +92,8 @@
                             "name": "Vertex 0",
                             "type": "int16",
                             "format": {
-                                "id": "VertexToStr0"
+                                "type": "function",
+                                "function": "Vertex0Format"
                             },
                             "linksToCallback": "VertexLinksTo"
                         },
@@ -100,7 +101,8 @@
                             "name": "Vertex 1",
                             "type": "int16",
                             "format": {
-                                "id": "VertexToStr1"
+                                "type": "function",
+                                "function": "Vertex1Format"
                             },
                             "linksToCallback": "VertexLinksTo"
                         },
@@ -108,7 +110,8 @@
                             "name": "Vertex 2",
                             "type": "int16",
                             "format": {
-                                "id": "VertexToStr2"
+                                "type": "function",
+                                "function": "Vertex2Format"
                             },
                             "linksToCallback": "VertexLinksTo"
                         },
@@ -116,7 +119,8 @@
                             "name": "Edge 0-1",
                             "type": "int16",
                             "format": {
-                                "id": "EdgeToStr0"
+                                "type": "function",
+                                "function": "Edge0Format"
                             },
                             "linksToCallback": "EdgeLinksTo0"
                         },
@@ -124,7 +128,8 @@
                             "name": "Edge 1-2",
                             "type": "int16",
                             "format": {
-                                "id": "EdgeToStr1"
+                                "type": "function",
+                                "function": "Edge1Format"
                             },
                             "linksToCallback": "EdgeLinksTo1"
                         },
@@ -132,7 +137,8 @@
                             "name": "Edge 2-0",
                             "type": "int16",
                             "format": {
-                                "id": "EdgeToStr2"
+                                "type": "function",
+                                "function": "Edge2Format"
                             },
                             "linksToCallback": "EdgeLinksTo2"
                         },
