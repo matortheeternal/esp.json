@@ -32,8 +32,7 @@
                         "name": "Next Object ID",
                         "type": "uint32",
                         "format": {
-                            "type": "function",
-                            "function": "NextObjectIDFormat"
+                            "type": "NextObjectIDFormat"
                         }
                     }
                 ]

@@ -13,8 +13,7 @@
                         "name": "Type",
                         "type": "uint8",
                         "format": {
-                            "type": "function",
-                            "function": "CtdaTypeFormat"
+                            "type": "CtdaTypeFormat"
                         }
                     },
                     {
@@ -44,8 +43,7 @@
                         "name": "Function",
                         "type": "uint16",
                         "format": {
-                            "type": "function",
-                            "function": "CTDAFunctionFormat"
+                            "type": "CTDAFunctionFormat"
                         }
                     },
                     {
@@ -81,8 +79,7 @@
                                 "name": "Variable Name",
                                 "type": "uint32",
                                 "format": {
-                                    "type": "function",
-                                    "function": "CTDAParam1StringFormat"
+                                    "type": "CTDAParam1StringFormat"
                                 }
                             },
                             {
@@ -448,8 +445,7 @@
                                 "name": "Alias",
                                 "type": "int32",
                                 "format": {
-                                    "type": "function",
-                                    "function": "ConditionAliasFormat"
+                                    "type": "ConditionAliasFormat"
                                 }
                             },
                             {
@@ -503,8 +499,7 @@
                                 "name": "Event",
                                 "type": "uint32",
                                 "format": {
-                                    "type": "function",
-                                    "function": "EventFunctionAndMemberFormat"
+                                    "type": "EventFunctionAndMemberFormat"
                                 }
                             },
                             {
@@ -549,8 +544,7 @@
                                 "name": "Variable Name",
                                 "type": "uint32",
                                 "format": {
-                                    "type": "function",
-                                    "function": "CTDAParam2StringFormat"
+                                    "type": "CTDAParam2StringFormat"
                                 }
                             },
                             {
@@ -585,8 +579,7 @@
                                 "name": "Quest Stage",
                                 "type": "int32",
                                 "format": {
-                                    "type": "function",
-                                    "function": "CTDAParam2QuestStageFormat"
+                                    "type": "CTDAParam2QuestStageFormat"
                                 }
                             },
                             {
@@ -1080,8 +1073,7 @@
                                 "name": "Alias",
                                 "type": "int32",
                                 "format": {
-                                    "type": "function",
-                                    "function": "ConditionAliasFormat"
+                                    "type": "ConditionAliasFormat"
                                 }
                             },
                             {
@@ -1135,8 +1127,7 @@
                                 "name": "Event",
                                 "type": "uint32",
                                 "format": {
-                                    "type": "function",
-                                    "function": "EventFunctionAndMemberFormat"
+                                    "type": "EventFunctionAndMemberFormat"
                                 }
                             },
                             {

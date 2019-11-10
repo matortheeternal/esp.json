@@ -78,16 +78,14 @@
                                 "name": "Begin",
                                 "type": "uint8",
                                 "format": {
-                                    "type": "function",
-                                    "function": "ClmtTimeFormat"
+                                    "type": "ClmtTimeFormat"
                                 }
                             },
                             {
                                 "name": "End",
                                 "type": "uint8",
                                 "format": {
-                                    "type": "function",
-                                    "function": "ClmtTimeFormat"
+                                    "type": "ClmtTimeFormat"
                                 }
                             }
                         ]
@@ -100,16 +98,14 @@
                                 "name": "Begin",
                                 "type": "uint8",
                                 "format": {
-                                    "type": "function",
-                                    "function": "ClmtTimeFormat"
+                                    "type": "ClmtTimeFormat"
                                 }
                             },
                             {
                                 "name": "End",
                                 "type": "uint8",
                                 "format": {
-                                    "type": "function",
-                                    "function": "ClmtTimeFormat"
+                                    "type": "ClmtTimeFormat"
                                 }
                             }
                         ]
@@ -122,8 +118,7 @@
                         "name": "Moons / Phase Length",
                         "type": "uint8",
                         "format": {
-                            "type": "function",
-                            "function": "ClmtMoonsPhaseLengthFormat"
+                            "type": "ClmtMoonsPhaseLengthFormat"
                         }
                     }
                 ]

@@ -1049,8 +1049,7 @@
                         "name": "Teleport Marker Triangle",
                         "type": "int16",
                         "format": {
-                            "type": "function",
-                            "function": "REFRNavmeshTriangleFormat"
+                            "type": "REFRNavmeshTriangleFormat"
                         }
                     },
                     {

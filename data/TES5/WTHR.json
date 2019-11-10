@@ -324,8 +324,7 @@
                             "name": "Layer",
                             "type": "uint8",
                             "format": {
-                                "type": "function",
-                                "function": "CloudSpeedFormat"
+                                "type": "CloudSpeedFormat"
                             }
                         }
                     },
@@ -341,8 +340,7 @@
                             "name": "Layer",
                             "type": "uint8",
                             "format": {
-                                "type": "function",
-                                "function": "CloudSpeedFormat"
+                                "type": "CloudSpeedFormat"
                             }
                         }
                     },

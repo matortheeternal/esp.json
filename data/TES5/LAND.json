@@ -259,8 +259,7 @@
                                                 "name": "Position",
                                                 "type": "uint16",
                                                 "format": {
-                                                    "type": "function",
-                                                    "function": "AtxtPositionFormat"
+                                                    "type": "AtxtPositionFormat"
                                                 }
                                             },
                                             {

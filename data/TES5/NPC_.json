@@ -814,8 +814,7 @@
                             "name": "Tint Index",
                             "type": "uint16",
                             "format": {
-                                "type": "function",
-                                "function": "TintLayerFormat"
+                                "type": "TintLayerFormat"
                             }
                         }
                     },

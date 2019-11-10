@@ -294,8 +294,7 @@
                                                 "name": "Alias",
                                                 "type": "int32",
                                                 "format": {
-                                                    "type": "function",
-                                                    "function": "QuestAliasFormat"
+                                                    "type": "QuestAliasFormat"
                                                 }
                                             },
                                             {
@@ -370,8 +369,7 @@
                                     "name": "Force Into Alias When Filled",
                                     "type": "int32",
                                     "format": {
-                                        "type": "function",
-                                        "function": "QuestAliasFormat"
+                                        "type": "QuestAliasFormat"
                                     }
                                 }
                             },
@@ -416,8 +414,7 @@
                                             "name": "Alias",
                                             "type": "int32",
                                             "format": {
-                                                "type": "function",
-                                                "function": "QuestAliasFormat"
+                                                "type": "QuestAliasFormat"
                                             }
                                         }
                                     },
@@ -467,8 +464,7 @@
                                             "name": "Alias",
                                             "type": "int32",
                                             "format": {
-                                                "type": "function",
-                                                "function": "QuestExternalAliasFormat"
+                                                "type": "QuestExternalAliasFormat"
                                             }
                                         }
                                     }
@@ -497,8 +493,7 @@
                                                     "name": "Alias",
                                                     "type": "int16",
                                                     "format": {
-                                                        "type": "function",
-                                                        "function": "QuestAliasFormat"
+                                                        "type": "QuestAliasFormat"
                                                     }
                                                 },
                                                 {
@@ -546,8 +541,7 @@
                                             "name": "Alias",
                                             "type": "int32",
                                             "format": {
-                                                "type": "function",
-                                                "function": "QuestAliasFormat"
+                                                "type": "QuestAliasFormat"
                                             }
                                         }
                                     },
@@ -767,8 +761,7 @@
                                     "name": "Force Into Alias When Filled",
                                     "type": "int32",
                                     "format": {
-                                        "type": "function",
-                                        "function": "QuestAliasFormat"
+                                        "type": "QuestAliasFormat"
                                     }
                                 }
                             },
@@ -813,8 +806,7 @@
                                             "name": "Alias",
                                             "type": "int32",
                                             "format": {
-                                                "type": "function",
-                                                "function": "QuestAliasFormat"
+                                                "type": "QuestAliasFormat"
                                             }
                                         }
                                     },
@@ -864,8 +856,7 @@
                                             "name": "Alias",
                                             "type": "int32",
                                             "format": {
-                                                "type": "function",
-                                                "function": "QuestExternalAliasFormat"
+                                                "type": "QuestExternalAliasFormat"
                                             }
                                         }
                                     }
@@ -894,8 +885,7 @@
                                                     "name": "Alias",
                                                     "type": "int16",
                                                     "format": {
-                                                        "type": "function",
-                                                        "function": "QuestAliasFormat"
+                                                        "type": "QuestAliasFormat"
                                                     }
                                                 },
                                                 {
@@ -943,8 +933,7 @@
                                             "name": "Alias",
                                             "type": "int32",
                                             "format": {
-                                                "type": "function",
-                                                "function": "QuestAliasFormat"
+                                                "type": "QuestAliasFormat"
                                             }
                                         }
                                     },

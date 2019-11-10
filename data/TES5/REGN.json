@@ -248,8 +248,7 @@
                                         "name": "Parent Index",
                                         "type": "uint16",
                                         "format": {
-                                            "type": "function",
-                                            "function": "HideFFFF_Format"
+                                            "type": "HideFFFF_Format"
                                         }
                                     },
                                     {
