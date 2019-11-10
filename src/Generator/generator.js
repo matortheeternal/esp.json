@@ -32,6 +32,7 @@ let generate = function(game, options = {}) {
     let defsFolder = options.buildFrom || game;
     buildDefs(game, defsFolder);
     buildDefs(game, path.join(defsFolder, 'extra'));
+    buildDefs(game, path.join(defsFolder, 'adjustments'));
     saveDefs(game);
     if (options.saveIndividualDefs) saveIndividualDefs(game);
 };
