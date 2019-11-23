@@ -1,50 +1,47 @@
 {
     "signature": "DATA",
-    "type": "subrecord",
-    "element": {
-        "name": "Position/Rotation",
-        "type": "struct",
-        "elements": [
-            {
-                "name": "Position",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "X",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Y",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Z",
-                        "type": "float"
-                    }
-                ]
-            },
-            {
-                "name": "Rotation",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "X",
-                        "type": "float",
-                        "required": true
-                    },
-                    {
-                        "name": "Y",
-                        "type": "float",
-                        "required": true
-                    },
-                    {
-                        "name": "Z",
-                        "type": "float",
-                        "required": true
-                    }
-                ]
-            }
-        ]
-    },
+    "name": "Position/Rotation",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Position",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "X",
+                    "type": "float"
+                },
+                {
+                    "name": "Y",
+                    "type": "float"
+                },
+                {
+                    "name": "Z",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Rotation",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "X",
+                    "type": "float",
+                    "required": true
+                },
+                {
+                    "name": "Y",
+                    "type": "float",
+                    "required": true
+                },
+                {
+                    "name": "Z",
+                    "type": "float",
+                    "required": true
+                }
+            ]
+        }
+    ],
     "required": true
 }

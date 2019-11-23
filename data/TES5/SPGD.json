@@ -8,77 +8,71 @@
         },
         {
             "signature": "DATA",
-            "type": "subrecord",
-            "element": {
-                "name": "Data",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Gravity Velocity",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Rotation Velocity",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Particle Size X",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Particle Size Y",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Center Offset Min",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Center Offset Max",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Initial Rotation Range",
-                        "type": "float"
-                    },
-                    {
-                        "name": "# of Subtextures X",
-                        "type": "uint32"
-                    },
-                    {
-                        "name": "# of Subtextures Y",
-                        "type": "uint32"
-                    },
-                    {
-                        "name": "Type",
-                        "type": "uint32",
-                        "format": {
-                            "type": "enum",
-                            "options": {
-                                "0": "Rain",
-                                "1": "Snow"
-                            }
+            "name": "Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Gravity Velocity",
+                    "type": "float"
+                },
+                {
+                    "name": "Rotation Velocity",
+                    "type": "float"
+                },
+                {
+                    "name": "Particle Size X",
+                    "type": "float"
+                },
+                {
+                    "name": "Particle Size Y",
+                    "type": "float"
+                },
+                {
+                    "name": "Center Offset Min",
+                    "type": "float"
+                },
+                {
+                    "name": "Center Offset Max",
+                    "type": "float"
+                },
+                {
+                    "name": "Initial Rotation Range",
+                    "type": "float"
+                },
+                {
+                    "name": "# of Subtextures X",
+                    "type": "uint32"
+                },
+                {
+                    "name": "# of Subtextures Y",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Type",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Rain",
+                            "1": "Snow"
                         }
-                    },
-                    {
-                        "name": "Box Size",
-                        "type": "uint32"
-                    },
-                    {
-                        "name": "Particle Density",
-                        "type": "float"
                     }
-                ]
-            },
+                },
+                {
+                    "name": "Box Size",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Particle Density",
+                    "type": "float"
+                }
+            ],
             "required": true
         },
         {
             "signature": "ICON",
-            "type": "subrecord",
-            "element": {
-                "name": "Particle Texture",
-                "type": "string"
-            }
+            "name": "Particle Texture",
+            "type": "string"
         }
     ]
 }

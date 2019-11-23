@@ -14,42 +14,30 @@
                     "members": [
                         {
                             "signature": "TINI",
-                            "type": "subrecord",
-                            "element": {
-                                "name": "Index",
-                                "type": "uint16"
-                            }
+                            "name": "Index",
+                            "type": "uint16"
                         },
                         {
                             "signature": "TINT",
-                            "type": "subrecord",
-                            "element": {
-                                "name": "File Name",
-                                "type": "string"
-                            }
+                            "name": "File Name",
+                            "type": "string"
                         },
                         {
                             "signature": "TINP",
-                            "type": "subrecord",
-                            "element": {
-                                "name": "Mask Type",
-                                "type": "uint16",
-                                "format": {
-                                    "id": "TintMaskTypeEnum"
-                                }
+                            "name": "Mask Type",
+                            "type": "uint16",
+                            "format": {
+                                "id": "TintMaskTypeEnum"
                             }
                         },
                         {
                             "signature": "TIND",
-                            "type": "subrecord",
-                            "element": {
-                                "name": "Preset Default",
-                                "type": "formId",
-                                "signatures": [
-                                    "CLFM",
-                                    "NULL"
-                                ]
-                            }
+                            "name": "Preset Default",
+                            "type": "formId",
+                            "signatures": [
+                                "CLFM",
+                                "NULL"
+                            ]
                         }
                     ]
                 }
@@ -63,31 +51,22 @@
                     "members": [
                         {
                             "signature": "TINC",
-                            "type": "subrecord",
-                            "element": {
-                                "name": "Color",
-                                "type": "formId",
-                                "signatures": [
-                                    "CLFM",
-                                    "NULL"
-                                ]
-                            }
+                            "name": "Color",
+                            "type": "formId",
+                            "signatures": [
+                                "CLFM",
+                                "NULL"
+                            ]
                         },
                         {
                             "signature": "TINV",
-                            "type": "subrecord",
-                            "element": {
-                                "name": "Default Value",
-                                "type": "float"
-                            }
+                            "name": "Default Value",
+                            "type": "float"
                         },
                         {
                             "signature": "TIRS",
-                            "type": "subrecord",
-                            "element": {
-                                "name": "Index",
-                                "type": "uint16"
-                            }
+                            "name": "Index",
+                            "type": "uint16"
                         }
                     ]
                 }

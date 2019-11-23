@@ -4,23 +4,17 @@
     "members": [
         {
             "signature": "INDX",
-            "type": "subrecord",
-            "element": {
-                "name": "Head Part Number",
-                "type": "uint32"
-            }
+            "name": "Head Part Number",
+            "type": "uint32"
         },
         {
             "signature": "HEAD",
-            "type": "subrecord",
-            "element": {
-                "name": "Head",
-                "type": "formId",
-                "signatures": [
-                    "HDPT",
-                    "NULL"
-                ]
-            }
+            "name": "Head",
+            "type": "formId",
+            "signatures": [
+                "HDPT",
+                "NULL"
+            ]
         }
     ],
     "sortKey": [

@@ -15,44 +15,35 @@
         },
         {
             "signature": "ANAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Abbreviation",
-                "type": "string"
-            }
+            "name": "Abbreviation",
+            "type": "string"
         },
         {
             "signature": "CNAM",
-            "type": "subrecord",
-            "element": {
-                "type": "bytes"
-            }
+            "type": "bytes"
         },
         {
             "signature": "AVSK",
-            "type": "subrecord",
-            "element": {
-                "name": "Skill",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Skill Use Mult",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Skill Offset Mult",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Skill Improve Mult",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Skill Improve Offset",
-                        "type": "float"
-                    }
-                ]
-            }
+            "name": "Skill",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Skill Use Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Skill Offset Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Skill Improve Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Skill Improve Offset",
+                    "type": "float"
+                }
+            ]
         },
         {
             "name": "Perk Tree",
@@ -63,86 +54,59 @@
                 "members": [
                     {
                         "signature": "PNAM",
-                        "type": "subrecord",
-                        "element": {
-                            "name": "Perk",
-                            "type": "formId",
-                            "signatures": [
-                                "PERK",
-                                "NULL"
-                            ]
-                        }
+                        "name": "Perk",
+                        "type": "formId",
+                        "signatures": [
+                            "PERK",
+                            "NULL"
+                        ]
                     },
                     {
                         "signature": "FNAM",
-                        "type": "subrecord",
-                        "element": {
-                            "type": "bytes"
-                        }
+                        "type": "bytes"
                     },
                     {
                         "signature": "XNAM",
-                        "type": "subrecord",
-                        "element": {
-                            "name": "Perk-Grid X",
-                            "type": "uint32"
-                        }
+                        "name": "Perk-Grid X",
+                        "type": "uint32"
                     },
                     {
                         "signature": "YNAM",
-                        "type": "subrecord",
-                        "element": {
-                            "name": "Perk-Grid Y",
-                            "type": "uint32"
-                        }
+                        "name": "Perk-Grid Y",
+                        "type": "uint32"
                     },
                     {
                         "signature": "HNAM",
-                        "type": "subrecord",
-                        "element": {
-                            "name": "Horizontal Position",
-                            "type": "float"
-                        }
+                        "name": "Horizontal Position",
+                        "type": "float"
                     },
                     {
                         "signature": "VNAM",
-                        "type": "subrecord",
-                        "element": {
-                            "name": "Vertical Position",
-                            "type": "float"
-                        }
+                        "name": "Vertical Position",
+                        "type": "float"
                     },
                     {
                         "signature": "SNAM",
-                        "type": "subrecord",
-                        "element": {
-                            "name": "Associated Skill",
-                            "type": "formId",
-                            "signatures": [
-                                "AVIF",
-                                "NULL"
-                            ]
-                        }
+                        "name": "Associated Skill",
+                        "type": "formId",
+                        "signatures": [
+                            "AVIF",
+                            "NULL"
+                        ]
                     },
                     {
                         "name": "Connections",
                         "type": "memberArray",
                         "member": {
                             "signature": "CNAM",
-                            "type": "subrecord",
-                            "element": {
-                                "name": "Line to Index",
-                                "type": "uint32"
-                            }
+                            "name": "Line to Index",
+                            "type": "uint32"
                         }
                     },
                     {
                         "signature": "INAM",
-                        "type": "subrecord",
-                        "element": {
-                            "name": "Index",
-                            "type": "uint32"
-                        }
+                        "name": "Index",
+                        "type": "uint32"
                     }
                 ]
             }

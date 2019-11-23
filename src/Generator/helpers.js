@@ -45,8 +45,7 @@ let formatUnion = (decider, formats) =>
 let record = (signature, name, def) => addDef(signature,
     { signature, type: 'record', name, ...def }
 );
-let subrecord = (signature, element) =>
-    ({ signature, type: 'subrecord', element });
+let subrecord = (signature, element) => ({ signature, ...element });
 
 let memberArray = (name, member) =>
     ({ name, type: 'memberArray', member });

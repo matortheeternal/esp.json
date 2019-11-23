@@ -18,11 +18,8 @@
         },
         {
             "signature": "BNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Unload Event",
-                "type": "string"
-            }
+            "name": "Unload Event",
+            "type": "string"
         }
     ]
 }

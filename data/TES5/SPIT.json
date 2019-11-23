@@ -1,111 +1,108 @@
 {
     "signature": "SPIT",
-    "type": "subrecord",
-    "element": {
-        "name": "Data",
-        "type": "struct",
-        "elements": [
-            {
-                "name": "Base Cost",
-                "type": "uint32"
-            },
-            {
-                "name": "Flags",
-                "type": "uint32",
-                "format": {
-                    "type": "flags",
-                    "flags": {
-                        "0": "Manual Cost Calc",
-                        "1": "Unknown 2",
-                        "2": "Unknown 3",
-                        "3": "Unknown 4",
-                        "4": "Unknown 5",
-                        "5": "Unknown 6",
-                        "6": "Unknown 7",
-                        "7": "Unknown 8",
-                        "8": "Unknown 9",
-                        "9": "Unknown 10",
-                        "10": "Unknown 11",
-                        "11": "Unknown 12",
-                        "12": "Unknown 13",
-                        "13": "Unknown 14",
-                        "14": "Unknown 15",
-                        "15": "Unknown 16",
-                        "16": "Unknown 17",
-                        "17": "PC Start Spell",
-                        "18": "Unknown 19",
-                        "19": "Area Effect Ignores LOS",
-                        "20": "Ignore Resistance",
-                        "21": "No Absorb/Reflect",
-                        "22": "Unknown 23",
-                        "23": "No Dual Cast Modification",
-                        "24": "Unknown 25",
-                        "25": "Unknown 26",
-                        "26": "Unknown 27",
-                        "27": "Unknown 28",
-                        "28": "Unknown 29",
-                        "29": "Unknown 30",
-                        "30": "Unknown 31",
-                        "31": "Unknown 32"
-                    }
+    "name": "Data",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Base Cost",
+            "type": "uint32"
+        },
+        {
+            "name": "Flags",
+            "type": "uint32",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Manual Cost Calc",
+                    "1": "Unknown 2",
+                    "2": "Unknown 3",
+                    "3": "Unknown 4",
+                    "4": "Unknown 5",
+                    "5": "Unknown 6",
+                    "6": "Unknown 7",
+                    "7": "Unknown 8",
+                    "8": "Unknown 9",
+                    "9": "Unknown 10",
+                    "10": "Unknown 11",
+                    "11": "Unknown 12",
+                    "12": "Unknown 13",
+                    "13": "Unknown 14",
+                    "14": "Unknown 15",
+                    "15": "Unknown 16",
+                    "16": "Unknown 17",
+                    "17": "PC Start Spell",
+                    "18": "Unknown 19",
+                    "19": "Area Effect Ignores LOS",
+                    "20": "Ignore Resistance",
+                    "21": "No Absorb/Reflect",
+                    "22": "Unknown 23",
+                    "23": "No Dual Cast Modification",
+                    "24": "Unknown 25",
+                    "25": "Unknown 26",
+                    "26": "Unknown 27",
+                    "27": "Unknown 28",
+                    "28": "Unknown 29",
+                    "29": "Unknown 30",
+                    "30": "Unknown 31",
+                    "31": "Unknown 32"
                 }
-            },
-            {
-                "name": "Type",
-                "type": "uint32",
-                "format": {
-                    "type": "enum",
-                    "options": {
-                        "0": "Spell",
-                        "1": "Disease",
-                        "2": "Power",
-                        "3": "Lesser Power",
-                        "4": "Ability",
-                        "5": "Poison",
-                        "6": "Unknown 6",
-                        "7": "Unknown 7",
-                        "8": "Unknown 8",
-                        "9": "Unknown 9",
-                        "10": "Addiction",
-                        "11": "Voice"
-                    }
-                }
-            },
-            {
-                "name": "Charge Time",
-                "type": "float"
-            },
-            {
-                "name": "Cast Type",
-                "type": "uint32",
-                "format": {
-                    "id": "CastEnum"
-                }
-            },
-            {
-                "name": "Target Type",
-                "type": "uint32",
-                "format": {
-                    "id": "TargetEnum"
-                }
-            },
-            {
-                "name": "Cast Duration",
-                "type": "float"
-            },
-            {
-                "name": "Range",
-                "type": "float"
-            },
-            {
-                "name": "Half-cost Perk",
-                "type": "formId",
-                "signatures": [
-                    "NULL",
-                    "PERK"
-                ]
             }
-        ]
-    },
+        },
+        {
+            "name": "Type",
+            "type": "uint32",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "Spell",
+                    "1": "Disease",
+                    "2": "Power",
+                    "3": "Lesser Power",
+                    "4": "Ability",
+                    "5": "Poison",
+                    "6": "Unknown 6",
+                    "7": "Unknown 7",
+                    "8": "Unknown 8",
+                    "9": "Unknown 9",
+                    "10": "Addiction",
+                    "11": "Voice"
+                }
+            }
+        },
+        {
+            "name": "Charge Time",
+            "type": "float"
+        },
+        {
+            "name": "Cast Type",
+            "type": "uint32",
+            "format": {
+                "id": "CastEnum"
+            }
+        },
+        {
+            "name": "Target Type",
+            "type": "uint32",
+            "format": {
+                "id": "TargetEnum"
+            }
+        },
+        {
+            "name": "Cast Duration",
+            "type": "float"
+        },
+        {
+            "name": "Range",
+            "type": "float"
+        },
+        {
+            "name": "Half-cost Perk",
+            "type": "formId",
+            "signatures": [
+                "NULL",
+                "PERK"
+            ]
+        }
+    ],
     "required": true
 }

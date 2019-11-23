@@ -42,21 +42,18 @@
         },
         {
             "signature": "DATA",
-            "type": "subrecord",
-            "element": {
-                "name": "Item",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Value",
-                        "type": "uint32"
-                    },
-                    {
-                        "name": "Weight",
-                        "type": "float"
-                    }
-                ]
-            },
+            "name": "Item",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Value",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                }
+            ],
             "required": true
         },
         {

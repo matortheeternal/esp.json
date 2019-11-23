@@ -4,20 +4,14 @@
     "members": [
         {
             "signature": "ICON",
-            "type": "subrecord",
-            "element": {
-                "name": "Large Icon FileName",
-                "type": "string"
-            },
+            "name": "Large Icon FileName",
+            "type": "string",
             "required": true
         },
         {
             "signature": "MICO",
-            "type": "subrecord",
-            "element": {
-                "name": "Small Icon FileName",
-                "type": "string"
-            }
+            "name": "Small Icon FileName",
+            "type": "string"
         }
     ],
     "required": true

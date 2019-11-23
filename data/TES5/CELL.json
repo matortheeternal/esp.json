@@ -21,147 +21,138 @@
         },
         {
             "signature": "DATA",
-            "type": "subrecord",
-            "element": {
-                "name": "Flags",
-                "type": "uint16",
-                "format": {
-                    "type": "flags",
-                    "flags": {
-                        "0": "Is Interior Cell",
-                        "1": "Has Water",
-                        "2": "Can't Travel From Here",
-                        "3": "No LOD Water",
-                        "4": "Unknown 5",
-                        "5": "Public Area",
-                        "6": "Hand Changed",
-                        "7": "Show Sky",
-                        "8": "Use Sky Lighting"
-                    }
+            "name": "Flags",
+            "type": "uint16",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Is Interior Cell",
+                    "1": "Has Water",
+                    "2": "Can't Travel From Here",
+                    "3": "No LOD Water",
+                    "4": "Unknown 5",
+                    "5": "Public Area",
+                    "6": "Hand Changed",
+                    "7": "Show Sky",
+                    "8": "Use Sky Lighting"
                 }
             }
         },
         {
             "signature": "XCLC",
-            "type": "subrecord",
-            "element": {
-                "name": "Grid",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "X",
-                        "type": "int32"
-                    },
-                    {
-                        "name": "Y",
-                        "type": "int32"
-                    },
-                    {
-                        "name": "Force Hide Land",
-                        "type": "uint32",
-                        "format": {
-                            "type": "flags",
-                            "flags": {
-                                "0": "Quad 1",
-                                "1": "Quad 2",
-                                "2": "Quad 3",
-                                "3": "Quad 4"
-                            }
+            "name": "Grid",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "X",
+                    "type": "int32"
+                },
+                {
+                    "name": "Y",
+                    "type": "int32"
+                },
+                {
+                    "name": "Force Hide Land",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Quad 1",
+                            "1": "Quad 2",
+                            "2": "Quad 3",
+                            "3": "Quad 4"
                         }
                     }
-                ]
-            },
+                }
+            ],
             "required": true
         },
         {
             "signature": "XCLL",
-            "type": "subrecord",
-            "element": {
-                "name": "Lighting",
-                "type": "struct",
-                "elements": [
-                    {
-                        "id": "ByteColors",
-                        "name": "Ambient Color"
-                    },
-                    {
-                        "id": "ByteColors",
-                        "name": "Directional Color"
-                    },
-                    {
-                        "id": "ByteColors",
-                        "name": "Fog Color Near"
-                    },
-                    {
-                        "name": "Fog Near",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Fog Far",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Directional Rotation XY",
-                        "type": "int32"
-                    },
-                    {
-                        "name": "Directional Rotation Z",
-                        "type": "int32"
-                    },
-                    {
-                        "name": "Directional Fade",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Fog Clip Distance",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Fog Power",
-                        "type": "float"
-                    },
-                    {
-                        "id": "AmbientColors",
-                        "name": "Ambient Colors"
-                    },
-                    {
-                        "id": "ByteColors",
-                        "name": "Fog Color Far"
-                    },
-                    {
-                        "name": "Fog Max",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Light Fade Begin",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Light Fade End",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Inherits",
-                        "type": "uint32",
-                        "format": {
-                            "type": "flags",
-                            "flags": {
-                                "0": "Ambient Color",
-                                "1": "Directional Color",
-                                "2": "Fog Color",
-                                "3": "Fog Near",
-                                "4": "Fog Far",
-                                "5": "Directional Rotation",
-                                "6": "Directional Fade",
-                                "7": "Clip Distance",
-                                "8": "Fog Power",
-                                "9": "Fog Max",
-                                "10": "Light Fade Distances"
-                            }
+            "name": "Lighting",
+            "type": "struct",
+            "elements": [
+                {
+                    "id": "ByteColors",
+                    "name": "Ambient Color"
+                },
+                {
+                    "id": "ByteColors",
+                    "name": "Directional Color"
+                },
+                {
+                    "id": "ByteColors",
+                    "name": "Fog Color Near"
+                },
+                {
+                    "name": "Fog Near",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog Far",
+                    "type": "float"
+                },
+                {
+                    "name": "Directional Rotation XY",
+                    "type": "int32"
+                },
+                {
+                    "name": "Directional Rotation Z",
+                    "type": "int32"
+                },
+                {
+                    "name": "Directional Fade",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog Clip Distance",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog Power",
+                    "type": "float"
+                },
+                {
+                    "id": "AmbientColors",
+                    "name": "Ambient Colors"
+                },
+                {
+                    "id": "ByteColors",
+                    "name": "Fog Color Far"
+                },
+                {
+                    "name": "Fog Max",
+                    "type": "float"
+                },
+                {
+                    "name": "Light Fade Begin",
+                    "type": "float"
+                },
+                {
+                    "name": "Light Fade End",
+                    "type": "float"
+                },
+                {
+                    "name": "Inherits",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Ambient Color",
+                            "1": "Directional Color",
+                            "2": "Fog Color",
+                            "3": "Fog Near",
+                            "4": "Fog Far",
+                            "5": "Directional Rotation",
+                            "6": "Directional Fade",
+                            "7": "Clip Distance",
+                            "8": "Fog Power",
+                            "9": "Fog Max",
+                            "10": "Light Fade Distances"
                         }
                     }
-                ]
-            },
+                }
+            ],
             "required": true
         },
         {
@@ -172,217 +163,165 @@
         },
         {
             "signature": "LTMP",
-            "type": "subrecord",
-            "element": {
-                "name": "Lighting Template",
-                "type": "formId",
-                "signatures": [
-                    "LGTM",
-                    "NULL"
-                ]
-            },
+            "name": "Lighting Template",
+            "type": "formId",
+            "signatures": [
+                "LGTM",
+                "NULL"
+            ],
             "required": true
         },
         {
             "signature": "LNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Unknown",
-                "type": "bytes"
-            }
+            "name": "Unknown",
+            "type": "bytes"
         },
         {
             "signature": "XCLW",
-            "type": "subrecord",
-            "element": {
-                "name": "Water Height",
-                "type": "float",
-                "required": true
-            },
+            "name": "Water Height",
+            "type": "float",
             "required": true
         },
         {
             "signature": "XNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Water Noise Texture",
-                "type": "string"
-            }
+            "name": "Water Noise Texture",
+            "type": "string"
         },
         {
             "signature": "XCLR",
-            "type": "subrecord",
+            "name": "Regions",
+            "type": "array",
             "element": {
-                "name": "Regions",
-                "type": "array",
-                "element": {
-                    "name": "Region",
-                    "type": "formId",
-                    "signatures": [
-                        "REGN"
-                    ]
-                },
-                "sorted": true
-            }
+                "name": "Region",
+                "type": "formId",
+                "signatures": [
+                    "REGN"
+                ]
+            },
+            "sorted": true
         },
         {
             "signature": "XLCN",
-            "type": "subrecord",
-            "element": {
-                "name": "Location",
-                "type": "formId",
-                "signatures": [
-                    "LCTN"
-                ]
-            }
+            "name": "Location",
+            "type": "formId",
+            "signatures": [
+                "LCTN"
+            ]
         },
         {
             "signature": "XWCN",
-            "type": "subrecord",
-            "element": {
-                "name": "Unknown",
-                "type": "bytes"
-            }
+            "name": "Unknown",
+            "type": "bytes"
         },
         {
             "signature": "XWCS",
-            "type": "subrecord",
-            "element": {
-                "name": "Unknown",
-                "type": "bytes"
-            }
+            "name": "Unknown",
+            "type": "bytes"
         },
         {
             "signature": "XWCU",
-            "type": "subrecord",
-            "element": {
-                "name": "Water Velocity",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "X Offset",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Y Offset",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Z Offset",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Unknown",
-                        "type": "bytes",
-                        "size": 4
-                    },
-                    {
-                        "name": "X Angle",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Y Angle",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Z Angle",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Unknown",
-                        "type": "bytes"
-                    }
-                ]
-            }
+            "name": "Water Velocity",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "X Offset",
+                    "type": "float"
+                },
+                {
+                    "name": "Y Offset",
+                    "type": "float"
+                },
+                {
+                    "name": "Z Offset",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "X Angle",
+                    "type": "float"
+                },
+                {
+                    "name": "Y Angle",
+                    "type": "float"
+                },
+                {
+                    "name": "Z Angle",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes"
+                }
+            ]
         },
         {
             "signature": "XCWT",
-            "type": "subrecord",
-            "element": {
-                "name": "Water",
-                "type": "formId",
-                "signatures": [
-                    "WATR"
-                ]
-            }
+            "name": "Water",
+            "type": "formId",
+            "signatures": [
+                "WATR"
+            ]
         },
         {
             "id": "Ownership"
         },
         {
             "signature": "XILL",
-            "type": "subrecord",
-            "element": {
-                "name": "Lock List",
-                "type": "formId",
-                "signatures": [
-                    "FLST",
-                    "NPC_"
-                ]
-            }
+            "name": "Lock List",
+            "type": "formId",
+            "signatures": [
+                "FLST",
+                "NPC_"
+            ]
         },
         {
             "signature": "XWEM",
-            "type": "subrecord",
-            "element": {
-                "name": "Water Environment Map",
-                "type": "string"
-            }
+            "name": "Water Environment Map",
+            "type": "string"
         },
         {
             "signature": "XCCM",
-            "type": "subrecord",
-            "element": {
-                "name": "Sky/Weather from Region",
-                "type": "formId",
-                "signatures": [
-                    "REGN"
-                ]
-            }
+            "name": "Sky/Weather from Region",
+            "type": "formId",
+            "signatures": [
+                "REGN"
+            ]
         },
         {
             "signature": "XCAS",
-            "type": "subrecord",
-            "element": {
-                "name": "Acoustic Space",
-                "type": "formId",
-                "signatures": [
-                    "ASPC"
-                ]
-            }
+            "name": "Acoustic Space",
+            "type": "formId",
+            "signatures": [
+                "ASPC"
+            ]
         },
         {
             "signature": "XEZN",
-            "type": "subrecord",
-            "element": {
-                "name": "Encounter Zone",
-                "type": "formId",
-                "signatures": [
-                    "ECZN"
-                ]
-            }
+            "name": "Encounter Zone",
+            "type": "formId",
+            "signatures": [
+                "ECZN"
+            ]
         },
         {
             "signature": "XCMO",
-            "type": "subrecord",
-            "element": {
-                "name": "Music Type",
-                "type": "formId",
-                "signatures": [
-                    "MUSC"
-                ]
-            }
+            "name": "Music Type",
+            "type": "formId",
+            "signatures": [
+                "MUSC"
+            ]
         },
         {
             "signature": "XCIM",
-            "type": "subrecord",
-            "element": {
-                "name": "Image Space",
-                "type": "formId",
-                "signatures": [
-                    "IMGS"
-                ]
-            }
+            "name": "Image Space",
+            "type": "formId",
+            "signatures": [
+                "IMGS"
+            ]
         }
     ]
 }

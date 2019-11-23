@@ -14,225 +14,198 @@
             "type": "memberArray",
             "member": {
                 "signature": "XNAM",
-                "type": "subrecord",
-                "element": {
-                    "name": "Relation",
-                    "type": "struct",
-                    "elements": [
-                        {
-                            "name": "Faction",
-                            "type": "formId",
-                            "signatures": [
-                                "FACT",
-                                "RACE"
-                            ]
-                        },
-                        {
-                            "name": "Modifier",
-                            "type": "int32"
-                        },
-                        {
-                            "name": "Group Combat Reaction",
-                            "type": "uint32",
-                            "format": {
-                                "type": "enum",
-                                "options": {
-                                    "0": "Neutral",
-                                    "1": "Enemy",
-                                    "2": "Ally",
-                                    "3": "Friend"
-                                }
+                "name": "Relation",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Faction",
+                        "type": "formId",
+                        "signatures": [
+                            "FACT",
+                            "RACE"
+                        ]
+                    },
+                    {
+                        "name": "Modifier",
+                        "type": "int32"
+                    },
+                    {
+                        "name": "Group Combat Reaction",
+                        "type": "uint32",
+                        "format": {
+                            "type": "enum",
+                            "options": {
+                                "0": "Neutral",
+                                "1": "Enemy",
+                                "2": "Ally",
+                                "3": "Friend"
                             }
                         }
-                    ],
-                    "sortKey": [
-                        0
-                    ]
-                }
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
             },
             "sorted": true
         },
         {
             "signature": "DATA",
-            "type": "subrecord",
-            "element": {
-                "name": "Flags",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Flags",
-                        "type": "uint32",
-                        "format": {
-                            "type": "flags",
-                            "flags": {
-                                "0": "Hidden From NPC",
-                                "1": "Special Combat",
-                                "2": "Unknown 3",
-                                "3": "Unknown 4",
-                                "4": "Unknown 5",
-                                "5": "Unknown 6",
-                                "6": "Track Crime",
-                                "7": "Ignore Crimes: Murder",
-                                "8": "Ignore Crimes: Assault",
-                                "9": "Ignore Crimes: Stealing",
-                                "10": "Ignore Crimes: Trespass",
-                                "11": "Do Not Report Crimes Against Members",
-                                "12": "Crime Gold - Use Defaults",
-                                "13": "Ignore Crimes: Pickpocket",
-                                "14": "Vendor",
-                                "15": "Can Be Owner",
-                                "16": "Ignore Crimes: Werewolf",
-                                "17": "Unknown 18",
-                                "18": "Unknown 19",
-                                "19": "Unknown 20",
-                                "20": "Unknown 21",
-                                "21": "Unknown 22",
-                                "22": "Unknown 23",
-                                "23": "Unknown 24",
-                                "24": "Unknown 25",
-                                "25": "Unknown 26",
-                                "26": "Unknown 27",
-                                "27": "Unknown 28",
-                                "28": "Unknown 29",
-                                "29": "Unknown 30",
-                                "30": "Unknown 31",
-                                "31": "Unknown 32"
-                            }
+            "name": "Flags",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Hidden From NPC",
+                            "1": "Special Combat",
+                            "2": "Unknown 3",
+                            "3": "Unknown 4",
+                            "4": "Unknown 5",
+                            "5": "Unknown 6",
+                            "6": "Track Crime",
+                            "7": "Ignore Crimes: Murder",
+                            "8": "Ignore Crimes: Assault",
+                            "9": "Ignore Crimes: Stealing",
+                            "10": "Ignore Crimes: Trespass",
+                            "11": "Do Not Report Crimes Against Members",
+                            "12": "Crime Gold - Use Defaults",
+                            "13": "Ignore Crimes: Pickpocket",
+                            "14": "Vendor",
+                            "15": "Can Be Owner",
+                            "16": "Ignore Crimes: Werewolf",
+                            "17": "Unknown 18",
+                            "18": "Unknown 19",
+                            "19": "Unknown 20",
+                            "20": "Unknown 21",
+                            "21": "Unknown 22",
+                            "22": "Unknown 23",
+                            "23": "Unknown 24",
+                            "24": "Unknown 25",
+                            "25": "Unknown 26",
+                            "26": "Unknown 27",
+                            "27": "Unknown 28",
+                            "28": "Unknown 29",
+                            "29": "Unknown 30",
+                            "30": "Unknown 31",
+                            "31": "Unknown 32"
                         }
                     }
-                ]
-            },
+                }
+            ],
             "required": true
         },
         {
             "signature": "JAIL",
-            "type": "subrecord",
-            "element": {
-                "name": "Exterior Jail Marker",
-                "type": "formId",
-                "signatures": [
-                    "REFR"
-                ]
-            }
+            "name": "Exterior Jail Marker",
+            "type": "formId",
+            "signatures": [
+                "REFR"
+            ]
         },
         {
             "signature": "WAIT",
-            "type": "subrecord",
-            "element": {
-                "name": "Follower Wait Marker",
-                "type": "formId",
-                "signatures": [
-                    "REFR"
-                ]
-            }
+            "name": "Follower Wait Marker",
+            "type": "formId",
+            "signatures": [
+                "REFR"
+            ]
         },
         {
             "signature": "STOL",
-            "type": "subrecord",
-            "element": {
-                "name": "Stolen Goods Container",
-                "type": "formId",
-                "signatures": [
-                    "REFR"
-                ]
-            }
+            "name": "Stolen Goods Container",
+            "type": "formId",
+            "signatures": [
+                "REFR"
+            ]
         },
         {
             "signature": "PLCN",
-            "type": "subrecord",
-            "element": {
-                "name": "Player Inventory Container",
-                "type": "formId",
-                "signatures": [
-                    "REFR"
-                ]
-            }
+            "name": "Player Inventory Container",
+            "type": "formId",
+            "signatures": [
+                "REFR"
+            ]
         },
         {
             "signature": "CRGR",
-            "type": "subrecord",
-            "element": {
-                "name": "Shared Crime Faction List",
-                "type": "formId",
-                "signatures": [
-                    "FLST"
-                ]
-            }
+            "name": "Shared Crime Faction List",
+            "type": "formId",
+            "signatures": [
+                "FLST"
+            ]
         },
         {
             "signature": "JOUT",
-            "type": "subrecord",
-            "element": {
-                "name": "Jail Outfit",
-                "type": "formId",
-                "signatures": [
-                    "OTFT"
-                ]
-            }
+            "name": "Jail Outfit",
+            "type": "formId",
+            "signatures": [
+                "OTFT"
+            ]
         },
         {
             "signature": "CRVA",
-            "type": "subrecord",
-            "element": {
-                "name": "Crime Values",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Arrest",
-                        "type": "uint8",
-                        "format": {
-                            "type": "enum",
-                            "options": {
-                                "0": "False",
-                                "1": "True"
-                            }
+            "name": "Crime Values",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Arrest",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "False",
+                            "1": "True"
                         }
-                    },
-                    {
-                        "name": "Attack On Sight",
-                        "type": "uint8",
-                        "format": {
-                            "type": "enum",
-                            "options": {
-                                "0": "False",
-                                "1": "True"
-                            }
-                        }
-                    },
-                    {
-                        "name": "Murder",
-                        "type": "uint16"
-                    },
-                    {
-                        "name": "Assault",
-                        "type": "uint16"
-                    },
-                    {
-                        "name": "Trespass",
-                        "type": "uint16"
-                    },
-                    {
-                        "name": "Pickpocket",
-                        "type": "uint16"
-                    },
-                    {
-                        "name": "Unknown",
-                        "type": "uint16"
-                    },
-                    {
-                        "name": "Steal Multiplier",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Escape",
-                        "type": "uint16"
-                    },
-                    {
-                        "name": "Werewolf",
-                        "type": "uint16"
                     }
-                ]
-            },
+                },
+                {
+                    "name": "Attack On Sight",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "False",
+                            "1": "True"
+                        }
+                    }
+                },
+                {
+                    "name": "Murder",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Assault",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Trespass",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Pickpocket",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Steal Multiplier",
+                    "type": "float"
+                },
+                {
+                    "name": "Escape",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Werewolf",
+                    "type": "uint16"
+                }
+            ],
             "required": true
         },
         {
@@ -244,37 +217,25 @@
                 "members": [
                     {
                         "signature": "RNAM",
-                        "type": "subrecord",
-                        "element": {
-                            "name": "Rank#",
-                            "type": "uint32"
-                        }
+                        "name": "Rank#",
+                        "type": "uint32"
                     },
                     {
                         "signature": "MNAM",
-                        "type": "subrecord",
-                        "element": {
-                            "name": "Male Title",
-                            "type": "string",
-                            "localized": true
-                        }
+                        "name": "Male Title",
+                        "type": "string",
+                        "localized": true
                     },
                     {
                         "signature": "FNAM",
-                        "type": "subrecord",
-                        "element": {
-                            "name": "Female Title",
-                            "type": "string",
-                            "localized": true
-                        }
+                        "name": "Female Title",
+                        "type": "string",
+                        "localized": true
                     },
                     {
                         "signature": "INAM",
-                        "type": "subrecord",
-                        "element": {
-                            "name": "Insignia Unused",
-                            "type": "string"
-                        }
+                        "name": "Insignia Unused",
+                        "type": "string"
                     }
                 ],
                 "sortKey": [
@@ -284,79 +245,70 @@
         },
         {
             "signature": "VEND",
-            "type": "subrecord",
-            "element": {
-                "name": "Vendor Buy/Sell List",
-                "type": "formId",
-                "signatures": [
-                    "FLST"
-                ]
-            }
+            "name": "Vendor Buy/Sell List",
+            "type": "formId",
+            "signatures": [
+                "FLST"
+            ]
         },
         {
             "signature": "VENC",
-            "type": "subrecord",
-            "element": {
-                "name": "Merchant Container",
-                "type": "formId",
-                "signatures": [
-                    "REFR"
-                ]
-            }
+            "name": "Merchant Container",
+            "type": "formId",
+            "signatures": [
+                "REFR"
+            ]
         },
         {
             "signature": "VENV",
-            "type": "subrecord",
-            "element": {
-                "name": "Vendor Values",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Start Hour",
-                        "type": "uint16"
-                    },
-                    {
-                        "name": "End Hour",
-                        "type": "uint16"
-                    },
-                    {
-                        "name": "Radius",
-                        "type": "uint16"
-                    },
-                    {
-                        "name": "Unknown 1",
-                        "type": "bytes",
-                        "size": 2
-                    },
-                    {
-                        "name": "Only Buys Stolen Items",
-                        "type": "uint8",
-                        "format": {
-                            "type": "enum",
-                            "options": {
-                                "0": "False",
-                                "1": "True"
-                            }
+            "name": "Vendor Values",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Start Hour",
+                    "type": "uint16"
+                },
+                {
+                    "name": "End Hour",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Radius",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Unknown 1",
+                    "type": "bytes",
+                    "size": 2
+                },
+                {
+                    "name": "Only Buys Stolen Items",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "False",
+                            "1": "True"
                         }
-                    },
-                    {
-                        "name": "Not/Sell Buy",
-                        "type": "uint8",
-                        "format": {
-                            "type": "enum",
-                            "options": {
-                                "0": "False",
-                                "1": "True"
-                            }
-                        }
-                    },
-                    {
-                        "name": "Unknown 2",
-                        "type": "bytes",
-                        "size": 2
                     }
-                ]
-            }
+                },
+                {
+                    "name": "Not/Sell Buy",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "False",
+                            "1": "True"
+                        }
+                    }
+                },
+                {
+                    "name": "Unknown 2",
+                    "type": "bytes",
+                    "size": 2
+                }
+            ]
         },
         {
             "id": "PLVD"

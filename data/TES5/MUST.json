@@ -8,86 +8,65 @@
         },
         {
             "signature": "CNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Track Type",
-                "type": "uint32",
-                "format": {
-                    "type": "enum",
-                    "options": {
-                        "603355331": "Palette",
-                        "1859641416": "Single Track",
-                        "2712257749": "Silent Track"
-                    }
+            "name": "Track Type",
+            "type": "uint32",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "603355331": "Palette",
+                    "1859641416": "Single Track",
+                    "2712257749": "Silent Track"
                 }
             }
         },
         {
             "signature": "FLTV",
-            "type": "subrecord",
-            "element": {
-                "name": "Duration",
-                "type": "float"
-            }
+            "name": "Duration",
+            "type": "float"
         },
         {
             "signature": "DNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Fade-Out",
-                "type": "float"
-            }
+            "name": "Fade-Out",
+            "type": "float"
         },
         {
             "signature": "ANAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Track FileName",
-                "type": "string"
-            }
+            "name": "Track FileName",
+            "type": "string"
         },
         {
             "signature": "BNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Finale FileName",
-                "type": "string"
-            }
+            "name": "Finale FileName",
+            "type": "string"
         },
         {
             "signature": "FNAM",
-            "type": "subrecord",
+            "name": "Cue Points",
+            "type": "array",
             "element": {
-                "name": "Cue Points",
-                "type": "array",
-                "element": {
-                    "name": "Point",
-                    "type": "float"
-                }
+                "name": "Point",
+                "type": "float"
             },
             "includeFlag": "dfNotAlignable"
         },
         {
             "signature": "LNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Loop Data",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Loop Begins",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Loop Ends",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Loop Count",
-                        "type": "uint32"
-                    }
-                ]
-            }
+            "name": "Loop Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Loop Begins",
+                    "type": "float"
+                },
+                {
+                    "name": "Loop Ends",
+                    "type": "float"
+                },
+                {
+                    "name": "Loop Count",
+                    "type": "uint32"
+                }
+            ]
         },
         {
             "id": "CITC"
@@ -97,18 +76,15 @@
         },
         {
             "signature": "SNAM",
-            "type": "subrecord",
+            "name": "Tracks",
+            "type": "array",
             "element": {
-                "name": "Tracks",
-                "type": "array",
-                "element": {
-                    "name": "Track",
-                    "type": "formId",
-                    "signatures": [
-                        "MUST",
-                        "NULL"
-                    ]
-                }
+                "name": "Track",
+                "type": "formId",
+                "signatures": [
+                    "MUST",
+                    "NULL"
+                ]
             }
         }
     ]

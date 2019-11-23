@@ -15,48 +15,39 @@
         },
         {
             "signature": "DATA",
-            "type": "subrecord",
-            "element": {
-                "name": "Node Index",
-                "type": "int32"
-            }
+            "name": "Node Index",
+            "type": "int32"
         },
         {
             "signature": "SNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Sound",
-                "type": "formId",
-                "signatures": [
-                    "SNDR",
-                    "NULL"
-                ]
-            }
+            "name": "Sound",
+            "type": "formId",
+            "signatures": [
+                "SNDR",
+                "NULL"
+            ]
         },
         {
             "signature": "DNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Data",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Master Particle System Cap",
-                        "type": "uint16"
-                    },
-                    {
-                        "name": "Flags",
-                        "type": "uint16",
-                        "format": {
-                            "type": "enum",
-                            "options": {
-                                "1": "Unknown 1",
-                                "3": "Always Loaded"
-                            }
+            "name": "Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Master Particle System Cap",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint16",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "1": "Unknown 1",
+                            "3": "Always Loaded"
                         }
                     }
-                ]
-            },
+                }
+            ],
             "required": true
         }
     ]

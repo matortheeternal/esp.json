@@ -14,87 +14,75 @@
         },
         {
             "signature": "DNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "General",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Flags",
-                        "type": "uint16",
-                        "format": {
-                            "type": "flags",
-                            "flags": {
-                                "0": "Start Game Enabled",
-                                "1": "Unknown 2",
-                                "2": "Unknown 3",
-                                "3": "Allow repeated stages",
-                                "4": "Unknown 5",
-                                "5": "Unknown 6",
-                                "6": "Unknown 7",
-                                "7": "Unknown 8",
-                                "8": "Run Once",
-                                "9": "Exclude from dialogue export",
-                                "10": "Warn on alias fill failure",
-                                "11": "Unknown 12",
-                                "12": "Unknown 13"
-                            }
-                        }
-                    },
-                    {
-                        "name": "Priority",
-                        "type": "uint8"
-                    },
-                    {
-                        "name": "Form Version",
-                        "type": "uint8"
-                    },
-                    {
-                        "name": "Unknown",
-                        "type": "bytes",
-                        "size": 4
-                    },
-                    {
-                        "name": "Type",
-                        "type": "uint32",
-                        "format": {
-                            "id": "QuestTypeEnum"
+            "name": "General",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Flags",
+                    "type": "uint16",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Start Game Enabled",
+                            "1": "Unknown 2",
+                            "2": "Unknown 3",
+                            "3": "Allow repeated stages",
+                            "4": "Unknown 5",
+                            "5": "Unknown 6",
+                            "6": "Unknown 7",
+                            "7": "Unknown 8",
+                            "8": "Run Once",
+                            "9": "Exclude from dialogue export",
+                            "10": "Warn on alias fill failure",
+                            "11": "Unknown 12",
+                            "12": "Unknown 13"
                         }
                     }
-                ]
-            }
+                },
+                {
+                    "name": "Priority",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Form Version",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Type",
+                    "type": "uint32",
+                    "format": {
+                        "id": "QuestTypeEnum"
+                    }
+                }
+            ]
         },
         {
             "signature": "ENAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Event",
-                "type": "string",
-                "size": 4
-            }
+            "name": "Event",
+            "type": "string",
+            "size": 4
         },
         {
             "name": "Text Display Globals",
             "type": "memberArray",
             "member": {
                 "signature": "QTGL",
-                "type": "subrecord",
-                "element": {
-                    "name": "Global",
-                    "type": "formId",
-                    "signatures": [
-                        "GLOB"
-                    ]
-                }
+                "name": "Global",
+                "type": "formId",
+                "signatures": [
+                    "GLOB"
+                ]
             }
         },
         {
             "signature": "FLTR",
-            "type": "subrecord",
-            "element": {
-                "name": "Object Window Filter",
-                "type": "string"
-            }
+            "name": "Object Window Filter",
+            "type": "string"
         },
         {
             "name": "Quest Dialogue Conditions",
@@ -108,11 +96,8 @@
         },
         {
             "signature": "NEXT",
-            "type": "subrecord",
-            "element": {
-                "name": "Marker",
-                "type": "empty"
-            }
+            "name": "Marker",
+            "type": "empty"
         },
         {
             "id": "CTDAs"
@@ -126,37 +111,34 @@
                 "members": [
                     {
                         "signature": "INDX",
-                        "type": "subrecord",
-                        "element": {
-                            "name": "Stage Index",
-                            "type": "struct",
-                            "elements": [
-                                {
-                                    "name": "Stage Index",
-                                    "type": "uint16"
-                                },
-                                {
-                                    "name": "Flags",
-                                    "type": "uint8",
-                                    "format": {
-                                        "type": "flags",
-                                        "flags": {
-                                            "0": "Unknown 1",
-                                            "1": "Start Up Stage",
-                                            "2": "Shut Down Stage",
-                                            "3": "Keep Instance Data From Here On"
-                                        }
+                        "name": "Stage Index",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Stage Index",
+                                "type": "uint16"
+                            },
+                            {
+                                "name": "Flags",
+                                "type": "uint8",
+                                "format": {
+                                    "type": "flags",
+                                    "flags": {
+                                        "0": "Unknown 1",
+                                        "1": "Start Up Stage",
+                                        "2": "Shut Down Stage",
+                                        "3": "Keep Instance Data From Here On"
                                     }
-                                },
-                                {
-                                    "name": "Unknown",
-                                    "type": "uint8"
                                 }
-                            ],
-                            "sortKey": [
-                                0
-                            ]
-                        }
+                            },
+                            {
+                                "name": "Unknown",
+                                "type": "uint8"
+                            }
+                        ],
+                        "sortKey": [
+                            0
+                        ]
                     },
                     {
                         "name": "Log Entries",
@@ -167,16 +149,13 @@
                             "members": [
                                 {
                                     "signature": "QSDT",
-                                    "type": "subrecord",
-                                    "element": {
-                                        "name": "Stage Flags",
-                                        "type": "uint8",
-                                        "format": {
-                                            "type": "flags",
-                                            "flags": {
-                                                "0": "Complete Quest",
-                                                "1": "Fail Quest"
-                                            }
+                                    "name": "Stage Flags",
+                                    "type": "uint8",
+                                    "format": {
+                                        "type": "flags",
+                                        "flags": {
+                                            "0": "Complete Quest",
+                                            "1": "Fail Quest"
                                         }
                                     }
                                 },
@@ -185,47 +164,32 @@
                                 },
                                 {
                                     "signature": "CNAM",
-                                    "type": "subrecord",
-                                    "element": {
-                                        "name": "Log Entry",
-                                        "type": "string",
-                                        "localized": true
-                                    }
+                                    "name": "Log Entry",
+                                    "type": "string",
+                                    "localized": true
                                 },
                                 {
                                     "signature": "NAM0",
-                                    "type": "subrecord",
-                                    "element": {
-                                        "name": "Next Quest",
-                                        "type": "formId",
-                                        "signatures": [
-                                            "QUST"
-                                        ]
-                                    }
+                                    "name": "Next Quest",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "QUST"
+                                    ]
                                 },
                                 {
                                     "signature": "SCHR",
-                                    "type": "subrecord",
-                                    "element": {
-                                        "name": "Unused",
-                                        "type": "bytes"
-                                    }
+                                    "name": "Unused",
+                                    "type": "bytes"
                                 },
                                 {
                                     "signature": "SCTX",
-                                    "type": "subrecord",
-                                    "element": {
-                                        "name": "Unused",
-                                        "type": "bytes"
-                                    }
+                                    "name": "Unused",
+                                    "type": "bytes"
                                 },
                                 {
                                     "signature": "QNAM",
-                                    "type": "subrecord",
-                                    "element": {
-                                        "name": "Unused",
-                                        "type": "bytes"
-                                    }
+                                    "name": "Unused",
+                                    "type": "bytes"
                                 }
                             ]
                         }
@@ -246,34 +210,25 @@
                 "members": [
                     {
                         "signature": "QOBJ",
-                        "type": "subrecord",
-                        "element": {
-                            "name": "Objective Index",
-                            "type": "uint16"
-                        }
+                        "name": "Objective Index",
+                        "type": "uint16"
                     },
                     {
                         "signature": "FNAM",
-                        "type": "subrecord",
-                        "element": {
-                            "name": "Flags",
-                            "type": "uint32",
-                            "format": {
-                                "type": "flags",
-                                "flags": {
-                                    "0": "ORed With Previous"
-                                }
+                        "name": "Flags",
+                        "type": "uint32",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "ORed With Previous"
                             }
                         }
                     },
                     {
                         "signature": "NNAM",
-                        "type": "subrecord",
-                        "element": {
-                            "name": "Display Text",
-                            "type": "string",
-                            "localized": true
-                        },
+                        "name": "Display Text",
+                        "type": "string",
+                        "localized": true,
                         "required": true
                     },
                     {
@@ -285,35 +240,32 @@
                             "members": [
                                 {
                                     "signature": "QSTA",
-                                    "type": "subrecord",
-                                    "element": {
-                                        "name": "Target",
-                                        "type": "struct",
-                                        "elements": [
-                                            {
-                                                "name": "Alias",
-                                                "type": "int32",
-                                                "format": {
-                                                    "type": "QuestAliasFormat"
-                                                }
-                                            },
-                                            {
-                                                "name": "Flags",
-                                                "type": "uint8",
-                                                "format": {
-                                                    "type": "flags",
-                                                    "flags": {
-                                                        "0": "Compass Marker Ignores Locks"
-                                                    }
-                                                }
-                                            },
-                                            {
-                                                "name": "Unused",
-                                                "type": "bytes",
-                                                "size": 3
+                                    "name": "Target",
+                                    "type": "struct",
+                                    "elements": [
+                                        {
+                                            "name": "Alias",
+                                            "type": "int32",
+                                            "format": {
+                                                "type": "QuestAliasFormat"
                                             }
-                                        ]
-                                    }
+                                        },
+                                        {
+                                            "name": "Flags",
+                                            "type": "uint8",
+                                            "format": {
+                                                "type": "flags",
+                                                "flags": {
+                                                    "0": "Compass Marker Ignores Locks"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "Unused",
+                                            "type": "bytes",
+                                            "size": 3
+                                        }
+                                    ]
                                 },
                                 {
                                     "id": "CTDAs"
@@ -326,11 +278,8 @@
         },
         {
             "signature": "ANAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Next Alias ID",
-                "type": "uint32"
-            }
+            "name": "Next Alias ID",
+            "type": "uint32"
         },
         {
             "name": "Aliases",
@@ -345,63 +294,45 @@
                         "members": [
                             {
                                 "signature": "ALST",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Reference Alias ID",
-                                    "type": "uint32"
-                                }
+                                "name": "Reference Alias ID",
+                                "type": "uint32"
                             },
                             {
                                 "signature": "ALID",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Alias Name",
-                                    "type": "string"
-                                }
+                                "name": "Alias Name",
+                                "type": "string"
                             },
                             {
                                 "id": "QUSTAliasFlags"
                             },
                             {
                                 "signature": "ALFI",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Force Into Alias When Filled",
-                                    "type": "int32",
-                                    "format": {
-                                        "type": "QuestAliasFormat"
-                                    }
+                                "name": "Force Into Alias When Filled",
+                                "type": "int32",
+                                "format": {
+                                    "type": "QuestAliasFormat"
                                 }
                             },
                             {
                                 "signature": "ALFL",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Specific Location",
-                                    "type": "formId",
-                                    "signatures": [
-                                        "LCTN"
-                                    ]
-                                }
+                                "name": "Specific Location",
+                                "type": "formId",
+                                "signatures": [
+                                    "LCTN"
+                                ]
                             },
                             {
                                 "signature": "ALFR",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Forced Reference",
-                                    "type": "formId"
-                                }
+                                "name": "Forced Reference",
+                                "type": "formId"
                             },
                             {
                                 "signature": "ALUA",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Unique Actor",
-                                    "type": "formId",
-                                    "signatures": [
-                                        "NPC_"
-                                    ]
-                                }
+                                "name": "Unique Actor",
+                                "type": "formId",
+                                "signatures": [
+                                    "NPC_"
+                                ]
                             },
                             {
                                 "name": "Location Alias Reference",
@@ -409,36 +340,27 @@
                                 "members": [
                                     {
                                         "signature": "ALFA",
-                                        "type": "subrecord",
-                                        "element": {
-                                            "name": "Alias",
-                                            "type": "int32",
-                                            "format": {
-                                                "type": "QuestAliasFormat"
-                                            }
+                                        "name": "Alias",
+                                        "type": "int32",
+                                        "format": {
+                                            "type": "QuestAliasFormat"
                                         }
                                     },
                                     {
                                         "signature": "KNAM",
-                                        "type": "subrecord",
-                                        "element": {
-                                            "name": "Keyword",
-                                            "type": "formId",
-                                            "signatures": [
-                                                "KYWD"
-                                            ]
-                                        }
+                                        "name": "Keyword",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "KYWD"
+                                        ]
                                     },
                                     {
                                         "signature": "ALRT",
-                                        "type": "subrecord",
-                                        "element": {
-                                            "name": "Ref Type",
-                                            "type": "formId",
-                                            "signatures": [
-                                                "LCRT"
-                                            ]
-                                        }
+                                        "name": "Ref Type",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "LCRT"
+                                        ]
                                     }
                                 ]
                             },
@@ -448,24 +370,18 @@
                                 "members": [
                                     {
                                         "signature": "ALEQ",
-                                        "type": "subrecord",
-                                        "element": {
-                                            "name": "Quest",
-                                            "type": "formId",
-                                            "signatures": [
-                                                "QUST"
-                                            ]
-                                        }
+                                        "name": "Quest",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "QUST"
+                                        ]
                                     },
                                     {
                                         "signature": "ALEA",
-                                        "type": "subrecord",
-                                        "element": {
-                                            "name": "Alias",
-                                            "type": "int32",
-                                            "format": {
-                                                "type": "QuestExternalAliasFormat"
-                                            }
+                                        "name": "Alias",
+                                        "type": "int32",
+                                        "format": {
+                                            "type": "QuestExternalAliasFormat"
                                         }
                                     }
                                 ]
@@ -476,55 +392,46 @@
                                 "members": [
                                     {
                                         "signature": "ALCO",
-                                        "type": "subrecord",
-                                        "element": {
-                                            "name": "Object",
-                                            "type": "formId"
-                                        }
+                                        "name": "Object",
+                                        "type": "formId"
                                     },
                                     {
                                         "signature": "ALCA",
-                                        "type": "subrecord",
-                                        "element": {
-                                            "name": "Alias",
-                                            "type": "struct",
-                                            "elements": [
-                                                {
-                                                    "name": "Alias",
-                                                    "type": "int16",
-                                                    "format": {
-                                                        "type": "QuestAliasFormat"
-                                                    }
-                                                },
-                                                {
-                                                    "name": "Create",
-                                                    "type": "uint16",
-                                                    "format": {
-                                                        "type": "enum",
-                                                        "options": {
-                                                            "0": "At",
-                                                            "32768": "In"
-                                                        }
+                                        "name": "Alias",
+                                        "type": "struct",
+                                        "elements": [
+                                            {
+                                                "name": "Alias",
+                                                "type": "int16",
+                                                "format": {
+                                                    "type": "QuestAliasFormat"
+                                                }
+                                            },
+                                            {
+                                                "name": "Create",
+                                                "type": "uint16",
+                                                "format": {
+                                                    "type": "enum",
+                                                    "options": {
+                                                        "0": "At",
+                                                        "32768": "In"
                                                     }
                                                 }
-                                            ]
-                                        }
+                                            }
+                                        ]
                                     },
                                     {
                                         "signature": "ALCL",
-                                        "type": "subrecord",
-                                        "element": {
-                                            "name": "Level",
-                                            "type": "uint32",
-                                            "format": {
-                                                "type": "enum",
-                                                "options": {
-                                                    "0": "Easy",
-                                                    "1": "Medium",
-                                                    "2": "Hard",
-                                                    "3": "Very Hard",
-                                                    "4": "None"
-                                                }
+                                        "name": "Level",
+                                        "type": "uint32",
+                                        "format": {
+                                            "type": "enum",
+                                            "options": {
+                                                "0": "Easy",
+                                                "1": "Medium",
+                                                "2": "Hard",
+                                                "3": "Very Hard",
+                                                "4": "None"
                                             }
                                         }
                                     }
@@ -536,26 +443,20 @@
                                 "members": [
                                     {
                                         "signature": "ALNA",
-                                        "type": "subrecord",
-                                        "element": {
-                                            "name": "Alias",
-                                            "type": "int32",
-                                            "format": {
-                                                "type": "QuestAliasFormat"
-                                            }
+                                        "name": "Alias",
+                                        "type": "int32",
+                                        "format": {
+                                            "type": "QuestAliasFormat"
                                         }
                                     },
                                     {
                                         "signature": "ALNT",
-                                        "type": "subrecord",
-                                        "element": {
-                                            "name": "Type",
-                                            "type": "uint32",
-                                            "format": {
-                                                "type": "enum",
-                                                "options": {
-                                                    "0": "Linked Ref Child"
-                                                }
+                                        "name": "Type",
+                                        "type": "uint32",
+                                        "format": {
+                                            "type": "enum",
+                                            "options": {
+                                                "0": "Linked Ref Child"
                                             }
                                         }
                                     }
@@ -567,20 +468,14 @@
                                 "members": [
                                     {
                                         "signature": "ALFE",
-                                        "type": "subrecord",
-                                        "element": {
-                                            "name": "From Event",
-                                            "type": "string",
-                                            "size": 4
-                                        }
+                                        "name": "From Event",
+                                        "type": "string",
+                                        "size": 4
                                     },
                                     {
                                         "signature": "ALFD",
-                                        "type": "subrecord",
-                                        "element": {
-                                            "name": "Event Data",
-                                            "type": "bytes"
-                                        }
+                                        "name": "Event Data",
+                                        "type": "bytes"
                                     }
                                 ]
                             },
@@ -601,76 +496,58 @@
                             },
                             {
                                 "signature": "SPOR",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Spectator override package list",
-                                    "type": "formId",
-                                    "signatures": [
-                                        "FLST"
-                                    ]
-                                },
+                                "name": "Spectator override package list",
+                                "type": "formId",
+                                "signatures": [
+                                    "FLST"
+                                ],
                                 "required": true
                             },
                             {
                                 "signature": "OCOR",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Observe dead body override package list",
-                                    "type": "formId",
-                                    "signatures": [
-                                        "FLST"
-                                    ]
-                                },
+                                "name": "Observe dead body override package list",
+                                "type": "formId",
+                                "signatures": [
+                                    "FLST"
+                                ],
                                 "required": true
                             },
                             {
                                 "signature": "GWOR",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Guard warn override package list",
-                                    "type": "formId",
-                                    "signatures": [
-                                        "FLST"
-                                    ]
-                                },
+                                "name": "Guard warn override package list",
+                                "type": "formId",
+                                "signatures": [
+                                    "FLST"
+                                ],
                                 "required": true
                             },
                             {
                                 "signature": "ECOR",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Combat override package list",
-                                    "type": "formId",
-                                    "signatures": [
-                                        "FLST"
-                                    ]
-                                },
+                                "name": "Combat override package list",
+                                "type": "formId",
+                                "signatures": [
+                                    "FLST"
+                                ],
                                 "required": true
                             },
                             {
                                 "signature": "ALDN",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Display Name",
-                                    "type": "formId",
-                                    "signatures": [
-                                        "MESG"
-                                    ]
-                                }
+                                "name": "Display Name",
+                                "type": "formId",
+                                "signatures": [
+                                    "MESG"
+                                ]
                             },
                             {
                                 "name": "Alias Spells",
                                 "type": "memberArray",
                                 "member": {
                                     "signature": "ALSP",
-                                    "type": "subrecord",
-                                    "element": {
-                                        "name": "Spell",
-                                        "type": "formId",
-                                        "signatures": [
-                                            "SPEL"
-                                        ]
-                                    }
+                                    "name": "Spell",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "SPEL"
+                                    ]
                                 }
                             },
                             {
@@ -678,14 +555,11 @@
                                 "type": "memberArray",
                                 "member": {
                                     "signature": "ALFC",
-                                    "type": "subrecord",
-                                    "element": {
-                                        "name": "Faction",
-                                        "type": "formId",
-                                        "signatures": [
-                                            "FACT"
-                                        ]
-                                    }
+                                    "name": "Faction",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "FACT"
+                                    ]
                                 }
                             },
                             {
@@ -693,36 +567,27 @@
                                 "type": "memberArray",
                                 "member": {
                                     "signature": "ALPC",
-                                    "type": "subrecord",
-                                    "element": {
-                                        "name": "Package",
-                                        "type": "formId",
-                                        "signatures": [
-                                            "PACK"
-                                        ]
-                                    }
-                                }
-                            },
-                            {
-                                "signature": "VTCK",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Voice Types",
+                                    "name": "Package",
                                     "type": "formId",
                                     "signatures": [
-                                        "NPC_",
-                                        "FLST",
-                                        "NULL"
+                                        "PACK"
                                     ]
                                 }
                             },
                             {
+                                "signature": "VTCK",
+                                "name": "Voice Types",
+                                "type": "formId",
+                                "signatures": [
+                                    "NPC_",
+                                    "FLST",
+                                    "NULL"
+                                ]
+                            },
+                            {
                                 "signature": "ALED",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Alias End",
-                                    "type": "empty"
-                                },
+                                "name": "Alias End",
+                                "type": "empty",
                                 "required": true
                             }
                         ],
@@ -737,63 +602,45 @@
                         "members": [
                             {
                                 "signature": "ALLS",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Location Alias ID",
-                                    "type": "uint32"
-                                }
+                                "name": "Location Alias ID",
+                                "type": "uint32"
                             },
                             {
                                 "signature": "ALID",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Alias Name",
-                                    "type": "string"
-                                }
+                                "name": "Alias Name",
+                                "type": "string"
                             },
                             {
                                 "id": "QUSTAliasFlags"
                             },
                             {
                                 "signature": "ALFI",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Force Into Alias When Filled",
-                                    "type": "int32",
-                                    "format": {
-                                        "type": "QuestAliasFormat"
-                                    }
+                                "name": "Force Into Alias When Filled",
+                                "type": "int32",
+                                "format": {
+                                    "type": "QuestAliasFormat"
                                 }
                             },
                             {
                                 "signature": "ALFL",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Specific Location",
-                                    "type": "formId",
-                                    "signatures": [
-                                        "LCTN"
-                                    ]
-                                }
+                                "name": "Specific Location",
+                                "type": "formId",
+                                "signatures": [
+                                    "LCTN"
+                                ]
                             },
                             {
                                 "signature": "ALFR",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Forced Reference",
-                                    "type": "formId"
-                                }
+                                "name": "Forced Reference",
+                                "type": "formId"
                             },
                             {
                                 "signature": "ALUA",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Unique Actor",
-                                    "type": "formId",
-                                    "signatures": [
-                                        "NPC_"
-                                    ]
-                                }
+                                "name": "Unique Actor",
+                                "type": "formId",
+                                "signatures": [
+                                    "NPC_"
+                                ]
                             },
                             {
                                 "name": "Location Alias Reference",
@@ -801,36 +648,27 @@
                                 "members": [
                                     {
                                         "signature": "ALFA",
-                                        "type": "subrecord",
-                                        "element": {
-                                            "name": "Alias",
-                                            "type": "int32",
-                                            "format": {
-                                                "type": "QuestAliasFormat"
-                                            }
+                                        "name": "Alias",
+                                        "type": "int32",
+                                        "format": {
+                                            "type": "QuestAliasFormat"
                                         }
                                     },
                                     {
                                         "signature": "KNAM",
-                                        "type": "subrecord",
-                                        "element": {
-                                            "name": "Keyword",
-                                            "type": "formId",
-                                            "signatures": [
-                                                "KYWD"
-                                            ]
-                                        }
+                                        "name": "Keyword",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "KYWD"
+                                        ]
                                     },
                                     {
                                         "signature": "ALRT",
-                                        "type": "subrecord",
-                                        "element": {
-                                            "name": "Ref Type",
-                                            "type": "formId",
-                                            "signatures": [
-                                                "LCRT"
-                                            ]
-                                        }
+                                        "name": "Ref Type",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "LCRT"
+                                        ]
                                     }
                                 ]
                             },
@@ -840,24 +678,18 @@
                                 "members": [
                                     {
                                         "signature": "ALEQ",
-                                        "type": "subrecord",
-                                        "element": {
-                                            "name": "Quest",
-                                            "type": "formId",
-                                            "signatures": [
-                                                "QUST"
-                                            ]
-                                        }
+                                        "name": "Quest",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "QUST"
+                                        ]
                                     },
                                     {
                                         "signature": "ALEA",
-                                        "type": "subrecord",
-                                        "element": {
-                                            "name": "Alias",
-                                            "type": "int32",
-                                            "format": {
-                                                "type": "QuestExternalAliasFormat"
-                                            }
+                                        "name": "Alias",
+                                        "type": "int32",
+                                        "format": {
+                                            "type": "QuestExternalAliasFormat"
                                         }
                                     }
                                 ]
@@ -868,55 +700,46 @@
                                 "members": [
                                     {
                                         "signature": "ALCO",
-                                        "type": "subrecord",
-                                        "element": {
-                                            "name": "Object",
-                                            "type": "formId"
-                                        }
+                                        "name": "Object",
+                                        "type": "formId"
                                     },
                                     {
                                         "signature": "ALCA",
-                                        "type": "subrecord",
-                                        "element": {
-                                            "name": "Alias",
-                                            "type": "struct",
-                                            "elements": [
-                                                {
-                                                    "name": "Alias",
-                                                    "type": "int16",
-                                                    "format": {
-                                                        "type": "QuestAliasFormat"
-                                                    }
-                                                },
-                                                {
-                                                    "name": "Create",
-                                                    "type": "uint16",
-                                                    "format": {
-                                                        "type": "enum",
-                                                        "options": {
-                                                            "0": "At",
-                                                            "32768": "In"
-                                                        }
+                                        "name": "Alias",
+                                        "type": "struct",
+                                        "elements": [
+                                            {
+                                                "name": "Alias",
+                                                "type": "int16",
+                                                "format": {
+                                                    "type": "QuestAliasFormat"
+                                                }
+                                            },
+                                            {
+                                                "name": "Create",
+                                                "type": "uint16",
+                                                "format": {
+                                                    "type": "enum",
+                                                    "options": {
+                                                        "0": "At",
+                                                        "32768": "In"
                                                     }
                                                 }
-                                            ]
-                                        }
+                                            }
+                                        ]
                                     },
                                     {
                                         "signature": "ALCL",
-                                        "type": "subrecord",
-                                        "element": {
-                                            "name": "Level",
-                                            "type": "uint32",
-                                            "format": {
-                                                "type": "enum",
-                                                "options": {
-                                                    "0": "Easy",
-                                                    "1": "Medium",
-                                                    "2": "Hard",
-                                                    "3": "Very Hard",
-                                                    "4": "None"
-                                                }
+                                        "name": "Level",
+                                        "type": "uint32",
+                                        "format": {
+                                            "type": "enum",
+                                            "options": {
+                                                "0": "Easy",
+                                                "1": "Medium",
+                                                "2": "Hard",
+                                                "3": "Very Hard",
+                                                "4": "None"
                                             }
                                         }
                                     }
@@ -928,26 +751,20 @@
                                 "members": [
                                     {
                                         "signature": "ALNA",
-                                        "type": "subrecord",
-                                        "element": {
-                                            "name": "Alias",
-                                            "type": "int32",
-                                            "format": {
-                                                "type": "QuestAliasFormat"
-                                            }
+                                        "name": "Alias",
+                                        "type": "int32",
+                                        "format": {
+                                            "type": "QuestAliasFormat"
                                         }
                                     },
                                     {
                                         "signature": "ALNT",
-                                        "type": "subrecord",
-                                        "element": {
-                                            "name": "Type",
-                                            "type": "uint32",
-                                            "format": {
-                                                "type": "enum",
-                                                "options": {
-                                                    "0": "Linked Ref Child"
-                                                }
+                                        "name": "Type",
+                                        "type": "uint32",
+                                        "format": {
+                                            "type": "enum",
+                                            "options": {
+                                                "0": "Linked Ref Child"
                                             }
                                         }
                                     }
@@ -959,20 +776,14 @@
                                 "members": [
                                     {
                                         "signature": "ALFE",
-                                        "type": "subrecord",
-                                        "element": {
-                                            "name": "From Event",
-                                            "type": "string",
-                                            "size": 4
-                                        }
+                                        "name": "From Event",
+                                        "type": "string",
+                                        "size": 4
                                     },
                                     {
                                         "signature": "ALFD",
-                                        "type": "subrecord",
-                                        "element": {
-                                            "name": "Event Data",
-                                            "type": "bytes"
-                                        }
+                                        "name": "Event Data",
+                                        "type": "bytes"
                                     }
                                 ]
                             },
@@ -993,76 +804,58 @@
                             },
                             {
                                 "signature": "SPOR",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Spectator override package list",
-                                    "type": "formId",
-                                    "signatures": [
-                                        "FLST"
-                                    ]
-                                },
+                                "name": "Spectator override package list",
+                                "type": "formId",
+                                "signatures": [
+                                    "FLST"
+                                ],
                                 "required": true
                             },
                             {
                                 "signature": "OCOR",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Observe dead body override package list",
-                                    "type": "formId",
-                                    "signatures": [
-                                        "FLST"
-                                    ]
-                                },
+                                "name": "Observe dead body override package list",
+                                "type": "formId",
+                                "signatures": [
+                                    "FLST"
+                                ],
                                 "required": true
                             },
                             {
                                 "signature": "GWOR",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Guard warn override package list",
-                                    "type": "formId",
-                                    "signatures": [
-                                        "FLST"
-                                    ]
-                                },
+                                "name": "Guard warn override package list",
+                                "type": "formId",
+                                "signatures": [
+                                    "FLST"
+                                ],
                                 "required": true
                             },
                             {
                                 "signature": "ECOR",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Combat override package list",
-                                    "type": "formId",
-                                    "signatures": [
-                                        "FLST"
-                                    ]
-                                },
+                                "name": "Combat override package list",
+                                "type": "formId",
+                                "signatures": [
+                                    "FLST"
+                                ],
                                 "required": true
                             },
                             {
                                 "signature": "ALDN",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Display Name",
-                                    "type": "formId",
-                                    "signatures": [
-                                        "MESG"
-                                    ]
-                                }
+                                "name": "Display Name",
+                                "type": "formId",
+                                "signatures": [
+                                    "MESG"
+                                ]
                             },
                             {
                                 "name": "Alias Spells",
                                 "type": "memberArray",
                                 "member": {
                                     "signature": "ALSP",
-                                    "type": "subrecord",
-                                    "element": {
-                                        "name": "Spell",
-                                        "type": "formId",
-                                        "signatures": [
-                                            "SPEL"
-                                        ]
-                                    }
+                                    "name": "Spell",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "SPEL"
+                                    ]
                                 }
                             },
                             {
@@ -1070,14 +863,11 @@
                                 "type": "memberArray",
                                 "member": {
                                     "signature": "ALFC",
-                                    "type": "subrecord",
-                                    "element": {
-                                        "name": "Faction",
-                                        "type": "formId",
-                                        "signatures": [
-                                            "FACT"
-                                        ]
-                                    }
+                                    "name": "Faction",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "FACT"
+                                    ]
                                 }
                             },
                             {
@@ -1085,36 +875,27 @@
                                 "type": "memberArray",
                                 "member": {
                                     "signature": "ALPC",
-                                    "type": "subrecord",
-                                    "element": {
-                                        "name": "Package",
-                                        "type": "formId",
-                                        "signatures": [
-                                            "PACK"
-                                        ]
-                                    }
-                                }
-                            },
-                            {
-                                "signature": "VTCK",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Voice Types",
+                                    "name": "Package",
                                     "type": "formId",
                                     "signatures": [
-                                        "NPC_",
-                                        "FLST",
-                                        "NULL"
+                                        "PACK"
                                     ]
                                 }
                             },
                             {
+                                "signature": "VTCK",
+                                "name": "Voice Types",
+                                "type": "formId",
+                                "signatures": [
+                                    "NPC_",
+                                    "FLST",
+                                    "NULL"
+                                ]
+                            },
+                            {
                                 "signature": "ALED",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Alias End",
-                                    "type": "empty"
-                                },
+                                "name": "Alias End",
+                                "type": "empty",
                                 "required": true
                             }
                         ],
@@ -1128,11 +909,8 @@
         },
         {
             "signature": "NNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Description",
-                "type": "string"
-            },
+            "name": "Description",
+            "type": "string",
             "required": true
         },
         {
@@ -1144,44 +922,41 @@
                 "members": [
                     {
                         "signature": "QSTA",
-                        "type": "subrecord",
-                        "element": {
-                            "name": "Target",
-                            "type": "struct",
-                            "elements": [
-                                {
-                                    "name": "Target",
-                                    "type": "formId",
-                                    "signatures": [
-                                        "ACHR",
-                                        "REFR",
-                                        "PGRE",
-                                        "PHZD",
-                                        "PMIS",
-                                        "PARW",
-                                        "PBAR",
-                                        "PBEA",
-                                        "PCON",
-                                        "PFLA"
-                                    ]
-                                },
-                                {
-                                    "name": "Flags",
-                                    "type": "uint8",
-                                    "format": {
-                                        "type": "flags",
-                                        "flags": {
-                                            "0": "Compass Marker Ignores Locks"
-                                        }
+                        "name": "Target",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Target",
+                                "type": "formId",
+                                "signatures": [
+                                    "ACHR",
+                                    "REFR",
+                                    "PGRE",
+                                    "PHZD",
+                                    "PMIS",
+                                    "PARW",
+                                    "PBAR",
+                                    "PBEA",
+                                    "PCON",
+                                    "PFLA"
+                                ]
+                            },
+                            {
+                                "name": "Flags",
+                                "type": "uint8",
+                                "format": {
+                                    "type": "flags",
+                                    "flags": {
+                                        "0": "Compass Marker Ignores Locks"
                                     }
-                                },
-                                {
-                                    "name": "Unknown",
-                                    "type": "bytes",
-                                    "size": 3
                                 }
-                            ]
-                        }
+                            },
+                            {
+                                "name": "Unknown",
+                                "type": "bytes",
+                                "size": 3
+                            }
+                        ]
                     },
                     {
                         "id": "CTDAs"

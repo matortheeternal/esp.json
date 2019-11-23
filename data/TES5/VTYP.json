@@ -8,16 +8,13 @@
         },
         {
             "signature": "DNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Flags",
-                "type": "uint8",
-                "format": {
-                    "type": "flags",
-                    "flags": {
-                        "0": "Allow Default Dialog",
-                        "1": "Female"
-                    }
+            "name": "Flags",
+            "type": "uint8",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Allow Default Dialog",
+                    "1": "Female"
                 }
             }
         }

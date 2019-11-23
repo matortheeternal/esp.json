@@ -8,157 +8,136 @@
         },
         {
             "signature": "NAM1",
-            "type": "subrecord",
-            "element": {
-                "name": "Data",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Flags",
-                        "type": "uint8",
-                        "format": {
-                            "type": "flags",
-                            "flags": {
-                                "0": "Attenuates With Distance",
-                                "1": "Allows Rumble"
-                            }
+            "name": "Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Attenuates With Distance",
+                            "1": "Allows Rumble"
                         }
-                    },
-                    {
-                        "name": "Unknown",
-                        "type": "bytes",
-                        "size": 2
-                    },
-                    {
-                        "name": "Reverb Send %",
-                        "type": "uint8"
                     }
-                ]
-            }
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 2
+                },
+                {
+                    "name": "Reverb Send %",
+                    "type": "uint8"
+                }
+            ]
         },
         {
             "signature": "FNAM",
-            "type": "subrecord",
-            "element": {
-                "type": "bytes"
-            }
+            "type": "bytes"
         },
         {
             "signature": "MNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Type",
-                "type": "uint32",
-                "format": {
-                    "type": "enum",
-                    "options": {
-                        "0": "Uses HRTF",
-                        "1": "Defined Speaker Output"
-                    }
+            "name": "Type",
+            "type": "uint32",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "Uses HRTF",
+                    "1": "Defined Speaker Output"
                 }
             }
         },
         {
             "signature": "CNAM",
-            "type": "subrecord",
-            "element": {
-                "type": "bytes"
-            }
+            "type": "bytes"
         },
         {
             "signature": "SNAM",
-            "type": "subrecord",
-            "element": {
-                "type": "bytes"
-            }
+            "type": "bytes"
         },
         {
             "signature": "ONAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Output Values",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Channels",
-                        "type": "array",
-                        "element": {
-                            "name": "",
-                            "type": "struct",
-                            "elements": [
-                                {
-                                    "name": "L",
-                                    "type": "uint8"
-                                },
-                                {
-                                    "name": "R",
-                                    "type": "uint8"
-                                },
-                                {
-                                    "name": "C",
-                                    "type": "uint8"
-                                },
-                                {
-                                    "name": "LFE",
-                                    "type": "uint8"
-                                },
-                                {
-                                    "name": "RL",
-                                    "type": "uint8"
-                                },
-                                {
-                                    "name": "RR",
-                                    "type": "uint8"
-                                },
-                                {
-                                    "name": "BL",
-                                    "type": "uint8"
-                                },
-                                {
-                                    "name": "BR",
-                                    "type": "uint8"
-                                }
-                            ]
-                        }
+            "name": "Output Values",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Channels",
+                    "type": "array",
+                    "element": {
+                        "name": "",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "L",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "R",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "C",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "LFE",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "RL",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "RR",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "BL",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "BR",
+                                "type": "uint8"
+                            }
+                        ]
                     }
-                ]
-            }
+                }
+            ]
         },
         {
             "signature": "ANAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Attenuation Values",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Unknown",
-                        "type": "bytes",
-                        "size": 4
+            "name": "Attenuation Values",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Min Distance",
+                    "type": "float"
+                },
+                {
+                    "name": "Max Distance",
+                    "type": "float"
+                },
+                {
+                    "name": "Curve",
+                    "type": "array",
+                    "element": {
+                        "name": "Value",
+                        "type": "uint8"
                     },
-                    {
-                        "name": "Min Distance",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Max Distance",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Curve",
-                        "type": "array",
-                        "element": {
-                            "name": "Value",
-                            "type": "uint8"
-                        },
-                        "size": 5
-                    },
-                    {
-                        "name": "Unknown",
-                        "type": "bytes"
-                    }
-                ]
-            }
+                    "size": 5
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes"
+                }
+            ]
         }
     ]
 }

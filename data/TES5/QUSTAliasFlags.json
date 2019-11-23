@@ -1,47 +1,44 @@
 {
     "signature": "FNAM",
-    "type": "subrecord",
-    "element": {
-        "name": "Alias Flags",
-        "type": "struct",
-        "elements": [
-            {
-                "name": "Flags",
-                "type": "uint16",
-                "format": {
-                    "type": "flags",
-                    "flags": {
-                        "0": "Reserves Location/Reference",
-                        "1": "Optional",
-                        "2": "Quest Object",
-                        "3": "Allow Reuse in Quest",
-                        "4": "Allow Dead",
-                        "5": "Matching Ref - In Loaded Area",
-                        "6": "Essential",
-                        "7": "Allow Disabled",
-                        "8": "Stores Text",
-                        "9": "Allow Reserved",
-                        "10": "Protected",
-                        "11": "Forced by Aliases?",
-                        "12": "Allow Destroyed",
-                        "13": "Matching Ref - Closest",
-                        "14": "Uses Stored Text",
-                        "15": "Initially Disabled"
-                    }
-                }
-            },
-            {
-                "name": "Additional Flags",
-                "type": "uint16",
-                "format": {
-                    "type": "flags",
-                    "flags": {
-                        "0": "Allow Cleared",
-                        "1": "Clear Names When Removed"
-                    }
+    "name": "Alias Flags",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Flags",
+            "type": "uint16",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Reserves Location/Reference",
+                    "1": "Optional",
+                    "2": "Quest Object",
+                    "3": "Allow Reuse in Quest",
+                    "4": "Allow Dead",
+                    "5": "Matching Ref - In Loaded Area",
+                    "6": "Essential",
+                    "7": "Allow Disabled",
+                    "8": "Stores Text",
+                    "9": "Allow Reserved",
+                    "10": "Protected",
+                    "11": "Forced by Aliases?",
+                    "12": "Allow Destroyed",
+                    "13": "Matching Ref - Closest",
+                    "14": "Uses Stored Text",
+                    "15": "Initially Disabled"
                 }
             }
-        ]
-    },
+        },
+        {
+            "name": "Additional Flags",
+            "type": "uint16",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Allow Cleared",
+                    "1": "Clear Names When Removed"
+                }
+            }
+        }
+    ],
     "required": true
 }

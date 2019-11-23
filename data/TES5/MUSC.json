@@ -8,68 +8,56 @@
         },
         {
             "signature": "FNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Flags",
-                "type": "uint32",
-                "format": {
-                    "type": "flags",
-                    "flags": {
-                        "0": "Plays One Selection",
-                        "1": "Abrupt Transition",
-                        "2": "Cycle Tracks",
-                        "3": "Maintain Track Order",
-                        "4": "Unknown 4",
-                        "5": "Ducks Current Track",
-                        "6": "Unknown 6"
-                    }
+            "name": "Flags",
+            "type": "uint32",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Plays One Selection",
+                    "1": "Abrupt Transition",
+                    "2": "Cycle Tracks",
+                    "3": "Maintain Track Order",
+                    "4": "Unknown 4",
+                    "5": "Ducks Current Track",
+                    "6": "Unknown 6"
                 }
             }
         },
         {
             "signature": "PNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Data",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Priority",
-                        "type": "uint16"
-                    },
-                    {
-                        "name": "Ducking (dB)",
-                        "type": "uint16",
-                        "format": {
-                            "type": "divide",
-                            "value": 100
-                        }
+            "name": "Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Priority",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Ducking (dB)",
+                    "type": "uint16",
+                    "format": {
+                        "type": "divide",
+                        "value": 100
                     }
-                ]
-            }
+                }
+            ]
         },
         {
             "signature": "WNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Fade Duration",
-                "type": "float"
-            }
+            "name": "Fade Duration",
+            "type": "float"
         },
         {
             "signature": "TNAM",
-            "type": "subrecord",
+            "name": "Music Tracks",
+            "type": "array",
             "element": {
-                "name": "Music Tracks",
-                "type": "array",
-                "element": {
-                    "name": "Track",
-                    "type": "formId",
-                    "signatures": [
-                        "MUST",
-                        "NULL"
-                    ]
-                }
+                "name": "Track",
+                "type": "formId",
+                "signatures": [
+                    "MUST",
+                    "NULL"
+                ]
             }
         }
     ]

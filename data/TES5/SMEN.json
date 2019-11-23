@@ -8,31 +8,25 @@
         },
         {
             "signature": "PNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Parent ",
-                "type": "formId",
-                "signatures": [
-                    "SMQN",
-                    "SMBN",
-                    "SMEN",
-                    "NULL"
-                ]
-            }
+            "name": "Parent ",
+            "type": "formId",
+            "signatures": [
+                "SMQN",
+                "SMBN",
+                "SMEN",
+                "NULL"
+            ]
         },
         {
             "signature": "SNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Previous Sibling ",
-                "type": "formId",
-                "signatures": [
-                    "SMQN",
-                    "SMBN",
-                    "SMEN",
-                    "NULL"
-                ]
-            }
+            "name": "Previous Sibling ",
+            "type": "formId",
+            "signatures": [
+                "SMQN",
+                "SMBN",
+                "SMEN",
+                "NULL"
+            ]
         },
         {
             "id": "CITC",
@@ -43,30 +37,21 @@
         },
         {
             "signature": "DNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Flags",
-                "type": "uint32",
-                "format": {
-                    "id": "SMNodeFlags"
-                }
+            "name": "Flags",
+            "type": "uint32",
+            "format": {
+                "id": "SMNodeFlags"
             }
         },
         {
             "signature": "XNAM",
-            "type": "subrecord",
-            "element": {
-                "type": "bytes"
-            }
+            "type": "bytes"
         },
         {
             "signature": "ENAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Type",
-                "type": "string",
-                "size": 4
-            }
+            "name": "Type",
+            "type": "string",
+            "size": 4
         }
     ]
 }

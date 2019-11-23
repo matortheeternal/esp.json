@@ -23,79 +23,64 @@
         },
         {
             "signature": "NAME",
-            "type": "subrecord",
-            "element": {
-                "name": "Projectile",
-                "type": "formId",
-                "signatures": [
-                    "PROJ",
-                    "HAZD"
-                ]
-            }
+            "name": "Projectile",
+            "type": "formId",
+            "signatures": [
+                "PROJ",
+                "HAZD"
+            ]
         },
         {
             "signature": "XEZN",
-            "type": "subrecord",
-            "element": {
-                "name": "Encounter Zone",
-                "type": "formId",
-                "signatures": [
-                    "ECZN"
-                ]
-            }
+            "name": "Encounter Zone",
+            "type": "formId",
+            "signatures": [
+                "ECZN"
+            ]
         },
         {
             "id": "Ownership"
         },
         {
             "signature": "XHTW",
-            "type": "subrecord",
-            "element": {
-                "name": "Head-Tracking Weight",
-                "type": "float"
-            }
+            "name": "Head-Tracking Weight",
+            "type": "float"
         },
         {
             "signature": "XFVC",
-            "type": "subrecord",
-            "element": {
-                "name": "Favor Cost",
-                "type": "float"
-            }
+            "name": "Favor Cost",
+            "type": "float"
         },
         {
             "name": "Reflected/Refracted By",
             "type": "memberArray",
             "member": {
                 "signature": "XPWR",
-                "type": "subrecord",
-                "element": {
-                    "name": "Water",
-                    "type": "struct",
-                    "elements": [
-                        {
-                            "name": "Reference",
-                            "type": "formId",
-                            "signatures": [
-                                "REFR"
-                            ]
-                        },
-                        {
-                            "name": "Type",
-                            "type": "uint32",
-                            "format": {
-                                "type": "flags",
-                                "flags": {
-                                    "0": "Reflection",
-                                    "1": "Refraction"
-                                }
+                "name": "Water",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Reference",
+                        "type": "formId",
+                        "signatures": [
+                            "REFR"
+                        ]
+                    },
+                    {
+                        "name": "Type",
+                        "type": "uint32",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "Reflection",
+                                "1": "Refraction"
                             }
                         }
-                    ],
-                    "sortKey": [
-                        0
-                    ]
-                }
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
             },
             "sorted": true
         },
@@ -104,52 +89,49 @@
             "type": "memberArray",
             "member": {
                 "signature": "XLKR",
-                "type": "subrecord",
-                "element": {
-                    "name": "Linked Reference",
-                    "type": "struct",
-                    "elements": [
-                        {
-                            "name": "Keyword/Ref",
-                            "type": "formId",
-                            "signatures": [
-                                "KYWD",
-                                "PLYR",
-                                "ACHR",
-                                "REFR",
-                                "PGRE",
-                                "PHZD",
-                                "PMIS",
-                                "PARW",
-                                "PBAR",
-                                "PBEA",
-                                "PCON",
-                                "PFLA",
-                                "NULL"
-                            ]
-                        },
-                        {
-                            "name": "Ref",
-                            "type": "formId",
-                            "signatures": [
-                                "PLYR",
-                                "ACHR",
-                                "REFR",
-                                "PGRE",
-                                "PHZD",
-                                "PMIS",
-                                "PARW",
-                                "PBAR",
-                                "PBEA",
-                                "PCON",
-                                "PFLA"
-                            ]
-                        }
-                    ],
-                    "sortKey": [
-                        0
-                    ]
-                }
+                "name": "Linked Reference",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Keyword/Ref",
+                        "type": "formId",
+                        "signatures": [
+                            "KYWD",
+                            "PLYR",
+                            "ACHR",
+                            "REFR",
+                            "PGRE",
+                            "PHZD",
+                            "PMIS",
+                            "PARW",
+                            "PBAR",
+                            "PBEA",
+                            "PCON",
+                            "PFLA",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "name": "Ref",
+                        "type": "formId",
+                        "signatures": [
+                            "PLYR",
+                            "ACHR",
+                            "REFR",
+                            "PGRE",
+                            "PHZD",
+                            "PMIS",
+                            "PARW",
+                            "PBAR",
+                            "PBEA",
+                            "PCON",
+                            "PFLA"
+                        ]
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
             },
             "sorted": true
         },
@@ -159,15 +141,12 @@
             "members": [
                 {
                     "signature": "XAPD",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Flags",
-                        "type": "uint8",
-                        "format": {
-                            "type": "flags",
-                            "flags": {
-                                "0": "Parent Activate Only"
-                            }
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Parent Activate Only"
                         }
                     }
                 },
@@ -176,37 +155,34 @@
                     "type": "memberArray",
                     "member": {
                         "signature": "XAPR",
-                        "type": "subrecord",
-                        "element": {
-                            "name": "Activate Parent Ref",
-                            "type": "struct",
-                            "elements": [
-                                {
-                                    "name": "Reference",
-                                    "type": "formId",
-                                    "signatures": [
-                                        "PLYR",
-                                        "ACHR",
-                                        "REFR",
-                                        "PGRE",
-                                        "PHZD",
-                                        "PMIS",
-                                        "PARW",
-                                        "PBAR",
-                                        "PBEA",
-                                        "PCON",
-                                        "PFLA"
-                                    ]
-                                },
-                                {
-                                    "name": "Delay",
-                                    "type": "float"
-                                }
-                            ],
-                            "sortKey": [
-                                0
-                            ]
-                        }
+                        "name": "Activate Parent Ref",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Reference",
+                                "type": "formId",
+                                "signatures": [
+                                    "PLYR",
+                                    "ACHR",
+                                    "REFR",
+                                    "PGRE",
+                                    "PHZD",
+                                    "PMIS",
+                                    "PARW",
+                                    "PBAR",
+                                    "PBEA",
+                                    "PCON",
+                                    "PFLA"
+                                ]
+                            },
+                            {
+                                "name": "Delay",
+                                "type": "float"
+                            }
+                        ],
+                        "sortKey": [
+                            0
+                        ]
                     },
                     "sorted": true
                 }
@@ -217,63 +193,48 @@
         },
         {
             "signature": "XEMI",
-            "type": "subrecord",
-            "element": {
-                "name": "Emittance",
-                "type": "formId",
-                "signatures": [
-                    "LIGH",
-                    "REGN"
-                ]
-            }
+            "name": "Emittance",
+            "type": "formId",
+            "signatures": [
+                "LIGH",
+                "REGN"
+            ]
         },
         {
             "signature": "XMBR",
-            "type": "subrecord",
-            "element": {
-                "name": "MultiBound Reference",
-                "type": "formId",
-                "signatures": [
-                    "REFR"
-                ]
-            }
+            "name": "MultiBound Reference",
+            "type": "formId",
+            "signatures": [
+                "REFR"
+            ]
         },
         {
             "signature": "XIS2",
-            "type": "subrecord",
-            "element": {
-                "name": "Ignored by Sandbox",
-                "type": "empty"
-            }
+            "name": "Ignored by Sandbox",
+            "type": "empty"
         },
         {
             "signature": "XLRT",
-            "type": "subrecord",
+            "name": "Location Ref Type",
+            "type": "array",
             "element": {
-                "name": "Location Ref Type",
-                "type": "array",
-                "element": {
-                    "name": "Ref",
-                    "type": "formId",
-                    "signatures": [
-                        "LCRT",
-                        "NULL"
-                    ]
-                }
+                "name": "Ref",
+                "type": "formId",
+                "signatures": [
+                    "LCRT",
+                    "NULL"
+                ]
             }
         },
         {
             "signature": "XLRL",
-            "type": "subrecord",
-            "element": {
-                "name": "Location Reference",
-                "type": "formId",
-                "signatures": [
-                    "LCRT",
-                    "LCTN",
-                    "NULL"
-                ]
-            }
+            "name": "Location Reference",
+            "type": "formId",
+            "signatures": [
+                "LCRT",
+                "LCTN",
+                "NULL"
+            ]
         },
         {
             "id": "XLOD"

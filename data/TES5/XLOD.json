@@ -1,13 +1,10 @@
 {
     "signature": "XLOD",
-    "type": "subrecord",
+    "name": "Distant LOD Data",
+    "type": "array",
     "element": {
-        "name": "Distant LOD Data",
-        "type": "array",
-        "element": {
-            "name": "Unknown",
-            "type": "float"
-        },
-        "size": 3
-    }
+        "name": "Unknown",
+        "type": "float"
+    },
+    "size": 3
 }

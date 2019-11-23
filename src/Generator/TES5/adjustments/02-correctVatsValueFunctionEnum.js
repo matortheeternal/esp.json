@@ -2,7 +2,7 @@ const {getDefs} = require('../../helpers');
 
 module.exports = () => {
     let defs = getDefs();
-    defs.CTDA.members[0].element.elements.forEach(element => {
+    defs.CTDA.members[0].elements.forEach(element => {
         if (!element.name.startsWith('Parameter')) return;
         if (!element.elements) return;
         element.elements.forEach(element => {

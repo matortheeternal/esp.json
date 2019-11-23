@@ -1,13 +1,10 @@
 {
     "signature": "SPLO",
-    "type": "subrecord",
-    "element": {
-        "name": "Actor Effect",
-        "type": "formId",
-        "signatures": [
-            "SPEL",
-            "SHOU",
-            "LVSP"
-        ]
-    }
+    "name": "Actor Effect",
+    "type": "formId",
+    "signatures": [
+        "SPEL",
+        "SHOU",
+        "LVSP"
+    ]
 }

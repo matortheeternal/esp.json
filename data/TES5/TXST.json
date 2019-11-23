@@ -16,67 +16,43 @@
             "members": [
                 {
                     "signature": "TX00",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Difuse",
-                        "type": "string"
-                    }
+                    "name": "Difuse",
+                    "type": "string"
                 },
                 {
                     "signature": "TX01",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Normal/Gloss",
-                        "type": "string"
-                    }
+                    "name": "Normal/Gloss",
+                    "type": "string"
                 },
                 {
                     "signature": "TX02",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Environment Mask/Subsurface Tint",
-                        "type": "string"
-                    }
+                    "name": "Environment Mask/Subsurface Tint",
+                    "type": "string"
                 },
                 {
                     "signature": "TX03",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Glow/Detail Map",
-                        "type": "string"
-                    }
+                    "name": "Glow/Detail Map",
+                    "type": "string"
                 },
                 {
                     "signature": "TX04",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Height",
-                        "type": "string"
-                    }
+                    "name": "Height",
+                    "type": "string"
                 },
                 {
                     "signature": "TX05",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Environment",
-                        "type": "string"
-                    }
+                    "name": "Environment",
+                    "type": "string"
                 },
                 {
                     "signature": "TX06",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Multilayer",
-                        "type": "string"
-                    }
+                    "name": "Multilayer",
+                    "type": "string"
                 },
                 {
                     "signature": "TX07",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Backlight Mask/Specular",
-                        "type": "string"
-                    }
+                    "name": "Backlight Mask/Specular",
+                    "type": "string"
                 }
             ]
         },
@@ -85,17 +61,14 @@
         },
         {
             "signature": "DNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Flags",
-                "type": "uint16",
-                "format": {
-                    "type": "flags",
-                    "flags": {
-                        "0": "No Specular Map",
-                        "1": "Facegen Textures",
-                        "2": "Has Model Space Normal Map"
-                    }
+            "name": "Flags",
+            "type": "uint16",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "No Specular Map",
+                    "1": "Facegen Textures",
+                    "2": "Has Model Space Normal Map"
                 }
             }
         }

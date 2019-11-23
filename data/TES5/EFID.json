@@ -1,11 +1,8 @@
 {
     "signature": "EFID",
-    "type": "subrecord",
-    "element": {
-        "name": "Base Effect",
-        "type": "formId",
-        "signatures": [
-            "MGEF"
-        ]
-    }
+    "name": "Base Effect",
+    "type": "formId",
+    "signatures": [
+        "MGEF"
+    ]
 }

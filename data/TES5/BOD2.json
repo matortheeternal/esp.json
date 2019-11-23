@@ -1,21 +1,18 @@
 {
     "signature": "BOD2",
-    "type": "subrecord",
-    "element": {
-        "name": "Biped Body Template",
-        "type": "struct",
-        "elements": [
-            {
-                "id": "FirstPersonFlagsU32"
-            },
-            {
-                "name": "Armor Type",
-                "type": "uint32",
-                "format": {
-                    "id": "ArmorTypeEnum"
-                }
+    "name": "Biped Body Template",
+    "type": "struct",
+    "elements": [
+        {
+            "id": "FirstPersonFlagsU32"
+        },
+        {
+            "name": "Armor Type",
+            "type": "uint32",
+            "format": {
+                "id": "ArmorTypeEnum"
             }
-        ]
-    },
+        }
+    ],
     "required": true
 }

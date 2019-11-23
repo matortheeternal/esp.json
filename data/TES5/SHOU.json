@@ -27,33 +27,30 @@
             "type": "memberArray",
             "member": {
                 "signature": "SNAM",
-                "type": "subrecord",
-                "element": {
-                    "name": "",
-                    "type": "struct",
-                    "elements": [
-                        {
-                            "name": "Word",
-                            "type": "formId",
-                            "signatures": [
-                                "WOOP",
-                                "NULL"
-                            ]
-                        },
-                        {
-                            "name": "Spell",
-                            "type": "formId",
-                            "signatures": [
-                                "SPEL",
-                                "NULL"
-                            ]
-                        },
-                        {
-                            "name": "Recovery Time",
-                            "type": "float"
-                        }
-                    ]
-                }
+                "name": "",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Word",
+                        "type": "formId",
+                        "signatures": [
+                            "WOOP",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "name": "Spell",
+                        "type": "formId",
+                        "signatures": [
+                            "SPEL",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "name": "Recovery Time",
+                        "type": "float"
+                    }
+                ]
             }
         }
     ]

@@ -7,31 +7,22 @@
         "members": [
             {
                 "signature": "UNAM",
-                "type": "subrecord",
-                "element": {
-                    "name": "Index",
-                    "type": "int8"
-                }
+                "name": "Index",
+                "type": "int8"
             },
             {
                 "signature": "BNAM",
-                "type": "subrecord",
-                "element": {
-                    "name": "Name",
-                    "type": "string"
-                }
+                "name": "Name",
+                "type": "string"
             },
             {
                 "signature": "PNAM",
-                "type": "subrecord",
-                "element": {
-                    "name": "Flags",
-                    "type": "uint32",
-                    "format": {
-                        "type": "flags",
-                        "flags": {
-                            "0": "Public"
-                        }
+                "name": "Flags",
+                "type": "uint32",
+                "format": {
+                    "type": "flags",
+                    "flags": {
+                        "0": "Public"
                     }
                 }
             }

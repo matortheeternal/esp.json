@@ -25,94 +25,76 @@
         },
         {
             "signature": "NNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Loading Screen NIF",
-                "type": "formId",
-                "signatures": [
-                    "STAT",
-                    "NULL"
-                ]
-            },
+            "name": "Loading Screen NIF",
+            "type": "formId",
+            "signatures": [
+                "STAT",
+                "NULL"
+            ],
             "required": true
         },
         {
             "signature": "SNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Initial Scale",
-                "type": "float"
-            }
+            "name": "Initial Scale",
+            "type": "float"
         },
         {
             "signature": "RNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Initial Rotation",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "X",
-                        "type": "int16"
-                    },
-                    {
-                        "name": "Y",
-                        "type": "int16"
-                    },
-                    {
-                        "name": "Z",
-                        "type": "int16"
-                    }
-                ]
-            }
+            "name": "Initial Rotation",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "X",
+                    "type": "int16"
+                },
+                {
+                    "name": "Y",
+                    "type": "int16"
+                },
+                {
+                    "name": "Z",
+                    "type": "int16"
+                }
+            ]
         },
         {
             "signature": "ONAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Rotation Offset Constraints",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Min",
-                        "type": "int16"
-                    },
-                    {
-                        "name": "Max",
-                        "type": "int16"
-                    }
-                ]
-            }
+            "name": "Rotation Offset Constraints",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Min",
+                    "type": "int16"
+                },
+                {
+                    "name": "Max",
+                    "type": "int16"
+                }
+            ]
         },
         {
             "signature": "XNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Initial Translation Offset",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "X",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Y",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Z",
-                        "type": "float"
-                    }
-                ]
-            }
+            "name": "Initial Translation Offset",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "X",
+                    "type": "float"
+                },
+                {
+                    "name": "Y",
+                    "type": "float"
+                },
+                {
+                    "name": "Z",
+                    "type": "float"
+                }
+            ]
         },
         {
             "signature": "MOD2",
-            "type": "subrecord",
-            "element": {
-                "name": "Camera Path",
-                "type": "string"
-            },
+            "name": "Camera Path",
+            "type": "string",
             "required": true
         }
     ]

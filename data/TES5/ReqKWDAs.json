@@ -1,17 +1,14 @@
 {
     "signature": "KWDA",
-    "type": "subrecord",
+    "name": "Keywords",
+    "type": "array",
     "element": {
-        "name": "Keywords",
-        "type": "array",
-        "element": {
-            "name": "Keyword",
-            "type": "formId",
-            "signatures": [
-                "KYWD",
-                "NULL"
-            ]
-        },
-        "sorted": true
-    }
+        "name": "Keyword",
+        "type": "formId",
+        "signatures": [
+            "KYWD",
+            "NULL"
+        ]
+    },
+    "sorted": true
 }

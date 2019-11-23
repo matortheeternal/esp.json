@@ -11,52 +11,40 @@
         },
         {
             "signature": "FNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Flags",
-                "type": "uint32",
-                "format": {
-                    "type": "flags",
-                    "flags": {
-                        "0": "Mute When Submerged",
-                        "1": "Should Appear on Menu"
-                    }
+            "name": "Flags",
+            "type": "uint32",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Mute When Submerged",
+                    "1": "Should Appear on Menu"
                 }
             }
         },
         {
             "signature": "PNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Parent",
-                "type": "formId",
-                "signatures": [
-                    "SNCT"
-                ]
-            }
+            "name": "Parent",
+            "type": "formId",
+            "signatures": [
+                "SNCT"
+            ]
         },
         {
             "signature": "VNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Static Volume Multiplier",
-                "type": "uint16",
-                "format": {
-                    "type": "divide",
-                    "value": 65535
-                }
+            "name": "Static Volume Multiplier",
+            "type": "uint16",
+            "format": {
+                "type": "divide",
+                "value": 65535
             }
         },
         {
             "signature": "UNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Default Menu Value",
-                "type": "uint16",
-                "format": {
-                    "type": "divide",
-                    "value": 65535
-                }
+            "name": "Default Menu Value",
+            "type": "uint16",
+            "format": {
+                "type": "divide",
+                "value": 65535
             }
         }
     ]

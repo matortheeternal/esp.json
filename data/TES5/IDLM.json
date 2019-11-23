@@ -19,53 +19,40 @@
         },
         {
             "signature": "IDLF",
-            "type": "subrecord",
-            "element": {
-                "name": "Flags",
-                "type": "uint8",
-                "format": {
-                    "type": "flags",
-                    "flags": {
-                        "0": "Run in Sequence",
-                        "1": "Unknown 1",
-                        "2": "Do Once",
-                        "3": "Unknown 3",
-                        "4": "Ignored by Sandbox"
-                    }
+            "name": "Flags",
+            "type": "uint8",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Run in Sequence",
+                    "1": "Unknown 1",
+                    "2": "Do Once",
+                    "3": "Unknown 3",
+                    "4": "Ignored by Sandbox"
                 }
             }
         },
         {
             "signature": "IDLC",
-            "type": "subrecord",
-            "element": {
-                "name": "Animation Count",
-                "type": "uint8"
-            }
+            "name": "Animation Count",
+            "type": "uint8"
         },
         {
             "signature": "IDLT",
-            "type": "subrecord",
-            "element": {
-                "name": "Idle Timer Setting",
-                "type": "float",
-                "required": true
-            },
+            "name": "Idle Timer Setting",
+            "type": "float",
             "required": true
         },
         {
             "signature": "IDLA",
-            "type": "subrecord",
+            "name": "Animations",
+            "type": "array",
             "element": {
-                "name": "Animations",
-                "type": "array",
-                "element": {
-                    "name": "Animation",
-                    "type": "formId",
-                    "signatures": [
-                        "IDLE"
-                    ]
-                }
+                "name": "Animation",
+                "type": "formId",
+                "signatures": [
+                    "IDLE"
+                ]
             }
         },
         {

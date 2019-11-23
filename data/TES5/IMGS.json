@@ -8,148 +8,133 @@
         },
         {
             "signature": "ENAM",
-            "type": "subrecord",
-            "element": {
-                "type": "bytes"
-            }
+            "type": "bytes"
         },
         {
             "signature": "HNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "HDR",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Eye Adapt Speed",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Bloom Blur Radius",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Bloom Threshold",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Bloom Scale",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Receive Bloom Threshold",
-                        "type": "float"
-                    },
-                    {
-                        "name": "White",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Sunlight Scale",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Sky Scale",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Eye Adapt Strength",
-                        "type": "float"
-                    }
-                ]
-            }
+            "name": "HDR",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Eye Adapt Speed",
+                    "type": "float"
+                },
+                {
+                    "name": "Bloom Blur Radius",
+                    "type": "float"
+                },
+                {
+                    "name": "Bloom Threshold",
+                    "type": "float"
+                },
+                {
+                    "name": "Bloom Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Receive Bloom Threshold",
+                    "type": "float"
+                },
+                {
+                    "name": "White",
+                    "type": "float"
+                },
+                {
+                    "name": "Sunlight Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Sky Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Eye Adapt Strength",
+                    "type": "float"
+                }
+            ]
         },
         {
             "signature": "CNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Cinematic",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Saturation",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Brightness",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Contrast",
-                        "type": "float"
-                    }
-                ]
-            }
+            "name": "Cinematic",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Saturation",
+                    "type": "float"
+                },
+                {
+                    "name": "Brightness",
+                    "type": "float"
+                },
+                {
+                    "name": "Contrast",
+                    "type": "float"
+                }
+            ]
         },
         {
             "signature": "TNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Tint",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Amount",
-                        "type": "float"
-                    },
-                    {
-                        "id": "FloatColors",
-                        "name": "Color"
-                    }
-                ]
-            }
+            "name": "Tint",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Amount",
+                    "type": "float"
+                },
+                {
+                    "id": "FloatColors",
+                    "name": "Color"
+                }
+            ]
         },
         {
             "signature": "DNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Depth of Field",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Strength",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Distance",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Range",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Unknown",
-                        "type": "bytes",
-                        "size": 2
-                    },
-                    {
-                        "name": "Sky / Blur Radius",
-                        "type": "uint16",
-                        "format": {
-                            "type": "enum",
-                            "options": {
-                                "16384": "Radius 0",
-                                "16576": "No Sky, Radius 0",
-                                "16672": "Radius 1",
-                                "16736": "No Sky, Radius 1",
-                                "16784": "Radius 2",
-                                "16816": "No Sky, Radius 2",
-                                "16848": "Radius 3",
-                                "16880": "No Sky, Radius 3",
-                                "16904": "Radius 4",
-                                "16920": "No Sky, Radius 4",
-                                "16936": "Radius 5",
-                                "16952": "No Sky, Radius 5",
-                                "16968": "Radius 6",
-                                "16984": "No Sky, Radius 6",
-                                "17000": "Radius 7",
-                                "17016": "No Sky, Radius 7"
-                            }
+            "name": "Depth of Field",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Strength",
+                    "type": "float"
+                },
+                {
+                    "name": "Distance",
+                    "type": "float"
+                },
+                {
+                    "name": "Range",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 2
+                },
+                {
+                    "name": "Sky / Blur Radius",
+                    "type": "uint16",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "16384": "Radius 0",
+                            "16576": "No Sky, Radius 0",
+                            "16672": "Radius 1",
+                            "16736": "No Sky, Radius 1",
+                            "16784": "Radius 2",
+                            "16816": "No Sky, Radius 2",
+                            "16848": "Radius 3",
+                            "16880": "No Sky, Radius 3",
+                            "16904": "Radius 4",
+                            "16920": "No Sky, Radius 4",
+                            "16936": "Radius 5",
+                            "16952": "No Sky, Radius 5",
+                            "16968": "Radius 6",
+                            "16984": "No Sky, Radius 6",
+                            "17000": "Radius 7",
+                            "17016": "No Sky, Radius 7"
                         }
                     }
-                ]
-            },
+                }
+            ],
             "required": true
         }
     ]

@@ -1,70 +1,67 @@
 {
     "signature": "VMAD",
-    "type": "subrecord",
-    "element": {
-        "name": "Virtual Machine Adapter",
-        "type": "struct",
-        "elements": [
-            {
-                "name": "Version",
-                "type": "int16",
-                "defaultNativeValue": 5
+    "name": "Virtual Machine Adapter",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Version",
+            "type": "int16",
+            "defaultNativeValue": 5
+        },
+        {
+            "name": "Object Format",
+            "type": "int16",
+            "defaultNativeValue": 2
+        },
+        {
+            "name": "Scripts",
+            "type": "array",
+            "element": {
+                "id": "ScriptEntry"
             },
-            {
-                "name": "Object Format",
-                "type": "int16",
-                "defaultNativeValue": 2
-            },
-            {
-                "name": "Scripts",
-                "type": "array",
-                "element": {
-                    "id": "ScriptEntry"
-                },
-                "sorted": true,
-                "prefix": 2
-            },
-            {
-                "id": "ScriptFragmentsQuest"
-            },
-            {
-                "name": "Aliases",
-                "type": "array",
-                "element": {
-                    "name": "Alias",
-                    "type": "struct",
-                    "elements": [
-                        {
-                            "id": "ScriptPropertyObject"
+            "sorted": true,
+            "prefix": 2
+        },
+        {
+            "id": "ScriptFragmentsQuest"
+        },
+        {
+            "name": "Aliases",
+            "type": "array",
+            "element": {
+                "name": "Alias",
+                "type": "struct",
+                "elements": [
+                    {
+                        "id": "ScriptPropertyObject"
+                    },
+                    {
+                        "name": "Version",
+                        "type": "int16",
+                        "defaultNativeValue": 5
+                    },
+                    {
+                        "name": "Object Format",
+                        "type": "int16",
+                        "defaultNativeValue": 2
+                    },
+                    {
+                        "name": "Alias Scripts",
+                        "type": "array",
+                        "element": {
+                            "id": "ScriptEntry"
                         },
-                        {
-                            "name": "Version",
-                            "type": "int16",
-                            "defaultNativeValue": 5
-                        },
-                        {
-                            "name": "Object Format",
-                            "type": "int16",
-                            "defaultNativeValue": 2
-                        },
-                        {
-                            "name": "Alias Scripts",
-                            "type": "array",
-                            "element": {
-                                "id": "ScriptEntry"
-                            },
-                            "sorted": true,
-                            "prefix": 2
-                        }
-                    ],
-                    "sortKey": [
-                        0
-                    ]
-                },
-                "sorted": true,
-                "prefix": 2
-            }
-        ]
-    },
+                        "sorted": true,
+                        "prefix": 2
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            },
+            "sorted": true,
+            "prefix": 2
+        }
+    ],
     "required": true
 }

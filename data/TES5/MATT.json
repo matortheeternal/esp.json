@@ -8,83 +8,65 @@
         },
         {
             "signature": "PNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Material Parent",
-                "type": "formId",
-                "signatures": [
-                    "MATT",
-                    "NULL"
-                ]
-            }
+            "name": "Material Parent",
+            "type": "formId",
+            "signatures": [
+                "MATT",
+                "NULL"
+            ]
         },
         {
             "signature": "MNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Material Name",
-                "type": "string"
-            }
+            "name": "Material Name",
+            "type": "string"
         },
         {
             "signature": "CNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Havok Display Color",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Red",
-                        "type": "float",
-                        "required": true
-                    },
-                    {
-                        "name": "Green",
-                        "type": "float",
-                        "required": true
-                    },
-                    {
-                        "name": "Blue",
-                        "type": "float",
-                        "required": true
-                    }
-                ]
-            }
+            "name": "Havok Display Color",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Red",
+                    "type": "float",
+                    "required": true
+                },
+                {
+                    "name": "Green",
+                    "type": "float",
+                    "required": true
+                },
+                {
+                    "name": "Blue",
+                    "type": "float",
+                    "required": true
+                }
+            ]
         },
         {
             "signature": "BNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Buoyancy",
-                "type": "float"
-            }
+            "name": "Buoyancy",
+            "type": "float"
         },
         {
             "signature": "FNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Flags",
-                "type": "uint32",
-                "format": {
-                    "type": "flags",
-                    "flags": {
-                        "0": "Stair Material",
-                        "1": "Arrows Stick"
-                    }
+            "name": "Flags",
+            "type": "uint32",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Stair Material",
+                    "1": "Arrows Stick"
                 }
             }
         },
         {
             "signature": "HNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Havok Impact Data Set",
-                "type": "formId",
-                "signatures": [
-                    "IPDS",
-                    "NULL"
-                ]
-            }
+            "name": "Havok Impact Data Set",
+            "type": "formId",
+            "signatures": [
+                "IPDS",
+                "NULL"
+            ]
         }
     ]
 }

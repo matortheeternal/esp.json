@@ -49,97 +49,76 @@
         },
         {
             "signature": "PNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Marker Color",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Red",
-                        "type": "uint8"
-                    },
-                    {
-                        "name": "Green",
-                        "type": "uint8"
-                    },
-                    {
-                        "name": "Blue",
-                        "type": "uint8"
-                    },
-                    {
-                        "name": "Unused",
-                        "type": "uint8"
-                    }
-                ]
-            }
+            "name": "Marker Color",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Red",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Green",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Blue",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unused",
+                    "type": "uint8"
+                }
+            ]
         },
         {
             "signature": "SNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Sound - Looping",
-                "type": "formId",
-                "signatures": [
-                    "SNDR"
-                ]
-            }
+            "name": "Sound - Looping",
+            "type": "formId",
+            "signatures": [
+                "SNDR"
+            ]
         },
         {
             "signature": "VNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Sound - Activation",
-                "type": "formId",
-                "signatures": [
-                    "SNDR"
-                ]
-            }
+            "name": "Sound - Activation",
+            "type": "formId",
+            "signatures": [
+                "SNDR"
+            ]
         },
         {
             "signature": "WNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Water Type",
-                "type": "formId",
-                "signatures": [
-                    "WATR"
-                ]
-            }
+            "name": "Water Type",
+            "type": "formId",
+            "signatures": [
+                "WATR"
+            ]
         },
         {
             "signature": "RNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Activate Text Override",
-                "type": "string",
-                "localized": true
-            }
+            "name": "Activate Text Override",
+            "type": "string",
+            "localized": true
         },
         {
             "signature": "FNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Flags",
-                "type": "uint16",
-                "format": {
-                    "type": "flags",
-                    "flags": {
-                        "0": "No Displacement",
-                        "1": "Ignored by Sandbox"
-                    }
+            "name": "Flags",
+            "type": "uint16",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "No Displacement",
+                    "1": "Ignored by Sandbox"
                 }
             }
         },
         {
             "signature": "KNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Interaction Keyword",
-                "type": "formId",
-                "signatures": [
-                    "KYWD"
-                ]
-            }
+            "name": "Interaction Keyword",
+            "type": "formId",
+            "signatures": [
+                "KYWD"
+            ]
         }
     ]
 }

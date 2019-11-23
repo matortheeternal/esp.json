@@ -4,11 +4,8 @@
     "members": [
         {
             "signature": "MODL",
-            "type": "subrecord",
-            "element": {
-                "name": "Model FileName",
-                "type": "string"
-            },
+            "name": "Model FileName",
+            "type": "string",
             "required": true
         },
         {

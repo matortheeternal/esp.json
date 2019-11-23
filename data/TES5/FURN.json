@@ -42,127 +42,109 @@
         },
         {
             "signature": "PNAM",
-            "type": "subrecord",
-            "element": {
-                "type": "bytes"
-            }
+            "type": "bytes"
         },
         {
             "signature": "FNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Flags",
-                "type": "uint16",
-                "format": {
-                    "type": "flags",
-                    "flags": {
-                        "0": "Unknown 0",
-                        "1": "Ignored By Sandbox"
-                    }
+            "name": "Flags",
+            "type": "uint16",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Unknown 0",
+                    "1": "Ignored By Sandbox"
                 }
             }
         },
         {
             "signature": "KNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Interaction Keyword",
-                "type": "formId",
-                "signatures": [
-                    "KYWD",
-                    "NULL"
-                ]
-            }
+            "name": "Interaction Keyword",
+            "type": "formId",
+            "signatures": [
+                "KYWD",
+                "NULL"
+            ]
         },
         {
             "signature": "MNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Active Markers / Flags",
-                "type": "uint32",
-                "format": {
-                    "type": "flags",
-                    "flags": {
-                        "0": "Sit 0",
-                        "1": "Sit 1",
-                        "2": "Sit 2",
-                        "3": "Sit 3",
-                        "4": "Sit 4",
-                        "5": "Sit 5",
-                        "6": "Sit 6",
-                        "7": "Sit 7",
-                        "8": "Sit 8",
-                        "9": "Sit 9",
-                        "10": "Sit 10",
-                        "11": "Sit 11",
-                        "12": "Sit 12",
-                        "13": "Sit 13",
-                        "14": "Sit 14",
-                        "15": "Sit 15",
-                        "16": "Sit 16",
-                        "17": "Sit 17",
-                        "18": "Sit 18",
-                        "19": "Sit 19",
-                        "20": "Sit 20",
-                        "21": "Sit 21",
-                        "22": "Sit 22",
-                        "23": "Sit 23",
-                        "24": "Unknown 25",
-                        "25": "Disables Activation",
-                        "26": "Is Perch",
-                        "27": "Must Exit to Talk",
-                        "28": "Unknown 29",
-                        "29": "Unknown 30",
-                        "30": "Unknown 31",
-                        "31": "Unknown 32"
-                    }
+            "name": "Active Markers / Flags",
+            "type": "uint32",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Sit 0",
+                    "1": "Sit 1",
+                    "2": "Sit 2",
+                    "3": "Sit 3",
+                    "4": "Sit 4",
+                    "5": "Sit 5",
+                    "6": "Sit 6",
+                    "7": "Sit 7",
+                    "8": "Sit 8",
+                    "9": "Sit 9",
+                    "10": "Sit 10",
+                    "11": "Sit 11",
+                    "12": "Sit 12",
+                    "13": "Sit 13",
+                    "14": "Sit 14",
+                    "15": "Sit 15",
+                    "16": "Sit 16",
+                    "17": "Sit 17",
+                    "18": "Sit 18",
+                    "19": "Sit 19",
+                    "20": "Sit 20",
+                    "21": "Sit 21",
+                    "22": "Sit 22",
+                    "23": "Sit 23",
+                    "24": "Unknown 25",
+                    "25": "Disables Activation",
+                    "26": "Is Perch",
+                    "27": "Must Exit to Talk",
+                    "28": "Unknown 29",
+                    "29": "Unknown 30",
+                    "30": "Unknown 31",
+                    "31": "Unknown 32"
                 }
             }
         },
         {
             "signature": "WBDT",
-            "type": "subrecord",
-            "element": {
-                "name": "Workbench Data",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Bench Type",
-                        "type": "uint8",
-                        "format": {
-                            "type": "enum",
-                            "options": {
-                                "0": "None",
-                                "1": "Create object",
-                                "2": "Smithing Weapon",
-                                "3": "Enchanting",
-                                "4": "Enchanting Experiment",
-                                "5": "Alchemy",
-                                "6": "Alchemy Experiment",
-                                "7": "Smithing Armor"
-                            }
-                        }
-                    },
-                    {
-                        "name": "Uses Skill",
-                        "type": "int8",
-                        "format": {
-                            "id": "SkillEnum"
+            "name": "Workbench Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Bench Type",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "None",
+                            "1": "Create object",
+                            "2": "Smithing Weapon",
+                            "3": "Enchanting",
+                            "4": "Enchanting Experiment",
+                            "5": "Alchemy",
+                            "6": "Alchemy Experiment",
+                            "7": "Smithing Armor"
                         }
                     }
-                ]
-            }
+                },
+                {
+                    "name": "Uses Skill",
+                    "type": "int8",
+                    "format": {
+                        "id": "SkillEnum"
+                    }
+                }
+            ]
         },
         {
             "signature": "NAM1",
-            "type": "subrecord",
-            "element": {
-                "name": "Associated Spell",
-                "type": "formId",
-                "signatures": [
-                    "SPEL"
-                ]
-            }
+            "name": "Associated Spell",
+            "type": "formId",
+            "signatures": [
+                "SPEL"
+            ]
         },
         {
             "name": "Markers",
@@ -173,45 +155,36 @@
                 "members": [
                     {
                         "signature": "ENAM",
-                        "type": "subrecord",
-                        "element": {
-                            "name": "Marker Index",
-                            "type": "uint32"
-                        }
+                        "name": "Marker Index",
+                        "type": "uint32"
                     },
                     {
                         "signature": "NAM0",
-                        "type": "subrecord",
-                        "element": {
-                            "name": "Disabled Entry Points",
-                            "type": "struct",
-                            "elements": [
-                                {
-                                    "name": "Unknown",
-                                    "type": "bytes",
-                                    "size": 2
-                                },
-                                {
-                                    "name": "Disabled Points",
-                                    "type": "uint16",
-                                    "format": {
-                                        "id": "FurnitureEntryTypeFlags"
-                                    }
+                        "name": "Disabled Entry Points",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Unknown",
+                                "type": "bytes",
+                                "size": 2
+                            },
+                            {
+                                "name": "Disabled Points",
+                                "type": "uint16",
+                                "format": {
+                                    "id": "FurnitureEntryTypeFlags"
                                 }
-                            ]
-                        }
+                            }
+                        ]
                     },
                     {
                         "signature": "FNMK",
-                        "type": "subrecord",
-                        "element": {
-                            "name": "Marker Keyword",
-                            "type": "formId",
-                            "signatures": [
-                                "KYWD",
-                                "NULL"
-                            ]
-                        }
+                        "name": "Marker Keyword",
+                        "type": "formId",
+                        "signatures": [
+                            "KYWD",
+                            "NULL"
+                        ]
                     }
                 ]
             }
@@ -221,36 +194,30 @@
             "type": "memberArray",
             "member": {
                 "signature": "FNPR",
-                "type": "subrecord",
-                "element": {
-                    "name": "Marker",
-                    "type": "struct",
-                    "elements": [
-                        {
-                            "name": "Type",
-                            "type": "uint16",
-                            "format": {
-                                "id": "FurnitureAnimTypeEnum"
-                            }
-                        },
-                        {
-                            "name": "Entry Points",
-                            "type": "uint16",
-                            "format": {
-                                "id": "FurnitureEntryTypeFlags"
-                            }
+                "name": "Marker",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Type",
+                        "type": "uint16",
+                        "format": {
+                            "id": "FurnitureAnimTypeEnum"
                         }
-                    ]
-                }
+                    },
+                    {
+                        "name": "Entry Points",
+                        "type": "uint16",
+                        "format": {
+                            "id": "FurnitureEntryTypeFlags"
+                        }
+                    }
+                ]
             }
         },
         {
             "signature": "XMRK",
-            "type": "subrecord",
-            "element": {
-                "name": "Model FileName",
-                "type": "string"
-            }
+            "name": "Model FileName",
+            "type": "string"
         }
     ]
 }

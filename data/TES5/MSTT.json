@@ -36,30 +36,24 @@
         },
         {
             "signature": "DATA",
-            "type": "subrecord",
-            "element": {
-                "name": "Flags",
-                "type": "uint8",
-                "format": {
-                    "type": "flags",
-                    "flags": {
-                        "0": "On Local Map",
-                        "1": "Unknown 1",
-                        "2": "Unknown 2"
-                    }
+            "name": "Flags",
+            "type": "uint8",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "On Local Map",
+                    "1": "Unknown 1",
+                    "2": "Unknown 2"
                 }
             }
         },
         {
             "signature": "SNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Looping Sound",
-                "type": "formId",
-                "signatures": [
-                    "SNDR"
-                ]
-            }
+            "name": "Looping Sound",
+            "type": "formId",
+            "signatures": [
+                "SNDR"
+            ]
         }
     ]
 }

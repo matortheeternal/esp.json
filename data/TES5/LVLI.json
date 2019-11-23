@@ -15,31 +15,25 @@
         },
         {
             "signature": "LVLF",
-            "type": "subrecord",
-            "element": {
-                "name": "Flags",
-                "type": "uint8",
-                "format": {
-                    "type": "flags",
-                    "flags": {
-                        "0": "Calculate from all levels <= player's level",
-                        "1": "Calculate for each item in count",
-                        "2": "Use All",
-                        "3": "Special Loot"
-                    }
+            "name": "Flags",
+            "type": "uint8",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Calculate from all levels <= player's level",
+                    "1": "Calculate for each item in count",
+                    "2": "Use All",
+                    "3": "Special Loot"
                 }
             }
         },
         {
             "signature": "LVLG",
-            "type": "subrecord",
-            "element": {
-                "name": "Global",
-                "type": "formId",
-                "signatures": [
-                    "GLOB"
-                ]
-            }
+            "name": "Global",
+            "type": "formId",
+            "signatures": [
+                "GLOB"
+            ]
         },
         {
             "id": "LLCT"
@@ -53,54 +47,51 @@
                 "members": [
                     {
                         "signature": "LVLO",
-                        "type": "subrecord",
-                        "element": {
-                            "name": "Base Data",
-                            "type": "struct",
-                            "elements": [
-                                {
-                                    "name": "Level",
-                                    "type": "uint16"
-                                },
-                                {
-                                    "name": "Unknown",
-                                    "type": "bytes",
-                                    "size": 2
-                                },
-                                {
-                                    "name": "Reference",
-                                    "type": "formId",
-                                    "signatures": [
-                                        "ARMO",
-                                        "AMMO",
-                                        "APPA",
-                                        "MISC",
-                                        "WEAP",
-                                        "BOOK",
-                                        "LVLI",
-                                        "KEYM",
-                                        "ALCH",
-                                        "LIGH",
-                                        "INGR",
-                                        "SLGM",
-                                        "SCRL"
-                                    ]
-                                },
-                                {
-                                    "name": "Count",
-                                    "type": "uint16"
-                                },
-                                {
-                                    "name": "Unknown",
-                                    "type": "bytes",
-                                    "size": 2
-                                }
-                            ],
-                            "sortKey": [
-                                0,
-                                2
-                            ]
-                        }
+                        "name": "Base Data",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Level",
+                                "type": "uint16"
+                            },
+                            {
+                                "name": "Unknown",
+                                "type": "bytes",
+                                "size": 2
+                            },
+                            {
+                                "name": "Reference",
+                                "type": "formId",
+                                "signatures": [
+                                    "ARMO",
+                                    "AMMO",
+                                    "APPA",
+                                    "MISC",
+                                    "WEAP",
+                                    "BOOK",
+                                    "LVLI",
+                                    "KEYM",
+                                    "ALCH",
+                                    "LIGH",
+                                    "INGR",
+                                    "SLGM",
+                                    "SCRL"
+                                ]
+                            },
+                            {
+                                "name": "Count",
+                                "type": "uint16"
+                            },
+                            {
+                                "name": "Unknown",
+                                "type": "bytes",
+                                "size": 2
+                            }
+                        ],
+                        "sortKey": [
+                            0,
+                            2
+                        ]
                     },
                     {
                         "id": "COED"

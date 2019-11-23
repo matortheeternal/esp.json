@@ -15,49 +15,37 @@
         },
         {
             "signature": "INAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Icon (unused)",
-                "type": "formId",
-                "signatures": [
-                    "NULL"
-                ]
-            },
+            "name": "Icon (unused)",
+            "type": "formId",
+            "signatures": [
+                "NULL"
+            ],
             "required": true
         },
         {
             "signature": "QNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Owner Quest",
-                "type": "formId",
-                "signatures": [
-                    "QUST"
-                ]
-            }
+            "name": "Owner Quest",
+            "type": "formId",
+            "signatures": [
+                "QUST"
+            ]
         },
         {
             "signature": "DNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Flags",
-                "type": "uint32",
-                "format": {
-                    "type": "flags",
-                    "flags": {
-                        "0": "Message Box",
-                        "1": "Auto Display"
-                    }
+            "name": "Flags",
+            "type": "uint32",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Message Box",
+                    "1": "Auto Display"
                 }
             }
         },
         {
             "signature": "TNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Display Time",
-                "type": "uint32"
-            }
+            "name": "Display Time",
+            "type": "uint32"
         },
         {
             "name": "Menu Buttons",
@@ -68,12 +56,9 @@
                 "members": [
                     {
                         "signature": "ITXT",
-                        "type": "subrecord",
-                        "element": {
-                            "name": "Button Text",
-                            "type": "string",
-                            "localized": true
-                        }
+                        "name": "Button Text",
+                        "type": "string",
+                        "localized": true
                     },
                     {
                         "id": "CTDAs"

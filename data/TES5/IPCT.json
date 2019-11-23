@@ -11,73 +11,70 @@
         },
         {
             "signature": "DATA",
-            "type": "subrecord",
-            "element": {
-                "name": "",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Effect - Duration",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Effect - Orientation",
-                        "type": "uint32",
-                        "format": {
-                            "type": "enum",
-                            "options": {
-                                "0": "Surface Normal",
-                                "1": "Projectile Vector",
-                                "2": "Projectile Reflection"
-                            }
+            "name": "",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Effect - Duration",
+                    "type": "float"
+                },
+                {
+                    "name": "Effect - Orientation",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Surface Normal",
+                            "1": "Projectile Vector",
+                            "2": "Projectile Reflection"
                         }
-                    },
-                    {
-                        "name": "Angle Threshold",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Placement Radius",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Sound Level",
-                        "type": "uint32",
-                        "format": {
-                            "id": "SoundLevelEnum"
-                        }
-                    },
-                    {
-                        "name": "Flags",
-                        "type": "uint8",
-                        "format": {
-                            "type": "flags",
-                            "flags": {
-                                "0": "No Decal Data"
-                            }
-                        }
-                    },
-                    {
-                        "name": "Impact Result",
-                        "type": "uint8",
-                        "format": {
-                            "type": "enum",
-                            "options": {
-                                "0": "Default",
-                                "1": "Destroy",
-                                "2": "Bounce",
-                                "3": "Impale",
-                                "4": "Stick"
-                            }
-                        }
-                    },
-                    {
-                        "name": "Unknown",
-                        "type": "bytes",
-                        "size": 2
                     }
-                ]
-            },
+                },
+                {
+                    "name": "Angle Threshold",
+                    "type": "float"
+                },
+                {
+                    "name": "Placement Radius",
+                    "type": "float"
+                },
+                {
+                    "name": "Sound Level",
+                    "type": "uint32",
+                    "format": {
+                        "id": "SoundLevelEnum"
+                    }
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "No Decal Data"
+                        }
+                    }
+                },
+                {
+                    "name": "Impact Result",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Default",
+                            "1": "Destroy",
+                            "2": "Bounce",
+                            "3": "Impale",
+                            "4": "Stick"
+                        }
+                    }
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 2
+                }
+            ],
             "required": true
         },
         {
@@ -85,63 +82,48 @@
         },
         {
             "signature": "DNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Texture Set",
-                "type": "formId",
-                "signatures": [
-                    "TXST"
-                ]
-            }
+            "name": "Texture Set",
+            "type": "formId",
+            "signatures": [
+                "TXST"
+            ]
         },
         {
             "signature": "ENAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Secondary Texture Set",
-                "type": "formId",
-                "signatures": [
-                    "TXST"
-                ]
-            }
+            "name": "Secondary Texture Set",
+            "type": "formId",
+            "signatures": [
+                "TXST"
+            ]
         },
         {
             "signature": "SNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Sound 1",
-                "type": "formId",
-                "signatures": [
-                    "SNDR",
-                    "SOUN",
-                    "NULL"
-                ]
-            }
+            "name": "Sound 1",
+            "type": "formId",
+            "signatures": [
+                "SNDR",
+                "SOUN",
+                "NULL"
+            ]
         },
         {
             "signature": "NAM1",
-            "type": "subrecord",
-            "element": {
-                "name": "Sound 2",
-                "type": "formId",
-                "signatures": [
-                    "SNDR",
-                    "SOUN",
-                    "NULL"
-                ]
-            }
+            "name": "Sound 2",
+            "type": "formId",
+            "signatures": [
+                "SNDR",
+                "SOUN",
+                "NULL"
+            ]
         },
         {
             "signature": "NAM2",
-            "type": "subrecord",
-            "element": {
-                "name": "Hazard",
-                "type": "formId",
-                "signatures": [
-                    "HAZD",
-                    "NULL"
-                ]
-            }
+            "name": "Hazard",
+            "type": "formId",
+            "signatures": [
+                "HAZD",
+                "NULL"
+            ]
         }
     ]
 }

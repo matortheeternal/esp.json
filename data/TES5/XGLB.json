@@ -1,11 +1,8 @@
 {
     "signature": "XGLB",
-    "type": "subrecord",
-    "element": {
-        "name": "Global variable",
-        "type": "formId",
-        "signatures": [
-            "GLOB"
-        ]
-    }
+    "name": "Global variable",
+    "type": "formId",
+    "signatures": [
+        "GLOB"
+    ]
 }

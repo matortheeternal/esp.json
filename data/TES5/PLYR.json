@@ -8,11 +8,8 @@
         },
         {
             "signature": "PLYR",
-            "type": "subrecord",
-            "element": {
-                "name": "Player",
-                "type": "formId"
-            },
+            "name": "Player",
+            "type": "formId",
             "required": true,
             "defaultNativeValue": 7
         }

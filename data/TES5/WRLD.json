@@ -18,48 +18,45 @@
             "type": "memberArray",
             "member": {
                 "signature": "RNAM",
-                "type": "subrecord",
-                "element": {
-                    "name": "Grid",
-                    "type": "struct",
-                    "elements": [
-                        {
-                            "name": "Y",
-                            "type": "int16"
+                "name": "Grid",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Y",
+                        "type": "int16"
+                    },
+                    {
+                        "name": "X",
+                        "type": "int16"
+                    },
+                    {
+                        "name": "References",
+                        "type": "array",
+                        "element": {
+                            "name": "Reference",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Ref",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "REFR"
+                                    ]
+                                },
+                                {
+                                    "name": "Y",
+                                    "type": "int16"
+                                },
+                                {
+                                    "name": "X",
+                                    "type": "int16"
+                                }
+                            ]
                         },
-                        {
-                            "name": "X",
-                            "type": "int16"
-                        },
-                        {
-                            "name": "References",
-                            "type": "array",
-                            "element": {
-                                "name": "Reference",
-                                "type": "struct",
-                                "elements": [
-                                    {
-                                        "name": "Ref",
-                                        "type": "formId",
-                                        "signatures": [
-                                            "REFR"
-                                        ]
-                                    },
-                                    {
-                                        "name": "Y",
-                                        "type": "int16"
-                                    },
-                                    {
-                                        "name": "X",
-                                        "type": "int16"
-                                    }
-                                ]
-                            },
-                            "prefix": 4,
-                            "includeFlag": "dfNotAlignable"
-                        }
-                    ]
-                }
+                        "prefix": 4,
+                        "includeFlag": "dfNotAlignable"
+                    }
+                ]
             }
         },
         {
@@ -70,56 +67,44 @@
         },
         {
             "signature": "WCTR",
-            "type": "subrecord",
-            "element": {
-                "name": "Fixed Dimensions Center Cell",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "X",
-                        "type": "int16"
-                    },
-                    {
-                        "name": "Y",
-                        "type": "int16"
-                    }
-                ]
-            }
+            "name": "Fixed Dimensions Center Cell",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "X",
+                    "type": "int16"
+                },
+                {
+                    "name": "Y",
+                    "type": "int16"
+                }
+            ]
         },
         {
             "signature": "LTMP",
-            "type": "subrecord",
-            "element": {
-                "name": "Interior Lighting",
-                "type": "formId",
-                "signatures": [
-                    "LGTM"
-                ]
-            }
+            "name": "Interior Lighting",
+            "type": "formId",
+            "signatures": [
+                "LGTM"
+            ]
         },
         {
             "signature": "XEZN",
-            "type": "subrecord",
-            "element": {
-                "name": "Encounter Zone",
-                "type": "formId",
-                "signatures": [
-                    "ECZN",
-                    "NULL"
-                ]
-            }
+            "name": "Encounter Zone",
+            "type": "formId",
+            "signatures": [
+                "ECZN",
+                "NULL"
+            ]
         },
         {
             "signature": "XLCN",
-            "type": "subrecord",
-            "element": {
-                "name": "Location",
-                "type": "formId",
-                "signatures": [
-                    "LCTN",
-                    "NULL"
-                ]
-            }
+            "name": "Location",
+            "type": "formId",
+            "signatures": [
+                "LCTN",
+                "NULL"
+            ]
         },
         {
             "name": "Parent",
@@ -127,115 +112,91 @@
             "members": [
                 {
                     "signature": "WNAM",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Worldspace",
-                        "type": "formId",
-                        "signatures": [
-                            "WRLD"
-                        ]
-                    }
+                    "name": "Worldspace",
+                    "type": "formId",
+                    "signatures": [
+                        "WRLD"
+                    ]
                 },
                 {
                     "signature": "PNAM",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "",
-                        "type": "struct",
-                        "elements": [
-                            {
-                                "name": "Flags",
-                                "type": "uint8",
-                                "format": {
-                                    "type": "flags",
-                                    "flags": {
-                                        "0": "Use Land Data",
-                                        "1": "Use LOD Data",
-                                        "2": "Use Map Data",
-                                        "3": "Use Water Data",
-                                        "4": "Use Climate Data",
-                                        "5": "Use Image Space Data (unused)",
-                                        "6": "Use Sky Cell"
-                                    }
+                    "name": "",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Flags",
+                            "type": "uint8",
+                            "format": {
+                                "type": "flags",
+                                "flags": {
+                                    "0": "Use Land Data",
+                                    "1": "Use LOD Data",
+                                    "2": "Use Map Data",
+                                    "3": "Use Water Data",
+                                    "4": "Use Climate Data",
+                                    "5": "Use Image Space Data (unused)",
+                                    "6": "Use Sky Cell"
                                 }
-                            },
-                            {
-                                "name": "Unknown",
-                                "type": "bytes",
-                                "size": 1
                             }
-                        ]
-                    },
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 1
+                        }
+                    ],
                     "required": true
                 }
             ]
         },
         {
             "signature": "CNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Climate",
-                "type": "formId",
-                "signatures": [
-                    "CLMT"
-                ]
-            }
+            "name": "Climate",
+            "type": "formId",
+            "signatures": [
+                "CLMT"
+            ]
         },
         {
             "signature": "NAM2",
-            "type": "subrecord",
-            "element": {
-                "name": "Water",
-                "type": "formId",
-                "signatures": [
-                    "WATR"
-                ]
-            }
+            "name": "Water",
+            "type": "formId",
+            "signatures": [
+                "WATR"
+            ]
         },
         {
             "signature": "NAM3",
-            "type": "subrecord",
-            "element": {
-                "name": "LOD Water Type",
-                "type": "formId",
-                "signatures": [
-                    "WATR"
-                ]
-            }
+            "name": "LOD Water Type",
+            "type": "formId",
+            "signatures": [
+                "WATR"
+            ]
         },
         {
             "signature": "NAM4",
-            "type": "subrecord",
-            "element": {
-                "name": "LOD Water Height",
-                "type": "float"
-            }
+            "name": "LOD Water Height",
+            "type": "float"
         },
         {
             "signature": "DNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Land Data",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Default Land Height",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Default Water Height",
-                        "type": "float"
-                    }
-                ]
-            }
+            "name": "Land Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Default Land Height",
+                    "type": "float"
+                },
+                {
+                    "name": "Default Water Height",
+                    "type": "float"
+                }
+            ]
         },
         {
             "signature": "ICON",
-            "type": "subrecord",
-            "element": {
-                "name": "Map Image",
-                "type": "string"
-            }
+            "name": "Map Image",
+            "type": "string"
         },
         {
             "name": "Cloud Model",
@@ -248,134 +209,122 @@
         },
         {
             "signature": "MNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Map Data",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Usable Dimensions",
-                        "type": "struct",
-                        "elements": [
-                            {
-                                "name": "X",
-                                "type": "int32"
-                            },
-                            {
-                                "name": "Y",
-                                "type": "int32"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "Cell Coordinates",
-                        "type": "struct",
-                        "elements": [
-                            {
-                                "name": "NW Cell",
-                                "type": "struct",
-                                "elements": [
-                                    {
-                                        "name": "X",
-                                        "type": "int16"
-                                    },
-                                    {
-                                        "name": "Y",
-                                        "type": "int16"
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "SE Cell",
-                                "type": "struct",
-                                "elements": [
-                                    {
-                                        "name": "X",
-                                        "type": "int16"
-                                    },
-                                    {
-                                        "name": "Y",
-                                        "type": "int16"
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "name": "Camera Data",
-                        "type": "struct",
-                        "elements": [
-                            {
-                                "name": "Min Height",
-                                "type": "float"
-                            },
-                            {
-                                "name": "Max Height",
-                                "type": "float"
-                            },
-                            {
-                                "name": "Initial Pitch",
-                                "type": "float"
-                            }
-                        ]
-                    }
-                ]
-            },
+            "name": "Map Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Usable Dimensions",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "X",
+                            "type": "int32"
+                        },
+                        {
+                            "name": "Y",
+                            "type": "int32"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cell Coordinates",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "NW Cell",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "X",
+                                    "type": "int16"
+                                },
+                                {
+                                    "name": "Y",
+                                    "type": "int16"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "SE Cell",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "X",
+                                    "type": "int16"
+                                },
+                                {
+                                    "name": "Y",
+                                    "type": "int16"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Camera Data",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Min Height",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Max Height",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Initial Pitch",
+                            "type": "float"
+                        }
+                    ]
+                }
+            ],
             "required": true
         },
         {
             "signature": "ONAM",
-            "type": "subrecord",
-            "element": {
-                "name": "World Map Offset Data",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "World Map Scale",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Cell X Offset",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Cell Y Offset",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Cell Z Offset",
-                        "type": "float"
-                    }
-                ]
-            },
+            "name": "World Map Offset Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "World Map Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Cell X Offset",
+                    "type": "float"
+                },
+                {
+                    "name": "Cell Y Offset",
+                    "type": "float"
+                },
+                {
+                    "name": "Cell Z Offset",
+                    "type": "float"
+                }
+            ],
             "required": true
         },
         {
             "signature": "NAMA",
-            "type": "subrecord",
-            "element": {
-                "name": "Distant LOD Multiplier",
-                "type": "float"
-            }
+            "name": "Distant LOD Multiplier",
+            "type": "float"
         },
         {
             "signature": "DATA",
-            "type": "subrecord",
-            "element": {
-                "name": "Flags",
-                "type": "uint8",
-                "format": {
-                    "type": "flags",
-                    "flags": {
-                        "0": "Small World",
-                        "1": "Can't Fast Travel",
-                        "2": "Unknown 3",
-                        "3": "No LOD Water",
-                        "4": "No Landscape",
-                        "5": "No Sky",
-                        "6": "Fixed Dimensions",
-                        "7": "No Grass"
-                    }
+            "name": "Flags",
+            "type": "uint8",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Small World",
+                    "1": "Can't Fast Travel",
+                    "2": "Unknown 3",
+                    "3": "No LOD Water",
+                    "4": "No Landscape",
+                    "5": "No Sky",
+                    "6": "Fixed Dimensions",
+                    "7": "No Grass"
                 }
             }
         },
@@ -385,98 +334,74 @@
             "members": [
                 {
                     "signature": "NAM0",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Min",
-                        "type": "struct",
-                        "elements": [
-                            {
-                                "name": "X",
-                                "type": "float",
-                                "required": true
-                            },
-                            {
-                                "name": "Y",
-                                "type": "float",
-                                "required": true
-                            }
-                        ]
-                    },
+                    "name": "Min",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "X",
+                            "type": "float",
+                            "required": true
+                        },
+                        {
+                            "name": "Y",
+                            "type": "float",
+                            "required": true
+                        }
+                    ],
                     "required": true
                 },
                 {
                     "signature": "NAM9",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Max",
-                        "type": "struct",
-                        "elements": [
-                            {
-                                "name": "X",
-                                "type": "float",
-                                "required": true
-                            },
-                            {
-                                "name": "Y",
-                                "type": "float",
-                                "required": true
-                            }
-                        ]
-                    },
+                    "name": "Max",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "X",
+                            "type": "float",
+                            "required": true
+                        },
+                        {
+                            "name": "Y",
+                            "type": "float",
+                            "required": true
+                        }
+                    ],
                     "required": true
                 }
             ]
         },
         {
             "signature": "ZNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Music",
-                "type": "formId",
-                "signatures": [
-                    "MUSC"
-                ]
-            }
+            "name": "Music",
+            "type": "formId",
+            "signatures": [
+                "MUSC"
+            ]
         },
         {
             "signature": "NNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Canopy Shadow (unused)",
-                "type": "string"
-            }
+            "name": "Canopy Shadow (unused)",
+            "type": "string"
         },
         {
             "signature": "XNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Water Noise Texture",
-                "type": "string"
-            }
+            "name": "Water Noise Texture",
+            "type": "string"
         },
         {
             "signature": "TNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "HD LOD Diffuse Texture",
-                "type": "string"
-            }
+            "name": "HD LOD Diffuse Texture",
+            "type": "string"
         },
         {
             "signature": "UNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "HD LOD Normal Texture",
-                "type": "string"
-            }
+            "name": "HD LOD Normal Texture",
+            "type": "string"
         },
         {
             "signature": "XWEM",
-            "type": "subrecord",
-            "element": {
-                "name": "Water Environment Map (unused)",
-                "type": "string"
-            }
+            "name": "Water Environment Map (unused)",
+            "type": "string"
         },
         {
             "id": "OFST"

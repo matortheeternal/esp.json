@@ -1,9 +1,6 @@
 {
     "signature": "FULL",
-    "type": "subrecord",
-    "element": {
-        "name": "Name",
-        "type": "string",
-        "localized": true
-    }
+    "name": "Name",
+    "type": "string",
+    "localized": true
 }

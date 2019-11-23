@@ -1,117 +1,114 @@
 {
     "signature": "AIDT",
-    "type": "subrecord",
-    "element": {
-        "name": "AI Data",
-        "type": "struct",
-        "elements": [
-            {
-                "name": "Aggression",
-                "type": "uint8",
-                "format": {
-                    "type": "enum",
-                    "options": {
-                        "0": "Unaggressive",
-                        "1": "Aggressive",
-                        "2": "Very Aggressive",
-                        "3": "Frenzied"
-                    }
+    "name": "AI Data",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Aggression",
+            "type": "uint8",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "Unaggressive",
+                    "1": "Aggressive",
+                    "2": "Very Aggressive",
+                    "3": "Frenzied"
                 }
-            },
-            {
-                "name": "Confidence",
-                "type": "uint8",
-                "format": {
-                    "type": "enum",
-                    "options": {
-                        "0": "Cowardly",
-                        "1": "Cautious",
-                        "2": "Average",
-                        "3": "Brave",
-                        "4": "Foolhardy"
-                    }
-                }
-            },
-            {
-                "name": "Energy Level",
-                "type": "uint8"
-            },
-            {
-                "name": "Responsibility",
-                "type": "uint8",
-                "format": {
-                    "type": "enum",
-                    "options": {
-                        "0": "Any crime",
-                        "1": "Violence against enemies",
-                        "2": "Property crime only",
-                        "3": "No crime"
-                    }
-                }
-            },
-            {
-                "name": "Mood",
-                "type": "uint8",
-                "format": {
-                    "type": "enum",
-                    "options": {
-                        "0": "Neutral",
-                        "1": "Angry",
-                        "2": "Fear",
-                        "3": "Happy",
-                        "4": "Sad",
-                        "5": "Surprised",
-                        "6": "Puzzled",
-                        "7": "Disgusted"
-                    }
-                }
-            },
-            {
-                "name": "Assistance",
-                "type": "uint8",
-                "format": {
-                    "type": "enum",
-                    "options": {
-                        "0": "Helps Nobody",
-                        "1": "Helps Allies",
-                        "2": "Helps Friends and Allies"
-                    }
-                }
-            },
-            {
-                "name": "Aggro",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Aggro Radius Behavior",
-                        "type": "uint8",
-                        "format": {
-                            "type": "enum",
-                            "options": {
-                                "0": "False",
-                                "1": "True"
-                            }
-                        }
-                    },
-                    {
-                        "name": "Unused",
-                        "type": "uint8"
-                    },
-                    {
-                        "name": "Warn",
-                        "type": "uint32"
-                    },
-                    {
-                        "name": "Warn/Attack",
-                        "type": "uint32"
-                    },
-                    {
-                        "name": "Attack",
-                        "type": "uint32"
-                    }
-                ]
             }
-        ]
-    },
+        },
+        {
+            "name": "Confidence",
+            "type": "uint8",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "Cowardly",
+                    "1": "Cautious",
+                    "2": "Average",
+                    "3": "Brave",
+                    "4": "Foolhardy"
+                }
+            }
+        },
+        {
+            "name": "Energy Level",
+            "type": "uint8"
+        },
+        {
+            "name": "Responsibility",
+            "type": "uint8",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "Any crime",
+                    "1": "Violence against enemies",
+                    "2": "Property crime only",
+                    "3": "No crime"
+                }
+            }
+        },
+        {
+            "name": "Mood",
+            "type": "uint8",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "Neutral",
+                    "1": "Angry",
+                    "2": "Fear",
+                    "3": "Happy",
+                    "4": "Sad",
+                    "5": "Surprised",
+                    "6": "Puzzled",
+                    "7": "Disgusted"
+                }
+            }
+        },
+        {
+            "name": "Assistance",
+            "type": "uint8",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "Helps Nobody",
+                    "1": "Helps Allies",
+                    "2": "Helps Friends and Allies"
+                }
+            }
+        },
+        {
+            "name": "Aggro",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Aggro Radius Behavior",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "False",
+                            "1": "True"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Warn",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Warn/Attack",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Attack",
+                    "type": "uint32"
+                }
+            ]
+        }
+    ],
     "required": true
 }

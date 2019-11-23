@@ -36,108 +36,98 @@
         },
         {
             "signature": "DATA",
-            "type": "subrecord",
-            "element": {
-                "name": "",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Time",
-                        "type": "int32"
-                    },
-                    {
-                        "name": "Radius",
-                        "type": "uint32"
-                    },
-                    {
-                        "id": "ByteColors"
-                    },
-                    {
-                        "name": "Flags",
-                        "type": "uint32",
-                        "format": {
-                            "type": "flags",
-                            "flags": {
-                                "0": "Dynamic",
-                                "1": "Can be Carried",
-                                "2": "Negative",
-                                "3": "Flicker",
-                                "4": "Unknown",
-                                "5": "Off By Default",
-                                "6": "Flicker Slow",
-                                "7": "Pulse",
-                                "8": "Pulse Slow",
-                                "9": "Spot Light",
-                                "10": "Shadow Spotlight",
-                                "11": "Shadow Hemisphere",
-                                "12": "Shadow Omnidirectional",
-                                "13": "Portal-strict"
-                            }
+            "name": "",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Time",
+                    "type": "int32"
+                },
+                {
+                    "name": "Radius",
+                    "type": "uint32"
+                },
+                {
+                    "id": "ByteColors"
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Dynamic",
+                            "1": "Can be Carried",
+                            "2": "Negative",
+                            "3": "Flicker",
+                            "4": "Unknown",
+                            "5": "Off By Default",
+                            "6": "Flicker Slow",
+                            "7": "Pulse",
+                            "8": "Pulse Slow",
+                            "9": "Spot Light",
+                            "10": "Shadow Spotlight",
+                            "11": "Shadow Hemisphere",
+                            "12": "Shadow Omnidirectional",
+                            "13": "Portal-strict"
                         }
-                    },
-                    {
-                        "name": "Falloff Exponent",
-                        "type": "float"
-                    },
-                    {
-                        "name": "FOV",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Near Clip",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Flicker Effect",
-                        "type": "struct",
-                        "elements": [
-                            {
-                                "name": "Period",
-                                "type": "float",
-                                "required": true
-                            },
-                            {
-                                "name": "Intensity Amplitude",
-                                "type": "float"
-                            },
-                            {
-                                "name": "Movement Amplitude",
-                                "type": "float"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "Value",
-                        "type": "uint32"
-                    },
-                    {
-                        "name": "Weight",
-                        "type": "float"
                     }
-                ]
-            },
+                },
+                {
+                    "name": "Falloff Exponent",
+                    "type": "float"
+                },
+                {
+                    "name": "FOV",
+                    "type": "float"
+                },
+                {
+                    "name": "Near Clip",
+                    "type": "float"
+                },
+                {
+                    "name": "Flicker Effect",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Period",
+                            "type": "float",
+                            "required": true
+                        },
+                        {
+                            "name": "Intensity Amplitude",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Movement Amplitude",
+                            "type": "float"
+                        }
+                    ]
+                },
+                {
+                    "name": "Value",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                }
+            ],
             "required": true
         },
         {
             "signature": "FNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Fade value",
-                "type": "float",
-                "required": true
-            },
+            "name": "Fade value",
+            "type": "float",
             "required": true
         },
         {
             "signature": "SNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Sound",
-                "type": "formId",
-                "signatures": [
-                    "SNDR"
-                ]
-            }
+            "name": "Sound",
+            "type": "formId",
+            "signatures": [
+                "SNDR"
+            ]
         }
     ]
 }

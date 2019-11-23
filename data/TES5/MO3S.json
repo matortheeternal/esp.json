@@ -1,36 +1,33 @@
 {
     "signature": "MO3S",
-    "type": "subrecord",
+    "name": "Alternate Textures",
+    "type": "array",
     "element": {
-        "name": "Alternate Textures",
-        "type": "array",
-        "element": {
-            "name": "Alternate Texture",
-            "type": "struct",
-            "elements": [
-                {
-                    "name": "3D Name",
-                    "type": "string",
-                    "prefix": 4
-                },
-                {
-                    "name": "New Texture",
-                    "type": "formId",
-                    "signatures": [
-                        "TXST"
-                    ]
-                },
-                {
-                    "name": "3D Index",
-                    "type": "int32"
-                }
-            ],
-            "sortKey": [
-                0,
-                2
-            ]
-        },
-        "sorted": true,
-        "prefix": 4
-    }
+        "name": "Alternate Texture",
+        "type": "struct",
+        "elements": [
+            {
+                "name": "3D Name",
+                "type": "string",
+                "prefix": 4
+            },
+            {
+                "name": "New Texture",
+                "type": "formId",
+                "signatures": [
+                    "TXST"
+                ]
+            },
+            {
+                "name": "3D Index",
+                "type": "int32"
+            }
+        ],
+        "sortKey": [
+            0,
+            2
+        ]
+    },
+    "sorted": true,
+    "prefix": 4
 }

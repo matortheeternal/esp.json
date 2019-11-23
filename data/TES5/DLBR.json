@@ -8,50 +8,38 @@
         },
         {
             "signature": "QNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Quest",
-                "type": "formId",
-                "signatures": [
-                    "QUST"
-                ]
-            },
+            "name": "Quest",
+            "type": "formId",
+            "signatures": [
+                "QUST"
+            ],
             "required": true
         },
         {
             "signature": "TNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Unknown",
-                "type": "uint32"
-            }
+            "name": "Unknown",
+            "type": "uint32"
         },
         {
             "signature": "DNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Flags",
-                "type": "uint32",
-                "format": {
-                    "type": "flags",
-                    "flags": {
-                        "0": "Top-Level",
-                        "1": "Blocking",
-                        "2": "Exclusive"
-                    }
+            "name": "Flags",
+            "type": "uint32",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Top-Level",
+                    "1": "Blocking",
+                    "2": "Exclusive"
                 }
             }
         },
         {
             "signature": "SNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Starting Topic",
-                "type": "formId",
-                "signatures": [
-                    "DIAL"
-                ]
-            },
+            "name": "Starting Topic",
+            "type": "formId",
+            "signatures": [
+                "DIAL"
+            ],
             "required": true
         }
     ]

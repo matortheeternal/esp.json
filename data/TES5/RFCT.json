@@ -8,41 +8,38 @@
         },
         {
             "signature": "DATA",
-            "type": "subrecord",
-            "element": {
-                "name": "Effect Data",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Effect Art",
-                        "type": "formId",
-                        "signatures": [
-                            "ARTO",
-                            "NULL"
-                        ]
-                    },
-                    {
-                        "name": "Shader",
-                        "type": "formId",
-                        "signatures": [
-                            "EFSH",
-                            "NULL"
-                        ]
-                    },
-                    {
-                        "name": "Flags",
-                        "type": "uint32",
-                        "format": {
-                            "type": "flags",
-                            "flags": {
-                                "0": "Rotate to Face Target",
-                                "1": "Attach to Camera",
-                                "2": "Inherit Rotation"
-                            }
+            "name": "Effect Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Effect Art",
+                    "type": "formId",
+                    "signatures": [
+                        "ARTO",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Shader",
+                    "type": "formId",
+                    "signatures": [
+                        "EFSH",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Rotate to Face Target",
+                            "1": "Attach to Camera",
+                            "2": "Inherit Rotation"
                         }
                     }
-                ]
-            },
+                }
+            ],
             "required": true
         }
     ]

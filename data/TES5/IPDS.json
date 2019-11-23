@@ -11,30 +11,27 @@
             "type": "memberArray",
             "member": {
                 "signature": "PNAM",
-                "type": "subrecord",
-                "element": {
-                    "name": "",
-                    "type": "struct",
-                    "elements": [
-                        {
-                            "name": "Material",
-                            "type": "formId",
-                            "signatures": [
-                                "MATT"
-                            ]
-                        },
-                        {
-                            "name": "Impact",
-                            "type": "formId",
-                            "signatures": [
-                                "IPCT"
-                            ]
-                        }
-                    ],
-                    "sortKey": [
-                        0
-                    ]
-                }
+                "name": "",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Material",
+                        "type": "formId",
+                        "signatures": [
+                            "MATT"
+                        ]
+                    },
+                    {
+                        "name": "Impact",
+                        "type": "formId",
+                        "signatures": [
+                            "IPCT"
+                        ]
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
             },
             "sorted": true
         }

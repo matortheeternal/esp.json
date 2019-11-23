@@ -22,16 +22,13 @@
         },
         {
             "signature": "FNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Playable",
-                "type": "uint32",
-                "format": {
-                    "type": "enum",
-                    "options": {
-                        "0": "False",
-                        "1": "True"
-                    }
+            "name": "Playable",
+            "type": "uint32",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "False",
+                    "1": "True"
                 }
             }
         }

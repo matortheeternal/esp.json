@@ -8,14 +8,11 @@
         },
         {
             "signature": "QNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Quest",
-                "type": "formId",
-                "signatures": [
-                    "QUST"
-                ]
-            },
+            "name": "Quest",
+            "type": "formId",
+            "signatures": [
+                "QUST"
+            ],
             "required": true
         },
         {
@@ -23,14 +20,11 @@
             "type": "memberArray",
             "member": {
                 "signature": "BNAM",
-                "type": "subrecord",
-                "element": {
-                    "name": "Branch",
-                    "type": "formId",
-                    "signatures": [
-                        "DLBR"
-                    ]
-                }
+                "name": "Branch",
+                "type": "formId",
+                "signatures": [
+                    "DLBR"
+                ]
             }
         },
         {
@@ -42,27 +36,18 @@
                 "members": [
                     {
                         "signature": "TNAM",
-                        "type": "subrecord",
-                        "element": {
-                            "type": "bytes"
-                        }
+                        "type": "bytes"
                     }
                 ]
             }
         },
         {
             "signature": "ENAM",
-            "type": "subrecord",
-            "element": {
-                "type": "bytes"
-            }
+            "type": "bytes"
         },
         {
             "signature": "DNAM",
-            "type": "subrecord",
-            "element": {
-                "type": "bytes"
-            }
+            "type": "bytes"
         }
     ]
 }

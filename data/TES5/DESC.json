@@ -1,9 +1,6 @@
 {
     "signature": "DESC",
-    "type": "subrecord",
-    "element": {
-        "name": "Description",
-        "type": "string",
-        "localized": true
-    }
+    "name": "Description",
+    "type": "string",
+    "localized": true
 }

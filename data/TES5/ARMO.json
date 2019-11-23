@@ -31,11 +31,8 @@
         },
         {
             "signature": "EAMT",
-            "type": "subrecord",
-            "element": {
-                "name": "Enchantment Amount",
-                "type": "uint16"
-            }
+            "name": "Enchantment Amount",
+            "type": "uint16"
         },
         {
             "name": "Male world model",
@@ -43,19 +40,13 @@
             "members": [
                 {
                     "signature": "MOD2",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Model FileName",
-                        "type": "string"
-                    }
+                    "name": "Model FileName",
+                    "type": "string"
                 },
                 {
                     "signature": "MO2T",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Texture Files Hashes",
-                        "type": "bytes"
-                    }
+                    "name": "Texture Files Hashes",
+                    "type": "bytes"
                 },
                 {
                     "id": "MO2S"
@@ -71,19 +62,13 @@
             "members": [
                 {
                     "signature": "MOD4",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Model FileName",
-                        "type": "string"
-                    }
+                    "name": "Model FileName",
+                    "type": "string"
                 },
                 {
                     "signature": "MO4T",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Texture Files Hashes",
-                        "type": "bytes"
-                    }
+                    "name": "Texture Files Hashes",
+                    "type": "bytes"
                 },
                 {
                     "id": "MO4S"
@@ -107,47 +92,35 @@
         },
         {
             "signature": "BMCT",
-            "type": "subrecord",
-            "element": {
-                "name": "Ragdoll Constraint Template",
-                "type": "string"
-            }
+            "name": "Ragdoll Constraint Template",
+            "type": "string"
         },
         {
             "id": "ETYP"
         },
         {
             "signature": "BIDS",
-            "type": "subrecord",
-            "element": {
-                "name": "Bash Impact Data Set",
-                "type": "formId",
-                "signatures": [
-                    "IPDS"
-                ]
-            }
+            "name": "Bash Impact Data Set",
+            "type": "formId",
+            "signatures": [
+                "IPDS"
+            ]
         },
         {
             "signature": "BAMT",
-            "type": "subrecord",
-            "element": {
-                "name": "Alternate Block Material",
-                "type": "formId",
-                "signatures": [
-                    "MATT"
-                ]
-            }
+            "name": "Alternate Block Material",
+            "type": "formId",
+            "signatures": [
+                "MATT"
+            ]
         },
         {
             "signature": "RNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Race",
-                "type": "formId",
-                "signatures": [
-                    "RACE"
-                ]
-            }
+            "name": "Race",
+            "type": "formId",
+            "signatures": [
+                "RACE"
+            ]
         },
         {
             "id": "KSIZ"
@@ -163,58 +136,46 @@
             "type": "memberArray",
             "member": {
                 "signature": "MODL",
-                "type": "subrecord",
-                "element": {
-                    "name": "Model FileName",
-                    "type": "formId",
-                    "signatures": [
-                        "ARMA",
-                        "NULL"
-                    ]
-                }
+                "name": "Model FileName",
+                "type": "formId",
+                "signatures": [
+                    "ARMA",
+                    "NULL"
+                ]
             }
         },
         {
             "signature": "DATA",
-            "type": "subrecord",
-            "element": {
-                "name": "Data",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Value",
-                        "type": "int32"
-                    },
-                    {
-                        "name": "Weight",
-                        "type": "float"
-                    }
-                ]
-            },
+            "name": "Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Value",
+                    "type": "int32"
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                }
+            ],
             "required": true
         },
         {
             "signature": "DNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Armor Rating",
-                "type": "int32",
-                "format": {
-                    "type": "divide",
-                    "value": 100
-                }
+            "name": "Armor Rating",
+            "type": "int32",
+            "format": {
+                "type": "divide",
+                "value": 100
             }
         },
         {
             "signature": "TNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Template Armor",
-                "type": "formId",
-                "signatures": [
-                    "ARMO"
-                ]
-            }
+            "name": "Template Armor",
+            "type": "formId",
+            "signatures": [
+                "ARMO"
+            ]
         }
     ]
 }

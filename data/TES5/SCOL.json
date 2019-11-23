@@ -23,72 +23,66 @@
                 "members": [
                     {
                         "signature": "ONAM",
-                        "type": "subrecord",
-                        "element": {
-                            "name": "Static",
-                            "type": "formId",
-                            "signatures": [
-                                "STAT"
-                            ]
-                        }
+                        "name": "Static",
+                        "type": "formId",
+                        "signatures": [
+                            "STAT"
+                        ]
                     },
                     {
                         "signature": "DATA",
-                        "type": "subrecord",
+                        "name": "Placements",
+                        "type": "array",
                         "element": {
-                            "name": "Placements",
-                            "type": "array",
-                            "element": {
-                                "name": "Placement",
-                                "type": "struct",
-                                "elements": [
-                                    {
-                                        "name": "Position",
-                                        "type": "struct",
-                                        "elements": [
-                                            {
-                                                "name": "X",
-                                                "type": "float"
-                                            },
-                                            {
-                                                "name": "Y",
-                                                "type": "float"
-                                            },
-                                            {
-                                                "name": "Z",
-                                                "type": "float"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "name": "Rotation",
-                                        "type": "struct",
-                                        "elements": [
-                                            {
-                                                "name": "X",
-                                                "type": "float",
-                                                "required": true
-                                            },
-                                            {
-                                                "name": "Y",
-                                                "type": "float",
-                                                "required": true
-                                            },
-                                            {
-                                                "name": "Z",
-                                                "type": "float",
-                                                "required": true
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "name": "Scale",
-                                        "type": "float"
-                                    }
-                                ]
-                            },
-                            "sorted": true
-                        }
+                            "name": "Placement",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Position",
+                                    "type": "struct",
+                                    "elements": [
+                                        {
+                                            "name": "X",
+                                            "type": "float"
+                                        },
+                                        {
+                                            "name": "Y",
+                                            "type": "float"
+                                        },
+                                        {
+                                            "name": "Z",
+                                            "type": "float"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Rotation",
+                                    "type": "struct",
+                                    "elements": [
+                                        {
+                                            "name": "X",
+                                            "type": "float",
+                                            "required": true
+                                        },
+                                        {
+                                            "name": "Y",
+                                            "type": "float",
+                                            "required": true
+                                        },
+                                        {
+                                            "name": "Z",
+                                            "type": "float",
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Scale",
+                                    "type": "float"
+                                }
+                            ]
+                        },
+                        "sorted": true
                     }
                 ]
             },

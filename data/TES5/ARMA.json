@@ -11,72 +11,66 @@
         },
         {
             "signature": "RNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Race",
-                "type": "formId",
-                "signatures": [
-                    "RACE"
-                ]
-            }
+            "name": "Race",
+            "type": "formId",
+            "signatures": [
+                "RACE"
+            ]
         },
         {
             "signature": "DNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Data",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Male Priority",
-                        "type": "uint8"
-                    },
-                    {
-                        "name": "Female Priority",
-                        "type": "uint8"
-                    },
-                    {
-                        "name": "Weight slider - Male",
-                        "type": "uint8",
-                        "format": {
-                            "type": "flags",
-                            "flags": {
-                                "0": "Unknown 0",
-                                "1": "Enabled"
-                            }
+            "name": "Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Male Priority",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Female Priority",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Weight slider - Male",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Unknown 0",
+                            "1": "Enabled"
                         }
-                    },
-                    {
-                        "name": "Weight slider - Female",
-                        "type": "uint8",
-                        "format": {
-                            "type": "flags",
-                            "flags": {
-                                "0": "Unknown 0",
-                                "1": "Enabled"
-                            }
-                        }
-                    },
-                    {
-                        "name": "Unknown",
-                        "type": "bytes",
-                        "size": 2
-                    },
-                    {
-                        "name": "Detection Sound Value",
-                        "type": "uint8"
-                    },
-                    {
-                        "name": "Unknown",
-                        "type": "bytes",
-                        "size": 1
-                    },
-                    {
-                        "name": "Weapon Adjust",
-                        "type": "float"
                     }
-                ]
-            },
+                },
+                {
+                    "name": "Weight slider - Female",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Unknown 0",
+                            "1": "Enabled"
+                        }
+                    }
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 2
+                },
+                {
+                    "name": "Detection Sound Value",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 1
+                },
+                {
+                    "name": "Weapon Adjust",
+                    "type": "float"
+                }
+            ],
             "required": true
         },
         {
@@ -85,19 +79,13 @@
             "members": [
                 {
                     "signature": "MOD2",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Model FileName",
-                        "type": "string"
-                    }
+                    "name": "Model FileName",
+                    "type": "string"
                 },
                 {
                     "signature": "MO2T",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Texture Files Hashes",
-                        "type": "bytes"
-                    }
+                    "name": "Texture Files Hashes",
+                    "type": "bytes"
                 },
                 {
                     "id": "MO2S"
@@ -111,19 +99,13 @@
             "members": [
                 {
                     "signature": "MOD3",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Model FileName",
-                        "type": "string"
-                    }
+                    "name": "Model FileName",
+                    "type": "string"
                 },
                 {
                     "signature": "MO3T",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Texture Files Hashes",
-                        "type": "bytes"
-                    }
+                    "name": "Texture Files Hashes",
+                    "type": "bytes"
                 },
                 {
                     "id": "MO3S"
@@ -136,19 +118,13 @@
             "members": [
                 {
                     "signature": "MOD4",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Model FileName",
-                        "type": "string"
-                    }
+                    "name": "Model FileName",
+                    "type": "string"
                 },
                 {
                     "signature": "MO4T",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Texture Files Hashes",
-                        "type": "bytes"
-                    }
+                    "name": "Texture Files Hashes",
+                    "type": "bytes"
                 },
                 {
                     "id": "MO4S"
@@ -161,19 +137,13 @@
             "members": [
                 {
                     "signature": "MOD5",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Model FileName",
-                        "type": "string"
-                    }
+                    "name": "Model FileName",
+                    "type": "string"
                 },
                 {
                     "signature": "MO5T",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Texture Files Hashes",
-                        "type": "bytes"
-                    }
+                    "name": "Texture Files Hashes",
+                    "type": "bytes"
                 },
                 {
                     "id": "MO5S"
@@ -182,91 +152,70 @@
         },
         {
             "signature": "NAM0",
-            "type": "subrecord",
-            "element": {
-                "name": "Male Skin Texture",
-                "type": "formId",
-                "signatures": [
-                    "TXST",
-                    "NULL"
-                ]
-            }
+            "name": "Male Skin Texture",
+            "type": "formId",
+            "signatures": [
+                "TXST",
+                "NULL"
+            ]
         },
         {
             "signature": "NAM1",
-            "type": "subrecord",
-            "element": {
-                "name": "Female Skin texture",
-                "type": "formId",
-                "signatures": [
-                    "TXST",
-                    "NULL"
-                ]
-            }
+            "name": "Female Skin texture",
+            "type": "formId",
+            "signatures": [
+                "TXST",
+                "NULL"
+            ]
         },
         {
             "signature": "NAM2",
-            "type": "subrecord",
-            "element": {
-                "name": "Male Skin Texture Swap List",
-                "type": "formId",
-                "signatures": [
-                    "FLST",
-                    "NULL"
-                ]
-            }
+            "name": "Male Skin Texture Swap List",
+            "type": "formId",
+            "signatures": [
+                "FLST",
+                "NULL"
+            ]
         },
         {
             "signature": "NAM3",
-            "type": "subrecord",
-            "element": {
-                "name": "Female Skin Texture Swap List",
-                "type": "formId",
-                "signatures": [
-                    "FLST",
-                    "NULL"
-                ]
-            }
+            "name": "Female Skin Texture Swap List",
+            "type": "formId",
+            "signatures": [
+                "FLST",
+                "NULL"
+            ]
         },
         {
             "name": "Additional Races",
             "type": "memberArray",
             "member": {
                 "signature": "MODL",
-                "type": "subrecord",
-                "element": {
-                    "name": "Race",
-                    "type": "formId",
-                    "signatures": [
-                        "RACE",
-                        "NULL"
-                    ]
-                }
+                "name": "Race",
+                "type": "formId",
+                "signatures": [
+                    "RACE",
+                    "NULL"
+                ]
             },
             "sorted": true
         },
         {
             "signature": "SNDD",
-            "type": "subrecord",
-            "element": {
-                "name": "Footstep Sound",
-                "type": "formId",
-                "signatures": [
-                    "FSTS",
-                    "NULL"
-                ]
-            }
+            "name": "Footstep Sound",
+            "type": "formId",
+            "signatures": [
+                "FSTS",
+                "NULL"
+            ]
         },
         {
             "signature": "ONAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Art Object",
-                "type": "formId",
-                "signatures": [
-                    "ARTO"
-                ]
-            }
+            "name": "Art Object",
+            "type": "formId",
+            "signatures": [
+                "ARTO"
+            ]
         }
     ]
 }

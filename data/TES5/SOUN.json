@@ -12,29 +12,20 @@
         },
         {
             "signature": "FNAM",
-            "type": "subrecord",
-            "element": {
-                "type": "bytes"
-            }
+            "type": "bytes"
         },
         {
             "signature": "SNDD",
-            "type": "subrecord",
-            "element": {
-                "type": "bytes"
-            }
+            "type": "bytes"
         },
         {
             "signature": "SDSC",
-            "type": "subrecord",
-            "element": {
-                "name": "Sound Descriptor",
-                "type": "formId",
-                "signatures": [
-                    "SNDR",
-                    "NULL"
-                ]
-            }
+            "name": "Sound Descriptor",
+            "type": "formId",
+            "signatures": [
+                "SNDR",
+                "NULL"
+            ]
         }
     ]
 }

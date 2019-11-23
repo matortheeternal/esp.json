@@ -8,31 +8,25 @@
         },
         {
             "signature": "PNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Parent ",
-                "type": "formId",
-                "signatures": [
-                    "SMQN",
-                    "SMBN",
-                    "SMEN",
-                    "NULL"
-                ]
-            }
+            "name": "Parent ",
+            "type": "formId",
+            "signatures": [
+                "SMQN",
+                "SMBN",
+                "SMEN",
+                "NULL"
+            ]
         },
         {
             "signature": "SNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Previous Sibling ",
-                "type": "formId",
-                "signatures": [
-                    "SMQN",
-                    "SMBN",
-                    "SMEN",
-                    "NULL"
-                ]
-            }
+            "name": "Previous Sibling ",
+            "type": "formId",
+            "signatures": [
+                "SMQN",
+                "SMBN",
+                "SMEN",
+                "NULL"
+            ]
         },
         {
             "id": "CITC",
@@ -43,56 +37,44 @@
         },
         {
             "signature": "DNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Flags",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Node Flags",
-                        "type": "uint16",
-                        "format": {
-                            "id": "SMNodeFlags"
-                        }
-                    },
-                    {
-                        "name": "Quest Flags",
-                        "type": "uint16",
-                        "format": {
-                            "type": "flags",
-                            "flags": {
-                                "0": "Do all before repeating",
-                                "1": "Shares event",
-                                "2": "Num quests to run"
-                            }
+            "name": "Flags",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Node Flags",
+                    "type": "uint16",
+                    "format": {
+                        "id": "SMNodeFlags"
+                    }
+                },
+                {
+                    "name": "Quest Flags",
+                    "type": "uint16",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Do all before repeating",
+                            "1": "Shares event",
+                            "2": "Num quests to run"
                         }
                     }
-                ]
-            }
+                }
+            ]
         },
         {
             "signature": "XNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Max concurrent quests",
-                "type": "uint32"
-            }
+            "name": "Max concurrent quests",
+            "type": "uint32"
         },
         {
             "signature": "MNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Num quests to run",
-                "type": "uint32"
-            }
+            "name": "Num quests to run",
+            "type": "uint32"
         },
         {
             "signature": "QNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Quest Count",
-                "type": "uint32"
-            }
+            "name": "Quest Count",
+            "type": "uint32"
         },
         {
             "name": "Quests",
@@ -103,30 +85,20 @@
                 "members": [
                     {
                         "signature": "NNAM",
-                        "type": "subrecord",
-                        "element": {
-                            "name": "Quest",
-                            "type": "formId",
-                            "signatures": [
-                                "QUST"
-                            ]
-                        }
+                        "name": "Quest",
+                        "type": "formId",
+                        "signatures": [
+                            "QUST"
+                        ]
                     },
                     {
                         "signature": "FNAM",
-                        "type": "subrecord",
-                        "element": {
-                            "type": "bytes"
-                        }
+                        "type": "bytes"
                     },
                     {
                         "signature": "RNAM",
-                        "type": "subrecord",
-                        "element": {
-                            "name": "Hours until reset",
-                            "type": "float",
-                            "required": true
-                        },
+                        "name": "Hours until reset",
+                        "type": "float",
                         "required": true
                     }
                 ],

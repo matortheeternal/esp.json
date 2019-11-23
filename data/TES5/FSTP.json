@@ -8,24 +8,18 @@
         },
         {
             "signature": "DATA",
-            "type": "subrecord",
-            "element": {
-                "name": "Impact Data Set",
-                "type": "formId",
-                "signatures": [
-                    "IPDS",
-                    "NULL"
-                ]
-            },
+            "name": "Impact Data Set",
+            "type": "formId",
+            "signatures": [
+                "IPDS",
+                "NULL"
+            ],
             "required": true
         },
         {
             "signature": "ANAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Tag",
-                "type": "string"
-            },
+            "name": "Tag",
+            "type": "string",
             "required": true
         }
     ]

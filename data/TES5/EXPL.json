@@ -24,113 +24,107 @@
         },
         {
             "signature": "MNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Image Space Modifier",
-                "type": "formId",
-                "signatures": [
-                    "IMAD"
-                ]
-            }
+            "name": "Image Space Modifier",
+            "type": "formId",
+            "signatures": [
+                "IMAD"
+            ]
         },
         {
             "signature": "DATA",
-            "type": "subrecord",
-            "element": {
-                "name": "Data",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Light",
-                        "type": "formId",
-                        "signatures": [
-                            "LIGH",
-                            "NULL"
-                        ]
-                    },
-                    {
-                        "name": "Sound 1",
-                        "type": "formId",
-                        "signatures": [
-                            "SNDR",
-                            "NULL"
-                        ]
-                    },
-                    {
-                        "name": "Sound 2",
-                        "type": "formId",
-                        "signatures": [
-                            "SNDR",
-                            "NULL"
-                        ]
-                    },
-                    {
-                        "name": "Impact Data Set",
-                        "type": "formId",
-                        "signatures": [
-                            "IPDS",
-                            "NULL"
-                        ]
-                    },
-                    {
-                        "name": "Placed Object",
-                        "type": "formId"
-                    },
-                    {
-                        "name": "Spawn Projectile",
-                        "type": "formId",
-                        "signatures": [
-                            "PROJ",
-                            "NULL"
-                        ]
-                    },
-                    {
-                        "name": "Force",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Damage",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Radius",
-                        "type": "float"
-                    },
-                    {
-                        "name": "IS Radius",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Vertical Offset Mult",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Flags",
-                        "type": "uint32",
-                        "format": {
-                            "type": "flags",
-                            "flags": {
-                                "0": "Unknown 0",
-                                "1": "Always Uses World Orientation",
-                                "2": "Knock Down - Always",
-                                "3": "Knock Down - By Formula",
-                                "4": "Ignore LOS Check",
-                                "5": "Push Explosion Source Ref Only",
-                                "6": "Ignore Image Space Swap",
-                                "7": "Chain",
-                                "8": "No Controller Vibration"
-                            }
-                        }
-                    },
-                    {
-                        "name": "Sound Level",
-                        "type": "uint32",
-                        "format": {
-                            "id": "SoundLevelEnum"
+            "name": "Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Light",
+                    "type": "formId",
+                    "signatures": [
+                        "LIGH",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Sound 1",
+                    "type": "formId",
+                    "signatures": [
+                        "SNDR",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Sound 2",
+                    "type": "formId",
+                    "signatures": [
+                        "SNDR",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Impact Data Set",
+                    "type": "formId",
+                    "signatures": [
+                        "IPDS",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Placed Object",
+                    "type": "formId"
+                },
+                {
+                    "name": "Spawn Projectile",
+                    "type": "formId",
+                    "signatures": [
+                        "PROJ",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Force",
+                    "type": "float"
+                },
+                {
+                    "name": "Damage",
+                    "type": "float"
+                },
+                {
+                    "name": "Radius",
+                    "type": "float"
+                },
+                {
+                    "name": "IS Radius",
+                    "type": "float"
+                },
+                {
+                    "name": "Vertical Offset Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Unknown 0",
+                            "1": "Always Uses World Orientation",
+                            "2": "Knock Down - Always",
+                            "3": "Knock Down - By Formula",
+                            "4": "Ignore LOS Check",
+                            "5": "Push Explosion Source Ref Only",
+                            "6": "Ignore Image Space Swap",
+                            "7": "Chain",
+                            "8": "No Controller Vibration"
                         }
                     }
-                ]
-            },
+                },
+                {
+                    "name": "Sound Level",
+                    "type": "uint32",
+                    "format": {
+                        "id": "SoundLevelEnum"
+                    }
+                }
+            ],
             "required": true
         }
     ]

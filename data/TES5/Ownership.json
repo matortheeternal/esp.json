@@ -4,24 +4,18 @@
     "members": [
         {
             "signature": "XOWN",
-            "type": "subrecord",
-            "element": {
-                "name": "Owner",
-                "type": "formId",
-                "signatures": [
-                    "FACT",
-                    "ACHR",
-                    "NPC_"
-                ]
-            }
+            "name": "Owner",
+            "type": "formId",
+            "signatures": [
+                "FACT",
+                "ACHR",
+                "NPC_"
+            ]
         },
         {
             "signature": "XRNK",
-            "type": "subrecord",
-            "element": {
-                "name": "Faction rank",
-                "type": "int32"
-            }
+            "name": "Faction rank",
+            "type": "int32"
         }
     ]
 }

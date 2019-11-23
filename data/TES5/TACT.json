@@ -39,41 +39,29 @@
         },
         {
             "signature": "PNAM",
-            "type": "subrecord",
-            "element": {
-                "type": "bytes"
-            },
+            "type": "bytes",
             "required": true
         },
         {
             "signature": "SNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Looping Sound",
-                "type": "formId",
-                "signatures": [
-                    "SNDR"
-                ]
-            }
+            "name": "Looping Sound",
+            "type": "formId",
+            "signatures": [
+                "SNDR"
+            ]
         },
         {
             "signature": "FNAM",
-            "type": "subrecord",
-            "element": {
-                "type": "bytes"
-            },
+            "type": "bytes",
             "required": true
         },
         {
             "signature": "VNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Voice Type",
-                "type": "formId",
-                "signatures": [
-                    "VTYP"
-                ]
-            }
+            "name": "Voice Type",
+            "type": "formId",
+            "signatures": [
+                "VTYP"
+            ]
         }
     ]
 }

@@ -15,27 +15,20 @@
         },
         {
             "signature": "FNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Type",
-                "type": "uint8",
-                "format": {
-                    "type": "enum",
-                    "options": {
-                        "39": "Float"
-                    }
+            "name": "Type",
+            "type": "uint8",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "39": "Float"
                 }
             },
             "defaultEditValue": "'Float'"
         },
         {
             "signature": "FLTV",
-            "type": "subrecord",
-            "element": {
-                "name": "Value",
-                "type": "float",
-                "required": true
-            },
+            "name": "Value",
+            "type": "float",
             "required": true
         }
     ]

@@ -1,8 +1,5 @@
 {
     "signature": "COCT",
-    "type": "subrecord",
-    "element": {
-        "name": "Count",
-        "type": "uint32"
-    }
+    "name": "Count",
+    "type": "uint32"
 }

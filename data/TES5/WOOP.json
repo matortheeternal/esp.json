@@ -11,12 +11,9 @@
         },
         {
             "signature": "TNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Translation",
-                "type": "string",
-                "localized": true
-            },
+            "name": "Translation",
+            "type": "string",
+            "localized": true,
             "required": true
         }
     ]

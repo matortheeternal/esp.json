@@ -1,9 +1,6 @@
 {
     "signature": "MDOB",
-    "type": "subrecord",
-    "element": {
-        "name": "Menu Display Object",
-        "type": "formId"
-    },
+    "name": "Menu Display Object",
+    "type": "formId",
     "required": true
 }

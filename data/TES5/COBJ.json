@@ -17,30 +17,21 @@
         },
         {
             "signature": "CNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Created Object",
-                "type": "formId"
-            }
+            "name": "Created Object",
+            "type": "formId"
         },
         {
             "signature": "BNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Workbench Keyword",
-                "type": "formId",
-                "signatures": [
-                    "KYWD"
-                ]
-            }
+            "name": "Workbench Keyword",
+            "type": "formId",
+            "signatures": [
+                "KYWD"
+            ]
         },
         {
             "signature": "NAM1",
-            "type": "subrecord",
-            "element": {
-                "name": "Created Object Count",
-                "type": "uint16"
-            }
+            "name": "Created Object Count",
+            "type": "uint16"
         }
     ]
 }

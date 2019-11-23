@@ -1,27 +1,24 @@
 {
     "signature": "EFIT",
-    "type": "subrecord",
-    "element": {
-        "name": "",
-        "type": "struct",
-        "elements": [
-            {
-                "name": "Magnitude",
-                "type": "float",
-                "required": true
-            },
-            {
-                "name": "Area",
-                "type": "uint32"
-            },
-            {
-                "name": "Duration",
-                "type": "uint32"
-            }
-        ],
-        "sortKey": [
-            3,
-            4
-        ]
-    }
+    "name": "",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Magnitude",
+            "type": "float",
+            "required": true
+        },
+        {
+            "name": "Area",
+            "type": "uint32"
+        },
+        {
+            "name": "Duration",
+            "type": "uint32"
+        }
+    ],
+    "sortKey": [
+        3,
+        4
+    ]
 }

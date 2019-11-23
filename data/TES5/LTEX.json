@@ -8,83 +8,65 @@
         },
         {
             "signature": "TNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Texture Set",
-                "type": "formId",
-                "signatures": [
-                    "TXST"
-                ]
-            },
+            "name": "Texture Set",
+            "type": "formId",
+            "signatures": [
+                "TXST"
+            ],
             "required": true
         },
         {
             "signature": "MNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Material Type",
-                "type": "formId",
-                "signatures": [
-                    "MATT",
-                    "NULL"
-                ]
-            },
+            "name": "Material Type",
+            "type": "formId",
+            "signatures": [
+                "MATT",
+                "NULL"
+            ],
             "required": true
         },
         {
             "signature": "HNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Havok Data",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Friction",
-                        "type": "uint8"
-                    },
-                    {
-                        "name": "Restitution",
-                        "type": "uint8"
-                    }
-                ]
-            },
+            "name": "Havok Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Friction",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Restitution",
+                    "type": "uint8"
+                }
+            ],
             "required": true
         },
         {
             "signature": "SNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Texture Specular Exponent",
-                "type": "uint8"
-            }
+            "name": "Texture Specular Exponent",
+            "type": "uint8"
         },
         {
             "name": "Grasses",
             "type": "memberArray",
             "member": {
                 "signature": "GNAM",
-                "type": "subrecord",
-                "element": {
-                    "name": "Grass",
-                    "type": "formId",
-                    "signatures": [
-                        "GRAS"
-                    ]
-                }
+                "name": "Grass",
+                "type": "formId",
+                "signatures": [
+                    "GRAS"
+                ]
             },
             "sorted": true
         },
         {
             "signature": "INAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Unused",
-                "type": "uint32",
-                "format": {
-                    "type": "flags",
-                    "flags": {
-                        "0": "Is Snow"
-                    }
+            "name": "Unused",
+            "type": "uint32",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Is Snow"
                 }
             }
         }

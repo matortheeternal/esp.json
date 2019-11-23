@@ -31,79 +31,61 @@
         },
         {
             "signature": "PNAM",
-            "type": "subrecord",
-            "element": {
-                "type": "bytes"
-            }
+            "type": "bytes"
         },
         {
             "signature": "RNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Activate Text Override",
-                "type": "string",
-                "localized": true
-            }
+            "name": "Activate Text Override",
+            "type": "string",
+            "localized": true
         },
         {
             "signature": "FNAM",
-            "type": "subrecord",
-            "element": {
-                "type": "bytes"
-            }
+            "type": "bytes"
         },
         {
             "signature": "PFIG",
-            "type": "subrecord",
-            "element": {
-                "name": "Ingredient",
-                "type": "formId",
-                "signatures": [
-                    "INGR",
-                    "ALCH",
-                    "LVLI",
-                    "MISC",
-                    "NULL"
-                ]
-            }
+            "name": "Ingredient",
+            "type": "formId",
+            "signatures": [
+                "INGR",
+                "ALCH",
+                "LVLI",
+                "MISC",
+                "NULL"
+            ]
         },
         {
             "signature": "SNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Sound",
-                "type": "formId",
-                "signatures": [
-                    "SNDR",
-                    "NULL"
-                ]
-            }
+            "name": "Sound",
+            "type": "formId",
+            "signatures": [
+                "SNDR",
+                "NULL"
+            ]
         },
         {
             "signature": "PFPC",
-            "type": "subrecord",
-            "element": {
-                "name": "Seasonal ingredient production",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Spring",
-                        "type": "uint8"
-                    },
-                    {
-                        "name": "Summer ",
-                        "type": "uint8"
-                    },
-                    {
-                        "name": "Fall",
-                        "type": "uint8"
-                    },
-                    {
-                        "name": "Winter",
-                        "type": "uint8"
-                    }
-                ]
-            },
+            "name": "Seasonal ingredient production",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Spring",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Summer ",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Fall",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Winter",
+                    "type": "uint8"
+                }
+            ],
             "required": true
         }
     ]

@@ -1,11 +1,8 @@
 {
     "signature": "ZNAM",
-    "type": "subrecord",
-    "element": {
-        "name": "Sound - Put Down",
-        "type": "formId",
-        "signatures": [
-            "SNDR"
-        ]
-    }
+    "name": "Sound - Put Down",
+    "type": "formId",
+    "signatures": [
+        "SNDR"
+    ]
 }

@@ -1,34 +1,31 @@
 {
     "signature": "OBND",
-    "type": "subrecord",
-    "element": {
-        "name": "Object Bounds",
-        "type": "struct",
-        "elements": [
-            {
-                "name": "X1",
-                "type": "int16"
-            },
-            {
-                "name": "Y1",
-                "type": "int16"
-            },
-            {
-                "name": "Z1",
-                "type": "int16"
-            },
-            {
-                "name": "X2",
-                "type": "int16"
-            },
-            {
-                "name": "Y2",
-                "type": "int16"
-            },
-            {
-                "name": "Z2",
-                "type": "int16"
-            }
-        ]
-    }
+    "name": "Object Bounds",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "X1",
+            "type": "int16"
+        },
+        {
+            "name": "Y1",
+            "type": "int16"
+        },
+        {
+            "name": "Z1",
+            "type": "int16"
+        },
+        {
+            "name": "X2",
+            "type": "int16"
+        },
+        {
+            "name": "Y2",
+            "type": "int16"
+        },
+        {
+            "name": "Z2",
+            "type": "int16"
+        }
+    ]
 }

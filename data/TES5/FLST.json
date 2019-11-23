@@ -5,11 +5,8 @@
     "members": [
         {
             "signature": "EDID",
-            "type": "subrecord",
-            "element": {
-                "name": "Editor ID",
-                "type": "string"
-            },
+            "name": "Editor ID",
+            "type": "string",
             "required": true
         },
         {
@@ -17,11 +14,8 @@
             "type": "memberArray",
             "member": {
                 "signature": "LNAM",
-                "type": "subrecord",
-                "element": {
-                    "name": "FormID",
-                    "type": "formId"
-                }
+                "name": "FormID",
+                "type": "formId"
             },
             "sorted": true,
             "required": true

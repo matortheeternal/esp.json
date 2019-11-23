@@ -8,20 +8,17 @@
         },
         {
             "signature": "INAM",
-            "type": "subrecord",
+            "name": "Items",
+            "type": "array",
             "element": {
-                "name": "Items",
-                "type": "array",
-                "element": {
-                    "name": "Item",
-                    "type": "formId",
-                    "signatures": [
-                        "ARMO",
-                        "LVLI"
-                    ]
-                },
-                "sorted": true
-            }
+                "name": "Item",
+                "type": "formId",
+                "signatures": [
+                    "ARMO",
+                    "LVLI"
+                ]
+            },
+            "sorted": true
         }
     ]
 }

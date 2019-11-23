@@ -8,47 +8,32 @@
         },
         {
             "signature": "MPRT",
-            "type": "subrecord",
-            "element": {
-                "name": "Male Parent Title",
-                "type": "string"
-            }
+            "name": "Male Parent Title",
+            "type": "string"
         },
         {
             "signature": "FPRT",
-            "type": "subrecord",
-            "element": {
-                "name": "Female Parent Title",
-                "type": "string"
-            }
+            "name": "Female Parent Title",
+            "type": "string"
         },
         {
             "signature": "MCHT",
-            "type": "subrecord",
-            "element": {
-                "name": "Male Child Title",
-                "type": "string"
-            }
+            "name": "Male Child Title",
+            "type": "string"
         },
         {
             "signature": "FCHT",
-            "type": "subrecord",
-            "element": {
-                "name": "Female Child Title",
-                "type": "string"
-            }
+            "name": "Female Child Title",
+            "type": "string"
         },
         {
             "signature": "DATA",
-            "type": "subrecord",
-            "element": {
-                "name": "Flags",
-                "type": "uint32",
-                "format": {
-                    "type": "flags",
-                    "flags": {
-                        "0": "Family Association"
-                    }
+            "name": "Flags",
+            "type": "uint32",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Family Association"
                 }
             }
         }

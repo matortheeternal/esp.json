@@ -4,37 +4,34 @@
     "members": [
         {
             "signature": "DEST",
-            "type": "subrecord",
-            "element": {
-                "name": "Header",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Health",
-                        "type": "int32"
-                    },
-                    {
-                        "name": "Count",
-                        "type": "uint8"
-                    },
-                    {
-                        "name": "VATS Targetable",
-                        "type": "uint8",
-                        "format": {
-                            "type": "enum",
-                            "options": {
-                                "0": "False",
-                                "1": "True"
-                            }
+            "name": "Header",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Health",
+                    "type": "int32"
+                },
+                {
+                    "name": "Count",
+                    "type": "uint8"
+                },
+                {
+                    "name": "VATS Targetable",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "False",
+                            "1": "True"
                         }
-                    },
-                    {
-                        "name": "Unknown",
-                        "type": "bytes",
-                        "size": 2
                     }
-                ]
-            }
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 2
+                }
+            ]
         },
         {
             "name": "Stages",
@@ -45,61 +42,58 @@
                 "members": [
                     {
                         "signature": "DSTD",
-                        "type": "subrecord",
-                        "element": {
-                            "name": "Destruction Stage Data",
-                            "type": "struct",
-                            "elements": [
-                                {
-                                    "name": "Health %",
-                                    "type": "uint8"
-                                },
-                                {
-                                    "name": "Index",
-                                    "type": "uint8"
-                                },
-                                {
-                                    "name": "Damage Stage",
-                                    "type": "uint8"
-                                },
-                                {
-                                    "name": "Flags",
-                                    "type": "uint8",
-                                    "format": {
-                                        "type": "flags",
-                                        "flags": {
-                                            "0": "Cap Damage",
-                                            "1": "Disable",
-                                            "2": "Destroy"
-                                        }
+                        "name": "Destruction Stage Data",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Health %",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "Index",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "Damage Stage",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "Flags",
+                                "type": "uint8",
+                                "format": {
+                                    "type": "flags",
+                                    "flags": {
+                                        "0": "Cap Damage",
+                                        "1": "Disable",
+                                        "2": "Destroy"
                                     }
-                                },
-                                {
-                                    "name": "Self Damage per Second",
-                                    "type": "int32"
-                                },
-                                {
-                                    "name": "Explosion",
-                                    "type": "formId",
-                                    "signatures": [
-                                        "EXPL",
-                                        "NULL"
-                                    ]
-                                },
-                                {
-                                    "name": "Debris",
-                                    "type": "formId",
-                                    "signatures": [
-                                        "DEBR",
-                                        "NULL"
-                                    ]
-                                },
-                                {
-                                    "name": "Debris Count",
-                                    "type": "int32"
                                 }
-                            ]
-                        },
+                            },
+                            {
+                                "name": "Self Damage per Second",
+                                "type": "int32"
+                            },
+                            {
+                                "name": "Explosion",
+                                "type": "formId",
+                                "signatures": [
+                                    "EXPL",
+                                    "NULL"
+                                ]
+                            },
+                            {
+                                "name": "Debris",
+                                "type": "formId",
+                                "signatures": [
+                                    "DEBR",
+                                    "NULL"
+                                ]
+                            },
+                            {
+                                "name": "Debris Count",
+                                "type": "int32"
+                            }
+                        ],
                         "required": true
                     },
                     {
@@ -108,11 +102,8 @@
                         "members": [
                             {
                                 "signature": "DMDL",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Model FileName",
-                                    "type": "string"
-                                }
+                                "name": "Model FileName",
+                                "type": "string"
                             }
                         ],
                         "sortKey": [
@@ -127,11 +118,8 @@
                     },
                     {
                         "signature": "DSTF",
-                        "type": "subrecord",
-                        "element": {
-                            "name": "End Marker",
-                            "type": "empty"
-                        },
+                        "name": "End Marker",
+                        "type": "empty",
                         "required": true
                     }
                 ]

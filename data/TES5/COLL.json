@@ -12,87 +12,69 @@
         },
         {
             "signature": "BNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Index",
-                "type": "uint32"
-            }
+            "name": "Index",
+            "type": "uint32"
         },
         {
             "signature": "FNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Debug Color",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Red",
-                        "type": "uint8"
-                    },
-                    {
-                        "name": "Green",
-                        "type": "uint8"
-                    },
-                    {
-                        "name": "Blue",
-                        "type": "uint8"
-                    },
-                    {
-                        "name": "Unused",
-                        "type": "uint8"
-                    }
-                ]
-            },
+            "name": "Debug Color",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Red",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Green",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Blue",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unused",
+                    "type": "uint8"
+                }
+            ],
             "required": true
         },
         {
             "signature": "GNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Flags",
-                "type": "uint32",
-                "format": {
-                    "type": "flags",
-                    "flags": {
-                        "0": "Trigger Volume",
-                        "1": "Sensor",
-                        "2": "Navmesh Obstacle"
-                    }
+            "name": "Flags",
+            "type": "uint32",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Trigger Volume",
+                    "1": "Sensor",
+                    "2": "Navmesh Obstacle"
                 }
             }
         },
         {
             "signature": "MNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Name",
-                "type": "string"
-            },
+            "name": "Name",
+            "type": "string",
             "required": true
         },
         {
             "signature": "INTV",
-            "type": "subrecord",
-            "element": {
-                "name": "Interactables Count",
-                "type": "uint32"
-            }
+            "name": "Interactables Count",
+            "type": "uint32"
         },
         {
             "signature": "CNAM",
-            "type": "subrecord",
+            "name": "Collides With",
+            "type": "array",
             "element": {
-                "name": "Collides With",
-                "type": "array",
-                "element": {
-                    "name": "Forms",
-                    "type": "formId",
-                    "signatures": [
-                        "COLL"
-                    ]
-                },
-                "sorted": true
-            }
+                "name": "Forms",
+                "type": "formId",
+                "signatures": [
+                    "COLL"
+                ]
+            },
+            "sorted": true
         }
     ]
 }

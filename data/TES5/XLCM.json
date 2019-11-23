@@ -1,17 +1,14 @@
 {
     "signature": "XLCM",
-    "type": "subrecord",
-    "element": {
-        "name": "Level Modifier",
-        "type": "int32",
-        "format": {
-            "type": "enum",
-            "options": {
-                "0": "Easy",
-                "1": "Medium",
-                "2": "Hard",
-                "3": "Very Hard"
-            }
+    "name": "Level Modifier",
+    "type": "int32",
+    "format": {
+        "type": "enum",
+        "options": {
+            "0": "Easy",
+            "1": "Medium",
+            "2": "Hard",
+            "3": "Very Hard"
         }
     }
 }

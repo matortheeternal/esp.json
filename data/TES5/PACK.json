@@ -11,132 +11,126 @@
         },
         {
             "signature": "PKDT",
-            "type": "subrecord",
-            "element": {
-                "name": "Pack Data",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "General Flags",
-                        "type": "uint32",
-                        "format": {
-                            "id": "PKDTFlags"
-                        }
-                    },
-                    {
-                        "name": "Type",
-                        "type": "uint8",
-                        "format": {
-                            "type": "enum",
-                            "options": {
-                                "18": "Package",
-                                "19": "Package Template"
-                            }
-                        }
-                    },
-                    {
-                        "name": "Interrupt Override",
-                        "type": "uint8",
-                        "format": {
-                            "type": "enum",
-                            "options": {
-                                "0": "None",
-                                "1": "Spectator",
-                                "2": "ObserveDead",
-                                "3": "GuardWarn",
-                                "4": "Combat"
-                            }
-                        }
-                    },
-                    {
-                        "name": "Preferred Speed",
-                        "type": "uint8",
-                        "format": {
-                            "type": "enum",
-                            "options": {
-                                "0": "Walk",
-                                "1": "Jog",
-                                "2": "Run",
-                                "3": "Fast Walk"
-                            }
-                        }
-                    },
-                    {
-                        "name": "Unknown",
-                        "type": "bytes",
-                        "size": 1
-                    },
-                    {
-                        "name": "Interrupt Flags",
-                        "type": "uint16",
-                        "format": {
-                            "id": "PKDTInterruptFlags"
-                        }
-                    },
-                    {
-                        "name": "Unknown",
-                        "type": "bytes",
-                        "size": 2
+            "name": "Pack Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "General Flags",
+                    "type": "uint32",
+                    "format": {
+                        "id": "PKDTFlags"
                     }
-                ]
-            },
+                },
+                {
+                    "name": "Type",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "18": "Package",
+                            "19": "Package Template"
+                        }
+                    }
+                },
+                {
+                    "name": "Interrupt Override",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "None",
+                            "1": "Spectator",
+                            "2": "ObserveDead",
+                            "3": "GuardWarn",
+                            "4": "Combat"
+                        }
+                    }
+                },
+                {
+                    "name": "Preferred Speed",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Walk",
+                            "1": "Jog",
+                            "2": "Run",
+                            "3": "Fast Walk"
+                        }
+                    }
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 1
+                },
+                {
+                    "name": "Interrupt Flags",
+                    "type": "uint16",
+                    "format": {
+                        "id": "PKDTInterruptFlags"
+                    }
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 2
+                }
+            ],
             "required": true
         },
         {
             "signature": "PSDT",
-            "type": "subrecord",
-            "element": {
-                "name": "Schedule",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Month",
-                        "type": "int8"
-                    },
-                    {
-                        "name": "Day of week",
-                        "type": "int8",
-                        "format": {
-                            "type": "enum",
-                            "options": {
-                                "0": "Sunday",
-                                "1": "Monday",
-                                "2": "Tuesday",
-                                "3": "Wednesday",
-                                "4": "Thursday",
-                                "5": "Friday",
-                                "6": "Saturday",
-                                "7": "Weekdays",
-                                "8": "Weekends",
-                                "9": "Monday, Wednesday, Friday",
-                                "10": "Tuesday, Thursday",
-                                "-1": "Any"
-                            }
+            "name": "Schedule",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Month",
+                    "type": "int8"
+                },
+                {
+                    "name": "Day of week",
+                    "type": "int8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Sunday",
+                            "1": "Monday",
+                            "2": "Tuesday",
+                            "3": "Wednesday",
+                            "4": "Thursday",
+                            "5": "Friday",
+                            "6": "Saturday",
+                            "7": "Weekdays",
+                            "8": "Weekends",
+                            "9": "Monday, Wednesday, Friday",
+                            "10": "Tuesday, Thursday",
+                            "-1": "Any"
                         }
-                    },
-                    {
-                        "name": "Date",
-                        "type": "uint8"
-                    },
-                    {
-                        "name": "Hour",
-                        "type": "int8"
-                    },
-                    {
-                        "name": "Minute",
-                        "type": "int8"
-                    },
-                    {
-                        "name": "Unused",
-                        "type": "bytes",
-                        "size": 3
-                    },
-                    {
-                        "name": "Duration (minutes)",
-                        "type": "int32"
                     }
-                ]
-            },
+                },
+                {
+                    "name": "Date",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Hour",
+                    "type": "int8"
+                },
+                {
+                    "name": "Minute",
+                    "type": "int8"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3
+                },
+                {
+                    "name": "Duration (minutes)",
+                    "type": "int32"
+                }
+            ],
             "required": true
         },
         {
@@ -148,126 +142,101 @@
             "members": [
                 {
                     "signature": "IDLF",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Flags",
-                        "type": "uint8",
-                        "format": {
-                            "type": "enum",
-                            "options": {
-                                "0": "Unknown",
-                                "8": "Random",
-                                "9": "Run in Sequence",
-                                "12": "Random, Do Once",
-                                "13": "Run in Sequence, Do Once"
-                            }
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Unknown",
+                            "8": "Random",
+                            "9": "Run in Sequence",
+                            "12": "Random, Do Once",
+                            "13": "Run in Sequence, Do Once"
                         }
                     }
                 },
                 {
                     "signature": "IDLC",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "",
-                        "type": "struct",
-                        "elements": [
-                            {
-                                "name": "Animation Count",
-                                "type": "uint8"
-                            },
-                            {
-                                "name": "Unknown",
-                                "type": "bytes",
-                                "size": 3
-                            }
-                        ]
-                    },
+                    "name": "",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Animation Count",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 3
+                        }
+                    ],
                     "required": true
                 },
                 {
                     "signature": "IDLT",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Idle Timer Setting",
-                        "type": "float",
-                        "required": true
-                    },
+                    "name": "Idle Timer Setting",
+                    "type": "float",
                     "required": true
                 },
                 {
                     "signature": "IDLA",
-                    "type": "subrecord",
+                    "name": "Animations",
+                    "type": "array",
                     "element": {
-                        "name": "Animations",
-                        "type": "array",
-                        "element": {
-                            "name": "Animation",
-                            "type": "formId",
-                            "signatures": [
-                                "IDLE"
-                            ]
-                        }
+                        "name": "Animation",
+                        "type": "formId",
+                        "signatures": [
+                            "IDLE"
+                        ]
                     }
                 },
                 {
                     "signature": "IDLB",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Unknown",
-                        "type": "bytes",
-                        "size": 4
-                    }
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
                 }
             ],
             "required": true
         },
         {
             "signature": "CNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Combat Style",
-                "type": "formId",
-                "signatures": [
-                    "CSTY"
-                ]
-            }
+            "name": "Combat Style",
+            "type": "formId",
+            "signatures": [
+                "CSTY"
+            ]
         },
         {
             "signature": "QNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Owner Quest",
-                "type": "formId",
-                "signatures": [
-                    "QUST"
-                ]
-            }
+            "name": "Owner Quest",
+            "type": "formId",
+            "signatures": [
+                "QUST"
+            ]
         },
         {
             "signature": "PKCU",
-            "type": "subrecord",
-            "element": {
-                "name": "Counter",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Data Input Count",
-                        "type": "uint32"
-                    },
-                    {
-                        "name": "Package Template",
-                        "type": "formId",
-                        "signatures": [
-                            "PACK",
-                            "NULL"
-                        ]
-                    },
-                    {
-                        "name": "Version Counter (autoincremented)",
-                        "type": "uint32"
-                    }
-                ]
-            },
+            "name": "Counter",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Data Input Count",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Package Template",
+                    "type": "formId",
+                    "signatures": [
+                        "PACK",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Version Counter (autoincremented)",
+                    "type": "uint32"
+                }
+            ],
             "required": true
         },
         {
@@ -283,52 +252,43 @@
                         "members": [
                             {
                                 "signature": "ANAM",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Type",
-                                    "type": "string"
-                                }
+                                "name": "Type",
+                                "type": "string"
                             },
                             {
                                 "signature": "CNAM",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Value",
-                                    "type": "union",
-                                    "decider": "PubPackCNAMDecider",
-                                    "elements": [
-                                        {
-                                            "name": "Unknown",
-                                            "type": "bytes"
-                                        },
-                                        {
-                                            "name": "Bool",
-                                            "type": "uint8",
-                                            "format": {
-                                                "type": "enum",
-                                                "options": {
-                                                    "0": "False",
-                                                    "1": "True"
-                                                }
+                                "name": "Value",
+                                "type": "union",
+                                "decider": "PubPackCNAMDecider",
+                                "elements": [
+                                    {
+                                        "name": "Unknown",
+                                        "type": "bytes"
+                                    },
+                                    {
+                                        "name": "Bool",
+                                        "type": "uint8",
+                                        "format": {
+                                            "type": "enum",
+                                            "options": {
+                                                "0": "False",
+                                                "1": "True"
                                             }
-                                        },
-                                        {
-                                            "name": "Integer",
-                                            "type": "uint32"
-                                        },
-                                        {
-                                            "name": "Float",
-                                            "type": "float"
                                         }
-                                    ]
-                                }
+                                    },
+                                    {
+                                        "name": "Integer",
+                                        "type": "uint32"
+                                    },
+                                    {
+                                        "name": "Float",
+                                        "type": "float"
+                                    }
+                                ]
                             },
                             {
                                 "signature": "BNAM",
-                                "type": "subrecord",
-                                "element": {
-                                    "type": "bytes"
-                                }
+                                "type": "bytes"
                             },
                             {
                                 "id": "PDTOs"
@@ -338,23 +298,17 @@
                             },
                             {
                                 "signature": "PTDA",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Target",
-                                    "type": "struct",
-                                    "elements": [
-                                        {
-                                            "id": "TargetData"
-                                        }
-                                    ]
-                                }
+                                "name": "Target",
+                                "type": "struct",
+                                "elements": [
+                                    {
+                                        "id": "TargetData"
+                                    }
+                                ]
                             },
                             {
                                 "signature": "TPIC",
-                                "type": "subrecord",
-                                "element": {
-                                    "type": "bytes"
-                                }
+                                "type": "bytes"
                             }
                         ],
                         "required": true
@@ -367,11 +321,8 @@
         },
         {
             "signature": "XNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Marker",
-                "type": "bytes"
-            }
+            "name": "Marker",
+            "type": "bytes"
         },
         {
             "name": "Procedure Tree",
@@ -386,11 +337,8 @@
                         "members": [
                             {
                                 "signature": "ANAM",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Branch Type",
-                                    "type": "string"
-                                }
+                                "name": "Branch Type",
+                                "type": "string"
                             },
                             {
                                 "id": "CITC",
@@ -401,48 +349,39 @@
                             },
                             {
                                 "signature": "PRCB",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Root",
-                                    "type": "struct",
-                                    "elements": [
-                                        {
-                                            "name": "Branch Count",
-                                            "type": "uint32"
-                                        },
-                                        {
-                                            "name": "Flags",
-                                            "type": "uint32",
-                                            "format": {
-                                                "type": "flags",
-                                                "flags": {
-                                                    "0": "Repeat when Complete",
-                                                    "1": "Unknown 1"
-                                                }
+                                "name": "Root",
+                                "type": "struct",
+                                "elements": [
+                                    {
+                                        "name": "Branch Count",
+                                        "type": "uint32"
+                                    },
+                                    {
+                                        "name": "Flags",
+                                        "type": "uint32",
+                                        "format": {
+                                            "type": "flags",
+                                            "flags": {
+                                                "0": "Repeat when Complete",
+                                                "1": "Unknown 1"
                                             }
                                         }
-                                    ]
-                                }
+                                    }
+                                ]
                             },
                             {
                                 "signature": "PNAM",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Procedure Type",
-                                    "type": "string"
-                                }
+                                "name": "Procedure Type",
+                                "type": "string"
                             },
                             {
                                 "signature": "FNAM",
-                                "type": "subrecord",
-                                "element": {
-                                    "name": "Flags",
-                                    "type": "uint32",
-                                    "format": {
-                                        "type": "flags",
-                                        "flags": {
-                                            "0": "Success Completes Package"
-                                        }
+                                "name": "Flags",
+                                "type": "uint32",
+                                "format": {
+                                    "type": "flags",
+                                    "flags": {
+                                        "0": "Success Completes Package"
                                     }
                                 }
                             },
@@ -451,11 +390,8 @@
                                 "type": "memberArray",
                                 "member": {
                                     "signature": "PKC2",
-                                    "type": "subrecord",
-                                    "element": {
-                                        "name": "Index",
-                                        "type": "uint8"
-                                    }
+                                    "name": "Index",
+                                    "type": "uint8"
                                 }
                             },
                             {
@@ -463,59 +399,56 @@
                                 "type": "memberArray",
                                 "member": {
                                     "signature": "PFO2",
-                                    "type": "subrecord",
-                                    "element": {
-                                        "name": "Data",
-                                        "type": "struct",
-                                        "elements": [
-                                            {
-                                                "name": "Set General Flags",
-                                                "type": "uint32",
-                                                "format": {
-                                                    "id": "PKDTFlags"
-                                                }
-                                            },
-                                            {
-                                                "name": "Clear General Flags",
-                                                "type": "uint32",
-                                                "format": {
-                                                    "id": "PKDTFlags"
-                                                }
-                                            },
-                                            {
-                                                "name": "Set Interrupt Flags",
-                                                "type": "uint16",
-                                                "format": {
-                                                    "id": "PKDTInterruptFlags"
-                                                }
-                                            },
-                                            {
-                                                "name": "Clear Interrupt Flags",
-                                                "type": "uint16",
-                                                "format": {
-                                                    "id": "PKDTInterruptFlags"
-                                                }
-                                            },
-                                            {
-                                                "name": "Preferred Speed Override",
-                                                "type": "uint8",
-                                                "format": {
-                                                    "type": "enum",
-                                                    "options": {
-                                                        "0": "Walk",
-                                                        "1": "Jog",
-                                                        "2": "Run",
-                                                        "3": "Fast Walk"
-                                                    }
-                                                }
-                                            },
-                                            {
-                                                "name": "Unknown",
-                                                "type": "bytes",
-                                                "size": 3
+                                    "name": "Data",
+                                    "type": "struct",
+                                    "elements": [
+                                        {
+                                            "name": "Set General Flags",
+                                            "type": "uint32",
+                                            "format": {
+                                                "id": "PKDTFlags"
                                             }
-                                        ]
-                                    }
+                                        },
+                                        {
+                                            "name": "Clear General Flags",
+                                            "type": "uint32",
+                                            "format": {
+                                                "id": "PKDTFlags"
+                                            }
+                                        },
+                                        {
+                                            "name": "Set Interrupt Flags",
+                                            "type": "uint16",
+                                            "format": {
+                                                "id": "PKDTInterruptFlags"
+                                            }
+                                        },
+                                        {
+                                            "name": "Clear Interrupt Flags",
+                                            "type": "uint16",
+                                            "format": {
+                                                "id": "PKDTInterruptFlags"
+                                            }
+                                        },
+                                        {
+                                            "name": "Preferred Speed Override",
+                                            "type": "uint8",
+                                            "format": {
+                                                "type": "enum",
+                                                "options": {
+                                                    "0": "Walk",
+                                                    "1": "Jog",
+                                                    "2": "Run",
+                                                    "3": "Fast Walk"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "Unknown",
+                                            "type": "bytes",
+                                            "size": 3
+                                        }
+                                    ]
                                 }
                             },
                             {
@@ -523,10 +456,7 @@
                                 "type": "memberArray",
                                 "member": {
                                     "signature": "PFOR",
-                                    "type": "subrecord",
-                                    "element": {
-                                        "type": "bytes"
-                                    }
+                                    "type": "bytes"
                                 }
                             }
                         ],
@@ -544,57 +474,39 @@
             "members": [
                 {
                     "signature": "POBA",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "OnBegin Marker",
-                        "type": "empty"
-                    },
+                    "name": "OnBegin Marker",
+                    "type": "empty",
                     "required": true
                 },
                 {
                     "signature": "INAM",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Idle",
-                        "type": "formId",
-                        "signatures": [
-                            "IDLE",
-                            "NULL"
-                        ]
-                    },
+                    "name": "Idle",
+                    "type": "formId",
+                    "signatures": [
+                        "IDLE",
+                        "NULL"
+                    ],
                     "required": true
                 },
                 {
                     "signature": "SCHR",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Unused",
-                        "type": "bytes"
-                    }
+                    "name": "Unused",
+                    "type": "bytes"
                 },
                 {
                     "signature": "SCTX",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Unused",
-                        "type": "bytes"
-                    }
+                    "name": "Unused",
+                    "type": "bytes"
                 },
                 {
                     "signature": "QNAM",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Unused",
-                        "type": "bytes"
-                    }
+                    "name": "Unused",
+                    "type": "bytes"
                 },
                 {
                     "signature": "TNAM",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Unused",
-                        "type": "bytes"
-                    }
+                    "name": "Unused",
+                    "type": "bytes"
                 },
                 {
                     "id": "PDTOs"
@@ -607,57 +519,39 @@
             "members": [
                 {
                     "signature": "POEA",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "OnEnd Marker",
-                        "type": "empty"
-                    },
+                    "name": "OnEnd Marker",
+                    "type": "empty",
                     "required": true
                 },
                 {
                     "signature": "INAM",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Idle",
-                        "type": "formId",
-                        "signatures": [
-                            "IDLE",
-                            "NULL"
-                        ]
-                    },
+                    "name": "Idle",
+                    "type": "formId",
+                    "signatures": [
+                        "IDLE",
+                        "NULL"
+                    ],
                     "required": true
                 },
                 {
                     "signature": "SCHR",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Unused",
-                        "type": "bytes"
-                    }
+                    "name": "Unused",
+                    "type": "bytes"
                 },
                 {
                     "signature": "SCTX",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Unused",
-                        "type": "bytes"
-                    }
+                    "name": "Unused",
+                    "type": "bytes"
                 },
                 {
                     "signature": "QNAM",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Unused",
-                        "type": "bytes"
-                    }
+                    "name": "Unused",
+                    "type": "bytes"
                 },
                 {
                     "signature": "TNAM",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Unused",
-                        "type": "bytes"
-                    }
+                    "name": "Unused",
+                    "type": "bytes"
                 },
                 {
                     "id": "PDTOs"
@@ -670,65 +564,44 @@
             "members": [
                 {
                     "signature": "POCA",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "OnChange Marker",
-                        "type": "empty"
-                    },
+                    "name": "OnChange Marker",
+                    "type": "empty",
                     "required": true
                 },
                 {
                     "signature": "INAM",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Idle",
-                        "type": "formId",
-                        "signatures": [
-                            "IDLE",
-                            "NULL"
-                        ]
-                    },
+                    "name": "Idle",
+                    "type": "formId",
+                    "signatures": [
+                        "IDLE",
+                        "NULL"
+                    ],
                     "required": true
                 },
                 {
                     "signature": "SCHR",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Unused",
-                        "type": "bytes"
-                    }
+                    "name": "Unused",
+                    "type": "bytes"
                 },
                 {
                     "signature": "SCDA",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Unused",
-                        "type": "bytes"
-                    }
+                    "name": "Unused",
+                    "type": "bytes"
                 },
                 {
                     "signature": "SCTX",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Unused",
-                        "type": "bytes"
-                    }
+                    "name": "Unused",
+                    "type": "bytes"
                 },
                 {
                     "signature": "QNAM",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Unused",
-                        "type": "bytes"
-                    }
+                    "name": "Unused",
+                    "type": "bytes"
                 },
                 {
                     "signature": "TNAM",
-                    "type": "subrecord",
-                    "element": {
-                        "name": "Unused",
-                        "type": "bytes"
-                    }
+                    "name": "Unused",
+                    "type": "bytes"
                 },
                 {
                     "id": "PDTOs"

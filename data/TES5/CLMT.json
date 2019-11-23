@@ -8,121 +8,109 @@
         },
         {
             "signature": "WLST",
-            "type": "subrecord",
+            "name": "Weather Types",
+            "type": "array",
             "element": {
-                "name": "Weather Types",
-                "type": "array",
-                "element": {
-                    "name": "Weather Type",
-                    "type": "struct",
-                    "elements": [
-                        {
-                            "name": "Weather",
-                            "type": "formId",
-                            "signatures": [
-                                "WTHR",
-                                "NULL"
-                            ]
-                        },
-                        {
-                            "name": "Chance",
-                            "type": "int32"
-                        },
-                        {
-                            "name": "Global",
-                            "type": "formId",
-                            "signatures": [
-                                "GLOB",
-                                "NULL"
-                            ]
-                        }
-                    ],
-                    "sortKey": [
-                        0
-                    ]
-                },
-                "sorted": true
-            }
+                "name": "Weather Type",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Weather",
+                        "type": "formId",
+                        "signatures": [
+                            "WTHR",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "name": "Chance",
+                        "type": "int32"
+                    },
+                    {
+                        "name": "Global",
+                        "type": "formId",
+                        "signatures": [
+                            "GLOB",
+                            "NULL"
+                        ]
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            },
+            "sorted": true
         },
         {
             "signature": "FNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Sun Texture",
-                "type": "string"
-            }
+            "name": "Sun Texture",
+            "type": "string"
         },
         {
             "signature": "GNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Sun Glare Texture",
-                "type": "string"
-            }
+            "name": "Sun Glare Texture",
+            "type": "string"
         },
         {
             "id": "MODL"
         },
         {
             "signature": "TNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Timing",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Sunrise",
-                        "type": "struct",
-                        "elements": [
-                            {
-                                "name": "Begin",
-                                "type": "uint8",
-                                "format": {
-                                    "type": "ClmtTimeFormat"
-                                }
-                            },
-                            {
-                                "name": "End",
-                                "type": "uint8",
-                                "format": {
-                                    "type": "ClmtTimeFormat"
-                                }
+            "name": "Timing",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Sunrise",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Begin",
+                            "type": "uint8",
+                            "format": {
+                                "type": "ClmtTimeFormat"
                             }
-                        ]
-                    },
-                    {
-                        "name": "Sunset",
-                        "type": "struct",
-                        "elements": [
-                            {
-                                "name": "Begin",
-                                "type": "uint8",
-                                "format": {
-                                    "type": "ClmtTimeFormat"
-                                }
-                            },
-                            {
-                                "name": "End",
-                                "type": "uint8",
-                                "format": {
-                                    "type": "ClmtTimeFormat"
-                                }
+                        },
+                        {
+                            "name": "End",
+                            "type": "uint8",
+                            "format": {
+                                "type": "ClmtTimeFormat"
                             }
-                        ]
-                    },
-                    {
-                        "name": "Volatility",
-                        "type": "uint8"
-                    },
-                    {
-                        "name": "Moons / Phase Length",
-                        "type": "uint8",
-                        "format": {
-                            "type": "ClmtMoonsPhaseLengthFormat"
                         }
+                    ]
+                },
+                {
+                    "name": "Sunset",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Begin",
+                            "type": "uint8",
+                            "format": {
+                                "type": "ClmtTimeFormat"
+                            }
+                        },
+                        {
+                            "name": "End",
+                            "type": "uint8",
+                            "format": {
+                                "type": "ClmtTimeFormat"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Volatility",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Moons / Phase Length",
+                    "type": "uint8",
+                    "format": {
+                        "type": "ClmtMoonsPhaseLengthFormat"
                     }
-                ]
-            },
+                }
+            ],
             "required": true
         }
     ]

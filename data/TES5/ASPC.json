@@ -12,36 +12,27 @@
         },
         {
             "signature": "SNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Ambient Sound",
-                "type": "formId",
-                "signatures": [
-                    "SNDR"
-                ]
-            }
+            "name": "Ambient Sound",
+            "type": "formId",
+            "signatures": [
+                "SNDR"
+            ]
         },
         {
             "signature": "RDAT",
-            "type": "subrecord",
-            "element": {
-                "name": "Use Sound from Region (Interiors Only)",
-                "type": "formId",
-                "signatures": [
-                    "REGN"
-                ]
-            }
+            "name": "Use Sound from Region (Interiors Only)",
+            "type": "formId",
+            "signatures": [
+                "REGN"
+            ]
         },
         {
             "signature": "BNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Environment Type (reverb)",
-                "type": "formId",
-                "signatures": [
-                    "REVB"
-                ]
-            }
+            "name": "Environment Type (reverb)",
+            "type": "formId",
+            "signatures": [
+                "REVB"
+            ]
         }
     ]
 }

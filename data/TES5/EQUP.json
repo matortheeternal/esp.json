@@ -8,28 +8,22 @@
         },
         {
             "signature": "PNAM",
-            "type": "subrecord",
+            "name": "Slot Parents",
+            "type": "array",
             "element": {
-                "name": "Slot Parents",
-                "type": "array",
-                "element": {
-                    "name": "Can Be Equipped",
-                    "type": "formId"
-                }
+                "name": "Can Be Equipped",
+                "type": "formId"
             }
         },
         {
             "signature": "DATA",
-            "type": "subrecord",
-            "element": {
-                "name": "Use All Parents",
-                "type": "uint32",
-                "format": {
-                    "type": "enum",
-                    "options": {
-                        "0": "False",
-                        "1": "True"
-                    }
+            "name": "Use All Parents",
+            "type": "uint32",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "False",
+                    "1": "True"
                 }
             }
         }

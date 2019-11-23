@@ -4,39 +4,36 @@
     "members": [
         {
             "signature": "CNTO",
-            "type": "subrecord",
-            "element": {
-                "name": "Item",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Item",
-                        "type": "formId",
-                        "signatures": [
-                            "ARMO",
-                            "AMMO",
-                            "APPA",
-                            "MISC",
-                            "WEAP",
-                            "BOOK",
-                            "LVLI",
-                            "KEYM",
-                            "ALCH",
-                            "INGR",
-                            "LIGH",
-                            "SLGM",
-                            "SCRL"
-                        ]
-                    },
-                    {
-                        "name": "Count",
-                        "type": "int32"
-                    }
-                ],
-                "sortKey": [
-                    0
-                ]
-            }
+            "name": "Item",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Item",
+                    "type": "formId",
+                    "signatures": [
+                        "ARMO",
+                        "AMMO",
+                        "APPA",
+                        "MISC",
+                        "WEAP",
+                        "BOOK",
+                        "LVLI",
+                        "KEYM",
+                        "ALCH",
+                        "INGR",
+                        "LIGH",
+                        "SLGM",
+                        "SCRL"
+                    ]
+                },
+                {
+                    "name": "Count",
+                    "type": "int32"
+                }
+            ],
+            "sortKey": [
+                0
+            ]
         },
         {
             "id": "COED"

@@ -5,47 +5,41 @@
     "members": [
         {
             "signature": "EDID",
-            "type": "subrecord",
-            "element": {
-                "name": "Editor ID",
-                "type": "string"
-            },
+            "name": "Editor ID",
+            "type": "string",
             "required": true
         },
         {
             "signature": "DATA",
-            "type": "subrecord",
-            "element": {
-                "name": "Value",
-                "type": "union",
-                "decider": "GMSTUnionDecider",
-                "elements": [
-                    {
-                        "name": "Name",
-                        "type": "string",
-                        "localized": true
-                    },
-                    {
-                        "name": "Int",
-                        "type": "int32"
-                    },
-                    {
-                        "name": "Float",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Bool",
-                        "type": "uint32",
-                        "format": {
-                            "type": "enum",
-                            "options": {
-                                "0": "False",
-                                "1": "True"
-                            }
+            "name": "Value",
+            "type": "union",
+            "decider": "GMSTUnionDecider",
+            "elements": [
+                {
+                    "name": "Name",
+                    "type": "string",
+                    "localized": true
+                },
+                {
+                    "name": "Int",
+                    "type": "int32"
+                },
+                {
+                    "name": "Float",
+                    "type": "float"
+                },
+                {
+                    "name": "Bool",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "False",
+                            "1": "True"
                         }
                     }
-                ]
-            },
+                }
+            ],
             "required": true
         }
     ]

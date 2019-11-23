@@ -11,36 +11,30 @@
         },
         {
             "signature": "ANAM",
-            "type": "subrecord",
+            "name": "Related Camera Paths",
+            "type": "array",
             "element": {
-                "name": "Related Camera Paths",
-                "type": "array",
-                "element": {
-                    "name": "Related Camera Path",
-                    "type": "formId",
-                    "signatures": [
-                        "CPTH",
-                        "NULL"
-                    ]
-                }
+                "name": "Related Camera Path",
+                "type": "formId",
+                "signatures": [
+                    "CPTH",
+                    "NULL"
+                ]
             }
         },
         {
             "signature": "DATA",
-            "type": "subrecord",
-            "element": {
-                "name": "Camera Zoom",
-                "type": "uint8",
-                "format": {
-                    "type": "enum",
-                    "options": {
-                        "0": "Default, Must Have Camera Shots",
-                        "1": "Disable, Must Have Camera Shots",
-                        "2": "Shot List, Must Have Camera Shots",
-                        "128": "Default",
-                        "129": "Disable",
-                        "130": "Shot List"
-                    }
+            "name": "Camera Zoom",
+            "type": "uint8",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "Default, Must Have Camera Shots",
+                    "1": "Disable, Must Have Camera Shots",
+                    "2": "Shot List, Must Have Camera Shots",
+                    "128": "Default",
+                    "129": "Disable",
+                    "130": "Shot List"
                 }
             }
         },
@@ -49,14 +43,11 @@
             "type": "memberArray",
             "member": {
                 "signature": "SNAM",
-                "type": "subrecord",
-                "element": {
-                    "name": "Camera Shot",
-                    "type": "formId",
-                    "signatures": [
-                        "CAMS"
-                    ]
-                }
+                "name": "Camera Shot",
+                "type": "formId",
+                "signatures": [
+                    "CAMS"
+                ]
             }
         }
     ]

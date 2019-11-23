@@ -42,55 +42,43 @@
         },
         {
             "signature": "DATA",
-            "type": "subrecord",
-            "element": {
-                "name": "",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Value",
-                        "type": "uint32"
-                    },
-                    {
-                        "name": "Weight",
-                        "type": "float"
-                    }
-                ]
-            },
+            "name": "",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Value",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                }
+            ],
             "required": true
         },
         {
             "signature": "SOUL",
-            "type": "subrecord",
-            "element": {
-                "name": "Contained Soul",
-                "type": "uint8",
-                "format": {
-                    "id": "SoulGemEnum"
-                }
+            "name": "Contained Soul",
+            "type": "uint8",
+            "format": {
+                "id": "SoulGemEnum"
             }
         },
         {
             "signature": "SLCP",
-            "type": "subrecord",
-            "element": {
-                "name": "Maximum Capacity",
-                "type": "uint8",
-                "format": {
-                    "id": "SoulGemEnum"
-                }
+            "name": "Maximum Capacity",
+            "type": "uint8",
+            "format": {
+                "id": "SoulGemEnum"
             }
         },
         {
             "signature": "NAM0",
-            "type": "subrecord",
-            "element": {
-                "name": "Linked To",
-                "type": "formId",
-                "signatures": [
-                    "SLGM"
-                ]
-            }
+            "name": "Linked To",
+            "type": "formId",
+            "signatures": [
+                "SLGM"
+            ]
         }
     ]
 }

@@ -1,27 +1,24 @@
 {
     "signature": "CNAM",
-    "type": "subrecord",
-    "element": {
-        "name": "Color",
-        "type": "struct",
-        "elements": [
-            {
-                "name": "Red",
-                "type": "uint8"
-            },
-            {
-                "name": "Green",
-                "type": "uint8"
-            },
-            {
-                "name": "Blue",
-                "type": "uint8"
-            },
-            {
-                "name": "Unknown",
-                "type": "bytes",
-                "size": 1
-            }
-        ]
-    }
+    "name": "Color",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Red",
+            "type": "uint8"
+        },
+        {
+            "name": "Green",
+            "type": "uint8"
+        },
+        {
+            "name": "Blue",
+            "type": "uint8"
+        },
+        {
+            "name": "Unknown",
+            "type": "bytes",
+            "size": 1
+        }
+    ]
 }

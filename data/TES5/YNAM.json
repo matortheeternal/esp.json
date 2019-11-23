@@ -1,11 +1,8 @@
 {
     "signature": "YNAM",
-    "type": "subrecord",
-    "element": {
-        "name": "Sound - Pick Up",
-        "type": "formId",
-        "signatures": [
-            "SNDR"
-        ]
-    }
+    "name": "Sound - Pick Up",
+    "type": "formId",
+    "signatures": [
+        "SNDR"
+    ]
 }

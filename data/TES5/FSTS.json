@@ -8,48 +8,42 @@
         },
         {
             "signature": "XCNT",
-            "type": "subrecord",
-            "element": {
-                "name": "Count",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Walk Forward Sets",
-                        "type": "uint32"
-                    },
-                    {
-                        "name": "Run Forward Sets",
-                        "type": "uint32"
-                    },
-                    {
-                        "name": "Walk Forward Alternate Sets",
-                        "type": "uint32"
-                    },
-                    {
-                        "name": "Run Forward Alternate Sets",
-                        "type": "uint32"
-                    },
-                    {
-                        "name": "Walk Forward Alternate 2 Sets",
-                        "type": "uint32"
-                    }
-                ]
-            },
+            "name": "Count",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Walk Forward Sets",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Run Forward Sets",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Walk Forward Alternate Sets",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Run Forward Alternate Sets",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Walk Forward Alternate 2 Sets",
+                    "type": "uint32"
+                }
+            ],
             "required": true
         },
         {
             "signature": "DATA",
-            "type": "subrecord",
+            "name": "Footstep Sets",
+            "type": "array",
             "element": {
-                "name": "Footstep Sets",
-                "type": "array",
-                "element": {
-                    "name": "Footstep",
-                    "type": "formId",
-                    "signatures": [
-                        "FSTP"
-                    ]
-                }
+                "name": "Footstep",
+                "type": "formId",
+                "signatures": [
+                    "FSTP"
+                ]
             }
         }
     ]

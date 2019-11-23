@@ -52,44 +52,38 @@
         },
         {
             "signature": "DNAM",
-            "type": "subrecord",
-            "element": {
-                "name": "Direction Material",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Max Angle (30-120)",
-                        "type": "float"
-                    },
-                    {
-                        "name": "Material",
-                        "type": "formId",
-                        "signatures": [
-                            "MATO",
-                            "NULL"
-                        ]
-                    }
-                ]
-            },
+            "name": "Direction Material",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Max Angle (30-120)",
+                    "type": "float"
+                },
+                {
+                    "name": "Material",
+                    "type": "formId",
+                    "signatures": [
+                        "MATO",
+                        "NULL"
+                    ]
+                }
+            ],
             "required": true
         },
         {
             "signature": "MNAM",
-            "type": "subrecord",
+            "name": "Distant LOD",
+            "type": "array",
             "element": {
-                "name": "Distant LOD",
-                "type": "array",
-                "element": {
-                    "name": "LOD",
-                    "type": "struct",
-                    "elements": [
-                        {
-                            "name": "Mesh",
-                            "type": "string",
-                            "size": 260
-                        }
-                    ]
-                }
+                "name": "LOD",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Mesh",
+                        "type": "string",
+                        "size": 260
+                    }
+                ]
             }
         }
     ]
