@@ -1,0 +1,51 @@
+{
+    "signature": "SMBN",
+    "type": "record",
+    "name": "Story Manager Branch Node",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "PNAM",
+            "name": "Parent ",
+            "type": "formId",
+            "signatures": [
+                "SMQN",
+                "SMBN",
+                "SMEN",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "SNAM",
+            "name": "Previous Sibling ",
+            "type": "formId",
+            "signatures": [
+                "SMQN",
+                "SMBN",
+                "SMEN",
+                "NULL"
+            ]
+        },
+        {
+            "id": "CITC",
+            "required": true
+        },
+        {
+            "id": "CTDAsCount"
+        },
+        {
+            "signature": "DNAM",
+            "name": "Flags",
+            "type": "uint32",
+            "format": {
+                "id": "SMNodeFlags"
+            }
+        },
+        {
+            "signature": "XNAM",
+            "type": "bytes"
+        }
+    ]
+}

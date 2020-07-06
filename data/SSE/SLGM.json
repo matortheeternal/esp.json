@@ -1,0 +1,84 @@
+{
+    "signature": "SLGM",
+    "type": "record",
+    "name": "Soul Gem",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "12": "Ignored",
+            "17": "Can Hold NPC Soul"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "OBND"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "id": "YNAM"
+        },
+        {
+            "id": "ZNAM"
+        },
+        {
+            "id": "KSIZ"
+        },
+        {
+            "id": "KWDAs"
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Value",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                }
+            ],
+            "required": true
+        },
+        {
+            "signature": "SOUL",
+            "name": "Contained Soul",
+            "type": "uint8",
+            "format": {
+                "id": "SoulGemEnum"
+            }
+        },
+        {
+            "signature": "SLCP",
+            "name": "Maximum Capacity",
+            "type": "uint8",
+            "format": {
+                "id": "SoulGemEnum"
+            }
+        },
+        {
+            "signature": "NAM0",
+            "name": "Linked To",
+            "type": "formId",
+            "signatures": [
+                "SLGM"
+            ]
+        }
+    ]
+}

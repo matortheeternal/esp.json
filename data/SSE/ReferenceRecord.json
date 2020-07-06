@@ -1,0 +1,249 @@
+{
+    "type": "record",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "5": "Deleted",
+            "7": "Turn Off Fire",
+            "10": "Persistent",
+            "11": "Initially Disabled",
+            "12": "Ignored",
+            "28": "Reflected By Auto Water",
+            "29": "Don't Havok Settle",
+            "30": "No Respawn"
+        },
+        "showUnknown": true
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "VMAD"
+        },
+        {
+            "signature": "NAME",
+            "name": "Projectile",
+            "type": "formId",
+            "signatures": [
+                "PROJ",
+                "HAZD"
+            ]
+        },
+        {
+            "signature": "XEZN",
+            "name": "Encounter Zone",
+            "type": "formId",
+            "signatures": [
+                "ECZN"
+            ]
+        },
+        {
+            "id": "Ownership"
+        },
+        {
+            "signature": "XHTW",
+            "name": "Head-Tracking Weight",
+            "type": "float"
+        },
+        {
+            "signature": "XFVC",
+            "name": "Favor Cost",
+            "type": "float"
+        },
+        {
+            "name": "Reflected/Refracted By",
+            "type": "memberArray",
+            "member": {
+                "signature": "XPWR",
+                "name": "Water",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Reference",
+                        "type": "formId",
+                        "signatures": [
+                            "REFR"
+                        ]
+                    },
+                    {
+                        "name": "Type",
+                        "type": "uint32",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "Reflection",
+                                "1": "Refraction"
+                            }
+                        }
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            },
+            "sorted": true
+        },
+        {
+            "name": "Linked References",
+            "type": "memberArray",
+            "member": {
+                "signature": "XLKR",
+                "name": "Linked Reference",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Keyword/Ref",
+                        "type": "formId",
+                        "signatures": [
+                            "KYWD",
+                            "PLYR",
+                            "ACHR",
+                            "REFR",
+                            "PGRE",
+                            "PHZD",
+                            "PMIS",
+                            "PARW",
+                            "PBAR",
+                            "PBEA",
+                            "PCON",
+                            "PFLA",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "name": "Ref",
+                        "type": "formId",
+                        "signatures": [
+                            "PLYR",
+                            "ACHR",
+                            "REFR",
+                            "PGRE",
+                            "PHZD",
+                            "PMIS",
+                            "PARW",
+                            "PBAR",
+                            "PBEA",
+                            "PCON",
+                            "PFLA"
+                        ]
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            },
+            "sorted": true
+        },
+        {
+            "name": "Activate Parents",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "XAPD",
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Parent Activate Only"
+                        }
+                    }
+                },
+                {
+                    "name": "Activate Parent Refs",
+                    "type": "memberArray",
+                    "member": {
+                        "signature": "XAPR",
+                        "name": "Activate Parent Ref",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Reference",
+                                "type": "formId",
+                                "signatures": [
+                                    "PLYR",
+                                    "ACHR",
+                                    "REFR",
+                                    "PGRE",
+                                    "PHZD",
+                                    "PMIS",
+                                    "PARW",
+                                    "PBAR",
+                                    "PBEA",
+                                    "PCON",
+                                    "PFLA"
+                                ]
+                            },
+                            {
+                                "name": "Delay",
+                                "type": "float"
+                            }
+                        ],
+                        "sortKey": [
+                            0
+                        ]
+                    },
+                    "sorted": true
+                }
+            ]
+        },
+        {
+            "id": "XESP"
+        },
+        {
+            "signature": "XEMI",
+            "name": "Emittance",
+            "type": "formId",
+            "signatures": [
+                "LIGH",
+                "REGN"
+            ]
+        },
+        {
+            "signature": "XMBR",
+            "name": "MultiBound Reference",
+            "type": "formId",
+            "signatures": [
+                "REFR"
+            ]
+        },
+        {
+            "signature": "XIS2",
+            "name": "Ignored by Sandbox",
+            "type": "empty"
+        },
+        {
+            "signature": "XLRT",
+            "name": "Location Ref Type",
+            "type": "array",
+            "element": {
+                "name": "Ref",
+                "type": "formId",
+                "signatures": [
+                    "LCRT",
+                    "NULL"
+                ]
+            }
+        },
+        {
+            "signature": "XLRL",
+            "name": "Location Reference",
+            "type": "formId",
+            "signatures": [
+                "LCRT",
+                "LCTN",
+                "NULL"
+            ]
+        },
+        {
+            "id": "XLOD"
+        },
+        {
+            "id": "XSCL"
+        },
+        {
+            "id": "DataPosRot"
+        }
+    ]
+}

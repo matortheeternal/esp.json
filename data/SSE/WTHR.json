@@ -1,0 +1,708 @@
+{
+    "signature": "WTHR",
+    "type": "record",
+    "name": "Weather",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "\u00000TX",
+            "name": "Cloud Texture Layer #0",
+            "type": "string"
+        },
+        {
+            "signature": "\u00100TX",
+            "name": "Cloud Texture Layer #1",
+            "type": "string"
+        },
+        {
+            "signature": " 0TX",
+            "name": "Cloud Texture Layer #2",
+            "type": "string"
+        },
+        {
+            "signature": "00TX",
+            "name": "Cloud Texture Layer #3",
+            "type": "string"
+        },
+        {
+            "signature": "@0TX",
+            "name": "Cloud Texture Layer #4",
+            "type": "string"
+        },
+        {
+            "signature": "P0TX",
+            "name": "Cloud Texture Layer #5",
+            "type": "string"
+        },
+        {
+            "signature": "`0TX",
+            "name": "Cloud Texture Layer #6",
+            "type": "string"
+        },
+        {
+            "signature": "p0TX",
+            "name": "Cloud Texture Layer #7",
+            "type": "string"
+        },
+        {
+            "signature": "0TX",
+            "name": "Cloud Texture Layer #8",
+            "type": "string"
+        },
+        {
+            "signature": "0TX",
+            "name": "Cloud Texture Layer #9",
+            "type": "string"
+        },
+        {
+            "signature": ":0TX",
+            "name": "Cloud Texture Layer #10",
+            "type": "string"
+        },
+        {
+            "signature": ";0TX",
+            "name": "Cloud Texture Layer #11",
+            "type": "string"
+        },
+        {
+            "signature": "<0TX",
+            "name": "Cloud Texture Layer #12",
+            "type": "string"
+        },
+        {
+            "signature": "=0TX",
+            "name": "Cloud Texture Layer #13",
+            "type": "string"
+        },
+        {
+            "signature": ">0TX",
+            "name": "Cloud Texture Layer #14",
+            "type": "string"
+        },
+        {
+            "signature": "?0TX",
+            "name": "Cloud Texture Layer #15",
+            "type": "string"
+        },
+        {
+            "signature": "@0TX",
+            "name": "Cloud Texture Layer #16",
+            "type": "string"
+        },
+        {
+            "signature": "A0TX",
+            "name": "Cloud Texture Layer #17",
+            "type": "string"
+        },
+        {
+            "signature": "B0TX",
+            "name": "Cloud Texture Layer #18",
+            "type": "string"
+        },
+        {
+            "signature": "C0TX",
+            "name": "Cloud Texture Layer #19",
+            "type": "string"
+        },
+        {
+            "signature": "D0TX",
+            "name": "Cloud Texture Layer #20",
+            "type": "string"
+        },
+        {
+            "signature": "E0TX",
+            "name": "Cloud Texture Layer #21",
+            "type": "string"
+        },
+        {
+            "signature": "F0TX",
+            "name": "Cloud Texture Layer #22",
+            "type": "string"
+        },
+        {
+            "signature": "G0TX",
+            "name": "Cloud Texture Layer #23",
+            "type": "string"
+        },
+        {
+            "signature": "H0TX",
+            "name": "Cloud Texture Layer #24",
+            "type": "string"
+        },
+        {
+            "signature": "I0TX",
+            "name": "Cloud Texture Layer #25",
+            "type": "string"
+        },
+        {
+            "signature": "J0TX",
+            "name": "Cloud Texture Layer #26",
+            "type": "string"
+        },
+        {
+            "signature": "K0TX",
+            "name": "Cloud Texture Layer #27",
+            "type": "string"
+        },
+        {
+            "signature": "L0TX",
+            "name": "Cloud Texture Layer #28",
+            "type": "string"
+        },
+        {
+            "signature": "DNAM",
+            "name": "Unused",
+            "type": "bytes"
+        },
+        {
+            "signature": "CNAM",
+            "name": "Unused",
+            "type": "bytes"
+        },
+        {
+            "signature": "ANAM",
+            "name": "Unused",
+            "type": "bytes"
+        },
+        {
+            "signature": "BNAM",
+            "name": "Unused",
+            "type": "bytes"
+        },
+        {
+            "signature": "LNAM",
+            "type": "bytes"
+        },
+        {
+            "signature": "MNAM",
+            "name": "Precipitation Type",
+            "type": "formId",
+            "signatures": [
+                "SPGD",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "NNAM",
+            "name": "Visual Effect",
+            "type": "formId",
+            "signatures": [
+                "RFCT",
+                "NULL"
+            ],
+            "required": true
+        },
+        {
+            "signature": "ONAM",
+            "name": "Unused",
+            "type": "bytes"
+        },
+        {
+            "name": "Cloud Speed",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "RNAM",
+                    "name": "Y Speed",
+                    "type": "array",
+                    "element": {
+                        "name": "Layer",
+                        "type": "uint8",
+                        "format": {
+                            "type": "CloudSpeedFormat"
+                        }
+                    },
+                    "includeFlag": "dfNotAlignable"
+                },
+                {
+                    "signature": "QNAM",
+                    "name": "X Speed",
+                    "type": "array",
+                    "element": {
+                        "name": "Layer",
+                        "type": "uint8",
+                        "format": {
+                            "type": "CloudSpeedFormat"
+                        }
+                    },
+                    "includeFlag": "dfNotAlignable"
+                }
+            ]
+        },
+        {
+            "signature": "PNAM",
+            "name": "Cloud Colors",
+            "type": "array",
+            "element": {
+                "id": "WeatherColors",
+                "name": "Layer"
+            },
+            "includeFlag": "dfNotAlignable"
+        },
+        {
+            "signature": "JNAM",
+            "name": "Cloud Alphas",
+            "type": "array",
+            "element": {
+                "name": "Layer",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Sunrise",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Day",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Sunset",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Night",
+                        "type": "float"
+                    }
+                ]
+            },
+            "includeFlag": "dfNotAlignable"
+        },
+        {
+            "signature": "NAM0",
+            "name": "Weather Colors",
+            "type": "struct",
+            "elements": [
+                {
+                    "id": "WeatherColors",
+                    "name": "Sky-Upper"
+                },
+                {
+                    "id": "WeatherColors",
+                    "name": "Fog Near"
+                },
+                {
+                    "id": "WeatherColors",
+                    "name": "Unknown"
+                },
+                {
+                    "id": "WeatherColors",
+                    "name": "Ambient"
+                },
+                {
+                    "id": "WeatherColors",
+                    "name": "Sunlight"
+                },
+                {
+                    "id": "WeatherColors",
+                    "name": "Sun"
+                },
+                {
+                    "id": "WeatherColors",
+                    "name": "Stars"
+                },
+                {
+                    "id": "WeatherColors",
+                    "name": "Sky-Lower"
+                },
+                {
+                    "id": "WeatherColors",
+                    "name": "Horizon"
+                },
+                {
+                    "id": "WeatherColors",
+                    "name": "Effect Lighting"
+                },
+                {
+                    "id": "WeatherColors",
+                    "name": "Cloud LOD Diffuse"
+                },
+                {
+                    "id": "WeatherColors",
+                    "name": "Cloud LOD Ambient"
+                },
+                {
+                    "id": "WeatherColors",
+                    "name": "Fog Far"
+                },
+                {
+                    "id": "WeatherColors",
+                    "name": "Sky Statics"
+                },
+                {
+                    "id": "WeatherColors",
+                    "name": "Water Multiplier"
+                },
+                {
+                    "id": "WeatherColors",
+                    "name": "Sun Glare"
+                },
+                {
+                    "id": "WeatherColors",
+                    "name": "Moon Glare"
+                }
+            ],
+            "required": true
+        },
+        {
+            "signature": "FNAM",
+            "name": "Fog Distance",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Day - Near",
+                    "type": "float"
+                },
+                {
+                    "name": "Day - Far",
+                    "type": "float"
+                },
+                {
+                    "name": "Night - Near",
+                    "type": "float"
+                },
+                {
+                    "name": "Night - Far",
+                    "type": "float"
+                },
+                {
+                    "name": "Day - Power",
+                    "type": "float"
+                },
+                {
+                    "name": "Night - Power",
+                    "type": "float"
+                },
+                {
+                    "name": "Day - Max",
+                    "type": "float"
+                },
+                {
+                    "name": "Night - Max",
+                    "type": "float"
+                }
+            ],
+            "required": true
+        },
+        {
+            "signature": "DATA",
+            "name": "Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Wind Speed",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 2
+                },
+                {
+                    "name": "Trans Delta",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Sun Glare",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Sun Damage",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Precipitation - Begin Fade In",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Precipitation - End Fade Out",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Thunder/Lightning - Begin Fade In",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Thunder/Lightning - End Fade Out",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Thunder/Lightning - Frequency",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Weather - Pleasant",
+                            "1": "Weather - Cloudy",
+                            "2": "Weather - Rainy",
+                            "3": "Weather - Snow",
+                            "4": "Sky Statics - Always Visible",
+                            "5": "Sky Statics - Follows Sun Position"
+                        }
+                    }
+                },
+                {
+                    "name": "Lightning Color",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Red",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Green",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Blue",
+                            "type": "uint8"
+                        }
+                    ]
+                },
+                {
+                    "name": "Visual Effect - Begin",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Visual Effect - End",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Wind Direction",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Wind Direction Range",
+                    "type": "uint8"
+                }
+            ],
+            "required": true
+        },
+        {
+            "signature": "NAM1",
+            "name": "Disabled Cloud Layers",
+            "type": "uint32",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "0",
+                    "1": "1",
+                    "2": "2",
+                    "3": "3",
+                    "4": "4",
+                    "5": "5",
+                    "6": "6",
+                    "7": "7",
+                    "8": "8",
+                    "9": "9",
+                    "10": "10",
+                    "11": "11",
+                    "12": "12",
+                    "13": "13",
+                    "14": "14",
+                    "15": "15",
+                    "16": "16",
+                    "17": "17",
+                    "18": "18",
+                    "19": "19",
+                    "20": "20",
+                    "21": "21",
+                    "22": "22",
+                    "23": "23",
+                    "24": "24",
+                    "25": "25",
+                    "26": "26",
+                    "27": "27",
+                    "28": "28",
+                    "29": "29",
+                    "30": "30",
+                    "31": "31"
+                }
+            }
+        },
+        {
+            "name": "Sounds",
+            "type": "memberArray",
+            "member": {
+                "signature": "SNAM",
+                "name": "Sound",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Sound",
+                        "type": "formId",
+                        "signatures": [
+                            "SNDR",
+                            "SOUN",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "name": "Type",
+                        "type": "uint32",
+                        "format": {
+                            "type": "enum",
+                            "options": {
+                                "0": "Default",
+                                "1": "Precipitation",
+                                "2": "Wind",
+                                "3": "Thunder"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Sky Statics",
+            "type": "memberArray",
+            "member": {
+                "signature": "TNAM",
+                "name": "Static",
+                "type": "formId",
+                "signatures": [
+                    "STAT",
+                    "NULL"
+                ]
+            },
+            "sorted": true
+        },
+        {
+            "signature": "IMSP",
+            "name": "Image Spaces",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Sunrise",
+                    "type": "formId",
+                    "signatures": [
+                        "IMGS",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Day",
+                    "type": "formId",
+                    "signatures": [
+                        "IMGS",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Sunset",
+                    "type": "formId",
+                    "signatures": [
+                        "IMGS",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Night",
+                    "type": "formId",
+                    "signatures": [
+                        "IMGS",
+                        "NULL"
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "HNAM",
+            "name": "Volumetric Lighting",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Sunrise",
+                    "type": "formId",
+                    "signatures": [
+                        "VOLI",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Day",
+                    "type": "formId",
+                    "signatures": [
+                        "VOLI",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Sunset",
+                    "type": "formId",
+                    "signatures": [
+                        "VOLI",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Night",
+                    "type": "formId",
+                    "signatures": [
+                        "VOLI",
+                        "NULL"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Directional Ambient Lighting Colors",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "DALC",
+                    "id": "AmbientColors",
+                    "name": "Sunrise"
+                },
+                {
+                    "signature": "DALC",
+                    "id": "AmbientColors",
+                    "name": "Day"
+                },
+                {
+                    "signature": "DALC",
+                    "id": "AmbientColors",
+                    "name": "Sunset"
+                },
+                {
+                    "signature": "DALC",
+                    "id": "AmbientColors",
+                    "name": "Night"
+                }
+            ],
+            "required": true
+        },
+        {
+            "signature": "NAM2",
+            "name": "Unused",
+            "type": "bytes"
+        },
+        {
+            "signature": "NAM3",
+            "name": "Unused",
+            "type": "bytes"
+        },
+        {
+            "name": "Aurora",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "id": "MODL"
+                }
+            ]
+        },
+        {
+            "signature": "GNAM",
+            "name": "Sun Glare Lens Flare",
+            "type": "formId",
+            "signatures": [
+                "LENS"
+            ]
+        }
+    ]
+}

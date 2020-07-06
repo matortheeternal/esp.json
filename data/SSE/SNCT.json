@@ -1,0 +1,51 @@
+{
+    "signature": "SNCT",
+    "type": "record",
+    "name": "Sound Category",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "signature": "FNAM",
+            "name": "Flags",
+            "type": "uint32",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Mute When Submerged",
+                    "1": "Should Appear on Menu"
+                }
+            }
+        },
+        {
+            "signature": "PNAM",
+            "name": "Parent",
+            "type": "formId",
+            "signatures": [
+                "SNCT"
+            ]
+        },
+        {
+            "signature": "VNAM",
+            "name": "Static Volume Multiplier",
+            "type": "uint16",
+            "format": {
+                "type": "divide",
+                "value": 65535
+            }
+        },
+        {
+            "signature": "UNAM",
+            "name": "Default Menu Value",
+            "type": "uint16",
+            "format": {
+                "type": "divide",
+                "value": 65535
+            }
+        }
+    ]
+}

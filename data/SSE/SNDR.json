@@ -1,0 +1,126 @@
+{
+    "signature": "SNDR",
+    "type": "record",
+    "name": "Sound Descriptor",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "CNAM",
+            "type": "bytes"
+        },
+        {
+            "signature": "GNAM",
+            "name": "Category",
+            "type": "formId"
+        },
+        {
+            "signature": "SNAM",
+            "name": "Alternate Sound For",
+            "type": "formId",
+            "signatures": [
+                "SNDR",
+                "NULL"
+            ]
+        },
+        {
+            "name": "Sounds",
+            "type": "memberArray",
+            "member": {
+                "name": "Sound Files",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "ANAM",
+                        "name": "File Name",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "ONAM",
+            "name": "Output Model",
+            "type": "formId",
+            "signatures": [
+                "SOPM",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "FNAM",
+            "name": "String",
+            "type": "string",
+            "localized": true
+        },
+        {
+            "id": "CTDAs"
+        },
+        {
+            "signature": "LNAM",
+            "name": "Values",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 1
+                },
+                {
+                    "name": "Looping",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "None",
+                            "8": "Loop",
+                            "16": "Envelope Fast",
+                            "32": "Envelope Slow"
+                        }
+                    }
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 1
+                },
+                {
+                    "name": "Rumble Send Value = (Small / 7) + ((Big / 7) * 16)",
+                    "type": "uint8"
+                }
+            ]
+        },
+        {
+            "signature": "BNAM",
+            "name": "Values",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "% Frequency Shift",
+                    "type": "int8"
+                },
+                {
+                    "name": "% Frequency Variance",
+                    "type": "int8"
+                },
+                {
+                    "name": "Priority",
+                    "type": "uint8"
+                },
+                {
+                    "name": "db Variance",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Static Attenuation (db)",
+                    "type": "uint16",
+                    "format": {
+                        "type": "divide",
+                        "value": 100
+                    }
+                }
+            ]
+        }
+    ]
+}

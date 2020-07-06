@@ -1,0 +1,118 @@
+{
+    "signature": "TES4",
+    "type": "record",
+    "name": "Main File Header",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "0": "ESM",
+            "5": "Deleted",
+            "7": "Localized",
+            "9": "ESL",
+            "12": "Ignored"
+        }
+    },
+    "members": [
+        {
+            "signature": "HEDR",
+            "name": "Header",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Version",
+                    "type": "float"
+                },
+                {
+                    "name": "Number of Records",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Next Object ID",
+                    "type": "uint32",
+                    "format": {
+                        "type": "NextObjectIDFormat"
+                    }
+                }
+            ],
+            "required": true
+        },
+        {
+            "signature": "OFST",
+            "name": "Unknown",
+            "type": "bytes"
+        },
+        {
+            "signature": "DELE",
+            "name": "Unknown",
+            "type": "bytes"
+        },
+        {
+            "signature": "CNAM",
+            "name": "Author",
+            "type": "string",
+            "required": true
+        },
+        {
+            "signature": "SNAM",
+            "name": "Description",
+            "type": "string"
+        },
+        {
+            "name": "Master Files",
+            "type": "memberArray",
+            "member": {
+                "name": "Master File",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "MAST",
+                        "name": "FileName",
+                        "type": "string"
+                    },
+                    {
+                        "signature": "DATA",
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 8
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "ONAM",
+            "name": "Overridden Forms",
+            "type": "array",
+            "element": {
+                "name": "Form",
+                "type": "formId",
+                "signatures": [
+                    "ACHR",
+                    "LAND",
+                    "NAVM",
+                    "REFR",
+                    "PGRE",
+                    "PHZD",
+                    "PMIS",
+                    "PARW",
+                    "PBAR",
+                    "PBEA",
+                    "PCON",
+                    "PFLA"
+                ]
+            }
+        },
+        {
+            "signature": "SCRN",
+            "name": "Screenshot",
+            "type": "bytes"
+        },
+        {
+            "signature": "INTV",
+            "type": "bytes"
+        },
+        {
+            "signature": "INCC",
+            "type": "bytes"
+        }
+    ]
+}

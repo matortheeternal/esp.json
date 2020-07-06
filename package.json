@@ -7,6 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "convertTES5": "node ./tasks/convertTES5.js",
     "buildTES5": "node ./tasks/buildTES5.js",
+    "convertSSE": "node ./tasks/convertSSE.js",
+    "buildSSE": "node ./tasks/buildSSE.js",
     "buildSchema": "node ./tasks/buildSchema.js"
   },
   "repository": {

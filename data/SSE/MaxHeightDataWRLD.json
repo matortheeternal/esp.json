@@ -1,0 +1,39 @@
+{
+    "signature": "MHDT",
+    "name": "Max Height Data",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Min",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "X",
+                    "type": "int16"
+                },
+                {
+                    "name": "Y",
+                    "type": "int16"
+                }
+            ]
+        },
+        {
+            "name": "Max",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "X",
+                    "type": "int16"
+                },
+                {
+                    "name": "Y",
+                    "type": "int16"
+                }
+            ]
+        },
+        {
+            "name": "Cell Data",
+            "type": "bytes"
+        }
+    ]
+}

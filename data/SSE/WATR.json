@@ -1,0 +1,400 @@
+{
+    "signature": "WATR",
+    "type": "record",
+    "name": "Water",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "name": "Unused",
+            "type": "memberArray",
+            "member": {
+                "signature": "NNAM",
+                "name": "Noise Map",
+                "type": "string",
+                "required": true
+            }
+        },
+        {
+            "signature": "ANAM",
+            "name": "Opacity",
+            "type": "uint8"
+        },
+        {
+            "signature": "FNAM",
+            "name": "Flags",
+            "type": "uint8",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Causes Damage",
+                    "1": "Unknown 1",
+                    "2": "Unknown 2",
+                    "3": "Enable Flowmap",
+                    "4": "Blend Normals",
+                    "5": "Unknown 5",
+                    "6": "Unknown 6",
+                    "7": "Unknown 7"
+                }
+            }
+        },
+        {
+            "signature": "MNAM",
+            "name": "Unused",
+            "type": "bytes"
+        },
+        {
+            "signature": "TNAM",
+            "name": "Material",
+            "type": "formId",
+            "signatures": [
+                "MATT"
+            ]
+        },
+        {
+            "signature": "SNAM",
+            "name": "Open Sound",
+            "type": "formId",
+            "signatures": [
+                "SNDR",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "XNAM",
+            "name": "Spell",
+            "type": "formId",
+            "signatures": [
+                "SPEL"
+            ]
+        },
+        {
+            "signature": "INAM",
+            "name": "Image Space",
+            "type": "formId",
+            "signatures": [
+                "IMGS"
+            ]
+        },
+        {
+            "signature": "DATA",
+            "name": "Unused",
+            "type": "uint16"
+        },
+        {
+            "signature": "DNAM",
+            "name": "Visual Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                },
+                {
+                    "name": "Specular Properties - Sun Specular Power",
+                    "type": "float"
+                },
+                {
+                    "name": "Water Properties - Reflectivity Amount",
+                    "type": "float"
+                },
+                {
+                    "name": "Water Properties - Fresnel Amount",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Fog Properties - Above Water - Fog Distance - Near Plane",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog Properties - Above Water - Fog Distance - Far Plane",
+                    "type": "float"
+                },
+                {
+                    "id": "ByteColors",
+                    "name": "Shallow Color"
+                },
+                {
+                    "id": "ByteColors",
+                    "name": "Deep Color"
+                },
+                {
+                    "id": "ByteColors",
+                    "name": "Reflection Color"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                },
+                {
+                    "name": "Displacement Simulator - Starting Size",
+                    "type": "float"
+                },
+                {
+                    "name": "Displacement Simulator - Force",
+                    "type": "float"
+                },
+                {
+                    "name": "Displacement Simulator - Velocity",
+                    "type": "float"
+                },
+                {
+                    "name": "Displacement Simulator - Falloff",
+                    "type": "float"
+                },
+                {
+                    "name": "Displacement Simulator - Dampner",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                },
+                {
+                    "name": "Noise Properties - Noise Falloff",
+                    "type": "float"
+                },
+                {
+                    "name": "Noise Properties - Layer One - Wind Direction",
+                    "type": "float"
+                },
+                {
+                    "name": "Noise Properties - Layer Two - Wind Direction",
+                    "type": "float"
+                },
+                {
+                    "name": "Noise Properties - Layer Three - Wind Direction",
+                    "type": "float"
+                },
+                {
+                    "name": "Noise Properties - Layer One - Wind Speed",
+                    "type": "float"
+                },
+                {
+                    "name": "Noise Properties - Layer Two - Wind Speed",
+                    "type": "float"
+                },
+                {
+                    "name": "Noise Properties - Layer Three - Wind Speed",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog Properties - Above Water - Fog Amount",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog Properties - Under Water - Fog Amount",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog Properties - Under Water - Fog Distance - Near Plane",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog Properties - Under Water - Fog Distance - Far Plane",
+                    "type": "float"
+                },
+                {
+                    "name": "Water Properties - Refraction Magnitude",
+                    "type": "float"
+                },
+                {
+                    "name": "Specular Properties - Specular Power",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                },
+                {
+                    "name": "Specular Properties - Specular Radius",
+                    "type": "float"
+                },
+                {
+                    "name": "Specular Properties - Specular Brightness",
+                    "type": "float"
+                },
+                {
+                    "name": "Noise Properties - Layer One - UV Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Noise Properties - Layer Two - UV Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Noise Properties - Layer Three - UV Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Noise Properties - Layer One - Amplitude Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Noise Properties - Layer Two - Amplitude Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Noise Properties - Layer Three - Amplitude Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Water Properties - Reflection Magnitude",
+                    "type": "float"
+                },
+                {
+                    "name": "Specular Properties - Sun Sparkle Magnitude",
+                    "type": "float"
+                },
+                {
+                    "name": "Specular Properties - Sun Specular Magnitude",
+                    "type": "float"
+                },
+                {
+                    "name": "Depth Properties - Reflections",
+                    "type": "float"
+                },
+                {
+                    "name": "Depth Properties - Refraction",
+                    "type": "float"
+                },
+                {
+                    "name": "Depth Properties - Normals",
+                    "type": "float"
+                },
+                {
+                    "name": "Depth Properties - Specular Lighting",
+                    "type": "float"
+                },
+                {
+                    "name": "Specular Properties - Sun Sparkle Power",
+                    "type": "float"
+                },
+                {
+                    "name": "Noise Properties - Flowmap Scale",
+                    "type": "float"
+                }
+            ],
+            "required": true
+        },
+        {
+            "signature": "GNAM",
+            "name": "Unused",
+            "type": "bytes"
+        },
+        {
+            "signature": "NAM0",
+            "name": "Linear Velocity",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "X",
+                    "type": "float"
+                },
+                {
+                    "name": "Y",
+                    "type": "float"
+                },
+                {
+                    "name": "Z",
+                    "type": "float"
+                }
+            ],
+            "required": true
+        },
+        {
+            "signature": "NAM1",
+            "name": "Angular Velocity",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "X",
+                    "type": "float"
+                },
+                {
+                    "name": "Y",
+                    "type": "float"
+                },
+                {
+                    "name": "Z",
+                    "type": "float"
+                }
+            ],
+            "required": true
+        },
+        {
+            "signature": "NAM2",
+            "name": "Noise Layer One - Noise Texture",
+            "type": "string",
+            "required": true
+        },
+        {
+            "signature": "NAM3",
+            "name": "Noise Layer Two - Noise Texture",
+            "type": "string",
+            "required": true
+        },
+        {
+            "signature": "NAM4",
+            "name": "Noise Layer Three - Noise Texture",
+            "type": "string",
+            "required": true
+        },
+        {
+            "signature": "NAM5",
+            "name": "Flow Normals - Noise Texture",
+            "type": "string",
+            "required": true
+        }
+    ]
+}

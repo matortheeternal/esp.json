@@ -1,0 +1,57 @@
+{
+    "signature": "SHOU",
+    "type": "record",
+    "name": "Shout",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "7": "Treat spells as powers",
+            "12": "Ignored"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MDOB"
+        },
+        {
+            "id": "DESC"
+        },
+        {
+            "name": "Words of Power",
+            "type": "memberArray",
+            "member": {
+                "signature": "SNAM",
+                "name": "",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Word",
+                        "type": "formId",
+                        "signatures": [
+                            "WOOP",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "name": "Spell",
+                        "type": "formId",
+                        "signatures": [
+                            "SPEL",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "name": "Recovery Time",
+                        "type": "float"
+                    }
+                ]
+            }
+        }
+    ]
+}

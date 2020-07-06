@@ -1,0 +1,105 @@
+{
+    "signature": "STAT",
+    "type": "record",
+    "name": "Static",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "0": "",
+            "1": "",
+            "2": "Never Fades",
+            "3": "",
+            "4": "",
+            "5": "Deleted",
+            "6": "Has Tree LOD",
+            "7": "Add-On LOD Object",
+            "8": "",
+            "9": "Hidden From Local Map",
+            "10": "",
+            "11": "Unknown 11",
+            "12": "",
+            "13": "",
+            "14": "",
+            "15": "Has Distant LOD",
+            "16": "Unknown 16",
+            "17": "Uses HD LOD Texture",
+            "18": "",
+            "19": "Has Currents",
+            "20": "",
+            "21": "",
+            "22": "",
+            "23": "Is Marker",
+            "24": "",
+            "25": "Obstacle",
+            "26": "NavMesh Generation - Filter",
+            "27": "NavMesh Generation - Bounding Box",
+            "28": "Show In World Map",
+            "29": "",
+            "30": "NavMesh Generation - Ground",
+            "31": ""
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "signature": "DNAM",
+            "name": "Direction Material",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Max Angle (30-120)",
+                    "type": "float"
+                },
+                {
+                    "name": "Material",
+                    "type": "formId",
+                    "signatures": [
+                        "MATO",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Considered Snow"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3
+                }
+            ],
+            "required": true
+        },
+        {
+            "signature": "MNAM",
+            "name": "Distant LOD",
+            "type": "array",
+            "element": {
+                "name": "LOD",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Mesh",
+                        "type": "string",
+                        "size": 260
+                    }
+                ]
+            }
+        }
+    ]
+}

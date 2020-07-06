@@ -1,0 +1,85 @@
+{
+    "signature": "LVSP",
+    "type": "record",
+    "name": "Leveled Spell",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "LVLD"
+        },
+        {
+            "signature": "LVLF",
+            "name": "Flags",
+            "type": "uint8",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Calculate from all levels <= player's level",
+                    "1": "Calculate for each item in count",
+                    "2": "Use All Spells"
+                }
+            }
+        },
+        {
+            "id": "LLCT"
+        },
+        {
+            "name": "Leveled List Entries",
+            "type": "memberArray",
+            "member": {
+                "name": "Leveled List Entry",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "LVLO",
+                        "name": "Base Data",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Level",
+                                "type": "uint16"
+                            },
+                            {
+                                "name": "Unknown",
+                                "type": "bytes",
+                                "size": 2
+                            },
+                            {
+                                "name": "Reference",
+                                "type": "formId",
+                                "signatures": [
+                                    "SPEL",
+                                    "LVSP"
+                                ]
+                            },
+                            {
+                                "name": "Count",
+                                "type": "uint16"
+                            },
+                            {
+                                "name": "Unknown",
+                                "type": "bytes",
+                                "size": 2
+                            }
+                        ],
+                        "sortKey": [
+                            0,
+                            2
+                        ]
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            },
+            "sorted": true,
+            "required": true
+        }
+    ]
+}

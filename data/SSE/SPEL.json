@@ -1,0 +1,40 @@
+{
+    "signature": "SPEL",
+    "type": "record",
+    "name": "Spell",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "KSIZ"
+        },
+        {
+            "id": "KWDAs"
+        },
+        {
+            "id": "MDOB"
+        },
+        {
+            "id": "ETYP"
+        },
+        {
+            "id": "DESC",
+            "required": true
+        },
+        {
+            "id": "SPIT"
+        },
+        {
+            "id": "Effects",
+            "required": true
+        }
+    ]
+}

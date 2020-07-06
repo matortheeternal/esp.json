@@ -1,0 +1,92 @@
+{
+    "signature": "FLOR",
+    "type": "record",
+    "name": "Flora",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "VMAD"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "FULL",
+            "required": true
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "id": "KSIZ"
+        },
+        {
+            "id": "KWDAs"
+        },
+        {
+            "signature": "PNAM",
+            "type": "bytes"
+        },
+        {
+            "signature": "RNAM",
+            "name": "Activate Text Override",
+            "type": "string",
+            "localized": true
+        },
+        {
+            "signature": "FNAM",
+            "type": "bytes"
+        },
+        {
+            "signature": "PFIG",
+            "name": "Ingredient",
+            "type": "formId",
+            "signatures": [
+                "INGR",
+                "ALCH",
+                "LVLI",
+                "MISC",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "SNAM",
+            "name": "Sound",
+            "type": "formId",
+            "signatures": [
+                "SNDR",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "PFPC",
+            "name": "Seasonal ingredient production",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Spring",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Summer ",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Fall",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Winter",
+                    "type": "uint8"
+                }
+            ],
+            "required": true
+        }
+    ]
+}

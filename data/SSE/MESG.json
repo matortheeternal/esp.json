@@ -1,0 +1,70 @@
+{
+    "signature": "MESG",
+    "type": "record",
+    "name": "Message",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "DESC",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "signature": "INAM",
+            "name": "Icon (unused)",
+            "type": "formId",
+            "signatures": [
+                "NULL"
+            ],
+            "required": true
+        },
+        {
+            "signature": "QNAM",
+            "name": "Owner Quest",
+            "type": "formId",
+            "signatures": [
+                "QUST"
+            ]
+        },
+        {
+            "signature": "DNAM",
+            "name": "Flags",
+            "type": "uint32",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Message Box",
+                    "1": "Auto Display"
+                }
+            }
+        },
+        {
+            "signature": "TNAM",
+            "name": "Display Time",
+            "type": "uint32"
+        },
+        {
+            "name": "Menu Buttons",
+            "type": "memberArray",
+            "member": {
+                "name": "Menu Button",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "ITXT",
+                        "name": "Button Text",
+                        "type": "string",
+                        "localized": true
+                    },
+                    {
+                        "id": "CTDAs"
+                    }
+                ]
+            }
+        }
+    ]
+}

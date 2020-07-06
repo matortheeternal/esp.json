@@ -1,0 +1,209 @@
+{
+    "name": "Available Morphs",
+    "type": "memberStruct",
+    "members": [
+        {
+            "signature": "MPAI",
+            "name": "Unknown",
+            "type": "bytes"
+        },
+        {
+            "signature": "MPAV",
+            "name": "Nose Variants",
+            "type": "struct",
+            "elements": [
+                {
+                    "id": "NoseMorphFlags"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                }
+            ]
+        },
+        {
+            "signature": "MPAI",
+            "name": "Unknown",
+            "type": "bytes"
+        },
+        {
+            "signature": "MPAV",
+            "name": "Brow Variants",
+            "type": "struct",
+            "elements": [
+                {
+                    "id": "BrowMorphFlags"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                }
+            ]
+        },
+        {
+            "signature": "MPAI",
+            "name": "Unknown",
+            "type": "bytes"
+        },
+        {
+            "signature": "MPAV",
+            "name": "Eye Variants",
+            "type": "struct",
+            "elements": [
+                {
+                    "id": "EyesMorphFlags01"
+                },
+                {
+                    "id": "EyesMorphFlags02"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 3
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                }
+            ]
+        },
+        {
+            "signature": "MPAI",
+            "name": "Unknown",
+            "type": "bytes"
+        },
+        {
+            "signature": "MPAV",
+            "name": "Lip Variants",
+            "type": "struct",
+            "elements": [
+                {
+                    "id": "LipMorphFlags"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,268 @@
+{
+    "signature": "INFO",
+    "type": "record",
+    "name": "Dialog response",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "12": "Ignored",
+            "13": "Actor Changed"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "VMADFragmentedINFO"
+        },
+        {
+            "signature": "DATA",
+            "type": "bytes"
+        },
+        {
+            "signature": "ENAM",
+            "name": "Response flags",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Flags",
+                    "type": "uint16",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Goodbye",
+                            "1": "Random",
+                            "2": "Say once",
+                            "3": "Unknown 4",
+                            "4": "Unknown 5",
+                            "5": "Random end",
+                            "6": "Invisible continue",
+                            "7": "Walk Away",
+                            "8": "Walk Away Invisible in Menu",
+                            "9": "Force subtitle",
+                            "10": "Can move while greeting",
+                            "11": "No LIP File",
+                            "12": "Requires post-processing",
+                            "13": "Audio Output Override",
+                            "14": "Spends favor points",
+                            "15": "Unknown 16"
+                        }
+                    }
+                },
+                {
+                    "name": "Reset Hours",
+                    "type": "uint16",
+                    "format": {
+                        "type": "divide",
+                        "value": 2730
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "TPIC",
+            "name": "Topic",
+            "type": "formId",
+            "signatures": [
+                "DIAL"
+            ]
+        },
+        {
+            "signature": "PNAM",
+            "name": "Previous INFO",
+            "type": "formId",
+            "signatures": [
+                "INFO",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "CNAM",
+            "name": "Favor Level",
+            "type": "uint8",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "None",
+                    "1": "Small",
+                    "2": "Medium",
+                    "3": "Large"
+                }
+            }
+        },
+        {
+            "name": "Link To",
+            "type": "memberArray",
+            "member": {
+                "signature": "TCLT",
+                "name": "Response",
+                "type": "formId",
+                "signatures": [
+                    "DIAL",
+                    "INFO",
+                    "NULL"
+                ]
+            }
+        },
+        {
+            "signature": "DNAM",
+            "name": "Response Data",
+            "type": "formId"
+        },
+        {
+            "name": "Responses",
+            "type": "memberArray",
+            "member": {
+                "name": "Response",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "TRDT",
+                        "name": "Response Data",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Emotion Type",
+                                "type": "uint32",
+                                "format": {
+                                    "id": "EmotionTypeEnum"
+                                }
+                            },
+                            {
+                                "name": "Emotion Value",
+                                "type": "uint32"
+                            },
+                            {
+                                "name": "Unused",
+                                "type": "bytes",
+                                "size": 4
+                            },
+                            {
+                                "name": "Response number",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "Unused",
+                                "type": "bytes",
+                                "size": 3
+                            },
+                            {
+                                "name": "Sound",
+                                "type": "formId",
+                                "signatures": [
+                                    "SNDR",
+                                    "NULL"
+                                ]
+                            },
+                            {
+                                "name": "Flags",
+                                "type": "uint8",
+                                "format": {
+                                    "type": "flags",
+                                    "flags": {
+                                        "0": "Use Emotion Animation"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Unused",
+                                "type": "bytes",
+                                "size": 3
+                            }
+                        ]
+                    },
+                    {
+                        "signature": "NAM1",
+                        "name": "Response Text",
+                        "type": "string",
+                        "localized": true
+                    },
+                    {
+                        "signature": "NAM2",
+                        "name": "Script Notes",
+                        "type": "string"
+                    },
+                    {
+                        "signature": "NAM3",
+                        "name": "Edits",
+                        "type": "string"
+                    },
+                    {
+                        "signature": "SNAM",
+                        "name": "Idle Animations: Speaker",
+                        "type": "formId",
+                        "signatures": [
+                            "IDLE"
+                        ]
+                    },
+                    {
+                        "signature": "LNAM",
+                        "name": "Idle Animations: Listener",
+                        "type": "formId",
+                        "signatures": [
+                            "IDLE"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": "CTDAs"
+        },
+        {
+            "name": "Unknown",
+            "type": "memberArray",
+            "member": {
+                "name": "Unknown",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "SCHR",
+                        "type": "bytes"
+                    },
+                    {
+                        "signature": "QNAM",
+                        "name": "Unknown",
+                        "type": "formId"
+                    },
+                    {
+                        "signature": "NEXT",
+                        "name": "Marker",
+                        "type": "empty"
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "RNAM",
+            "name": "Prompt",
+            "type": "string",
+            "localized": true
+        },
+        {
+            "signature": "ANAM",
+            "name": "Speaker",
+            "type": "formId",
+            "signatures": [
+                "NPC_"
+            ]
+        },
+        {
+            "signature": "TWAT",
+            "name": "Walk Away Topic",
+            "type": "formId",
+            "signatures": [
+                "DIAL"
+            ]
+        },
+        {
+            "signature": "ONAM",
+            "name": "Audio Output Override",
+            "type": "formId",
+            "signatures": [
+                "SOPM"
+            ]
+        }
+    ]
+}

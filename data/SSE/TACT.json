@@ -1,0 +1,67 @@
+{
+    "signature": "TACT",
+    "type": "record",
+    "name": "Talking Activator",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "9": "Hidden From Local Map",
+            "12": "Ignored",
+            "16": "Random Anim Start",
+            "17": "Radio Station"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "VMAD"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "id": "KSIZ"
+        },
+        {
+            "id": "KWDAs"
+        },
+        {
+            "signature": "PNAM",
+            "type": "bytes",
+            "required": true
+        },
+        {
+            "signature": "SNAM",
+            "name": "Looping Sound",
+            "type": "formId",
+            "signatures": [
+                "SNDR"
+            ]
+        },
+        {
+            "signature": "FNAM",
+            "type": "bytes",
+            "required": true
+        },
+        {
+            "signature": "VNAM",
+            "name": "Voice Type",
+            "type": "formId",
+            "signatures": [
+                "VTYP"
+            ]
+        }
+    ]
+}

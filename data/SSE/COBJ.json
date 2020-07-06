@@ -1,0 +1,37 @@
+{
+    "signature": "COBJ",
+    "type": "record",
+    "name": "Constructible Object",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "COCT"
+        },
+        {
+            "id": "CNTOsNoReach"
+        },
+        {
+            "id": "CTDAs"
+        },
+        {
+            "signature": "CNAM",
+            "name": "Created Object",
+            "type": "formId"
+        },
+        {
+            "signature": "BNAM",
+            "name": "Workbench Keyword",
+            "type": "formId",
+            "signatures": [
+                "KYWD"
+            ]
+        },
+        {
+            "signature": "NAM1",
+            "name": "Created Object Count",
+            "type": "uint16"
+        }
+    ]
+}

@@ -1,0 +1,67 @@
+{
+    "signature": "SCRL",
+    "type": "record",
+    "name": "Scroll",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "KSIZ"
+        },
+        {
+            "id": "KWDAs"
+        },
+        {
+            "id": "MDOB"
+        },
+        {
+            "id": "ETYP"
+        },
+        {
+            "id": "DESC"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "id": "YNAM"
+        },
+        {
+            "id": "ZNAM"
+        },
+        {
+            "signature": "DATA",
+            "name": "Item",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Value",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                }
+            ],
+            "required": true
+        },
+        {
+            "id": "SPIT"
+        },
+        {
+            "id": "Effects",
+            "required": true
+        }
+    ]
+}

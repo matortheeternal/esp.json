@@ -1,0 +1,102 @@
+{
+    "name": "Script Fragments",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Unknown",
+            "type": "int8"
+        },
+        {
+            "name": "Flags",
+            "type": "uint8",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "OnBegin",
+                    "1": "OnEnd"
+                }
+            }
+        },
+        {
+            "name": "FileName",
+            "type": "string",
+            "prefix": 2
+        },
+        {
+            "name": "Fragments",
+            "type": "array",
+            "element": {
+                "name": "Fragment",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Unknown",
+                        "type": "int8"
+                    },
+                    {
+                        "name": "ScriptName",
+                        "type": "string",
+                        "prefix": 2
+                    },
+                    {
+                        "name": "FragmentName",
+                        "type": "string",
+                        "prefix": 2
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Phase Fragments",
+            "type": "array",
+            "element": {
+                "name": "Phase Fragment",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Phase Flag",
+                        "type": "uint8",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "OnStart",
+                                "1": "OnCompletion"
+                            }
+                        }
+                    },
+                    {
+                        "name": "Phase Index",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "int16"
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "int8"
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "int8"
+                    },
+                    {
+                        "name": "ScriptName",
+                        "type": "string",
+                        "prefix": 2
+                    },
+                    {
+                        "name": "FragmentName",
+                        "type": "string",
+                        "prefix": 2
+                    }
+                ],
+                "sortKey": [
+                    0,
+                    1
+                ]
+            },
+            "prefix": 2
+        }
+    ]
+}

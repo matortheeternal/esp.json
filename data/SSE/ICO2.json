@@ -1,0 +1,18 @@
+{
+    "name": "Icon 2 (female)",
+    "type": "memberStruct",
+    "members": [
+        {
+            "signature": "ICO2",
+            "name": "Large Icon FileName",
+            "type": "string",
+            "required": true
+        },
+        {
+            "signature": "MIC2",
+            "name": "Small Icon FileName",
+            "type": "string"
+        }
+    ],
+    "required": true
+}

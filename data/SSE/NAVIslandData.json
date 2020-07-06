@@ -1,0 +1,76 @@
+{
+    "name": "Island Data",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Min X",
+            "type": "float"
+        },
+        {
+            "name": "Min Y",
+            "type": "float"
+        },
+        {
+            "name": "Min Z",
+            "type": "float"
+        },
+        {
+            "name": "Max X",
+            "type": "float"
+        },
+        {
+            "name": "Max Y",
+            "type": "float"
+        },
+        {
+            "name": "Max Z",
+            "type": "float"
+        },
+        {
+            "name": "Triangles",
+            "type": "array",
+            "element": {
+                "name": "Triangle",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Vertices",
+                        "type": "array",
+                        "element": {
+                            "name": "Vertex",
+                            "type": "int16"
+                        },
+                        "size": 3,
+                        "includeFlag": "dfNotAlignable"
+                    }
+                ]
+            },
+            "prefix": 4,
+            "includeFlag": "dfNotAlignable"
+        },
+        {
+            "name": "Vertices",
+            "type": "array",
+            "element": {
+                "name": "Vertex",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "X",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Z",
+                        "type": "float"
+                    }
+                ]
+            },
+            "prefix": 4,
+            "includeFlag": "dfNotAlignable"
+        }
+    ]
+}

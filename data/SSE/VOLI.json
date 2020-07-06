@@ -1,0 +1,73 @@
+{
+    "signature": "VOLI",
+    "type": "record",
+    "name": "Volumetric Lighting",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "CNAM",
+            "name": "Intensity",
+            "type": "float"
+        },
+        {
+            "signature": "DNAM",
+            "name": "Custom Color - Contribution",
+            "type": "float"
+        },
+        {
+            "signature": "ENAM",
+            "name": "Red",
+            "type": "float",
+            "required": true
+        },
+        {
+            "signature": "FNAM",
+            "name": "Green",
+            "type": "float",
+            "required": true
+        },
+        {
+            "signature": "GNAM",
+            "name": "Blue",
+            "type": "float",
+            "required": true
+        },
+        {
+            "signature": "HNAM",
+            "name": "Density - Contribution",
+            "type": "float"
+        },
+        {
+            "signature": "INAM",
+            "name": "Density - Size",
+            "type": "float"
+        },
+        {
+            "signature": "JNAM",
+            "name": "Density - Wind Speed",
+            "type": "float"
+        },
+        {
+            "signature": "KNAM",
+            "name": "Density - Falling Speed",
+            "type": "float"
+        },
+        {
+            "signature": "LNAM",
+            "name": "Phase Function - Contribution",
+            "type": "float"
+        },
+        {
+            "signature": "MNAM",
+            "name": "Phase Function - Scattering",
+            "type": "float"
+        },
+        {
+            "signature": "NNAM",
+            "name": "Sampling Repartition - Range Factor",
+            "type": "float"
+        }
+    ]
+}

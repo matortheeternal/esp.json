@@ -1,0 +1,124 @@
+{
+    "signature": "ACTI",
+    "type": "record",
+    "name": "Activator",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "6": "Has Tree LOD",
+            "8": "Must Update Anims",
+            "9": "Hidden From Local Map",
+            "12": "Ignored",
+            "15": "Has Distant LOD",
+            "16": "Random Anim Start",
+            "17": "Dangerous",
+            "20": "Ignore Object Interaction",
+            "23": "Is Marker",
+            "25": "Obstacle",
+            "26": "NavMesh Generation - Filter",
+            "27": "NavMesh Generation - Bounding Box",
+            "29": "Child Can Use",
+            "30": "NavMesh Generation - Ground"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "VMAD"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "id": "KSIZ"
+        },
+        {
+            "id": "KWDAs"
+        },
+        {
+            "signature": "PNAM",
+            "name": "Marker Color",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Red",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Green",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Blue",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unused",
+                    "type": "uint8"
+                }
+            ]
+        },
+        {
+            "signature": "SNAM",
+            "name": "Sound - Looping",
+            "type": "formId",
+            "signatures": [
+                "SNDR"
+            ]
+        },
+        {
+            "signature": "VNAM",
+            "name": "Sound - Activation",
+            "type": "formId",
+            "signatures": [
+                "SNDR"
+            ]
+        },
+        {
+            "signature": "WNAM",
+            "name": "Water Type",
+            "type": "formId",
+            "signatures": [
+                "WATR"
+            ]
+        },
+        {
+            "signature": "RNAM",
+            "name": "Activate Text Override",
+            "type": "string",
+            "localized": true
+        },
+        {
+            "signature": "FNAM",
+            "name": "Flags",
+            "type": "uint16",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "No Displacement",
+                    "1": "Ignored by Sandbox"
+                }
+            }
+        },
+        {
+            "signature": "KNAM",
+            "name": "Interaction Keyword",
+            "type": "formId",
+            "signatures": [
+                "KYWD"
+            ]
+        }
+    ]
+}

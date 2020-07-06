@@ -1,0 +1,435 @@
+{
+    "signature": "WEAP",
+    "type": "record",
+    "name": "Weapon",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "2": "Non-Playable",
+            "12": "Ignored"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "VMAD"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "EITM"
+        },
+        {
+            "signature": "EAMT",
+            "name": "Enchantment Amount",
+            "type": "uint16"
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "id": "ETYP"
+        },
+        {
+            "signature": "BIDS",
+            "name": "Block Bash Impact Data Set",
+            "type": "formId",
+            "signatures": [
+                "IPDS",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "BAMT",
+            "name": "Alternate Block Material",
+            "type": "formId",
+            "signatures": [
+                "MATT",
+                "NULL"
+            ]
+        },
+        {
+            "id": "YNAM"
+        },
+        {
+            "id": "ZNAM"
+        },
+        {
+            "id": "KSIZ"
+        },
+        {
+            "id": "KWDAs"
+        },
+        {
+            "id": "DESC"
+        },
+        {
+            "name": "Has Scope",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "MOD3",
+                    "name": "Model FileName",
+                    "type": "string"
+                },
+                {
+                    "signature": "MO3T",
+                    "name": "Texture Files Hashes",
+                    "type": "bytes"
+                },
+                {
+                    "id": "MO3S"
+                }
+            ]
+        },
+        {
+            "signature": "NNAM",
+            "name": "Unused",
+            "type": "bytes"
+        },
+        {
+            "signature": "INAM",
+            "name": "Impact Data Set",
+            "type": "formId",
+            "signatures": [
+                "IPDS",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "WNAM",
+            "name": "1st Person Model Object",
+            "type": "formId",
+            "signatures": [
+                "STAT",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "SNAM",
+            "name": "Attack Sound",
+            "type": "formId",
+            "signatures": [
+                "SNDR"
+            ]
+        },
+        {
+            "signature": "XNAM",
+            "name": "Attack Sound 2D",
+            "type": "formId",
+            "signatures": [
+                "SNDR"
+            ]
+        },
+        {
+            "signature": "NAM7",
+            "name": "Attack Loop Sound",
+            "type": "formId",
+            "signatures": [
+                "SNDR"
+            ]
+        },
+        {
+            "signature": "TNAM",
+            "name": "Attack Fail Sound",
+            "type": "formId",
+            "signatures": [
+                "SNDR"
+            ]
+        },
+        {
+            "signature": "UNAM",
+            "name": "Idle Sound",
+            "type": "formId",
+            "signatures": [
+                "SNDR"
+            ]
+        },
+        {
+            "signature": "NAM9",
+            "name": "Equip Sound",
+            "type": "formId",
+            "signatures": [
+                "SNDR"
+            ]
+        },
+        {
+            "signature": "NAM8",
+            "name": "Unequip Sound",
+            "type": "formId",
+            "signatures": [
+                "SNDR"
+            ]
+        },
+        {
+            "signature": "DATA",
+            "name": "Game Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Value",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                },
+                {
+                    "name": "Damage",
+                    "type": "uint16"
+                }
+            ]
+        },
+        {
+            "signature": "DNAM",
+            "name": "Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Animation Type",
+                    "type": "uint8",
+                    "format": {
+                        "id": "WeaponAnimTypeEnum"
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3
+                },
+                {
+                    "name": "Speed",
+                    "type": "float"
+                },
+                {
+                    "name": "Reach",
+                    "type": "float"
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint16",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Ignores Normal Weapon Resistance",
+                            "1": "Automatic (unused)",
+                            "2": "Has Scope (unused)",
+                            "3": "Can't Drop",
+                            "4": "Hide Backpack (unused)",
+                            "5": "Embedded Weapon (unused)",
+                            "6": "Don't Use 1st Person IS Anim (unused)",
+                            "7": "Non-playable"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 2
+                },
+                {
+                    "name": "Sight FOV",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Base VATS To-Hit Chance",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Attack Animation",
+                    "type": "uint8",
+                    "format": {
+                        "id": "AttackAnimationEnum"
+                    }
+                },
+                {
+                    "name": "# Projectiles",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Embedded Weapon AV (unused)",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Range Min",
+                    "type": "float"
+                },
+                {
+                    "name": "Range Max",
+                    "type": "float"
+                },
+                {
+                    "name": "On Hit",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "No formula behaviour",
+                            "1": "Dismember only",
+                            "2": "Explode only",
+                            "3": "No dismember/explode"
+                        }
+                    }
+                },
+                {
+                    "name": "Flags2",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Player Only",
+                            "1": "NPCs Use Ammo",
+                            "2": "No Jam After Reload (unused)",
+                            "3": "Unknown 4",
+                            "4": "Minor Crime",
+                            "5": "Range Fixed",
+                            "6": "Not Used in Normal Combat",
+                            "7": "Unknown 8",
+                            "8": "Don't Use 3rd Person IS Anim (unused)",
+                            "9": "Burst Shot",
+                            "10": "Rumble - Alternate",
+                            "11": "Long Bursts",
+                            "12": "Non-hostile",
+                            "13": "Bound Weapon"
+                        }
+                    }
+                },
+                {
+                    "name": "Animation Attack Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                },
+                {
+                    "name": "Rumble - Left Motor Strength",
+                    "type": "float"
+                },
+                {
+                    "name": "Rumble - Right Motor Strength",
+                    "type": "float"
+                },
+                {
+                    "name": "Rumble - Duration",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 12
+                },
+                {
+                    "name": "Skill",
+                    "type": "int32",
+                    "format": {
+                        "id": "SkillEnum"
+                    }
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 8
+                },
+                {
+                    "name": "Resist",
+                    "type": "int32",
+                    "format": {
+                        "id": "ActorValueEnum"
+                    }
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Stagger",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "CRDT",
+            "name": "Critical Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Damage",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 2
+                },
+                {
+                    "name": "% Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "On Death"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 7
+                },
+                {
+                    "name": "Effect",
+                    "type": "formId",
+                    "signatures": [
+                        "SPEL",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 4
+                }
+            ]
+        },
+        {
+            "signature": "VNAM",
+            "name": "Detection Sound Level",
+            "type": "uint32",
+            "format": {
+                "id": "SoundLevelEnum"
+            }
+        },
+        {
+            "signature": "CNAM",
+            "name": "Template",
+            "type": "formId",
+            "signatures": [
+                "WEAP"
+            ]
+        }
+    ]
+}

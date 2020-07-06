@@ -1,0 +1,21 @@
+{
+    "signature": "MHDT",
+    "name": "Max Height Data",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Offset",
+            "type": "float"
+        },
+        {
+            "name": "Rows",
+            "type": "array",
+            "element": {
+                "name": "Columns",
+                "type": "bytes",
+                "size": 32
+            },
+            "size": 32
+        }
+    ]
+}

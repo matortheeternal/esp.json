@@ -1,0 +1,74 @@
+{
+    "signature": "LTEX",
+    "type": "record",
+    "name": "Landscape Texture",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "TNAM",
+            "name": "Texture Set",
+            "type": "formId",
+            "signatures": [
+                "TXST"
+            ],
+            "required": true
+        },
+        {
+            "signature": "MNAM",
+            "name": "Material Type",
+            "type": "formId",
+            "signatures": [
+                "MATT",
+                "NULL"
+            ],
+            "required": true
+        },
+        {
+            "signature": "HNAM",
+            "name": "Havok Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Friction",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Restitution",
+                    "type": "uint8"
+                }
+            ],
+            "required": true
+        },
+        {
+            "signature": "SNAM",
+            "name": "Texture Specular Exponent",
+            "type": "uint8"
+        },
+        {
+            "name": "Grasses",
+            "type": "memberArray",
+            "member": {
+                "signature": "GNAM",
+                "name": "Grass",
+                "type": "formId",
+                "signatures": [
+                    "GRAS"
+                ]
+            },
+            "sorted": true
+        },
+        {
+            "signature": "INAM",
+            "name": "Flags",
+            "type": "uint32",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Is Snow"
+                }
+            }
+        }
+    ]
+}

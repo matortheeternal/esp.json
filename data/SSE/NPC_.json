@@ -1,0 +1,750 @@
+{
+    "signature": "NPC_",
+    "type": "record",
+    "name": "Non-Player Character (Actor)",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "10": "Unknown 10",
+            "12": "Ignored",
+            "18": "Compressed",
+            "19": "Unknown 19",
+            "29": "Bleedout Override"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "VMAD"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "signature": "ACBS",
+            "name": "Configuration",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Female",
+                            "1": "Essential",
+                            "2": "Is CharGen Face Preset",
+                            "3": "Respawn",
+                            "4": "Auto-calc stats",
+                            "5": "Unique",
+                            "6": "Doesn't affect stealth meter",
+                            "7": "PC Level Mult",
+                            "8": "Use Template?",
+                            "9": "Unknown 9",
+                            "10": "Unknown 10",
+                            "11": "Protected",
+                            "12": "Unknown 12",
+                            "13": "Unknown 13",
+                            "14": "Summonable",
+                            "15": "Unknown 15",
+                            "16": "Doesn't bleed",
+                            "17": "Unknown 17",
+                            "18": "Bleedout Override",
+                            "19": "Opposite Gender Anims",
+                            "20": "Simple Actor",
+                            "21": "looped script?",
+                            "22": "Unknown 22",
+                            "23": "Unknown 23",
+                            "24": "Unknown 24",
+                            "25": "Unknown 25",
+                            "26": "Unknown 26",
+                            "27": "Unknown 27",
+                            "28": "looped audio?",
+                            "29": "Is Ghost",
+                            "30": "Unknown 30",
+                            "31": "Invulnerable"
+                        }
+                    }
+                },
+                {
+                    "name": "Magicka Offset",
+                    "type": "int16"
+                },
+                {
+                    "name": "Stamina Offset",
+                    "type": "int16"
+                },
+                {
+                    "name": "Level",
+                    "type": "union",
+                    "decider": "NPCLevelDecider",
+                    "elements": [
+                        {
+                            "name": "Level",
+                            "type": "int16"
+                        },
+                        {
+                            "name": "Level Mult",
+                            "type": "int16",
+                            "format": {
+                                "type": "divide",
+                                "value": 1000
+                            }
+                        }
+                    ],
+                    "required": true
+                },
+                {
+                    "name": "Calc min level",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Calc max level",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Speed Multiplier",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Disposition Base (unused)",
+                    "type": "int16"
+                },
+                {
+                    "name": "Template Flags",
+                    "type": "uint16",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Use Traits",
+                            "1": "Use Stats",
+                            "2": "Use Factions",
+                            "3": "Use Spell List",
+                            "4": "Use AI Data",
+                            "5": "Use AI Packages",
+                            "6": "Use Model/Animation?",
+                            "7": "Use Base Data",
+                            "8": "Use Inventory",
+                            "9": "Use Script",
+                            "10": "Use Def Pack List",
+                            "11": "Use Attack Data",
+                            "12": "Use Keywords"
+                        }
+                    }
+                },
+                {
+                    "name": "Health Offset",
+                    "type": "int16"
+                },
+                {
+                    "name": "Bleedout Override",
+                    "type": "uint16"
+                }
+            ],
+            "required": true
+        },
+        {
+            "name": "Factions",
+            "type": "memberArray",
+            "member": {
+                "signature": "SNAM",
+                "name": "Faction",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Faction",
+                        "type": "formId",
+                        "signatures": [
+                            "FACT"
+                        ]
+                    },
+                    {
+                        "name": "Rank",
+                        "type": "int8"
+                    },
+                    {
+                        "name": "Unused",
+                        "type": "bytes",
+                        "size": 3
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            },
+            "sorted": true,
+            "required": true
+        },
+        {
+            "signature": "INAM",
+            "name": "Death item",
+            "type": "formId",
+            "signatures": [
+                "LVLI"
+            ],
+            "required": true
+        },
+        {
+            "signature": "VTCK",
+            "name": "Voice",
+            "type": "formId",
+            "signatures": [
+                "VTYP"
+            ],
+            "required": true
+        },
+        {
+            "signature": "TPLT",
+            "name": "Template",
+            "type": "formId",
+            "signatures": [
+                "LVLN",
+                "NPC_"
+            ]
+        },
+        {
+            "signature": "RNAM",
+            "name": "Race",
+            "type": "formId",
+            "signatures": [
+                "RACE"
+            ],
+            "required": true
+        },
+        {
+            "id": "SPCT"
+        },
+        {
+            "id": "SPLOs"
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "signature": "WNAM",
+            "name": "Worn Armor",
+            "type": "formId",
+            "signatures": [
+                "ARMO"
+            ],
+            "required": true
+        },
+        {
+            "signature": "ANAM",
+            "name": "Far away model",
+            "type": "formId",
+            "signatures": [
+                "ARMO"
+            ],
+            "required": true
+        },
+        {
+            "signature": "ATKR",
+            "name": "Attack Race",
+            "type": "formId",
+            "signatures": [
+                "RACE"
+            ],
+            "required": true
+        },
+        {
+            "name": "Attacks",
+            "type": "memberArray",
+            "member": {
+                "id": "AttackData"
+            },
+            "sorted": true
+        },
+        {
+            "signature": "SPOR",
+            "name": "Spectator override package list",
+            "type": "formId",
+            "signatures": [
+                "FLST"
+            ],
+            "required": true
+        },
+        {
+            "signature": "OCOR",
+            "name": "Observe dead body override package list",
+            "type": "formId",
+            "signatures": [
+                "FLST"
+            ],
+            "required": true
+        },
+        {
+            "signature": "GWOR",
+            "name": "Guard warn override package list",
+            "type": "formId",
+            "signatures": [
+                "FLST"
+            ],
+            "required": true
+        },
+        {
+            "signature": "ECOR",
+            "name": "Combat override package list",
+            "type": "formId",
+            "signatures": [
+                "FLST"
+            ],
+            "required": true
+        },
+        {
+            "signature": "PRKZ",
+            "name": "Perk Count",
+            "type": "uint32"
+        },
+        {
+            "name": "Perks",
+            "type": "memberArray",
+            "member": {
+                "signature": "PRKR",
+                "name": "Perk",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Perk",
+                        "type": "formId",
+                        "signatures": [
+                            "PERK"
+                        ]
+                    },
+                    {
+                        "name": "Rank",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "Unused",
+                        "type": "bytes",
+                        "size": 3
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            },
+            "sorted": true,
+            "required": true
+        },
+        {
+            "id": "COCT"
+        },
+        {
+            "id": "CNTOs"
+        },
+        {
+            "id": "AIDT"
+        },
+        {
+            "name": "Packages",
+            "type": "memberArray",
+            "member": {
+                "signature": "PKID",
+                "name": "Package",
+                "type": "formId",
+                "signatures": [
+                    "PACK"
+                ]
+            }
+        },
+        {
+            "id": "KSIZ"
+        },
+        {
+            "id": "KWDAs"
+        },
+        {
+            "signature": "CNAM",
+            "name": "Class",
+            "type": "formId",
+            "signatures": [
+                "CLAS"
+            ],
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "signature": "SHRT",
+            "name": "Short Name",
+            "type": "string",
+            "localized": true
+        },
+        {
+            "signature": "DATA",
+            "name": "Marker",
+            "type": "bytes"
+        },
+        {
+            "signature": "DNAM",
+            "name": "Player Skills",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Skill Values",
+                    "type": "array",
+                    "element": {
+                        "name": "Skill",
+                        "type": "uint8"
+                    }
+                },
+                {
+                    "name": "Skill Offsets",
+                    "type": "array",
+                    "element": {
+                        "name": "Skill",
+                        "type": "uint8"
+                    }
+                },
+                {
+                    "name": "Health",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Magicka",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Stamina",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 2
+                },
+                {
+                    "name": "Far away model distance",
+                    "type": "float"
+                },
+                {
+                    "name": "Geared up weapons",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3
+                }
+            ],
+            "required": true
+        },
+        {
+            "name": "Head Parts",
+            "type": "memberArray",
+            "member": {
+                "signature": "PNAM",
+                "name": "Head Part",
+                "type": "formId",
+                "signatures": [
+                    "HDPT"
+                ]
+            },
+            "sorted": true,
+            "required": true
+        },
+        {
+            "signature": "HCLF",
+            "name": "Hair Color",
+            "type": "formId",
+            "signatures": [
+                "CLFM"
+            ],
+            "required": true
+        },
+        {
+            "signature": "ZNAM",
+            "name": "Combat Style",
+            "type": "formId",
+            "signatures": [
+                "CSTY"
+            ],
+            "required": true
+        },
+        {
+            "signature": "GNAM",
+            "name": "Gift Filter",
+            "type": "formId",
+            "signatures": [
+                "FLST"
+            ],
+            "required": true
+        },
+        {
+            "signature": "NAM5",
+            "type": "bytes",
+            "required": true
+        },
+        {
+            "signature": "NAM6",
+            "name": "Height",
+            "type": "float",
+            "required": true
+        },
+        {
+            "signature": "NAM7",
+            "name": "Weight",
+            "type": "float",
+            "required": true
+        },
+        {
+            "signature": "NAM8",
+            "name": "Sound Level",
+            "type": "uint32",
+            "format": {
+                "id": "SoundLevelEnum"
+            }
+        },
+        {
+            "id": "CSDTs"
+        },
+        {
+            "signature": "CSCR",
+            "name": "Inherits Sounds From",
+            "type": "formId",
+            "signatures": [
+                "NPC_"
+            ],
+            "required": true
+        },
+        {
+            "signature": "DOFT",
+            "name": "Default outfit",
+            "type": "formId",
+            "signatures": [
+                "OTFT"
+            ],
+            "required": true
+        },
+        {
+            "signature": "SOFT",
+            "name": "Sleeping outfit",
+            "type": "formId",
+            "signatures": [
+                "OTFT"
+            ],
+            "required": true
+        },
+        {
+            "signature": "DPLT",
+            "name": "Default Package List",
+            "type": "formId",
+            "signatures": [
+                "FLST"
+            ],
+            "required": true
+        },
+        {
+            "signature": "CRIF",
+            "name": "Crime faction",
+            "type": "formId",
+            "signatures": [
+                "FACT"
+            ],
+            "required": true
+        },
+        {
+            "signature": "FTST",
+            "name": "Head texture",
+            "type": "formId",
+            "signatures": [
+                "TXST"
+            ],
+            "required": true
+        },
+        {
+            "signature": "QNAM",
+            "name": "Texture lighting",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Red",
+                    "type": "float",
+                    "required": true
+                },
+                {
+                    "name": "Green",
+                    "type": "float",
+                    "required": true
+                },
+                {
+                    "name": "Blue",
+                    "type": "float",
+                    "required": true
+                }
+            ]
+        },
+        {
+            "signature": "NAM9",
+            "name": "Face morph",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Nose Long/Short",
+                    "type": "float"
+                },
+                {
+                    "name": "Nose Up/Down",
+                    "type": "float"
+                },
+                {
+                    "name": "Jaw Up/Down",
+                    "type": "float"
+                },
+                {
+                    "name": "Jaw Narrow/Wide",
+                    "type": "float"
+                },
+                {
+                    "name": "Jaw Farward/Back",
+                    "type": "float"
+                },
+                {
+                    "name": "Cheeks Up/Down",
+                    "type": "float"
+                },
+                {
+                    "name": "Cheeks Farward/Back",
+                    "type": "float"
+                },
+                {
+                    "name": "Eyes Up/Down",
+                    "type": "float"
+                },
+                {
+                    "name": "Eyes In/Out",
+                    "type": "float"
+                },
+                {
+                    "name": "Brows Up/Down",
+                    "type": "float"
+                },
+                {
+                    "name": "Brows In/Out",
+                    "type": "float"
+                },
+                {
+                    "name": "Brows Farward/Back",
+                    "type": "float"
+                },
+                {
+                    "name": "Lips Up/Down",
+                    "type": "float"
+                },
+                {
+                    "name": "Lips In/Out",
+                    "type": "float"
+                },
+                {
+                    "name": "Chin Narrow/Wide",
+                    "type": "float"
+                },
+                {
+                    "name": "Chin Up/Down",
+                    "type": "float"
+                },
+                {
+                    "name": "Chin Underbite/Overbite",
+                    "type": "float"
+                },
+                {
+                    "name": "Eyes Farward/Back",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                }
+            ],
+            "required": true
+        },
+        {
+            "signature": "NAMA",
+            "name": "Face parts",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Nose",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "int32"
+                },
+                {
+                    "name": "Eyes",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Mouth",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "name": "Tint Layers",
+            "type": "memberArray",
+            "member": {
+                "name": "Layer",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "TINI",
+                        "name": "Tint Index",
+                        "type": "uint16",
+                        "format": {
+                            "type": "TintLayerFormat"
+                        }
+                    },
+                    {
+                        "signature": "TINC",
+                        "name": "Tint Color",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Red",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "Green",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "Blue",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "Alpha",
+                                "type": "uint8"
+                            }
+                        ]
+                    },
+                    {
+                        "signature": "TINV",
+                        "name": "Interpolation Value",
+                        "type": "uint32",
+                        "format": {
+                            "type": "divide",
+                            "value": 100
+                        }
+                    },
+                    {
+                        "signature": "TIAS",
+                        "name": "Preset",
+                        "type": "int16"
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            },
+            "sorted": true
+        }
+    ]
+}

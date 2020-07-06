@@ -1,0 +1,13 @@
+{
+    "signature": "OFST",
+    "name": "Offset Data",
+    "type": "array",
+    "element": {
+        "name": "Rows",
+        "type": "array",
+        "element": {
+            "name": "Offset",
+            "type": "uint32"
+        }
+    }
+}

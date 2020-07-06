@@ -1,0 +1,143 @@
+{
+    "signature": "SOPM",
+    "type": "record",
+    "name": "Sound Output Model",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "NAM1",
+            "name": "Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Attenuates With Distance",
+                            "1": "Allows Rumble"
+                        }
+                    }
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 2
+                },
+                {
+                    "name": "Reverb Send %",
+                    "type": "uint8"
+                }
+            ]
+        },
+        {
+            "signature": "FNAM",
+            "type": "bytes"
+        },
+        {
+            "signature": "MNAM",
+            "name": "Type",
+            "type": "uint32",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "Uses HRTF",
+                    "1": "Defined Speaker Output"
+                }
+            }
+        },
+        {
+            "signature": "CNAM",
+            "type": "bytes"
+        },
+        {
+            "signature": "SNAM",
+            "type": "bytes"
+        },
+        {
+            "signature": "ONAM",
+            "name": "Output Values",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Channels",
+                    "type": "array",
+                    "element": {
+                        "name": "",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "L",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "R",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "C",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "LFE",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "RL",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "RR",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "BL",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "BR",
+                                "type": "uint8"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "ANAM",
+            "name": "Attenuation Values",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Min Distance",
+                    "type": "float"
+                },
+                {
+                    "name": "Max Distance",
+                    "type": "float"
+                },
+                {
+                    "name": "Curve",
+                    "type": "array",
+                    "element": {
+                        "name": "Value",
+                        "type": "uint8"
+                    },
+                    "size": 5
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes"
+                }
+            ]
+        }
+    ]
+}

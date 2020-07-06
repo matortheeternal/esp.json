@@ -1,0 +1,36 @@
+{
+    "signature": "CLFM",
+    "type": "record",
+    "name": "Color",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "2": "Non-Playable",
+            "12": "Ignored"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "CNAM",
+            "required": true
+        },
+        {
+            "signature": "FNAM",
+            "name": "Playable",
+            "type": "uint32",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "False",
+                    "1": "True"
+                }
+            }
+        }
+    ]
+}

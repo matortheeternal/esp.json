@@ -1,0 +1,181 @@
+{
+    "signature": "ARMO",
+    "type": "record",
+    "name": "Armor",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "2": "Non-Playable",
+            "6": "Shield",
+            "10": "Unknown 10",
+            "12": "Ignored",
+            "15": "Unknown 15"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "VMAD"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "EITM"
+        },
+        {
+            "signature": "EAMT",
+            "name": "Enchantment Amount",
+            "type": "uint16"
+        },
+        {
+            "name": "Male world model",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "MOD2",
+                    "name": "Model FileName",
+                    "type": "string"
+                },
+                {
+                    "signature": "MO2T",
+                    "name": "Texture Files Hashes",
+                    "type": "bytes"
+                },
+                {
+                    "id": "MO2S"
+                }
+            ]
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "name": "Female world model",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "MOD4",
+                    "name": "Model FileName",
+                    "type": "string"
+                },
+                {
+                    "signature": "MO4T",
+                    "name": "Texture Files Hashes",
+                    "type": "bytes"
+                },
+                {
+                    "id": "MO4S"
+                }
+            ]
+        },
+        {
+            "id": "ICO2"
+        },
+        {
+            "id": "BODTBOD2"
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "id": "YNAM"
+        },
+        {
+            "id": "ZNAM"
+        },
+        {
+            "signature": "BMCT",
+            "name": "Ragdoll Constraint Template",
+            "type": "string"
+        },
+        {
+            "id": "ETYP"
+        },
+        {
+            "signature": "BIDS",
+            "name": "Bash Impact Data Set",
+            "type": "formId",
+            "signatures": [
+                "IPDS"
+            ]
+        },
+        {
+            "signature": "BAMT",
+            "name": "Alternate Block Material",
+            "type": "formId",
+            "signatures": [
+                "MATT"
+            ]
+        },
+        {
+            "signature": "RNAM",
+            "name": "Race",
+            "type": "formId",
+            "signatures": [
+                "RACE"
+            ]
+        },
+        {
+            "id": "KSIZ"
+        },
+        {
+            "id": "KWDAs"
+        },
+        {
+            "id": "DESC"
+        },
+        {
+            "name": "Armature",
+            "type": "memberArray",
+            "member": {
+                "signature": "MODL",
+                "name": "Model FileName",
+                "type": "formId",
+                "signatures": [
+                    "ARMA",
+                    "NULL"
+                ]
+            }
+        },
+        {
+            "signature": "DATA",
+            "name": "Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Value",
+                    "type": "int32"
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                }
+            ],
+            "required": true
+        },
+        {
+            "signature": "DNAM",
+            "name": "Armor Rating",
+            "type": "int32",
+            "format": {
+                "type": "divide",
+                "value": 100
+            }
+        },
+        {
+            "signature": "TNAM",
+            "name": "Template Armor",
+            "type": "formId",
+            "signatures": [
+                "ARMO"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "name": "Head Part",
+    "type": "memberStruct",
+    "members": [
+        {
+            "signature": "INDX",
+            "name": "Head Part Number",
+            "type": "uint32"
+        },
+        {
+            "signature": "HEAD",
+            "name": "Head",
+            "type": "formId",
+            "signatures": [
+                "HDPT",
+                "NULL"
+            ]
+        }
+    ],
+    "sortKey": [
+        0
+    ]
+}

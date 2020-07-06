@@ -1,0 +1,410 @@
+{
+    "signature": "WRLD",
+    "type": "record",
+    "name": "Worldspace",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "12": "Ignored",
+            "19": "Can't Wait"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "name": "Large References",
+            "type": "memberArray",
+            "member": {
+                "signature": "RNAM",
+                "name": "Grid",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Y",
+                        "type": "int16"
+                    },
+                    {
+                        "name": "X",
+                        "type": "int16"
+                    },
+                    {
+                        "name": "References",
+                        "type": "array",
+                        "element": {
+                            "name": "Reference",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Ref",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "REFR"
+                                    ]
+                                },
+                                {
+                                    "name": "Y",
+                                    "type": "int16"
+                                },
+                                {
+                                    "name": "X",
+                                    "type": "int16"
+                                }
+                            ]
+                        },
+                        "prefix": 4,
+                        "includeFlag": "dfNotAlignable"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "MaxHeightDataWRLD"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "signature": "WCTR",
+            "name": "Fixed Dimensions Center Cell",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "X",
+                    "type": "int16"
+                },
+                {
+                    "name": "Y",
+                    "type": "int16"
+                }
+            ]
+        },
+        {
+            "signature": "LTMP",
+            "name": "Interior Lighting",
+            "type": "formId",
+            "signatures": [
+                "LGTM"
+            ]
+        },
+        {
+            "signature": "XEZN",
+            "name": "Encounter Zone",
+            "type": "formId",
+            "signatures": [
+                "ECZN",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "XLCN",
+            "name": "Location",
+            "type": "formId",
+            "signatures": [
+                "LCTN",
+                "NULL"
+            ]
+        },
+        {
+            "name": "Parent",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "WNAM",
+                    "name": "Worldspace",
+                    "type": "formId",
+                    "signatures": [
+                        "WRLD"
+                    ]
+                },
+                {
+                    "signature": "PNAM",
+                    "name": "",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Flags",
+                            "type": "uint8",
+                            "format": {
+                                "type": "flags",
+                                "flags": {
+                                    "0": "Use Land Data",
+                                    "1": "Use LOD Data",
+                                    "2": "Use Map Data",
+                                    "3": "Use Water Data",
+                                    "4": "Use Climate Data",
+                                    "5": "Use Image Space Data (unused)",
+                                    "6": "Use Sky Cell"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 1
+                        }
+                    ],
+                    "required": true
+                }
+            ]
+        },
+        {
+            "signature": "CNAM",
+            "name": "Climate",
+            "type": "formId",
+            "signatures": [
+                "CLMT"
+            ]
+        },
+        {
+            "signature": "NAM2",
+            "name": "Water",
+            "type": "formId",
+            "signatures": [
+                "WATR"
+            ]
+        },
+        {
+            "signature": "NAM3",
+            "name": "LOD Water Type",
+            "type": "formId",
+            "signatures": [
+                "WATR"
+            ]
+        },
+        {
+            "signature": "NAM4",
+            "name": "LOD Water Height",
+            "type": "float"
+        },
+        {
+            "signature": "DNAM",
+            "name": "Land Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Default Land Height",
+                    "type": "float"
+                },
+                {
+                    "name": "Default Water Height",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "ICON",
+            "name": "Map Image",
+            "type": "string"
+        },
+        {
+            "name": "Cloud Model",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "id": "MODL"
+                }
+            ]
+        },
+        {
+            "signature": "MNAM",
+            "name": "Map Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Usable Dimensions",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "X",
+                            "type": "int32"
+                        },
+                        {
+                            "name": "Y",
+                            "type": "int32"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cell Coordinates",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "NW Cell",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "X",
+                                    "type": "int16"
+                                },
+                                {
+                                    "name": "Y",
+                                    "type": "int16"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "SE Cell",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "X",
+                                    "type": "int16"
+                                },
+                                {
+                                    "name": "Y",
+                                    "type": "int16"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Camera Data",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Min Height",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Max Height",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Initial Pitch",
+                            "type": "float"
+                        }
+                    ]
+                }
+            ],
+            "required": true
+        },
+        {
+            "signature": "ONAM",
+            "name": "World Map Offset Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "World Map Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Cell X Offset",
+                    "type": "float"
+                },
+                {
+                    "name": "Cell Y Offset",
+                    "type": "float"
+                },
+                {
+                    "name": "Cell Z Offset",
+                    "type": "float"
+                }
+            ],
+            "required": true
+        },
+        {
+            "signature": "NAMA",
+            "name": "Distant LOD Multiplier",
+            "type": "float"
+        },
+        {
+            "signature": "DATA",
+            "name": "Flags",
+            "type": "uint8",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Small World",
+                    "1": "Can't Fast Travel",
+                    "2": "Unknown 3",
+                    "3": "No LOD Water",
+                    "4": "No Landscape",
+                    "5": "No Sky",
+                    "6": "Fixed Dimensions",
+                    "7": "No Grass"
+                }
+            }
+        },
+        {
+            "name": "Object Bounds",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "NAM0",
+                    "name": "Min",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "X",
+                            "type": "float",
+                            "required": true
+                        },
+                        {
+                            "name": "Y",
+                            "type": "float",
+                            "required": true
+                        }
+                    ],
+                    "required": true
+                },
+                {
+                    "signature": "NAM9",
+                    "name": "Max",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "X",
+                            "type": "float",
+                            "required": true
+                        },
+                        {
+                            "name": "Y",
+                            "type": "float",
+                            "required": true
+                        }
+                    ],
+                    "required": true
+                }
+            ]
+        },
+        {
+            "signature": "ZNAM",
+            "name": "Music",
+            "type": "formId",
+            "signatures": [
+                "MUSC"
+            ]
+        },
+        {
+            "signature": "NNAM",
+            "name": "Canopy Shadow (unused)",
+            "type": "string"
+        },
+        {
+            "signature": "XNAM",
+            "name": "Water Noise Texture",
+            "type": "string"
+        },
+        {
+            "signature": "TNAM",
+            "name": "HD LOD Diffuse Texture",
+            "type": "string"
+        },
+        {
+            "signature": "UNAM",
+            "name": "HD LOD Normal Texture",
+            "type": "string"
+        },
+        {
+            "signature": "XWEM",
+            "name": "Water Environment Map (unused)",
+            "type": "string"
+        },
+        {
+            "id": "OFST"
+        }
+    ]
+}

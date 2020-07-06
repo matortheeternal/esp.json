@@ -1,0 +1,45 @@
+{
+    "signature": "EYES",
+    "type": "record",
+    "name": "Eyes",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "2": "Non-Playable",
+            "12": "Ignored"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL",
+            "required": true
+        },
+        {
+            "signature": "ICON",
+            "name": "Texture",
+            "type": "string",
+            "required": true
+        },
+        {
+            "signature": "DATA",
+            "name": "Flags",
+            "type": "uint8",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Playable",
+                    "1": "Not Male",
+                    "2": "Not Female",
+                    "3": "Unknown 4",
+                    "4": "Unknown 5",
+                    "5": "Unknown 6",
+                    "6": "Unknown 7",
+                    "7": "Unknown 8"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,430 @@
+{
+    "signature": "SCEN",
+    "type": "record",
+    "name": "Scene",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "VMADFragmentedSCEN"
+        },
+        {
+            "signature": "FNAM",
+            "name": "Flags",
+            "type": "uint32",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Begin on Quest Start",
+                    "1": "Stop on Quest End",
+                    "2": "Unknown 3",
+                    "3": "Repeat Conditions While True",
+                    "4": "Interruptible"
+                }
+            }
+        },
+        {
+            "name": "Phases",
+            "type": "memberArray",
+            "member": {
+                "name": "Phase",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "HNAM",
+                        "name": "Marker Phase Start",
+                        "type": "empty"
+                    },
+                    {
+                        "signature": "NAM0",
+                        "name": "Name",
+                        "type": "string"
+                    },
+                    {
+                        "name": "Start Conditions",
+                        "type": "memberStruct",
+                        "members": [
+                            {
+                                "id": "CTDAs"
+                            }
+                        ]
+                    },
+                    {
+                        "signature": "NEXT",
+                        "name": "Marker",
+                        "type": "empty"
+                    },
+                    {
+                        "name": "Completion Conditions",
+                        "type": "memberStruct",
+                        "members": [
+                            {
+                                "id": "CTDAs"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Unused",
+                        "type": "memberStruct",
+                        "members": [
+                            {
+                                "signature": "SCHR",
+                                "type": "bytes"
+                            },
+                            {
+                                "signature": "SCDA",
+                                "type": "bytes"
+                            },
+                            {
+                                "signature": "SCTX",
+                                "type": "bytes"
+                            },
+                            {
+                                "signature": "QNAM",
+                                "type": "bytes"
+                            },
+                            {
+                                "signature": "SCRO",
+                                "type": "bytes"
+                            }
+                        ],
+                        "required": true
+                    },
+                    {
+                        "signature": "NEXT",
+                        "name": "Marker",
+                        "type": "empty"
+                    },
+                    {
+                        "name": "Unused",
+                        "type": "memberStruct",
+                        "members": [
+                            {
+                                "signature": "SCHR",
+                                "type": "bytes"
+                            },
+                            {
+                                "signature": "SCDA",
+                                "type": "bytes"
+                            },
+                            {
+                                "signature": "SCTX",
+                                "type": "bytes"
+                            },
+                            {
+                                "signature": "QNAM",
+                                "type": "bytes"
+                            },
+                            {
+                                "signature": "SCRO",
+                                "type": "bytes"
+                            }
+                        ],
+                        "required": true
+                    },
+                    {
+                        "signature": "WNAM",
+                        "name": "Editor Width",
+                        "type": "uint32"
+                    },
+                    {
+                        "signature": "HNAM",
+                        "name": "Marker Phase End",
+                        "type": "empty"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Actors",
+            "type": "memberArray",
+            "member": {
+                "name": "Actor",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "ALID",
+                        "name": "Actor ID",
+                        "type": "uint32"
+                    },
+                    {
+                        "signature": "LNAM",
+                        "name": "Flags",
+                        "type": "uint32",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "No Player Activation",
+                                "1": "Optional"
+                            }
+                        }
+                    },
+                    {
+                        "signature": "DNAM",
+                        "name": "Behaviour Flags",
+                        "type": "uint32",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "Death Pause (unsused)",
+                                "1": "Death End",
+                                "2": "Combat Pause",
+                                "3": "Combat End",
+                                "4": "Dialogue Pause",
+                                "5": "Dialogue End",
+                                "6": "OBS_COM Pause",
+                                "7": "OBS_COM End"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Actions",
+            "type": "memberArray",
+            "member": {
+                "name": "Action",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "ANAM",
+                        "name": "Type",
+                        "type": "uint16",
+                        "format": {
+                            "type": "enum",
+                            "options": {
+                                "0": "Dialogue",
+                                "1": "Package",
+                                "2": "Timer"
+                            }
+                        }
+                    },
+                    {
+                        "signature": "NAM0",
+                        "name": "Name",
+                        "type": "string"
+                    },
+                    {
+                        "signature": "ALID",
+                        "name": "Actor ID",
+                        "type": "int32"
+                    },
+                    {
+                        "signature": "LNAM",
+                        "type": "bytes"
+                    },
+                    {
+                        "signature": "INAM",
+                        "name": "Index",
+                        "type": "uint32"
+                    },
+                    {
+                        "signature": "FNAM",
+                        "name": "Flags",
+                        "type": "uint32",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "Unknown 1",
+                                "1": "Unknown 2",
+                                "2": "Unknown 3",
+                                "3": "Unknown 4",
+                                "4": "Unknown 5",
+                                "5": "Unknown 6",
+                                "6": "Unknown 7",
+                                "7": "Unknown 8",
+                                "8": "Unknown 9",
+                                "9": "Unknown 10",
+                                "10": "Unknown 11",
+                                "11": "Unknown 12",
+                                "12": "Unknown 13",
+                                "13": "Unknown 14",
+                                "14": "Unknown 15",
+                                "15": "Face Target",
+                                "16": "Looping",
+                                "17": "Headtrack Player"
+                            }
+                        }
+                    },
+                    {
+                        "signature": "SNAM",
+                        "name": "Start Phase",
+                        "type": "uint32"
+                    },
+                    {
+                        "signature": "ENAM",
+                        "name": "End Phase",
+                        "type": "uint32"
+                    },
+                    {
+                        "signature": "SNAM",
+                        "name": "Timer Seconds",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Packages",
+                        "type": "memberArray",
+                        "member": {
+                            "signature": "PNAM",
+                            "name": "Package",
+                            "type": "formId",
+                            "signatures": [
+                                "PACK"
+                            ]
+                        }
+                    },
+                    {
+                        "signature": "DATA",
+                        "name": "Topic",
+                        "type": "formId",
+                        "signatures": [
+                            "DIAL",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "signature": "HTID",
+                        "name": "Headtrack Actor ID",
+                        "type": "int32"
+                    },
+                    {
+                        "signature": "DMAX",
+                        "name": "Looping - Max",
+                        "type": "float"
+                    },
+                    {
+                        "signature": "DMIN",
+                        "name": "Looping - Min",
+                        "type": "float"
+                    },
+                    {
+                        "signature": "DEMO",
+                        "name": "Emotion Type",
+                        "type": "uint32",
+                        "format": {
+                            "id": "EmotionTypeEnum"
+                        }
+                    },
+                    {
+                        "signature": "DEVA",
+                        "name": "Emotion Value",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Unused",
+                        "type": "memberStruct",
+                        "members": [
+                            {
+                                "signature": "SCHR",
+                                "type": "bytes"
+                            },
+                            {
+                                "signature": "SCDA",
+                                "type": "bytes"
+                            },
+                            {
+                                "signature": "SCTX",
+                                "type": "bytes"
+                            },
+                            {
+                                "signature": "QNAM",
+                                "type": "bytes"
+                            },
+                            {
+                                "signature": "SCRO",
+                                "type": "bytes"
+                            }
+                        ],
+                        "required": true
+                    },
+                    {
+                        "signature": "ANAM",
+                        "name": "End Marker",
+                        "type": "empty"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Unused",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "SCHR",
+                    "type": "bytes"
+                },
+                {
+                    "signature": "SCDA",
+                    "type": "bytes"
+                },
+                {
+                    "signature": "SCTX",
+                    "type": "bytes"
+                },
+                {
+                    "signature": "QNAM",
+                    "type": "bytes"
+                },
+                {
+                    "signature": "SCRO",
+                    "type": "bytes"
+                }
+            ],
+            "required": true
+        },
+        {
+            "signature": "NEXT",
+            "name": "Marker",
+            "type": "empty"
+        },
+        {
+            "name": "Unused",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "SCHR",
+                    "type": "bytes"
+                },
+                {
+                    "signature": "SCDA",
+                    "type": "bytes"
+                },
+                {
+                    "signature": "SCTX",
+                    "type": "bytes"
+                },
+                {
+                    "signature": "QNAM",
+                    "type": "bytes"
+                },
+                {
+                    "signature": "SCRO",
+                    "type": "bytes"
+                }
+            ],
+            "required": true
+        },
+        {
+            "signature": "PNAM",
+            "name": "Quest",
+            "type": "formId",
+            "signatures": [
+                "QUST"
+            ]
+        },
+        {
+            "signature": "INAM",
+            "name": "Last Action Index",
+            "type": "uint32"
+        },
+        {
+            "signature": "VNAM",
+            "type": "bytes"
+        },
+        {
+            "id": "CTDAs"
+        }
+    ]
+}

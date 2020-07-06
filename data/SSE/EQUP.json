@@ -1,0 +1,31 @@
+{
+    "signature": "EQUP",
+    "type": "record",
+    "name": "Equip Type",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "PNAM",
+            "name": "Slot Parents",
+            "type": "array",
+            "element": {
+                "name": "Can Be Equipped",
+                "type": "formId"
+            }
+        },
+        {
+            "signature": "DATA",
+            "name": "Use All Parents",
+            "type": "uint32",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "False",
+                    "1": "True"
+                }
+            }
+        }
+    ]
+}

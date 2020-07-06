@@ -1,0 +1,61 @@
+{
+    "name": "Script Fragments",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Unknown",
+            "type": "int8"
+        },
+        {
+            "name": "FragmentCount",
+            "type": "uint16"
+        },
+        {
+            "name": "FileName",
+            "type": "string",
+            "prefix": 2
+        },
+        {
+            "name": "Fragments",
+            "type": "array",
+            "element": {
+                "name": "Fragment",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Quest Stage",
+                        "type": "uint16"
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "int16"
+                    },
+                    {
+                        "name": "Quest Stage Index",
+                        "type": "int32"
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "int8"
+                    },
+                    {
+                        "name": "ScriptName",
+                        "type": "string",
+                        "prefix": 2
+                    },
+                    {
+                        "name": "FragmentName",
+                        "type": "string",
+                        "prefix": 2
+                    }
+                ],
+                "sortKey": [
+                    0,
+                    2
+                ]
+            },
+            "sorted": true
+        }
+    ],
+    "afterSet": "ScriptFragmentsQuestAfterSet"
+}

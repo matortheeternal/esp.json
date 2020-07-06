@@ -1,0 +1,111 @@
+{
+    "signature": "SMQN",
+    "type": "record",
+    "name": "Story Manager Quest Node",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "PNAM",
+            "name": "Parent ",
+            "type": "formId",
+            "signatures": [
+                "SMQN",
+                "SMBN",
+                "SMEN",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "SNAM",
+            "name": "Previous Sibling ",
+            "type": "formId",
+            "signatures": [
+                "SMQN",
+                "SMBN",
+                "SMEN",
+                "NULL"
+            ]
+        },
+        {
+            "id": "CITC",
+            "required": true
+        },
+        {
+            "id": "CTDAsCount"
+        },
+        {
+            "signature": "DNAM",
+            "name": "Flags",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Node Flags",
+                    "type": "uint16",
+                    "format": {
+                        "id": "SMNodeFlags"
+                    }
+                },
+                {
+                    "name": "Quest Flags",
+                    "type": "uint16",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Do all before repeating",
+                            "1": "Shares event",
+                            "2": "Num quests to run"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "XNAM",
+            "name": "Max concurrent quests",
+            "type": "uint32"
+        },
+        {
+            "signature": "MNAM",
+            "name": "Num quests to run",
+            "type": "uint32"
+        },
+        {
+            "signature": "QNAM",
+            "name": "Quest Count",
+            "type": "uint32"
+        },
+        {
+            "name": "Quests",
+            "type": "memberArray",
+            "member": {
+                "name": "Quest",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "NNAM",
+                        "name": "Quest",
+                        "type": "formId",
+                        "signatures": [
+                            "QUST"
+                        ]
+                    },
+                    {
+                        "signature": "FNAM",
+                        "type": "bytes"
+                    },
+                    {
+                        "signature": "RNAM",
+                        "name": "Hours until reset",
+                        "type": "float",
+                        "required": true
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        }
+    ]
+}

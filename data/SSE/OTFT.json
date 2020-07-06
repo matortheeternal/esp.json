@@ -1,0 +1,24 @@
+{
+    "signature": "OTFT",
+    "type": "record",
+    "name": "Outfit",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "INAM",
+            "name": "Items",
+            "type": "array",
+            "element": {
+                "name": "Item",
+                "type": "formId",
+                "signatures": [
+                    "ARMO",
+                    "LVLI"
+                ]
+            },
+            "sorted": true
+        }
+    ]
+}

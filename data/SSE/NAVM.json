@@ -1,0 +1,34 @@
+{
+    "signature": "NAVM",
+    "type": "record",
+    "name": "Navigation Mesh",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "12": "Ignored",
+            "18": "Compressed",
+            "26": "AutoGen",
+            "31": "NavmeshGenCell"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "NVNM"
+        },
+        {
+            "signature": "ONAM",
+            "type": "bytes"
+        },
+        {
+            "signature": "PNAM",
+            "type": "bytes"
+        },
+        {
+            "signature": "NNAM",
+            "type": "bytes"
+        }
+    ]
+}

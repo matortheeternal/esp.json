@@ -1,0 +1,30 @@
+{
+    "signature": "ARTO",
+    "type": "record",
+    "name": "Art Object",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "signature": "DNAM",
+            "name": "Art Type",
+            "type": "uint32",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "Magic Casting",
+                    "1": "Magic Hit Effect",
+                    "2": "Enchantment Effect"
+                }
+            }
+        }
+    ]
+}

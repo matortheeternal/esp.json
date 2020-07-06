@@ -1,0 +1,101 @@
+{
+    "signature": "LSCR",
+    "type": "record",
+    "name": "Load Screen",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "10": "Displays In Main Menu",
+            "12": "Ignored"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "DESC",
+            "required": true
+        },
+        {
+            "id": "CTDAs"
+        },
+        {
+            "signature": "NNAM",
+            "name": "Loading Screen NIF",
+            "type": "formId",
+            "signatures": [
+                "STAT",
+                "NULL"
+            ],
+            "required": true
+        },
+        {
+            "signature": "SNAM",
+            "name": "Initial Scale",
+            "type": "float"
+        },
+        {
+            "signature": "RNAM",
+            "name": "Initial Rotation",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "X",
+                    "type": "int16"
+                },
+                {
+                    "name": "Y",
+                    "type": "int16"
+                },
+                {
+                    "name": "Z",
+                    "type": "int16"
+                }
+            ]
+        },
+        {
+            "signature": "ONAM",
+            "name": "Rotation Offset Constraints",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Min",
+                    "type": "int16"
+                },
+                {
+                    "name": "Max",
+                    "type": "int16"
+                }
+            ]
+        },
+        {
+            "signature": "XNAM",
+            "name": "Initial Translation Offset",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "X",
+                    "type": "float"
+                },
+                {
+                    "name": "Y",
+                    "type": "float"
+                },
+                {
+                    "name": "Z",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "MOD2",
+            "name": "Camera Path",
+            "type": "string",
+            "required": true
+        }
+    ]
+}

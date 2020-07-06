@@ -1,0 +1,59 @@
+{
+    "signature": "MSTT",
+    "type": "record",
+    "name": "Moveable Static",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "8": "Must Update Anims",
+            "9": "Hidden From Local Map",
+            "12": "Ignored",
+            "15": "Has Distant LOD",
+            "16": "Random Anim Start",
+            "19": "Has Currents",
+            "25": "Obstacle",
+            "26": "NavMesh Generation - Filter",
+            "27": "NavMesh Generation - Bounding Box",
+            "30": "NavMesh Generation - Ground"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "signature": "DATA",
+            "name": "Flags",
+            "type": "uint8",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "On Local Map",
+                    "1": "Unknown 1",
+                    "2": "Unknown 2"
+                }
+            }
+        },
+        {
+            "signature": "SNAM",
+            "name": "Looping Sound",
+            "type": "formId",
+            "signatures": [
+                "SNDR"
+            ]
+        }
+    ]
+}

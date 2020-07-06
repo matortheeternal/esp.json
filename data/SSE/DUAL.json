@@ -1,0 +1,74 @@
+{
+    "signature": "DUAL",
+    "type": "record",
+    "name": "Dual Cast Data",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "signature": "DATA",
+            "name": "Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Projectile",
+                    "type": "formId",
+                    "signatures": [
+                        "PROJ",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Explosion",
+                    "type": "formId",
+                    "signatures": [
+                        "EXPL",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Effect Shader",
+                    "type": "formId",
+                    "signatures": [
+                        "EFSH",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Hit Effect Art",
+                    "type": "formId",
+                    "signatures": [
+                        "ARTO",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Impact Data Set",
+                    "type": "formId",
+                    "signatures": [
+                        "IPDS",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Inherit Scale",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Hit Effect Art",
+                            "1": "Projectile",
+                            "2": "Explosion"
+                        }
+                    }
+                }
+            ],
+            "required": true
+        }
+    ]
+}

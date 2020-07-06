@@ -1,0 +1,117 @@
+{
+    "signature": "CLMT",
+    "type": "record",
+    "name": "Climate",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "WLST",
+            "name": "Weather Types",
+            "type": "array",
+            "element": {
+                "name": "Weather Type",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Weather",
+                        "type": "formId",
+                        "signatures": [
+                            "WTHR",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "name": "Chance",
+                        "type": "int32"
+                    },
+                    {
+                        "name": "Global",
+                        "type": "formId",
+                        "signatures": [
+                            "GLOB",
+                            "NULL"
+                        ]
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            },
+            "sorted": true
+        },
+        {
+            "signature": "FNAM",
+            "name": "Sun Texture",
+            "type": "string"
+        },
+        {
+            "signature": "GNAM",
+            "name": "Sun Glare Texture",
+            "type": "string"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "signature": "TNAM",
+            "name": "Timing",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Sunrise",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Begin",
+                            "type": "uint8",
+                            "format": {
+                                "type": "ClmtTimeFormat"
+                            }
+                        },
+                        {
+                            "name": "End",
+                            "type": "uint8",
+                            "format": {
+                                "type": "ClmtTimeFormat"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Sunset",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Begin",
+                            "type": "uint8",
+                            "format": {
+                                "type": "ClmtTimeFormat"
+                            }
+                        },
+                        {
+                            "name": "End",
+                            "type": "uint8",
+                            "format": {
+                                "type": "ClmtTimeFormat"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Volatility",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Moons / Phase Length",
+                    "type": "uint8",
+                    "format": {
+                        "type": "ClmtMoonsPhaseLengthFormat"
+                    }
+                }
+            ],
+            "required": true
+        }
+    ]
+}

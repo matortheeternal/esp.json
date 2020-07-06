@@ -1,0 +1,132 @@
+{
+    "name": "Properties",
+    "type": "array",
+    "element": {
+        "name": "Property",
+        "type": "struct",
+        "elements": [
+            {
+                "name": "propertyName",
+                "type": "string",
+                "prefix": 2
+            },
+            {
+                "name": "Type",
+                "type": "uint8",
+                "format": {
+                    "id": "PropTypeEnum"
+                }
+            },
+            {
+                "name": "Flags",
+                "type": "uint8",
+                "format": {
+                    "type": "enum",
+                    "options": {
+                        "0": "",
+                        "1": "Edited",
+                        "2": "",
+                        "3": "Removed"
+                    }
+                },
+                "defaultEditValue": "'Edited'"
+            },
+            {
+                "name": "Value",
+                "type": "union",
+                "decider": "ScriptPropertyDecider",
+                "elements": [
+                    {
+                        "id": "Null"
+                    },
+                    {
+                        "id": "ScriptPropertyObject"
+                    },
+                    {
+                        "name": "String",
+                        "type": "string",
+                        "prefix": 2,
+                        "encoding": "EncodingVMAD"
+                    },
+                    {
+                        "name": "Int32",
+                        "type": "int32"
+                    },
+                    {
+                        "name": "Float",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Bool",
+                        "type": "uint8",
+                        "format": {
+                            "type": "enum",
+                            "options": {
+                                "0": "False",
+                                "1": "True"
+                            }
+                        }
+                    },
+                    {
+                        "name": "Array of Object",
+                        "type": "array",
+                        "element": {
+                            "id": "ScriptPropertyObject"
+                        },
+                        "prefix": 4
+                    },
+                    {
+                        "name": "Array of String",
+                        "type": "array",
+                        "element": {
+                            "name": "Element",
+                            "type": "string",
+                            "prefix": 2,
+                            "encoding": "EncodingVMAD"
+                        },
+                        "prefix": 4
+                    },
+                    {
+                        "name": "Array of Int32",
+                        "type": "array",
+                        "element": {
+                            "name": "Element",
+                            "type": "int32"
+                        },
+                        "prefix": 4
+                    },
+                    {
+                        "name": "Array of Float",
+                        "type": "array",
+                        "element": {
+                            "name": "Element",
+                            "type": "float"
+                        },
+                        "prefix": 4
+                    },
+                    {
+                        "name": "Array of Bool",
+                        "type": "array",
+                        "element": {
+                            "name": "Element",
+                            "type": "uint8",
+                            "format": {
+                                "type": "enum",
+                                "options": {
+                                    "0": "False",
+                                    "1": "True"
+                                }
+                            }
+                        },
+                        "prefix": 4
+                    }
+                ]
+            }
+        ],
+        "sortKey": [
+            0
+        ]
+    },
+    "sorted": true,
+    "prefix": 2
+}

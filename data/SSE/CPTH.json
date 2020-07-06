@@ -1,0 +1,54 @@
+{
+    "signature": "CPTH",
+    "type": "record",
+    "name": "Camera Path",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "CTDAs"
+        },
+        {
+            "signature": "ANAM",
+            "name": "Related Camera Paths",
+            "type": "array",
+            "element": {
+                "name": "Related Camera Path",
+                "type": "formId",
+                "signatures": [
+                    "CPTH",
+                    "NULL"
+                ]
+            }
+        },
+        {
+            "signature": "DATA",
+            "name": "Camera Zoom",
+            "type": "uint8",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "Default, Must Have Camera Shots",
+                    "1": "Disable, Must Have Camera Shots",
+                    "2": "Shot List, Must Have Camera Shots",
+                    "128": "Default",
+                    "129": "Disable",
+                    "130": "Shot List"
+                }
+            }
+        },
+        {
+            "name": "Camera Shots",
+            "type": "memberArray",
+            "member": {
+                "signature": "SNAM",
+                "name": "Camera Shot",
+                "type": "formId",
+                "signatures": [
+                    "CAMS"
+                ]
+            }
+        }
+    ]
+}

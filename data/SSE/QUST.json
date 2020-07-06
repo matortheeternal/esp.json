@@ -1,0 +1,968 @@
+{
+    "signature": "QUST",
+    "type": "record",
+    "name": "Quest",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "VMADFragmentedQUST"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "signature": "DNAM",
+            "name": "General",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Flags",
+                    "type": "uint16",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Start Game Enabled",
+                            "1": "Unknown 2",
+                            "2": "Unknown 3",
+                            "3": "Allow repeated stages",
+                            "4": "Unknown 5",
+                            "5": "Unknown 6",
+                            "6": "Unknown 7",
+                            "7": "Unknown 8",
+                            "8": "Run Once",
+                            "9": "Exclude from dialogue export",
+                            "10": "Warn on alias fill failure",
+                            "11": "Unknown 12",
+                            "12": "Unknown 13"
+                        }
+                    }
+                },
+                {
+                    "name": "Priority",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Form Version",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Type",
+                    "type": "uint32",
+                    "format": {
+                        "id": "QuestTypeEnum"
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "ENAM",
+            "name": "Event",
+            "type": "string",
+            "size": 4
+        },
+        {
+            "name": "Text Display Globals",
+            "type": "memberArray",
+            "member": {
+                "signature": "QTGL",
+                "name": "Global",
+                "type": "formId",
+                "signatures": [
+                    "GLOB"
+                ]
+            }
+        },
+        {
+            "signature": "FLTR",
+            "name": "Object Window Filter",
+            "type": "string"
+        },
+        {
+            "name": "Quest Dialogue Conditions",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "id": "CTDAs"
+                }
+            ],
+            "required": true
+        },
+        {
+            "signature": "NEXT",
+            "name": "Marker",
+            "type": "empty"
+        },
+        {
+            "id": "CTDAs"
+        },
+        {
+            "name": "Stages",
+            "type": "memberArray",
+            "member": {
+                "name": "Stage",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "INDX",
+                        "name": "Stage Index",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Stage Index",
+                                "type": "uint16"
+                            },
+                            {
+                                "name": "Flags",
+                                "type": "uint8",
+                                "format": {
+                                    "type": "flags",
+                                    "flags": {
+                                        "0": "Unknown 1",
+                                        "1": "Start Up Stage",
+                                        "2": "Shut Down Stage",
+                                        "3": "Keep Instance Data From Here On"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Unknown",
+                                "type": "uint8"
+                            }
+                        ],
+                        "sortKey": [
+                            0
+                        ]
+                    },
+                    {
+                        "name": "Log Entries",
+                        "type": "memberArray",
+                        "member": {
+                            "name": "Log Entry",
+                            "type": "memberStruct",
+                            "members": [
+                                {
+                                    "signature": "QSDT",
+                                    "name": "Stage Flags",
+                                    "type": "uint8",
+                                    "format": {
+                                        "type": "flags",
+                                        "flags": {
+                                            "0": "Complete Quest",
+                                            "1": "Fail Quest"
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": "CTDAs"
+                                },
+                                {
+                                    "signature": "CNAM",
+                                    "name": "Log Entry",
+                                    "type": "string",
+                                    "localized": true
+                                },
+                                {
+                                    "signature": "NAM0",
+                                    "name": "Next Quest",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "QUST"
+                                    ]
+                                },
+                                {
+                                    "signature": "SCHR",
+                                    "name": "Unused",
+                                    "type": "bytes"
+                                },
+                                {
+                                    "signature": "SCTX",
+                                    "name": "Unused",
+                                    "type": "bytes"
+                                },
+                                {
+                                    "signature": "QNAM",
+                                    "name": "Unused",
+                                    "type": "bytes"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            },
+            "sorted": true
+        },
+        {
+            "name": "Objectives",
+            "type": "memberArray",
+            "member": {
+                "name": "Objective",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "QOBJ",
+                        "name": "Objective Index",
+                        "type": "uint16"
+                    },
+                    {
+                        "signature": "FNAM",
+                        "name": "Flags",
+                        "type": "uint32",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "ORed With Previous"
+                            }
+                        }
+                    },
+                    {
+                        "signature": "NNAM",
+                        "name": "Display Text",
+                        "type": "string",
+                        "localized": true,
+                        "required": true
+                    },
+                    {
+                        "name": "Targets",
+                        "type": "memberArray",
+                        "member": {
+                            "name": "Target",
+                            "type": "memberStruct",
+                            "members": [
+                                {
+                                    "signature": "QSTA",
+                                    "name": "Target",
+                                    "type": "struct",
+                                    "elements": [
+                                        {
+                                            "name": "Alias",
+                                            "type": "int32",
+                                            "format": {
+                                                "type": "QuestAliasFormat"
+                                            }
+                                        },
+                                        {
+                                            "name": "Flags",
+                                            "type": "uint8",
+                                            "format": {
+                                                "type": "flags",
+                                                "flags": {
+                                                    "0": "Compass Marker Ignores Locks"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "Unused",
+                                            "type": "bytes",
+                                            "size": 3
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "CTDAs"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "ANAM",
+            "name": "Next Alias ID",
+            "type": "uint32"
+        },
+        {
+            "name": "Aliases",
+            "type": "memberArray",
+            "member": {
+                "name": "Alias",
+                "type": "memberUnion",
+                "members": [
+                    {
+                        "name": "Alias",
+                        "type": "memberStruct",
+                        "members": [
+                            {
+                                "signature": "ALST",
+                                "name": "Reference Alias ID",
+                                "type": "uint32"
+                            },
+                            {
+                                "signature": "ALID",
+                                "name": "Alias Name",
+                                "type": "string"
+                            },
+                            {
+                                "id": "QUSTAliasFlags"
+                            },
+                            {
+                                "signature": "ALFI",
+                                "name": "Force Into Alias When Filled",
+                                "type": "int32",
+                                "format": {
+                                    "type": "QuestAliasFormat"
+                                }
+                            },
+                            {
+                                "signature": "ALFL",
+                                "name": "Specific Location",
+                                "type": "formId",
+                                "signatures": [
+                                    "LCTN"
+                                ]
+                            },
+                            {
+                                "signature": "ALFR",
+                                "name": "Forced Reference",
+                                "type": "formId"
+                            },
+                            {
+                                "signature": "ALUA",
+                                "name": "Unique Actor",
+                                "type": "formId",
+                                "signatures": [
+                                    "NPC_"
+                                ]
+                            },
+                            {
+                                "name": "Location Alias Reference",
+                                "type": "memberStruct",
+                                "members": [
+                                    {
+                                        "signature": "ALFA",
+                                        "name": "Alias",
+                                        "type": "int32",
+                                        "format": {
+                                            "type": "QuestAliasFormat"
+                                        }
+                                    },
+                                    {
+                                        "signature": "KNAM",
+                                        "name": "Keyword",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "KYWD"
+                                        ]
+                                    },
+                                    {
+                                        "signature": "ALRT",
+                                        "name": "Ref Type",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "LCRT"
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "External Alias Reference",
+                                "type": "memberStruct",
+                                "members": [
+                                    {
+                                        "signature": "ALEQ",
+                                        "name": "Quest",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "QUST"
+                                        ]
+                                    },
+                                    {
+                                        "signature": "ALEA",
+                                        "name": "Alias",
+                                        "type": "int32",
+                                        "format": {
+                                            "type": "QuestExternalAliasFormat"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Create Reference to Object",
+                                "type": "memberStruct",
+                                "members": [
+                                    {
+                                        "signature": "ALCO",
+                                        "name": "Object",
+                                        "type": "formId"
+                                    },
+                                    {
+                                        "signature": "ALCA",
+                                        "name": "Alias",
+                                        "type": "struct",
+                                        "elements": [
+                                            {
+                                                "name": "Alias",
+                                                "type": "int16",
+                                                "format": {
+                                                    "type": "QuestAliasFormat"
+                                                }
+                                            },
+                                            {
+                                                "name": "Create",
+                                                "type": "uint16",
+                                                "format": {
+                                                    "type": "enum",
+                                                    "options": {
+                                                        "0": "At",
+                                                        "32768": "In"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "signature": "ALCL",
+                                        "name": "Level",
+                                        "type": "uint32",
+                                        "format": {
+                                            "type": "enum",
+                                            "options": {
+                                                "0": "Easy",
+                                                "1": "Medium",
+                                                "2": "Hard",
+                                                "3": "Very Hard",
+                                                "4": "None"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Find Matching Reference Near Alias",
+                                "type": "memberStruct",
+                                "members": [
+                                    {
+                                        "signature": "ALNA",
+                                        "name": "Alias",
+                                        "type": "int32",
+                                        "format": {
+                                            "type": "QuestAliasFormat"
+                                        }
+                                    },
+                                    {
+                                        "signature": "ALNT",
+                                        "name": "Type",
+                                        "type": "uint32",
+                                        "format": {
+                                            "type": "enum",
+                                            "options": {
+                                                "0": "Linked Ref Child"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Find Matching Reference From Event",
+                                "type": "memberStruct",
+                                "members": [
+                                    {
+                                        "signature": "ALFE",
+                                        "name": "From Event",
+                                        "type": "string",
+                                        "size": 4
+                                    },
+                                    {
+                                        "signature": "ALFD",
+                                        "name": "Event Data",
+                                        "type": "bytes"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "CTDAs"
+                            },
+                            {
+                                "id": "KSIZ"
+                            },
+                            {
+                                "id": "KWDAs"
+                            },
+                            {
+                                "id": "COCT"
+                            },
+                            {
+                                "id": "CNTOs"
+                            },
+                            {
+                                "signature": "SPOR",
+                                "name": "Spectator override package list",
+                                "type": "formId",
+                                "signatures": [
+                                    "FLST"
+                                ],
+                                "required": true
+                            },
+                            {
+                                "signature": "OCOR",
+                                "name": "Observe dead body override package list",
+                                "type": "formId",
+                                "signatures": [
+                                    "FLST"
+                                ],
+                                "required": true
+                            },
+                            {
+                                "signature": "GWOR",
+                                "name": "Guard warn override package list",
+                                "type": "formId",
+                                "signatures": [
+                                    "FLST"
+                                ],
+                                "required": true
+                            },
+                            {
+                                "signature": "ECOR",
+                                "name": "Combat override package list",
+                                "type": "formId",
+                                "signatures": [
+                                    "FLST"
+                                ],
+                                "required": true
+                            },
+                            {
+                                "signature": "ALDN",
+                                "name": "Display Name",
+                                "type": "formId",
+                                "signatures": [
+                                    "MESG"
+                                ]
+                            },
+                            {
+                                "name": "Alias Spells",
+                                "type": "memberArray",
+                                "member": {
+                                    "signature": "ALSP",
+                                    "name": "Spell",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "SPEL"
+                                    ]
+                                }
+                            },
+                            {
+                                "name": "Alias Factions",
+                                "type": "memberArray",
+                                "member": {
+                                    "signature": "ALFC",
+                                    "name": "Faction",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "FACT"
+                                    ]
+                                }
+                            },
+                            {
+                                "name": "Alias Package Data",
+                                "type": "memberArray",
+                                "member": {
+                                    "signature": "ALPC",
+                                    "name": "Package",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "PACK"
+                                    ]
+                                }
+                            },
+                            {
+                                "signature": "VTCK",
+                                "name": "Voice Types",
+                                "type": "formId",
+                                "signatures": [
+                                    "NPC_",
+                                    "FLST",
+                                    "NULL"
+                                ]
+                            },
+                            {
+                                "signature": "ALED",
+                                "name": "Alias End",
+                                "type": "empty",
+                                "required": true
+                            }
+                        ],
+                        "sortKey": [
+                            0
+                        ],
+                        "required": true
+                    },
+                    {
+                        "name": "Alias",
+                        "type": "memberStruct",
+                        "members": [
+                            {
+                                "signature": "ALLS",
+                                "name": "Location Alias ID",
+                                "type": "uint32"
+                            },
+                            {
+                                "signature": "ALID",
+                                "name": "Alias Name",
+                                "type": "string"
+                            },
+                            {
+                                "id": "QUSTAliasFlags"
+                            },
+                            {
+                                "signature": "ALFI",
+                                "name": "Force Into Alias When Filled",
+                                "type": "int32",
+                                "format": {
+                                    "type": "QuestAliasFormat"
+                                }
+                            },
+                            {
+                                "signature": "ALFL",
+                                "name": "Specific Location",
+                                "type": "formId",
+                                "signatures": [
+                                    "LCTN"
+                                ]
+                            },
+                            {
+                                "signature": "ALFR",
+                                "name": "Forced Reference",
+                                "type": "formId"
+                            },
+                            {
+                                "signature": "ALUA",
+                                "name": "Unique Actor",
+                                "type": "formId",
+                                "signatures": [
+                                    "NPC_"
+                                ]
+                            },
+                            {
+                                "name": "Location Alias Reference",
+                                "type": "memberStruct",
+                                "members": [
+                                    {
+                                        "signature": "ALFA",
+                                        "name": "Alias",
+                                        "type": "int32",
+                                        "format": {
+                                            "type": "QuestAliasFormat"
+                                        }
+                                    },
+                                    {
+                                        "signature": "KNAM",
+                                        "name": "Keyword",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "KYWD"
+                                        ]
+                                    },
+                                    {
+                                        "signature": "ALRT",
+                                        "name": "Ref Type",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "LCRT"
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "External Alias Reference",
+                                "type": "memberStruct",
+                                "members": [
+                                    {
+                                        "signature": "ALEQ",
+                                        "name": "Quest",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "QUST"
+                                        ]
+                                    },
+                                    {
+                                        "signature": "ALEA",
+                                        "name": "Alias",
+                                        "type": "int32",
+                                        "format": {
+                                            "type": "QuestExternalAliasFormat"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Create Reference to Object",
+                                "type": "memberStruct",
+                                "members": [
+                                    {
+                                        "signature": "ALCO",
+                                        "name": "Object",
+                                        "type": "formId"
+                                    },
+                                    {
+                                        "signature": "ALCA",
+                                        "name": "Alias",
+                                        "type": "struct",
+                                        "elements": [
+                                            {
+                                                "name": "Alias",
+                                                "type": "int16",
+                                                "format": {
+                                                    "type": "QuestAliasFormat"
+                                                }
+                                            },
+                                            {
+                                                "name": "Create",
+                                                "type": "uint16",
+                                                "format": {
+                                                    "type": "enum",
+                                                    "options": {
+                                                        "0": "At",
+                                                        "32768": "In"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "signature": "ALCL",
+                                        "name": "Level",
+                                        "type": "uint32",
+                                        "format": {
+                                            "type": "enum",
+                                            "options": {
+                                                "0": "Easy",
+                                                "1": "Medium",
+                                                "2": "Hard",
+                                                "3": "Very Hard",
+                                                "4": "None"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Find Matching Reference Near Alias",
+                                "type": "memberStruct",
+                                "members": [
+                                    {
+                                        "signature": "ALNA",
+                                        "name": "Alias",
+                                        "type": "int32",
+                                        "format": {
+                                            "type": "QuestAliasFormat"
+                                        }
+                                    },
+                                    {
+                                        "signature": "ALNT",
+                                        "name": "Type",
+                                        "type": "uint32",
+                                        "format": {
+                                            "type": "enum",
+                                            "options": {
+                                                "0": "Linked Ref Child"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Find Matching Reference From Event",
+                                "type": "memberStruct",
+                                "members": [
+                                    {
+                                        "signature": "ALFE",
+                                        "name": "From Event",
+                                        "type": "string",
+                                        "size": 4
+                                    },
+                                    {
+                                        "signature": "ALFD",
+                                        "name": "Event Data",
+                                        "type": "bytes"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "CTDAs"
+                            },
+                            {
+                                "id": "KSIZ"
+                            },
+                            {
+                                "id": "KWDAs"
+                            },
+                            {
+                                "id": "COCT"
+                            },
+                            {
+                                "id": "CNTOs"
+                            },
+                            {
+                                "signature": "SPOR",
+                                "name": "Spectator override package list",
+                                "type": "formId",
+                                "signatures": [
+                                    "FLST"
+                                ],
+                                "required": true
+                            },
+                            {
+                                "signature": "OCOR",
+                                "name": "Observe dead body override package list",
+                                "type": "formId",
+                                "signatures": [
+                                    "FLST"
+                                ],
+                                "required": true
+                            },
+                            {
+                                "signature": "GWOR",
+                                "name": "Guard warn override package list",
+                                "type": "formId",
+                                "signatures": [
+                                    "FLST"
+                                ],
+                                "required": true
+                            },
+                            {
+                                "signature": "ECOR",
+                                "name": "Combat override package list",
+                                "type": "formId",
+                                "signatures": [
+                                    "FLST"
+                                ],
+                                "required": true
+                            },
+                            {
+                                "signature": "ALDN",
+                                "name": "Display Name",
+                                "type": "formId",
+                                "signatures": [
+                                    "MESG"
+                                ]
+                            },
+                            {
+                                "name": "Alias Spells",
+                                "type": "memberArray",
+                                "member": {
+                                    "signature": "ALSP",
+                                    "name": "Spell",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "SPEL"
+                                    ]
+                                }
+                            },
+                            {
+                                "name": "Alias Factions",
+                                "type": "memberArray",
+                                "member": {
+                                    "signature": "ALFC",
+                                    "name": "Faction",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "FACT"
+                                    ]
+                                }
+                            },
+                            {
+                                "name": "Alias Package Data",
+                                "type": "memberArray",
+                                "member": {
+                                    "signature": "ALPC",
+                                    "name": "Package",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "PACK"
+                                    ]
+                                }
+                            },
+                            {
+                                "signature": "VTCK",
+                                "name": "Voice Types",
+                                "type": "formId",
+                                "signatures": [
+                                    "NPC_",
+                                    "FLST",
+                                    "NULL"
+                                ]
+                            },
+                            {
+                                "signature": "ALED",
+                                "name": "Alias End",
+                                "type": "empty",
+                                "required": true
+                            }
+                        ],
+                        "sortKey": [
+                            0
+                        ],
+                        "required": true
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "NNAM",
+            "name": "Description",
+            "type": "string",
+            "required": true
+        },
+        {
+            "name": "Targets",
+            "type": "memberArray",
+            "member": {
+                "name": "Target",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "QSTA",
+                        "name": "Target",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Target",
+                                "type": "formId",
+                                "signatures": [
+                                    "ACHR",
+                                    "REFR",
+                                    "PGRE",
+                                    "PHZD",
+                                    "PMIS",
+                                    "PARW",
+                                    "PBAR",
+                                    "PBEA",
+                                    "PCON",
+                                    "PFLA"
+                                ]
+                            },
+                            {
+                                "name": "Flags",
+                                "type": "uint8",
+                                "format": {
+                                    "type": "flags",
+                                    "flags": {
+                                        "0": "Compass Marker Ignores Locks"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Unknown",
+                                "type": "bytes",
+                                "size": 3
+                            }
+                        ]
+                    },
+                    {
+                        "id": "CTDAs"
+                    }
+                ]
+            }
+        }
+    ]
+}

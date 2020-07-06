@@ -1,0 +1,54 @@
+{
+    "signature": "ADDN",
+    "type": "record",
+    "name": "Addon Node",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "signature": "DATA",
+            "name": "Node Index",
+            "type": "int32"
+        },
+        {
+            "signature": "SNAM",
+            "name": "Sound",
+            "type": "formId",
+            "signatures": [
+                "SNDR",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "DNAM",
+            "name": "Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Master Particle System Cap",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint16",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "1": "Unknown 1",
+                            "3": "Always Loaded"
+                        }
+                    }
+                }
+            ],
+            "required": true
+        }
+    ]
+}

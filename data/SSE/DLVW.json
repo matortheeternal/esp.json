@@ -1,0 +1,53 @@
+{
+    "signature": "DLVW",
+    "type": "record",
+    "name": "Dialog View",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "QNAM",
+            "name": "Quest",
+            "type": "formId",
+            "signatures": [
+                "QUST"
+            ],
+            "required": true
+        },
+        {
+            "name": "Branches",
+            "type": "memberArray",
+            "member": {
+                "signature": "BNAM",
+                "name": "Branch",
+                "type": "formId",
+                "signatures": [
+                    "DLBR"
+                ]
+            }
+        },
+        {
+            "name": "Unknown TNAM",
+            "type": "memberArray",
+            "member": {
+                "name": "Unknown",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "TNAM",
+                        "type": "bytes"
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "ENAM",
+            "type": "bytes"
+        },
+        {
+            "signature": "DNAM",
+            "type": "bytes"
+        }
+    ]
+}

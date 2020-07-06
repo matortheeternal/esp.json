@@ -1,0 +1,76 @@
+{
+    "name": "Tint Masks",
+    "type": "memberArray",
+    "member": {
+        "name": "Tint Assets",
+        "type": "memberStruct",
+        "members": [
+            {
+                "name": "Tint Layer",
+                "type": "memberArray",
+                "member": {
+                    "name": "Texture",
+                    "type": "memberStruct",
+                    "members": [
+                        {
+                            "signature": "TINI",
+                            "name": "Index",
+                            "type": "uint16"
+                        },
+                        {
+                            "signature": "TINT",
+                            "name": "File Name",
+                            "type": "string"
+                        },
+                        {
+                            "signature": "TINP",
+                            "name": "Mask Type",
+                            "type": "uint16",
+                            "format": {
+                                "id": "TintMaskTypeEnum"
+                            }
+                        },
+                        {
+                            "signature": "TIND",
+                            "name": "Preset Default",
+                            "type": "formId",
+                            "signatures": [
+                                "CLFM",
+                                "NULL"
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Presets",
+                "type": "memberArray",
+                "member": {
+                    "name": "Preset",
+                    "type": "memberStruct",
+                    "members": [
+                        {
+                            "signature": "TINC",
+                            "name": "Color",
+                            "type": "formId",
+                            "signatures": [
+                                "CLFM",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "signature": "TINV",
+                            "name": "Default Value",
+                            "type": "float"
+                        },
+                        {
+                            "signature": "TIRS",
+                            "name": "Index",
+                            "type": "uint16"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

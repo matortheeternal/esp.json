@@ -1,0 +1,20 @@
+{
+    "signature": "WOOP",
+    "type": "record",
+    "name": "Word of Power",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "signature": "TNAM",
+            "name": "Translation",
+            "type": "string",
+            "localized": true,
+            "required": true
+        }
+    ]
+}

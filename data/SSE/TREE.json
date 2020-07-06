@@ -1,0 +1,130 @@
+{
+    "signature": "TREE",
+    "type": "record",
+    "name": "Tree",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "12": "Ignored",
+            "15": "Has Distant LOD"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "VMAD"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "signature": "PFIG",
+            "name": "Ingredient",
+            "type": "formId",
+            "signatures": [
+                "INGR",
+                "ALCH",
+                "MISC",
+                "LVLI",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "SNAM",
+            "name": "Harvest Sound",
+            "type": "formId",
+            "signatures": [
+                "SNDR",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "PFPC",
+            "name": "Ingredient Production",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Spring",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Summer",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Fall",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Winter",
+                    "type": "uint8"
+                }
+            ]
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "signature": "CNAM",
+            "name": "Tree Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Trunk Flexibility",
+                    "type": "float"
+                },
+                {
+                    "name": "Branch Flexibility",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                },
+                {
+                    "name": "Leaf Amplitude",
+                    "type": "float"
+                },
+                {
+                    "name": "Leaf Frequency",
+                    "type": "float"
+                }
+            ],
+            "required": true
+        }
+    ]
+}

@@ -1,0 +1,56 @@
+{
+    "name": "Object Union",
+    "type": "union",
+    "decider": "ScriptObjFormatDecider",
+    "elements": [
+        {
+            "name": "Object v2",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Unused",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Alias",
+                    "type": "int16",
+                    "format": {
+                        "type": "ScriptObjectAliasFormat"
+                    },
+                    "defaultEditValue": "'None'"
+                },
+                {
+                    "name": "FormID",
+                    "type": "formId"
+                }
+            ],
+            "sortKey": [
+                1
+            ]
+        },
+        {
+            "name": "Object v1",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "FormID",
+                    "type": "formId"
+                },
+                {
+                    "name": "Alias",
+                    "type": "int16",
+                    "format": {
+                        "type": "ScriptObjectAliasFormat"
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "uint16"
+                }
+            ],
+            "sortKey": [
+                1
+            ]
+        }
+    ]
+}

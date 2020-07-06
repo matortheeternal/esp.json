@@ -1,0 +1,24 @@
+{
+    "signature": "FLST",
+    "type": "record",
+    "name": "FormID List",
+    "members": [
+        {
+            "signature": "EDID",
+            "name": "Editor ID",
+            "type": "string",
+            "required": true
+        },
+        {
+            "name": "FormIDs",
+            "type": "memberArray",
+            "member": {
+                "signature": "LNAM",
+                "name": "FormID",
+                "type": "formId"
+            },
+            "sorted": true,
+            "required": true
+        }
+    ]
+}

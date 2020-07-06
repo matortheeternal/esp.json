@@ -1,0 +1,68 @@
+{
+    "signature": "APPA",
+    "type": "record",
+    "name": "Alchemical Apparatus",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "VMAD"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "id": "YNAM"
+        },
+        {
+            "id": "ZNAM"
+        },
+        {
+            "signature": "QUAL",
+            "name": "Quality",
+            "type": "int32",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "Novice",
+                    "1": "Apprentice",
+                    "2": "Journeyman",
+                    "3": "Expert",
+                    "4": "Master"
+                }
+            }
+        },
+        {
+            "id": "DESC"
+        },
+        {
+            "signature": "DATA",
+            "name": "Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Value",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "signature": "SOUN",
+    "type": "record",
+    "name": "Sound Marker",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "signature": "FNAM",
+            "type": "bytes"
+        },
+        {
+            "signature": "SNDD",
+            "type": "bytes"
+        },
+        {
+            "signature": "SDSC",
+            "name": "Sound Descriptor",
+            "type": "formId",
+            "signatures": [
+                "SNDR",
+                "NULL"
+            ]
+        }
+    ]
+}

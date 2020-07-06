@@ -1,0 +1,76 @@
+{
+    "signature": "TXST",
+    "type": "record",
+    "name": "Texture Set",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "name": "Textures (RGB/A)",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "TX00",
+                    "name": "Difuse",
+                    "type": "string"
+                },
+                {
+                    "signature": "TX01",
+                    "name": "Normal/Gloss",
+                    "type": "string"
+                },
+                {
+                    "signature": "TX02",
+                    "name": "Environment Mask/Subsurface Tint",
+                    "type": "string"
+                },
+                {
+                    "signature": "TX03",
+                    "name": "Glow/Detail Map",
+                    "type": "string"
+                },
+                {
+                    "signature": "TX04",
+                    "name": "Height",
+                    "type": "string"
+                },
+                {
+                    "signature": "TX05",
+                    "name": "Environment",
+                    "type": "string"
+                },
+                {
+                    "signature": "TX06",
+                    "name": "Multilayer",
+                    "type": "string"
+                },
+                {
+                    "signature": "TX07",
+                    "name": "Backlight Mask/Specular",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "id": "DODT"
+        },
+        {
+            "signature": "DNAM",
+            "name": "Flags",
+            "type": "uint16",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "No Specular Map",
+                    "1": "Facegen Textures",
+                    "2": "Has Model Space Normal Map"
+                }
+            }
+        }
+    ]
+}

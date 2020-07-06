@@ -1,0 +1,33 @@
+{
+    "name": "Data",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Time",
+            "type": "float"
+        },
+        {
+            "name": "Red",
+            "type": "float",
+            "required": true
+        },
+        {
+            "name": "Green",
+            "type": "float",
+            "required": true
+        },
+        {
+            "name": "Blue",
+            "type": "float",
+            "required": true
+        },
+        {
+            "name": "Alpha",
+            "type": "float",
+            "required": true
+        }
+    ],
+    "sortKey": [
+        0
+    ]
+}

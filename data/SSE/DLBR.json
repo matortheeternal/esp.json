@@ -1,0 +1,46 @@
+{
+    "signature": "DLBR",
+    "type": "record",
+    "name": "Dialog Branch",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "QNAM",
+            "name": "Quest",
+            "type": "formId",
+            "signatures": [
+                "QUST"
+            ],
+            "required": true
+        },
+        {
+            "signature": "TNAM",
+            "name": "Unknown",
+            "type": "uint32"
+        },
+        {
+            "signature": "DNAM",
+            "name": "Flags",
+            "type": "uint32",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Top-Level",
+                    "1": "Blocking",
+                    "2": "Exclusive"
+                }
+            }
+        },
+        {
+            "signature": "SNAM",
+            "name": "Starting Topic",
+            "type": "formId",
+            "signatures": [
+                "DIAL"
+            ],
+            "required": true
+        }
+    ]
+}

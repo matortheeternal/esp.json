@@ -1,0 +1,31 @@
+{
+    "name": "Data Inputs",
+    "type": "memberArray",
+    "member": {
+        "name": "Data Input",
+        "type": "memberStruct",
+        "members": [
+            {
+                "signature": "UNAM",
+                "name": "Index",
+                "type": "int8"
+            },
+            {
+                "signature": "BNAM",
+                "name": "Name",
+                "type": "string"
+            },
+            {
+                "signature": "PNAM",
+                "name": "Flags",
+                "type": "uint32",
+                "format": {
+                    "type": "flags",
+                    "flags": {
+                        "0": "Public"
+                    }
+                }
+            }
+        ]
+    }
+}

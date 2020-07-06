@@ -1,0 +1,50 @@
+{
+    "signature": "DEBR",
+    "type": "record",
+    "name": "Debris",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "name": "Models",
+            "type": "memberArray",
+            "member": {
+                "name": "Model",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "DATA",
+                        "name": "Data",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Percentage",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "Model FileName",
+                                "type": "string"
+                            },
+                            {
+                                "name": "Flags",
+                                "type": "uint8",
+                                "format": {
+                                    "type": "flags",
+                                    "flags": {
+                                        "0": "Has Collision Data"
+                                    }
+                                }
+                            }
+                        ],
+                        "required": true
+                    },
+                    {
+                        "id": "MODT"
+                    }
+                ]
+            },
+            "required": true
+        }
+    ]
+}
