@@ -9,16 +9,22 @@ Clone the repo and its submodules, e.g.
 git clone --recursive https://github.com/matortheeternal/esp.json
 ```
 
-### TES5 - Skyrim
+### Commands
 
-To convert the TES5Edit definitions code to `src/Generator/TES5` run: 
-
-```
-npm run convertTES5
-```
-
-To build TES5 definition data files run:
+To convert the xEdit definitions to `src/Generator/{game}` run: 
 
 ```
-npm run buildTES5
+npm run convert -- {game} {source}
 ```
+
+To build xEdit definition data files run:
+
+```
+npm run build -- {game}
+```
+
+Examples:
+- `npm run convert -- TES5`
+- `npm run convert -- SSE TES5`
+- `npm run build -- TES5`
+- `npm run build -- SSE`
