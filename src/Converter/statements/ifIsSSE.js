@@ -1,12 +1,12 @@
 let {statementConverter, convertStatement} = require('../converters');
 
-let ifIsSSEExpr = /^if IsSSE then begin/;
+let ifIsSSEExpr = /^if IsSSE then\s*(begin)?/;
 
 statementConverter('ifIsSSE', {
     test: parser => parser.match(ifIsSSEExpr),
-    convert: (converter) => {
+    convert: (converter, match) => {
         converter.skipping = converter.gameMode !== 'gmSSE';
-        let end = 'end';
+        let end = match[1] ? 'end' : ';';
         while (!converter.chomp(end))
             convertStatement(converter);
         converter.skipping = false;

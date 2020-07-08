@@ -1,5 +1,5 @@
 let {statementConverter} = require('../converters');
 
 statementConverter('unknown', {
-    test: parser => parser.match(/^[^\s]+/)
+    test: parser => parser.match(/^(;|[^\s;]+)/)
 });
