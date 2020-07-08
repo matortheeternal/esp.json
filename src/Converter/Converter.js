@@ -5,20 +5,34 @@ let path = require('path'),
     {convertStatement} = require('./converters');
 
 class Converter extends Parser {
-    constructor(filePath) {
+    constructor(filePath, game) {
         super(filePath);
         this._store = {};
         this.outputFiles = [];
+        this.globalOutputs = {};
+        this._gameMode = `gm${game}`;
     }
 
-    newOutput(filename, game) {
+    newOutput(filename) {
         console.log(`Creating ${filename}`);
-        this._gameMode = `gm${game}`;
         this.output = {
             filename: filename,
             requires: [],
             text: ''
         };
+    }
+
+    registerGlobalOutput(filename, output) {
+        this.globalOutputs[filename] = output;
+    }
+
+    saveGlobalOutputs() {
+        Object.keys(this.globalOutputs).forEach(filename => {
+            this.newOutput(filename);
+            let globalOutput = this.globalOutputs[filename];
+            globalOutput.beforeSave(this, globalOutput);
+            this.saveOutput();
+        });
     }
 
     get gameMode() {

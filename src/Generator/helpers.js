@@ -1,8 +1,14 @@
 let defs = {};
+let metaDefs = {};
+let groupOrder = [];
 
 // meta
 let addDef = (id, def) => defs[id] = def;
 let getDefs = () => defs;
+let addMetaDef = (id, def) => metaDefs[id] = def;
+let getMetaDefs = () => metaDefs;
+let setGroupOrder = (order) => groupOrder = order;
+let getGroupOrder = () => groupOrder;
 let clearDefs = () => defs = {};
 let forEachDef = (cb, a) => {
     let target = a || Object.values(defs);
@@ -81,6 +87,7 @@ let empty = name => ({ name, type: 'empty' });
 
 module.exports = {
     addDef, getDefs, clearDefs, forEachDef, IsSSE,
+    addMetaDef, getMetaDefs, getGroupOrder, setGroupOrder,
     req, def, opts, sortKey, inherit,
     localized, sorted, size, prefix,
     format, div, scale, flags, showUnknown, enumeration, formatUnion,

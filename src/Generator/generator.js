@@ -1,6 +1,6 @@
 let fs = require('fs'),
     path = require('path'),
-    {clearDefs, getDefs} = require('./helpers');
+    {clearDefs, getDefs, getMetaDefs, getGroupOrder} = require('./helpers');
 
 let buildDefs = function(defGame, folderName) {
     let generatorFolder = path.resolve(__dirname, folderName);
@@ -14,7 +14,13 @@ let buildDefs = function(defGame, folderName) {
 
 let saveDefs = function(game) {
     let outputPath = path.resolve('data', `${game}.json`);
-    fs.writeFileSync(outputPath, JSON.stringify(getDefs()));
+    let gameDefs = {
+        game: game,
+        metaDefs: getMetaDefs(),
+        groupOrder: getGroupOrder(),
+        defs: getDefs()
+    };
+    fs.writeFileSync(outputPath, JSON.stringify(gameDefs));
 };
 
 let saveIndividualDefs = function(game) {

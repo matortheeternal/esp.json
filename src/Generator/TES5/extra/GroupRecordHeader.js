@@ -1,10 +1,10 @@
 let {
-    addDef, struct, uint32, bytes,
+    addMetaDef, struct, uint32, bytes,
     inherit, size, string, int32
 } = require('../../helpers');
 
 module.exports = () => {
-    addDef('GroupRecordHeader',
+    addMetaDef('GroupRecordHeader',
         struct('Group Header', [
             inherit('signature', size(4, string('Signature'))),
             uint32('Group Size'),

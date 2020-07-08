@@ -2,6 +2,14 @@ let path = require('path'),
     fs = require('fs'),
     Converter = require('./Converter');
 
+let setUpGlobalOutputs = function(converter) {
+    let folderPath = path.resolve(__dirname, 'globalOutputs'),
+        files = fs.readdirSync(folderPath);
+    files.forEach(filename => {
+        require(`./globalOutputs/${filename}`)(converter);
+    });
+};
+
 let convertProcedures = function(converter) {
     converter.convertRegions({
         start: /procedure Define\w+?[a-z];[\s\S]+?^begin/m,
@@ -16,7 +24,9 @@ let convertFile = function(filename, game) {
         let outputFolder = path.resolve(__dirname, '..', 'Generator', game);
         if (!fs.existsSync(outputFolder)) fs.mkdirSync(outputFolder);
         converter.setOutputFolder(outputFolder);
+        setUpGlobalOutputs(converter);
         convertProcedures(converter);
+        converter.saveGlobalOutputs();
     } catch (x) {
         if (x.name === 'ParseError')
             console.error(converter.getCodeSnippet());
@@ -44,6 +54,7 @@ module.exports = convertFile;
 // load statement converters
 require('./statements/wbRecord');
 require('./statements/wbRefRecord');
+require('./statements/wbAddGroupOrder');
 require('./statements/ReferenceRecord');
 require('./statements/loadList');
 require('./statements/ifGameMode');
