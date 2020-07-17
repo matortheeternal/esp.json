@@ -1,6 +1,6 @@
 let {
     addDef, int8, flags, uint8, format, 
-    prefix, string, struct, array
+    string, prefix, struct, array
 } = require('../helpers');
 
 module.exports = () => {

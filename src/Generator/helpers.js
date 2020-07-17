@@ -36,6 +36,7 @@ let localized = obj => ({ ...obj, localized: true });
 let sorted = obj => ({ ...obj, sorted: true });
 let size = (size, obj) => ({ ...obj, size});
 let prefix = (prefix, obj) => ({ ...obj, prefix });
+let padding = (padding, obj) => ({ ...obj, padding });
 
 // number formatting
 let format = (obj, format) => ({ ...obj, format });
@@ -89,7 +90,7 @@ module.exports = {
     addDef, getDefs, clearDefs, forEachDef, IsSSE,
     addMetaDef, getMetaDefs, getGroupOrder, setGroupOrder,
     req, def, opts, sortKey, inherit,
-    localized, sorted, size, prefix,
+    localized, sorted, size, prefix, padding,
     format, div, scale, flags, showUnknown, enumeration, formatUnion,
     record, subrecord,
     memberArray, memberStruct, memberUnion,

@@ -1,5 +1,5 @@
 let {
-    addDef, int8, prefix, string, uint16, 
+    addDef, int8, string, prefix, uint16, 
     int16, sortKey, struct, sorted, array
 } = require('../helpers');
 

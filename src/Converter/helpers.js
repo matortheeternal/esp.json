@@ -16,6 +16,7 @@ let args = {
     string: { type: 'string' },
     number: { type: 'number' },
     size: { type: 'number', name: 'size' },
+    prefix: { type: 'number', name: 'prefix' },
     sk: { type: 'array of number', name: 'sk' },
     elementMap: { type: 'array of number', name: 'elementMap' },
     exSk: { type: 'array of number', name: 'exSk' },
@@ -106,6 +107,12 @@ let prefixSize = function(size, line, converter) {
     return prefixLine(prefix, line, converter);
 };
 
+let paddingLine = function(prefix, line, converter) {
+    if (prefix > 0) return line;
+    converter.addRequires('padding');
+    return `padding(1, ${line})`;
+};
+
 let scaleLine = function(scale, line, converter) {
     if (scale !== 1) return line;
     converter.addRequires('scale');
@@ -137,7 +144,7 @@ let resolveIntFn = function(intType) {
 
 module.exports = {
     args, indent, arr, inlineArr, mixedArr, stringify, newLine,
-    sizeLine, prefixLine, prefixSize, scaleLine,
+    sizeLine, prefixLine, prefixSize, paddingLine, scaleLine,
     reqLine, optsLine, optsReq,
     resolveIntFn, lineBreak, tab
 };
