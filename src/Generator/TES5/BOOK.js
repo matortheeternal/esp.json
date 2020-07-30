@@ -1,8 +1,8 @@
 let {
     def, req, subrecord, localized, string, 
-    flags, uint8, format, enumeration, bytes, 
-    size, int32, ckFormId, union, uint32, 
-    float, struct, record
+    opts, flags, uint8, format, enumeration, 
+    bytes, size, int32, ckFormId, union, 
+    uint32, float, struct, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -14,7 +14,9 @@ module.exports = () => {
             def('FULL'),
             def('MODL'),
             def('ICON'),
-            req(subrecord('DESC', localized(string('Book Text')))),
+            req(subrecord('DESC', opts(localized(string('Book Text')), {
+                "keepCase": true
+            }))),
             def('DEST'),
             def('YNAM'),
             def('ZNAM'),

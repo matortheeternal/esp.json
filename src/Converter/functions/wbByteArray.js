@@ -11,5 +11,6 @@ subrecordAndField('wbByteArray', [
 ], ({name, size}, converter) => {
     converter.addRequires('bytes');
     let line = `bytes(${name})`;
-    return prefixSize(size, line, converter);
+    if (size === -255) size = 0;
+    return prefixSize(size, line, converter, true);
 });

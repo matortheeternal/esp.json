@@ -1,5 +1,5 @@
 let {functionConverter} = require('../converters'),
-    {reqLine, sizeLine, args} = require('../helpers');
+    {reqLine, sizeLine, optsLine, args} = require('../helpers');
 
 functionConverter('wbStringKC', [
     args.sig,
@@ -13,6 +13,7 @@ functionConverter('wbStringKC', [
 ], ({name, sig, size, required}, converter) => {
     converter.addRequires('subrecord', 'string');
     let line = sizeLine(size, `string(${name})`, converter);
+    line = optsLine({keepCase: true}, line, converter);
     line = `subrecord('${sig}', ${line})`;
     return reqLine(required, line, converter);
 });

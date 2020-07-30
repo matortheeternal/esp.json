@@ -1,9 +1,9 @@
 let {
-    addDef, bytes
+    addDef, bytes, size
 } = require('../helpers');
 
 module.exports = () => {
     addDef('Null', 
-        bytes('Unused')
+        size(0, bytes('Unused'))
     );
 };

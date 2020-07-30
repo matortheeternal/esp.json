@@ -1,9 +1,9 @@
 let {
-    addDef, subrecord, bytes
+    addDef, subrecord, bytes, size
 } = require('../helpers');
 
 module.exports = () => {
     addDef('TVDT', 
-        subrecord('TVDT', bytes('Occlusion Data'))
+        subrecord('TVDT', size(0, bytes('Occlusion Data')))
     );
 };

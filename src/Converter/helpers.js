@@ -34,6 +34,10 @@ let prefixes = {
     '-4': 1
 };
 
+let sizeMap = {
+    '-255': 0
+};
+
 let intFunctions = {
     it0: 'int0',
     itU8: 'uint8',
@@ -89,8 +93,9 @@ let newLine = function(str) {
     return lineBreak + indent(str) + lineBreak;
 };
 
-let sizeLine = function(size, line, converter) {
-    if (!size || size < 0) return line;
+let sizeLine = function(size, line, converter, bArray) {
+    let isVariable = !size && (!bArray || size !== 0);
+    if (isVariable || size < 0) return line;
     converter.addRequires('size');
     return `size(${size}, ${line})`;
 };
@@ -101,9 +106,9 @@ let prefixLine = function(prefix, line, converter) {
     return `prefix(${prefix}, ${line})`;
 };
 
-let prefixSize = function(size, line, converter) {
+let prefixSize = function(size, line, converter, bArray = false) {
     let prefix = prefixes[size] || 0;
-    line = sizeLine(size, line, converter);
+    line = sizeLine(size, line, converter, bArray);
     return prefixLine(prefix, line, converter);
 };
 

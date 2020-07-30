@@ -1,7 +1,7 @@
 let {
-    def, subrecord, string, bytes, unknown, 
-    ckFormId, req, uint8, format, array, 
-    opts, memberStruct, float, struct, size, 
+    def, subrecord, string, bytes, size, 
+    unknown, ckFormId, req, uint8, format, 
+    array, opts, memberStruct, float, struct, 
     flags, uint32, enumeration, memberArray, sorted, 
     record
 } = require('../helpers');
@@ -39,14 +39,14 @@ module.exports = () => {
             subrecord('J0TX', string('Cloud Texture Layer #26')),
             subrecord('K0TX', string('Cloud Texture Layer #27')),
             subrecord('L0TX', string('Cloud Texture Layer #28')),
-            subrecord('DNAM', bytes('Unused')),
-            subrecord('CNAM', bytes('Unused')),
-            subrecord('ANAM', bytes('Unused')),
-            subrecord('BNAM', bytes('Unused')),
+            subrecord('DNAM', size(0, bytes('Unused'))),
+            subrecord('CNAM', size(0, bytes('Unused'))),
+            subrecord('ANAM', size(0, bytes('Unused'))),
+            subrecord('BNAM', size(0, bytes('Unused'))),
             subrecord('LNAM', unknown()),
             subrecord('MNAM', ckFormId('Precipitation Type', ['SPGD', 'NULL'])),
             req(subrecord('NNAM', ckFormId('Visual Effect', ['RFCT', 'NULL']))),
-            subrecord('ONAM', bytes('Unused')),
+            subrecord('ONAM', size(0, bytes('Unused'))),
             memberStruct('Cloud Speed', [
                 opts(subrecord('RNAM', array('Y Speed', 
                     format(uint8('Layer'), def('CloudSpeedToStr'))
@@ -200,8 +200,8 @@ module.exports = () => {
                 subrecord('DALC', def('AmbientColors', { name: 'Sunset' })),
                 subrecord('DALC', def('AmbientColors', { name: 'Night' }))
             ])),
-            subrecord('NAM2', bytes('Unused')),
-            subrecord('NAM3', bytes('Unused')),
+            subrecord('NAM2', size(0, bytes('Unused'))),
+            subrecord('NAM3', size(0, bytes('Unused'))),
             memberStruct('Aurora', [
                 def('MODL')
             ]),

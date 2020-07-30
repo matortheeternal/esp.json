@@ -1,5 +1,6 @@
 let {
-    addDef, int16, struct, bytes, subrecord
+    addDef, int16, struct, bytes, size, 
+    subrecord
 } = require('../helpers');
 
 module.exports = () => {
@@ -13,7 +14,7 @@ module.exports = () => {
                 int16('X'),
                 int16('Y')
             ]),
-            bytes('Cell Data')
+            size(0, bytes('Cell Data'))
         ]))
     );
 };

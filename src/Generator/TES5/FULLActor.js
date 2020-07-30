@@ -1,9 +1,12 @@
 let {
-    addDef, subrecord, localized, string, req
+    addDef, subrecord, localized, string, opts, 
+    req
 } = require('../helpers');
 
 module.exports = () => {
     addDef('FULLActor', 
-        req(subrecord('FULL', localized(string('Name'))))
+        req(subrecord('FULL', opts(localized(string('Name')), {
+            "keepCase": true
+        })))
     );
 };

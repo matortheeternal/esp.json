@@ -2,8 +2,8 @@ let {
     flags, def, subrecord, unknown, uint16, 
     format, div, struct, ckFormId, enumeration, 
     uint8, memberArray, formId, uint32, bytes, 
-    size, localized, string, memberStruct, empty, 
-    record
+    size, localized, string, opts, memberStruct, 
+    empty, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -65,7 +65,9 @@ module.exports = () => {
                         })),
                         size(3, bytes('Unused'))
                     ])),
-                    subrecord('NAM1', localized(string('Response Text'))),
+                    subrecord('NAM1', opts(localized(string('Response Text')), {
+                        "keepCase": true
+                    })),
                     subrecord('NAM2', string('Script Notes')),
                     subrecord('NAM3', string('Edits')),
                     subrecord('SNAM', ckFormId('Idle Animations: Speaker', ['IDLE'])),

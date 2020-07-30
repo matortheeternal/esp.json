@@ -71,7 +71,7 @@ module.exports = () => {
                     ]))),
                     req(subrecord('NAM1', string('Limb Replacement Model'))),
                     req(subrecord('NAM4', string('Gore Effects - Target Bone'))),
-                    subrecord('NAM5', bytes('Texture Files Hashes'))
+                    subrecord('NAM5', size(0, bytes('Texture Files Hashes')))
                 ]))
             ))
         ]

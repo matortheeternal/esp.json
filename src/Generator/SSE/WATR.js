@@ -1,7 +1,7 @@
 let {
     def, subrecord, string, req, memberArray, 
     uint8, IsSSE, flags, format, bytes, 
-    ckFormId, uint16, float, size, struct, 
+    size, ckFormId, uint16, float, struct, 
     record
 } = require('../helpers');
 
@@ -24,7 +24,7 @@ module.exports = game => {
                 6: 'Unknown 6',
                 7: 'Unknown 7'
             }))),
-            subrecord('MNAM', bytes('Unused')),
+            subrecord('MNAM', size(0, bytes('Unused'))),
             subrecord('TNAM', ckFormId('Material', ['MATT'])),
             subrecord('SNAM', ckFormId('Open Sound', ['SNDR', 'NULL'])),
             subrecord('XNAM', ckFormId('Spell', ['SPEL'])),
@@ -154,7 +154,7 @@ module.exports = game => {
                     float('Specular Properties - Sun Sparkle Power')
                 ]))
             ]),
-            subrecord('GNAM', bytes('Unused')),
+            subrecord('GNAM', size(0, bytes('Unused'))),
             req(subrecord('NAM0', struct('Linear Velocity', [
                 float('X'),
                 float('Y'),

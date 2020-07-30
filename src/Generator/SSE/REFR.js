@@ -254,8 +254,8 @@ module.exports = () => {
             ])),
             subrecord('XTNM', ckFormId('Teleport Message Box', ['MESG'])),
             subrecord('XMBR', ckFormId('MultiBound Reference', ['REFR'])),
-            subrecord('XWCN', bytes('Unknown')),
-            subrecord('XWCS', bytes('Unknown')),
+            subrecord('XWCN', size(0, bytes('Unknown'))),
+            subrecord('XWCS', size(0, bytes('Unknown'))),
             subrecord('XWCU', struct('Water Velocity', [
                 float('X Offset'),
                 float('Y Offset'),
@@ -264,7 +264,7 @@ module.exports = () => {
                 float('X Angle'),
                 float('Y Angle'),
                 float('Z Angle'),
-                bytes('Unknown')
+                size(0, bytes('Unknown'))
             ])),
             subrecord('XCVL', struct('Unknown', [
                 size(4, bytes('Unknown')),
@@ -354,8 +354,8 @@ module.exports = () => {
                     req(subrecord('XPRD', req(float('Idle Time')))),
                     req(subrecord('XPPA', empty('Patrol Script Marker'))),
                     req(subrecord('INAM', ckFormId('Idle', ['IDLE', 'NULL']))),
-                    subrecord('SCHR', bytes('Unused')),
-                    subrecord('SCTX', bytes('Unused')),
+                    subrecord('SCHR', size(0, bytes('Unused'))),
+                    subrecord('SCTX', size(0, bytes('Unused'))),
                     def('PDTOs')
                 ])
             ),

@@ -1,8 +1,8 @@
 let {
     flags, def, subrecord, uint16, format, 
     int32, uint32, struct, req, float, 
-    ckFormId, bytes, string, sorted, array, 
-    size, record
+    ckFormId, bytes, size, string, sorted, 
+    array, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -71,15 +71,15 @@ module.exports = () => {
             def('TVDT'),
             def('MaxHeightDataCELL'),
             req(subrecord('LTMP', ckFormId('Lighting Template', ['LGTM', 'NULL']))),
-            subrecord('LNAM', bytes('Unknown')),
+            subrecord('LNAM', size(0, bytes('Unknown'))),
             req(subrecord('XCLW', req(float('Water Height')))),
             subrecord('XNAM', string('Water Noise Texture')),
             subrecord('XCLR', sorted(array('Regions', 
                 ckFormId('Region', ['REGN'])
             ))),
             subrecord('XLCN', ckFormId('Location', ['LCTN'])),
-            subrecord('XWCN', bytes('Unknown')),
-            subrecord('XWCS', bytes('Unknown')),
+            subrecord('XWCN', size(0, bytes('Unknown'))),
+            subrecord('XWCS', size(0, bytes('Unknown'))),
             subrecord('XWCU', struct('Water Velocity', [
                 float('X Offset'),
                 float('Y Offset'),
@@ -88,7 +88,7 @@ module.exports = () => {
                 float('X Angle'),
                 float('Y Angle'),
                 float('Z Angle'),
-                bytes('Unknown')
+                size(0, bytes('Unknown'))
             ])),
             subrecord('XCWT', ckFormId('Water', ['WATR'])),
             def('Ownership'),

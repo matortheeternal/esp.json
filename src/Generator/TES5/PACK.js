@@ -152,29 +152,29 @@ module.exports = () => {
             memberStruct('OnBegin', [
                 req(subrecord('POBA', empty('OnBegin Marker'))),
                 req(subrecord('INAM', ckFormId('Idle', ['IDLE', 'NULL']))),
-                subrecord('SCHR', bytes('Unused')),
-                subrecord('SCTX', bytes('Unused')),
-                subrecord('QNAM', bytes('Unused')),
-                subrecord('TNAM', bytes('Unused')),
+                subrecord('SCHR', size(0, bytes('Unused'))),
+                subrecord('SCTX', size(0, bytes('Unused'))),
+                subrecord('QNAM', size(0, bytes('Unused'))),
+                subrecord('TNAM', size(0, bytes('Unused'))),
                 def('PDTOs')
             ]),
             memberStruct('OnEnd', [
                 req(subrecord('POEA', empty('OnEnd Marker'))),
                 req(subrecord('INAM', ckFormId('Idle', ['IDLE', 'NULL']))),
-                subrecord('SCHR', bytes('Unused')),
-                subrecord('SCTX', bytes('Unused')),
-                subrecord('QNAM', bytes('Unused')),
-                subrecord('TNAM', bytes('Unused')),
+                subrecord('SCHR', size(0, bytes('Unused'))),
+                subrecord('SCTX', size(0, bytes('Unused'))),
+                subrecord('QNAM', size(0, bytes('Unused'))),
+                subrecord('TNAM', size(0, bytes('Unused'))),
                 def('PDTOs')
             ]),
             memberStruct('OnChange', [
                 req(subrecord('POCA', empty('OnChange Marker'))),
                 req(subrecord('INAM', ckFormId('Idle', ['IDLE', 'NULL']))),
-                subrecord('SCHR', bytes('Unused')),
-                subrecord('SCDA', bytes('Unused')),
-                subrecord('SCTX', bytes('Unused')),
-                subrecord('QNAM', bytes('Unused')),
-                subrecord('TNAM', bytes('Unused')),
+                subrecord('SCHR', size(0, bytes('Unused'))),
+                subrecord('SCDA', size(0, bytes('Unused'))),
+                subrecord('SCTX', size(0, bytes('Unused'))),
+                subrecord('QNAM', size(0, bytes('Unused'))),
+                subrecord('TNAM', size(0, bytes('Unused'))),
                 def('PDTOs')
             ])
         ]

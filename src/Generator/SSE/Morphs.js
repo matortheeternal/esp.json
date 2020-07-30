@@ -1,12 +1,12 @@
 let {
-    addDef, subrecord, bytes, def, size, 
+    addDef, subrecord, bytes, size, def, 
     struct, memberStruct
 } = require('../helpers');
 
 module.exports = () => {
     addDef('Morphs', 
         memberStruct('Available Morphs', [
-            subrecord('MPAI', bytes('Unknown')),
+            subrecord('MPAI', size(0, bytes('Unknown'))),
             subrecord('MPAV', struct('Nose Variants', [
                 def('NoseMorphFlags'),
                 size(4, bytes('Unknown')),
@@ -17,7 +17,7 @@ module.exports = () => {
                 size(4, bytes('Unknown')),
                 size(4, bytes('Unknown'))
             ])),
-            subrecord('MPAI', bytes('Unknown')),
+            subrecord('MPAI', size(0, bytes('Unknown'))),
             subrecord('MPAV', struct('Brow Variants', [
                 def('BrowMorphFlags'),
                 size(4, bytes('Unknown')),
@@ -28,7 +28,7 @@ module.exports = () => {
                 size(4, bytes('Unknown')),
                 size(4, bytes('Unknown'))
             ])),
-            subrecord('MPAI', bytes('Unknown')),
+            subrecord('MPAI', size(0, bytes('Unknown'))),
             subrecord('MPAV', struct('Eye Variants', [
                 def('EyesMorphFlags01'),
                 def('EyesMorphFlags02'),
@@ -40,7 +40,7 @@ module.exports = () => {
                 size(4, bytes('Unknown')),
                 size(4, bytes('Unknown'))
             ])),
-            subrecord('MPAI', bytes('Unknown')),
+            subrecord('MPAI', size(0, bytes('Unknown'))),
             subrecord('MPAV', struct('Lip Variants', [
                 def('LipMorphFlags'),
                 size(4, bytes('Unknown')),

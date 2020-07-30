@@ -1,7 +1,7 @@
 let {
     def, subrecord, ckFormId, sorted, memberArray, 
     req, enumeration, uint32, format, struct, 
-    array, localized, string, record
+    array, localized, string, opts, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -30,7 +30,9 @@ module.exports = () => {
                     ckFormId('Sound', ['SNDR'])
                 ])
             )),
-            subrecord('DNAM', localized(string('Magic Item Description'))),
+            subrecord('DNAM', opts(localized(string('Magic Item Description')), {
+                "keepCase": true
+            })),
             def('CTDAs')
         ]
     })
