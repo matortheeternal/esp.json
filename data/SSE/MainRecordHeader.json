@@ -20,22 +20,8 @@
         },
         {
             "name": "Version Control Info 1",
-            "type": "union",
-            "decider": "FormVer44Decider",
-            "elements": [
-                {
-                    "name": "Version Control Info 1",
-                    "type": "bytes",
-                    "size": 4,
-                    "toStr": "VCI1ToStrBeforeFO4"
-                },
-                {
-                    "name": "Version Control Info 1",
-                    "type": "bytes",
-                    "size": 4,
-                    "toStr": "VCI1ToStrAfterFO4"
-                }
-            ]
+            "type": "bytes",
+            "size": 4
         },
         {
             "name": "Form Version",
