@@ -28,16 +28,19 @@
                 {
                     "name": "X",
                     "type": "float",
+                    "format": "RotationFactor",
                     "required": true
                 },
                 {
                     "name": "Y",
                     "type": "float",
+                    "format": "RotationFactor",
                     "required": true
                 },
                 {
                     "name": "Z",
                     "type": "float",
+                    "format": "RotationFactor",
                     "required": true
                 }
             ]

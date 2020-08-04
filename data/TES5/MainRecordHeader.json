@@ -5,8 +5,7 @@
         {
             "name": "Signature",
             "type": "string",
-            "size": 4,
-            "inheritFrom": "signature"
+            "size": 4
         },
         {
             "name": "Data Size",
@@ -21,8 +20,22 @@
         },
         {
             "name": "Version Control Info 1",
-            "type": "bytes",
-            "size": 4
+            "type": "union",
+            "decider": "FormVer44Decider",
+            "elements": [
+                {
+                    "name": "Version Control Info 1",
+                    "type": "bytes",
+                    "size": 4,
+                    "toStr": "VCI1ToStrBeforeFO4"
+                },
+                {
+                    "name": "Version Control Info 1",
+                    "type": "bytes",
+                    "size": 4,
+                    "toStr": "VCI1ToStrAfterFO4"
+                }
+            ]
         },
         {
             "name": "Form Version",

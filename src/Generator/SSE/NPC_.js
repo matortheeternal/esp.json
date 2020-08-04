@@ -3,8 +3,8 @@ let {
     int16, div, union, uint16, subrecord, 
     struct, ckFormId, int8, bytes, size, 
     sortKey, sorted, memberArray, uint8, localized, 
-    string, array, float, unknown, int32, 
-    memberStruct, record
+    string, array, float, unknown, scale, 
+    int32, memberStruct, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -160,9 +160,9 @@ module.exports = () => {
             req(subrecord('CRIF', ckFormId('Crime faction', ['FACT']))),
             req(subrecord('FTST', ckFormId('Head texture', ['TXST']))),
             subrecord('QNAM', struct('Texture lighting', [
-                req(req(float('Red'))),
-                req(req(float('Green'))),
-                req(req(float('Blue')))
+                req(req(scale(255, float('Red')))),
+                req(req(scale(255, float('Green')))),
+                req(req(scale(255, float('Blue'))))
             ])),
             req(subrecord('NAM9', struct('Face morph', [
                 float('Nose Long/Short'),

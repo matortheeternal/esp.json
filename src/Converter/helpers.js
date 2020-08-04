@@ -118,8 +118,17 @@ let paddingLine = function(prefix, line, converter) {
     return `padding(1, ${line})`;
 };
 
+let formatLine = function(format, line, converter) {
+    if (!format || format === 'null' || format === "'nil'")
+        return line;
+    converter.addRequires('format');
+    return `format(${line}, ${format})`;
+};
+
 let scaleLine = function(scale, line, converter) {
-    if (scale !== 1) return line;
+    if (!scale || scale.str === '1') return line;
+    if (scale.type === 'identifier')
+        return formatLine(`'${scale.str}'`, line, converter);
     converter.addRequires('scale');
     return `scale(${scale}, ${line})`;
 };
@@ -150,6 +159,6 @@ let resolveIntFn = function(intType) {
 module.exports = {
     args, indent, arr, inlineArr, mixedArr, stringify, newLine,
     sizeLine, prefixLine, prefixSize, paddingLine, scaleLine,
-    reqLine, optsLine, optsReq,
+    formatLine, reqLine, optsLine, optsReq,
     resolveIntFn, lineBreak, tab
 };

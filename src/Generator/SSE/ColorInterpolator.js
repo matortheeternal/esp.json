@@ -1,15 +1,16 @@
 let {
-    addDef, float, req, sortKey, struct
+    addDef, float, scale, req, sortKey, 
+    struct
 } = require('../helpers');
 
 module.exports = () => {
     addDef('ColorInterpolator', 
         sortKey([0], struct('Data', [
             float('Time'),
-            req(req(float('Red'))),
-            req(req(float('Green'))),
-            req(req(float('Blue'))),
-            req(req(float('Alpha')))
+            req(req(scale(255, float('Red')))),
+            req(req(scale(255, float('Green')))),
+            req(req(scale(255, float('Blue')))),
+            req(req(scale(255, float('Alpha'))))
         ]))
     );
 };

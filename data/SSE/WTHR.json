@@ -154,22 +154,26 @@
         {
             "signature": "DNAM",
             "name": "Unused",
-            "type": "bytes"
+            "type": "bytes",
+            "size": 0
         },
         {
             "signature": "CNAM",
             "name": "Unused",
-            "type": "bytes"
+            "type": "bytes",
+            "size": 0
         },
         {
             "signature": "ANAM",
             "name": "Unused",
-            "type": "bytes"
+            "type": "bytes",
+            "size": 0
         },
         {
             "signature": "BNAM",
             "name": "Unused",
-            "type": "bytes"
+            "type": "bytes",
+            "size": 0
         },
         {
             "signature": "LNAM",
@@ -197,7 +201,8 @@
         {
             "signature": "ONAM",
             "name": "Unused",
-            "type": "bytes"
+            "type": "bytes",
+            "size": 0
         },
         {
             "name": "Cloud Speed",
@@ -680,12 +685,14 @@
         {
             "signature": "NAM2",
             "name": "Unused",
-            "type": "bytes"
+            "type": "bytes",
+            "size": 0
         },
         {
             "signature": "NAM3",
             "name": "Unused",
-            "type": "bytes"
+            "type": "bytes",
+            "size": 0
         },
         {
             "name": "Aurora",

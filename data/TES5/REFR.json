@@ -227,16 +227,19 @@
                         {
                             "name": "X",
                             "type": "float",
+                            "scale": 2,
                             "required": true
                         },
                         {
                             "name": "Y",
                             "type": "float",
+                            "scale": 2,
                             "required": true
                         },
                         {
                             "name": "Z",
                             "type": "float",
+                            "scale": 2,
                             "required": true
                         }
                     ]
@@ -248,16 +251,19 @@
                         {
                             "name": "Red",
                             "type": "float",
+                            "scale": 255,
                             "required": true
                         },
                         {
                             "name": "Green",
                             "type": "float",
+                            "scale": 255,
                             "required": true
                         },
                         {
                             "name": "Blue",
                             "type": "float",
+                            "scale": 255,
                             "required": true
                         }
                     ]
@@ -298,11 +304,13 @@
                         {
                             "name": "Width",
                             "type": "float",
+                            "scale": 2,
                             "required": true
                         },
                         {
                             "name": "Height",
                             "type": "float",
+                            "scale": 2,
                             "required": true
                         }
                     ]
@@ -388,11 +396,13 @@
                         {
                             "name": "Width",
                             "type": "float",
+                            "scale": 2,
                             "required": true
                         },
                         {
                             "name": "Height",
                             "type": "float",
+                            "scale": 2,
                             "required": true
                         }
                     ]
@@ -669,12 +679,14 @@
         {
             "signature": "XWCN",
             "name": "Unknown",
-            "type": "bytes"
+            "type": "bytes",
+            "size": 0
         },
         {
             "signature": "XWCS",
             "name": "Unknown",
-            "type": "bytes"
+            "type": "bytes",
+            "size": 0
         },
         {
             "signature": "XWCU",
@@ -712,7 +724,8 @@
                 },
                 {
                     "name": "Unknown",
-                    "type": "bytes"
+                    "type": "bytes",
+                    "size": 0
                 }
             ]
         },
@@ -1073,12 +1086,14 @@
                     {
                         "signature": "SCHR",
                         "name": "Unused",
-                        "type": "bytes"
+                        "type": "bytes",
+                        "size": 0
                     },
                     {
                         "signature": "SCTX",
                         "name": "Unused",
-                        "type": "bytes"
+                        "type": "bytes",
+                        "size": 0
                     },
                     {
                         "id": "PDTOs"

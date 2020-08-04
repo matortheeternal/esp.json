@@ -9,21 +9,25 @@
         {
             "name": "Red",
             "type": "float",
+            "scale": 255,
             "required": true
         },
         {
             "name": "Green",
             "type": "float",
+            "scale": 255,
             "required": true
         },
         {
             "name": "Blue",
             "type": "float",
+            "scale": 255,
             "required": true
         },
         {
             "name": "Alpha",
             "type": "float",
+            "scale": 255,
             "required": true
         }
     ],

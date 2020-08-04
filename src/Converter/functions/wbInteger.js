@@ -1,17 +1,11 @@
 let {subrecordAndField} = require('../converters'),
-    {args, resolveIntFn} = require('../helpers');
+    {args, resolveIntFn, formatLine} = require('../helpers');
 
 let wbIntegerConvert = ({name, format, intType}, converter) => {
     let intFn = resolveIntFn(intType),
-        hasFormat = format && format !== 'null',
         nameArg = name.startsWith('IsSSE(') ? name : `${name}`;
     converter.addRequires(intFn);
-    let line = `${intFn}(${nameArg})`;
-    if (hasFormat) {
-        converter.addRequires('format');
-        return `format(${line}, ${format})`;
-    }
-    return line;
+    return formatLine(format, `${intFn}(${nameArg})`, converter);
 };
 
 subrecordAndField('wbInteger', [

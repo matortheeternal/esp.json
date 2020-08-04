@@ -166,7 +166,8 @@
                                     "signature": "CNAM",
                                     "name": "Log Entry",
                                     "type": "string",
-                                    "localized": true
+                                    "localized": true,
+                                    "keepCase": true
                                 },
                                 {
                                     "signature": "NAM0",
@@ -179,17 +180,20 @@
                                 {
                                     "signature": "SCHR",
                                     "name": "Unused",
-                                    "type": "bytes"
+                                    "type": "bytes",
+                                    "size": 0
                                 },
                                 {
                                     "signature": "SCTX",
                                     "name": "Unused",
-                                    "type": "bytes"
+                                    "type": "bytes",
+                                    "size": 0
                                 },
                                 {
                                     "signature": "QNAM",
                                     "name": "Unused",
-                                    "type": "bytes"
+                                    "type": "bytes",
+                                    "size": 0
                                 }
                             ]
                         }
@@ -229,6 +233,7 @@
                         "name": "Display Text",
                         "type": "string",
                         "localized": true,
+                        "keepCase": true,
                         "required": true
                     },
                     {

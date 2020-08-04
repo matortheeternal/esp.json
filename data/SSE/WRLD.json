@@ -340,11 +340,13 @@
                         {
                             "name": "X",
                             "type": "float",
+                            "format": "1Div4096",
                             "required": true
                         },
                         {
                             "name": "Y",
                             "type": "float",
+                            "format": "1Div4096",
                             "required": true
                         }
                     ],
@@ -358,11 +360,13 @@
                         {
                             "name": "X",
                             "type": "float",
+                            "format": "1Div4096",
                             "required": true
                         },
                         {
                             "name": "Y",
                             "type": "float",
+                            "format": "1Div4096",
                             "required": true
                         }
                     ],

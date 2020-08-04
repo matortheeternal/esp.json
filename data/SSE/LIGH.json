@@ -92,6 +92,7 @@
                         {
                             "name": "Period",
                             "type": "float",
+                            "scale": 0.01,
                             "required": true
                         },
                         {

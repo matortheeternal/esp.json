@@ -45,7 +45,8 @@
         {
             "signature": "MNAM",
             "name": "Unused",
-            "type": "bytes"
+            "type": "bytes",
+            "size": 0
         },
         {
             "signature": "TNAM",
@@ -330,7 +331,8 @@
         {
             "signature": "GNAM",
             "name": "Unused",
-            "type": "bytes"
+            "type": "bytes",
+            "size": 0
         },
         {
             "signature": "NAM0",

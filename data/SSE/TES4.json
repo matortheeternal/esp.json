@@ -39,12 +39,14 @@
         {
             "signature": "OFST",
             "name": "Unknown",
-            "type": "bytes"
+            "type": "bytes",
+            "size": 0
         },
         {
             "signature": "DELE",
             "name": "Unknown",
-            "type": "bytes"
+            "type": "bytes",
+            "size": 0
         },
         {
             "signature": "CNAM",

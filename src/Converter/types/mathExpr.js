@@ -1,7 +1,7 @@
 let {typeParser} = require('../parsers');
 
 let mathExpr = /^(-?[0-9]+(?:\.[0-9]+)?|[\/*+-]|[A-Za-z]+)+/,
-    numberExpr = /^-?[0-9]+(?:\.[0-9]+)?/;
+    numberExpr = /^-?[0-9]+(?:\.[0-9]+)?$/;
 
 let signNames = {
     '/': 'Div',
@@ -10,13 +10,26 @@ let signNames = {
     '-': 'Minus'
 };
 
+let buildIdentifier = function(str) {
+    return str.replace(/[\/*+-]/g, m => {
+        return signNames[m[0]];
+    }).replace(/wb/g, '');
+};
+
+class MathExpr {
+    constructor(str) {
+        this.type = numberExpr.test(str) ? 'number' : 'identifier';
+        this.str = this.type === 'number' ? str : buildIdentifier(str);
+    }
+
+    toString() {
+        return this.str;
+    }
+}
+
 typeParser('mathExpr', {
-    test: parser => parser.match(mathExpr) || parser.match(numberExpr),
+    test: parser => parser.match(mathExpr),
     parse: match => {
-        if (numberExpr.test(match[0])) return match[0];
-        let identifierName = match[0].replace(/[\/*+-]/g, m => {
-            return signNames[m[0]];
-        });
-        return `'${identifierName}'`;
+        return new MathExpr(match[0]);
     }
 });

@@ -1,9 +1,10 @@
 let {
     flags, showUnknown, formatUnion, def, subrecord, 
-    ckFormId, req, float, struct, enumeration, 
-    uint32, format, unknown, array, uint8, 
-    bytes, size, sorted, memberArray, memberStruct, 
-    empty, sortKey, int16, int32, record
+    ckFormId, req, float, struct, scale, 
+    enumeration, uint32, format, unknown, array, 
+    uint8, bytes, size, sorted, memberArray, 
+    memberStruct, empty, sortKey, int16, int32, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
@@ -137,14 +138,14 @@ module.exports = () => {
             ])),
             subrecord('XPRM', struct('Primitive', [
                 struct('Bounds', [
-                    req(req(float('X'))),
-                    req(req(float('Y'))),
-                    req(req(float('Z')))
+                    req(req(scale(2, float('X')))),
+                    req(req(scale(2, float('Y')))),
+                    req(req(scale(2, float('Z'))))
                 ]),
                 struct('Color', [
-                    req(req(float('Red'))),
-                    req(req(float('Green'))),
-                    req(req(float('Blue')))
+                    req(req(scale(255, float('Red')))),
+                    req(req(scale(255, float('Green')))),
+                    req(req(scale(255, float('Blue'))))
                 ]),
                 float('Unknown'),
                 format(uint32('Type'), enumeration({
@@ -158,8 +159,8 @@ module.exports = () => {
             subrecord('XORD', unknown()),
             subrecord('XOCP', struct('Occlusion Plane Data', [
                 struct('Size', [
-                    req(req(float('Width'))),
-                    req(req(float('Height')))
+                    req(req(scale(2, float('Width')))),
+                    req(req(scale(2, float('Height'))))
                 ]),
                 struct('Position', [
                     float('X'),
@@ -181,8 +182,8 @@ module.exports = () => {
             )),
             subrecord('XPTL', struct('Room Portal (unused)', [
                 struct('Size', [
-                    req(req(float('Width'))),
-                    req(req(float('Height')))
+                    req(req(scale(2, float('Width')))),
+                    req(req(scale(2, float('Height'))))
                 ]),
                 struct('Position', [
                     float('X'),

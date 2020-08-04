@@ -75,7 +75,8 @@
             "signature": "DNAM",
             "name": "Magic Item Description",
             "type": "string",
-            "localized": true
+            "localized": true,
+            "keepCase": true
         },
         {
             "id": "CTDAs"

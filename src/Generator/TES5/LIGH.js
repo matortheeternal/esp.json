@@ -1,7 +1,7 @@
 let {
     flags, def, req, int32, uint32, 
-    format, float, struct, subrecord, ckFormId, 
-    record
+    format, float, scale, struct, subrecord, 
+    ckFormId, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -44,7 +44,7 @@ module.exports = () => {
                 float('FOV'),
                 float('Near Clip'),
                 struct('Flicker Effect', [
-                    req(req(float('Period'))),
+                    req(req(scale(0.01, float('Period')))),
                     float('Intensity Amplitude'),
                     float('Movement Amplitude')
                 ]),

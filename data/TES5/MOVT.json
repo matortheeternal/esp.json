@@ -51,16 +51,19 @@
                 {
                     "name": "Rotate in Place Walk",
                     "type": "float",
+                    "format": "RotationFactor",
                     "required": true
                 },
                 {
                     "name": "Rotate in Place Run",
                     "type": "float",
+                    "format": "RotationFactor",
                     "required": true
                 },
                 {
                     "name": "Rotate while Moving Run",
                     "type": "float",
+                    "format": "RotationFactor",
                     "required": true
                 }
             ],
@@ -74,6 +77,7 @@
                 {
                     "name": "Directional",
                     "type": "float",
+                    "format": "180DivPi",
                     "required": true
                 },
                 {
@@ -83,6 +87,7 @@
                 {
                     "name": "Rotation Speed",
                     "type": "float",
+                    "format": "180DivPi",
                     "required": true
                 }
             ]

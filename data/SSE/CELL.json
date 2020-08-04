@@ -174,7 +174,8 @@
         {
             "signature": "LNAM",
             "name": "Unknown",
-            "type": "bytes"
+            "type": "bytes",
+            "size": 0
         },
         {
             "signature": "XCLW",
@@ -211,12 +212,14 @@
         {
             "signature": "XWCN",
             "name": "Unknown",
-            "type": "bytes"
+            "type": "bytes",
+            "size": 0
         },
         {
             "signature": "XWCS",
             "name": "Unknown",
-            "type": "bytes"
+            "type": "bytes",
+            "size": 0
         },
         {
             "signature": "XWCU",
@@ -254,7 +257,8 @@
                 },
                 {
                     "name": "Unknown",
-                    "type": "bytes"
+                    "type": "bytes",
+                    "size": 0
                 }
             ]
         },

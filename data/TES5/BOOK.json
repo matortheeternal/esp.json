@@ -27,6 +27,7 @@
             "name": "Book Text",
             "type": "string",
             "localized": true,
+            "keepCase": true,
             "required": true
         },
         {

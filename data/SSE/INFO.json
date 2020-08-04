@@ -176,7 +176,8 @@
                         "signature": "NAM1",
                         "name": "Response Text",
                         "type": "string",
-                        "localized": true
+                        "localized": true,
+                        "keepCase": true
                     },
                     {
                         "signature": "NAM2",

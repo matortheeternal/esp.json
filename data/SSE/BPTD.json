@@ -187,16 +187,19 @@
                                             {
                                                 "name": "X",
                                                 "type": "float",
+                                                "format": "RotationFactor",
                                                 "required": true
                                             },
                                             {
                                                 "name": "Y",
                                                 "type": "float",
+                                                "format": "RotationFactor",
                                                 "required": true
                                             },
                                             {
                                                 "name": "Z",
                                                 "type": "float",
+                                                "format": "RotationFactor",
                                                 "required": true
                                             }
                                         ]
@@ -254,7 +257,8 @@
                     {
                         "signature": "NAM5",
                         "name": "Texture Files Hashes",
-                        "type": "bytes"
+                        "type": "bytes",
+                        "size": 0
                     }
                 ],
                 "sortKey": [
