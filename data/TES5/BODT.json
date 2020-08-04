@@ -2,6 +2,7 @@
     "signature": "BODT",
     "name": "Body Template",
     "type": "struct",
+    "required": true,
     "elements": [
         {
             "id": "FirstPersonFlagsU32"
@@ -35,6 +36,5 @@
                 "id": "ArmorTypeEnum"
             }
         }
-    ],
-    "required": true
+    ]
 }

@@ -16,11 +16,11 @@
         {
             "name": "Scripts",
             "type": "array",
+            "sorted": true,
+            "prefix": 2,
             "element": {
                 "id": "ScriptEntry"
-            },
-            "sorted": true,
-            "prefix": 2
+            }
         }
     ]
 }

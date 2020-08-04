@@ -6,7 +6,7 @@ functionConverter('wbRStructSK', [
     args.name,
     args.members,
     args.signatures,
-    args.identifier,
+    args.conflictPriority,
     args.required,
     args.identifier,
     args.boolean,

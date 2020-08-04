@@ -10,6 +10,7 @@
             "signature": "DATA",
             "name": "Data",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Gravity Velocity",
@@ -66,8 +67,7 @@
                     "name": "Particle Density",
                     "type": "float"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "ICON",

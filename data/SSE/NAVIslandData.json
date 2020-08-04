@@ -29,6 +29,8 @@
         {
             "name": "Triangles",
             "type": "array",
+            "prefix": 4,
+            "includeFlag": "dfNotAlignable",
             "element": {
                 "name": "Triangle",
                 "type": "struct",
@@ -36,21 +38,21 @@
                     {
                         "name": "Vertices",
                         "type": "array",
+                        "size": 3,
+                        "includeFlag": "dfNotAlignable",
                         "element": {
                             "name": "Vertex",
                             "type": "int16"
-                        },
-                        "size": 3,
-                        "includeFlag": "dfNotAlignable"
+                        }
                     }
                 ]
-            },
-            "prefix": 4,
-            "includeFlag": "dfNotAlignable"
+            }
         },
         {
             "name": "Vertices",
             "type": "array",
+            "prefix": 4,
+            "includeFlag": "dfNotAlignable",
             "element": {
                 "name": "Vertex",
                 "type": "struct",
@@ -68,9 +70,7 @@
                         "type": "float"
                     }
                 ]
-            },
-            "prefix": 4,
-            "includeFlag": "dfNotAlignable"
+            }
         }
     ]
 }

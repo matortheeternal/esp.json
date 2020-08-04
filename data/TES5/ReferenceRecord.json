@@ -2,6 +2,7 @@
     "type": "record",
     "flags": {
         "type": "flags",
+        "showUnknown": true,
         "flags": {
             "5": "Deleted",
             "7": "Turn Off Fire",
@@ -11,8 +12,7 @@
             "28": "Reflected By Auto Water",
             "29": "Don't Havok Settle",
             "30": "No Respawn"
-        },
-        "showUnknown": true
+        }
     },
     "members": [
         {
@@ -54,6 +54,7 @@
         {
             "name": "Reflected/Refracted By",
             "type": "memberArray",
+            "sorted": true,
             "member": {
                 "signature": "XPWR",
                 "name": "Water",
@@ -81,12 +82,12 @@
                 "sortKey": [
                     0
                 ]
-            },
-            "sorted": true
+            }
         },
         {
             "name": "Linked References",
             "type": "memberArray",
+            "sorted": true,
             "member": {
                 "signature": "XLKR",
                 "name": "Linked Reference",
@@ -132,8 +133,7 @@
                 "sortKey": [
                     0
                 ]
-            },
-            "sorted": true
+            }
         },
         {
             "name": "Activate Parents",
@@ -153,6 +153,7 @@
                 {
                     "name": "Activate Parent Refs",
                     "type": "memberArray",
+                    "sorted": true,
                     "member": {
                         "signature": "XAPR",
                         "name": "Activate Parent Ref",
@@ -183,8 +184,7 @@
                         "sortKey": [
                             0
                         ]
-                    },
-                    "sorted": true
+                    }
                 }
             ]
         },

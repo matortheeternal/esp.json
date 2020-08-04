@@ -21,6 +21,7 @@
             "signature": "DNAM",
             "name": "Data",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Male Priority",
@@ -70,12 +71,12 @@
                     "name": "Weapon Adjust",
                     "type": "float"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "name": "Male world model",
             "type": "memberStruct",
+            "required": true,
             "members": [
                 {
                     "signature": "MOD2",
@@ -91,8 +92,7 @@
                 {
                     "id": "MO2S"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "name": "Female world model",
@@ -193,6 +193,7 @@
         {
             "name": "Additional Races",
             "type": "memberArray",
+            "sorted": true,
             "member": {
                 "signature": "MODL",
                 "name": "Race",
@@ -201,8 +202,7 @@
                     "RACE",
                     "NULL"
                 ]
-            },
-            "sorted": true
+            }
         },
         {
             "signature": "SNDD",

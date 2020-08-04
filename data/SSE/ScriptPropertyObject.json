@@ -14,10 +14,10 @@
                 {
                     "name": "Alias",
                     "type": "int16",
+                    "defaultEditValue": "'None'",
                     "format": {
                         "type": "ScriptObjectAliasFormat"
-                    },
-                    "defaultEditValue": "'None'"
+                    }
                 },
                 {
                     "name": "FormID",

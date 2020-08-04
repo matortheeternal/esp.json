@@ -2,6 +2,7 @@
     "signature": "PHWT",
     "name": "Phoneme Target Weight",
     "type": "struct",
+    "required": true,
     "elements": [
         {
             "name": "Aah / LipBigAah",
@@ -67,6 +68,5 @@
             "name": "W",
             "type": "float"
         }
-    ],
-    "required": true
+    ]
 }

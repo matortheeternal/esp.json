@@ -67,6 +67,7 @@
                     {
                         "name": "Unused",
                         "type": "memberStruct",
+                        "required": true,
                         "members": [
                             {
                                 "signature": "SCHR",
@@ -88,8 +89,7 @@
                                 "signature": "SCRO",
                                 "type": "bytes"
                             }
-                        ],
-                        "required": true
+                        ]
                     },
                     {
                         "signature": "NEXT",
@@ -99,6 +99,7 @@
                     {
                         "name": "Unused",
                         "type": "memberStruct",
+                        "required": true,
                         "members": [
                             {
                                 "signature": "SCHR",
@@ -120,8 +121,7 @@
                                 "signature": "SCRO",
                                 "type": "bytes"
                             }
-                        ],
-                        "required": true
+                        ]
                     },
                     {
                         "signature": "WNAM",
@@ -315,6 +315,7 @@
                     {
                         "name": "Unused",
                         "type": "memberStruct",
+                        "required": true,
                         "members": [
                             {
                                 "signature": "SCHR",
@@ -336,8 +337,7 @@
                                 "signature": "SCRO",
                                 "type": "bytes"
                             }
-                        ],
-                        "required": true
+                        ]
                     },
                     {
                         "signature": "ANAM",
@@ -350,6 +350,7 @@
         {
             "name": "Unused",
             "type": "memberStruct",
+            "required": true,
             "members": [
                 {
                     "signature": "SCHR",
@@ -371,8 +372,7 @@
                     "signature": "SCRO",
                     "type": "bytes"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "NEXT",
@@ -382,6 +382,7 @@
         {
             "name": "Unused",
             "type": "memberStruct",
+            "required": true,
             "members": [
                 {
                     "signature": "SCHR",
@@ -403,8 +404,7 @@
                     "signature": "SCRO",
                     "type": "bytes"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "PNAM",

@@ -13,6 +13,7 @@
             "signature": "PKDT",
             "name": "Pack Data",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "General Flags",
@@ -76,13 +77,13 @@
                     "type": "bytes",
                     "size": 2
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "PSDT",
             "name": "Schedule",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Month",
@@ -130,8 +131,7 @@
                     "name": "Duration (minutes)",
                     "type": "int32"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "id": "CTDAs"
@@ -139,6 +139,7 @@
         {
             "name": "Idle Animations",
             "type": "memberStruct",
+            "required": true,
             "members": [
                 {
                     "signature": "IDLF",
@@ -159,6 +160,7 @@
                     "signature": "IDLC",
                     "name": "",
                     "type": "struct",
+                    "required": true,
                     "elements": [
                         {
                             "name": "Animation Count",
@@ -169,8 +171,7 @@
                             "type": "bytes",
                             "size": 3
                         }
-                    ],
-                    "required": true
+                    ]
                 },
                 {
                     "signature": "IDLT",
@@ -196,8 +197,7 @@
                     "type": "bytes",
                     "size": 4
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "CNAM",
@@ -219,6 +219,7 @@
             "signature": "PKCU",
             "name": "Counter",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Data Input Count",
@@ -236,8 +237,7 @@
                     "name": "Version Counter (autoincremented)",
                     "type": "uint32"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "name": "Package Data",
@@ -249,6 +249,7 @@
                     "member": {
                         "name": "Value",
                         "type": "memberStruct",
+                        "required": true,
                         "members": [
                             {
                                 "signature": "ANAM",
@@ -310,8 +311,7 @@
                                 "signature": "TPIC",
                                 "type": "bytes"
                             }
-                        ],
-                        "required": true
+                        ]
                     }
                 },
                 {
@@ -334,6 +334,7 @@
                     "member": {
                         "name": "Branch",
                         "type": "memberStruct",
+                        "required": true,
                         "members": [
                             {
                                 "signature": "ANAM",
@@ -459,8 +460,7 @@
                                     "type": "bytes"
                                 }
                             }
-                        ],
-                        "required": true
+                        ]
                     }
                 }
             ]
@@ -482,11 +482,11 @@
                     "signature": "INAM",
                     "name": "Idle",
                     "type": "formId",
+                    "required": true,
                     "signatures": [
                         "IDLE",
                         "NULL"
-                    ],
-                    "required": true
+                    ]
                 },
                 {
                     "signature": "SCHR",
@@ -531,11 +531,11 @@
                     "signature": "INAM",
                     "name": "Idle",
                     "type": "formId",
+                    "required": true,
                     "signatures": [
                         "IDLE",
                         "NULL"
-                    ],
-                    "required": true
+                    ]
                 },
                 {
                     "signature": "SCHR",
@@ -580,11 +580,11 @@
                     "signature": "INAM",
                     "name": "Idle",
                     "type": "formId",
+                    "required": true,
                     "signatures": [
                         "IDLE",
                         "NULL"
-                    ],
-                    "required": true
+                    ]
                 },
                 {
                     "signature": "SCHR",

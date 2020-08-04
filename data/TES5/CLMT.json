@@ -10,6 +10,7 @@
             "signature": "WLST",
             "name": "Weather Types",
             "type": "array",
+            "sorted": true,
             "element": {
                 "name": "Weather Type",
                 "type": "struct",
@@ -38,8 +39,7 @@
                 "sortKey": [
                     0
                 ]
-            },
-            "sorted": true
+            }
         },
         {
             "signature": "FNAM",
@@ -58,6 +58,7 @@
             "signature": "TNAM",
             "name": "Timing",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Sunrise",
@@ -110,8 +111,7 @@
                         "type": "ClmtMoonsPhaseLengthFormat"
                     }
                 }
-            ],
-            "required": true
+            ]
         }
     ]
 }

@@ -127,11 +127,11 @@
                 {
                     "name": "Curve",
                     "type": "array",
+                    "size": 5,
                     "element": {
                         "name": "Value",
                         "type": "uint8"
-                    },
-                    "size": 5
+                    }
                 },
                 {
                     "name": "Unknown",

@@ -17,6 +17,7 @@
             "signature": "CSGD",
             "name": "General",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Offensive Mult",
@@ -58,8 +59,7 @@
                     "name": "Avoid Threat Chance",
                     "type": "float"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "CSMD",
@@ -69,6 +69,7 @@
             "signature": "CSME",
             "name": "Melee",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Attack Staggered Mult",
@@ -102,13 +103,13 @@
                     "name": "Special Attack Mult",
                     "type": "float"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "CSCR",
             "name": "Close Range",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Circle Mult",
@@ -126,25 +127,25 @@
                     "name": "Stalk Time",
                     "type": "float"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "CSLR",
             "name": "Long Range",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Strafe Mult",
                     "type": "float"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "CSFL",
             "name": "Flight",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Hover Chance",
@@ -178,8 +179,7 @@
                     "name": "Flying Attack Chance",
                     "type": "float"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "DATA",

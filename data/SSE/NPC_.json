@@ -27,6 +27,7 @@
             "signature": "ACBS",
             "name": "Configuration",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Flags",
@@ -81,6 +82,7 @@
                     "name": "Level",
                     "type": "union",
                     "decider": "NPCLevelDecider",
+                    "required": true,
                     "elements": [
                         {
                             "name": "Level",
@@ -94,8 +96,7 @@
                                 "value": 1000
                             }
                         }
-                    ],
-                    "required": true
+                    ]
                 },
                 {
                     "name": "Calc min level",
@@ -143,12 +144,13 @@
                     "name": "Bleedout Override",
                     "type": "uint16"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "name": "Factions",
             "type": "memberArray",
+            "sorted": true,
+            "required": true,
             "member": {
                 "signature": "SNAM",
                 "name": "Faction",
@@ -174,27 +176,25 @@
                 "sortKey": [
                     0
                 ]
-            },
-            "sorted": true,
-            "required": true
+            }
         },
         {
             "signature": "INAM",
             "name": "Death item",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "LVLI"
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "VTCK",
             "name": "Voice",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "VTYP"
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "TPLT",
@@ -209,10 +209,10 @@
             "signature": "RNAM",
             "name": "Race",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "RACE"
-            ],
-            "required": true
+            ]
         },
         {
             "id": "SPCT"
@@ -227,72 +227,72 @@
             "signature": "WNAM",
             "name": "Worn Armor",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "ARMO"
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "ANAM",
             "name": "Far away model",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "ARMO"
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "ATKR",
             "name": "Attack Race",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "RACE"
-            ],
-            "required": true
+            ]
         },
         {
             "name": "Attacks",
             "type": "memberArray",
+            "sorted": true,
             "member": {
                 "id": "AttackData"
-            },
-            "sorted": true
+            }
         },
         {
             "signature": "SPOR",
             "name": "Spectator override package list",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "FLST"
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "OCOR",
             "name": "Observe dead body override package list",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "FLST"
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "GWOR",
             "name": "Guard warn override package list",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "FLST"
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "ECOR",
             "name": "Combat override package list",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "FLST"
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "PRKZ",
@@ -302,6 +302,8 @@
         {
             "name": "Perks",
             "type": "memberArray",
+            "sorted": true,
+            "required": true,
             "member": {
                 "signature": "PRKR",
                 "name": "Perk",
@@ -327,9 +329,7 @@
                 "sortKey": [
                     0
                 ]
-            },
-            "sorted": true,
-            "required": true
+            }
         },
         {
             "id": "COCT"
@@ -362,10 +362,10 @@
             "signature": "CNAM",
             "name": "Class",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "CLAS"
-            ],
-            "required": true
+            ]
         },
         {
             "id": "FULL"
@@ -385,6 +385,7 @@
             "signature": "DNAM",
             "name": "Player Skills",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Skill Values",
@@ -432,12 +433,13 @@
                     "type": "bytes",
                     "size": 3
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "name": "Head Parts",
             "type": "memberArray",
+            "sorted": true,
+            "required": true,
             "member": {
                 "signature": "PNAM",
                 "name": "Head Part",
@@ -445,36 +447,34 @@
                 "signatures": [
                     "HDPT"
                 ]
-            },
-            "sorted": true,
-            "required": true
+            }
         },
         {
             "signature": "HCLF",
             "name": "Hair Color",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "CLFM"
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "ZNAM",
             "name": "Combat Style",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "CSTY"
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "GNAM",
             "name": "Gift Filter",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "FLST"
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "NAM5",
@@ -508,55 +508,55 @@
             "signature": "CSCR",
             "name": "Inherits Sounds From",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "NPC_"
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "DOFT",
             "name": "Default outfit",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "OTFT"
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "SOFT",
             "name": "Sleeping outfit",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "OTFT"
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "DPLT",
             "name": "Default Package List",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "FLST"
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "CRIF",
             "name": "Crime faction",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "FACT"
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "FTST",
             "name": "Head texture",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "TXST"
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "QNAM",
@@ -587,6 +587,7 @@
             "signature": "NAM9",
             "name": "Face morph",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Nose Long/Short",
@@ -664,8 +665,7 @@
                     "name": "Unknown",
                     "type": "float"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "NAMA",
@@ -693,6 +693,7 @@
         {
             "name": "Tint Layers",
             "type": "memberArray",
+            "sorted": true,
             "member": {
                 "name": "Layer",
                 "type": "memberStruct",
@@ -746,8 +747,7 @@
                 "sortKey": [
                     0
                 ]
-            },
-            "sorted": true
+            }
         }
     ]
 }

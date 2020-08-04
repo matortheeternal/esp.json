@@ -1,6 +1,7 @@
 {
     "name": "Destructible",
     "type": "memberStruct",
+    "required": true,
     "members": [
         {
             "signature": "DEST",
@@ -39,11 +40,13 @@
             "member": {
                 "name": "Stage",
                 "type": "memberStruct",
+                "required": true,
                 "members": [
                     {
                         "signature": "DSTD",
                         "name": "Destruction Stage Data",
                         "type": "struct",
+                        "required": true,
                         "elements": [
                             {
                                 "name": "Health %",
@@ -94,12 +97,12 @@
                                 "name": "Debris Count",
                                 "type": "int32"
                             }
-                        ],
-                        "required": true
+                        ]
                     },
                     {
                         "name": "Model",
                         "type": "memberStruct",
+                        "required": true,
                         "members": [
                             {
                                 "signature": "DMDL",
@@ -115,8 +118,7 @@
                         ],
                         "sortKey": [
                             0
-                        ],
-                        "required": true
+                        ]
                     },
                     {
                         "signature": "DSTF",
@@ -124,10 +126,8 @@
                         "type": "empty",
                         "required": true
                     }
-                ],
-                "required": true
+                ]
             }
         }
-    ],
-    "required": true
+    ]
 }

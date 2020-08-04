@@ -1,6 +1,6 @@
 let {typeParser} = require('../parsers');
 
-let idExpr = /^(?:wb)?([a-z][a-z0-9_]*)/i;
+let idExpr = /^(?!cp)(?:wb)?([A-Za-z0-9_]+)/;
 
 typeParser('identifier', {
     test: parser => parser.match(idExpr),

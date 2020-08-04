@@ -21,6 +21,7 @@
             "signature": "DATA",
             "name": "",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Unknown",
@@ -82,8 +83,7 @@
                         "type": "uint8"
                     }
                 }
-            ],
-            "required": true
+            ]
         }
     ]
 }

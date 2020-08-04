@@ -17,6 +17,7 @@
             "signature": "RCLR",
             "name": "Map Color",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Red",
@@ -35,8 +36,7 @@
                     "type": "bytes",
                     "size": 1
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "WNAM",
@@ -83,6 +83,7 @@
         {
             "name": "Region Data Entries",
             "type": "memberArray",
+            "sorted": true,
             "member": {
                 "name": "Region Data Entry",
                 "type": "memberStruct",
@@ -147,15 +148,16 @@
                         "signature": "RDMO",
                         "name": "Music",
                         "type": "formId",
+                        "required": true,
                         "signatures": [
                             "MUSC"
-                        ],
-                        "required": true
+                        ]
                     },
                     {
                         "signature": "RDSA",
                         "name": "Sounds",
                         "type": "array",
+                        "sorted": true,
                         "element": {
                             "name": "Sound",
                             "type": "struct",
@@ -189,8 +191,7 @@
                             "sortKey": [
                                 0
                             ]
-                        },
-                        "sorted": true
+                        }
                     },
                     {
                         "signature": "RDMP",
@@ -326,6 +327,7 @@
                         "signature": "RDGS",
                         "name": "Grasses",
                         "type": "array",
+                        "sorted": true,
                         "element": {
                             "name": "Grass",
                             "type": "struct",
@@ -346,13 +348,13 @@
                             "sortKey": [
                                 0
                             ]
-                        },
-                        "sorted": true
+                        }
                     },
                     {
                         "signature": "RDWT",
                         "name": "Weather Types",
                         "type": "array",
+                        "sorted": true,
                         "element": {
                             "name": "Weather Type",
                             "type": "struct",
@@ -380,15 +382,13 @@
                             "sortKey": [
                                 0
                             ]
-                        },
-                        "sorted": true
+                        }
                     }
                 ],
                 "sortKey": [
                     0
                 ]
-            },
-            "sorted": true
+            }
         }
     ]
 }

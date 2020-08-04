@@ -31,6 +31,7 @@
             "signature": "DNAM",
             "name": "Data",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Master Particle System Cap",
@@ -47,8 +48,7 @@
                         }
                     }
                 }
-            ],
-            "required": true
+            ]
         }
     ]
 }

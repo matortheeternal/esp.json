@@ -13,6 +13,7 @@
             "signature": "DATA",
             "name": "",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Effect - Duration",
@@ -74,8 +75,7 @@
                     "type": "bytes",
                     "size": 2
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "id": "DODT"

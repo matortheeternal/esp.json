@@ -10,11 +10,11 @@
             "signature": "DATA",
             "name": "Impact Data Set",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "IPDS",
                 "NULL"
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "ANAM",

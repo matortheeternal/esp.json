@@ -1,9 +1,9 @@
 {
     "name": "Items",
     "type": "memberArray",
+    "sorted": true,
+    "required": true,
     "member": {
         "id": "CNTONoReach"
-    },
-    "sorted": true,
-    "required": true
+    }
 }

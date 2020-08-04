@@ -1,6 +1,7 @@
 {
     "name": "Effects",
     "type": "memberArray",
+    "required": true,
     "member": {
         "name": "Effect",
         "type": "memberStruct",
@@ -15,6 +16,5 @@
                 "id": "CTDAs"
             }
         ]
-    },
-    "required": true
+    }
 }

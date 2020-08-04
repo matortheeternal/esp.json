@@ -10,12 +10,12 @@
         {
             "name": "Rows",
             "type": "array",
+            "size": 32,
             "element": {
                 "name": "Columns",
                 "type": "bytes",
                 "size": 32
-            },
-            "size": 32
+            }
         }
     ]
 }

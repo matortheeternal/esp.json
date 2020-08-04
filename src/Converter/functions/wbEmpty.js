@@ -1,9 +1,9 @@
 let {subrecordAndField} = require('../converters'),
-    {reqLine, args} = require('../helpers');
+    {args} = require('../helpers');
 
 subrecordAndField('wbEmpty', [
     args.name,
-    args.identifier,
+    args.conflictPriority,
     args.required,
 ], ({name}, converter) => {
     converter.addRequires('empty');

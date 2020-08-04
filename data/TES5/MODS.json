@@ -2,6 +2,8 @@
     "signature": "MODS",
     "name": "Alternate Textures",
     "type": "array",
+    "sorted": true,
+    "prefix": 4,
     "element": {
         "name": "Alternate Texture",
         "type": "struct",
@@ -27,7 +29,5 @@
             0,
             2
         ]
-    },
-    "sorted": true,
-    "prefix": 4
+    }
 }

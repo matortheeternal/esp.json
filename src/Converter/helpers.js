@@ -10,7 +10,9 @@ let args = {
     members: { type: 'array of member', name: 'members' },
     arrayOfFlags: { type: 'array of flags', name: 'flags' },
     identifier: { type: 'identifier' },
+    conflictPriority: { type: 'conflictPriority', name: 'conflictPriority' },
     decider: { type: 'identifier', name: 'decider' },
+    getCount: { type: 'identifier', name: 'getCount' },
     required: { type: 'boolean', name: 'required' },
     boolean: { type: 'boolean' },
     string: { type: 'string' },
@@ -32,10 +34,6 @@ let prefixes = {
     '-1': 4,
     '-2': 2,
     '-4': 1
-};
-
-let sizeMap = {
-    '-255': 0
 };
 
 let intFunctions = {
@@ -133,6 +131,12 @@ let scaleLine = function(scale, line, converter) {
     return `scale(${scale}, ${line})`;
 };
 
+let getCountLine = function(getCount, line, converter) {
+    if (!getCount) return line;
+    converter.addRequires('getCount');
+    return `getCount('${getCount}', ${line})`;
+};
+
 let reqLine = function(required, line, converter) {
     if (!required) return line;
     converter.addRequires('req');
@@ -159,6 +163,6 @@ let resolveIntFn = function(intType) {
 module.exports = {
     args, indent, arr, inlineArr, mixedArr, stringify, newLine,
     sizeLine, prefixLine, prefixSize, paddingLine, scaleLine,
-    formatLine, reqLine, optsLine, optsReq,
+    getCountLine, formatLine, reqLine, optsLine, optsReq,
     resolveIntFn, lineBreak, tab
 };

@@ -1,9 +1,9 @@
 {
     "name": "Sound Types",
     "type": "memberArray",
+    "sorted": true,
+    "required": true,
     "member": {
         "id": "CSDT"
-    },
-    "sorted": true,
-    "required": true
+    }
 }

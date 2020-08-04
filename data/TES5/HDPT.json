@@ -54,6 +54,7 @@
         {
             "name": "Extra Parts",
             "type": "memberArray",
+            "sorted": true,
             "member": {
                 "signature": "HNAM",
                 "name": "Part",
@@ -61,8 +62,7 @@
                 "signatures": [
                     "HDPT"
                 ]
-            },
-            "sorted": true
+            }
         },
         {
             "name": "Parts",

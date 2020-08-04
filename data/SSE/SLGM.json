@@ -44,6 +44,7 @@
             "signature": "DATA",
             "name": "",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Value",
@@ -53,8 +54,7 @@
                     "name": "Weight",
                     "type": "float"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "SOUL",

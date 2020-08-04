@@ -10,10 +10,10 @@
             "signature": "QNAM",
             "name": "Quest",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "QUST"
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "TNAM",
@@ -37,10 +37,10 @@
             "signature": "SNAM",
             "name": "Starting Topic",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "DIAL"
-            ],
-            "required": true
+            ]
         }
     ]
 }

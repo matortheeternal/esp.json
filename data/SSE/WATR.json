@@ -90,6 +90,7 @@
             "signature": "DNAM",
             "name": "Visual Data",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Unknown",
@@ -325,8 +326,7 @@
                     "name": "Noise Properties - Flowmap Scale",
                     "type": "float"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "GNAM",
@@ -338,6 +338,7 @@
             "signature": "NAM0",
             "name": "Linear Velocity",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "X",
@@ -351,13 +352,13 @@
                     "name": "Z",
                     "type": "float"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "NAM1",
             "name": "Angular Velocity",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "X",
@@ -371,8 +372,7 @@
                     "name": "Z",
                     "type": "float"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "NAM2",

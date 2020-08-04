@@ -32,6 +32,8 @@
                     {
                         "name": "References",
                         "type": "array",
+                        "prefix": 4,
+                        "includeFlag": "dfNotAlignable",
                         "element": {
                             "name": "Reference",
                             "type": "struct",
@@ -52,9 +54,7 @@
                                     "type": "int16"
                                 }
                             ]
-                        },
-                        "prefix": 4,
-                        "includeFlag": "dfNotAlignable"
+                        }
                     }
                 ]
             }
@@ -122,6 +122,7 @@
                     "signature": "PNAM",
                     "name": "",
                     "type": "struct",
+                    "required": true,
                     "elements": [
                         {
                             "name": "Flags",
@@ -144,8 +145,7 @@
                             "type": "bytes",
                             "size": 1
                         }
-                    ],
-                    "required": true
+                    ]
                 }
             ]
         },
@@ -211,6 +211,7 @@
             "signature": "MNAM",
             "name": "Map Data",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Usable Dimensions",
@@ -278,13 +279,13 @@
                         }
                     ]
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "ONAM",
             "name": "World Map Offset Data",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "World Map Scale",
@@ -302,8 +303,7 @@
                     "name": "Cell Z Offset",
                     "type": "float"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "NAMA",
@@ -336,6 +336,7 @@
                     "signature": "NAM0",
                     "name": "Min",
                     "type": "struct",
+                    "required": true,
                     "elements": [
                         {
                             "name": "X",
@@ -349,13 +350,13 @@
                             "format": "1Div4096",
                             "required": true
                         }
-                    ],
-                    "required": true
+                    ]
                 },
                 {
                     "signature": "NAM9",
                     "name": "Max",
                     "type": "struct",
+                    "required": true,
                     "elements": [
                         {
                             "name": "X",
@@ -369,8 +370,7 @@
                             "format": "1Div4096",
                             "required": true
                         }
-                    ],
-                    "required": true
+                    ]
                 }
             ]
         },

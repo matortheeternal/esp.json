@@ -12,6 +12,7 @@
         {
             "name": "Body Parts",
             "type": "memberArray",
+            "required": true,
             "member": {
                 "name": "Body Part",
                 "type": "memberStruct",
@@ -51,6 +52,7 @@
                         "signature": "BPND",
                         "name": "",
                         "type": "struct",
+                        "required": true,
                         "elements": [
                             {
                                 "name": "Damage Mult",
@@ -239,8 +241,7 @@
                                 "name": "Limb Replacement Scale",
                                 "type": "float"
                             }
-                        ],
-                        "required": true
+                        ]
                     },
                     {
                         "signature": "NAM1",
@@ -264,8 +265,7 @@
                 "sortKey": [
                     2
                 ]
-            },
-            "required": true
+            }
         }
     ]
 }

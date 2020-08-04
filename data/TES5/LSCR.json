@@ -27,11 +27,11 @@
             "signature": "NNAM",
             "name": "Loading Screen NIF",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "STAT",
                 "NULL"
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "SNAM",

@@ -17,10 +17,10 @@
             "signature": "INAM",
             "name": "Icon (unused)",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "NULL"
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "QNAM",

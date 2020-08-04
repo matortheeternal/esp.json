@@ -5,7 +5,7 @@ let {functionConverter} = require('../converters'),
 functionConverter('wbRArrayS', [
     args.name,
     args.member,
-    args.identifier,
+    args.conflictPriority,
     args.required,
     args.identifier,
     args.identifier,

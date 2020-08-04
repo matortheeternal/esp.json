@@ -13,6 +13,7 @@
             "signature": "DATA",
             "name": "Data",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Action",
@@ -102,8 +103,7 @@
                     "name": "Near Target Distance",
                     "type": "float"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "MNAM",

@@ -17,6 +17,7 @@
             "signature": "ENIT",
             "name": "Effect Data",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Enchantment Cost",
@@ -83,8 +84,7 @@
                         "NULL"
                     ]
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "id": "Effects",

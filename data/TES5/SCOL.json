@@ -17,6 +17,7 @@
         {
             "name": "Parts",
             "type": "memberArray",
+            "required": true,
             "member": {
                 "name": "Part",
                 "type": "memberStruct",
@@ -33,6 +34,7 @@
                         "signature": "DATA",
                         "name": "Placements",
                         "type": "array",
+                        "sorted": true,
                         "element": {
                             "name": "Placement",
                             "type": "struct",
@@ -84,12 +86,10 @@
                                     "type": "float"
                                 }
                             ]
-                        },
-                        "sorted": true
+                        }
                     }
                 ]
-            },
-            "required": true
+            }
         }
     ]
 }

@@ -35,6 +35,7 @@
             "signature": "DATA",
             "name": "",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Unknown",
@@ -512,8 +513,7 @@
                     "name": "Scene Graph Emit Depth Limit (unused)",
                     "type": "uint32"
                 }
-            ],
-            "required": true
+            ]
         }
     ]
 }

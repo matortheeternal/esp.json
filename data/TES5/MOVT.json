@@ -15,6 +15,7 @@
             "signature": "SPED",
             "name": "Default Data",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Left Walk",
@@ -66,8 +67,7 @@
                     "format": "RotationFactor",
                     "required": true
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "INAM",

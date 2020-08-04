@@ -17,6 +17,7 @@
             "signature": "DATA",
             "name": "",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Density",
@@ -94,8 +95,7 @@
                     "type": "bytes",
                     "size": 3
                 }
-            ],
-            "required": true
+            ]
         }
     ]
 }

@@ -38,6 +38,7 @@
             "signature": "DATA",
             "name": "",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Time",
@@ -113,8 +114,7 @@
                     "name": "Weight",
                     "type": "float"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "FNAM",

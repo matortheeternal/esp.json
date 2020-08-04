@@ -1,6 +1,7 @@
 {
     "name": "Script Fragments",
     "type": "struct",
+    "afterSet": "ScriptFragmentsQuestAfterSet",
     "elements": [
         {
             "name": "Unknown",
@@ -18,6 +19,8 @@
         {
             "name": "Fragments",
             "type": "array",
+            "sorted": true,
+            "getCount": "ScriptFragmentsQuestCounter",
             "element": {
                 "name": "Fragment",
                 "type": "struct",
@@ -53,9 +56,7 @@
                     0,
                     2
                 ]
-            },
-            "sorted": true
+            }
         }
-    ],
-    "afterSet": "ScriptFragmentsQuestAfterSet"
+    ]
 }

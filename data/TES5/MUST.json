@@ -43,11 +43,11 @@
             "signature": "FNAM",
             "name": "Cue Points",
             "type": "array",
+            "includeFlag": "dfNotAlignable",
             "element": {
                 "name": "Point",
                 "type": "float"
-            },
-            "includeFlag": "dfNotAlignable"
+            }
         },
         {
             "signature": "LNAM",

@@ -17,6 +17,7 @@
             "signature": "HEDR",
             "name": "Header",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Version",
@@ -33,8 +34,7 @@
                         "type": "NextObjectIDFormat"
                     }
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "OFST",

@@ -8,6 +8,7 @@
         "formats": [
             {
                 "type": "flags",
+                "showUnknown": true,
                 "flags": {
                     "5": "Deleted",
                     "10": "Persistent",
@@ -19,11 +20,11 @@
                     "28": "Reflected By Auto Water",
                     "30": "Ground",
                     "31": "Multibound"
-                },
-                "showUnknown": true
+                }
             },
             {
                 "type": "flags",
+                "showUnknown": true,
                 "flags": {
                     "5": "Deleted",
                     "9": "Hidden From Local Map",
@@ -38,11 +39,11 @@
                     "29": "Don't Havok Settle",
                     "30": "No Respawn",
                     "31": "Multibound"
-                },
-                "showUnknown": true
+                }
             },
             {
                 "type": "flags",
+                "showUnknown": true,
                 "flags": {
                     "5": "Deleted",
                     "10": "Persistent",
@@ -56,11 +57,11 @@
                     "29": "Don't Havok Settle",
                     "30": "Ground",
                     "31": "Multibound"
-                },
-                "showUnknown": true
+                }
             },
             {
                 "type": "flags",
+                "showUnknown": true,
                 "flags": {
                     "5": "Deleted",
                     "6": "Hidden From Local Map",
@@ -75,11 +76,11 @@
                     "29": "Don't Havok Settle",
                     "30": "No Respawn",
                     "31": "Multibound"
-                },
-                "showUnknown": true
+                }
             },
             {
                 "type": "flags",
+                "showUnknown": true,
                 "flags": {
                     "5": "Deleted",
                     "8": "Doesn't Light Water",
@@ -94,11 +95,11 @@
                     "29": "Don't Havok Settle",
                     "30": "No Respawn",
                     "31": "Multibound"
-                },
-                "showUnknown": true
+                }
             },
             {
                 "type": "flags",
+                "showUnknown": true,
                 "flags": {
                     "5": "Deleted",
                     "9": "Motion Blur",
@@ -112,11 +113,11 @@
                     "29": "Don't Havok Settle",
                     "30": "No Respawn",
                     "31": "Multibound"
-                },
-                "showUnknown": true
+                }
             },
             {
                 "type": "flags",
+                "showUnknown": true,
                 "flags": {
                     "5": "Deleted",
                     "10": "Persistent",
@@ -127,11 +128,11 @@
                     "29": "Don't Havok Settle",
                     "30": "No Respawn",
                     "31": "Multibound"
-                },
-                "showUnknown": true
+                }
             },
             {
                 "type": "flags",
+                "showUnknown": true,
                 "flags": {
                     "5": "Deleted",
                     "10": "Persistent",
@@ -143,8 +144,7 @@
                     "29": "Don't Havok Settle",
                     "30": "No Respawn",
                     "31": "Multibound"
-                },
-                "showUnknown": true
+                }
             }
         ]
     },
@@ -159,6 +159,7 @@
             "signature": "NAME",
             "name": "Base",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "TREE",
                 "SNDR",
@@ -193,8 +194,7 @@
                 "SPEL",
                 "ARTO",
                 "ADDN"
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "XMBO",
@@ -505,6 +505,7 @@
                 {
                     "name": "Linked Rooms",
                     "type": "memberArray",
+                    "sorted": true,
                     "member": {
                         "signature": "XLRM",
                         "name": "Linked Room",
@@ -512,8 +513,7 @@
                         "signatures": [
                             "REFR"
                         ]
-                    },
-                    "sorted": true
+                    }
                 }
             ]
         },
@@ -536,6 +536,7 @@
         {
             "name": "Reflected/Refracted By",
             "type": "memberArray",
+            "sorted": true,
             "member": {
                 "signature": "XPWR",
                 "name": "Water",
@@ -563,12 +564,12 @@
                 "sortKey": [
                     0
                 ]
-            },
-            "sorted": true
+            }
         },
         {
             "name": "Lit Water",
             "type": "memberArray",
+            "sorted": true,
             "member": {
                 "signature": "XLTW",
                 "name": "Water",
@@ -576,8 +577,7 @@
                 "signatures": [
                     "REFR"
                 ]
-            },
-            "sorted": true
+            }
         },
         {
             "signature": "XEMI",
@@ -592,6 +592,7 @@
             "signature": "XLIG",
             "name": "Light Data",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "FOV 90+/-",
@@ -615,8 +616,7 @@
                     "type": "bytes",
                     "size": 4
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "XALP",
@@ -811,6 +811,7 @@
                 {
                     "name": "Activate Parent Refs",
                     "type": "memberArray",
+                    "sorted": true,
                     "member": {
                         "signature": "XAPR",
                         "name": "Activate Parent Ref",
@@ -841,8 +842,7 @@
                         "sortKey": [
                             0
                         ]
-                    },
-                    "sorted": true
+                    }
                 }
             ]
         },
@@ -874,6 +874,7 @@
             "signature": "XLOC",
             "name": "Lock Data",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Level",
@@ -925,8 +926,7 @@
                     "type": "bytes",
                     "size": 8
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "XEZN",
@@ -1013,6 +1013,7 @@
                 "signature": "XLKR",
                 "name": "Linked Reference",
                 "type": "struct",
+                "required": true,
                 "elements": [
                     {
                         "name": "Keyword/Ref",
@@ -1050,8 +1051,7 @@
                             "PFLA"
                         ]
                     }
-                ],
-                "required": true
+                ]
             }
         },
         {
@@ -1077,11 +1077,11 @@
                         "signature": "INAM",
                         "name": "Idle",
                         "type": "formId",
+                        "required": true,
                         "signatures": [
                             "IDLE",
                             "NULL"
-                        ],
-                        "required": true
+                        ]
                     },
                     {
                         "signature": "SCHR",
@@ -1160,6 +1160,7 @@
                     "signature": "TNAM",
                     "name": "",
                     "type": "struct",
+                    "required": true,
                     "elements": [
                         {
                             "name": "Type",
@@ -1173,8 +1174,7 @@
                             "type": "bytes",
                             "size": 1
                         }
-                    ],
-                    "required": true
+                    ]
                 }
             ]
         },

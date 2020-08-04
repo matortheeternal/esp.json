@@ -25,6 +25,7 @@
         {
             "name": "Fragments",
             "type": "array",
+            "getCount": "ScriptFragmentsInfoCounter",
             "element": {
                 "name": "Fragment",
                 "type": "struct",

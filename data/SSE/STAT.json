@@ -54,6 +54,7 @@
             "signature": "DNAM",
             "name": "Direction Material",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Max Angle (30-120)",
@@ -82,8 +83,7 @@
                     "type": "bytes",
                     "size": 3
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "MNAM",

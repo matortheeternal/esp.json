@@ -25,6 +25,7 @@
         {
             "name": "Fragments",
             "type": "array",
+            "getCount": "ScriptFragmentsSceneCounter",
             "element": {
                 "name": "Fragment",
                 "type": "struct",
@@ -49,6 +50,7 @@
         {
             "name": "Phase Fragments",
             "type": "array",
+            "prefix": 2,
             "element": {
                 "name": "Phase Fragment",
                 "type": "struct",
@@ -95,8 +97,7 @@
                     0,
                     1
                 ]
-            },
-            "prefix": 2
+            }
         }
     ]
 }

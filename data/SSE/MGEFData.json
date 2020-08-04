@@ -6,6 +6,7 @@
             "signature": "DATA",
             "name": "Data",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Flags",
@@ -56,6 +57,7 @@
                     "name": "Assoc. Item",
                     "type": "union",
                     "decider": "MGEFAssocItemDecider",
+                    "required": true,
                     "elements": [
                         {
                             "name": "Unused",
@@ -126,8 +128,7 @@
                                 "NULL"
                             ]
                         }
-                    ],
-                    "required": true
+                    ]
                 },
                 {
                     "name": "Magic Skill",
@@ -361,8 +362,7 @@
                         }
                     ]
                 }
-            ],
-            "required": true
+            ]
         }
     ]
 }

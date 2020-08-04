@@ -44,6 +44,7 @@
             "signature": "DATA",
             "name": "",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Flags",
@@ -61,8 +62,7 @@
                     "name": "Weight",
                     "type": "float"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "SNAM",

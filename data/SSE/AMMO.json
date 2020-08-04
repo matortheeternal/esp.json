@@ -48,6 +48,7 @@
             "signature": "DATA",
             "name": "Data",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Projectile",
@@ -81,8 +82,7 @@
                     "name": "Weight",
                     "type": "float"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "ONAM",

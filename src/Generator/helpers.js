@@ -2,6 +2,22 @@ let defs = {};
 let metaDefs = {};
 let groupOrder = [];
 
+let separatePropsByType = (s, a, obj) => {
+    Object.keys(obj).forEach(key => {
+        let value = obj[key];
+        let target = typeof value === 'object' ? a : s;
+        target[key] = value;
+    });
+}
+
+let merge = (obj1, obj2) => {
+    let s = {};
+    let a = {};
+    separatePropsByType(s, a, obj1);
+    separatePropsByType(s, a, obj2);
+    return Object.assign(s, a);
+};
+
 // meta
 let addDef = (id, def) => defs[id] = def;
 let getDefs = () => defs;
@@ -25,25 +41,26 @@ let forEachDef = (cb, a) => {
 let IsSSE = (game, options) => game === 'SSE' ? options[0] : options[1];
 
 // shared
-let req = obj => ({ ...obj, required: true });
-let def = (id, opts) => ({ id, ...opts });
-let opts = (obj, opts) => ({ ...obj, ...opts });
-let sortKey = (sortKey, obj) => ({ ...obj, sortKey });
-let inherit = (inheritFrom, obj) => ({ ...obj, inheritFrom});
+let req = obj => merge(obj, {required: true});
+let def = (id, opts) => ({id, ...opts});
+let opts = (obj, opts) => merge(obj, opts);
+let sortKey = (sortKey, obj) => merge(obj, {sortKey});
+let inherit = (inheritFrom, obj) => merge(obj, {inheritFrom});
 
 // arrays and strings
-let localized = obj => ({ ...obj, localized: true });
-let sorted = obj => ({ ...obj, sorted: true });
-let size = (size, obj) => ({ ...obj, size});
-let prefix = (prefix, obj) => ({ ...obj, prefix });
-let padding = (padding, obj) => ({ ...obj, padding });
+let localized = obj => merge(obj, {localized: true});
+let sorted = obj => merge(obj, {sorted: true});
+let size = (size, obj) => merge(obj, {size});
+let prefix = (prefix, obj) => merge(obj, {prefix});
+let padding = (padding, obj) => merge(obj, {padding});
+let getCount = (getCount, obj) => merge(obj, {getCount});
 
 // number formatting
-let format = (obj, format) => ({ ...obj, format });
+let format = (obj, format) => merge(obj, {format});
 let div = value => ({ type: 'divide', value });
-let scale = (scale, obj) => ({ ...obj, scale });
+let scale = (scale, obj) => merge(obj, {scale});
 let flags = flags => ({ type: 'flags', flags });
-let showUnknown = obj => ({ ...obj, showUnknown: true });
+let showUnknown = obj => merge(obj, {showUnknown: true});
 let enumeration = options => ({type: 'enum', options });
 let formatUnion = (decider, formats) =>
     ({ type: 'formatUnion', decider, formats, });
@@ -90,7 +107,7 @@ module.exports = {
     addDef, getDefs, clearDefs, forEachDef, IsSSE,
     addMetaDef, getMetaDefs, getGroupOrder, setGroupOrder,
     req, def, opts, sortKey, inherit,
-    localized, sorted, size, prefix, padding,
+    localized, sorted, size, prefix, padding, getCount,
     format, div, scale, flags, showUnknown, enumeration, formatUnion,
     record, subrecord,
     memberArray, memberStruct, memberUnion,

@@ -5,7 +5,7 @@ subrecordAndField('wbFormIDCkNoReach', [
     args.name,
     args.signatures,
     args.boolean,
-    args.identifier,
+    args.conflictPriority,
     args.required,
     args.identifier,
     args.identifier
@@ -19,7 +19,7 @@ functionConverter('wbFormIDCkNoReach', [
     args.signatures,
     { type: 'array of signature' },
     args.boolean,
-    args.identifier,
+    args.conflictPriority,
     args.required,
     args.identifier,
     args.identifier

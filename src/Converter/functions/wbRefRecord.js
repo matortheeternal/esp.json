@@ -8,7 +8,7 @@ functionConverter('wbRefRecord', [
     args.members,
     args.boolean,
     args.identifier,
-    args.identifier,
+    args.conflictPriority,
     args.boolean,
     args.identifier,
     args.identifier
@@ -26,7 +26,7 @@ functionConverter('wbRefRecord', [
     args.members,
     args.boolean,
     args.identifier,
-    args.identifier,
+    args.conflictPriority,
     args.boolean,
     args.identifier,
     args.identifier

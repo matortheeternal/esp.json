@@ -12,13 +12,13 @@
         {
             "name": "FormIDs",
             "type": "memberArray",
+            "sorted": true,
+            "required": true,
             "member": {
                 "signature": "LNAM",
                 "name": "FormID",
                 "type": "formId"
-            },
-            "sorted": true,
-            "required": true
+            }
         }
     ]
 }

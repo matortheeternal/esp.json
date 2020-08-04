@@ -192,11 +192,11 @@
             "signature": "NNAM",
             "name": "Visual Effect",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "RFCT",
                 "NULL"
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "ONAM",
@@ -212,27 +212,27 @@
                     "signature": "RNAM",
                     "name": "Y Speed",
                     "type": "array",
+                    "includeFlag": "dfNotAlignable",
                     "element": {
                         "name": "Layer",
                         "type": "uint8",
                         "format": {
                             "type": "CloudSpeedFormat"
                         }
-                    },
-                    "includeFlag": "dfNotAlignable"
+                    }
                 },
                 {
                     "signature": "QNAM",
                     "name": "X Speed",
                     "type": "array",
+                    "includeFlag": "dfNotAlignable",
                     "element": {
                         "name": "Layer",
                         "type": "uint8",
                         "format": {
                             "type": "CloudSpeedFormat"
                         }
-                    },
-                    "includeFlag": "dfNotAlignable"
+                    }
                 }
             ]
         },
@@ -240,16 +240,17 @@
             "signature": "PNAM",
             "name": "Cloud Colors",
             "type": "array",
+            "includeFlag": "dfNotAlignable",
             "element": {
                 "id": "WeatherColors",
                 "name": "Layer"
-            },
-            "includeFlag": "dfNotAlignable"
+            }
         },
         {
             "signature": "JNAM",
             "name": "Cloud Alphas",
             "type": "array",
+            "includeFlag": "dfNotAlignable",
             "element": {
                 "name": "Layer",
                 "type": "struct",
@@ -271,13 +272,13 @@
                         "type": "float"
                     }
                 ]
-            },
-            "includeFlag": "dfNotAlignable"
+            }
         },
         {
             "signature": "NAM0",
             "name": "Weather Colors",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "id": "WeatherColors",
@@ -347,13 +348,13 @@
                     "id": "WeatherColors",
                     "name": "Moon Glare"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "FNAM",
             "name": "Fog Distance",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Day - Near",
@@ -387,13 +388,13 @@
                     "name": "Night - Max",
                     "type": "float"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "DATA",
             "name": "Data",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Wind Speed",
@@ -485,8 +486,7 @@
                     "name": "Wind Direction Range",
                     "type": "uint8"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "NAM1",
@@ -566,6 +566,7 @@
         {
             "name": "Sky Statics",
             "type": "memberArray",
+            "sorted": true,
             "member": {
                 "signature": "TNAM",
                 "name": "Static",
@@ -574,8 +575,7 @@
                     "STAT",
                     "NULL"
                 ]
-            },
-            "sorted": true
+            }
         },
         {
             "signature": "IMSP",
@@ -658,6 +658,7 @@
         {
             "name": "Directional Ambient Lighting Colors",
             "type": "memberStruct",
+            "required": true,
             "members": [
                 {
                     "signature": "DALC",
@@ -679,8 +680,7 @@
                     "id": "AmbientColors",
                     "name": "Night"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "NAM2",

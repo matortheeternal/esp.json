@@ -5,7 +5,7 @@ functionConverter('wbStringForward', [
     args.sig,
     args.name,
     args.size,
-    args.identifier,
+    args.conflictPriority,
     args.required,
     args.identifier,
     args.identifier,

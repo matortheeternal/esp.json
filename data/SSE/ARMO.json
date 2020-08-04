@@ -150,6 +150,7 @@
             "signature": "DATA",
             "name": "Data",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Value",
@@ -159,8 +160,7 @@
                     "name": "Weight",
                     "type": "float"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "DNAM",

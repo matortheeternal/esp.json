@@ -23,6 +23,7 @@
             "signature": "DATA",
             "name": "Data",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Flags",
@@ -185,12 +186,12 @@
                         "NULL"
                     ]
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "name": "Muzzle Flash Model",
             "type": "memberStruct",
+            "required": true,
             "members": [
                 {
                     "signature": "NAM1",
@@ -206,8 +207,7 @@
             ],
             "sortKey": [
                 0
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "VNAM",

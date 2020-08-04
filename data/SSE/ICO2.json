@@ -1,6 +1,7 @@
 {
     "name": "Icon 2 (female)",
     "type": "memberStruct",
+    "required": true,
     "members": [
         {
             "signature": "ICO2",
@@ -13,6 +14,5 @@
             "name": "Small Icon FileName",
             "type": "string"
         }
-    ],
-    "required": true
+    ]
 }

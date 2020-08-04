@@ -12,6 +12,7 @@
         {
             "name": "Relations",
             "type": "memberArray",
+            "sorted": true,
             "member": {
                 "signature": "XNAM",
                 "name": "Relation",
@@ -46,13 +47,13 @@
                 "sortKey": [
                     0
                 ]
-            },
-            "sorted": true
+            }
         },
         {
             "signature": "DATA",
             "name": "Flags",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Flags",
@@ -95,8 +96,7 @@
                         }
                     }
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "JAIL",
@@ -150,6 +150,7 @@
             "signature": "CRVA",
             "name": "Crime Values",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Arrest",
@@ -205,8 +206,7 @@
                     "name": "Werewolf",
                     "type": "uint16"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "name": "Ranks",

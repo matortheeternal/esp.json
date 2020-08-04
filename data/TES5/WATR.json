@@ -333,6 +333,7 @@
             "signature": "NAM0",
             "name": "Linear Velocity",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "X",
@@ -346,13 +347,13 @@
                     "name": "Z",
                     "type": "float"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "NAM1",
             "name": "Angular Velocity",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "X",
@@ -366,8 +367,7 @@
                     "name": "Z",
                     "type": "float"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "NAM2",

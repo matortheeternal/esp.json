@@ -1,6 +1,7 @@
 {
     "name": "Model",
     "type": "memberStruct",
+    "required": true,
     "members": [
         {
             "signature": "MODL",
@@ -17,6 +18,5 @@
     ],
     "sortKey": [
         0
-    ],
-    "required": true
+    ]
 }

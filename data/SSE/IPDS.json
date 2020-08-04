@@ -9,6 +9,7 @@
         {
             "name": "Data",
             "type": "memberArray",
+            "sorted": true,
             "member": {
                 "signature": "PNAM",
                 "name": "",
@@ -32,8 +33,7 @@
                 "sortKey": [
                     0
                 ]
-            },
-            "sorted": true
+            }
         }
     ]
 }

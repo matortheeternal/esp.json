@@ -2,6 +2,7 @@
     "signature": "KWDA",
     "name": "Keywords",
     "type": "array",
+    "sorted": true,
     "element": {
         "name": "Keyword",
         "type": "formId",
@@ -9,6 +10,5 @@
             "KYWD",
             "NULL"
         ]
-    },
-    "sorted": true
+    }
 }

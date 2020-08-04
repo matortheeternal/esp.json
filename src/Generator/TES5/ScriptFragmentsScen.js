@@ -1,7 +1,7 @@
 let {
     addDef, int8, flags, uint8, format, 
-    string, prefix, struct, array, int16, 
-    sortKey
+    string, prefix, struct, array, getCount, 
+    int16, sortKey
 } = require('../helpers');
 
 module.exports = () => {
@@ -13,13 +13,13 @@ module.exports = () => {
                 1: 'OnEnd'
             })),
             prefix(2, string('FileName')),
-            array('Fragments', 
+            getCount('ScriptFragmentsSceneCounter', array('Fragments', 
                 struct('Fragment', [
                     int8('Unknown'),
                     prefix(2, string('ScriptName')),
                     prefix(2, string('FragmentName'))
                 ])
-            ),
+            )),
             prefix(2, array('Phase Fragments', 
                 sortKey([0, 1], struct('Phase Fragment', [
                     format(uint8('Phase Flag'), flags({

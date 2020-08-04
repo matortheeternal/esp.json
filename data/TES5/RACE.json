@@ -48,10 +48,13 @@
             "signature": "DATA",
             "name": "",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Skill Boosts",
                     "type": "array",
+                    "sorted": true,
+                    "size": 7,
                     "element": {
                         "name": "Skill Boost",
                         "type": "struct",
@@ -71,9 +74,7 @@
                         "sortKey": [
                             0
                         ]
-                    },
-                    "sorted": true,
-                    "size": 7
+                    }
                 },
                 {
                     "name": "Unknown",
@@ -268,8 +269,7 @@
                         }
                     ]
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "MNAM",
@@ -305,12 +305,12 @@
         {
             "name": "Movement Type Names",
             "type": "memberArray",
+            "sorted": true,
             "member": {
                 "signature": "MTNM",
                 "name": "Name",
                 "type": "string"
-            },
-            "sorted": true
+            }
         },
         {
             "signature": "VTCK",
@@ -371,22 +371,23 @@
             "signature": "ATKR",
             "name": "Attack Race",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "RACE"
-            ],
-            "required": true
+            ]
         },
         {
             "name": "Attacks",
             "type": "memberArray",
+            "sorted": true,
             "member": {
                 "id": "AttackData"
-            },
-            "sorted": true
+            }
         },
         {
             "name": "Body Data",
             "type": "memberStruct",
+            "required": true,
             "members": [
                 {
                     "signature": "NAM1",
@@ -397,6 +398,7 @@
                 {
                     "name": "Male Body Data",
                     "type": "memberStruct",
+                    "required": true,
                     "members": [
                         {
                             "signature": "MNAM",
@@ -406,6 +408,8 @@
                         {
                             "name": "Parts",
                             "type": "memberArray",
+                            "sorted": true,
+                            "required": true,
                             "member": {
                                 "name": "Part",
                                 "type": "memberStruct",
@@ -425,16 +429,14 @@
                                 "sortKey": [
                                     0
                                 ]
-                            },
-                            "sorted": true,
-                            "required": true
+                            }
                         }
-                    ],
-                    "required": true
+                    ]
                 },
                 {
                     "name": "Female Body Data",
                     "type": "memberStruct",
+                    "required": true,
                     "members": [
                         {
                             "signature": "FNAM",
@@ -445,6 +447,8 @@
                         {
                             "name": "Parts",
                             "type": "memberArray",
+                            "sorted": true,
+                            "required": true,
                             "member": {
                                 "name": "Part",
                                 "type": "memberStruct",
@@ -464,20 +468,17 @@
                                 "sortKey": [
                                     0
                                 ]
-                            },
-                            "sorted": true,
-                            "required": true
+                            }
                         }
-                    ],
-                    "required": true
+                    ]
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "HNAM",
             "name": "Hairs",
             "type": "array",
+            "sorted": true,
             "element": {
                 "name": "Hair",
                 "type": "formId",
@@ -485,13 +486,13 @@
                     "HDPT",
                     "NULL"
                 ]
-            },
-            "sorted": true
+            }
         },
         {
             "signature": "ENAM",
             "name": "Eyes",
             "type": "array",
+            "sorted": true,
             "element": {
                 "name": "Eye",
                 "type": "formId",
@@ -499,8 +500,7 @@
                     "EYES",
                     "NULL"
                 ]
-            },
-            "sorted": true
+            }
         },
         {
             "signature": "GNAM",
@@ -525,6 +525,7 @@
         {
             "name": "Male Behavior Graph",
             "type": "memberStruct",
+            "required": true,
             "members": [
                 {
                     "signature": "MNAM",
@@ -534,12 +535,12 @@
                 {
                     "id": "MODL"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "name": "Female Behavior Graph",
             "type": "memberStruct",
+            "required": true,
             "members": [
                 {
                     "signature": "FNAM",
@@ -550,8 +551,7 @@
                 {
                     "id": "MODL"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "NAM4",
@@ -610,6 +610,7 @@
         {
             "name": "Movement Types",
             "type": "memberArray",
+            "sorted": true,
             "member": {
                 "name": "Movement Types",
                 "type": "memberStruct",
@@ -678,8 +679,7 @@
                 "sortKey": [
                     0
                 ]
-            },
-            "sorted": true
+            }
         },
         {
             "signature": "VNAM",
@@ -692,6 +692,7 @@
         {
             "name": "Equip Slots",
             "type": "memberArray",
+            "sorted": true,
             "member": {
                 "signature": "QNAM",
                 "name": "Equip Slot",
@@ -700,8 +701,7 @@
                     "EQUP",
                     "NULL"
                 ]
-            },
-            "sorted": true
+            }
         },
         {
             "signature": "UNES",
@@ -781,6 +781,7 @@
         {
             "name": "Head Data",
             "type": "memberStruct",
+            "required": true,
             "members": [
                 {
                     "signature": "NAM0",
@@ -791,6 +792,7 @@
                 {
                     "name": "Male Head Data",
                     "type": "memberStruct",
+                    "required": true,
                     "members": [
                         {
                             "signature": "MNAM",
@@ -801,10 +803,10 @@
                         {
                             "name": "Head Parts",
                             "type": "memberArray",
+                            "sorted": true,
                             "member": {
                                 "id": "HeadPart"
-                            },
-                            "sorted": true
+                            }
                         },
                         {
                             "id": "Morphs"
@@ -812,6 +814,7 @@
                         {
                             "name": "Race Presets Male",
                             "type": "memberArray",
+                            "sorted": true,
                             "member": {
                                 "signature": "RPRM",
                                 "name": "Preset NPC",
@@ -820,12 +823,12 @@
                                     "NPC_",
                                     "NULL"
                                 ]
-                            },
-                            "sorted": true
+                            }
                         },
                         {
                             "name": "Available Hair Colors Male",
                             "type": "memberArray",
+                            "sorted": true,
                             "member": {
                                 "signature": "AHCM",
                                 "name": "Hair Color",
@@ -834,12 +837,12 @@
                                     "CLFM",
                                     "NULL"
                                 ]
-                            },
-                            "sorted": true
+                            }
                         },
                         {
                             "name": "Face Details Texture Set List Male",
                             "type": "memberArray",
+                            "sorted": true,
                             "member": {
                                 "signature": "FTSM",
                                 "name": "Texture Set",
@@ -848,8 +851,7 @@
                                     "TXST",
                                     "NULL"
                                 ]
-                            },
-                            "sorted": true
+                            }
                         },
                         {
                             "signature": "DFTM",
@@ -866,12 +868,12 @@
                         {
                             "id": "MODL"
                         }
-                    ],
-                    "required": true
+                    ]
                 },
                 {
                     "name": "Female Head Data",
                     "type": "memberStruct",
+                    "required": true,
                     "members": [
                         {
                             "signature": "NAM0",
@@ -888,10 +890,10 @@
                         {
                             "name": "Head Parts",
                             "type": "memberArray",
+                            "sorted": true,
                             "member": {
                                 "id": "HeadPart"
-                            },
-                            "sorted": true
+                            }
                         },
                         {
                             "id": "Morphs"
@@ -899,6 +901,7 @@
                         {
                             "name": "Race Presets Female",
                             "type": "memberArray",
+                            "sorted": true,
                             "member": {
                                 "signature": "RPRF",
                                 "name": "Preset NPC",
@@ -907,12 +910,12 @@
                                     "NPC_",
                                     "NULL"
                                 ]
-                            },
-                            "sorted": true
+                            }
                         },
                         {
                             "name": "Available Hair Colors Female",
                             "type": "memberArray",
+                            "sorted": true,
                             "member": {
                                 "signature": "AHCF",
                                 "name": "Hair Color",
@@ -921,12 +924,12 @@
                                     "CLFM",
                                     "NULL"
                                 ]
-                            },
-                            "sorted": true
+                            }
                         },
                         {
                             "name": "Face Details Texture Set List Female",
                             "type": "memberArray",
+                            "sorted": true,
                             "member": {
                                 "signature": "FTSF",
                                 "name": "Texture Set",
@@ -935,8 +938,7 @@
                                     "TXST",
                                     "NULL"
                                 ]
-                            },
-                            "sorted": true
+                            }
                         },
                         {
                             "signature": "DFTF",
@@ -953,11 +955,9 @@
                         {
                             "id": "MODL"
                         }
-                    ],
-                    "required": true
+                    ]
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "NAM8",

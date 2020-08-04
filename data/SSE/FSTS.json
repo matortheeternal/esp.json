@@ -10,6 +10,7 @@
             "signature": "XCNT",
             "name": "Count",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Walk Forward Sets",
@@ -31,8 +32,7 @@
                     "name": "Walk Forward Alternate 2 Sets",
                     "type": "uint32"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "DATA",

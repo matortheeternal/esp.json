@@ -10,6 +10,7 @@
             "signature": "DATA",
             "name": "",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Owner",
@@ -52,8 +53,7 @@
                     "name": "Max Level",
                     "type": "int8"
                 }
-            ],
-            "required": true
+            ]
         }
     ]
 }

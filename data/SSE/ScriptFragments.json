@@ -14,6 +14,8 @@
         {
             "name": "Fragments",
             "type": "array",
+            "sorted": true,
+            "prefix": 2,
             "element": {
                 "name": "Fragment",
                 "type": "struct",
@@ -44,9 +46,7 @@
                 "sortKey": [
                     0
                 ]
-            },
-            "sorted": true,
-            "prefix": 2
+            }
         }
     ]
 }

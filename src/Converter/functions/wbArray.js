@@ -1,5 +1,5 @@
 let {subrecordAndField} = require('../converters'),
-    {args, prefixSize, newLine} = require('../helpers');
+    {args, prefixSize, getCountLine, newLine} = require('../helpers');
 
 subrecordAndField('wbArray', [
     args.name,
@@ -7,10 +7,21 @@ subrecordAndField('wbArray', [
     args.size,
     args.identifier,
     args.identifier,
-    args.identifier,
+    args.conflictPriority,
     args.boolean,
     args.identifier,
     args.identifier
+], ({name, element, size}, converter) => {
+    converter.addRequires('array');
+    let line = `array(${name}, ${newLine(element)})`;
+    return prefixSize(size, line, converter);
+});
+
+subrecordAndField('wbArray', [
+    args.name,
+    args.field,
+    args.size,
+    args.conflictPriority
 ], ({name, element, size}, converter) => {
     converter.addRequires('array');
     let line = `array(${name}, ${newLine(element)})`;
@@ -22,25 +33,39 @@ subrecordAndField('wbArray', [
     args.name,
     args.field,
     args.labels,
-    args.identifier,
+    args.getCount,
     args.identifier,
     args.boolean,
     args.identifier,
     args.identifier
-], ({name, element, labels}, converter) => {
+], ({name, element, labels, getCount}, converter) => {
     converter.addRequires('array');
-    return `array(${name}, ${newLine(element)})`;
+    let line = `array(${name}, ${newLine(element)})`;
+    return getCountLine(getCount, line, converter);
 });
 
 subrecordAndField('wbArray', [
     args.name,
     args.field,
-    args.identifier, // count callback
+    args.labels,
+    args.conflictPriority,
+    args.boolean
+], ({name, element, labels, getCount}, converter) => {
+    converter.addRequires('array');
+    let line = `array(${name}, ${newLine(element)})`;
+    return getCountLine(getCount, line, converter);
+});
+
+subrecordAndField('wbArray', [
+    args.name,
+    args.field,
+    args.getCount,
     args.identifier,
     args.boolean,
     args.identifier,
     args.identifier
-], ({name, element}, converter) => {
+], ({name, element, getCount}, converter) => {
     converter.addRequires('array');
-    return `array(${name}, ${newLine(element)})`;
+    let line = `array(${name}, ${newLine(element)})`;
+    return getCountLine(getCount, line, converter);
 });

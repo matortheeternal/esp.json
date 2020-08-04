@@ -1,6 +1,7 @@
 {
     "name": "Destructible",
     "type": "memberStruct",
+    "required": true,
     "members": [
         {
             "signature": "DEST",
@@ -44,6 +45,7 @@
                         "signature": "DSTD",
                         "name": "Destruction Stage Data",
                         "type": "struct",
+                        "required": true,
                         "elements": [
                             {
                                 "name": "Health %",
@@ -93,8 +95,7 @@
                                 "name": "Debris Count",
                                 "type": "int32"
                             }
-                        ],
-                        "required": true
+                        ]
                     },
                     {
                         "name": "Model",
@@ -125,6 +126,5 @@
                 ]
             }
         }
-    ],
-    "required": true
+    ]
 }

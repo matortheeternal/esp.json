@@ -2,7 +2,7 @@ let {subrecordAndField} = require('../converters'),
     {args} = require('../helpers');
 
 subrecordAndField('wbUnknown', [
-    args.identifier,
+    args.conflictPriority,
     args.required
 ], (args, converter) => {
     converter.addRequires('unknown');

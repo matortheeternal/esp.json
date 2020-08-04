@@ -68,6 +68,7 @@
             "signature": "PFPC",
             "name": "Seasonal ingredient production",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Spring",
@@ -85,8 +86,7 @@
                     "name": "Winter",
                     "type": "uint8"
                 }
-            ],
-            "required": true
+            ]
         }
     ]
 }

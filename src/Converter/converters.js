@@ -91,7 +91,8 @@ let findConverter = function(functionName, args, converter) {
         return matchParsedArguments(args, fn.args) &&
             parseArguments(args, fn.args, converter);
     });
-    if (!fnConverter) throw new ParseError('Function converter not found.');
+    if (!fnConverter)
+        throw new ParseError(`Matching "${functionName}" function converter not found.`);
     return fnConverter;
 };
 

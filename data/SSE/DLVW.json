@@ -10,10 +10,10 @@
             "signature": "QNAM",
             "name": "Quest",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "QUST"
-            ],
-            "required": true
+            ]
         },
         {
             "name": "Branches",

@@ -3,7 +3,7 @@ let {subrecordAndField} = require('../converters'),
 
 subrecordAndField('wbFormID', [
     args.name,
-    args.identifier,
+    args.conflictPriority,
     args.required
 ], ({name}, converter) => {
     converter.addRequires('formId');

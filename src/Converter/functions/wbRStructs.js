@@ -6,7 +6,7 @@ functionConverter('wbRStructs', [
     { type: 'string', name: 'structName' },
     args.members,
     args.signatures,
-    args.identifier,
+    args.conflictPriority,
     args.required,
     args.identifier,
     args.identifier,

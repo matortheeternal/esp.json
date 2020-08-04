@@ -2,6 +2,7 @@
     "signature": "VMAD",
     "name": "Virtual Machine Adapter",
     "type": "struct",
+    "required": true,
     "elements": [
         {
             "name": "Version",
@@ -16,15 +17,14 @@
         {
             "name": "Scripts",
             "type": "array",
+            "sorted": true,
+            "prefix": 2,
             "element": {
                 "id": "ScriptEntry"
-            },
-            "sorted": true,
-            "prefix": 2
+            }
         },
         {
             "id": "ScriptFragmentsScen"
         }
-    ],
-    "required": true
+    ]
 }

@@ -2,6 +2,7 @@
     "signature": "AIDT",
     "name": "AI Data",
     "type": "struct",
+    "required": true,
     "elements": [
         {
             "name": "Aggression",
@@ -109,6 +110,5 @@
                 }
             ]
         }
-    ],
-    "required": true
+    ]
 }

@@ -42,6 +42,7 @@
             "signature": "XCLC",
             "name": "Grid",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "X",
@@ -64,13 +65,13 @@
                         }
                     }
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "XCLL",
             "name": "Lighting",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "id": "ByteColors",
@@ -152,8 +153,7 @@
                         }
                     }
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "id": "TVDT"
@@ -165,11 +165,11 @@
             "signature": "LTMP",
             "name": "Lighting Template",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "LGTM",
                 "NULL"
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "LNAM",
@@ -192,14 +192,14 @@
             "signature": "XCLR",
             "name": "Regions",
             "type": "array",
+            "sorted": true,
             "element": {
                 "name": "Region",
                 "type": "formId",
                 "signatures": [
                     "REGN"
                 ]
-            },
-            "sorted": true
+            }
         },
         {
             "signature": "XLCN",

@@ -27,6 +27,8 @@
         {
             "name": "Counter Effects",
             "type": "memberArray",
+            "sorted": true,
+            "required": true,
             "member": {
                 "signature": "ESCE",
                 "name": "Effect",
@@ -34,9 +36,7 @@
                 "signatures": [
                     "MGEF"
                 ]
-            },
-            "sorted": true,
-            "required": true
+            }
         },
         {
             "signature": "SNDD",

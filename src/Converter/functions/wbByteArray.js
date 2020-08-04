@@ -4,7 +4,7 @@ let {subrecordAndField} = require('../converters'),
 subrecordAndField('wbByteArray', [
     args.name,
     args.size,
-    args.identifier,
+    args.conflictPriority,
     args.boolean,
     args.identifier,
     args.identifier

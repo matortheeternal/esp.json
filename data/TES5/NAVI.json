@@ -50,30 +50,31 @@
                     {
                         "name": "Merged To",
                         "type": "array",
+                        "prefix": 4,
                         "element": {
                             "name": "Mesh",
                             "type": "formId",
                             "signatures": [
                                 "NAVM"
                             ]
-                        },
-                        "prefix": 4
+                        }
                     },
                     {
                         "name": "Preferred Merges",
                         "type": "array",
+                        "prefix": 4,
                         "element": {
                             "name": "Mesh",
                             "type": "formId",
                             "signatures": [
                                 "NAVM"
                             ]
-                        },
-                        "prefix": 4
+                        }
                     },
                     {
                         "name": "Linked Doors",
                         "type": "array",
+                        "prefix": 4,
                         "element": {
                             "name": "Door",
                             "type": "struct",
@@ -91,8 +92,7 @@
                                     ]
                                 }
                             ]
-                        },
-                        "prefix": 4
+                        }
                     },
                     {
                         "name": "Is Island",
@@ -170,23 +170,24 @@
                 {
                     "name": "NavMeshes",
                     "type": "array",
+                    "prefix": 4,
                     "element": {
                         "name": "Set",
                         "type": "array",
+                        "prefix": 4,
                         "element": {
                             "name": "",
                             "type": "formId",
                             "signatures": [
                                 "NAVM"
                             ]
-                        },
-                        "prefix": 4
-                    },
-                    "prefix": 4
+                        }
+                    }
                 },
                 {
                     "name": "NavMesh Tree?",
                     "type": "array",
+                    "prefix": 4,
                     "element": {
                         "name": "",
                         "type": "struct",
@@ -203,8 +204,7 @@
                                 "type": "uint32"
                             }
                         ]
-                    },
-                    "prefix": 4
+                    }
                 }
             ]
         },

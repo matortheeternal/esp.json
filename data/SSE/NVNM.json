@@ -53,6 +53,8 @@
         {
             "name": "Vertices",
             "type": "array",
+            "prefix": 4,
+            "includeFlag": "dfNotAlignable",
             "element": {
                 "name": "Vertex",
                 "type": "struct",
@@ -75,13 +77,13 @@
                     1,
                     2
                 ]
-            },
-            "prefix": 4,
-            "includeFlag": "dfNotAlignable"
+            }
         },
         {
             "name": "Triangles",
             "type": "array",
+            "prefix": 4,
+            "includeFlag": "dfNotAlignable",
             "element": {
                 "name": "Triangle",
                 "type": "struct",
@@ -89,50 +91,50 @@
                     {
                         "name": "Vertex 0",
                         "type": "int16",
+                        "linksToCallback": "VertexLinksTo",
                         "format": {
                             "type": "Vertex0Format"
-                        },
-                        "linksToCallback": "VertexLinksTo"
+                        }
                     },
                     {
                         "name": "Vertex 1",
                         "type": "int16",
+                        "linksToCallback": "VertexLinksTo",
                         "format": {
                             "type": "Vertex1Format"
-                        },
-                        "linksToCallback": "VertexLinksTo"
+                        }
                     },
                     {
                         "name": "Vertex 2",
                         "type": "int16",
+                        "linksToCallback": "VertexLinksTo",
                         "format": {
                             "type": "Vertex2Format"
-                        },
-                        "linksToCallback": "VertexLinksTo"
+                        }
                     },
                     {
                         "name": "Edge 0-1",
                         "type": "int16",
+                        "linksToCallback": "EdgeLinksTo0",
                         "format": {
                             "type": "Edge0Format"
-                        },
-                        "linksToCallback": "EdgeLinksTo0"
+                        }
                     },
                     {
                         "name": "Edge 1-2",
                         "type": "int16",
+                        "linksToCallback": "EdgeLinksTo1",
                         "format": {
                             "type": "Edge1Format"
-                        },
-                        "linksToCallback": "EdgeLinksTo1"
+                        }
                     },
                     {
                         "name": "Edge 2-0",
                         "type": "int16",
+                        "linksToCallback": "EdgeLinksTo2",
                         "format": {
                             "type": "Edge2Format"
-                        },
-                        "linksToCallback": "EdgeLinksTo2"
+                        }
                     },
                     {
                         "name": "Flags",
@@ -185,13 +187,13 @@
                         }
                     }
                 ]
-            },
-            "prefix": 4,
-            "includeFlag": "dfNotAlignable"
+            }
         },
         {
             "name": "Edge Links",
             "type": "array",
+            "prefix": 4,
+            "includeFlag": "dfNotAlignable",
             "element": {
                 "name": "Edge Link",
                 "type": "struct",
@@ -213,13 +215,13 @@
                         "type": "int16"
                     }
                 ]
-            },
-            "prefix": 4,
-            "includeFlag": "dfNotAlignable"
+            }
         },
         {
             "name": "Door Triangles",
             "type": "array",
+            "sorted": true,
+            "prefix": 4,
             "element": {
                 "name": "Door Triangle",
                 "type": "struct",
@@ -246,20 +248,18 @@
                     0,
                     2
                 ]
-            },
-            "sorted": true,
-            "prefix": 4
+            }
         },
         {
             "name": "Cover Triangles",
             "type": "array",
+            "prefix": 4,
+            "includeFlag": "dfNotAlignable",
             "element": {
                 "name": "Triangle",
                 "type": "int16",
                 "linksToCallback": "TriangleLinksTo"
-            },
-            "prefix": 4,
-            "includeFlag": "dfNotAlignable"
+            }
         },
         {
             "name": "NavMeshGrid Divisor",
@@ -300,18 +300,18 @@
         {
             "name": "NavMeshGrid",
             "type": "array",
+            "includeFlag": "dfNotAlignable",
             "element": {
                 "name": "NavMeshGridCell",
                 "type": "array",
+                "prefix": 4,
+                "includeFlag": "dfNotAlignable",
                 "element": {
                     "name": "Triangle",
                     "type": "int16",
                     "linksToCallback": "TriangleLinksTo"
-                },
-                "prefix": 4,
-                "includeFlag": "dfNotAlignable"
-            },
-            "includeFlag": "dfNotAlignable"
+                }
+            }
         }
     ]
 }

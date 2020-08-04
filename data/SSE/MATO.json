@@ -23,6 +23,7 @@
             "signature": "DATA",
             "name": "Directional Material Data",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Falloff Scale",
@@ -91,8 +92,7 @@
                     "type": "bytes",
                     "size": 3
                 }
-            ],
-            "required": true
+            ]
         }
     ]
 }

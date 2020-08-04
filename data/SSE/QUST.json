@@ -87,12 +87,12 @@
         {
             "name": "Quest Dialogue Conditions",
             "type": "memberStruct",
+            "required": true,
             "members": [
                 {
                     "id": "CTDAs"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "NEXT",
@@ -105,6 +105,7 @@
         {
             "name": "Stages",
             "type": "memberArray",
+            "sorted": true,
             "member": {
                 "name": "Stage",
                 "type": "memberStruct",
@@ -202,8 +203,7 @@
                 "sortKey": [
                     0
                 ]
-            },
-            "sorted": true
+            }
         },
         {
             "name": "Objectives",
@@ -296,6 +296,7 @@
                     {
                         "name": "Alias",
                         "type": "memberStruct",
+                        "required": true,
                         "members": [
                             {
                                 "signature": "ALST",
@@ -503,37 +504,37 @@
                                 "signature": "SPOR",
                                 "name": "Spectator override package list",
                                 "type": "formId",
+                                "required": true,
                                 "signatures": [
                                     "FLST"
-                                ],
-                                "required": true
+                                ]
                             },
                             {
                                 "signature": "OCOR",
                                 "name": "Observe dead body override package list",
                                 "type": "formId",
+                                "required": true,
                                 "signatures": [
                                     "FLST"
-                                ],
-                                "required": true
+                                ]
                             },
                             {
                                 "signature": "GWOR",
                                 "name": "Guard warn override package list",
                                 "type": "formId",
+                                "required": true,
                                 "signatures": [
                                     "FLST"
-                                ],
-                                "required": true
+                                ]
                             },
                             {
                                 "signature": "ECOR",
                                 "name": "Combat override package list",
                                 "type": "formId",
+                                "required": true,
                                 "signatures": [
                                     "FLST"
-                                ],
-                                "required": true
+                                ]
                             },
                             {
                                 "signature": "ALDN",
@@ -598,12 +599,12 @@
                         ],
                         "sortKey": [
                             0
-                        ],
-                        "required": true
+                        ]
                     },
                     {
                         "name": "Alias",
                         "type": "memberStruct",
+                        "required": true,
                         "members": [
                             {
                                 "signature": "ALLS",
@@ -811,37 +812,37 @@
                                 "signature": "SPOR",
                                 "name": "Spectator override package list",
                                 "type": "formId",
+                                "required": true,
                                 "signatures": [
                                     "FLST"
-                                ],
-                                "required": true
+                                ]
                             },
                             {
                                 "signature": "OCOR",
                                 "name": "Observe dead body override package list",
                                 "type": "formId",
+                                "required": true,
                                 "signatures": [
                                     "FLST"
-                                ],
-                                "required": true
+                                ]
                             },
                             {
                                 "signature": "GWOR",
                                 "name": "Guard warn override package list",
                                 "type": "formId",
+                                "required": true,
                                 "signatures": [
                                     "FLST"
-                                ],
-                                "required": true
+                                ]
                             },
                             {
                                 "signature": "ECOR",
                                 "name": "Combat override package list",
                                 "type": "formId",
+                                "required": true,
                                 "signatures": [
                                     "FLST"
-                                ],
-                                "required": true
+                                ]
                             },
                             {
                                 "signature": "ALDN",
@@ -906,8 +907,7 @@
                         ],
                         "sortKey": [
                             0
-                        ],
-                        "required": true
+                        ]
                     }
                 ]
             }

@@ -57,6 +57,7 @@
             "signature": "ENIT",
             "name": "Effect Data",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Value",
@@ -105,8 +106,7 @@
                         "NULL"
                     ]
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "id": "Effects",

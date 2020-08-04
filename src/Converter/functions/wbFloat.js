@@ -3,7 +3,7 @@ let {subrecordAndField, functionConverter} = require('../converters'),
 
 subrecordAndField('wbFloat', [
     args.name,
-    args.identifier,
+    args.conflictPriority,
     args.required,
     { type: 'mathExpr', name: 'scale' },
     { type: 'mathExpr', name: 'digits' },

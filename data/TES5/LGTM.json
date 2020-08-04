@@ -10,6 +10,7 @@
             "signature": "DATA",
             "name": "Lighting",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "id": "ByteColors",
@@ -82,8 +83,7 @@
                     "type": "bytes",
                     "size": 4
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "DALC",

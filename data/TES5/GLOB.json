@@ -17,13 +17,13 @@
             "signature": "FNAM",
             "name": "Type",
             "type": "uint8",
+            "defaultEditValue": "'Float'",
             "format": {
                 "type": "enum",
                 "options": {
                     "39": "Float"
                 }
-            },
-            "defaultEditValue": "'Float'"
+            }
         },
         {
             "signature": "FLTV",

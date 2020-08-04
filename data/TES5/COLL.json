@@ -19,6 +19,7 @@
             "signature": "FNAM",
             "name": "Debug Color",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Red",
@@ -36,8 +37,7 @@
                     "name": "Unused",
                     "type": "uint8"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "GNAM",
@@ -67,14 +67,14 @@
             "signature": "CNAM",
             "name": "Collides With",
             "type": "array",
+            "sorted": true,
             "element": {
                 "name": "Forms",
                 "type": "formId",
                 "signatures": [
                     "COLL"
                 ]
-            },
-            "sorted": true
+            }
         }
     ]
 }

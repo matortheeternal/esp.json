@@ -10,25 +10,26 @@
             "signature": "TNAM",
             "name": "Texture Set",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "TXST"
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "MNAM",
             "name": "Material Type",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "MATT",
                 "NULL"
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "HNAM",
             "name": "Havok Data",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Friction",
@@ -38,8 +39,7 @@
                     "name": "Restitution",
                     "type": "uint8"
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "SNAM",
@@ -49,6 +49,7 @@
         {
             "name": "Grasses",
             "type": "memberArray",
+            "sorted": true,
             "member": {
                 "signature": "GNAM",
                 "name": "Grass",
@@ -56,8 +57,7 @@
                 "signatures": [
                     "GRAS"
                 ]
-            },
-            "sorted": true
+            }
         },
         {
             "signature": "INAM",

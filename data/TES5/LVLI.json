@@ -41,6 +41,8 @@
         {
             "name": "Leveled List Entries",
             "type": "memberArray",
+            "sorted": true,
+            "required": true,
             "member": {
                 "name": "Leveled List Entry",
                 "type": "memberStruct",
@@ -100,9 +102,7 @@
                 "sortKey": [
                     0
                 ]
-            },
-            "sorted": true,
-            "required": true
+            }
         }
     ]
 }

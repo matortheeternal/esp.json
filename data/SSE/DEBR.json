@@ -9,6 +9,7 @@
         {
             "name": "Models",
             "type": "memberArray",
+            "required": true,
             "member": {
                 "name": "Model",
                 "type": "memberStruct",
@@ -17,6 +18,7 @@
                         "signature": "DATA",
                         "name": "Data",
                         "type": "struct",
+                        "required": true,
                         "elements": [
                             {
                                 "name": "Percentage",
@@ -36,15 +38,13 @@
                                     }
                                 }
                             }
-                        ],
-                        "required": true
+                        ]
                     },
                     {
                         "id": "MODT"
                     }
                 ]
-            },
-            "required": true
+            }
         }
     ]
 }

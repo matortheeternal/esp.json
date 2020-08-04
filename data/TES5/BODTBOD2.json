@@ -6,6 +6,7 @@
             "signature": "BOD2",
             "name": "Biped Body Template",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "id": "FirstPersonFlagsU32"
@@ -38,13 +39,13 @@
                         "id": "ArmorTypeEnum"
                     }
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "BODT",
             "name": "Body Template",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "id": "FirstPersonFlagsU32"
@@ -78,8 +79,7 @@
                         "id": "ArmorTypeEnum"
                     }
                 }
-            ],
-            "required": true
+            ]
         }
     ]
 }

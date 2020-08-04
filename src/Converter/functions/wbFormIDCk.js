@@ -5,7 +5,7 @@ subrecordAndField('wbFormIDCk', [
     args.name,
     args.signatures,
     args.boolean,
-    args.identifier,
+    args.conflictPriority,
     args.required,
     args.identifier,
     args.identifier

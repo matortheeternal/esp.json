@@ -4,6 +4,7 @@
     "name": "Placed NPC",
     "flags": {
         "type": "flags",
+        "showUnknown": true,
         "flags": {
             "5": "Deleted",
             "9": "Starts Dead",
@@ -12,8 +13,7 @@
             "12": "Ignored",
             "25": "No AI Acquire",
             "29": "Don't Havok Settle"
-        },
-        "showUnknown": true
+        }
     },
     "members": [
         {
@@ -26,10 +26,10 @@
             "signature": "NAME",
             "name": "Base",
             "type": "formId",
+            "required": true,
             "signatures": [
                 "NPC_"
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "XEZN",
@@ -65,15 +65,16 @@
                     "signature": "INAM",
                     "name": "Idle",
                     "type": "formId",
+                    "required": true,
                     "signatures": [
                         "IDLE",
                         "NULL"
-                    ],
-                    "required": true
+                    ]
                 },
                 {
                     "name": "Unused",
                     "type": "memberStruct",
+                    "required": true,
                     "members": [
                         {
                             "signature": "SCHR",
@@ -95,8 +96,7 @@
                             "signature": "SCRO",
                             "type": "bytes"
                         }
-                    ],
-                    "required": true
+                    ]
                 },
                 {
                     "id": "PDTOs"
@@ -141,6 +141,7 @@
         {
             "name": "Linked References",
             "type": "memberArray",
+            "sorted": true,
             "member": {
                 "signature": "XLKR",
                 "name": "Linked Reference",
@@ -186,8 +187,7 @@
                 "sortKey": [
                     0
                 ]
-            },
-            "sorted": true
+            }
         },
         {
             "name": "Activate Parents",
@@ -207,6 +207,7 @@
                 {
                     "name": "Activate Parent Refs",
                     "type": "memberArray",
+                    "sorted": true,
                     "member": {
                         "signature": "XAPR",
                         "name": "Activate Parent Ref",
@@ -237,8 +238,7 @@
                         "sortKey": [
                             0
                         ]
-                    },
-                    "sorted": true
+                    }
                 }
             ]
         },

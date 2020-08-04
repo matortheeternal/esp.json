@@ -10,6 +10,7 @@
             "signature": "INAM",
             "name": "Items",
             "type": "array",
+            "sorted": true,
             "element": {
                 "name": "Item",
                 "type": "formId",
@@ -17,8 +18,7 @@
                     "ARMO",
                     "LVLI"
                 ]
-            },
-            "sorted": true
+            }
         }
     ]
 }

@@ -33,6 +33,7 @@
             "signature": "DATA",
             "name": "Data",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Trait",
@@ -75,8 +76,7 @@
                         }
                     }
                 }
-            ],
-            "required": true
+            ]
         },
         {
             "signature": "NNAM",
@@ -131,6 +131,7 @@
                         "name": "Effect Data",
                         "type": "union",
                         "decider": "PerkDATADecider",
+                        "required": true,
                         "elements": [
                             {
                                 "name": "Quest + Stage",
@@ -214,12 +215,12 @@
                                     1
                                 ]
                             }
-                        ],
-                        "required": true
+                        ]
                     },
                     {
                         "name": "Perk Conditions",
                         "type": "memberArray",
+                        "required": true,
                         "member": {
                             "name": "Perk Condition",
                             "type": "memberStruct",
@@ -237,12 +238,12 @@
                             "sortKey": [
                                 0
                             ]
-                        },
-                        "required": true
+                        }
                     },
                     {
                         "name": "Function Parameters",
                         "type": "memberStruct",
+                        "required": true,
                         "members": [
                             {
                                 "signature": "EPFT",
@@ -295,6 +296,7 @@
                                 "name": "Data",
                                 "type": "union",
                                 "decider": "EPFDDecider",
+                                "required": true,
                                 "elements": [
                                     {
                                         "name": "Unknown",
@@ -365,11 +367,9 @@
                                             }
                                         ]
                                     }
-                                ],
-                                "required": true
+                                ]
                             }
-                        ],
-                        "required": true
+                        ]
                     },
                     {
                         "signature": "PRKF",

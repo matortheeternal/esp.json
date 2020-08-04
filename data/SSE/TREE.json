@@ -74,6 +74,7 @@
             "signature": "CNAM",
             "name": "Tree Data",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Trunk Flexibility",
@@ -123,8 +124,7 @@
                     "name": "Leaf Frequency",
                     "type": "float"
                 }
-            ],
-            "required": true
+            ]
         }
     ]
 }

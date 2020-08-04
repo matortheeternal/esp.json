@@ -10,6 +10,7 @@
             "signature": "DNAM",
             "name": "Objects",
             "type": "array",
+            "sorted": true,
             "element": {
                 "name": "Object",
                 "type": "struct",
@@ -402,8 +403,7 @@
                 "sortKey": [
                     0
                 ]
-            },
-            "sorted": true
+            }
         }
     ]
 }
