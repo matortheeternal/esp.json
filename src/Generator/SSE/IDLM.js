@@ -1,6 +1,7 @@
 let {
     flags, def, req, subrecord, uint8, 
-    format, float, ckFormId, array, record
+    format, float, ckFormId, array, opts, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
@@ -21,9 +22,11 @@ module.exports = () => {
             }))),
             subrecord('IDLC', uint8('Animation Count')),
             req(subrecord('IDLT', req(float('Idle Timer Setting')))),
-            subrecord('IDLA', array('Animations', 
+            subrecord('IDLA', opts(array('Animations', 
                 ckFormId('Animation', ['IDLE'])
-            )),
+            ), {
+                "afterSet": "IDLAsAfterSet"
+            })),
             def('MODL')
         ]
     })

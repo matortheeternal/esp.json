@@ -5,7 +5,9 @@
     "element": {
         "name": "Rows",
         "type": "array",
-        "getCount": "OffsetDataColsCounter",
+        "counter": {
+            "type": "OffsetDataColsCounter"
+        },
         "element": {
             "name": "Offset",
             "type": "uint32"

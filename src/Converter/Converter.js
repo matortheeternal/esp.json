@@ -107,6 +107,7 @@ class Converter extends Parser {
     convertRegions({start, end}) {
         let match;
         while (match = this.match(start)) {
+            this.regionName = match[1]
             this.advance(match.index + match[0].length);
             this.next();
             while (!this.match(end))

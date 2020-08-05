@@ -1,11 +1,14 @@
 let {
-    addDef, def, sorted, memberArray, req
+    addDef, def, sorted, memberArray, elementCounter, 
+    req
 } = require('../helpers');
 
 module.exports = () => {
     addDef('SPLOs', 
-        req(sorted(memberArray('Actor Effects', 
-            def('SPLO')
-        )))
+        req(elementCounter('SPCT - Count', 
+            sorted(memberArray('Actor Effects', 
+                def('SPLO')
+            ))
+        ))
     );
 };

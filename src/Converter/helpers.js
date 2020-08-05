@@ -131,10 +131,24 @@ let scaleLine = function(scale, line, converter) {
     return `scale(${scale}, ${line})`;
 };
 
-let getCountLine = function(getCount, line, converter) {
-    if (!getCount) return line;
-    converter.addRequires('getCount');
-    return `getCount('${getCount}', ${line})`;
+let customCounterLine = function(counterType, line, converter) {
+    if (!counterType) return line;
+    converter.addRequires('customCounter');
+    return `customCounter('${counterType}', ${newLine(line)})`;
+};
+
+let elementCounterLine = function(path, line, converter) {
+    if (!path) return line;
+    converter.addRequires('elementCounter');
+    return `elementCounter(${path}, ${newLine(line)})`;
+};
+
+let afterSetLine = function(afterSet, line, converter) {
+    if (!afterSet || afterSet === 'null') return line;
+    let data = converter.getData(afterSet);
+    if (data && data.counters.length === 1)
+        return elementCounterLine(data.counters[0].path, line, converter);
+    return optsLine({afterSet}, line, converter);
 };
 
 let reqLine = function(required, line, converter) {
@@ -163,6 +177,6 @@ let resolveIntFn = function(intType) {
 module.exports = {
     args, indent, arr, inlineArr, mixedArr, stringify, newLine,
     sizeLine, prefixLine, prefixSize, paddingLine, scaleLine,
-    getCountLine, formatLine, reqLine, optsLine, optsReq,
-    resolveIntFn, lineBreak, tab
+    customCounterLine, elementCounterLine, formatLine, afterSetLine,
+    reqLine, optsLine, optsReq, resolveIntFn, lineBreak, tab
 };

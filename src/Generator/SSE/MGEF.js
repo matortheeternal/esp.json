@@ -1,7 +1,7 @@
 let {
     def, subrecord, ckFormId, sorted, memberArray, 
-    req, enumeration, uint32, format, struct, 
-    array, localized, string, opts, record
+    opts, req, enumeration, uint32, format, 
+    struct, array, localized, string, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -14,9 +14,11 @@ module.exports = () => {
             def('KSIZ'),
             def('KWDAs'),
             def('MGEFData'),
-            req(sorted(memberArray('Counter Effects', 
+            req(opts(sorted(memberArray('Counter Effects', 
                 subrecord('ESCE', ckFormId('Effect', ['MGEF']))
-            ))),
+            )), {
+                "afterSet": "CounterEffectsAfterSet"
+            })),
             subrecord('SNDD', array('Sounds', 
                 struct('', [
                     format(uint32('Type'), enumeration({

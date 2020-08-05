@@ -3,6 +3,10 @@
     "type": "memberArray",
     "sorted": true,
     "required": true,
+    "counter": {
+        "type": "elementCounter",
+        "path": "SPCT - Count"
+    },
     "member": {
         "id": "SPLO"
     }

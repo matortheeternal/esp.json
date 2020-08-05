@@ -22,6 +22,11 @@ class Parser {
         this.position += numChars;
     }
 
+    reset() {
+        this.text = this.originalText;
+        this.position = 0;
+    }
+
     getCodeSnippet() {
         return codeSnippet(this.filename, this.originalText, this.position);
     }

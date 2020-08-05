@@ -2,7 +2,7 @@ let {
     def, req, flags, subrecord, uint8, 
     format, uint16, bytes, size, ckFormId, 
     sortKey, struct, memberStruct, sorted, memberArray, 
-    record
+    elementCounter, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -17,17 +17,19 @@ module.exports = () => {
                 2: 'Use All Spells'
             }))),
             def('LLCT'),
-            req(sorted(memberArray('Leveled List Entries', 
-                sortKey([0], memberStruct('Leveled List Entry', [
-                    subrecord('LVLO', sortKey([0, 2], struct('Base Data', [
-                        uint16('Level'),
-                        size(2, bytes('Unknown')),
-                        ckFormId('Reference', ['SPEL', 'LVSP']),
-                        uint16('Count'),
-                        size(2, bytes('Unknown'))
-                    ])))
-                ]))
-            )))
+            req(elementCounter('LLCT - Count', 
+                sorted(memberArray('Leveled List Entries', 
+                    sortKey([0], memberStruct('Leveled List Entry', [
+                        subrecord('LVLO', sortKey([0, 2], struct('Base Data', [
+                            uint16('Level'),
+                            size(2, bytes('Unknown')),
+                            ckFormId('Reference', ['SPEL', 'LVSP']),
+                            uint16('Count'),
+                            size(2, bytes('Unknown'))
+                        ])))
+                    ]))
+                ))
+            ))
         ]
     })
 };

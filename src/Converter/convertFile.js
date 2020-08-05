@@ -12,7 +12,12 @@ let setUpGlobalOutputs = function(converter) {
 
 let convertProcedures = function(converter) {
     converter.convertRegions({
-        start: /procedure Define\w+?[a-z];[\s\S]+?^begin/m,
+        start: /procedure wb([A-Za-z]+AfterSet)\(const aElement: IwbElement; const aOldValue, aNewValue: Variant\);\s+begin/m,
+        end: /^end;/
+    });
+    converter.reset();
+    converter.convertRegions({
+        start: /procedure (Define\w+?[a-z]);[\s\S]+?^begin/m,
         end: /^end;/
     });
 };
@@ -52,6 +57,8 @@ module.exports = convertFile;
 ['functions', 'types'].forEach(loadFilesFromFolder);
 
 // load statement converters
+require('./statements/wbCounterAfterSet');
+require('./statements/wbCounterContainerAfterSet');
 require('./statements/wbRecord');
 require('./statements/wbRefRecord');
 require('./statements/wbAddGroupOrder');

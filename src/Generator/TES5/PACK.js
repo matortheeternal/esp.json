@@ -2,8 +2,8 @@ let {
     def, uint32, format, enumeration, uint8, 
     bytes, size, uint16, subrecord, struct, 
     req, int8, int32, float, ckFormId, 
-    array, memberStruct, string, union, unknown, 
-    memberArray, flags, empty, record
+    array, opts, memberStruct, string, union, 
+    unknown, memberArray, flags, empty, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -70,9 +70,11 @@ module.exports = () => {
                     size(3, bytes('Unknown'))
                 ]))),
                 req(subrecord('IDLT', req(float('Idle Timer Setting')))),
-                subrecord('IDLA', array('Animations', 
+                subrecord('IDLA', opts(array('Animations', 
                     ckFormId('Animation', ['IDLE'])
-                )),
+                ), {
+                    "afterSet": "IDLAsAfterSet"
+                })),
                 subrecord('IDLB', size(4, bytes('Unknown')))
             ])),
             subrecord('CNAM', ckFormId('Combat Style', ['CSTY'])),

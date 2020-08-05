@@ -1,6 +1,6 @@
 let {
     addDef, int8, flags, uint8, format, 
-    string, prefix, struct, array, getCount
+    string, prefix, struct, array, customCounter
 } = require('../helpers');
 
 module.exports = () => {
@@ -12,13 +12,15 @@ module.exports = () => {
                 1: 'OnEnd'
             })),
             prefix(2, string('FileName')),
-            getCount('ScriptFragmentsInfoCounter', array('Fragments', 
-                struct('Fragment', [
-                    int8('Unknown'),
-                    prefix(2, string('ScriptName')),
-                    prefix(2, string('FragmentName'))
-                ])
-            ))
+            customCounter('ScriptFragmentsInfoCounter', 
+                array('Fragments', 
+                    struct('Fragment', [
+                        int8('Unknown'),
+                        prefix(2, string('ScriptName')),
+                        prefix(2, string('FragmentName'))
+                    ])
+                )
+            )
         ])
     );
 };

@@ -20,7 +20,9 @@
             "name": "Fragments",
             "type": "array",
             "sorted": true,
-            "getCount": "ScriptFragmentsQuestCounter",
+            "counter": {
+                "type": "ScriptFragmentsQuestCounter"
+            },
             "element": {
                 "name": "Fragment",
                 "type": "struct",

@@ -304,6 +304,10 @@
             "type": "memberArray",
             "sorted": true,
             "required": true,
+            "counter": {
+                "type": "elementCounter",
+                "path": "PRKZ - Perk Count"
+            },
             "member": {
                 "signature": "PRKR",
                 "name": "Perk",

@@ -2,9 +2,9 @@ let {
     flags, def, req, uint32, format, 
     int16, div, union, uint16, subrecord, 
     struct, ckFormId, int8, bytes, size, 
-    sortKey, sorted, memberArray, uint8, localized, 
-    string, array, float, unknown, scale, 
-    int32, memberStruct, record
+    sortKey, sorted, memberArray, uint8, elementCounter, 
+    localized, string, array, float, unknown, 
+    scale, int32, memberStruct, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -108,13 +108,15 @@ module.exports = () => {
             req(subrecord('GWOR', ckFormId('Guard warn override package list', ['FLST']))),
             req(subrecord('ECOR', ckFormId('Combat override package list', ['FLST']))),
             subrecord('PRKZ', uint32('Perk Count')),
-            req(sorted(memberArray('Perks', 
-                subrecord('PRKR', sortKey([0], struct('Perk', [
-                    ckFormId('Perk', ['PERK']),
-                    uint8('Rank'),
-                    size(3, bytes('Unused'))
-                ])))
-            ))),
+            req(elementCounter('PRKZ - Perk Count', 
+                sorted(memberArray('Perks', 
+                    subrecord('PRKR', sortKey([0], struct('Perk', [
+                        ckFormId('Perk', ['PERK']),
+                        uint8('Rank'),
+                        size(3, bytes('Unused'))
+                    ])))
+                ))
+            )),
             def('COCT'),
             def('CNTOs'),
             def('AIDT'),

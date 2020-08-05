@@ -40,7 +40,7 @@ let convertStatement = function(converter) {
     });
     let stConverter = stKey && statements[stKey];
     if (!stConverter) throw new ParseError('Error parsing statement.');
-    console.log('Parsing statement', stKey);
+    //console.log('Parsing statement', stKey);
     converter.advance(match[0].length);
     converter.next();
     if (!stConverter.convert) return;

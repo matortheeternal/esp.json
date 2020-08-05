@@ -183,6 +183,7 @@
                     "signature": "IDLA",
                     "name": "Animations",
                     "type": "array",
+                    "afterSet": "IDLAsAfterSet",
                     "element": {
                         "name": "Animation",
                         "type": "formId",

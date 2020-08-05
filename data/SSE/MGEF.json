@@ -28,6 +28,7 @@
             "name": "Counter Effects",
             "type": "memberArray",
             "sorted": true,
+            "afterSet": "CounterEffectsAfterSet",
             "required": true,
             "member": {
                 "signature": "ESCE",

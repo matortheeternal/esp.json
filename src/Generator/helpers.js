@@ -53,7 +53,13 @@ let sorted = obj => merge(obj, {sorted: true});
 let size = (size, obj) => merge(obj, {size});
 let prefix = (prefix, obj) => merge(obj, {prefix});
 let padding = (padding, obj) => merge(obj, {padding});
-let getCount = (getCount, obj) => merge(obj, {getCount});
+let counter = (type, options = {}) => ({type, ...options});
+let elementCounter = (path, obj) => merge({
+    counter: counter("elementCounter", {path})
+}, obj);
+let customCounter = (type, obj) => merge({
+    counter: counter(type)
+}, obj);
 
 // number formatting
 let format = (obj, format) => merge(obj, {format});
@@ -107,7 +113,7 @@ module.exports = {
     addDef, getDefs, clearDefs, forEachDef, IsSSE,
     addMetaDef, getMetaDefs, getGroupOrder, setGroupOrder,
     req, def, opts, sortKey, inherit,
-    localized, sorted, size, prefix, padding, getCount,
+    localized, sorted, size, prefix, padding, elementCounter, customCounter,
     format, div, scale, flags, showUnknown, enumeration, formatUnion,
     record, subrecord,
     memberArray, memberStruct, memberUnion,
