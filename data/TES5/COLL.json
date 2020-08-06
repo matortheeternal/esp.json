@@ -13,7 +13,8 @@
         {
             "signature": "BNAM",
             "name": "Index",
-            "type": "uint32"
+            "type": "uint32",
+            "required": true
         },
         {
             "signature": "FNAM",
@@ -43,6 +44,7 @@
             "signature": "GNAM",
             "name": "Flags",
             "type": "uint32",
+            "required": true,
             "format": {
                 "type": "flags",
                 "flags": {
@@ -61,13 +63,15 @@
         {
             "signature": "INTV",
             "name": "Interactables Count",
-            "type": "uint32"
+            "type": "uint32",
+            "required": true
         },
         {
             "signature": "CNAM",
             "name": "Collides With",
             "type": "array",
             "sorted": true,
+            "required": true,
             "element": {
                 "name": "Forms",
                 "type": "formId",

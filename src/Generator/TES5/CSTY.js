@@ -1,5 +1,5 @@
 let {
-    flags, def, float, subrecord, struct, 
+    flags, def, float, struct, subrecord, 
     req, unknown, uint32, format, record
 } = require('../helpers');
 
@@ -53,11 +53,11 @@ module.exports = () => {
                 float('Perch Attack Time'),
                 float('Flying Attack Chance')
             ]))),
-            subrecord('DATA', format(uint32('Flags'), flags({
+            req(subrecord('DATA', format(uint32('Flags'), flags({
                 0: 'Dueling',
                 1: 'Flanking',
                 2: 'Allow Dual Wielding'
-            })))
+            }))))
         ]
     })
 };

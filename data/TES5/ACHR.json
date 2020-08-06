@@ -146,6 +146,7 @@
                 "signature": "XLKR",
                 "name": "Linked Reference",
                 "type": "struct",
+                "required": true,
                 "elements": [
                     {
                         "name": "Keyword/Ref",

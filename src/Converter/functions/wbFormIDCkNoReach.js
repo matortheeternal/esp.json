@@ -1,29 +1,29 @@
 let {subrecordAndField, functionConverter} = require('../converters'),
-    {args} = require('../helpers');
+    args = require('../args');
+
+// TODO: what is NoReach?
+let convertFormIdCkNoReach = function(args, converter) {
+    converter.addRequires('ckFormId');
+    return `ckFormId(${args.name}, ${args.signatures})`;
+};
 
 subrecordAndField('wbFormIDCkNoReach', [
     args.name,
     args.signatures,
-    args.boolean,
-    args.conflictPriority,
+    args.persistent,
+    args.priority,
     args.required,
-    args.identifier,
-    args.identifier
-], ({name, signatures}, converter) => {
-    converter.addRequires('ckFormId');
-    return `ckFormId(${name}, ${signatures})`;
-});
+    args.dontShow,
+    args.getCP
+], convertFormIdCkNoReach);
 
 functionConverter('wbFormIDCkNoReach', [
     args.name,
     args.signatures,
-    { type: 'array of signature' },
-    args.boolean,
-    args.conflictPriority,
+    args.validFlstRefs,
+    args.persistent,
+    args.priority,
     args.required,
-    args.identifier,
-    args.identifier
-], ({name, signatures}, converter) => {
-    converter.addRequires('ckFormId');
-    return `ckFormId(${name}, ${signatures})`;
-});
+    args.dontShow,
+    args.getCP
+], convertFormIdCkNoReach);

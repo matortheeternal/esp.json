@@ -1,14 +1,22 @@
 let {functionConverter} = require('../converters'),
-    {args} = require('../helpers');
+    args = require('../args');
 
+// wbInterface.pas#3455
 functionConverter('wbRStructExSK', [
     args.sk,
     args.exSk,
     args.name,
     args.fields,
-    args.signatures
-], ({sk, exSk, name, fields}, converter) => {
+    args.signatures,
+    args.priority,
+    args.required,
+    args.dontShow,
+    args.boolean, // allow unordered
+    args.afterLoad,
+    args.afterSet,
+    args.getCP
+], (args, converter) => {
     converter.addRequires('sortKey', 'memberStruct');
-    let structDef = `memberStruct(${name}, ${fields})`;
-    return `sortKey(${sk}, ${structDef})`;
+    let structDef = `memberStruct(${args.name}, ${args.fields})`;
+    return `sortKey(${args.sk}, ${structDef})`;
 });

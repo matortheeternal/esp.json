@@ -202,7 +202,8 @@
                     "signature": "NAM2",
                     "name": "Texture Files Hashes",
                     "type": "bytes",
-                    "size": 0
+                    "size": 0,
+                    "required": true
                 }
             ],
             "sortKey": [
@@ -213,6 +214,7 @@
             "signature": "VNAM",
             "name": "Sound Level",
             "type": "uint32",
+            "required": true,
             "format": {
                 "id": "SoundLevelEnum"
             }

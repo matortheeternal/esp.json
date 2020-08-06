@@ -10,6 +10,7 @@
             "signature": "PNAM",
             "name": "Slot Parents",
             "type": "array",
+            "required": true,
             "element": {
                 "name": "Can Be Equipped",
                 "type": "formId"

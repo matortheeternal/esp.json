@@ -1,6 +1,6 @@
 let {
-    flags, def, req, uint8, subrecord, 
-    struct, ckFormId, localized, string, uint16, 
+    flags, def, req, uint8, struct, 
+    subrecord, ckFormId, localized, string, uint16, 
     format, record
 } = require('../helpers');
 

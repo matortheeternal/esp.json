@@ -1,15 +1,21 @@
 let {subrecordAndField} = require('../converters'),
-    {args} = require('../helpers');
+    args = require('../args');
 
+let convertUnion = function(args, converter) {
+    let {name, decider, members} = args;
+    converter.addRequires('union');
+    return `union(${name}, '${decider}', ${members})`;
+};
+
+// wbInterface.pas#6596
+// wbInterface.pas#6609
 subrecordAndField('wbUnion', [
     args.name,
     args.decider,
     args.members,
-    args.conflictPriority,
+    args.priority,
     args.required,
-    args.identifier,
-    args.identifier
-], ({name, decider, members}, converter) => {
-    converter.addRequires('union');
-    return `union(${name}, '${decider}', ${members})`;
-});
+    args.dontShow,
+    args.afterSet,
+    args.getCP
+], convertUnion);

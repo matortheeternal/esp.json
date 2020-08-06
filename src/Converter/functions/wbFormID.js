@@ -1,11 +1,14 @@
 let {subrecordAndField} = require('../converters'),
-    {args} = require('../helpers');
+    args = require('../args');
 
+// wbInterface.pas#7800
 subrecordAndField('wbFormID', [
     args.name,
-    args.conflictPriority,
-    args.required
-], ({name}, converter) => {
+    args.priority,
+    args.required,
+    args.dontShow,
+    args.getCP
+], (args, converter) => {
     converter.addRequires('formId');
-    return `formId(${name})`;
+    return `formId(${args.name})`;
 });

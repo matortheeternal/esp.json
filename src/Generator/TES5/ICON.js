@@ -1,5 +1,5 @@
 let {
-    addDef, subrecord, string, req, memberStruct
+    addDef, string, subrecord, req, memberStruct
 } = require('../helpers');
 
 module.exports = () => {

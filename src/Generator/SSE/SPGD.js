@@ -1,6 +1,6 @@
 let {
     def, float, uint32, enumeration, format, 
-    subrecord, struct, req, string, record
+    struct, subrecord, req, string, record
 } = require('../helpers');
 
 module.exports = () => {

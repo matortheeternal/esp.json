@@ -1,5 +1,6 @@
 let {functionConverter} = require('../converters'),
-    {args, stringify} = require('../helpers');
+    {stringify} = require('../helpers'),
+    args = require('../args');
 
 functionConverter('ReferenceRecord', [
     args.sig,

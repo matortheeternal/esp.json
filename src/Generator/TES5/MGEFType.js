@@ -1,10 +1,11 @@
 let {
-    addDef, enumeration, uint32, format
+    addDef, enumeration, uint32, format, req, 
+    opts
 } = require('../helpers');
 
 module.exports = () => {
     addDef('MGEFType', 
-        format(uint32('Archtype'), enumeration({
+        opts(req(format(uint32('Archtype'), enumeration({
             0: 'Value Modifier',
             1: 'Script',
             2: 'Dispel',
@@ -52,6 +53,8 @@ module.exports = () => {
             44: 'Disguise',
             45: 'Grab Actor',
             46: 'Vampire Lord'
-        }))
+        }))), {
+            "afterSet": "MGEFArchtypeAfterSet"
+        })
     );
 };

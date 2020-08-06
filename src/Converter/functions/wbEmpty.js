@@ -1,11 +1,14 @@
 let {subrecordAndField} = require('../converters'),
-    {args} = require('../helpers');
+    args = require('../args');
 
+// wbInterface.pas#3521
 subrecordAndField('wbEmpty', [
     args.name,
-    args.conflictPriority,
+    args.priority,
     args.required,
-], ({name}, converter) => {
+    args.dontShow,
+    args.getCP
+], (args, converter) => {
     converter.addRequires('empty');
-    return `empty(${name})`;
+    return `empty(${args.name})`;
 });

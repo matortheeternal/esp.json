@@ -1,7 +1,7 @@
 let {
     def, req, bytes, size, enumeration, 
     int8, format, uint8, array, float, 
-    uint32, subrecord, struct, record
+    uint32, struct, subrecord, record
 } = require('../helpers');
 
 module.exports = () => {

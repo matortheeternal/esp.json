@@ -1,9 +1,10 @@
 let {
     def, uint32, format, enumeration, uint8, 
-    bytes, size, uint16, subrecord, struct, 
+    bytes, size, uint16, struct, subrecord, 
     req, int8, int32, float, ckFormId, 
     array, opts, memberStruct, string, union, 
-    unknown, memberArray, flags, empty, record
+    unknown, memberArray, flags, elementCounter, empty, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
@@ -58,23 +59,23 @@ module.exports = () => {
             ]))),
             def('CTDAs'),
             req(memberStruct('Idle Animations', [
-                subrecord('IDLF', format(uint8('Flags'), enumeration({
+                req(subrecord('IDLF', format(uint8('Flags'), enumeration({
                     0: 'Unknown',
                     8: 'Random',
                     9: 'Run in Sequence',
                     12: 'Random, Do Once',
                     13: 'Run in Sequence, Do Once'
-                }))),
+                })))),
                 req(subrecord('IDLC', struct('', [
                     uint8('Animation Count'),
                     size(3, bytes('Unknown'))
                 ]))),
-                req(subrecord('IDLT', req(float('Idle Timer Setting')))),
-                subrecord('IDLA', opts(array('Animations', 
+                req(subrecord('IDLT', float('Idle Timer Setting'))),
+                opts(req(subrecord('IDLA', array('Animations', 
                     ckFormId('Animation', ['IDLE'])
-                ), {
+                ))), {
                     "afterSet": "IDLAsAfterSet"
-                })),
+                }),
                 subrecord('IDLB', size(4, bytes('Unknown')))
             ])),
             subrecord('CNAM', ckFormId('Combat Style', ['CSTY'])),
@@ -111,72 +112,74 @@ module.exports = () => {
             subrecord('XNAM', bytes('Marker')),
             memberStruct('Procedure Tree', [
                 memberArray('Branches', 
-                    req(memberStruct('Branch', [
-                        subrecord('ANAM', string('Branch Type')),
-                        req(def('CITC')),
-                        def('CTDAsCount'),
-                        subrecord('PRCB', struct('Root', [
-                            uint32('Branch Count'),
-                            format(uint32('Flags'), flags({
-                                0: 'Repeat when Complete',
-                                1: 'Unknown 1'
-                            }))
-                        ])),
-                        subrecord('PNAM', string('Procedure Type')),
-                        subrecord('FNAM', format(uint32('Flags'), flags({
-                            0: 'Success Completes Package'
-                        }))),
-                        memberArray('Data Input Indexes', 
-                            subrecord('PKC2', uint8('Index'))
-                        ),
-                        memberArray('Flags Override', 
-                            subrecord('PFO2', struct('Data', [
-                                format(uint32('Set General Flags'), def('PKDTFlags')),
-                                format(uint32('Clear General Flags'), def('PKDTFlags')),
-                                format(uint16('Set Interrupt Flags'), def('PKDTInterruptFlags')),
-                                format(uint16('Clear Interrupt Flags'), def('PKDTInterruptFlags')),
-                                format(uint8('Preferred Speed Override'), enumeration({
-                                    0: 'Walk',
-                                    1: 'Jog',
-                                    2: 'Run',
-                                    3: 'Fast Walk'
-                                })),
-                                size(3, bytes('Unknown'))
-                            ]))
-                        ),
-                        memberArray('Unknown', 
-                            subrecord('PFOR', unknown())
-                        )
-                    ]))
+                    req(elementCounter('CITC - Condition Count', 
+                        memberStruct('Branch', [
+                            subrecord('ANAM', string('Branch Type')),
+                            req(def('CITC')),
+                            def('CTDAsCount'),
+                            subrecord('PRCB', struct('Root', [
+                                uint32('Branch Count'),
+                                format(uint32('Flags'), flags({
+                                    0: 'Repeat when Complete',
+                                    1: 'Unknown 1'
+                                }))
+                            ])),
+                            subrecord('PNAM', string('Procedure Type')),
+                            subrecord('FNAM', format(uint32('Flags'), flags({
+                                0: 'Success Completes Package'
+                            }))),
+                            memberArray('Data Input Indexes', 
+                                subrecord('PKC2', uint8('Index'))
+                            ),
+                            memberArray('Flags Override', 
+                                subrecord('PFO2', struct('Data', [
+                                    format(uint32('Set General Flags'), def('PKDTFlags')),
+                                    format(uint32('Clear General Flags'), def('PKDTFlags')),
+                                    format(uint16('Set Interrupt Flags'), def('PKDTInterruptFlags')),
+                                    format(uint16('Clear Interrupt Flags'), def('PKDTInterruptFlags')),
+                                    format(uint8('Preferred Speed Override'), enumeration({
+                                        0: 'Walk',
+                                        1: 'Jog',
+                                        2: 'Run',
+                                        3: 'Fast Walk'
+                                    })),
+                                    size(3, bytes('Unknown'))
+                                ]))
+                            ),
+                            memberArray('Unknown', 
+                                subrecord('PFOR', unknown())
+                            )
+                        ])
+                    ))
                 )
             ]),
             def('UNAMs'),
             memberStruct('OnBegin', [
                 req(subrecord('POBA', empty('OnBegin Marker'))),
                 req(subrecord('INAM', ckFormId('Idle', ['IDLE', 'NULL']))),
-                subrecord('SCHR', size(0, bytes('Unused'))),
-                subrecord('SCTX', size(0, bytes('Unused'))),
-                subrecord('QNAM', size(0, bytes('Unused'))),
-                subrecord('TNAM', size(0, bytes('Unused'))),
+                req(subrecord('SCHR', size(0, bytes('Unused')))),
+                req(subrecord('SCTX', size(0, bytes('Unused')))),
+                req(subrecord('QNAM', size(0, bytes('Unused')))),
+                req(subrecord('TNAM', size(0, bytes('Unused')))),
                 def('PDTOs')
             ]),
             memberStruct('OnEnd', [
                 req(subrecord('POEA', empty('OnEnd Marker'))),
                 req(subrecord('INAM', ckFormId('Idle', ['IDLE', 'NULL']))),
-                subrecord('SCHR', size(0, bytes('Unused'))),
-                subrecord('SCTX', size(0, bytes('Unused'))),
-                subrecord('QNAM', size(0, bytes('Unused'))),
-                subrecord('TNAM', size(0, bytes('Unused'))),
+                req(subrecord('SCHR', size(0, bytes('Unused')))),
+                req(subrecord('SCTX', size(0, bytes('Unused')))),
+                req(subrecord('QNAM', size(0, bytes('Unused')))),
+                req(subrecord('TNAM', size(0, bytes('Unused')))),
                 def('PDTOs')
             ]),
             memberStruct('OnChange', [
                 req(subrecord('POCA', empty('OnChange Marker'))),
                 req(subrecord('INAM', ckFormId('Idle', ['IDLE', 'NULL']))),
-                subrecord('SCHR', size(0, bytes('Unused'))),
-                subrecord('SCDA', size(0, bytes('Unused'))),
-                subrecord('SCTX', size(0, bytes('Unused'))),
-                subrecord('QNAM', size(0, bytes('Unused'))),
-                subrecord('TNAM', size(0, bytes('Unused'))),
+                req(subrecord('SCHR', size(0, bytes('Unused')))),
+                req(subrecord('SCDA', size(0, bytes('Unused')))),
+                req(subrecord('SCTX', size(0, bytes('Unused')))),
+                req(subrecord('QNAM', size(0, bytes('Unused')))),
+                req(subrecord('TNAM', size(0, bytes('Unused')))),
                 def('PDTOs')
             ])
         ]

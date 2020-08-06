@@ -1,7 +1,7 @@
 let {
     def, flags, uint8, format, bytes, 
-    size, subrecord, struct, unknown, enumeration, 
-    uint32, array, float, record
+    size, struct, subrecord, unknown, enumeration, 
+    uint32, array, float, count, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -41,7 +41,7 @@ module.exports = () => {
                 size(4, bytes('Unknown')),
                 float('Min Distance'),
                 float('Max Distance'),
-                size(5, array('Curve', 
+                count(5, array('Curve', 
                     uint8('Value')
                 )),
                 bytes('Unknown')

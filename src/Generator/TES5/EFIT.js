@@ -1,14 +1,14 @@
 let {
-    addDef, float, req, uint32, subrecord, 
-    sortKey, struct
+    addDef, float, req, uint32, sortKey, 
+    struct, subrecord
 } = require('../helpers');
 
 module.exports = () => {
     addDef('EFIT', 
-        subrecord('EFIT', sortKey([3, 4], struct('', [
-            req(req(float('Magnitude'))),
+        req(subrecord('EFIT', sortKey([3, 4], struct('', [
+            req(float('Magnitude')),
             uint32('Area'),
             uint32('Duration')
-        ])))
+        ]))))
     );
 };

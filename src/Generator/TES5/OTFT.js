@@ -1,5 +1,5 @@
 let {
-    def, ckFormId, subrecord, sorted, array, 
+    def, ckFormId, sorted, array, subrecord, 
     record
 } = require('../helpers');
 

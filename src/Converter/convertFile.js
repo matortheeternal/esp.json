@@ -1,6 +1,7 @@
 let path = require('path'),
     fs = require('fs'),
-    Converter = require('./Converter');
+    Converter = require('./Converter'),
+    {loadFilesFromFolder} = require('../loader');
 
 let setUpGlobalOutputs = function(converter) {
     let folderPath = path.resolve(__dirname, 'globalOutputs'),
@@ -39,22 +40,10 @@ let convertFile = function(filename, game) {
     }
 };
 
-let loadFiles = function(folderName, files) {
-    files.forEach(filename => {
-        require(`./${folderName}/${filename}`);
-    });
-};
-
-let loadFilesFromFolder = function(folderName) {
-    let folderPath = path.resolve(__dirname, folderName),
-        files = fs.readdirSync(folderPath);
-    loadFiles(folderName, files);
-};
-
-module.exports = convertFile;
-
 // load function and type converters
-['functions', 'types'].forEach(loadFilesFromFolder);
+['Converter/functions', 'Converter/types'].forEach(folder => {
+    loadFilesFromFolder(folder);
+});
 
 // load statement converters
 require('./statements/wbCounterAfterSet');
@@ -74,3 +63,6 @@ require('./statements/assignment');
 require('./statements/begin');
 require('./statements/try');
 require('./statements/unknown');
+
+// export convertFile
+module.exports = convertFile;

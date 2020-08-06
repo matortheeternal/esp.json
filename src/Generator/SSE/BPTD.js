@@ -1,5 +1,5 @@
 let {
-    def, subrecord, localized, string, req, 
+    def, localized, string, subrecord, req, 
     float, flags, uint8, format, enumeration, 
     int8, uint16, ckFormId, int32, struct, 
     bytes, size, memberArray, sortKey, memberStruct, 
@@ -57,9 +57,9 @@ module.exports = () => {
                                 float('Z')
                             ]),
                             struct('Rotation', [
-                                req(req(format(float('X'), 'RotationFactor'))),
-                                req(req(format(float('Y'), 'RotationFactor'))),
-                                req(req(format(float('Z'), 'RotationFactor')))
+                                req(format(float('X'), 'RotationFactor')),
+                                req(format(float('Y'), 'RotationFactor')),
+                                req(format(float('Z'), 'RotationFactor'))
                             ])
                         ]),
                         ckFormId('Severable - Impact DataSet', ['IPDS', 'NULL']),

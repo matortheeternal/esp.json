@@ -1,6 +1,11 @@
 {
     "name": "Conditions",
     "type": "memberArray",
+    "required": true,
+    "counter": {
+        "type": "elementCounter",
+        "path": "CITC - Condition Count"
+    },
     "member": {
         "id": "CTDA"
     }

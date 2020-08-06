@@ -10,7 +10,7 @@
         {
             "name": "Rows",
             "type": "array",
-            "size": 32,
+            "count": 32,
             "element": {
                 "name": "Columns",
                 "type": "bytes",

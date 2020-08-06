@@ -1,14 +1,19 @@
 let {subrecordAndField} = require('../converters'),
-    {args} = require('../helpers');
+    args = require('../args');
 
+// wbInterface.pas#3362
+// wbInterface.pas#3374
 subrecordAndField('wbStruct', [
     args.name,
     args.fields,
-    args.conflictPriority,
+    args.priority,
     args.required,
-    args.identifier,
-    args.number
-], ({sig, name, fields}, converter) => {
+    args.dontShow,
+    args.optionalFromElement,
+    args.afterLoad,
+    args.afterSet,
+    args.getCP
+], (args, converter) => {
     converter.addRequires('struct');
-    return `struct(${name}, ${fields})`;
+    return `struct(${args.name}, ${args.fields})`;
 });

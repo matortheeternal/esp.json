@@ -23,6 +23,7 @@
             "signature": "ANAM",
             "name": "Related Idle Animations",
             "type": "array",
+            "required": true,
             "element": {
                 "name": "Related Idle Animation",
                 "type": "formId",

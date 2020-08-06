@@ -1,5 +1,5 @@
 let {
-    def, req, subrecord, localized, string, 
+    def, req, localized, string, subrecord, 
     opts, flags, uint8, format, enumeration, 
     bytes, size, int32, ckFormId, union, 
     uint32, float, struct, record
@@ -14,9 +14,9 @@ module.exports = () => {
             def('FULL'),
             def('MODL'),
             def('ICON'),
-            req(subrecord('DESC', opts(localized(string('Book Text')), {
+            opts(req(subrecord('DESC', localized(string('Book Text')))), {
                 "keepCase": true
-            }))),
+            }),
             def('DEST'),
             def('YNAM'),
             def('ZNAM'),

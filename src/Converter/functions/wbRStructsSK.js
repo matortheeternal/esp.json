@@ -1,22 +1,23 @@
 let {functionConverter} = require('../converters'),
-    {args, reqLine, newLine} = require('../helpers');
+    {newLine} = require('../helpers'),
+    args = require('../args');
 
 functionConverter('wbRStructsSK', [
     args.name,
-    { type: 'string', name: 'structName' },
+    args.elementName,
     args.sk,
     args.members,
     args.signatures,
-    args.conflictPriority,
+    args.priority,
     args.required,
-    args.identifier,
-    args.identifier,
-    args.identifier,
-    args.identifier
-], ({name, structName, sk, members, required}, converter) => {
+    args.afterLoad,
+    args.afterSet,
+    args.dontShow,
+    args.getCP
+], (args, converter) => {
+    let {name, elementName, sk, members} = args;
     converter.addRequires('memberArray', 'sortKey', 'memberStruct');
-    let memberStructArg = `memberStruct(${structName}, ${members})`,
-        skArg = `sortKey(${sk}, ${memberStructArg})`,
-        line = `memberArray(${name}, ${newLine(skArg)})`;
-    return reqLine(required, line, converter);
+    let memberStructArg = `memberStruct(${elementName}, ${members})`,
+        skArg = `sortKey(${sk}, ${memberStructArg})`;
+    return `memberArray(${name}, ${newLine(skArg)})`;
 });

@@ -1,7 +1,7 @@
 let {
-    flags, def, subrecord, uint8, format, 
-    enumeration, uint32, ckFormId, sorted, memberArray, 
-    string, req, memberStruct, record
+    flags, def, uint8, format, subrecord, 
+    req, enumeration, uint32, ckFormId, sorted, 
+    memberArray, string, memberStruct, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -14,13 +14,13 @@ module.exports = () => {
             def('EDID'),
             def('FULL'),
             def('MODL'),
-            subrecord('DATA', format(uint8('Flags'), flags({
+            req(subrecord('DATA', format(uint8('Flags'), flags({
                 0: 'Playable',
                 1: 'Male',
                 2: 'Female',
                 3: 'Is Extra Part',
                 4: 'Use Solid Tint'
-            }))),
+            })))),
             subrecord('PNAM', format(uint32('Type'), enumeration({
                 0: 'Misc',
                 1: 'Face',

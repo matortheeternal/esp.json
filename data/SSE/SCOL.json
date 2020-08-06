@@ -35,6 +35,7 @@
                         "name": "Placements",
                         "type": "array",
                         "sorted": true,
+                        "required": true,
                         "element": {
                             "name": "Placement",
                             "type": "struct",

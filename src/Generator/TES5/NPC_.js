@@ -1,7 +1,7 @@
 let {
     flags, def, req, uint32, format, 
-    int16, div, union, uint16, subrecord, 
-    struct, ckFormId, int8, bytes, size, 
+    int16, div, union, uint16, struct, 
+    subrecord, ckFormId, int8, bytes, size, 
     sortKey, sorted, memberArray, uint8, elementCounter, 
     localized, string, array, float, unknown, 
     scale, int32, memberStruct, record
@@ -55,16 +55,16 @@ module.exports = () => {
                     30: 'Unknown 30',
                     31: 'Invulnerable'
                 })),
-                int16('Magicka Offset'),
-                int16('Stamina Offset'),
+                req(int16('Magicka Offset')),
+                req(int16('Stamina Offset')),
                 req(union('Level', 'NPCLevelDecider', [
-                    int16('Level'),
-                    format(int16('Level Mult'), div(1000))
+                    req(int16('Level')),
+                    req(format(int16('Level Mult'), div(1000)))
                 ])),
-                uint16('Calc min level'),
-                uint16('Calc max level'),
-                uint16('Speed Multiplier'),
-                int16('Disposition Base (unused)'),
+                req(uint16('Calc min level')),
+                req(uint16('Calc max level')),
+                req(uint16('Speed Multiplier')),
+                req(int16('Disposition Base (unused)')),
                 format(uint16('Template Flags'), flags({
                     0: 'Use Traits',
                     1: 'Use Stats',
@@ -80,8 +80,8 @@ module.exports = () => {
                     11: 'Use Attack Data',
                     12: 'Use Keywords'
                 })),
-                int16('Health Offset'),
-                uint16('Bleedout Override')
+                req(int16('Health Offset')),
+                req(uint16('Bleedout Override'))
             ]))),
             req(sorted(memberArray('Factions', 
                 subrecord('SNAM', sortKey([0], struct('Faction', [
@@ -120,9 +120,9 @@ module.exports = () => {
             def('COCT'),
             def('CNTOs'),
             def('AIDT'),
-            memberArray('Packages', 
+            req(memberArray('Packages', 
                 subrecord('PKID', ckFormId('Package', ['PACK']))
-            ),
+            )),
             def('KSIZ'),
             def('KWDAs'),
             req(subrecord('CNAM', ckFormId('Class', ['CLAS']))),
@@ -151,9 +151,9 @@ module.exports = () => {
             req(subrecord('ZNAM', ckFormId('Combat Style', ['CSTY']))),
             req(subrecord('GNAM', ckFormId('Gift Filter', ['FLST']))),
             req(subrecord('NAM5', unknown())),
-            req(subrecord('NAM6', req(float('Height')))),
-            req(subrecord('NAM7', req(float('Weight')))),
-            subrecord('NAM8', format(uint32('Sound Level'), def('SoundLevelEnum'))),
+            req(subrecord('NAM6', float('Height'))),
+            req(subrecord('NAM7', float('Weight'))),
+            req(subrecord('NAM8', format(uint32('Sound Level'), def('SoundLevelEnum')))),
             def('CSDTs'),
             req(subrecord('CSCR', ckFormId('Inherits Sounds From', ['NPC_']))),
             req(subrecord('DOFT', ckFormId('Default outfit', ['OTFT']))),
@@ -162,9 +162,9 @@ module.exports = () => {
             req(subrecord('CRIF', ckFormId('Crime faction', ['FACT']))),
             req(subrecord('FTST', ckFormId('Head texture', ['TXST']))),
             subrecord('QNAM', struct('Texture lighting', [
-                req(req(scale(255, float('Red')))),
-                req(req(scale(255, float('Green')))),
-                req(req(scale(255, float('Blue'))))
+                req(scale(255, float('Red'))),
+                req(scale(255, float('Green'))),
+                req(scale(255, float('Blue')))
             ])),
             req(subrecord('NAM9', struct('Face morph', [
                 float('Nose Long/Short'),

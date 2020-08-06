@@ -1,5 +1,5 @@
 let {
-    def, subrecord, ckFormId, req, uint8, 
+    def, ckFormId, subrecord, req, uint8, 
     struct, sorted, memberArray, IsSSE, flags, 
     uint32, format, record
 } = require('../helpers');
@@ -14,7 +14,7 @@ module.exports = game => {
                 uint8('Friction'),
                 uint8('Restitution')
             ]))),
-            subrecord('SNAM', uint8('Texture Specular Exponent')),
+            req(subrecord('SNAM', uint8('Texture Specular Exponent'))),
             sorted(memberArray('Grasses', 
                 subrecord('GNAM', ckFormId('Grass', ['GRAS']))
             )),

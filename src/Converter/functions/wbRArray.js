@@ -1,16 +1,19 @@
 let {functionConverter} = require('../converters'),
-    {args, newLine} = require('../helpers');
+    {newLine} = require('../helpers'),
+    args = require('../args');
 
+// wbInterface.pas#3176
 // subrecord array
 functionConverter('wbRArray', [
-    { type: 'stringExpr', name: 'name' },
+    args.nameExpr,
     args.member,
-    args.conflictPriority,
-    args.boolean,
-    args.identifier,
-    args.identifier,
-    args.identifier
-], ({name, member}, converter) => {
+    args.priority,
+    args.required,
+    args.afterLoad,
+    args.afterSet,
+    args.dontShow,
+    args.getCP
+], (args, converter) => {
     converter.addRequires('memberArray');
-    return `memberArray(${name}, ${newLine(member)})`;
+    return `memberArray(${args.name}, ${newLine(args.member)})`;
 });

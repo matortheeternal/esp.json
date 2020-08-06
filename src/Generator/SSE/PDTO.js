@@ -1,6 +1,6 @@
 let {
     addDef, enumeration, uint32, format, ckFormId, 
-    string, size, union, subrecord, struct
+    string, size, union, struct, subrecord
 } = require('../helpers');
 
 module.exports = () => {

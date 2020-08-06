@@ -1,17 +1,18 @@
 let {functionConverter} = require('../converters'),
-    {sizeLine, args} = require('../helpers');
+    args = require('../args');
 
+// wbInterface.pas#2501
+// TODO: What is forward?
 functionConverter('wbStringForward', [
     args.sig,
     args.name,
-    args.size,
-    args.conflictPriority,
+    args.stringSize,
+    args.priority,
     args.required,
-    args.identifier,
-    args.identifier,
-    args.identifier
-], ({sig, name, size}, converter) => {
+    args.dontShow,
+    args.afterSet,
+    args.getCP
+], (args, converter) => {
     converter.addRequires('subrecord', 'string');
-    let line = sizeLine(size, `string(${name})`, converter);
-    return `subrecord('${sig}', ${line})`;
+    return `subrecord('${args.sig}', string(${args.name}))`;
 });

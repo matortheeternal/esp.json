@@ -1,5 +1,5 @@
 let {functionConverter} = require('../converters'),
-    {args} = require('../helpers');
+    args = require('../args');
 
 functionConverter('Ord', [args.string], args => {
     let str = args.values[0];

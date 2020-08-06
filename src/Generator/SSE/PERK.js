@@ -1,9 +1,9 @@
 let {
     flags, def, req, enumeration, uint8, 
-    format, subrecord, struct, ckFormId, sortKey, 
-    bytes, size, union, int8, memberArray, 
-    memberStruct, localized, string, uint16, float, 
-    uint32, empty, record
+    format, struct, subrecord, ckFormId, opts, 
+    sortKey, bytes, size, union, int8, 
+    memberArray, memberStruct, localized, string, uint16, 
+    float, uint32, empty, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -39,11 +39,13 @@ module.exports = () => {
             memberArray('Effects', 
                 sortKey([0, 1], memberStruct('Effect', [
                     subrecord('PRKE', sortKey([1, 2, 0], struct('Header', [
-                        format(uint8('Type'), enumeration({
+                        opts(req(format(uint8('Type'), enumeration({
                             0: 'Quest + Stage',
                             1: 'Ability',
                             2: 'Entry Point'
-                        })),
+                        }))), {
+                            "afterSet": "PERKPRKETypeAfterSet"
+                        }),
                         uint8('Rank'),
                         uint8('Priority')
                     ]))),
@@ -55,7 +57,7 @@ module.exports = () => {
                         ])),
                         ckFormId('Ability', ['SPEL']),
                         sortKey([0, 1], struct('Entry Point', [
-                            format(uint8('Entry Point'), def('EntryPointsEnum')),
+                            req(format(uint8('Entry Point'), def('EntryPointsEnum'))),
                             format(uint8('Function'), enumeration({
                                 0: 'Unknown 0',
                                 1: 'Set Value',

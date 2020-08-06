@@ -22,12 +22,14 @@
         {
             "signature": "ANAM",
             "name": "Opacity",
-            "type": "uint8"
+            "type": "uint8",
+            "required": true
         },
         {
             "signature": "FNAM",
             "name": "Flags",
             "type": "uint8",
+            "required": true,
             "format": {
                 "type": "flags",
                 "flags": {
@@ -46,7 +48,8 @@
             "signature": "MNAM",
             "name": "Unused",
             "type": "bytes",
-            "size": 0
+            "size": 0,
+            "required": true
         },
         {
             "signature": "TNAM",
@@ -84,7 +87,8 @@
         {
             "signature": "DATA",
             "name": "Unused",
-            "type": "uint16"
+            "type": "uint16",
+            "required": true
         },
         {
             "signature": "DNAM",
@@ -332,7 +336,8 @@
             "signature": "GNAM",
             "name": "Unused",
             "type": "bytes",
-            "size": 0
+            "size": 0,
+            "required": true
         },
         {
             "signature": "NAM0",

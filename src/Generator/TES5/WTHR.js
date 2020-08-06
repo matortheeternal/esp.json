@@ -1,5 +1,5 @@
 let {
-    def, subrecord, string, bytes, size, 
+    def, string, subrecord, bytes, size, 
     unknown, ckFormId, req, uint8, format, 
     array, opts, memberStruct, float, struct, 
     flags, uint32, enumeration, memberArray, sorted, 
@@ -51,18 +51,18 @@ module.exports = () => {
                 opts(subrecord('RNAM', array('Y Speed', 
                     format(uint8('Layer'), def('CloudSpeedToStr'))
                 )), {
-                    "includeFlag": "dfNotAlignable"
+                    "notAlignable": 1
                 }),
                 opts(subrecord('QNAM', array('X Speed', 
                     format(uint8('Layer'), def('CloudSpeedToStr'))
                 )), {
-                    "includeFlag": "dfNotAlignable"
+                    "notAlignable": 1
                 })
             ]),
             opts(subrecord('PNAM', array('Cloud Colors', 
                 def('WeatherColors', { name: 'Layer' })
             )), {
-                "includeFlag": "dfNotAlignable"
+                "notAlignable": 1
             }),
             opts(subrecord('JNAM', array('Cloud Alphas', 
                 struct('Layer', [
@@ -72,7 +72,7 @@ module.exports = () => {
                     float('Night')
                 ])
             )), {
-                "includeFlag": "dfNotAlignable"
+                "notAlignable": 1
             }),
             req(subrecord('NAM0', struct('Weather Colors', [
                 def('WeatherColors', { name: 'Sky-Upper' }),

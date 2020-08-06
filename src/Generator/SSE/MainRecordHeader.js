@@ -1,7 +1,6 @@
 let {
     addDef, string, size, uint32, def, 
-    formId, bytes, opts, union, uint16, 
-    struct
+    formId, bytes, union, uint16, struct
 } = require('../helpers');
 
 module.exports = () => {
@@ -12,12 +11,8 @@ module.exports = () => {
             def('RecordFlags'),
             formId('FormID'),
             union('Version Control Info 1', 'FormVer44Decider', [
-                opts(size(4, bytes('Version Control Info 1')), {
-                    "toStr": "VCI1ToStrBeforeFO4"
-                }),
-                opts(size(4, bytes('Version Control Info 1')), {
-                    "toStr": "VCI1ToStrAfterFO4"
-                })
+                size(4, bytes('Version Control Info 1')),
+                size(4, bytes('Version Control Info 1'))
             ]),
             uint16('Form Version'),
             size(2, bytes('Version Control Info 2'))

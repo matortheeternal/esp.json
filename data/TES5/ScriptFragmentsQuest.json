@@ -20,6 +20,7 @@
             "name": "Fragments",
             "type": "array",
             "sorted": true,
+            "afterSet": "ScriptFragmentsQuestFragmentsAfterSet",
             "counter": {
                 "type": "ScriptFragmentsQuestCounter"
             },

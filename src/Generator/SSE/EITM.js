@@ -1,5 +1,5 @@
 let {
-    addDef, subrecord, ckFormId
+    addDef, ckFormId, subrecord
 } = require('../helpers');
 
 module.exports = () => {

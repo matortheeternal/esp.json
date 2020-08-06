@@ -1,5 +1,5 @@
 let {
-    def, req, subrecord, ckFormId, formId, 
+    def, req, ckFormId, subrecord, formId, 
     float, flags, uint32, format, struct, 
     record
 } = require('../helpers');
@@ -37,7 +37,7 @@ module.exports = () => {
                     7: 'Chain',
                     8: 'No Controller Vibration'
                 })),
-                format(uint32('Sound Level'), def('SoundLevelEnum'))
+                req(format(uint32('Sound Level'), def('SoundLevelEnum')))
             ])))
         ]
     })

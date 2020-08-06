@@ -1,5 +1,6 @@
-let ParseError = require('./ParseError'),
-    {optsReq} = require('./helpers');
+let ParseError = require('./ParseError');
+let {optsLine} = require('./helpers');
+let {subrecordSig} = require('./args');
 
 let functionExpr = /^(\w+)\s*\(/;
 
@@ -13,19 +14,11 @@ let functionConverter = function(name, args, convert ) {
 
 let subrecordAndField = function(name, args, convert) {
     functionConverter(name, [
-        { type: 'signature', name: 'sig' },
+        subrecordSig,
         ...args
-    ], (args, converter, opts) => {
-        converter.addRequires('subrecord');
-        let field = convert(args, converter),
-            line = `subrecord('${args.sig}', ${field})`;
-        return optsReq(args, opts, line, converter);
-    });
+    ], convert);
 
-    functionConverter(name, args, (args, converter, opts) => {
-        let line = convert(args, converter);
-        return optsReq(args, opts, line, converter);
-    });
+    functionConverter(name, args, convert);
 };
 
 let statementConverter = function(name, converter) {
@@ -48,12 +41,12 @@ let convertStatement = function(converter) {
 };
 
 let parseArguments = function(args, fnArgs, converter) {
-    for (let i = args.length; i < fnArgs.length; i++) {
+    for (let i = args.types.length; i < fnArgs.length; i++) {
         let arg = fnArgs[i],
             value = converter.parseType(arg.type, arg);
         if (value === undefined) return false;
         //console.log(`Parsed argument ${i}, ${arg.type}: ${value}`);
-        args[i] = arg;
+        args.types[i] = arg;
         args.values[i] = value;
         if (arg.name) args[arg.name] = value;
         converter.next();
@@ -64,7 +57,7 @@ let parseArguments = function(args, fnArgs, converter) {
 };
 
 let matchParsedArguments = function(args, fnArgs) {
-    return args.find((arg, index) => {
+    return args.types.find((arg, index) => {
         return fnArgs[index].type !== arg.type;
     }) === undefined;
 };
@@ -86,6 +79,16 @@ let getConverters = function(functionName) {
     }, []);
 };
 
+let addDefaultArgValues = function(fn, args) {
+    for (let i = args.types.length; i < fn.args.length; i++) {
+        let fnArg = fn.args[i];
+        if (!fnArg.default) return;
+        args.types.push(fnArg);
+        args.values.push(fnArg.defaultValue);
+        args[fnArg.name] = fnArg.defaultValue;
+    }
+};
+
 let findConverter = function(functionName, args, converter) {
     let fnConverter = getConverters(functionName).find(fn => {
         return matchParsedArguments(args, fn.args) &&
@@ -93,19 +96,40 @@ let findConverter = function(functionName, args, converter) {
     });
     if (!fnConverter)
         throw new ParseError(`Matching "${functionName}" function converter not found.`);
+    addDefaultArgValues(fnConverter, args);
     return fnConverter;
+};
+
+let applyExtArgs = function(args, line, converter, opts) {
+    args.types.sort((a, b) => {
+        return (b.priority || 0) - (a.priority || 0);
+    }).forEach(argType => {
+        if (!argType.handle) return;
+        let value = args[argType.name];
+        line = argType.handle(value, line, converter, opts);
+    });
+    return line;
+};
+
+let convertExtFunction = function(converter, opts) {
+    let functionName = getFunctionName(converter),
+        args = { types: [], values: [] };
+    let fnConverter = findConverter(functionName, args, converter);
+    if (converter.chomp('.')) convertExtFunction(converter, opts);
+    fnConverter.convert(args, converter, opts);
 };
 
 let convertFunction = function(converter, functionName) {
     if (!functionName) functionName = getFunctionName(converter);
     //console.log(`Parsing function ${functionName}`);
     let opts = {},
-        args = [];
-    args.values = [];
+        args = { types: [], values: [] };
     let fnConverter = findConverter(functionName, args, converter);
-    if (converter.chomp('.')) opts = convertFunction(converter);
+    if (converter.chomp('.')) convertExtFunction(converter, opts);
     converter.chomp(';');
-    return fnConverter.convert(args, converter, opts);
+    let line = fnConverter.convert(args, converter, opts);
+    line = applyExtArgs(args, line, converter, opts);
+    return optsLine(opts, line, converter);
 };
 
 module.exports = {

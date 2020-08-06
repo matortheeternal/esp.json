@@ -1,16 +1,16 @@
 let {functionConverter} = require('../converters'),
-    {args, reqLine} = require('../helpers');
+    args = require('../args');
 
+// wbInterface.pas#7605
 functionConverter('wbRUnion', [
     args.name,
     args.members,
     args.signatures,
-    args.identifier,
+    args.priority,
     args.required,
-    args.identifier,
-    args.identifier
-], ({name, members, required}, converter) => {
+    args.dontShow,
+    args.getCP
+], (args, converter) => {
     converter.addRequires('memberUnion');
-    let line = `memberUnion(${name}, ${members})`;
-    return reqLine(required, line, converter);
+    return `memberUnion(${args.name}, ${args.members})`;
 });

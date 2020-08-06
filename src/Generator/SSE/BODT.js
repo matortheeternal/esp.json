@@ -1,6 +1,6 @@
 let {
     addDef, def, flags, uint8, format, 
-    bytes, size, uint32, subrecord, struct, 
+    bytes, size, uint32, struct, subrecord, 
     req
 } = require('../helpers');
 

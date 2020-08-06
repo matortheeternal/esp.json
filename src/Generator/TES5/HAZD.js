@@ -1,5 +1,5 @@
 let {
-    def, req, subrecord, ckFormId, uint32, 
+    def, req, ckFormId, subrecord, uint32, 
     float, flags, format, struct, record
 } = require('../helpers');
 

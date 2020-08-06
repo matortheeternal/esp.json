@@ -1,24 +1,32 @@
 let {subrecordAndField, functionConverter} = require('../converters'),
-    {sizeLine, args} = require('../helpers');
+    {sizeLine} = require('../helpers'),
+    args = require('../args');
 
+let convertString = (args, converter) => {
+    converter.addRequires('string');
+    return `string(${args.name})`;
+};
+
+// wbInterface.pas#2482
+// wbInterface.pas#2492
 subrecordAndField('wbString', [
     args.name,
-    args.size,
-    args.conflictPriority,
+    args.stringSize,
+    args.priority,
     args.required,
-    args.identifier,
-    args.identifier,
-    args.identifier
-], ({name, size}, converter) => {
-    converter.addRequires('string');
-    return sizeLine(size, `string(${name})`, converter);
-});
+    args.dontShow,
+    args.afterSet,
+    args.getCP
+], convertString);
 
+// wbInterface.pas#2511
 functionConverter('wbString', [
-    args.boolean,
+    args.boolean, // forward
     args.name,
-    args.size
-], ({name, size}, converter) => {
-    converter.addRequires('string');
-    return sizeLine(size, `string(${name})`, converter);
-});
+    args.stringSize,
+    args.priority,
+    args.required,
+    args.dontShow,
+    args.afterSet,
+    args.getCP
+], convertString);

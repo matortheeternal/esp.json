@@ -1,11 +1,11 @@
 let {
-    addDef, def, memberArray
+    addDef, def, memberArray, req
 } = require('../helpers');
 
 module.exports = () => {
     addDef('CTDAs', 
-        memberArray('Conditions', 
+        req(memberArray('Conditions', 
             def('CTDA')
-        )
+        ))
     );
 };

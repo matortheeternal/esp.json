@@ -44,14 +44,14 @@ module.exports = () => {
                 float('FOV'),
                 float('Near Clip'),
                 struct('Flicker Effect', [
-                    req(req(scale(0.01, float('Period')))),
+                    req(scale(0.01, float('Period'))),
                     float('Intensity Amplitude'),
                     float('Movement Amplitude')
                 ]),
                 uint32('Value'),
                 float('Weight')
             ]))),
-            req(subrecord('FNAM', req(float('Fade value')))),
+            req(subrecord('FNAM', float('Fade value'))),
             subrecord('SNAM', ckFormId('Sound', ['SNDR']))
         ]
     })

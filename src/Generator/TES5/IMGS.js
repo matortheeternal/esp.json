@@ -1,5 +1,5 @@
 let {
-    def, subrecord, unknown, float, struct, 
+    def, unknown, subrecord, float, struct, 
     bytes, size, enumeration, uint16, format, 
     req, record
 } = require('../helpers');

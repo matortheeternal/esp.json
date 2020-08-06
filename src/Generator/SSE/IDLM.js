@@ -1,6 +1,6 @@
 let {
-    flags, def, req, subrecord, uint8, 
-    format, float, ckFormId, array, opts, 
+    flags, def, req, uint8, format, 
+    subrecord, float, ckFormId, array, opts, 
     record
 } = require('../helpers');
 
@@ -13,20 +13,20 @@ module.exports = () => {
         members: [
             def('EDID'),
             req(def('OBND')),
-            subrecord('IDLF', format(uint8('Flags'), flags({
+            req(subrecord('IDLF', format(uint8('Flags'), flags({
                 0: 'Run in Sequence',
                 1: 'Unknown 1',
                 2: 'Do Once',
                 3: 'Unknown 3',
                 4: 'Ignored by Sandbox'
-            }))),
+            })))),
             subrecord('IDLC', uint8('Animation Count')),
-            req(subrecord('IDLT', req(float('Idle Timer Setting')))),
-            subrecord('IDLA', opts(array('Animations', 
+            req(subrecord('IDLT', float('Idle Timer Setting'))),
+            opts(req(subrecord('IDLA', array('Animations', 
                 ckFormId('Animation', ['IDLE'])
-            ), {
+            ))), {
                 "afterSet": "IDLAsAfterSet"
-            })),
+            }),
             def('MODL')
         ]
     })

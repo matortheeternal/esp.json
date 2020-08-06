@@ -1,6 +1,6 @@
 let {
-    flags, def, req, subrecord, uint8, 
-    format, ckFormId, record
+    flags, def, req, uint8, format, 
+    subrecord, ckFormId, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -23,11 +23,11 @@ module.exports = () => {
             def('FULL'),
             def('MODL'),
             def('DEST'),
-            subrecord('DATA', format(uint8('Flags'), flags({
+            req(subrecord('DATA', format(uint8('Flags'), flags({
                 0: 'On Local Map',
                 1: 'Unknown 1',
                 2: 'Unknown 2'
-            }))),
+            })))),
             subrecord('SNAM', ckFormId('Looping Sound', ['SNDR']))
         ]
     })

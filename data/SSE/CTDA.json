@@ -6,10 +6,13 @@
             "signature": "CTDA",
             "name": "",
             "type": "struct",
+            "required": true,
             "elements": [
                 {
                     "name": "Type",
                     "type": "uint8",
+                    "required": true,
+                    "afterSet": "CtdaTypeAfterSet",
                     "format": {
                         "type": "CtdaTypeFormat"
                     }
@@ -17,7 +20,8 @@
                 {
                     "name": "Unused",
                     "type": "bytes",
-                    "size": 3
+                    "size": 3,
+                    "required": true
                 },
                 {
                     "name": "Comparison Value",
@@ -47,7 +51,8 @@
                 {
                     "name": "Unused",
                     "type": "bytes",
-                    "size": 2
+                    "size": 2,
+                    "required": true
                 },
                 {
                     "name": "Parameter #1",
@@ -63,7 +68,7 @@
                             "name": "None",
                             "type": "bytes",
                             "size": 4,
-                            "includeFlag": "dfZeroSortKey"
+                            "zeroSortKey": 1
                         },
                         {
                             "name": "Integer",
@@ -111,7 +116,7 @@
                         {
                             "name": "Quest Stage (unused)",
                             "type": "int32",
-                            "includeFlag": "dfZeroSortKey"
+                            "zeroSortKey": 1
                         },
                         {
                             "name": "Misc Stat",
@@ -348,7 +353,7 @@
                         {
                             "name": "VATS Value Param (INVALID)",
                             "type": "uint32",
-                            "includeFlag": "dfZeroSortKey"
+                            "zeroSortKey": 1
                         },
                         {
                             "name": "Referenceable Object",
@@ -528,7 +533,7 @@
                             "name": "None",
                             "type": "bytes",
                             "size": 4,
-                            "includeFlag": "dfZeroSortKey"
+                            "zeroSortKey": 1
                         },
                         {
                             "name": "Integer",
@@ -882,13 +887,13 @@
                                     "name": "Unknown",
                                     "type": "bytes",
                                     "size": 4,
-                                    "includeFlag": "dfZeroSortKey"
+                                    "zeroSortKey": 1
                                 },
                                 {
                                     "name": "Unknown",
                                     "type": "bytes",
                                     "size": 4,
-                                    "includeFlag": "dfZeroSortKey"
+                                    "zeroSortKey": 1
                                 },
                                 {
                                     "name": "Critical Effect",
@@ -908,25 +913,25 @@
                                     "name": "Unknown",
                                     "type": "bytes",
                                     "size": 4,
-                                    "includeFlag": "dfZeroSortKey"
+                                    "zeroSortKey": 1
                                 },
                                 {
                                     "name": "Unknown",
                                     "type": "bytes",
                                     "size": 4,
-                                    "includeFlag": "dfZeroSortKey"
+                                    "zeroSortKey": 1
                                 },
                                 {
                                     "name": "Unknown",
                                     "type": "bytes",
                                     "size": 4,
-                                    "includeFlag": "dfZeroSortKey"
+                                    "zeroSortKey": 1
                                 },
                                 {
                                     "name": "Unknown",
                                     "type": "bytes",
                                     "size": 4,
-                                    "includeFlag": "dfZeroSortKey"
+                                    "zeroSortKey": 1
                                 },
                                 {
                                     "name": "Weapon Type",
@@ -939,13 +944,13 @@
                                     "name": "Unknown",
                                     "type": "bytes",
                                     "size": 4,
-                                    "includeFlag": "dfZeroSortKey"
+                                    "zeroSortKey": 1
                                 },
                                 {
                                     "name": "Unknown",
                                     "type": "bytes",
                                     "size": 4,
-                                    "includeFlag": "dfZeroSortKey"
+                                    "zeroSortKey": 1
                                 },
                                 {
                                     "name": "Projectile Type",
@@ -1145,6 +1150,8 @@
                 {
                     "name": "Run On",
                     "type": "uint32",
+                    "required": true,
+                    "afterSet": "CTDARunOnAfterSet",
                     "format": {
                         "type": "enum",
                         "options": {
@@ -1190,7 +1197,8 @@
                 },
                 {
                     "name": "Parameter #3",
-                    "type": "int32"
+                    "type": "int32",
+                    "required": true
                 }
             ],
             "sortKey": [

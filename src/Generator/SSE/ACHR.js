@@ -1,5 +1,5 @@
 let {
-    flags, showUnknown, def, subrecord, ckFormId, 
+    flags, showUnknown, def, ckFormId, subrecord, 
     req, float, empty, unknown, memberStruct, 
     int32, sortKey, struct, sorted, memberArray, 
     uint8, format, array, record
@@ -24,7 +24,7 @@ module.exports = () => {
             def('XRGD'),
             def('XRGB'),
             memberStruct('Patrol Data', [
-                req(subrecord('XPRD', req(float('Idle Time')))),
+                req(subrecord('XPRD', float('Idle Time'))),
                 req(subrecord('XPPA', empty('Patrol Script Marker'))),
                 req(subrecord('INAM', ckFormId('Idle', ['IDLE', 'NULL']))),
                 req(memberStruct('Unused', [
@@ -43,7 +43,7 @@ module.exports = () => {
             subrecord('XRDS', float('Radius')),
             subrecord('XHLP', float('Health')),
             sorted(memberArray('Linked References', 
-                subrecord('XLKR', sortKey([0], struct('Linked Reference', [
+                req(subrecord('XLKR', sortKey([0], struct('Linked Reference', [
                     ckFormId('Keyword/Ref', [
                         'KYWD', 'PLYR', 'ACHR', 'REFR', 'PGRE',
                         'PHZD', 'PMIS', 'PARW', 'PBAR', 'PBEA',
@@ -54,7 +54,7 @@ module.exports = () => {
                         'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON',
                         'PFLA'
                     ])
-                ])))
+                ]))))
             )),
             memberStruct('Activate Parents', [
                 subrecord('XAPD', format(uint8('Flags'), flags({

@@ -1,6 +1,6 @@
 let {
     def, ckFormId, int32, enumeration, uint32, 
-    format, subrecord, sortKey, struct, sorted, 
+    format, sortKey, struct, subrecord, sorted, 
     memberArray, flags, req, uint8, uint16, 
     float, localized, string, memberStruct, bytes, 
     size, record

@@ -1,6 +1,6 @@
 let {
-    flags, def, uint32, float, subrecord, 
-    struct, req, uint8, format, ckFormId, 
+    flags, def, uint32, float, struct, 
+    subrecord, req, uint8, format, ckFormId, 
     record
 } = require('../helpers');
 
@@ -25,8 +25,8 @@ module.exports = () => {
                 uint32('Value'),
                 float('Weight')
             ]))),
-            subrecord('SOUL', format(uint8('Contained Soul'), def('SoulGemEnum'))),
-            subrecord('SLCP', format(uint8('Maximum Capacity'), def('SoulGemEnum'))),
+            req(subrecord('SOUL', format(uint8('Contained Soul'), def('SoulGemEnum')))),
+            req(subrecord('SLCP', format(uint8('Maximum Capacity'), def('SoulGemEnum')))),
             subrecord('NAM0', ckFormId('Linked To', ['SLGM']))
         ]
     })

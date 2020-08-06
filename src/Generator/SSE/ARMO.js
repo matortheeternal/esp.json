@@ -1,5 +1,5 @@
 let {
-    flags, def, req, subrecord, uint16, 
+    flags, def, req, uint16, subrecord, 
     string, bytes, size, memberStruct, ckFormId, 
     memberArray, int32, float, struct, div, 
     format, record
@@ -23,13 +23,13 @@ module.exports = () => {
             subrecord('EAMT', uint16('Enchantment Amount')),
             memberStruct('Male world model', [
                 subrecord('MOD2', string('Model FileName')),
-                subrecord('MO2T', size(0, bytes('Texture Files Hashes'))),
+                req(subrecord('MO2T', size(0, bytes('Texture Files Hashes')))),
                 def('MO2S')
             ]),
             def('ICON'),
             memberStruct('Female world model', [
                 subrecord('MOD4', string('Model FileName')),
-                subrecord('MO4T', size(0, bytes('Texture Files Hashes'))),
+                req(subrecord('MO4T', size(0, bytes('Texture Files Hashes')))),
                 def('MO4S')
             ]),
             def('ICO2'),
@@ -52,7 +52,7 @@ module.exports = () => {
                 int32('Value'),
                 float('Weight')
             ]))),
-            subrecord('DNAM', format(int32('Armor Rating'), div(100))),
+            req(subrecord('DNAM', format(int32('Armor Rating'), div(100)))),
             subrecord('TNAM', ckFormId('Template Armor', ['ARMO']))
         ]
     })

@@ -1,9 +1,9 @@
 let {functionConverter} = require('../converters'),
-    {args} = require('../helpers');
+    args = require('../args');
 
 functionConverter('wbCounterAfterSet', [
-    { type: 'string', name: 'path' },
-    args.identifier
+    args.path,
+    args.identifier // discard
 ], ({path}, converter) => {
     let storage = converter.getData(converter.regionName);
     if (!storage) {

@@ -1,9 +1,9 @@
 let {
-    flags, subrecord, uint32, format, uint8, 
-    struct, array, size, float, bytes, 
-    ckFormId, def, int16, sortKey, memberStruct, 
-    uint16, sorted, memberUnion, memberArray, unknown, 
-    record
+    flags, uint32, format, subrecord, uint8, 
+    struct, array, count, float, bytes, 
+    size, ckFormId, def, int16, sortKey, 
+    memberStruct, uint16, sorted, memberUnion, memberArray, 
+    unknown, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -26,9 +26,9 @@ module.exports = () => {
                 9: '',
                 10: 'MPCD'
             }))),
-            subrecord('VNML', size(33, array('Vertex Normals', 
+            subrecord('VNML', count(33, array('Vertex Normals', 
                 struct('Row', [
-                    size(33, array('Columns', 
+                    count(33, array('Columns', 
                         struct('Column', [
                             uint8('X'),
                             uint8('Y'),
@@ -39,18 +39,18 @@ module.exports = () => {
             ))),
             subrecord('VHGT', struct('Vertext Height Map', [
                 float('Offset'),
-                size(33, array('Rows', 
+                count(33, array('Rows', 
                     struct('Row', [
-                        size(33, array('Columns', 
+                        count(33, array('Columns', 
                             uint8('Column')
                         ))
                     ])
                 )),
                 size(3, bytes('Unused'))
             ])),
-            subrecord('VCLR', size(33, array('Vertex Colours', 
+            subrecord('VCLR', count(33, array('Vertex Colours', 
                 struct('Row', [
-                    size(33, array('Columns', 
+                    count(33, array('Columns', 
                         struct('Column', [
                             uint8('X'),
                             uint8('Y'),

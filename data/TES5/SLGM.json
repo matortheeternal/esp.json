@@ -60,6 +60,7 @@
             "signature": "SOUL",
             "name": "Contained Soul",
             "type": "uint8",
+            "required": true,
             "format": {
                 "id": "SoulGemEnum"
             }
@@ -68,6 +69,7 @@
             "signature": "SLCP",
             "name": "Maximum Capacity",
             "type": "uint8",
+            "required": true,
             "format": {
                 "id": "SoulGemEnum"
             }

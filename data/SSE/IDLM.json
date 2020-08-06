@@ -21,6 +21,7 @@
             "signature": "IDLF",
             "name": "Flags",
             "type": "uint8",
+            "required": true,
             "format": {
                 "type": "flags",
                 "flags": {
@@ -47,6 +48,7 @@
             "signature": "IDLA",
             "name": "Animations",
             "type": "array",
+            "required": true,
             "afterSet": "IDLAsAfterSet",
             "element": {
                 "name": "Animation",

@@ -1,5 +1,5 @@
 let {
-    def, subrecord, float, req, ckFormId, 
+    def, float, subrecord, req, ckFormId, 
     flags, uint8, format, enumeration, uint16, 
     struct, string, size, uint32, record
 } = require('../helpers');
@@ -9,13 +9,13 @@ module.exports = () => {
         members: [
             def('EDID'),
             def('FULL'),
-            req(subrecord('PNAM', req(float('Priority')))),
+            req(subrecord('PNAM', float('Priority'))),
             subrecord('BNAM', ckFormId('Branch', ['DLBR', 'NULL'])),
             req(subrecord('QNAM', ckFormId('Quest', ['QUST', 'NULL']))),
             subrecord('DATA', struct('Data', [
-                format(uint8('Topic Flags'), flags({
+                req(format(uint8('Topic Flags'), flags({
                     0: 'Do All Before Repeating'
-                })),
+                }))),
                 format(uint8('Category'), enumeration({
                     0: 'Topic',
                     1: 'Favor',

@@ -3,6 +3,7 @@
     "name": "Keywords",
     "type": "array",
     "sorted": true,
+    "required": true,
     "counter": {
         "type": "elementCounter",
         "path": "KSIZ - Keyword Count"

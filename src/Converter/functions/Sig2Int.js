@@ -1,4 +1,4 @@
 let {functionConverter} = require('../converters'),
-    {args} = require('../helpers');
+    args = require('../args');
 
 functionConverter('Sig2Int', [args.string], args => args.values[0]);

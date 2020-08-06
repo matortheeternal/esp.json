@@ -182,19 +182,22 @@
                                     "signature": "SCHR",
                                     "name": "Unused",
                                     "type": "bytes",
-                                    "size": 0
+                                    "size": 0,
+                                    "required": true
                                 },
                                 {
                                     "signature": "SCTX",
                                     "name": "Unused",
                                     "type": "bytes",
-                                    "size": 0
+                                    "size": 0,
+                                    "required": true
                                 },
                                 {
                                     "signature": "QNAM",
                                     "name": "Unused",
                                     "type": "bytes",
-                                    "size": 0
+                                    "size": 0,
+                                    "required": true
                                 }
                             ]
                         }
@@ -233,8 +236,8 @@
                         "name": "Display Text",
                         "type": "string",
                         "localized": true,
-                        "keepCase": true,
-                        "required": true
+                        "required": true,
+                        "keepCase": true
                     },
                     {
                         "name": "Targets",

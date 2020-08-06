@@ -11,6 +11,7 @@
             "name": "Objects",
             "type": "array",
             "sorted": true,
+            "required": true,
             "element": {
                 "name": "Object",
                 "type": "struct",

@@ -1,8 +1,8 @@
 let {functionConverter} = require('../converters'),
-    {args} = require('../helpers');
+    args = require('../args');
 
 functionConverter('OverrideEncoding', [
     args.identifier
 ], (args, converter, opts) => {
-    return { encoding: args.values[0], ...opts };
+    opts.encoding = args.values[0];
 });

@@ -1,5 +1,5 @@
 let {subrecordAndField} = require('../converters'),
-    {args} = require('../helpers');
+    args = require('../args');
 
 subrecordAndField('wbAmbientColors', [
     args.name

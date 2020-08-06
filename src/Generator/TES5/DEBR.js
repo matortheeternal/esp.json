@@ -1,6 +1,6 @@
 let {
     def, uint8, string, flags, format, 
-    subrecord, struct, req, memberArray, memberStruct, 
+    struct, subrecord, req, memberArray, memberStruct, 
     record
 } = require('../helpers');
 

@@ -10,7 +10,7 @@ module.exports = () => {
             int8('Unknown'),
             uint16('FragmentCount'),
             prefix(2, string('FileName')),
-            customCounter('ScriptFragmentsQuestCounter', 
+            opts(customCounter('ScriptFragmentsQuestCounter', 
                 sorted(array('Fragments', 
                     sortKey([0, 2], struct('Fragment', [
                         uint16('Quest Stage'),
@@ -21,7 +21,9 @@ module.exports = () => {
                         prefix(2, string('FragmentName'))
                     ]))
                 ))
-            )
+            ), {
+                "afterSet": "ScriptFragmentsQuestFragmentsAfterSet"
+            })
         ]), {
             "afterSet": "ScriptFragmentsQuestAfterSet"
         })

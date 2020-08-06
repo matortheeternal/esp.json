@@ -1,5 +1,6 @@
 let {functionConverter} = require('../converters'),
-    {args, stringify} = require('../helpers');
+    {stringify} = require('../helpers'),
+    args = require('../args');
 
 let convertFlags = ({flags}, converter) => {
     if (typeof flags === 'string') return flags;
@@ -10,24 +11,24 @@ let convertFlags = ({flags}, converter) => {
 // inherit flags
 functionConverter('wbFlags', [
     args.identifier,
-    { type: 'flagsField', name: 'flags' },
-    { type: 'boolean', name: 'unused' }
+    args.flagsField,
+    args.boolean // aUnknownIsUnused
 ], convertFlags);
 
 // TODO: handle flagsToIgnore ?
 functionConverter('wbFlags', [
     args.identifier,
-    { type: 'flagsField', name: 'flags' },
-    { type: 'array of number', name: 'flagsToIgnore' }
+    args.flagsField,
+    args.flagsToIgnore
 ], convertFlags);
 
 // new flags
 functionConverter('wbFlags', [
-    { type: 'flagsField', name: 'flags' },
-    { type: 'boolean', name: 'unused' }
+    args.flagsField,
+    args.boolean // aUnknownIsUnused
 ], convertFlags);
 
 functionConverter('wbFlags', [
-    { type: 'flagsField', name: 'flags' },
-    { type: 'array of number', name: 'flagsToIgnore' }
+    args.flagsField,
+    args.flagsToIgnore
 ], convertFlags);

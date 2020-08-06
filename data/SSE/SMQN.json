@@ -74,11 +74,17 @@
         {
             "signature": "QNAM",
             "name": "Quest Count",
-            "type": "uint32"
+            "type": "uint32",
+            "required": true
         },
         {
             "name": "Quests",
             "type": "memberArray",
+            "required": true,
+            "counter": {
+                "type": "elementCounter",
+                "path": "QNAM - Quest Count"
+            },
             "member": {
                 "name": "Quest",
                 "type": "memberStruct",

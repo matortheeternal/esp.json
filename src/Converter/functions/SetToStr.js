@@ -1,8 +1,8 @@
 let {functionConverter} = require('../converters'),
-    {args} = require('../helpers');
+    args = require('../args');
 
 functionConverter('SetToStr', [
     args.identifier
 ], (args, converter, opts) => {
-    return { toStr: args.values[0], ...opts };
+    //opts.toStr = args.values[0];
 });

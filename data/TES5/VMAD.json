@@ -18,6 +18,7 @@
             "type": "array",
             "sorted": true,
             "prefix": 2,
+            "required": true,
             "element": {
                 "id": "ScriptEntry"
             }

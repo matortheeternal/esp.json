@@ -1,9 +1,9 @@
 let {
-    addDef, subrecord, bytes, size
+    addDef, bytes, size, subrecord, req
 } = require('../helpers');
 
 module.exports = () => {
     addDef('DMDT', 
-        subrecord('DMDT', size(0, bytes('Texture Files Hashes')))
+        req(subrecord('DMDT', size(0, bytes('Texture Files Hashes'))))
     );
 };

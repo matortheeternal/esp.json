@@ -1,6 +1,6 @@
 let {
-    flags, showUnknown, formatUnion, def, subrecord, 
-    ckFormId, req, float, struct, scale, 
+    flags, showUnknown, formatUnion, def, ckFormId, 
+    subrecord, req, float, struct, scale, 
     enumeration, uint32, format, unknown, array, 
     uint8, bytes, size, sorted, memberArray, 
     memberStruct, empty, sortKey, int16, int32, 
@@ -8,7 +8,7 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    record('REFR', 'Placed Object', {
+    req(record('REFR', 'Placed Object', {
         flags: formatUnion('REFRRecordFlagsDecider', [
             showUnknown(flags({
                 5: 'Deleted',
@@ -138,14 +138,14 @@ module.exports = () => {
             ])),
             subrecord('XPRM', struct('Primitive', [
                 struct('Bounds', [
-                    req(req(scale(2, float('X')))),
-                    req(req(scale(2, float('Y')))),
-                    req(req(scale(2, float('Z'))))
+                    req(scale(2, float('X'))),
+                    req(scale(2, float('Y'))),
+                    req(scale(2, float('Z')))
                 ]),
                 struct('Color', [
-                    req(req(scale(255, float('Red')))),
-                    req(req(scale(255, float('Green')))),
-                    req(req(scale(255, float('Blue'))))
+                    req(scale(255, float('Red'))),
+                    req(scale(255, float('Green'))),
+                    req(scale(255, float('Blue')))
                 ]),
                 float('Unknown'),
                 format(uint32('Type'), enumeration({
@@ -159,8 +159,8 @@ module.exports = () => {
             subrecord('XORD', unknown()),
             subrecord('XOCP', struct('Occlusion Plane Data', [
                 struct('Size', [
-                    req(req(scale(2, float('Width')))),
-                    req(req(scale(2, float('Height'))))
+                    req(scale(2, float('Width'))),
+                    req(scale(2, float('Height')))
                 ]),
                 struct('Position', [
                     float('X'),
@@ -182,8 +182,8 @@ module.exports = () => {
             )),
             subrecord('XPTL', struct('Room Portal (unused)', [
                 struct('Size', [
-                    req(req(scale(2, float('Width')))),
-                    req(req(scale(2, float('Height'))))
+                    req(scale(2, float('Width'))),
+                    req(scale(2, float('Height')))
                 ]),
                 struct('Position', [
                     float('X'),
@@ -223,13 +223,13 @@ module.exports = () => {
             def('XRGB'),
             subrecord('XRDS', float('Radius')),
             sorted(memberArray('Reflected/Refracted By', 
-                subrecord('XPWR', sortKey([0], struct('Water', [
+                req(subrecord('XPWR', sortKey([0], struct('Water', [
                     ckFormId('Reference', ['REFR']),
                     format(uint32('Type'), flags({
                         0: 'Reflection',
                         1: 'Refraction'
                     }))
-                ])))
+                ]))))
             )),
             sorted(memberArray('Lit Water', 
                 subrecord('XLTW', ckFormId('Water', ['REFR']))
@@ -352,11 +352,11 @@ module.exports = () => {
             ),
             memberArray('Patrol', 
                 memberStruct('Data', [
-                    req(subrecord('XPRD', req(float('Idle Time')))),
+                    req(subrecord('XPRD', float('Idle Time'))),
                     req(subrecord('XPPA', empty('Patrol Script Marker'))),
                     req(subrecord('INAM', ckFormId('Idle', ['IDLE', 'NULL']))),
-                    subrecord('SCHR', size(0, bytes('Unused'))),
-                    subrecord('SCTX', size(0, bytes('Unused'))),
+                    req(subrecord('SCHR', size(0, bytes('Unused')))),
+                    req(subrecord('SCTX', size(0, bytes('Unused')))),
                     def('PDTOs')
                 ])
             ),
@@ -371,11 +371,11 @@ module.exports = () => {
             subrecord('ONAM', empty('Open by Default')),
             memberStruct('Map Marker', [
                 subrecord('XMRK', empty('Map Marker Data')),
-                subrecord('FNAM', format(uint8('Map Flags'), flags({
+                req(subrecord('FNAM', format(uint8('Map Flags'), flags({
                     0: 'Visible',
                     1: 'Can Travel To',
                     2: '"Show All" Hidden'
-                }))),
+                })))),
                 req(def('FULL')),
                 req(subrecord('TNAM', struct('', [
                     format(uint8('Type'), def('MapMarkerEnum')),
@@ -389,5 +389,5 @@ module.exports = () => {
             def('XLOD'),
             def('DataPosRot')
         ]
-    })
+    }))
 };

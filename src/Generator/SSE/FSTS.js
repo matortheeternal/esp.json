@@ -1,5 +1,5 @@
 let {
-    def, uint32, subrecord, struct, req, 
+    def, uint32, struct, subrecord, req, 
     ckFormId, array, record
 } = require('../helpers');
 
@@ -14,9 +14,9 @@ module.exports = () => {
                 uint32('Run Forward Alternate Sets'),
                 uint32('Walk Forward Alternate 2 Sets')
             ]))),
-            subrecord('DATA', array('Footstep Sets', 
+            req(subrecord('DATA', array('Footstep Sets', 
                 ckFormId('Footstep', ['FSTP'])
-            ))
+            )))
         ]
     })
 };

@@ -23,6 +23,8 @@
             "signature": "DATA",
             "name": "Flags",
             "type": "uint16",
+            "required": true,
+            "afterSet": "CELLDATAAfterSet",
             "format": {
                 "type": "flags",
                 "flags": {

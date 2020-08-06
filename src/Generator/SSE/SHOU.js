@@ -1,6 +1,6 @@
 let {
-    flags, def, ckFormId, float, subrecord, 
-    struct, memberArray, record
+    flags, def, ckFormId, float, struct, 
+    subrecord, memberArray, opts, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -14,13 +14,15 @@ module.exports = () => {
             def('FULL'),
             def('MDOB'),
             def('DESC'),
-            memberArray('Words of Power', 
+            opts(memberArray('Words of Power', 
                 subrecord('SNAM', struct('', [
                     ckFormId('Word', ['WOOP', 'NULL']),
                     ckFormId('Spell', ['SPEL', 'NULL']),
                     float('Recovery Time')
                 ]))
-            )
+            ), {
+                "notAlignable": 1
+            })
         ]
     })
 };

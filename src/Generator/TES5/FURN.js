@@ -1,5 +1,5 @@
 let {
-    flags, def, req, subrecord, unknown, 
+    flags, def, req, unknown, subrecord, 
     uint16, format, ckFormId, uint32, enumeration, 
     uint8, int8, struct, bytes, size, 
     memberStruct, memberArray, string, record

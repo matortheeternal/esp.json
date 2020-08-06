@@ -1,14 +1,11 @@
 let fs = require('fs'),
     path = require('path'),
+    {loadFilesFromFolder} = require('../loader'),
     {clearDefs, getDefs, getMetaDefs, getGroupOrder} = require('./helpers');
 
 let buildDefs = function(defGame, folderName) {
-    let generatorFolder = path.resolve(__dirname, folderName);
-    if (!fs.lstatSync(generatorFolder).isDirectory()) return;
-    fs.readdirSync(generatorFolder).forEach(file => {
-        let filePath = path.resolve(generatorFolder, file);
-        if (fs.lstatSync(filePath).isDirectory()) return;
-        require(filePath)(defGame);
+    loadFilesFromFolder(`Generator/${folderName}`, (filename, file) => {
+        file(defGame);
     });
 };
 

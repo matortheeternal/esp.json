@@ -1,7 +1,7 @@
 let {
     flags, def, ckFormId, enumeration, uint16, 
-    format, bytes, size, uint8, subrecord, 
-    struct, record
+    format, bytes, size, uint8, struct, 
+    subrecord, record
 } = require('../helpers');
 
 module.exports = () => {

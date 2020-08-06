@@ -24,6 +24,11 @@
         {
             "name": "Lens Flare Sprites",
             "type": "memberArray",
+            "required": true,
+            "counter": {
+                "type": "elementCounter",
+                "path": "LFSP - Count"
+            },
             "member": {
                 "name": "Flare",
                 "type": "memberStruct",

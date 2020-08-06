@@ -1,5 +1,5 @@
 let {
-    addDef, enumeration, subrecord, uint32, format, 
+    addDef, enumeration, uint32, format, subrecord, 
     ckFormId, req, uint8, sortKey, memberStruct, 
     sorted, memberArray
 } = require('../helpers');
@@ -35,7 +35,7 @@ module.exports = () => {
             req(sorted(memberArray('Sounds', 
                 sortKey([0], memberStruct('Sound', [
                     req(subrecord('CSDI', ckFormId('Sound', ['SNDR', 'NULL']))),
-                    subrecord('CSDC', uint8('Sound Chance'))
+                    req(subrecord('CSDC', uint8('Sound Chance')))
                 ]))
             )))
         ]))

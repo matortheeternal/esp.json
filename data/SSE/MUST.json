@@ -10,6 +10,7 @@
             "signature": "CNAM",
             "name": "Track Type",
             "type": "uint32",
+            "required": true,
             "format": {
                 "type": "enum",
                 "options": {
@@ -43,7 +44,7 @@
             "signature": "FNAM",
             "name": "Cue Points",
             "type": "array",
-            "includeFlag": "dfNotAlignable",
+            "notAlignable": 1,
             "element": {
                 "name": "Point",
                 "type": "float"

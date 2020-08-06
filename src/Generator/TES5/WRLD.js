@@ -1,8 +1,8 @@
 let {
     flags, def, IsSSE, int16, ckFormId, 
     struct, array, prefix, opts, subrecord, 
-    memberArray, uint8, format, bytes, size, 
-    req, memberStruct, float, string, int32, 
+    memberArray, req, uint8, format, bytes, 
+    size, memberStruct, float, string, int32, 
     record
 } = require('../helpers');
 
@@ -14,7 +14,7 @@ module.exports = game => {
         }),
         members: [
             def('EDID'),
-            memberArray(IsSSE(game, ['Large References', 'Unused RNAM']), 
+            opts(req(memberArray(IsSSE(game, ['Large References', 'Unused RNAM']), 
                 subrecord('RNAM', struct('Grid', [
                     int16('Y'),
                     int16('X'),
@@ -25,10 +25,12 @@ module.exports = game => {
                             int16('X')
                         ])
                     )), {
-                        "includeFlag": "dfNotAlignable"
+                        "notAlignable": 1
                     })
                 ]))
-            ),
+            )), {
+                "notAlignable": 1
+            }),
             def('MaxHeightDataWRLD'),
             def('FULL'),
             subrecord('WCTR', struct('Fixed Dimensions Center Cell', [
@@ -93,7 +95,7 @@ module.exports = game => {
                 float('Cell Z Offset')
             ]))),
             subrecord('NAMA', float('Distant LOD Multiplier')),
-            subrecord('DATA', format(uint8('Flags'), flags({
+            req(subrecord('DATA', format(uint8('Flags'), flags({
                 0: 'Small World',
                 1: 'Can\'t Fast Travel',
                 2: 'Unknown 3',
@@ -102,15 +104,15 @@ module.exports = game => {
                 5: 'No Sky',
                 6: 'Fixed Dimensions',
                 7: 'No Grass'
-            }))),
+            })))),
             memberStruct('Object Bounds', [
                 req(subrecord('NAM0', struct('Min', [
-                    req(req(format(float('X'), '1Div4096'))),
-                    req(req(format(float('Y'), '1Div4096')))
+                    req(format(float('X'), '1Div4096')),
+                    req(format(float('Y'), '1Div4096'))
                 ]))),
                 req(subrecord('NAM9', struct('Max', [
-                    req(req(format(float('X'), '1Div4096'))),
-                    req(req(format(float('Y'), '1Div4096')))
+                    req(format(float('X'), '1Div4096')),
+                    req(format(float('Y'), '1Div4096'))
                 ])))
             ]),
             subrecord('ZNAM', ckFormId('Music', ['MUSC'])),

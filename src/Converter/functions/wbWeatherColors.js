@@ -1,9 +1,9 @@
 let {functionConverter} = require('../converters'),
-    {args} = require('../helpers');
+    args = require('../args');
 
 functionConverter('wbWeatherColors', [
     args.name
-], ({name}, converter) => {
+], (args, converter) => {
     converter.addRequires('def');
-    return `def('WeatherColors', { name: ${name} })`;
+    return `def('WeatherColors', { name: ${args.name} })`;
 });

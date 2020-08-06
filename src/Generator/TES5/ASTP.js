@@ -1,5 +1,5 @@
 let {
-    def, subrecord, string, flags, uint32, 
+    def, string, subrecord, flags, uint32, 
     format, record
 } = require('../helpers');
 

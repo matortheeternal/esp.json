@@ -1,5 +1,5 @@
 let {
-    def, subrecord, localized, string, req, 
+    def, localized, string, subrecord, req, 
     record
 } = require('../helpers');
 

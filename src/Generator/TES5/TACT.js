@@ -1,5 +1,5 @@
 let {
-    flags, def, req, subrecord, unknown, 
+    flags, def, req, unknown, subrecord, 
     ckFormId, record
 } = require('../helpers');
 

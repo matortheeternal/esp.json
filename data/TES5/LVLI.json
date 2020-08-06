@@ -17,6 +17,7 @@
             "signature": "LVLF",
             "name": "Flags",
             "type": "uint8",
+            "required": true,
             "format": {
                 "type": "flags",
                 "flags": {
@@ -63,7 +64,8 @@
                             {
                                 "name": "Unknown",
                                 "type": "bytes",
-                                "size": 2
+                                "size": 2,
+                                "required": true
                             },
                             {
                                 "name": "Reference",
@@ -91,7 +93,8 @@
                             {
                                 "name": "Unknown",
                                 "type": "bytes",
-                                "size": 2
+                                "size": 2,
+                                "required": true
                             }
                         ],
                         "sortKey": [

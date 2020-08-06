@@ -1,8 +1,8 @@
 let {functionConverter} = require('../converters'),
-    {args} = require('../helpers');
+    args = require('../args');
 
 functionConverter('SetDefaultEditValue', [
     args.string
 ], (args, converter, opts) => {
-    return { defaultEditValue: args.values[0], ...opts };
+    opts.defaultEditValue = args.values[0].slice(1, -1);
 });

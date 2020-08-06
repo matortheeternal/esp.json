@@ -1,7 +1,7 @@
 let {
-    def, subrecord, string, ckFormId, array, 
-    uint8, struct, flags, format, uint16, 
-    req, record
+    def, string, subrecord, ckFormId, array, 
+    req, uint8, struct, flags, format, 
+    uint16, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -11,11 +11,11 @@ module.exports = () => {
             def('CTDAs'),
             subrecord('DNAM', string('FileName')),
             subrecord('ENAM', string('Animation Event')),
-            subrecord('ANAM', array('Related Idle Animations', 
+            req(subrecord('ANAM', array('Related Idle Animations', 
                 ckFormId('Related Idle Animation', [
                     'AACT', 'IDLE', 'NULL'
                 ])
-            )),
+            ))),
             req(subrecord('DATA', struct('Data (unused)', [
                 struct('Looping seconds (both 255 forever)', [
                     uint8('Min'),

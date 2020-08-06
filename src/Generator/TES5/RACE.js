@@ -1,9 +1,9 @@
 let {
-    flags, def, req, subrecord, ckFormId, 
+    flags, def, req, ckFormId, subrecord, 
     int8, format, sortKey, struct, sorted, 
-    array, size, bytes, float, enumeration, 
-    uint32, int32, empty, string, memberArray, 
-    uint16, memberStruct, record
+    array, count, bytes, size, float, 
+    enumeration, uint32, int32, empty, string, 
+    memberArray, uint16, memberStruct, opts, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -23,7 +23,7 @@ module.exports = () => {
             def('KSIZ'),
             def('KWDAs'),
             req(subrecord('DATA', struct('', [
-                size(7, sorted(array('Skill Boosts', 
+                count(7, sorted(array('Skill Boosts', 
                     sortKey([0], struct('Skill Boost', [
                         format(int8('Skill'), def('ActorValueEnum')),
                         int8('Boost')
@@ -70,14 +70,14 @@ module.exports = () => {
                     4: 'Allow Mounted Combat'
                 })),
                 struct('Mount Data', [
-                    req(req(float('Offset X'))),
+                    req(float('Offset X')),
                     float('Offset Y'),
                     float('Unknown'),
-                    req(req(float('Unknown'))),
+                    req(float('Unknown')),
                     float('Unknown'),
-                    req(req(float('Unknown'))),
+                    req(float('Unknown')),
                     float('Unknown'),
-                    req(req(float('Unknown'))),
+                    req(float('Unknown')),
                     float('Unknown')
                 ])
             ]))),
@@ -91,18 +91,18 @@ module.exports = () => {
             sorted(memberArray('Movement Type Names', 
                 subrecord('MTNM', string('Name'))
             )),
-            subrecord('VTCK', array('Voices', 
+            req(subrecord('VTCK', array('Voices', 
                 ckFormId('Voice', ['VTYP'])
-            )),
-            subrecord('DNAM', array('Decapitate Armors', 
+            ))),
+            req(subrecord('DNAM', array('Decapitate Armors', 
                 ckFormId('Decapitate Armor', ['NULL', 'ARMO'])
-            )),
-            subrecord('HCLF', array('Default Hair Colors', 
+            ))),
+            req(subrecord('HCLF', array('Default Hair Colors', 
                 ckFormId('Default Hair Color', ['NULL', 'CLFM'])
-            )),
-            subrecord('TINL', uint16('Total Number of Tints in List')),
-            req(subrecord('PNAM', req(float('FaceGen - Main clamp')))),
-            req(subrecord('UNAM', req(float('FaceGen - Face clamp')))),
+            ))),
+            req(subrecord('TINL', uint16('Total Number of Tints in List'))),
+            req(subrecord('PNAM', float('FaceGen - Main clamp'))),
+            req(subrecord('UNAM', float('FaceGen - Face clamp'))),
             req(subrecord('ATKR', ckFormId('Attack Race', ['RACE']))),
             sorted(memberArray('Attacks', 
                 def('AttackData')
@@ -150,9 +150,11 @@ module.exports = () => {
             subrecord('NAM7', ckFormId('Decapitation FX', ['ARTO', 'NULL'])),
             subrecord('ONAM', ckFormId('Open Loot Sound', ['SNDR', 'NULL'])),
             subrecord('LNAM', ckFormId('Close Loot Sound', ['SNDR', 'NULL'])),
-            memberArray('Biped Object Names', 
+            opts(memberArray('Biped Object Names', 
                 subrecord('NAME', string('Name'))
-            ),
+            ), {
+                "notAlignable": 1
+            }),
             sorted(memberArray('Movement Types', 
                 sortKey([0], memberStruct('Movement Types', [
                     subrecord('MTYP', ckFormId('Movement Type', ['MOVT', 'NULL'])),

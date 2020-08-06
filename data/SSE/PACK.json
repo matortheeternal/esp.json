@@ -145,6 +145,7 @@
                     "signature": "IDLF",
                     "name": "Flags",
                     "type": "uint8",
+                    "required": true,
                     "format": {
                         "type": "enum",
                         "options": {
@@ -183,6 +184,7 @@
                     "signature": "IDLA",
                     "name": "Animations",
                     "type": "array",
+                    "required": true,
                     "afterSet": "IDLAsAfterSet",
                     "element": {
                         "name": "Animation",
@@ -336,6 +338,10 @@
                         "name": "Branch",
                         "type": "memberStruct",
                         "required": true,
+                        "counter": {
+                            "type": "elementCounter",
+                            "path": "CITC - Condition Count"
+                        },
                         "members": [
                             {
                                 "signature": "ANAM",
@@ -493,25 +499,29 @@
                     "signature": "SCHR",
                     "name": "Unused",
                     "type": "bytes",
-                    "size": 0
+                    "size": 0,
+                    "required": true
                 },
                 {
                     "signature": "SCTX",
                     "name": "Unused",
                     "type": "bytes",
-                    "size": 0
+                    "size": 0,
+                    "required": true
                 },
                 {
                     "signature": "QNAM",
                     "name": "Unused",
                     "type": "bytes",
-                    "size": 0
+                    "size": 0,
+                    "required": true
                 },
                 {
                     "signature": "TNAM",
                     "name": "Unused",
                     "type": "bytes",
-                    "size": 0
+                    "size": 0,
+                    "required": true
                 },
                 {
                     "id": "PDTOs"
@@ -542,25 +552,29 @@
                     "signature": "SCHR",
                     "name": "Unused",
                     "type": "bytes",
-                    "size": 0
+                    "size": 0,
+                    "required": true
                 },
                 {
                     "signature": "SCTX",
                     "name": "Unused",
                     "type": "bytes",
-                    "size": 0
+                    "size": 0,
+                    "required": true
                 },
                 {
                     "signature": "QNAM",
                     "name": "Unused",
                     "type": "bytes",
-                    "size": 0
+                    "size": 0,
+                    "required": true
                 },
                 {
                     "signature": "TNAM",
                     "name": "Unused",
                     "type": "bytes",
-                    "size": 0
+                    "size": 0,
+                    "required": true
                 },
                 {
                     "id": "PDTOs"
@@ -591,31 +605,36 @@
                     "signature": "SCHR",
                     "name": "Unused",
                     "type": "bytes",
-                    "size": 0
+                    "size": 0,
+                    "required": true
                 },
                 {
                     "signature": "SCDA",
                     "name": "Unused",
                     "type": "bytes",
-                    "size": 0
+                    "size": 0,
+                    "required": true
                 },
                 {
                     "signature": "SCTX",
                     "name": "Unused",
                     "type": "bytes",
-                    "size": 0
+                    "size": 0,
+                    "required": true
                 },
                 {
                     "signature": "QNAM",
                     "name": "Unused",
                     "type": "bytes",
-                    "size": 0
+                    "size": 0,
+                    "required": true
                 },
                 {
                     "signature": "TNAM",
                     "name": "Unused",
                     "type": "bytes",
-                    "size": 0
+                    "size": 0,
+                    "required": true
                 },
                 {
                     "id": "PDTOs"

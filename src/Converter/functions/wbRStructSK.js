@@ -1,21 +1,20 @@
 let {functionConverter} = require('../converters'),
-    {args, reqLine} = require('../helpers');
+    args = require('../args');
 
 functionConverter('wbRStructSK', [
-    args.sk,
-    args.name,
-    args.members,
-    args.signatures,
-    args.conflictPriority,
-    args.required,
-    args.identifier,
-    args.boolean,
-    args.identifier,
-    args.identifier,
-    args.identifier
+    args.sk,                // aSortKey: array of integer
+    args.name,              // aName: string
+    args.members,           // aMembers: array of IwbRecordMemberDef
+    args.signatures,        // aSkipSigs: TwbSignatures
+    args.priority,          // aPriority: TwbConflictPriority = cpNormal
+    args.required,          // aRequired: Boolean = False
+    args.identifier,        // aDontShow: TwbDontShowCallback = nil
+    args.boolean,           // aAllowUnordered: Boolean = False
+    args.identifier,        // aAfterLoad: TwbAfterLoadCallback = nil
+    args.identifier,        // aAfterSet: TwbAfterSetCallback = nil
+    args.identifier         // aGetCP: TwbGetConflictPriority = nil
 ], ({sk, name, members, required}, converter) => {
     converter.addRequires('sortKey', 'memberStruct');
-    let structDef = `memberStruct(${name}, ${members})`,
-        line = `sortKey(${sk}, ${structDef})`;
-    return reqLine(required, line, converter);
+    let structDef = `memberStruct(${name}, ${members})`;
+    return `sortKey(${sk}, ${structDef})`;
 });

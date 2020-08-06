@@ -1,5 +1,5 @@
 let {
-    addDef, enumeration, subrecord, int32, format
+    addDef, enumeration, int32, format, subrecord
 } = require('../helpers');
 
 module.exports = () => {

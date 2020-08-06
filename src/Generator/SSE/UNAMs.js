@@ -1,5 +1,5 @@
 let {
-    addDef, subrecord, int8, string, flags, 
+    addDef, int8, subrecord, string, flags, 
     uint32, format, memberStruct, memberArray
 } = require('../helpers');
 

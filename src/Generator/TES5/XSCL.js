@@ -1,5 +1,5 @@
 let {
-    addDef, subrecord, float
+    addDef, float, subrecord
 } = require('../helpers');
 
 module.exports = () => {

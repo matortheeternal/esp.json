@@ -1,5 +1,5 @@
 let {
-    flags, def, subrecord, unknown, record
+    flags, def, unknown, subrecord, record
 } = require('../helpers');
 
 module.exports = () => {

@@ -1,5 +1,5 @@
 let {
-    def, subrecord, float, scale, req, 
+    def, float, subrecord, scale, req, 
     record
 } = require('../helpers');
 
@@ -9,9 +9,9 @@ module.exports = () => {
             def('EDID'),
             subrecord('CNAM', float('Intensity')),
             subrecord('DNAM', float('Custom Color - Contribution')),
-            req(subrecord('ENAM', req(scale(255, float('Red'))))),
-            req(subrecord('FNAM', req(scale(255, float('Green'))))),
-            req(subrecord('GNAM', req(scale(255, float('Blue'))))),
+            req(subrecord('ENAM', scale(255, float('Red')))),
+            req(subrecord('FNAM', scale(255, float('Green')))),
+            req(subrecord('GNAM', scale(255, float('Blue')))),
             subrecord('HNAM', float('Density - Contribution')),
             subrecord('INAM', float('Density - Size')),
             subrecord('JNAM', float('Density - Wind Speed')),

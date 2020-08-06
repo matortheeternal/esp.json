@@ -1,11 +1,11 @@
 let {
-    addDef, subrecord, localized, string, opts
+    addDef, localized, string, subrecord, opts
 } = require('../helpers');
 
 module.exports = () => {
     addDef('FULL', 
-        subrecord('FULL', opts(localized(string('Name')), {
+        opts(subrecord('FULL', localized(string('Name'))), {
             "keepCase": true
-        }))
+        })
     );
 };

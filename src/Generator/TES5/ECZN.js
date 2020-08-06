@@ -1,6 +1,6 @@
 let {
     def, ckFormId, int8, flags, uint8, 
-    format, subrecord, struct, req, record
+    format, struct, subrecord, req, record
 } = require('../helpers');
 
 module.exports = () => {

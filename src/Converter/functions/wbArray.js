@@ -1,72 +1,86 @@
 let {subrecordAndField} = require('../converters'),
-    {args, prefixSize, afterSetLine, customCounterLine, newLine} = require('../helpers');
+    {newLine} = require('../helpers'),
+    args = require('../args');
 
-subrecordAndField('wbArray', [
-    args.name,
-    args.field,
-    args.size,
-    args.identifier,
-    { type: 'identifier', name: 'afterSet' },
-    args.conflictPriority,
-    args.boolean,
-    args.identifier,
-    args.identifier
-], ({name, element, size, afterSet}, converter) => {
+let convertArray = function(args, converter) {
     converter.addRequires('array');
-    let line = `array(${name}, ${newLine(element)})`;
-    line = afterSetLine(afterSet, line, converter);
-    return prefixSize(size, line, converter);
-});
+    return `array(${args.name}, ${newLine(args.element)})`;
+};
 
+// wbInterface.pas#2995
+// Fixed count, after callbacks
 subrecordAndField('wbArray', [
-    args.name,
-    args.field,
-    args.size,
-    args.conflictPriority
-], ({name, element, size}, converter) => {
-    converter.addRequires('array');
-    let line = `array(${name}, ${newLine(element)})`;
-    return prefixSize(size, line, converter);
-});
+    args.name,              // aName: string
+    args.field,             // aElement: IwbValueDef
+    args.count,             // aCount: Integer = 0
+    args.afterLoad,         // aAfterLoad: TwbAfterLoadCallback = nil
+    args.afterSet,          // aAfterSet: TwbAfterSetCallback = nil
+    args.priority,          // aPriority: TwbConflictPriority = cpNormal
+    args.required,          // aRequired: Boolean = False
+    args.dontShow,          // aDontShow: TwbDontShowCallback = nil
+    args.getCP              // aGetCP: TwbGetConflictPriority = nil
+], convertArray);
 
-// TODO: use labels?
+// wbInterface.pas#3007
+// Fixed count, no after callbacks
 subrecordAndField('wbArray', [
-    args.name,
-    args.field,
-    args.labels,
-    args.getCount,
-    args.identifier,
-    args.boolean,
-    args.identifier,
-    args.identifier
-], ({name, element, labels, getCount}, converter) => {
-    converter.addRequires('array');
-    let line = `array(${name}, ${newLine(element)})`;
-    return customCounterLine(getCount, line, converter);
-});
+    args.name,              // aName: string
+    args.field,             // aElement: IwbValueDef
+    args.count,             // aCount: Integer = 0
+    args.priority,          // aPriority: TwbConflictPriority = cpNormal
+    args.required,          // aRequired: Boolean = False
+    args.dontShow,          // aDontShow: TwbDontShowCallback = nil
+    args.getCP              // aGetCP: TwbGetConflictPriority = nil
+], convertArray);
 
+// wbInterface.pas#3016
+// Fixed count, afterLoad callback
 subrecordAndField('wbArray', [
-    args.name,
-    args.field,
-    args.labels,
-    args.conflictPriority,
-    args.boolean
-], ({name, element, labels, getCount}, converter) => {
-    converter.addRequires('array');
-    let line = `array(${name}, ${newLine(element)})`;
-    return customCounterLine(getCount, line, converter);
-});
+    args.name,              // aName: string
+    args.field,             // aElement: IwbValueDef
+    args.count,             // aCount: Integer = 0
+    args.afterLoad,         // aAfterLoad: TwbAfterLoadCallback = nil
+    args.priority,          // aPriority: TwbConflictPriority = cpNormal
+    args.required,          // aRequired: Boolean = False
+    args.dontShow,          // aDontShow: TwbDontShowCallback = nil
+    args.getCP              // aGetCP: TwbGetConflictPriority = nil
+], convertArray);
 
+// wbInterface.pas#3026
+// wbInterface.pas#3047
+// Labels, no count callback
 subrecordAndField('wbArray', [
-    args.name,
-    args.field,
-    args.getCount,
-    args.identifier,
-    args.boolean,
-    args.identifier,
-    args.identifier
-], ({name, element, getCount}, converter) => {
-    converter.addRequires('array');
-    let line = `array(${name}, ${newLine(element)})`;
-    return customCounterLine(getCount, line, converter);
-});
+    args.name,              // aName: string
+    args.field,             // aElement: IwbValueDef
+    args.labels,            // aLabels: array of string
+    args.priority,          // aPriority: TwbConflictPriority = cpNormal
+    args.required,          // aRequired: Boolean = False
+    args.dontShow,          // aDontShow: TwbDontShowCallback = nil
+    args.getCP              // aGetCP: TwbGetConflictPriority = nil
+], convertArray);
+
+// wbInterface.pas#3036
+// wbInterface.pas#3056
+// Labels, count callback
+subrecordAndField('wbArray', [
+    args.name,              // aName: string
+    args.field,             // aElement: IwbValueDef
+    args.labels,            // aLabels: array of string
+    args.countCallback,     // aCountCallback: TwbCountCallback
+    args.priority,          // aPriority: TwbConflictPriority = cpNormal
+    args.required,          // aRequired: Boolean = False
+    args.dontShow,          // aDontShow: TwbDontShowCallback = nil
+    args.getCP              // aGetCP: TwbGetConflictPriority = nil
+], convertArray);
+
+// wbInterface.pas#3066
+// Count callback, no labels
+subrecordAndField('wbArray', [
+    args.name,              // aName: string
+    args.field,             // aElement: IwbValueDef
+    args.countCallback,     // aCountCallback: TwbCountCallback
+    args.priority,          // aPriority: TwbConflictPriority = cpNormal
+    args.required,          // aRequired: Boolean = False
+    args.dontShow,          // aDontShow: TwbDontShowCallback = nil
+    args.getCP              // aGetCP: TwbGetConflictPriority = nil
+], convertArray);

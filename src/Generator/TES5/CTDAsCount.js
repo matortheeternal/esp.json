@@ -1,11 +1,13 @@
 let {
-    addDef, def, memberArray
+    addDef, def, memberArray, elementCounter, req
 } = require('../helpers');
 
 module.exports = () => {
     addDef('CTDAsCount', 
-        memberArray('Conditions', 
-            def('CTDA')
-        )
+        req(elementCounter('CITC - Condition Count', 
+            memberArray('Conditions', 
+                def('CTDA')
+            )
+        ))
     );
 };

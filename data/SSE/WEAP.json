@@ -89,7 +89,8 @@
                     "signature": "MO3T",
                     "name": "Texture Files Hashes",
                     "type": "bytes",
-                    "size": 0
+                    "size": 0,
+                    "required": true
                 },
                 {
                     "id": "MO3S"
@@ -100,7 +101,8 @@
             "signature": "NNAM",
             "name": "Unused",
             "type": "bytes",
-            "size": 0
+            "size": 0,
+            "required": true
         },
         {
             "signature": "INAM",

@@ -1,14 +1,14 @@
 let {
     def, enumeration, uint32, format, formId, 
-    sortKey, struct, subrecord, sorted, array, 
-    record
+    sortKey, struct, sorted, array, subrecord, 
+    req, record
 } = require('../helpers');
 
 module.exports = () => {
     record('DOBJ', 'Default Object Manager', {
         members: [
             def('EDID'),
-            subrecord('DNAM', sorted(array('Objects', 
+            req(subrecord('DNAM', sorted(array('Objects', 
                 sortKey([0], struct('Object', [
                     format(uint32('Use'), enumeration({
                         0: 'None',
@@ -385,7 +385,7 @@ module.exports = () => {
                     })),
                     formId('Object ID')
                 ]))
-            )))
+            ))))
         ]
     })
 };

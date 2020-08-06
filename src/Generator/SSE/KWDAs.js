@@ -1,14 +1,14 @@
 let {
-    addDef, ckFormId, subrecord, sorted, array, 
-    elementCounter
+    addDef, ckFormId, sorted, array, elementCounter, 
+    subrecord, req
 } = require('../helpers');
 
 module.exports = () => {
     addDef('KWDAs', 
-        subrecord('KWDA', elementCounter('KSIZ - Keyword Count', 
+        req(subrecord('KWDA', elementCounter('KSIZ - Keyword Count', 
             sorted(array('Keywords', 
                 ckFormId('Keyword', ['KYWD', 'NULL'])
             ))
-        ))
+        )))
     );
 };

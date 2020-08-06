@@ -1,38 +1,42 @@
 let {functionConverter} = require('../converters'),
-    {stringify, args} = require('../helpers');
+    {stringify} = require('../helpers'),
+    args = require('../args');
 
+// wbInterface.pas#5205
 functionConverter('wbRecord', [
     args.sig,
     args.name,
-    { type: 'function', id: 'wbFlags', name: 'flags' },
+    args.flagsFn,
     args.members,
-    args.boolean,
-    args.identifier,
-    args.conflictPriority,
-    args.boolean,
-    args.identifier,
-    args.identifier
-], ({sig, name, flags, members}, converter) => {
+    args.boolean, // allow unordered
+    args.addInfo,
+    args.priority,
+    args.boolean, // required
+    args.afterLoad,
+    args.identifier // afterSet
+], (args, converter) => {
     converter.addRequires('record');
-    return `record('${sig}', ${name}, ` + stringify({
-        flags,
-        members
+    return `record('${args.sig}', ${args.name}, ` + stringify({
+        flags: args.flags,
+        members: args.members
     }) + ')';
 });
 
+// wbInterface.pas#6191
 functionConverter('wbRecord', [
     args.sig,
     args.name,
     args.members,
-    args.boolean,
-    args.identifier,
-    args.conflictPriority,
-    args.boolean,
-    args.identifier,
-    args.identifier
-], ({sig, name, members}, converter) => {
+    args.boolean, // allow unordered
+    args.addInfo,
+    args.priority,
+    args.boolean, // required
+    args.afterLoad,
+    args.identifier, // afterSet
+    args.isReference
+], (args, converter) => {
     converter.addRequires('record');
-    return `record('${sig}', ${name}, ` + stringify({
-        members
+    return `record('${args.sig}', ${args.name}, ` + stringify({
+        members: args.members
     }) + ')';
 });

@@ -1,6 +1,6 @@
 let {
     addDef, float, ckFormId, flags, uint32, 
-    format, subrecord, struct, string, sortKey, 
+    format, struct, subrecord, string, sortKey, 
     memberStruct
 } = require('../helpers');
 

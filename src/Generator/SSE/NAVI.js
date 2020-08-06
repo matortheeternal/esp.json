@@ -1,5 +1,5 @@
 let {
-    def, subrecord, uint32, ckFormId, bytes, 
+    def, uint32, subrecord, ckFormId, bytes, 
     size, float, array, prefix, struct, 
     enumeration, uint8, format, union, int16, 
     memberArray, record

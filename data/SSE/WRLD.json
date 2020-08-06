@@ -16,6 +16,8 @@
         {
             "name": "Large References",
             "type": "memberArray",
+            "required": true,
+            "notAlignable": 1,
             "member": {
                 "signature": "RNAM",
                 "name": "Grid",
@@ -33,7 +35,7 @@
                         "name": "References",
                         "type": "array",
                         "prefix": 4,
-                        "includeFlag": "dfNotAlignable",
+                        "notAlignable": 1,
                         "element": {
                             "name": "Reference",
                             "type": "struct",
@@ -314,6 +316,7 @@
             "signature": "DATA",
             "name": "Flags",
             "type": "uint8",
+            "required": true,
             "format": {
                 "type": "flags",
                 "flags": {

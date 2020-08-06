@@ -89,6 +89,7 @@
             "signature": "MNAM",
             "name": "Distant LOD",
             "type": "array",
+            "required": true,
             "element": {
                 "name": "LOD",
                 "type": "struct",

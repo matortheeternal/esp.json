@@ -1,9 +1,9 @@
 let {
-    addDef, subrecord, uint8
+    addDef, uint8, subrecord, req
 } = require('../helpers');
 
 module.exports = () => {
     addDef('LVLD', 
-        subrecord('LVLD', uint8('Chance None'))
+        req(subrecord('LVLD', uint8('Chance None')))
     );
 };

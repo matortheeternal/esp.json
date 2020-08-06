@@ -12,7 +12,7 @@ module.exports = () => {
                 "defaultNativeValue": 12
             }),
             opts(size(4, bytes('Magic')), {
-                "defaultEditValue": "'3C A0 E9 A5'"
+                "defaultEditValue": "3C A0 E9 A5"
             }),
             ckFormId('Parent Worldspace', ['WRLD', 'NULL']),
             union('Parent', 'NVNMParentDecider', [
@@ -29,7 +29,7 @@ module.exports = () => {
                     float('Z')
                 ]))
             )), {
-                "includeFlag": "dfNotAlignable"
+                "notAlignable": 1
             }),
             opts(prefix(4, array('Triangles', 
                 struct('Triangle', [
@@ -89,7 +89,7 @@ module.exports = () => {
                     }))
                 ])
             )), {
-                "includeFlag": "dfNotAlignable"
+                "notAlignable": 1
             }),
             opts(prefix(4, array('Edge Links', 
                 struct('Edge Link', [
@@ -98,7 +98,7 @@ module.exports = () => {
                     int16('Triangle')
                 ])
             )), {
-                "includeFlag": "dfNotAlignable"
+                "notAlignable": 1
             }),
             prefix(4, sorted(array('Door Triangles', 
                 sortKey([0, 2], struct('Door Triangle', [
@@ -114,7 +114,7 @@ module.exports = () => {
                     "linksToCallback": "TriangleLinksTo"
                 })
             )), {
-                "includeFlag": "dfNotAlignable"
+                "notAlignable": 1
             }),
             uint32('NavMeshGrid Divisor'),
             float('Max X Distance'),
@@ -131,10 +131,10 @@ module.exports = () => {
                         "linksToCallback": "TriangleLinksTo"
                     })
                 )), {
-                    "includeFlag": "dfNotAlignable"
+                    "notAlignable": 1
                 })
             ), {
-                "includeFlag": "dfNotAlignable"
+                "notAlignable": 1
             })
         ]))
     );

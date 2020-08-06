@@ -1,5 +1,6 @@
 let {functionConverter} = require('../converters'),
-    {args, stringify} = require('../helpers');
+    {stringify} = require('../helpers'),
+    args = require('../args');
 
 functionConverter('wbEnum', [
     args.flags,
@@ -15,10 +16,7 @@ functionConverter('wbEnum', [
     args.identifier
 ], (args, converter) => {
     converter.addRequires('enumeration');
-    let options = Object.assign(
-        {},
-        args.flags,
-        converter.getData(args.values[1]) || {}
-    );
+    let options = converter.getData(args.values[1]);
+    options = Object.assign({}, args.flags, options || {});
     return `enumeration(${stringify(options)})`;
 });

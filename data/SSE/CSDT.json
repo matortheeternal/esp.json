@@ -57,7 +57,8 @@
                     {
                         "signature": "CSDC",
                         "name": "Sound Chance",
-                        "type": "uint8"
+                        "type": "uint8",
+                        "required": true
                     }
                 ],
                 "sortKey": [

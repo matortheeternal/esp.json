@@ -1,5 +1,5 @@
 let {
-    addDef, subrecord, bytes, size, def, 
+    addDef, bytes, size, subrecord, def, 
     struct, memberStruct
 } = require('../helpers');
 

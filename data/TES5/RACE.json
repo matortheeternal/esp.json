@@ -54,7 +54,7 @@
                     "name": "Skill Boosts",
                     "type": "array",
                     "sorted": true,
-                    "size": 7,
+                    "count": 7,
                     "element": {
                         "name": "Skill Boost",
                         "type": "struct",
@@ -316,6 +316,7 @@
             "signature": "VTCK",
             "name": "Voices",
             "type": "array",
+            "required": true,
             "element": {
                 "name": "Voice",
                 "type": "formId",
@@ -328,6 +329,7 @@
             "signature": "DNAM",
             "name": "Decapitate Armors",
             "type": "array",
+            "required": true,
             "element": {
                 "name": "Decapitate Armor",
                 "type": "formId",
@@ -341,6 +343,7 @@
             "signature": "HCLF",
             "name": "Default Hair Colors",
             "type": "array",
+            "required": true,
             "element": {
                 "name": "Default Hair Color",
                 "type": "formId",
@@ -353,7 +356,8 @@
         {
             "signature": "TINL",
             "name": "Total Number of Tints in List",
-            "type": "uint16"
+            "type": "uint16",
+            "required": true
         },
         {
             "signature": "PNAM",
@@ -601,6 +605,7 @@
         {
             "name": "Biped Object Names",
             "type": "memberArray",
+            "notAlignable": 1,
             "member": {
                 "signature": "NAME",
                 "name": "Name",

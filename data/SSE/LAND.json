@@ -35,7 +35,7 @@
             "signature": "VNML",
             "name": "Vertex Normals",
             "type": "array",
-            "size": 33,
+            "count": 33,
             "element": {
                 "name": "Row",
                 "type": "struct",
@@ -43,7 +43,7 @@
                     {
                         "name": "Columns",
                         "type": "array",
-                        "size": 33,
+                        "count": 33,
                         "element": {
                             "name": "Column",
                             "type": "struct",
@@ -78,7 +78,7 @@
                 {
                     "name": "Rows",
                     "type": "array",
-                    "size": 33,
+                    "count": 33,
                     "element": {
                         "name": "Row",
                         "type": "struct",
@@ -86,7 +86,7 @@
                             {
                                 "name": "Columns",
                                 "type": "array",
-                                "size": 33,
+                                "count": 33,
                                 "element": {
                                     "name": "Column",
                                     "type": "uint8"
@@ -106,7 +106,7 @@
             "signature": "VCLR",
             "name": "Vertex Colours",
             "type": "array",
-            "size": 33,
+            "count": 33,
             "element": {
                 "name": "Row",
                 "type": "struct",
@@ -114,7 +114,7 @@
                     {
                         "name": "Columns",
                         "type": "array",
-                        "size": 33,
+                        "count": 33,
                         "element": {
                             "name": "Column",
                             "type": "struct",

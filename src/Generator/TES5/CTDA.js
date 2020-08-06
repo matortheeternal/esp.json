@@ -1,26 +1,29 @@
 let {
-    addDef, def, uint8, format, bytes, 
-    size, float, ckFormId, union, uint16, 
-    opts, int32, uint32, enumeration, formId, 
-    subrecord, sortKey, struct, string, memberStruct
+    addDef, def, uint8, format, req, 
+    opts, bytes, size, float, ckFormId, 
+    union, uint16, int32, uint32, enumeration, 
+    formId, sortKey, struct, subrecord, string, 
+    memberStruct
 } = require('../helpers');
 
 module.exports = () => {
     addDef('CTDA', 
         sortKey([0], memberStruct('Condition', [
-            subrecord('CTDA', sortKey([3, 5], struct('', [
-                format(uint8('Type'), def('CtdaTypeToStr')),
-                size(3, bytes('Unused')),
+            req(subrecord('CTDA', sortKey([3, 5], struct('', [
+                opts(req(format(uint8('Type'), def('CtdaTypeToStr'))), {
+                    "afterSet": "CtdaTypeAfterSet"
+                }),
+                req(size(3, bytes('Unused'))),
                 union('Comparison Value', 'CTDACompValueDecider', [
                     float('Comparison Value - Float'),
                     ckFormId('Comparison Value - Global', ['GLOB'])
                 ]),
                 format(uint16('Function'), def('CTDAFunctionToStr')),
-                size(2, bytes('Unused')),
+                req(size(2, bytes('Unused'))),
                 union('Parameter #1', 'CTDAParam1Decider', [
                     size(4, bytes('Unknown')),
                     opts(size(4, bytes('None')), {
-                        "includeFlag": "dfZeroSortKey"
+                        "zeroSortKey": 1
                     }),
                     int32('Integer'),
                     float('Float'),
@@ -30,7 +33,7 @@ module.exports = () => {
                     format(uint32('Crime Type'), def('CrimeTypeEnum')),
                     format(uint32('Axis'), def('AxisEnum')),
                     opts(int32('Quest Stage (unused)'), {
-                        "includeFlag": "dfZeroSortKey"
+                        "zeroSortKey": 1
                     }),
                     format(uint32('Misc Stat'), def('MiscStatEnum')),
                     format(uint32('Alignment'), def('AlignmentEnum')),
@@ -75,7 +78,7 @@ module.exports = () => {
                     ckFormId('Worldspace', ['WRLD', 'FLST']),
                     format(uint32('VATS Value Function'), def('VATSValueFunctionEnum')),
                     opts(uint32('VATS Value Param (INVALID)'), {
-                        "includeFlag": "dfZeroSortKey"
+                        "zeroSortKey": 1
                     }),
                     ckFormId('Referenceable Object', [
                         'NULL', 'NPC_', 'PROJ', 'TREE', 'SOUN',
@@ -113,7 +116,7 @@ module.exports = () => {
                 union('Parameter #2', 'CTDAParam2Decider', [
                     size(4, bytes('Unknown')),
                     opts(size(4, bytes('None')), {
-                        "includeFlag": "dfZeroSortKey"
+                        "zeroSortKey": 1
                     }),
                     int32('Integer'),
                     float('Float'),
@@ -187,31 +190,31 @@ module.exports = () => {
                             11: 'Player Death'
                         })),
                         opts(size(4, bytes('Unknown')), {
-                            "includeFlag": "dfZeroSortKey"
+                            "zeroSortKey": 1
                         }),
                         opts(size(4, bytes('Unknown')), {
-                            "includeFlag": "dfZeroSortKey"
+                            "zeroSortKey": 1
                         }),
                         ckFormId('Critical Effect', ['SPEL']),
                         ckFormId('Critical Effect List', ['FLST']),
                         opts(size(4, bytes('Unknown')), {
-                            "includeFlag": "dfZeroSortKey"
+                            "zeroSortKey": 1
                         }),
                         opts(size(4, bytes('Unknown')), {
-                            "includeFlag": "dfZeroSortKey"
+                            "zeroSortKey": 1
                         }),
                         opts(size(4, bytes('Unknown')), {
-                            "includeFlag": "dfZeroSortKey"
+                            "zeroSortKey": 1
                         }),
                         opts(size(4, bytes('Unknown')), {
-                            "includeFlag": "dfZeroSortKey"
+                            "zeroSortKey": 1
                         }),
                         format(uint32('Weapon Type'), def('WeaponAnimTypeEnum')),
                         opts(size(4, bytes('Unknown')), {
-                            "includeFlag": "dfZeroSortKey"
+                            "zeroSortKey": 1
                         }),
                         opts(size(4, bytes('Unknown')), {
-                            "includeFlag": "dfZeroSortKey"
+                            "zeroSortKey": 1
                         }),
                         format(uint32('Projectile Type'), enumeration({
                             0: 'Missile',
@@ -258,7 +261,7 @@ module.exports = () => {
                     formId('Event Data'),
                     ckFormId('Knowable', ['MGEF', 'WOOP'])
                 ]),
-                format(uint32('Run On'), enumeration({
+                opts(req(format(uint32('Run On'), enumeration({
                     0: 'Subject',
                     1: 'Target',
                     2: 'Reference',
@@ -267,7 +270,9 @@ module.exports = () => {
                     5: 'Quest Alias',
                     6: 'Package Data',
                     7: 'Event Data'
-                })),
+                }))), {
+                    "afterSet": "CTDARunOnAfterSet"
+                }),
                 union('Reference', 'CTDAReferenceDecider', [
                     uint32('Unused'),
                     ckFormId('Reference', [
@@ -276,8 +281,8 @@ module.exports = () => {
                         'PCON', 'PFLA'
                     ])
                 ]),
-                int32('Parameter #3')
-            ]))),
+                req(int32('Parameter #3'))
+            ])))),
             subrecord('CIS1', string('Parameter #1')),
             subrecord('CIS2', string('Parameter #2'))
         ]))

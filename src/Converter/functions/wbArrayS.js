@@ -1,37 +1,34 @@
 let {subrecordAndField, functionConverter} = require('../converters'),
-    {args, prefixSize, afterSetLine, customCounterLine, newLine} = require('../helpers');
+    {newLine} = require('../helpers'),
+    args = require('../args');
 
-// sorted array
+let convertSortedArray = function(args, converter) {
+    converter.addRequires('sorted', 'array');
+    return `sorted(array(${args.name}, ${newLine(args.element)}))`;
+};
+
+// wbInterface.pas#7256
 subrecordAndField('wbArrayS', [
     args.name,
     args.field,
-    args.size,
-    args.conflictPriority,
-    args.boolean,
-    args.identifier,
-    { type: 'identifier', name: 'afterSet' },
-    args.identifier,
-    args.identifier
-], ({name, element, size, afterSet}, converter) => {
-    converter.addRequires('sorted', 'array');
-    let line = `sorted(array(${name}, ${newLine(element)}))`;
-    line = afterSetLine(afterSet, line, converter);
-    return prefixSize(size, line, converter);
-});
+    args.count,
+    args.priority,
+    args.required,
+    args.afterLoad,
+    args.afterSet,
+    args.dontShow,
+    args.getCP
+], convertSortedArray);
 
+// wbInterface.pas#7300
 functionConverter('wbArrayS', [
     args.name,
     args.field,
-    args.getCount,
-    args.conflictPriority,
-    args.boolean,
-    args.identifier,
-    { type: 'identifier', name: 'afterSet' },
-    args.identifier,
-    args.identifier
-], ({name, element, getCount, afterSet}, converter) => {
-    converter.addRequires('sorted', 'array');
-    let line = `sorted(array(${name}, ${newLine(element)}))`;
-    line = afterSetLine(afterSet, line, converter);
-    return customCounterLine(getCount, line, converter);
-});
+    args.countCallback,
+    args.priority,
+    args.required,
+    args.afterLoad,
+    args.afterSet,
+    args.dontShow,
+    args.getCP
+], convertSortedArray);

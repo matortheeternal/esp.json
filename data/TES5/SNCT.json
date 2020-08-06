@@ -13,6 +13,7 @@
             "signature": "FNAM",
             "name": "Flags",
             "type": "uint32",
+            "required": true,
             "format": {
                 "type": "flags",
                 "flags": {

@@ -1,6 +1,6 @@
 let {
-    flags, def, enumeration, subrecord, uint8, 
-    format, opts, float, req, record
+    flags, def, enumeration, uint8, format, 
+    subrecord, req, opts, float, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -11,12 +11,12 @@ module.exports = () => {
         }),
         members: [
             def('EDID'),
-            opts(subrecord('FNAM', format(uint8('Type'), enumeration({
+            opts(req(subrecord('FNAM', format(uint8('Type'), enumeration({
                 39: 'Float'
-            }))), {
-                "defaultEditValue": "'Float'"
+            })))), {
+                "defaultEditValue": "Float"
             }),
-            req(subrecord('FLTV', req(float('Value'))))
+            req(subrecord('FLTV', float('Value')))
         ]
     })
 };

@@ -1,9 +1,9 @@
 let {
-    flags, def, subrecord, unknown, uint16, 
+    flags, def, unknown, subrecord, uint16, 
     format, div, struct, ckFormId, enumeration, 
     uint8, memberArray, formId, uint32, bytes, 
     size, localized, string, opts, memberStruct, 
-    empty, record
+    empty, req, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -65,9 +65,9 @@ module.exports = () => {
                         })),
                         size(3, bytes('Unused'))
                     ])),
-                    subrecord('NAM1', opts(localized(string('Response Text')), {
+                    opts(subrecord('NAM1', localized(string('Response Text'))), {
                         "keepCase": true
-                    })),
+                    }),
                     subrecord('NAM2', string('Script Notes')),
                     subrecord('NAM3', string('Edits')),
                     subrecord('SNAM', ckFormId('Idle Animations: Speaker', ['IDLE'])),
@@ -75,13 +75,13 @@ module.exports = () => {
                 ])
             ),
             def('CTDAs'),
-            memberArray('Unknown', 
+            req(memberArray('Unknown', 
                 memberStruct('Unknown', [
                     subrecord('SCHR', unknown()),
                     subrecord('QNAM', formId('Unknown')),
                     subrecord('NEXT', empty('Marker'))
                 ])
-            ),
+            )),
             subrecord('RNAM', localized(string('Prompt'))),
             subrecord('ANAM', ckFormId('Speaker', ['NPC_'])),
             subrecord('TWAT', ckFormId('Walk Away Topic', ['DIAL'])),

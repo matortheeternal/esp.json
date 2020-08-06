@@ -1,5 +1,5 @@
 let {
-    flags, def, req, subrecord, float, 
+    flags, def, req, float, subrecord, 
     int32, uint32, format, formId, ckFormId, 
     struct, record
 } = require('../helpers');
@@ -23,7 +23,7 @@ module.exports = () => {
             def('YNAM'),
             def('ZNAM'),
             def('ETYP'),
-            req(subrecord('DATA', req(float('Weight')))),
+            req(subrecord('DATA', float('Weight'))),
             req(subrecord('ENIT', struct('Effect Data', [
                 int32('Value'),
                 format(uint32('Flags'), flags({

@@ -1,16 +1,16 @@
 let {subrecordAndField} = require('../converters'),
-    {args, prefixSize} = require('../helpers');
+    args = require('../args');
+
+let convertByteArray = function(args, converter) {
+    converter.addRequires('bytes');
+    return `bytes(${args.name || 'Unknown'})`;
+};
 
 subrecordAndField('wbByteArray', [
     args.name,
     args.size,
-    args.conflictPriority,
-    args.boolean,
-    args.identifier,
-    args.identifier
-], ({name, size}, converter) => {
-    converter.addRequires('bytes');
-    let line = `bytes(${name})`;
-    if (size === -255) size = 0;
-    return prefixSize(size, line, converter, true);
-});
+    args.priority,
+    args.required,
+    args.dontShow,
+    args.getCP
+], convertByteArray);

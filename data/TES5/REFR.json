@@ -541,6 +541,7 @@
                 "signature": "XPWR",
                 "name": "Water",
                 "type": "struct",
+                "required": true,
                 "elements": [
                     {
                         "name": "Reference",
@@ -1087,13 +1088,15 @@
                         "signature": "SCHR",
                         "name": "Unused",
                         "type": "bytes",
-                        "size": 0
+                        "size": 0,
+                        "required": true
                     },
                     {
                         "signature": "SCTX",
                         "name": "Unused",
                         "type": "bytes",
-                        "size": 0
+                        "size": 0,
+                        "required": true
                     },
                     {
                         "id": "PDTOs"
@@ -1143,6 +1146,7 @@
                     "signature": "FNAM",
                     "name": "Map Flags",
                     "type": "uint8",
+                    "required": true,
                     "format": {
                         "type": "flags",
                         "flags": {

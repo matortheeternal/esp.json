@@ -92,6 +92,7 @@
                         "signature": "RDAT",
                         "name": "Data Header",
                         "type": "struct",
+                        "required": true,
                         "elements": [
                             {
                                 "name": "Type",
@@ -158,6 +159,7 @@
                         "name": "Sounds",
                         "type": "array",
                         "sorted": true,
+                        "required": true,
                         "element": {
                             "name": "Sound",
                             "type": "struct",
@@ -204,6 +206,7 @@
                         "signature": "RDOT",
                         "name": "Objects",
                         "type": "array",
+                        "required": true,
                         "element": {
                             "name": "Object",
                             "type": "struct",
@@ -328,6 +331,7 @@
                         "name": "Grasses",
                         "type": "array",
                         "sorted": true,
+                        "required": true,
                         "element": {
                             "name": "Grass",
                             "type": "struct",
@@ -355,6 +359,7 @@
                         "name": "Weather Types",
                         "type": "array",
                         "sorted": true,
+                        "required": true,
                         "element": {
                             "name": "Weather Type",
                             "type": "struct",

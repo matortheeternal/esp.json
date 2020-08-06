@@ -1,5 +1,5 @@
 let {functionConverter} = require('../converters'),
-    {args} = require('../helpers');
+    args = require('../args');
 
 functionConverter('wbFormaterUnion', [
     args.identifier,

@@ -1,6 +1,6 @@
 let {
     flags, def, req, ckFormId, uint32, 
-    format, float, subrecord, struct, IsSSE, 
+    format, float, struct, subrecord, IsSSE, 
     string, record
 } = require('../helpers');
 

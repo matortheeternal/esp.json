@@ -1,5 +1,5 @@
 let {
-    addDef, subrecord, bytes, size
+    addDef, bytes, size, subrecord
 } = require('../helpers');
 
 module.exports = () => {

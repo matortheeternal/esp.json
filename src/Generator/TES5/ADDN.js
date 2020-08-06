@@ -1,5 +1,5 @@
 let {
-    def, req, subrecord, int32, ckFormId, 
+    def, req, int32, subrecord, ckFormId, 
     uint16, enumeration, format, struct, record
 } = require('../helpers');
 
@@ -9,7 +9,7 @@ module.exports = () => {
             def('EDID'),
             req(def('OBND')),
             def('MODL'),
-            subrecord('DATA', int32('Node Index')),
+            req(subrecord('DATA', int32('Node Index'))),
             subrecord('SNAM', ckFormId('Sound', ['SNDR', 'NULL'])),
             req(subrecord('DNAM', struct('Data', [
                 uint16('Master Particle System Cap'),

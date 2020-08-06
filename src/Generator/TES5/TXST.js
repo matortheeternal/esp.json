@@ -1,5 +1,5 @@
 let {
-    def, req, subrecord, string, memberStruct, 
+    def, req, string, subrecord, memberStruct, 
     flags, uint16, format, record
 } = require('../helpers');
 
@@ -19,11 +19,11 @@ module.exports = () => {
                 subrecord('TX07', string('Backlight Mask/Specular'))
             ]),
             def('DODT'),
-            subrecord('DNAM', format(uint16('Flags'), flags({
+            req(subrecord('DNAM', format(uint16('Flags'), flags({
                 0: 'No Specular Map',
                 1: 'Facegen Textures',
                 2: 'Has Model Space Normal Map'
-            })))
+            }))))
         ]
     })
 };

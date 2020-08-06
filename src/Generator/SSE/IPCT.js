@@ -1,7 +1,7 @@
 let {
     def, float, enumeration, uint32, format, 
-    flags, uint8, bytes, size, subrecord, 
-    struct, req, ckFormId, record
+    flags, uint8, bytes, size, struct, 
+    subrecord, req, ckFormId, record
 } = require('../helpers');
 
 module.exports = () => {

@@ -1,5 +1,5 @@
 let {
-    addDef, float, int16, array, size, 
+    addDef, float, int16, array, count, 
     opts, struct, prefix
 } = require('../helpers');
 
@@ -14,14 +14,14 @@ module.exports = () => {
             float('Max Z'),
             opts(prefix(4, array('Triangles', 
                 struct('Triangle', [
-                    opts(size(3, array('Vertices', 
+                    opts(count(3, array('Vertices', 
                         int16('Vertex')
                     )), {
-                        "includeFlag": "dfNotAlignable"
+                        "notAlignable": 1
                     })
                 ])
             )), {
-                "includeFlag": "dfNotAlignable"
+                "notAlignable": 1
             }),
             opts(prefix(4, array('Vertices', 
                 struct('Vertex', [
@@ -30,7 +30,7 @@ module.exports = () => {
                     float('Z')
                 ])
             )), {
-                "includeFlag": "dfNotAlignable"
+                "notAlignable": 1
             })
         ])
     );

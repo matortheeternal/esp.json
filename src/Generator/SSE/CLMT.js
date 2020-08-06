@@ -1,6 +1,6 @@
 let {
     def, ckFormId, int32, sortKey, struct, 
-    subrecord, sorted, array, string, uint8, 
+    sorted, array, subrecord, string, uint8, 
     format, req, record
 } = require('../helpers');
 

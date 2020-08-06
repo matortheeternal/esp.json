@@ -1,5 +1,5 @@
 let {
-    def, subrecord, string, req, memberArray, 
+    def, string, subrecord, req, memberArray, 
     uint8, IsSSE, flags, format, bytes, 
     size, ckFormId, uint16, float, struct, 
     record
@@ -13,8 +13,8 @@ module.exports = game => {
             memberArray('Unused', 
                 req(subrecord('NNAM', string('Noise Map')))
             ),
-            subrecord('ANAM', uint8('Opacity')),
-            subrecord('FNAM', format(uint8('Flags'), flags({
+            req(subrecord('ANAM', uint8('Opacity'))),
+            req(subrecord('FNAM', format(uint8('Flags'), flags({
                 0: 'Causes Damage',
                 1: 'Unknown 1',
                 2: 'Unknown 2',
@@ -23,15 +23,15 @@ module.exports = game => {
                 5: 'Unknown 5',
                 6: 'Unknown 6',
                 7: 'Unknown 7'
-            }))),
-            subrecord('MNAM', size(0, bytes('Unused'))),
+            })))),
+            req(subrecord('MNAM', size(0, bytes('Unused')))),
             subrecord('TNAM', ckFormId('Material', ['MATT'])),
             subrecord('SNAM', ckFormId('Open Sound', ['SNDR', 'NULL'])),
             subrecord('XNAM', ckFormId('Spell', ['SPEL'])),
             subrecord('INAM', ckFormId('Image Space', ['IMGS'])),
             IsSSE(game, [
-                subrecord('DATA', uint16('Unused')),
-                subrecord('DATA', uint16('Damage Per Second'))
+                req(subrecord('DATA', uint16('Unused'))),
+                req(subrecord('DATA', uint16('Damage Per Second')))
             ]),
             IsSSE(game, [
                 req(subrecord('DNAM', struct('Visual Data', [
@@ -154,7 +154,7 @@ module.exports = game => {
                     float('Specular Properties - Sun Sparkle Power')
                 ]))
             ]),
-            subrecord('GNAM', size(0, bytes('Unused'))),
+            req(subrecord('GNAM', size(0, bytes('Unused')))),
             req(subrecord('NAM0', struct('Linear Velocity', [
                 float('X'),
                 float('Y'),

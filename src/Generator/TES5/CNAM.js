@@ -1,6 +1,6 @@
 let {
-    addDef, uint8, bytes, size, subrecord, 
-    struct
+    addDef, uint8, bytes, size, struct, 
+    subrecord
 } = require('../helpers');
 
 module.exports = () => {

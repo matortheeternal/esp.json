@@ -9,7 +9,7 @@ module.exports = () => {
             sortKey([1], struct('Object v2', [
                 uint16('Unused'),
                 opts(format(int16('Alias'), def('ScriptObjectAliasToStr')), {
-                    "defaultEditValue": "'None'"
+                    "defaultEditValue": "None"
                 }),
                 formId('FormID')
             ])),

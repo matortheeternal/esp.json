@@ -87,7 +87,8 @@
                     "signature": "MO2T",
                     "name": "Texture Files Hashes",
                     "type": "bytes",
-                    "size": 0
+                    "size": 0,
+                    "required": true
                 },
                 {
                     "id": "MO2S"
@@ -107,7 +108,8 @@
                     "signature": "MO3T",
                     "name": "Texture Files Hashes",
                     "type": "bytes",
-                    "size": 0
+                    "size": 0,
+                    "required": true
                 },
                 {
                     "id": "MO3S"
@@ -127,7 +129,8 @@
                     "signature": "MO4T",
                     "name": "Texture Files Hashes",
                     "type": "bytes",
-                    "size": 0
+                    "size": 0,
+                    "required": true
                 },
                 {
                     "id": "MO4S"
@@ -147,7 +150,8 @@
                     "signature": "MO5T",
                     "name": "Texture Files Hashes",
                     "type": "bytes",
-                    "size": 0
+                    "size": 0,
+                    "required": true
                 },
                 {
                     "id": "MO5S"

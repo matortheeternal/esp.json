@@ -212,7 +212,7 @@
                     "signature": "RNAM",
                     "name": "Y Speed",
                     "type": "array",
-                    "includeFlag": "dfNotAlignable",
+                    "notAlignable": 1,
                     "element": {
                         "name": "Layer",
                         "type": "uint8",
@@ -225,7 +225,7 @@
                     "signature": "QNAM",
                     "name": "X Speed",
                     "type": "array",
-                    "includeFlag": "dfNotAlignable",
+                    "notAlignable": 1,
                     "element": {
                         "name": "Layer",
                         "type": "uint8",
@@ -240,7 +240,7 @@
             "signature": "PNAM",
             "name": "Cloud Colors",
             "type": "array",
-            "includeFlag": "dfNotAlignable",
+            "notAlignable": 1,
             "element": {
                 "id": "WeatherColors",
                 "name": "Layer"
@@ -250,7 +250,7 @@
             "signature": "JNAM",
             "name": "Cloud Alphas",
             "type": "array",
-            "includeFlag": "dfNotAlignable",
+            "notAlignable": 1,
             "element": {
                 "name": "Layer",
                 "type": "struct",

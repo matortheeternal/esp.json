@@ -3,6 +3,7 @@
     "type": "array",
     "sorted": true,
     "prefix": 2,
+    "required": true,
     "element": {
         "name": "Property",
         "type": "struct",
@@ -15,6 +16,8 @@
             {
                 "name": "Type",
                 "type": "uint8",
+                "required": true,
+                "afterSet": "ScriptPropertyTypeAfterSet",
                 "format": {
                     "id": "PropTypeEnum"
                 }
@@ -22,7 +25,7 @@
             {
                 "name": "Flags",
                 "type": "uint8",
-                "defaultEditValue": "'Edited'",
+                "defaultEditValue": "Edited",
                 "format": {
                     "type": "enum",
                     "options": {

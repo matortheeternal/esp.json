@@ -1,42 +1,51 @@
 let {subrecordAndField} = require('../converters'),
-    {args, resolveIntFn, formatLine} = require('../helpers');
+    {resolveIntFn} = require('../helpers'),
+    args = require('../args');
 
-let wbIntegerConvert = ({name, format, intType}, converter) => {
-    let intFn = resolveIntFn(intType),
-        nameArg = name.startsWith('IsSSE(') ? name : `${name}`;
+let wbIntegerConvert = (args, converter) => {
+    let intFn = resolveIntFn(args.intType);
     converter.addRequires(intFn);
-    return formatLine(format, `${intFn}(${nameArg})`, converter);
+    return `${intFn}(${args.name})`;
 };
 
+// wbInterface.pas#2763
 subrecordAndField('wbInteger', [
-    { type: 'stringExpr', name: 'name' },
+    args.nameExpr,
     args.intType,
-    args.integerFormat,
-    args.conflictPriority,
-    args.boolean,
-    args.boolean,
-    args.identifier,
-    args.identifier
+    args.format,
+    args.priority,
+    args.required,
+    args.matchSize,
+    args.dontShow,
+    args.afterSet,
+    args.defaultNumber,
+    args.getCP
 ], wbIntegerConvert);
 
+// wbInterface.pas#2776
 subrecordAndField('wbInteger', [
-    { type: 'stringExpr', name: 'name' },
+    args.nameExpr,
     args.intType,
-    args.integerFormat,
-    args.conflictPriority,
-    args.boolean,
-    args.identifier,
-    args.identifier,
-    args.number
+    args.format,
+    args.priority,
+    args.required,
+    args.dontShow,
+    args.afterSet,
+    args.defaultNumber,
+    args.getCP
 ], wbIntegerConvert);
 
+// wbInterface.pas#2787
+// wbInterface.pas#2800
 subrecordAndField('wbInteger', [
-    { type: 'stringExpr', name: 'name' },
+    args.nameExpr,
     args.intType,
-    args.integerFormat,
-    args.identifier,
-    args.conflictPriority,
-    args.boolean,
-    args.identifier,
-    args.identifier
+    args.format,
+    args.identifier, // toInt
+    args.priority,
+    args.required,
+    args.dontShow,
+    args.afterSet,
+    args.defaultNumber,
+    args.getCP
 ], wbIntegerConvert);

@@ -72,11 +72,13 @@
                 },
                 {
                     "name": "Magicka Offset",
-                    "type": "int16"
+                    "type": "int16",
+                    "required": true
                 },
                 {
                     "name": "Stamina Offset",
-                    "type": "int16"
+                    "type": "int16",
+                    "required": true
                 },
                 {
                     "name": "Level",
@@ -86,11 +88,13 @@
                     "elements": [
                         {
                             "name": "Level",
-                            "type": "int16"
+                            "type": "int16",
+                            "required": true
                         },
                         {
                             "name": "Level Mult",
                             "type": "int16",
+                            "required": true,
                             "format": {
                                 "type": "divide",
                                 "value": 1000
@@ -100,19 +104,23 @@
                 },
                 {
                     "name": "Calc min level",
-                    "type": "uint16"
+                    "type": "uint16",
+                    "required": true
                 },
                 {
                     "name": "Calc max level",
-                    "type": "uint16"
+                    "type": "uint16",
+                    "required": true
                 },
                 {
                     "name": "Speed Multiplier",
-                    "type": "uint16"
+                    "type": "uint16",
+                    "required": true
                 },
                 {
                     "name": "Disposition Base (unused)",
-                    "type": "int16"
+                    "type": "int16",
+                    "required": true
                 },
                 {
                     "name": "Template Flags",
@@ -138,11 +146,13 @@
                 },
                 {
                     "name": "Health Offset",
-                    "type": "int16"
+                    "type": "int16",
+                    "required": true
                 },
                 {
                     "name": "Bleedout Override",
-                    "type": "uint16"
+                    "type": "uint16",
+                    "required": true
                 }
             ]
         },
@@ -347,6 +357,7 @@
         {
             "name": "Packages",
             "type": "memberArray",
+            "required": true,
             "member": {
                 "signature": "PKID",
                 "name": "Package",
@@ -501,6 +512,7 @@
             "signature": "NAM8",
             "name": "Sound Level",
             "type": "uint32",
+            "required": true,
             "format": {
                 "id": "SoundLevelEnum"
             }

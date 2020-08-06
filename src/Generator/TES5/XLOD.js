@@ -1,10 +1,10 @@
 let {
-    addDef, float, subrecord, array, size
+    addDef, float, array, count, subrecord
 } = require('../helpers');
 
 module.exports = () => {
     addDef('XLOD', 
-        subrecord('XLOD', size(3, array('Distant LOD Data', 
+        subrecord('XLOD', count(3, array('Distant LOD Data', 
             float('Unknown')
         )))
     );

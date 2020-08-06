@@ -1,8 +1,8 @@
 let {functionConverter} = require('../converters'),
-    {args} = require('../helpers');
+    args = require('../args');
 
 functionConverter('SetLinksToCallback', [
     args.identifier
 ], (args, converter, opts) => {
-    return { linksToCallback: args.values[0], ...opts };
+    opts.linksToCallback = args.values[0];
 });

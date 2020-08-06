@@ -1,15 +1,28 @@
 let {subrecordAndField} = require('../converters'),
-    {args} = require('../helpers');
+    args = require('../args');
+
+let convertFormIdCk = function(args, converter) {
+    converter.addRequires('ckFormId');
+    return `ckFormId(${args.name}, ${args.signatures})`;
+};
 
 subrecordAndField('wbFormIDCk', [
     args.name,
     args.signatures,
-    args.boolean,
-    args.conflictPriority,
+    args.persistent,
+    args.priority,
     args.required,
-    args.identifier,
-    args.identifier
-], ({sig, name, signatures}, converter) => {
-    converter.addRequires('ckFormId');
-    return `ckFormId(${name}, ${signatures})`;
-});
+    args.dontShow,
+    args.afterSet
+], convertFormIdCk);
+
+subrecordAndField('wbFormIDCk', [
+    args.name,
+    args.signatures,
+    args.validFlstRefs,
+    args.persistent,
+    args.priority,
+    args.required,
+    args.dontShow,
+    args.afterSet
+], convertFormIdCk);

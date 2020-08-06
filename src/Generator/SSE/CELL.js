@@ -1,8 +1,8 @@
 let {
-    flags, def, subrecord, uint16, format, 
-    int32, uint32, struct, req, float, 
-    ckFormId, bytes, size, string, sorted, 
-    array, record
+    flags, def, uint16, format, subrecord, 
+    req, opts, int32, uint32, struct, 
+    float, ckFormId, bytes, size, string, 
+    sorted, array, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -17,7 +17,7 @@ module.exports = () => {
         members: [
             def('EDID'),
             def('FULL'),
-            subrecord('DATA', format(uint16('Flags'), flags({
+            opts(req(subrecord('DATA', format(uint16('Flags'), flags({
                 0: 'Is Interior Cell',
                 1: 'Has Water',
                 2: 'Can\'t Travel From Here',
@@ -27,7 +27,9 @@ module.exports = () => {
                 6: 'Hand Changed',
                 7: 'Show Sky',
                 8: 'Use Sky Lighting'
-            }))),
+            })))), {
+                "afterSet": "CELLDATAAfterSet"
+            }),
             req(subrecord('XCLC', struct('Grid', [
                 int32('X'),
                 int32('Y'),
@@ -72,7 +74,7 @@ module.exports = () => {
             def('MaxHeightDataCELL'),
             req(subrecord('LTMP', ckFormId('Lighting Template', ['LGTM', 'NULL']))),
             subrecord('LNAM', size(0, bytes('Unknown'))),
-            req(subrecord('XCLW', req(float('Water Height')))),
+            req(subrecord('XCLW', float('Water Height'))),
             subrecord('XNAM', string('Water Noise Texture')),
             subrecord('XCLR', sorted(array('Regions', 
                 ckFormId('Region', ['REGN'])

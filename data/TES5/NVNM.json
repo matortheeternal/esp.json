@@ -12,7 +12,7 @@
             "name": "Magic",
             "type": "bytes",
             "size": 4,
-            "defaultEditValue": "'3C A0 E9 A5'"
+            "defaultEditValue": "3C A0 E9 A5"
         },
         {
             "name": "Parent Worldspace",
@@ -54,7 +54,7 @@
             "name": "Vertices",
             "type": "array",
             "prefix": 4,
-            "includeFlag": "dfNotAlignable",
+            "notAlignable": 1,
             "element": {
                 "name": "Vertex",
                 "type": "struct",
@@ -83,7 +83,7 @@
             "name": "Triangles",
             "type": "array",
             "prefix": 4,
-            "includeFlag": "dfNotAlignable",
+            "notAlignable": 1,
             "element": {
                 "name": "Triangle",
                 "type": "struct",
@@ -193,7 +193,7 @@
             "name": "Edge Links",
             "type": "array",
             "prefix": 4,
-            "includeFlag": "dfNotAlignable",
+            "notAlignable": 1,
             "element": {
                 "name": "Edge Link",
                 "type": "struct",
@@ -254,7 +254,7 @@
             "name": "Cover Triangles",
             "type": "array",
             "prefix": 4,
-            "includeFlag": "dfNotAlignable",
+            "notAlignable": 1,
             "element": {
                 "name": "Triangle",
                 "type": "int16",
@@ -300,12 +300,12 @@
         {
             "name": "NavMeshGrid",
             "type": "array",
-            "includeFlag": "dfNotAlignable",
+            "notAlignable": 1,
             "element": {
                 "name": "NavMeshGridCell",
                 "type": "array",
                 "prefix": 4,
-                "includeFlag": "dfNotAlignable",
+                "notAlignable": 1,
                 "element": {
                     "name": "Triangle",
                     "type": "int16",

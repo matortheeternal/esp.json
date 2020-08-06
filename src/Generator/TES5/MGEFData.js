@@ -1,8 +1,8 @@
 let {
     addDef, flags, uint32, format, float, 
-    formId, ckFormId, union, req, def, 
-    int32, uint16, bytes, size, struct, 
-    subrecord, memberStruct
+    formId, ckFormId, union, req, opts, 
+    def, int32, uint16, bytes, size, 
+    struct, subrecord, memberStruct
 } = require('../helpers');
 
 module.exports = () => {
@@ -44,7 +44,7 @@ module.exports = () => {
                     31: 'Unknown 32'
                 })),
                 float('Base Cost'),
-                req(union('Assoc. Item', 'MGEFAssocItemDecider', [
+                opts(req(union('Assoc. Item', 'MGEFAssocItemDecider', [
                     formId('Unused'),
                     ckFormId('Assoc. Item', ['LIGH', 'NULL']),
                     ckFormId('Assoc. Item', [
@@ -56,7 +56,9 @@ module.exports = () => {
                     ckFormId('Assoc. Item', ['RACE', 'NULL']),
                     ckFormId('Assoc. Item', ['ENCH', 'NULL']),
                     ckFormId('Assoc. Item', ['KYWD', 'NULL'])
-                ])),
+                ])), {
+                    "afterSet": "MGEFAssocItemAfterSet"
+                }),
                 format(int32('Magic Skill'), def('ActorValueEnum')),
                 format(int32('Resist Value'), def('ActorValueEnum')),
                 uint16('Counter Effect count'),
@@ -72,7 +74,7 @@ module.exports = () => {
                 ]),
                 float('Taper Curve'),
                 float('Taper Duration'),
-                req(req(float('Second AV Weight'))),
+                req(float('Second AV Weight')),
                 def('MGEFType'),
                 def('ActorValue'),
                 ckFormId('Projectile', ['PROJ', 'NULL']),

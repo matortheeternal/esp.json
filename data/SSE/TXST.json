@@ -63,6 +63,7 @@
             "signature": "DNAM",
             "name": "Flags",
             "type": "uint16",
+            "required": true,
             "format": {
                 "type": "flags",
                 "flags": {

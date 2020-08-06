@@ -13,6 +13,7 @@
             "signature": "ANAM",
             "name": "Related Camera Paths",
             "type": "array",
+            "required": true,
             "element": {
                 "name": "Related Camera Path",
                 "type": "formId",
@@ -26,6 +27,7 @@
             "signature": "DATA",
             "name": "Camera Zoom",
             "type": "uint8",
+            "required": true,
             "format": {
                 "type": "enum",
                 "options": {

@@ -1,10 +1,10 @@
 let {functionConverter} = require('../converters'),
-    {args} = require('../helpers');
+    args = require('../args');
 
 functionConverter('wbCounterContainerAfterSet', [
-    { type: 'string', name: 'path' },
-    { type: 'string', name: 'arrayPath' },
-    args.identifier
+    args.path,
+    args.arrayPath,
+    args.identifier // discard
 ], ({path, arrayPath}, converter) => {
     let storage = converter.getData(converter.regionName);
     if (!storage) {

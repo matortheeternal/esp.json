@@ -47,7 +47,8 @@
                     "signature": "MO2T",
                     "name": "Texture Files Hashes",
                     "type": "bytes",
-                    "size": 0
+                    "size": 0,
+                    "required": true
                 },
                 {
                     "id": "MO2S"
@@ -70,7 +71,8 @@
                     "signature": "MO4T",
                     "name": "Texture Files Hashes",
                     "type": "bytes",
-                    "size": 0
+                    "size": 0,
+                    "required": true
                 },
                 {
                     "id": "MO4S"
@@ -166,6 +168,7 @@
             "signature": "DNAM",
             "name": "Armor Rating",
             "type": "int32",
+            "required": true,
             "format": {
                 "type": "divide",
                 "value": 100

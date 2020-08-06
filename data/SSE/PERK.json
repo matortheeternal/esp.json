@@ -102,6 +102,8 @@
                             {
                                 "name": "Type",
                                 "type": "uint8",
+                                "required": true,
+                                "afterSet": "PERKPRKETypeAfterSet",
                                 "format": {
                                     "type": "enum",
                                     "options": {
@@ -176,6 +178,7 @@
                                     {
                                         "name": "Entry Point",
                                         "type": "uint8",
+                                        "required": true,
                                         "format": {
                                             "id": "EntryPointsEnum"
                                         }

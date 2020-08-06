@@ -1,6 +1,6 @@
 let {
     def, flags, uint16, format, uint8, 
-    bytes, size, uint32, subrecord, struct, 
+    bytes, size, uint32, struct, subrecord, 
     string, ckFormId, memberArray, memberStruct, req, 
     empty, sortKey, localized, opts, sorted, 
     int32, formId, int16, enumeration, memberUnion, 
@@ -63,13 +63,13 @@ module.exports = () => {
                                 1: 'Fail Quest'
                             }))),
                             def('CTDAs'),
-                            subrecord('CNAM', opts(localized(string('Log Entry')), {
+                            opts(subrecord('CNAM', localized(string('Log Entry'))), {
                                 "keepCase": true
-                            })),
+                            }),
                             subrecord('NAM0', ckFormId('Next Quest', ['QUST'])),
-                            subrecord('SCHR', size(0, bytes('Unused'))),
-                            subrecord('SCTX', size(0, bytes('Unused'))),
-                            subrecord('QNAM', size(0, bytes('Unused')))
+                            req(subrecord('SCHR', size(0, bytes('Unused')))),
+                            req(subrecord('SCTX', size(0, bytes('Unused')))),
+                            req(subrecord('QNAM', size(0, bytes('Unused'))))
                         ])
                     )
                 ]))
@@ -80,9 +80,9 @@ module.exports = () => {
                     subrecord('FNAM', format(uint32('Flags'), flags({
                         0: 'ORed With Previous'
                     }))),
-                    req(subrecord('NNAM', opts(localized(string('Display Text')), {
+                    opts(req(subrecord('NNAM', localized(string('Display Text')))), {
                         "keepCase": true
-                    }))),
+                    }),
                     memberArray('Targets', 
                         memberStruct('Target', [
                             subrecord('QSTA', struct('Target', [

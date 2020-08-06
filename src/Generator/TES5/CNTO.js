@@ -1,6 +1,6 @@
 let {
-    addDef, ckFormId, int32, subrecord, sortKey, 
-    struct, def, memberStruct
+    addDef, ckFormId, int32, sortKey, struct, 
+    subrecord, def, memberStruct
 } = require('../helpers');
 
 module.exports = () => {

@@ -1,12 +1,14 @@
 let {subrecordAndField} = require('../converters'),
-    {args} = require('../helpers');
+    args = require('../args');
 
 subrecordAndField('wbLString', [
     args.name,
-    args.number,
-    args.conflictPriority,
+    args.stringSize,
+    args.priority,
     args.required,
-    args.identifier
+    args.dontShow,
+    args.afterSet,
+    args.getCP
 ], ({name}, converter) => {
     converter.addRequires('localized', 'string');
     return `localized(string(${name}))`;

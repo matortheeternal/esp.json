@@ -1,18 +1,19 @@
 let {functionConverter} = require('../converters'),
-    {reqLine, args} = require('../helpers');
+    args = require('../args');
 
+// wbInterface.pas#3430
 functionConverter('wbRStruct', [
     args.name,
     args.members,
     args.signatures,
-    args.conflictPriority,
+    args.priority,
     args.required,
-    args.identifier,
-    args.boolean,
-    args.identifier,
-    args.identifier,
-    args.identifier
-], ({name, members, required}, converter) => {
+    args.dontShow,
+    args.boolean, // allow unordered
+    args.afterLoad,
+    args.afterSet,
+    args.getCP
+], (args, converter) => {
     converter.addRequires('memberStruct');
-    return reqLine(required, `memberStruct(${name}, ${members})`, converter);
+    return `memberStruct(${args.name}, ${args.members})`;
 });

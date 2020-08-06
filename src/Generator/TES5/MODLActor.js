@@ -1,5 +1,5 @@
 let {
-    addDef, subrecord, string, req, def, 
+    addDef, string, subrecord, req, def, 
     sortKey, memberStruct
 } = require('../helpers');
 

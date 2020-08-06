@@ -1,6 +1,6 @@
 let {
     flags, def, uint8, bytes, size, 
-    subrecord, struct, req, ckFormId, uint32, 
+    struct, subrecord, req, ckFormId, uint32, 
     float, array, memberStruct, memberArray, enumeration, 
     format, sortKey, sorted, localized, string, 
     uint16, record
@@ -34,7 +34,7 @@ module.exports = () => {
             ),
             sorted(memberArray('Region Data Entries', 
                 sortKey([0], memberStruct('Region Data Entry', [
-                    subrecord('RDAT', sortKey([0], struct('Data Header', [
+                    req(subrecord('RDAT', sortKey([0], struct('Data Header', [
                         format(uint32('Type'), enumeration({
                             0: 'Unknown 0',
                             1: 'Unknown 1',
@@ -58,10 +58,10 @@ module.exports = () => {
                         })),
                         uint8('Priority'),
                         bytes('Unknown')
-                    ]))),
+                    ])))),
                     def('ICON'),
                     req(subrecord('RDMO', ckFormId('Music', ['MUSC']))),
-                    subrecord('RDSA', sorted(array('Sounds', 
+                    req(subrecord('RDSA', sorted(array('Sounds', 
                         sortKey([0], struct('Sound', [
                             ckFormId('Sound', ['SNDR', 'NULL']),
                             format(uint32('Flags'), flags({
@@ -72,9 +72,9 @@ module.exports = () => {
                             })),
                             float('Chance')
                         ]))
-                    ))),
+                    )))),
                     req(subrecord('RDMP', localized(string('Map Name')))),
-                    subrecord('RDOT', array('Objects', 
+                    req(subrecord('RDOT', array('Objects', 
                         struct('Object', [
                             ckFormId('Object', [
                                 'TREE', 'FLOR', 'STAT', 'LTEX', 'MSTT'
@@ -110,20 +110,20 @@ module.exports = () => {
                             size(2, bytes('Unknown')),
                             size(4, bytes('Unknown'))
                         ])
-                    )),
-                    subrecord('RDGS', sorted(array('Grasses', 
+                    ))),
+                    req(subrecord('RDGS', sorted(array('Grasses', 
                         sortKey([0], struct('Grass', [
                             ckFormId('Grass', ['GRAS']),
                             size(4, bytes('Unknown'))
                         ]))
-                    ))),
-                    subrecord('RDWT', sorted(array('Weather Types', 
+                    )))),
+                    req(subrecord('RDWT', sorted(array('Weather Types', 
                         sortKey([0], struct('Weather Type', [
                             ckFormId('Weather', ['WTHR']),
                             uint32('Chance'),
                             ckFormId('Global', ['GLOB', 'NULL'])
                         ]))
-                    )))
+                    ))))
                 ]))
             ))
         ]

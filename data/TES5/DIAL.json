@@ -42,6 +42,7 @@
                 {
                     "name": "Topic Flags",
                     "type": "uint8",
+                    "required": true,
                     "format": {
                         "type": "flags",
                         "flags": {

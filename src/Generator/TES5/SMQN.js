@@ -1,7 +1,8 @@
 let {
-    def, subrecord, ckFormId, req, uint16, 
+    def, ckFormId, subrecord, req, uint16, 
     format, flags, struct, uint32, unknown, 
-    float, sortKey, memberStruct, memberArray, record
+    float, sortKey, memberStruct, memberArray, elementCounter, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
@@ -26,14 +27,16 @@ module.exports = () => {
             ])),
             subrecord('XNAM', uint32('Max concurrent quests')),
             subrecord('MNAM', uint32('Num quests to run')),
-            subrecord('QNAM', uint32('Quest Count')),
-            memberArray('Quests', 
-                sortKey([0], memberStruct('Quest', [
-                    subrecord('NNAM', ckFormId('Quest', ['QUST'])),
-                    subrecord('FNAM', unknown()),
-                    req(subrecord('RNAM', req(format(float('Hours until reset'), '1Div24'))))
-                ]))
-            )
+            req(subrecord('QNAM', uint32('Quest Count'))),
+            req(elementCounter('QNAM - Quest Count', 
+                memberArray('Quests', 
+                    sortKey([0], memberStruct('Quest', [
+                        subrecord('NNAM', ckFormId('Quest', ['QUST'])),
+                        subrecord('FNAM', unknown()),
+                        req(subrecord('RNAM', format(float('Hours until reset'), '1Div24')))
+                    ]))
+                )
+            ))
         ]
     })
 };

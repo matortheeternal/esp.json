@@ -1,19 +1,16 @@
-let {functionConverter} = require('../converters'),
-    {reqLine, sizeLine, optsLine, args} = require('../helpers');
+let {subrecordAndField} = require('../converters'),
+    args = require('../args');
 
-functionConverter('wbStringKC', [
-    args.sig,
+subrecordAndField('wbStringKC', [
     args.name,
-    args.size,
-    args.conflictPriority,
+    args.stringSize,
+    args.priority,
     args.required,
-    args.identifier,
-    args.identifier,
-    args.identifier
-], ({name, sig, size, required}, converter) => {
-    converter.addRequires('subrecord', 'string');
-    let line = sizeLine(size, `string(${name})`, converter);
-    line = optsLine({keepCase: true}, line, converter);
-    line = `subrecord('${sig}', ${line})`;
-    return reqLine(required, line, converter);
+    args.dontShow,
+    args.afterSet,
+    args.getCP
+], (args, converter, opts) => {
+    converter.addRequires('string');
+    opts.keepCase = true;
+    return  `string(${args.name})`;
 });

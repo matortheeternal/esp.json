@@ -1,5 +1,5 @@
 let {
-    flags, def, req, subrecord, uint16, 
+    flags, def, req, uint16, subrecord, 
     ckFormId, string, bytes, size, memberStruct, 
     uint32, float, struct, uint8, format, 
     enumeration, int32, IsSSE, record
@@ -31,10 +31,10 @@ module.exports = game => {
             def('DESC'),
             memberStruct('Has Scope', [
                 subrecord('MOD3', string('Model FileName')),
-                subrecord('MO3T', size(0, bytes('Texture Files Hashes'))),
+                req(subrecord('MO3T', size(0, bytes('Texture Files Hashes')))),
                 def('MO3S')
             ]),
-            subrecord('NNAM', size(0, bytes('Unused'))),
+            req(subrecord('NNAM', size(0, bytes('Unused')))),
             subrecord('INAM', ckFormId('Impact Data Set', ['IPDS', 'NULL'])),
             subrecord('WNAM', ckFormId('1st Person Model Object', ['STAT', 'NULL'])),
             subrecord('SNAM', ckFormId('Attack Sound', ['SNDR'])),

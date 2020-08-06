@@ -51,6 +51,7 @@ let inherit = (inheritFrom, obj) => merge(obj, {inheritFrom});
 let localized = obj => merge(obj, {localized: true});
 let sorted = obj => merge(obj, {sorted: true});
 let size = (size, obj) => merge(obj, {size});
+let count = (count, obj) => merge(obj, {count});
 let prefix = (prefix, obj) => merge(obj, {prefix});
 let padding = (padding, obj) => merge(obj, {padding});
 let counter = (type, options = {}) => ({type, ...options});
@@ -113,7 +114,8 @@ module.exports = {
     addDef, getDefs, clearDefs, forEachDef, IsSSE,
     addMetaDef, getMetaDefs, getGroupOrder, setGroupOrder,
     req, def, opts, sortKey, inherit,
-    localized, sorted, size, prefix, padding, elementCounter, customCounter,
+    localized, sorted, size, count, prefix, padding,
+    elementCounter, customCounter,
     format, div, scale, flags, showUnknown, enumeration, formatUnion,
     record, subrecord,
     memberArray, memberStruct, memberUnion,

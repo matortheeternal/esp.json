@@ -1,6 +1,6 @@
 let {
     addDef, def, flags, int0, format, 
-    empty, uint32, subrecord, struct, req, 
+    empty, uint32, struct, subrecord, req, 
     uint8, bytes, size, memberUnion
 } = require('../helpers');
 

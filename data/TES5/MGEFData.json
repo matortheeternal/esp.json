@@ -58,6 +58,7 @@
                     "type": "union",
                     "decider": "MGEFAssocItemDecider",
                     "required": true,
+                    "afterSet": "MGEFAssocItemAfterSet",
                     "elements": [
                         {
                             "name": "Unused",

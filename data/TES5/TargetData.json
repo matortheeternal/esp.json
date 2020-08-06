@@ -5,6 +5,7 @@
         {
             "name": "Type",
             "type": "int32",
+            "required": true,
             "format": {
                 "type": "enum",
                 "options": {

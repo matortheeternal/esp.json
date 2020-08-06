@@ -1,9 +1,13 @@
 let {subrecordAndField} = require('../converters'),
-    {args} = require('../helpers');
+    args = require('../args');
 
+// wbInterface.pas#6680
+// wbInterface.pas#6690
 subrecordAndField('wbUnknown', [
-    args.conflictPriority,
-    args.required
+    args.priority,
+    args.required,
+    args.dontShow,
+    args.getCP
 ], (args, converter) => {
     converter.addRequires('unknown');
     return `unknown()`;

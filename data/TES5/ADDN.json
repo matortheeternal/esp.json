@@ -16,7 +16,8 @@
         {
             "signature": "DATA",
             "name": "Node Index",
-            "type": "int32"
+            "type": "int32",
+            "required": true
         },
         {
             "signature": "SNAM",

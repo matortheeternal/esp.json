@@ -38,6 +38,7 @@
             "signature": "DATA",
             "name": "Footstep Sets",
             "type": "array",
+            "required": true,
             "element": {
                 "name": "Footstep",
                 "type": "formId",

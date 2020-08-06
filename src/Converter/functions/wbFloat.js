@@ -1,34 +1,33 @@
 let {subrecordAndField, functionConverter} = require('../converters'),
-    {args, scaleLine, reqLine} = require('../helpers');
+    args = require('../args');
 
+let convertFloat = (args, converter) => {
+    converter.addRequires('float');
+    return `float(${args.name})`
+};
+
+// wbInterface.pas#6837
+// wbInterface.pas#6867
 subrecordAndField('wbFloat', [
     args.name,
-    args.conflictPriority,
+    args.priority,
     args.required,
-    { type: 'mathExpr', name: 'scale' },
-    { type: 'mathExpr', name: 'digits' },
-    args.identifier,
-    args.identifier,
-    args.number,
-    args.identifier
-], ({name, scale, required}, converter) => {
-    converter.addRequires('float');
-    let line = `float(${name})`;
-    line = scaleLine(scale, line, converter);
-    return reqLine(required, line, converter);
-});
+    args.scale,
+    args.digits,
+    args.dontShow,
+    args.normalizer,
+    args.defaultNumber,
+    args.getCP
+], convertFloat);
 
+// wbInterface.pas#6895
 functionConverter('wbFloat', [
     args.name,
-    args.identifier,
+    args.priority,
     args.required,
-    args.identifier,
-    args.identifier,
-    args.identifier,
-    args.number,
-    args.identifier
-], ({name, required}, converter) => {
-    converter.addRequires('float');
-    let line = `float(${name})`;
-    return reqLine(required, line, converter);
-});
+    args.dontShow,
+    args.afterSet,
+    args.normalizer,
+    args.defaultNumber,
+    args.getCP
+], convertFloat);
