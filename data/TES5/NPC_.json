@@ -405,18 +405,60 @@
                 {
                     "name": "Skill Values",
                     "type": "array",
+                    "count": 18,
                     "element": {
                         "name": "Skill",
                         "type": "uint8"
-                    }
+                    },
+                    "labels": [
+                        "OneHanded",
+                        "TwoHanded",
+                        "Marksman",
+                        "Block",
+                        "Smithing",
+                        "HeavyArmor",
+                        "LightArmor",
+                        "Pickpocket",
+                        "Lockpicking",
+                        "Sneak",
+                        "Alchemy",
+                        "Speechcraft",
+                        "Alteration",
+                        "Conjuration",
+                        "Destruction",
+                        "Illusion",
+                        "Restoration",
+                        "Enchanting"
+                    ]
                 },
                 {
                     "name": "Skill Offsets",
                     "type": "array",
+                    "count": 18,
                     "element": {
                         "name": "Skill",
                         "type": "uint8"
-                    }
+                    },
+                    "labels": [
+                        "OneHanded",
+                        "TwoHanded",
+                        "Marksman",
+                        "Block",
+                        "Smithing",
+                        "HeavyArmor",
+                        "LightArmor",
+                        "Pickpocket",
+                        "Lockpicking",
+                        "Sneak",
+                        "Alchemy",
+                        "Speechcraft",
+                        "Alteration",
+                        "Conjuration",
+                        "Destruction",
+                        "Illusion",
+                        "Restoration",
+                        "Enchanting"
+                    ]
                 },
                 {
                     "name": "Health",

@@ -65,6 +65,7 @@
                 {
                     "name": "Channels",
                     "type": "array",
+                    "count": 3,
                     "element": {
                         "name": "",
                         "type": "struct",
@@ -102,7 +103,12 @@
                                 "type": "uint8"
                             }
                         ]
-                    }
+                    },
+                    "labels": [
+                        "Channel 0",
+                        "Channel 1",
+                        "Channel 2? (unused)"
+                    ]
                 }
             ]
         },

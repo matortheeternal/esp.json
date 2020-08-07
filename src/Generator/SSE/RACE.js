@@ -3,7 +3,8 @@ let {
     int8, format, sortKey, struct, sorted, 
     array, count, bytes, size, float, 
     enumeration, uint32, int32, empty, string, 
-    memberArray, uint16, memberStruct, opts, record
+    memberArray, labels, uint16, memberStruct, opts, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
@@ -91,15 +92,15 @@ module.exports = () => {
             sorted(memberArray('Movement Type Names', 
                 subrecord('MTNM', string('Name'))
             )),
-            req(subrecord('VTCK', array('Voices', 
+            req(subrecord('VTCK', labels(array('Voices', 
                 ckFormId('Voice', ['VTYP'])
-            ))),
-            req(subrecord('DNAM', array('Decapitate Armors', 
+            ), ['Male', 'Female']))),
+            req(subrecord('DNAM', labels(array('Decapitate Armors', 
                 ckFormId('Decapitate Armor', ['NULL', 'ARMO'])
-            ))),
-            req(subrecord('HCLF', array('Default Hair Colors', 
+            ), ['Male', 'Female']))),
+            req(subrecord('HCLF', labels(array('Default Hair Colors', 
                 ckFormId('Default Hair Color', ['NULL', 'CLFM'])
-            ))),
+            ), ['Male', 'Female']))),
             req(subrecord('TINL', uint16('Total Number of Tints in List'))),
             req(subrecord('PNAM', float('FaceGen - Main clamp'))),
             req(subrecord('UNAM', float('FaceGen - Face clamp'))),

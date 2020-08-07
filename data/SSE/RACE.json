@@ -316,6 +316,7 @@
             "signature": "VTCK",
             "name": "Voices",
             "type": "array",
+            "count": 2,
             "required": true,
             "element": {
                 "name": "Voice",
@@ -323,12 +324,17 @@
                 "signatures": [
                     "VTYP"
                 ]
-            }
+            },
+            "labels": [
+                "Male",
+                "Female"
+            ]
         },
         {
             "signature": "DNAM",
             "name": "Decapitate Armors",
             "type": "array",
+            "count": 2,
             "required": true,
             "element": {
                 "name": "Decapitate Armor",
@@ -337,12 +343,17 @@
                     "NULL",
                     "ARMO"
                 ]
-            }
+            },
+            "labels": [
+                "Male",
+                "Female"
+            ]
         },
         {
             "signature": "HCLF",
             "name": "Default Hair Colors",
             "type": "array",
+            "count": 2,
             "required": true,
             "element": {
                 "name": "Default Hair Color",
@@ -351,7 +362,11 @@
                     "NULL",
                     "CLFM"
                 ]
-            }
+            },
+            "labels": [
+                "Male",
+                "Female"
+            ]
         },
         {
             "signature": "TINL",

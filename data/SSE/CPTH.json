@@ -13,6 +13,7 @@
             "signature": "ANAM",
             "name": "Related Camera Paths",
             "type": "array",
+            "count": 2,
             "required": true,
             "element": {
                 "name": "Related Camera Path",
@@ -21,7 +22,11 @@
                     "CPTH",
                     "NULL"
                 ]
-            }
+            },
+            "labels": [
+                "Parent",
+                "Previous Sibling"
+            ]
         },
         {
             "signature": "DATA",

@@ -1,7 +1,7 @@
 let {
     def, req, bytes, size, enumeration, 
-    int8, format, uint8, array, float, 
-    uint32, struct, subrecord, record
+    int8, format, uint8, array, labels, 
+    float, uint32, struct, subrecord, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -34,14 +34,20 @@ module.exports = () => {
                     17: 'Enchanting'
                 })),
                 uint8('Maximum training level'),
-                array('Skill Weights', 
+                labels(array('Skill Weights', 
                     uint8('Weight')
-                ),
+                ), [
+                    'One Handed', 'Two Handed', 'Archery', 'Block',
+                    'Smithing', 'Heavy Armor', 'Light Armor', 'Pickpocket',
+                    'Lockpicking', 'Sneak', 'Alchemy', 'Speech',
+                    'Alteration', 'Conjuration', 'Destruction', 'Illusion',
+                    'Restoration', 'Enchanting'
+                ]),
                 float('Bleedout Default'),
                 uint32('Voice Points'),
-                array('Attribute Weights', 
+                labels(array('Attribute Weights', 
                     uint8('Weight')
-                )
+                ), ['Health', 'Magicka', 'Stamina', 'Unknown'])
             ])))
         ]
     })

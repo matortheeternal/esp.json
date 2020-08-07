@@ -1,6 +1,7 @@
 let {
-    def, ckFormId, array, subrecord, req, 
-    enumeration, uint8, format, memberArray, record
+    def, ckFormId, array, labels, subrecord, 
+    req, enumeration, uint8, format, memberArray, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
@@ -8,9 +9,9 @@ module.exports = () => {
         members: [
             def('EDID'),
             def('CTDAs'),
-            req(subrecord('ANAM', array('Related Camera Paths', 
+            req(subrecord('ANAM', labels(array('Related Camera Paths', 
                 ckFormId('Related Camera Path', ['CPTH', 'NULL'])
-            ))),
+            ), ['Parent', 'Previous Sibling']))),
             req(subrecord('DATA', format(uint8('Camera Zoom'), enumeration({
                 0: 'Default, Must Have Camera Shots',
                 1: 'Disable, Must Have Camera Shots',

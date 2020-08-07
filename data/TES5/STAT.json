@@ -74,6 +74,7 @@
             "signature": "MNAM",
             "name": "Distant LOD",
             "type": "array",
+            "count": 4,
             "required": true,
             "element": {
                 "name": "LOD",
@@ -85,7 +86,13 @@
                         "size": 260
                     }
                 ]
-            }
+            },
+            "labels": [
+                "Level 0",
+                "Level 1",
+                "Level 2",
+                "Level 3"
+            ]
         }
     ]
 }

@@ -62,10 +62,31 @@
                 {
                     "name": "Skill Weights",
                     "type": "array",
+                    "count": 18,
                     "element": {
                         "name": "Weight",
                         "type": "uint8"
-                    }
+                    },
+                    "labels": [
+                        "One Handed",
+                        "Two Handed",
+                        "Archery",
+                        "Block",
+                        "Smithing",
+                        "Heavy Armor",
+                        "Light Armor",
+                        "Pickpocket",
+                        "Lockpicking",
+                        "Sneak",
+                        "Alchemy",
+                        "Speech",
+                        "Alteration",
+                        "Conjuration",
+                        "Destruction",
+                        "Illusion",
+                        "Restoration",
+                        "Enchanting"
+                    ]
                 },
                 {
                     "name": "Bleedout Default",
@@ -78,10 +99,17 @@
                 {
                     "name": "Attribute Weights",
                     "type": "array",
+                    "count": 4,
                     "element": {
                         "name": "Weight",
                         "type": "uint8"
-                    }
+                    },
+                    "labels": [
+                        "Health",
+                        "Magicka",
+                        "Stamina",
+                        "Unknown"
+                    ]
                 }
             ]
         }

@@ -23,6 +23,7 @@
             "signature": "ANAM",
             "name": "Related Idle Animations",
             "type": "array",
+            "count": 2,
             "required": true,
             "element": {
                 "name": "Related Idle Animation",
@@ -32,7 +33,11 @@
                     "IDLE",
                     "NULL"
                 ]
-            }
+            },
+            "labels": [
+                "Parent",
+                "Previous Sibling"
+            ]
         },
         {
             "signature": "DATA",

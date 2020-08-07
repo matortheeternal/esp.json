@@ -1,8 +1,7 @@
-let {typeParser} = require('../parsers'),
-    {inlineArr} = require('../helpers');
+let {typeParser} = require('../parsers');
 
 typeParser('array of string', {
     skipAdvance: true,
     test: parser => parser.matchArray(['string']),
-    parse: a => inlineArr(a)
+    parse: a => a
 });

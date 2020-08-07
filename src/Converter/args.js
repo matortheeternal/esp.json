@@ -15,7 +15,6 @@ let normalizer = {type: 'identifier', name: 'normalizer'};
 let addInfo = {type: 'identifier', name: 'addInfo'};
 let isSorted = {type: 'identifier', name: 'isSorted'};
 let getCP = {type: 'identifier', name: 'getCP'};
-let labels = {type: 'array of string', name: 'labels'};
 let isReference = {type: 'boolean', name: 'isReference'};
 let persistent = {type: 'boolean', name: 'persistent'};
 let matchSize = {type: 'boolean',name: 'matchSize'};
@@ -53,8 +52,7 @@ module.exports = {
     // extension types
     ...extTypes,
     // unimplemented extension types
-    labels, priority, afterLoad, dontShow, getCP,
-    digits, validFlstRefs, elementMap, exSk,
-    normalizer, defaultNumber, persistent, isReference,
+    priority, afterLoad, dontShow, getCP, digits, validFlstRefs,
+    elementMap, exSk, normalizer, defaultNumber, persistent, isReference,
     matchSize, isSorted, addInfo, optionalFromElement
 };

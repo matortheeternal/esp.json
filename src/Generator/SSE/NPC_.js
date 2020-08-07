@@ -3,8 +3,8 @@ let {
     int16, div, union, uint16, struct, 
     subrecord, ckFormId, int8, bytes, size, 
     sortKey, sorted, memberArray, uint8, elementCounter, 
-    localized, string, array, float, unknown, 
-    scale, int32, memberStruct, record
+    localized, string, array, labels, float, 
+    unknown, scale, int32, memberStruct, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -130,12 +130,24 @@ module.exports = () => {
             subrecord('SHRT', localized(string('Short Name'))),
             subrecord('DATA', bytes('Marker')),
             req(subrecord('DNAM', struct('Player Skills', [
-                array('Skill Values', 
+                labels(array('Skill Values', 
                     uint8('Skill')
-                ),
-                array('Skill Offsets', 
+                ), [
+                    'OneHanded', 'TwoHanded', 'Marksman', 'Block',
+                    'Smithing', 'HeavyArmor', 'LightArmor', 'Pickpocket',
+                    'Lockpicking', 'Sneak', 'Alchemy', 'Speechcraft',
+                    'Alteration', 'Conjuration', 'Destruction', 'Illusion',
+                    'Restoration', 'Enchanting'
+                ]),
+                labels(array('Skill Offsets', 
                     uint8('Skill')
-                ),
+                ), [
+                    'OneHanded', 'TwoHanded', 'Marksman', 'Block',
+                    'Smithing', 'HeavyArmor', 'LightArmor', 'Pickpocket',
+                    'Lockpicking', 'Sneak', 'Alchemy', 'Speechcraft',
+                    'Alteration', 'Conjuration', 'Destruction', 'Illusion',
+                    'Restoration', 'Enchanting'
+                ]),
                 uint16('Health'),
                 uint16('Magicka'),
                 uint16('Stamina'),
