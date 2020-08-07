@@ -61,31 +61,80 @@
                 },
                 {
                     "name": "Skill Weights",
-                    "type": "array",
-                    "count": 18,
-                    "element": {
-                        "name": "Weight",
-                        "type": "uint8"
-                    },
-                    "labels": [
-                        "One Handed",
-                        "Two Handed",
-                        "Archery",
-                        "Block",
-                        "Smithing",
-                        "Heavy Armor",
-                        "Light Armor",
-                        "Pickpocket",
-                        "Lockpicking",
-                        "Sneak",
-                        "Alchemy",
-                        "Speech",
-                        "Alteration",
-                        "Conjuration",
-                        "Destruction",
-                        "Illusion",
-                        "Restoration",
-                        "Enchanting"
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "One Handed",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Two Handed",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Archery",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Block",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Smithing",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Heavy Armor",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Light Armor",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Pickpocket",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Lockpicking",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Sneak",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Alchemy",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Speech",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Alteration",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Conjuration",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Destruction",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Illusion",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Restoration",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Enchanting",
+                            "type": "uint8"
+                        }
                     ]
                 },
                 {
@@ -98,17 +147,24 @@
                 },
                 {
                     "name": "Attribute Weights",
-                    "type": "array",
-                    "count": 4,
-                    "element": {
-                        "name": "Weight",
-                        "type": "uint8"
-                    },
-                    "labels": [
-                        "Health",
-                        "Magicka",
-                        "Stamina",
-                        "Unknown"
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Health",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Magicka",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Stamina",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": "uint8"
+                        }
                     ]
                 }
             ]

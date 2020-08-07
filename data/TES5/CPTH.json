@@ -12,20 +12,25 @@
         {
             "signature": "ANAM",
             "name": "Related Camera Paths",
-            "type": "array",
-            "count": 2,
+            "type": "struct",
             "required": true,
-            "element": {
-                "name": "Related Camera Path",
-                "type": "formId",
-                "signatures": [
-                    "CPTH",
-                    "NULL"
-                ]
-            },
-            "labels": [
-                "Parent",
-                "Previous Sibling"
+            "elements": [
+                {
+                    "name": "Parent",
+                    "type": "formId",
+                    "signatures": [
+                        "CPTH",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Previous Sibling",
+                    "type": "formId",
+                    "signatures": [
+                        "CPTH",
+                        "NULL"
+                    ]
+                }
             ]
         },
         {

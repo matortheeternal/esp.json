@@ -3,8 +3,8 @@ let {
     int16, div, union, uint16, struct, 
     subrecord, ckFormId, int8, bytes, size, 
     sortKey, sorted, memberArray, uint8, elementCounter, 
-    localized, string, array, labels, float, 
-    unknown, scale, int32, memberStruct, record
+    localized, string, float, unknown, scale, 
+    int32, memberStruct, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -130,23 +130,45 @@ module.exports = () => {
             subrecord('SHRT', localized(string('Short Name'))),
             subrecord('DATA', bytes('Marker')),
             req(subrecord('DNAM', struct('Player Skills', [
-                labels(array('Skill Values', 
-                    uint8('Skill')
-                ), [
-                    'OneHanded', 'TwoHanded', 'Marksman', 'Block',
-                    'Smithing', 'HeavyArmor', 'LightArmor', 'Pickpocket',
-                    'Lockpicking', 'Sneak', 'Alchemy', 'Speechcraft',
-                    'Alteration', 'Conjuration', 'Destruction', 'Illusion',
-                    'Restoration', 'Enchanting'
+                struct('Skill Values', [
+                    uint8('OneHanded'),
+                    uint8('TwoHanded'),
+                    uint8('Marksman'),
+                    uint8('Block'),
+                    uint8('Smithing'),
+                    uint8('HeavyArmor'),
+                    uint8('LightArmor'),
+                    uint8('Pickpocket'),
+                    uint8('Lockpicking'),
+                    uint8('Sneak'),
+                    uint8('Alchemy'),
+                    uint8('Speechcraft'),
+                    uint8('Alteration'),
+                    uint8('Conjuration'),
+                    uint8('Destruction'),
+                    uint8('Illusion'),
+                    uint8('Restoration'),
+                    uint8('Enchanting')
                 ]),
-                labels(array('Skill Offsets', 
-                    uint8('Skill')
-                ), [
-                    'OneHanded', 'TwoHanded', 'Marksman', 'Block',
-                    'Smithing', 'HeavyArmor', 'LightArmor', 'Pickpocket',
-                    'Lockpicking', 'Sneak', 'Alchemy', 'Speechcraft',
-                    'Alteration', 'Conjuration', 'Destruction', 'Illusion',
-                    'Restoration', 'Enchanting'
+                struct('Skill Offsets', [
+                    uint8('OneHanded'),
+                    uint8('TwoHanded'),
+                    uint8('Marksman'),
+                    uint8('Block'),
+                    uint8('Smithing'),
+                    uint8('HeavyArmor'),
+                    uint8('LightArmor'),
+                    uint8('Pickpocket'),
+                    uint8('Lockpicking'),
+                    uint8('Sneak'),
+                    uint8('Alchemy'),
+                    uint8('Speechcraft'),
+                    uint8('Alteration'),
+                    uint8('Conjuration'),
+                    uint8('Destruction'),
+                    uint8('Illusion'),
+                    uint8('Restoration'),
+                    uint8('Enchanting')
                 ]),
                 uint16('Health'),
                 uint16('Magicka'),

@@ -1,8 +1,7 @@
 let {
     def, flags, uint8, format, bytes, 
     size, struct, subrecord, unknown, enumeration, 
-    uint32, array, labels, float, count, 
-    record
+    uint32, float, array, count, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -25,8 +24,28 @@ module.exports = () => {
             subrecord('CNAM', unknown()),
             subrecord('SNAM', unknown()),
             subrecord('ONAM', struct('Output Values', [
-                labels(array('Channels', 
-                    struct('', [
+                struct('Channels', [
+                    struct('Channel 0', [
+                        uint8('L'),
+                        uint8('R'),
+                        uint8('C'),
+                        uint8('LFE'),
+                        uint8('RL'),
+                        uint8('RR'),
+                        uint8('BL'),
+                        uint8('BR')
+                    ]),
+                    struct('Channel 1', [
+                        uint8('L'),
+                        uint8('R'),
+                        uint8('C'),
+                        uint8('LFE'),
+                        uint8('RL'),
+                        uint8('RR'),
+                        uint8('BL'),
+                        uint8('BR')
+                    ]),
+                    struct('Channel 2? (unused)', [
                         uint8('L'),
                         uint8('R'),
                         uint8('C'),
@@ -36,7 +55,7 @@ module.exports = () => {
                         uint8('BL'),
                         uint8('BR')
                     ])
-                ), ['Channel 0', 'Channel 1', 'Channel 2? (unused)'])
+                ])
             ])),
             subrecord('ANAM', struct('Attenuation Values', [
                 size(4, bytes('Unknown')),

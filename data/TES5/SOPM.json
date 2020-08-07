@@ -64,50 +64,122 @@
             "elements": [
                 {
                     "name": "Channels",
-                    "type": "array",
-                    "count": 3,
-                    "element": {
-                        "name": "",
-                        "type": "struct",
-                        "elements": [
-                            {
-                                "name": "L",
-                                "type": "uint8"
-                            },
-                            {
-                                "name": "R",
-                                "type": "uint8"
-                            },
-                            {
-                                "name": "C",
-                                "type": "uint8"
-                            },
-                            {
-                                "name": "LFE",
-                                "type": "uint8"
-                            },
-                            {
-                                "name": "RL",
-                                "type": "uint8"
-                            },
-                            {
-                                "name": "RR",
-                                "type": "uint8"
-                            },
-                            {
-                                "name": "BL",
-                                "type": "uint8"
-                            },
-                            {
-                                "name": "BR",
-                                "type": "uint8"
-                            }
-                        ]
-                    },
-                    "labels": [
-                        "Channel 0",
-                        "Channel 1",
-                        "Channel 2? (unused)"
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Channel 0",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "L",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "R",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "C",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "LFE",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "RL",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "RR",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "BL",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "BR",
+                                    "type": "uint8"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Channel 1",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "L",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "R",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "C",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "LFE",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "RL",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "RR",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "BL",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "BR",
+                                    "type": "uint8"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Channel 2? (unused)",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "L",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "R",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "C",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "LFE",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "RL",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "RR",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "BL",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "BR",
+                                    "type": "uint8"
+                                }
+                            ]
+                        }
                     ]
                 }
             ]

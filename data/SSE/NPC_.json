@@ -404,60 +404,158 @@
             "elements": [
                 {
                     "name": "Skill Values",
-                    "type": "array",
-                    "count": 18,
-                    "element": {
-                        "name": "Skill",
-                        "type": "uint8"
-                    },
-                    "labels": [
-                        "OneHanded",
-                        "TwoHanded",
-                        "Marksman",
-                        "Block",
-                        "Smithing",
-                        "HeavyArmor",
-                        "LightArmor",
-                        "Pickpocket",
-                        "Lockpicking",
-                        "Sneak",
-                        "Alchemy",
-                        "Speechcraft",
-                        "Alteration",
-                        "Conjuration",
-                        "Destruction",
-                        "Illusion",
-                        "Restoration",
-                        "Enchanting"
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "OneHanded",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "TwoHanded",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Marksman",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Block",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Smithing",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "HeavyArmor",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "LightArmor",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Pickpocket",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Lockpicking",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Sneak",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Alchemy",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Speechcraft",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Alteration",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Conjuration",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Destruction",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Illusion",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Restoration",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Enchanting",
+                            "type": "uint8"
+                        }
                     ]
                 },
                 {
                     "name": "Skill Offsets",
-                    "type": "array",
-                    "count": 18,
-                    "element": {
-                        "name": "Skill",
-                        "type": "uint8"
-                    },
-                    "labels": [
-                        "OneHanded",
-                        "TwoHanded",
-                        "Marksman",
-                        "Block",
-                        "Smithing",
-                        "HeavyArmor",
-                        "LightArmor",
-                        "Pickpocket",
-                        "Lockpicking",
-                        "Sneak",
-                        "Alchemy",
-                        "Speechcraft",
-                        "Alteration",
-                        "Conjuration",
-                        "Destruction",
-                        "Illusion",
-                        "Restoration",
-                        "Enchanting"
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "OneHanded",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "TwoHanded",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Marksman",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Block",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Smithing",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "HeavyArmor",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "LightArmor",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Pickpocket",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Lockpicking",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Sneak",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Alchemy",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Speechcraft",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Alteration",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Conjuration",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Destruction",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Illusion",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Restoration",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Enchanting",
+                            "type": "uint8"
+                        }
                     ]
                 },
                 {

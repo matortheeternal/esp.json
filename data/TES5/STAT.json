@@ -73,25 +73,53 @@
         {
             "signature": "MNAM",
             "name": "Distant LOD",
-            "type": "array",
-            "count": 4,
+            "type": "struct",
             "required": true,
-            "element": {
-                "name": "LOD",
-                "type": "struct",
-                "elements": [
-                    {
-                        "name": "Mesh",
-                        "type": "string",
-                        "size": 260
-                    }
-                ]
-            },
-            "labels": [
-                "Level 0",
-                "Level 1",
-                "Level 2",
-                "Level 3"
+            "elements": [
+                {
+                    "name": "Level 0",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Mesh",
+                            "type": "string",
+                            "size": 260
+                        }
+                    ]
+                },
+                {
+                    "name": "Level 1",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Mesh",
+                            "type": "string",
+                            "size": 260
+                        }
+                    ]
+                },
+                {
+                    "name": "Level 2",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Mesh",
+                            "type": "string",
+                            "size": 260
+                        }
+                    ]
+                },
+                {
+                    "name": "Level 3",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Mesh",
+                            "type": "string",
+                            "size": 260
+                        }
+                    ]
+                }
             ]
         }
     ]

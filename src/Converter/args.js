@@ -19,6 +19,7 @@ let isReference = {type: 'boolean', name: 'isReference'};
 let persistent = {type: 'boolean', name: 'persistent'};
 let matchSize = {type: 'boolean',name: 'matchSize'};
 let optionalFromElement = {type: 'number',name: 'optionalFromElement'};
+let labels = { type: 'array of string', name: 'labels' };
 
 module.exports = {
     // primitives
@@ -54,5 +55,5 @@ module.exports = {
     // unimplemented extension types
     priority, afterLoad, dontShow, getCP, digits, validFlstRefs,
     elementMap, exSk, normalizer, defaultNumber, persistent, isReference,
-    matchSize, isSorted, addInfo, optionalFromElement
+    matchSize, isSorted, addInfo, optionalFromElement, labels
 };

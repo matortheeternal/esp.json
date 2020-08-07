@@ -3,8 +3,7 @@ let {
     int8, format, sortKey, struct, sorted, 
     array, count, bytes, size, float, 
     enumeration, uint32, int32, empty, string, 
-    memberArray, labels, uint16, memberStruct, opts, 
-    record
+    memberArray, uint16, memberStruct, opts, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -92,15 +91,18 @@ module.exports = () => {
             sorted(memberArray('Movement Type Names', 
                 subrecord('MTNM', string('Name'))
             )),
-            req(subrecord('VTCK', labels(array('Voices', 
-                ckFormId('Voice', ['VTYP'])
-            ), ['Male', 'Female']))),
-            req(subrecord('DNAM', labels(array('Decapitate Armors', 
-                ckFormId('Decapitate Armor', ['NULL', 'ARMO'])
-            ), ['Male', 'Female']))),
-            req(subrecord('HCLF', labels(array('Default Hair Colors', 
-                ckFormId('Default Hair Color', ['NULL', 'CLFM'])
-            ), ['Male', 'Female']))),
+            req(subrecord('VTCK', struct('Voices', [
+                ckFormId('Male', ['VTYP']),
+                ckFormId('Female', ['VTYP'])
+            ]))),
+            req(subrecord('DNAM', struct('Decapitate Armors', [
+                ckFormId('Male', ['NULL', 'ARMO']),
+                ckFormId('Female', ['NULL', 'ARMO'])
+            ]))),
+            req(subrecord('HCLF', struct('Default Hair Colors', [
+                ckFormId('Male', ['NULL', 'CLFM']),
+                ckFormId('Female', ['NULL', 'CLFM'])
+            ]))),
             req(subrecord('TINL', uint16('Total Number of Tints in List'))),
             req(subrecord('PNAM', float('FaceGen - Main clamp'))),
             req(subrecord('UNAM', float('FaceGen - Face clamp'))),

@@ -315,57 +315,71 @@
         {
             "signature": "VTCK",
             "name": "Voices",
-            "type": "array",
-            "count": 2,
+            "type": "struct",
             "required": true,
-            "element": {
-                "name": "Voice",
-                "type": "formId",
-                "signatures": [
-                    "VTYP"
-                ]
-            },
-            "labels": [
-                "Male",
-                "Female"
+            "elements": [
+                {
+                    "name": "Male",
+                    "type": "formId",
+                    "signatures": [
+                        "VTYP"
+                    ]
+                },
+                {
+                    "name": "Female",
+                    "type": "formId",
+                    "signatures": [
+                        "VTYP"
+                    ]
+                }
             ]
         },
         {
             "signature": "DNAM",
             "name": "Decapitate Armors",
-            "type": "array",
-            "count": 2,
+            "type": "struct",
             "required": true,
-            "element": {
-                "name": "Decapitate Armor",
-                "type": "formId",
-                "signatures": [
-                    "NULL",
-                    "ARMO"
-                ]
-            },
-            "labels": [
-                "Male",
-                "Female"
+            "elements": [
+                {
+                    "name": "Male",
+                    "type": "formId",
+                    "signatures": [
+                        "NULL",
+                        "ARMO"
+                    ]
+                },
+                {
+                    "name": "Female",
+                    "type": "formId",
+                    "signatures": [
+                        "NULL",
+                        "ARMO"
+                    ]
+                }
             ]
         },
         {
             "signature": "HCLF",
             "name": "Default Hair Colors",
-            "type": "array",
-            "count": 2,
+            "type": "struct",
             "required": true,
-            "element": {
-                "name": "Default Hair Color",
-                "type": "formId",
-                "signatures": [
-                    "NULL",
-                    "CLFM"
-                ]
-            },
-            "labels": [
-                "Male",
-                "Female"
+            "elements": [
+                {
+                    "name": "Male",
+                    "type": "formId",
+                    "signatures": [
+                        "NULL",
+                        "CLFM"
+                    ]
+                },
+                {
+                    "name": "Female",
+                    "type": "formId",
+                    "signatures": [
+                        "NULL",
+                        "CLFM"
+                    ]
+                }
             ]
         },
         {

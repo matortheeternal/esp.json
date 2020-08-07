@@ -22,21 +22,27 @@
         {
             "signature": "ANAM",
             "name": "Related Idle Animations",
-            "type": "array",
-            "count": 2,
+            "type": "struct",
             "required": true,
-            "element": {
-                "name": "Related Idle Animation",
-                "type": "formId",
-                "signatures": [
-                    "AACT",
-                    "IDLE",
-                    "NULL"
-                ]
-            },
-            "labels": [
-                "Parent",
-                "Previous Sibling"
+            "elements": [
+                {
+                    "name": "Parent",
+                    "type": "formId",
+                    "signatures": [
+                        "AACT",
+                        "IDLE",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Previous Sibling",
+                    "type": "formId",
+                    "signatures": [
+                        "AACT",
+                        "IDLE",
+                        "NULL"
+                    ]
+                }
             ]
         },
         {
