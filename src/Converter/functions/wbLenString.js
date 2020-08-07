@@ -8,7 +8,7 @@ subrecordAndField('wbLenString', [
     args.required,
     args.dontShow,
     args.getCP
-], (foundArgs, converter) => {
+], (args, converter) => {
     converter.addRequires('string');
-    return `string(${foundArgs.name})`;
+    return `string(${args.name})`;
 });

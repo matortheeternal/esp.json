@@ -82,7 +82,7 @@ let getConverters = function(functionName) {
 let addDefaultArgValues = function(fn, args) {
     for (let i = args.types.length; i < fn.args.length; i++) {
         let fnArg = fn.args[i];
-        if (!fnArg.default) return;
+        if (!fnArg.defaultValue) return;
         args.types.push(fnArg);
         args.values.push(fnArg.defaultValue);
         args[fnArg.name] = fnArg.defaultValue;
