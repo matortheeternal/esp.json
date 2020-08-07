@@ -211,7 +211,10 @@
                 {
                     "name": "Second AV Weight",
                     "type": "float",
-                    "required": true
+                    "required": true,
+                    "format": {
+                        "type": "nilFormat"
+                    }
                 },
                 {
                     "id": "MGEFType"

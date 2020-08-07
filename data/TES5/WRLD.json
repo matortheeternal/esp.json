@@ -344,14 +344,18 @@
                         {
                             "name": "X",
                             "type": "float",
-                            "format": "1Div4096",
-                            "required": true
+                            "required": true,
+                            "format": {
+                                "type": "1Div4096Format"
+                            }
                         },
                         {
                             "name": "Y",
                             "type": "float",
-                            "format": "1Div4096",
-                            "required": true
+                            "required": true,
+                            "format": {
+                                "type": "1Div4096Format"
+                            }
                         }
                     ]
                 },
@@ -364,14 +368,18 @@
                         {
                             "name": "X",
                             "type": "float",
-                            "format": "1Div4096",
-                            "required": true
+                            "required": true,
+                            "format": {
+                                "type": "1Div4096Format"
+                            }
                         },
                         {
                             "name": "Y",
                             "type": "float",
-                            "format": "1Div4096",
-                            "required": true
+                            "required": true,
+                            "format": {
+                                "type": "1Div4096Format"
+                            }
                         }
                     ]
                 }

@@ -1,5 +1,6 @@
 let {
-    addDef, float, struct, format, req
+    addDef, float, struct, def, format, 
+    req
 } = require('../helpers');
 
 module.exports = () => {
@@ -11,9 +12,9 @@ module.exports = () => {
                 float('Z')
             ]),
             struct('Rotation', [
-                req(format(float('X'), 'RotationFactor')),
-                req(format(float('Y'), 'RotationFactor')),
-                req(format(float('Z'), 'RotationFactor'))
+                req(format(float('X'), def('RotationFactor'))),
+                req(format(float('Y'), def('RotationFactor'))),
+                req(format(float('Z'), def('RotationFactor')))
             ])
         ])
     );

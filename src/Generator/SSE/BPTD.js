@@ -57,9 +57,9 @@ module.exports = () => {
                                 float('Z')
                             ]),
                             struct('Rotation', [
-                                req(format(float('X'), 'RotationFactor')),
-                                req(format(float('Y'), 'RotationFactor')),
-                                req(format(float('Z'), 'RotationFactor'))
+                                req(format(float('X'), def('RotationFactor'))),
+                                req(format(float('Y'), def('RotationFactor'))),
+                                req(format(float('Z'), def('RotationFactor')))
                             ])
                         ]),
                         ckFormId('Severable - Impact DataSet', ['IPDS', 'NULL']),

@@ -105,8 +105,10 @@
                         "signature": "RNAM",
                         "name": "Hours until reset",
                         "type": "float",
-                        "format": "1Div24",
-                        "required": true
+                        "required": true,
+                        "format": {
+                            "type": "1Div24Format"
+                        }
                     }
                 ],
                 "sortKey": [

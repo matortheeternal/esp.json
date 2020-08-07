@@ -189,20 +189,26 @@
                                             {
                                                 "name": "X",
                                                 "type": "float",
-                                                "format": "RotationFactor",
-                                                "required": true
+                                                "required": true,
+                                                "format": {
+                                                    "type": "RotationFactorFormat"
+                                                }
                                             },
                                             {
                                                 "name": "Y",
                                                 "type": "float",
-                                                "format": "RotationFactor",
-                                                "required": true
+                                                "required": true,
+                                                "format": {
+                                                    "type": "RotationFactorFormat"
+                                                }
                                             },
                                             {
                                                 "name": "Z",
                                                 "type": "float",
-                                                "format": "RotationFactor",
-                                                "required": true
+                                                "required": true,
+                                                "format": {
+                                                    "type": "RotationFactorFormat"
+                                                }
                                             }
                                         ]
                                     }

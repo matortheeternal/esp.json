@@ -33,7 +33,7 @@ module.exports = () => {
                     sortKey([0], memberStruct('Quest', [
                         subrecord('NNAM', ckFormId('Quest', ['QUST'])),
                         subrecord('FNAM', unknown()),
-                        req(subrecord('RNAM', format(float('Hours until reset'), '1Div24')))
+                        req(subrecord('RNAM', format(float('Hours until reset'), def('1Div24'))))
                     ]))
                 )
             ))

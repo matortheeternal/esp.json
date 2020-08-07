@@ -52,20 +52,26 @@
                 {
                     "name": "Rotate in Place Walk",
                     "type": "float",
-                    "format": "RotationFactor",
-                    "required": true
+                    "required": true,
+                    "format": {
+                        "type": "RotationFactorFormat"
+                    }
                 },
                 {
                     "name": "Rotate in Place Run",
                     "type": "float",
-                    "format": "RotationFactor",
-                    "required": true
+                    "required": true,
+                    "format": {
+                        "type": "RotationFactorFormat"
+                    }
                 },
                 {
                     "name": "Rotate while Moving Run",
                     "type": "float",
-                    "format": "RotationFactor",
-                    "required": true
+                    "required": true,
+                    "format": {
+                        "type": "RotationFactorFormat"
+                    }
                 }
             ]
         },
@@ -77,8 +83,10 @@
                 {
                     "name": "Directional",
                     "type": "float",
-                    "format": "180DivPi",
-                    "required": true
+                    "required": true,
+                    "format": {
+                        "type": "180DivPiFormat"
+                    }
                 },
                 {
                     "name": "Movement Speed",
@@ -87,8 +95,10 @@
                 {
                     "name": "Rotation Speed",
                     "type": "float",
-                    "format": "180DivPi",
-                    "required": true
+                    "required": true,
+                    "format": {
+                        "type": "180DivPiFormat"
+                    }
                 }
             ]
         }
