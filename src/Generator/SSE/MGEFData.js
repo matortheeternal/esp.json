@@ -74,7 +74,7 @@ module.exports = () => {
                 ]),
                 float('Taper Curve'),
                 float('Taper Duration'),
-                req(format(float('Second AV Weight'), def('nil'))),
+                req(float('Second AV Weight')),
                 def('MGEFType'),
                 def('ActorValue'),
                 ckFormId('Projectile', ['PROJ', 'NULL']),

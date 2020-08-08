@@ -1,4 +1,4 @@
-let {formatLine} = require('../helpers');
+let {formatLine, isNull} = require('../helpers');
 
 module.exports = {
     type: 'mathExpr',
@@ -7,6 +7,7 @@ module.exports = {
     handle: (value, line, converter) => {
         if (!value || value.str === '1') return line;
         if (value.type === 'identifier') {
+            if (isNull(value.str)) return line;
             converter.addRequires('def');
             return formatLine(`def('${value.str}')`, line, converter);
         }
