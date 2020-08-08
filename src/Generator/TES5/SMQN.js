@@ -1,8 +1,8 @@
 let {
     def, ckFormId, subrecord, req, uint16, 
     format, flags, struct, uint32, unknown, 
-    float, sortKey, memberStruct, memberArray, elementCounter, 
-    record
+    float, div, sortKey, memberStruct, memberArray, 
+    elementCounter, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -33,7 +33,7 @@ module.exports = () => {
                     sortKey([0], memberStruct('Quest', [
                         subrecord('NNAM', ckFormId('Quest', ['QUST'])),
                         subrecord('FNAM', unknown()),
-                        req(subrecord('RNAM', format(float('Hours until reset'), def('1Div24'))))
+                        req(subrecord('RNAM', format(float('Hours until reset'), div(24))))
                     ]))
                 )
             ))

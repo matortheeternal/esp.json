@@ -346,7 +346,8 @@
                             "type": "float",
                             "required": true,
                             "format": {
-                                "type": "1Div4096Format"
+                                "type": "divide",
+                                "value": 4096
                             }
                         },
                         {
@@ -354,7 +355,8 @@
                             "type": "float",
                             "required": true,
                             "format": {
-                                "type": "1Div4096Format"
+                                "type": "divide",
+                                "value": 4096
                             }
                         }
                     ]
@@ -370,7 +372,8 @@
                             "type": "float",
                             "required": true,
                             "format": {
-                                "type": "1Div4096Format"
+                                "type": "divide",
+                                "value": 4096
                             }
                         },
                         {
@@ -378,7 +381,8 @@
                             "type": "float",
                             "required": true,
                             "format": {
-                                "type": "1Div4096Format"
+                                "type": "divide",
+                                "value": 4096
                             }
                         }
                     ]

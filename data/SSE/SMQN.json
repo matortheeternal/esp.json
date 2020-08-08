@@ -107,7 +107,8 @@
                         "type": "float",
                         "required": true,
                         "format": {
-                            "type": "1Div24Format"
+                            "type": "divide",
+                            "value": 24
                         }
                     }
                 ],

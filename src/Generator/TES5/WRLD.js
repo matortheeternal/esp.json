@@ -3,7 +3,7 @@ let {
     struct, array, prefix, opts, subrecord, 
     memberArray, req, uint8, format, bytes, 
     size, memberStruct, float, string, int32, 
-    record
+    div, record
 } = require('../helpers');
 
 module.exports = game => {
@@ -107,12 +107,12 @@ module.exports = game => {
             })))),
             memberStruct('Object Bounds', [
                 req(subrecord('NAM0', struct('Min', [
-                    req(format(float('X'), def('1Div4096'))),
-                    req(format(float('Y'), def('1Div4096')))
+                    req(format(float('X'), div(4096))),
+                    req(format(float('Y'), div(4096)))
                 ]))),
                 req(subrecord('NAM9', struct('Max', [
-                    req(format(float('X'), def('1Div4096'))),
-                    req(format(float('Y'), def('1Div4096')))
+                    req(format(float('X'), div(4096))),
+                    req(format(float('Y'), div(4096)))
                 ])))
             ]),
             subrecord('ZNAM', ckFormId('Music', ['MUSC'])),

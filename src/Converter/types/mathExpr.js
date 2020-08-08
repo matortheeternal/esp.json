@@ -19,6 +19,7 @@ let buildIdentifier = function(str) {
 class MathExpr {
     constructor(str) {
         this.type = numberExpr.test(str) ? 'number' : 'identifier';
+        if (this.type === 'identifier' && str === 'nil') return;
         this.str = this.type === 'number' ? str : buildIdentifier(str);
     }
 
