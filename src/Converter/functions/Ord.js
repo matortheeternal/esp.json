@@ -3,5 +3,5 @@ let {functionConverter} = require('../converters'),
 
 functionConverter('Ord', [args.string], args => {
     let str = args.values[0];
-    return str.charCodeAt(0);
+    return str.charCodeAt(1);
 });

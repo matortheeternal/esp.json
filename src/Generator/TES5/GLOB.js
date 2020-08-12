@@ -12,7 +12,9 @@ module.exports = () => {
         members: [
             def('EDID'),
             opts(req(subrecord('FNAM', format(uint8('Type'), enumeration({
-                39: 'Float'
+                102: 'Float',
+                108: 'Long',
+                115: 'Short'
             })))), {
                 "defaultEditValue": "Float"
             }),

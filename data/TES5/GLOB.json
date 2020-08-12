@@ -22,7 +22,9 @@
             "format": {
                 "type": "enum",
                 "options": {
-                    "39": "Float"
+                    "102": "Float",
+                    "108": "Long",
+                    "115": "Short"
                 }
             }
         },
