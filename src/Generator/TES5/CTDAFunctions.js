@@ -317,7 +317,7 @@ module.exports = () => {
         ctdaFunction(306, 'IsActorUsingATorch'),
         ctdaFunction(309, 'IsXBox'),
         opts(ctdaFunction(310, 'GetInWorldspace'), {
-            "paramType1": "ptWorldSpace"
+            "paramType1": "ptWorldspace"
         }),
         opts(ctdaFunction(312, 'GetPCMiscStat'), {
             "paramType1": "ptMiscStat"
