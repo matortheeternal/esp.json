@@ -49,7 +49,7 @@ class Parser {
         if (!match) return;
         if (!skipAdvance && !type.skipAdvance)
             this.advance(match[0].length);
-        return type.parse(match, this);
+        return type.parse(match, this, options);
     }
 
     matchOne(typeNames) {
@@ -69,7 +69,6 @@ class Parser {
             entries.push(match.value);
             this.next();
             this.chomp(',');
-            this.next();
         }
         //console.log(`Parsed array: ${entries}`);
         return entries;

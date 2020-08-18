@@ -32,6 +32,7 @@ let convertFile = function(filename, game) {
         converter.setOutputFolder(outputFolder);
         setUpGlobalOutputs(converter);
         convertProcedures(converter);
+        converter.convertStatement(/wbCTDAFunctions : /);
         converter.saveGlobalOutputs();
     } catch (x) {
         if (x.name === 'ParseError')
@@ -51,6 +52,7 @@ require('./statements/wbCounterContainerAfterSet');
 require('./statements/wbRecord');
 require('./statements/wbRefRecord');
 require('./statements/wbAddGroupOrder');
+require('./statements/wbCTDAFunctions');
 require('./statements/ReferenceRecord');
 require('./statements/loadList');
 require('./statements/ifGameMode');

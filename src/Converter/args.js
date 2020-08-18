@@ -50,6 +50,7 @@ module.exports = {
     enumFn: { type: 'function', id: 'wbEnum', name: 'options' },
     enum: { type: 'enum', name: 'options' },
     flagsToIgnore: { type: 'array of number', name: 'flagsToIgnore' },
+    ctdaFunctions: { type: 'array of ctdaFunction', name: 'ctdaFunctions' },
     // extension types
     ...extTypes,
     // unimplemented extension types

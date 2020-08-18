@@ -114,6 +114,14 @@ class Converter extends Parser {
                 convertStatement(this);
         }
     }
+
+    convertStatement(start) {
+        this.reset();
+        let match = this.match(start);
+        if (!match) throw new Error('Could not find statement ' + start);
+        this.advance(match.index);
+        convertStatement(this);
+    }
 }
 
 module.exports = Converter;

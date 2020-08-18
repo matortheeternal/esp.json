@@ -50,8 +50,10 @@ let parseArguments = function(args, fnArgs, converter) {
         args.values[i] = value;
         if (arg.name) args[arg.name] = value;
         converter.next();
-        if (converter.chomp(',')) continue;
-        converter.next();
+        if (converter.chomp(',') || converter.chomp(';')) {
+            if (converter.chomp(')')) return true;
+            continue;
+        }
         return converter.chomp(')');
     }
 };
