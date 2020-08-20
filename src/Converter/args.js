@@ -3,7 +3,6 @@ let {loadFilesToDictionary} = require('../loader');
 let extTypes = loadFilesToDictionary('Converter/args');
 
 // TODO: implement these
-let elementMap = { type: 'array of number', name: 'elementMap' };
 let exSk = { type: 'array of number', name: 'exSk' };
 let validFlstRefs = { type: 'array of signature', name: 'validFlstRefs' };
 let defaultNumber = { type: 'number', name: 'default' };
@@ -55,6 +54,6 @@ module.exports = {
     ...extTypes,
     // unimplemented extension types
     priority, afterLoad, dontShow, getCP, digits, validFlstRefs,
-    elementMap, exSk, normalizer, defaultNumber, persistent, isReference,
+    exSk, normalizer, defaultNumber, persistent, isReference,
     matchSize, isSorted, addInfo, optionalFromElement, labels
 };
