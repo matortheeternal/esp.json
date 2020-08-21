@@ -15,8 +15,7 @@
             "member": {
                 "signature": "NNAM",
                 "name": "Noise Map",
-                "type": "string",
-                "required": true
+                "type": "string"
             }
         },
         {
@@ -48,8 +47,7 @@
             "signature": "MNAM",
             "name": "Unused",
             "type": "bytes",
-            "size": 0,
-            "required": true
+            "size": 0
         },
         {
             "signature": "TNAM",
@@ -338,7 +336,6 @@
             "signature": "NAM0",
             "name": "Linear Velocity",
             "type": "struct",
-            "required": true,
             "elements": [
                 {
                     "name": "X",
@@ -358,7 +355,6 @@
             "signature": "NAM1",
             "name": "Angular Velocity",
             "type": "struct",
-            "required": true,
             "elements": [
                 {
                     "name": "X",
@@ -377,26 +373,22 @@
         {
             "signature": "NAM2",
             "name": "Noise Layer One - Noise Texture",
-            "type": "string",
-            "required": true
+            "type": "string"
         },
         {
             "signature": "NAM3",
             "name": "Noise Layer Two - Noise Texture",
-            "type": "string",
-            "required": true
+            "type": "string"
         },
         {
             "signature": "NAM4",
             "name": "Noise Layer Three - Noise Texture",
-            "type": "string",
-            "required": true
+            "type": "string"
         },
         {
             "signature": "NAM5",
             "name": "Flow Normals - Noise Texture",
-            "type": "string",
-            "required": true
+            "type": "string"
         }
     ]
 }

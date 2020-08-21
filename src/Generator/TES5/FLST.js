@@ -9,9 +9,9 @@ module.exports = () => {
             opts(req(subrecord('EDID', string('Editor ID'))), {
                 "afterSet": "FLSTEDIDAfterSet"
             }),
-            req(sorted(memberArray('FormIDs', 
+            sorted(memberArray('FormIDs', 
                 subrecord('LNAM', formId('FormID'))
-            )))
+            ))
         ]
     })
 };

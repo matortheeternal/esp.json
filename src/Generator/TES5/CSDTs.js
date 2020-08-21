@@ -1,11 +1,11 @@
 let {
-    addDef, def, sorted, memberArray, req
+    addDef, def, sorted, memberArray
 } = require('../helpers');
 
 module.exports = () => {
     addDef('CSDTs', 
-        req(sorted(memberArray('Sound Types', 
+        sorted(memberArray('Sound Types', 
             def('CSDT')
-        )))
+        ))
     );
 };

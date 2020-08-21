@@ -58,7 +58,7 @@ module.exports = game => {
                     ckFormId('Material', ['MATO', 'NULL'])
                 ])))
             ]),
-            req(subrecord('MNAM', struct('Distant LOD', [
+            subrecord('MNAM', struct('Distant LOD', [
                 struct('Level 0', [
                     size(260, string('Mesh'))
                 ]),
@@ -71,7 +71,7 @@ module.exports = game => {
                 struct('Level 3', [
                     size(260, string('Mesh'))
                 ])
-            ])))
+            ]))
         ]
     })
 };

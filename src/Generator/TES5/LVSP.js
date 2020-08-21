@@ -17,19 +17,19 @@ module.exports = () => {
                 2: 'Use All Spells'
             })))),
             def('LLCT'),
-            req(elementCounter('LLCT - Count', 
+            elementCounter('LLCT - Count', 
                 sorted(memberArray('Leveled List Entries', 
                     sortKey([0], memberStruct('Leveled List Entry', [
                         subrecord('LVLO', sortKey([0, 2], struct('Base Data', [
                             uint16('Level'),
-                            req(size(2, bytes('Unknown'))),
+                            size(2, bytes('Unknown')),
                             ckFormId('Reference', ['SPEL', 'LVSP']),
                             uint16('Count'),
-                            req(size(2, bytes('Unknown')))
+                            size(2, bytes('Unknown'))
                         ])))
                     ]))
                 ))
-            ))
+            )
         ]
     })
 };

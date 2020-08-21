@@ -32,13 +32,13 @@ module.exports = game => {
             ), {
                 "protected": 1
             }),
-            req(subrecord('ONAM', array('Overridden Forms', 
+            subrecord('ONAM', array('Overridden Forms', 
                 ckFormId('Form', [
                     'ACHR', 'LAND', 'NAVM', 'REFR', 'PGRE',
                     'PHZD', 'PMIS', 'PARW', 'PBAR', 'PBEA',
                     'PCON', 'PFLA'
                 ])
-            ))),
+            )),
             subrecord('SCRN', bytes('Screenshot')),
             subrecord('INTV', unknown()),
             subrecord('INCC', unknown())

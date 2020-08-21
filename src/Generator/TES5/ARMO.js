@@ -23,13 +23,13 @@ module.exports = () => {
             subrecord('EAMT', uint16('Enchantment Amount')),
             memberStruct('Male world model', [
                 subrecord('MOD2', string('Model FileName')),
-                req(subrecord('MO2T', size(0, bytes('Texture Files Hashes')))),
+                subrecord('MO2T', size(0, bytes('Texture Files Hashes'))),
                 def('MO2S')
             ]),
             def('ICON'),
             memberStruct('Female world model', [
                 subrecord('MOD4', string('Model FileName')),
-                req(subrecord('MO4T', size(0, bytes('Texture Files Hashes')))),
+                subrecord('MO4T', size(0, bytes('Texture Files Hashes'))),
                 def('MO4S')
             ]),
             def('ICO2'),

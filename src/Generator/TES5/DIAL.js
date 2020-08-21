@@ -11,7 +11,7 @@ module.exports = () => {
             def('FULL'),
             req(subrecord('PNAM', float('Priority'))),
             subrecord('BNAM', ckFormId('Branch', ['DLBR', 'NULL'])),
-            req(subrecord('QNAM', ckFormId('Quest', ['QUST', 'NULL']))),
+            subrecord('QNAM', ckFormId('Quest', ['QUST', 'NULL'])),
             subrecord('DATA', struct('Data', [
                 req(format(uint8('Topic Flags'), flags({
                     0: 'Do All Before Repeating'

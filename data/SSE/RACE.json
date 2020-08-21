@@ -229,8 +229,7 @@
                     "elements": [
                         {
                             "name": "Offset X",
-                            "type": "float",
-                            "required": true
+                            "type": "float"
                         },
                         {
                             "name": "Offset Y",
@@ -242,8 +241,7 @@
                         },
                         {
                             "name": "Unknown",
-                            "type": "float",
-                            "required": true
+                            "type": "float"
                         },
                         {
                             "name": "Unknown",
@@ -251,8 +249,7 @@
                         },
                         {
                             "name": "Unknown",
-                            "type": "float",
-                            "required": true
+                            "type": "float"
                         },
                         {
                             "name": "Unknown",
@@ -260,8 +257,7 @@
                         },
                         {
                             "name": "Unknown",
-                            "type": "float",
-                            "required": true
+                            "type": "float"
                         },
                         {
                             "name": "Unknown",
@@ -338,7 +334,6 @@
             "signature": "DNAM",
             "name": "Decapitate Armors",
             "type": "struct",
-            "required": true,
             "elements": [
                 {
                     "name": "Male",
@@ -362,7 +357,6 @@
             "signature": "HCLF",
             "name": "Default Hair Colors",
             "type": "struct",
-            "required": true,
             "elements": [
                 {
                     "name": "Male",
@@ -385,8 +379,7 @@
         {
             "signature": "TINL",
             "name": "Total Number of Tints in List",
-            "type": "uint16",
-            "required": true
+            "type": "uint16"
         },
         {
             "signature": "PNAM",
@@ -404,7 +397,6 @@
             "signature": "ATKR",
             "name": "Attack Race",
             "type": "formId",
-            "required": true,
             "signatures": [
                 "RACE"
             ]
@@ -815,7 +807,6 @@
         {
             "name": "Head Data",
             "type": "memberStruct",
-            "required": true,
             "members": [
                 {
                     "signature": "NAM0",

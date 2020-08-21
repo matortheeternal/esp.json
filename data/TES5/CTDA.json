@@ -6,12 +6,10 @@
             "signature": "CTDA",
             "name": "",
             "type": "struct",
-            "required": true,
             "elements": [
                 {
                     "name": "Type",
                     "type": "uint8",
-                    "required": true,
                     "afterSet": "CtdaTypeAfterSet",
                     "format": {
                         "type": "CtdaTypeFormat"
@@ -20,8 +18,7 @@
                 {
                     "name": "Unused",
                     "type": "bytes",
-                    "size": 3,
-                    "required": true
+                    "size": 3
                 },
                 {
                     "name": "Comparison Value",
@@ -51,8 +48,7 @@
                 {
                     "name": "Unused",
                     "type": "bytes",
-                    "size": 2,
-                    "required": true
+                    "size": 2
                 },
                 {
                     "name": "Parameter #1",
@@ -1150,7 +1146,6 @@
                 {
                     "name": "Run On",
                     "type": "uint32",
-                    "required": true,
                     "afterSet": "CTDARunOnAfterSet",
                     "format": {
                         "type": "enum",
@@ -1197,8 +1192,7 @@
                 },
                 {
                     "name": "Parameter #3",
-                    "type": "int32",
-                    "required": true
+                    "type": "int32"
                 }
             ],
             "sortKey": [

@@ -80,7 +80,6 @@
         {
             "name": "Quests",
             "type": "memberArray",
-            "required": true,
             "counter": {
                 "type": "elementCounter",
                 "path": "QNAM - Quest Count"
@@ -105,7 +104,6 @@
                         "signature": "RNAM",
                         "name": "Hours until reset",
                         "type": "float",
-                        "required": true,
                         "format": {
                             "type": "divide",
                             "value": 24

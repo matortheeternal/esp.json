@@ -5,10 +5,10 @@ let {
 
 module.exports = () => {
     addDef('MODLActor', 
-        req(unordered(sortKey([0], memberStruct('Model', [
+        unordered(sortKey([0], memberStruct('Model', [
             req(subrecord('MODL', string('Model FileName'))),
             def('MODT'),
             def('MODS')
-        ]))))
+        ])))
     );
 };

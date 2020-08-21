@@ -60,8 +60,8 @@ module.exports = () => {
                         bytes('Unknown')
                     ])))),
                     def('ICON'),
-                    req(subrecord('RDMO', ckFormId('Music', ['MUSC']))),
-                    req(subrecord('RDSA', sorted(array('Sounds', 
+                    subrecord('RDMO', ckFormId('Music', ['MUSC'])),
+                    subrecord('RDSA', sorted(array('Sounds', 
                         sortKey([0], struct('Sound', [
                             ckFormId('Sound', ['SNDR', 'NULL']),
                             format(uint32('Flags'), flags({
@@ -72,9 +72,9 @@ module.exports = () => {
                             })),
                             float('Chance')
                         ]))
-                    )))),
-                    req(subrecord('RDMP', localized(string('Map Name')))),
-                    req(subrecord('RDOT', array('Objects', 
+                    ))),
+                    subrecord('RDMP', localized(string('Map Name'))),
+                    subrecord('RDOT', array('Objects', 
                         struct('Object', [
                             ckFormId('Object', [
                                 'TREE', 'FLOR', 'STAT', 'LTEX', 'MSTT'
@@ -110,20 +110,20 @@ module.exports = () => {
                             size(2, bytes('Unknown')),
                             size(4, bytes('Unknown'))
                         ])
-                    ))),
-                    req(subrecord('RDGS', sorted(array('Grasses', 
+                    )),
+                    subrecord('RDGS', sorted(array('Grasses', 
                         sortKey([0], struct('Grass', [
                             ckFormId('Grass', ['GRAS']),
                             size(4, bytes('Unknown'))
                         ]))
-                    )))),
-                    req(subrecord('RDWT', sorted(array('Weather Types', 
+                    ))),
+                    subrecord('RDWT', sorted(array('Weather Types', 
                         sortKey([0], struct('Weather Type', [
                             ckFormId('Weather', ['WTHR']),
                             uint32('Chance'),
                             ckFormId('Global', ['GLOB', 'NULL'])
                         ]))
-                    ))))
+                    )))
                 ]))
             ))
         ]

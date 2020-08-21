@@ -41,7 +41,6 @@
             "name": "Leveled List Entries",
             "type": "memberArray",
             "sorted": true,
-            "required": true,
             "counter": {
                 "type": "elementCounter",
                 "path": "LLCT - Count"
@@ -62,8 +61,7 @@
                             {
                                 "name": "Unknown",
                                 "type": "bytes",
-                                "size": 2,
-                                "required": true
+                                "size": 2
                             },
                             {
                                 "name": "Reference",
@@ -80,8 +78,7 @@
                             {
                                 "name": "Unknown",
                                 "type": "bytes",
-                                "size": 2,
-                                "required": true
+                                "size": 2
                             }
                         ],
                         "sortKey": [

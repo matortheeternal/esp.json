@@ -1,8 +1,8 @@
 let {
     flags, def, IsSSE, int16, ckFormId, 
     struct, array, prefix, opts, subrecord, 
-    memberArray, req, uint8, format, bytes, 
-    size, memberStruct, float, string, int32, 
+    memberArray, uint8, format, bytes, size, 
+    req, memberStruct, float, string, int32, 
     div, record
 } = require('../helpers');
 
@@ -14,7 +14,7 @@ module.exports = game => {
         }),
         members: [
             def('EDID'),
-            opts(req(memberArray(IsSSE(game, ['Large References', 'Unused RNAM']), 
+            opts(memberArray(IsSSE(game, ['Large References', 'Unused RNAM']), 
                 subrecord('RNAM', struct('Grid', [
                     int16('Y'),
                     int16('X'),
@@ -28,7 +28,7 @@ module.exports = game => {
                         "notAlignable": 1
                     })
                 ]))
-            )), {
+            ), {
                 "notAlignable": 1
             }),
             def('MaxHeightDataWRLD'),
@@ -67,7 +67,7 @@ module.exports = game => {
             memberStruct('Cloud Model', [
                 def('MODL')
             ]),
-            req(subrecord('MNAM', struct('Map Data', [
+            subrecord('MNAM', struct('Map Data', [
                 struct('Usable Dimensions', [
                     int32('X'),
                     int32('Y')
@@ -87,7 +87,7 @@ module.exports = game => {
                     float('Max Height'),
                     float('Initial Pitch')
                 ])
-            ]))),
+            ])),
             req(subrecord('ONAM', struct('World Map Offset Data', [
                 float('World Map Scale'),
                 float('Cell X Offset'),
@@ -107,12 +107,12 @@ module.exports = game => {
             })))),
             memberStruct('Object Bounds', [
                 req(subrecord('NAM0', struct('Min', [
-                    req(format(float('X'), div(4096))),
-                    req(format(float('Y'), div(4096)))
+                    format(float('X'), div(4096)),
+                    format(float('Y'), div(4096))
                 ]))),
                 req(subrecord('NAM9', struct('Max', [
-                    req(format(float('X'), div(4096))),
-                    req(format(float('Y'), div(4096)))
+                    format(float('X'), div(4096)),
+                    format(float('Y'), div(4096))
                 ])))
             ]),
             subrecord('ZNAM', ckFormId('Music', ['MUSC'])),

@@ -44,7 +44,6 @@
             "signature": "XCLC",
             "name": "Grid",
             "type": "struct",
-            "required": true,
             "elements": [
                 {
                     "name": "X",
@@ -73,7 +72,6 @@
             "signature": "XCLL",
             "name": "Lighting",
             "type": "struct",
-            "required": true,
             "elements": [
                 {
                     "id": "ByteColors",
@@ -182,8 +180,7 @@
         {
             "signature": "XCLW",
             "name": "Water Height",
-            "type": "float",
-            "required": true
+            "type": "float"
         },
         {
             "signature": "XNAM",

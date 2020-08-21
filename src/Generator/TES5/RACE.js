@@ -70,14 +70,14 @@ module.exports = () => {
                     4: 'Allow Mounted Combat'
                 })),
                 struct('Mount Data', [
-                    req(float('Offset X')),
+                    float('Offset X'),
                     float('Offset Y'),
                     float('Unknown'),
-                    req(float('Unknown')),
                     float('Unknown'),
-                    req(float('Unknown')),
                     float('Unknown'),
-                    req(float('Unknown')),
+                    float('Unknown'),
+                    float('Unknown'),
+                    float('Unknown'),
                     float('Unknown')
                 ])
             ]))),
@@ -95,18 +95,18 @@ module.exports = () => {
                 ckFormId('Male', ['VTYP']),
                 ckFormId('Female', ['VTYP'])
             ]))),
-            req(subrecord('DNAM', struct('Decapitate Armors', [
+            subrecord('DNAM', struct('Decapitate Armors', [
                 ckFormId('Male', ['NULL', 'ARMO']),
                 ckFormId('Female', ['NULL', 'ARMO'])
-            ]))),
-            req(subrecord('HCLF', struct('Default Hair Colors', [
+            ])),
+            subrecord('HCLF', struct('Default Hair Colors', [
                 ckFormId('Male', ['NULL', 'CLFM']),
                 ckFormId('Female', ['NULL', 'CLFM'])
-            ]))),
-            req(subrecord('TINL', uint16('Total Number of Tints in List'))),
+            ])),
+            subrecord('TINL', uint16('Total Number of Tints in List')),
             req(subrecord('PNAM', float('FaceGen - Main clamp'))),
             req(subrecord('UNAM', float('FaceGen - Face clamp'))),
-            req(subrecord('ATKR', ckFormId('Attack Race', ['RACE']))),
+            subrecord('ATKR', ckFormId('Attack Race', ['RACE'])),
             sorted(memberArray('Attacks', 
                 def('AttackData')
             )),
@@ -191,7 +191,7 @@ module.exports = () => {
             subrecord('FLMV', ckFormId('Base Movement Default - Fly', ['MOVT', 'NULL'])),
             subrecord('SNMV', ckFormId('Base Movement Default - Sneak', ['MOVT', 'NULL'])),
             subrecord('SPMV', ckFormId('Base Movement Default - Sprint', ['MOVT', 'NULL'])),
-            req(memberStruct('Head Data', [
+            memberStruct('Head Data', [
                 req(subrecord('NAM0', empty('Head Data Marker'))),
                 req(memberStruct('Male Head Data', [
                     req(subrecord('MNAM', empty('Male Data Marker'))),
@@ -232,7 +232,7 @@ module.exports = () => {
                     def('Tints'),
                     def('MODL')
                 ]))
-            ])),
+            ]),
             subrecord('NAM8', ckFormId('Morph race', ['RACE', 'NULL'])),
             subrecord('RNAM', ckFormId('Armor race', ['RACE', 'NULL']))
         ]

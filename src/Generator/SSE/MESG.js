@@ -18,7 +18,7 @@ module.exports = () => {
             })))), {
                 "afterSet": "MESGDNAMAfterSet"
             }),
-            req(subrecord('TNAM', uint32('Display Time'))),
+            subrecord('TNAM', uint32('Display Time')),
             memberArray('Menu Buttons', 
                 memberStruct('Menu Button', [
                     subrecord('ITXT', localized(string('Button Text'))),

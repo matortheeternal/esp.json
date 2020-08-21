@@ -57,7 +57,6 @@
                     "name": "Assoc. Item",
                     "type": "union",
                     "decider": "MGEFAssocItemDecider",
-                    "required": true,
                     "afterSet": "MGEFAssocItemAfterSet",
                     "elements": [
                         {
@@ -210,8 +209,7 @@
                 },
                 {
                     "name": "Second AV Weight",
-                    "type": "float",
-                    "required": true
+                    "type": "float"
                 },
                 {
                     "id": "MGEFType"

@@ -44,7 +44,7 @@ module.exports = () => {
                 float('FOV'),
                 float('Near Clip'),
                 struct('Flicker Effect', [
-                    req(scale(0.01, float('Period'))),
+                    scale(0.01, float('Period')),
                     float('Intensity Amplitude'),
                     float('Movement Amplitude')
                 ]),

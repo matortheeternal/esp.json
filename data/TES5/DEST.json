@@ -1,7 +1,6 @@
 {
     "name": "Destructible",
     "type": "memberStruct",
-    "required": true,
     "members": [
         {
             "signature": "DEST",
@@ -40,7 +39,6 @@
             "member": {
                 "name": "Stage",
                 "type": "memberStruct",
-                "required": true,
                 "members": [
                     {
                         "signature": "DSTD",
@@ -102,7 +100,6 @@
                     {
                         "name": "Model",
                         "type": "memberStruct",
-                        "required": true,
                         "members": [
                             {
                                 "signature": "DMDL",

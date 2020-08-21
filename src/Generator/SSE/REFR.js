@@ -8,7 +8,7 @@ let {
 } = require('../helpers');
 
 module.exports = () => {
-    req(record('REFR', 'Placed Object', {
+    record('REFR', 'Placed Object', {
         flags: formatUnion('REFRRecordFlagsDecider', [
             showUnknown(flags({
                 5: 'Deleted',
@@ -143,9 +143,9 @@ module.exports = () => {
                     req(scale(2, float('Z')))
                 ]),
                 struct('Color', [
-                    req(scale(255, float('Red'))),
-                    req(scale(255, float('Green'))),
-                    req(scale(255, float('Blue')))
+                    scale(255, float('Red')),
+                    scale(255, float('Green')),
+                    scale(255, float('Blue'))
                 ]),
                 float('Unknown'),
                 format(uint32('Type'), enumeration({
@@ -159,8 +159,8 @@ module.exports = () => {
             subrecord('XORD', unknown()),
             subrecord('XOCP', struct('Occlusion Plane Data', [
                 struct('Size', [
-                    req(scale(2, float('Width'))),
-                    req(scale(2, float('Height')))
+                    scale(2, float('Width')),
+                    scale(2, float('Height'))
                 ]),
                 struct('Position', [
                     float('X'),
@@ -182,8 +182,8 @@ module.exports = () => {
             )),
             subrecord('XPTL', struct('Room Portal (unused)', [
                 struct('Size', [
-                    req(scale(2, float('Width'))),
-                    req(scale(2, float('Height')))
+                    scale(2, float('Width')),
+                    scale(2, float('Height'))
                 ]),
                 struct('Position', [
                     float('X'),
@@ -223,25 +223,25 @@ module.exports = () => {
             def('XRGB'),
             subrecord('XRDS', float('Radius')),
             sorted(memberArray('Reflected/Refracted By', 
-                req(subrecord('XPWR', sortKey([0], struct('Water', [
+                subrecord('XPWR', sortKey([0], struct('Water', [
                     ckFormId('Reference', ['REFR']),
                     format(uint32('Type'), flags({
                         0: 'Reflection',
                         1: 'Refraction'
                     }))
-                ]))))
+                ])))
             )),
             sorted(memberArray('Lit Water', 
                 subrecord('XLTW', ckFormId('Water', ['REFR']))
             )),
             subrecord('XEMI', ckFormId('Emittance', ['LIGH', 'REGN'])),
-            req(subrecord('XLIG', struct('Light Data', [
+            subrecord('XLIG', struct('Light Data', [
                 float('FOV 90+/-'),
                 float('Fade 1.35+/-'),
                 size(4, bytes('Unknown')),
                 float('Shadow Depth Bias'),
                 size(4, bytes('Unknown'))
-            ]))),
+            ])),
             subrecord('XALP', struct('Alpha', [
                 uint8('Cutoff'),
                 uint8('Base')
@@ -300,7 +300,7 @@ module.exports = () => {
             def('XLCM'),
             subrecord('XLCN', ckFormId('Persistent Location', ['LCTN'])),
             subrecord('XTRI', uint32('Collision Layer')),
-            req(subrecord('XLOC', struct('Lock Data', [
+            subrecord('XLOC', struct('Lock Data', [
                 format(uint8('Level'), enumeration({
                     1: 'Novice',
                     25: 'Apprentice',
@@ -318,7 +318,7 @@ module.exports = () => {
                 })),
                 size(3, bytes('Unused')),
                 size(8, bytes('Unused'))
-            ]))),
+            ])),
             subrecord('XEZN', ckFormId('Encounter Zone', ['ECZN'])),
             subrecord('XNDP', struct('Navigation Door Link', [
                 ckFormId('Navigation Mesh', ['NAVM']),
@@ -337,7 +337,7 @@ module.exports = () => {
             ])),
             def('XESP'),
             memberArray('Linked References', 
-                req(subrecord('XLKR', struct('Linked Reference', [
+                subrecord('XLKR', struct('Linked Reference', [
                     ckFormId('Keyword/Ref', [
                         'KYWD', 'PLYR', 'ACHR', 'REFR', 'PGRE',
                         'PHZD', 'PMIS', 'PARW', 'PBAR', 'PBEA',
@@ -348,15 +348,15 @@ module.exports = () => {
                         'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON',
                         'PFLA'
                     ])
-                ])))
+                ]))
             ),
             memberArray('Patrol', 
                 memberStruct('Data', [
                     req(subrecord('XPRD', float('Idle Time'))),
                     req(subrecord('XPPA', empty('Patrol Script Marker'))),
                     req(subrecord('INAM', ckFormId('Idle', ['IDLE', 'NULL']))),
-                    req(subrecord('SCHR', size(0, bytes('Unused')))),
-                    req(subrecord('SCTX', size(0, bytes('Unused')))),
+                    subrecord('SCHR', size(0, bytes('Unused'))),
+                    subrecord('SCTX', size(0, bytes('Unused'))),
                     def('PDTOs')
                 ])
             ),
@@ -389,5 +389,5 @@ module.exports = () => {
             def('XLOD'),
             def('DataPosRot')
         ]
-    }))
+    })
 };

@@ -1,14 +1,13 @@
 let {
-    addDef, def, sorted, memberArray, elementCounter, 
-    req
+    addDef, def, sorted, memberArray, elementCounter
 } = require('../helpers');
 
 module.exports = () => {
     addDef('CNTOsNoReach', 
-        req(elementCounter('COCT - Count', 
+        elementCounter('COCT - Count', 
             sorted(memberArray('Items', 
                 def('CNTONoReach')
             ))
-        ))
+        )
     );
 };

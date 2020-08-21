@@ -1,13 +1,13 @@
 let {
-    addDef, enumeration, int32, format, req, 
-    ckFormId, def, uint32, formId, bytes, 
-    size, union, struct
+    addDef, enumeration, int32, format, ckFormId, 
+    def, uint32, formId, bytes, size, 
+    union, struct
 } = require('../helpers');
 
 module.exports = () => {
     addDef('TargetData', 
         struct('Target Data', [
-            req(format(int32('Type'), enumeration({
+            format(int32('Type'), enumeration({
                 0: 'Specific Reference',
                 1: 'Object ID',
                 2: 'Object Type',
@@ -15,7 +15,7 @@ module.exports = () => {
                 4: 'Ref Alias',
                 5: 'Unknown 5',
                 6: 'Self'
-            }))),
+            })),
             union('Target', 'TypeDecider', [
                 ckFormId('Reference', [
                     'NULL', 'PLYR', 'ACHR', 'REFR', 'PGRE',

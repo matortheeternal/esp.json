@@ -69,7 +69,6 @@
             "signature": "CSME",
             "name": "Melee",
             "type": "struct",
-            "required": true,
             "elements": [
                 {
                     "name": "Attack Staggered Mult",
@@ -109,7 +108,6 @@
             "signature": "CSCR",
             "name": "Close Range",
             "type": "struct",
-            "required": true,
             "elements": [
                 {
                     "name": "Circle Mult",
@@ -133,7 +131,6 @@
             "signature": "CSLR",
             "name": "Long Range",
             "type": "struct",
-            "required": true,
             "elements": [
                 {
                     "name": "Strafe Mult",
@@ -145,7 +142,6 @@
             "signature": "CSFL",
             "name": "Flight",
             "type": "struct",
-            "required": true,
             "elements": [
                 {
                     "name": "Hover Chance",
@@ -185,7 +181,6 @@
             "signature": "DATA",
             "name": "Flags",
             "type": "uint32",
-            "required": true,
             "format": {
                 "type": "flags",
                 "flags": {

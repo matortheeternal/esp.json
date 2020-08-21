@@ -7,7 +7,7 @@ let {
 
 module.exports = () => {
     addDef('DESTActor', 
-        req(memberStruct('Destructible', [
+        memberStruct('Destructible', [
             subrecord('DEST', struct('Header', [
                 int32('Health'),
                 uint8('Count'),
@@ -41,6 +41,6 @@ module.exports = () => {
                     req(subrecord('DSTF', empty('End Marker')))
                 ])
             )
-        ]))
+        ])
     );
 };

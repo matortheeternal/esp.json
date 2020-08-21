@@ -24,7 +24,7 @@ module.exports = () => {
                 float('Avoid Threat Chance')
             ]))),
             subrecord('CSMD', unknown()),
-            req(subrecord('CSME', struct('Melee', [
+            subrecord('CSME', struct('Melee', [
                 float('Attack Staggered Mult'),
                 float('Power Attack Staggered Mult'),
                 float('Power Attack Blocking Mult'),
@@ -33,17 +33,17 @@ module.exports = () => {
                 float('Bash Attack Mult'),
                 float('Bash Power Attack Mult'),
                 float('Special Attack Mult')
-            ]))),
-            req(subrecord('CSCR', struct('Close Range', [
+            ])),
+            subrecord('CSCR', struct('Close Range', [
                 float('Circle Mult'),
                 float('Fallback Mult'),
                 float('Flank Distance'),
                 float('Stalk Time')
-            ]))),
-            req(subrecord('CSLR', struct('Long Range', [
+            ])),
+            subrecord('CSLR', struct('Long Range', [
                 float('Strafe Mult')
-            ]))),
-            req(subrecord('CSFL', struct('Flight', [
+            ])),
+            subrecord('CSFL', struct('Flight', [
                 float('Hover Chance'),
                 float('Dive Bomb Chance'),
                 float('Ground Attack Chance'),
@@ -52,12 +52,12 @@ module.exports = () => {
                 float('Perch Attack Chance'),
                 float('Perch Attack Time'),
                 float('Flying Attack Chance')
-            ]))),
-            req(subrecord('DATA', format(uint32('Flags'), flags({
+            ])),
+            subrecord('DATA', format(uint32('Flags'), flags({
                 0: 'Dueling',
                 1: 'Flanking',
                 2: 'Allow Dual Wielding'
-            }))))
+            })))
         ]
     })
 };

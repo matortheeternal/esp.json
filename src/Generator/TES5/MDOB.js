@@ -1,9 +1,9 @@
 let {
-    addDef, formId, subrecord, req
+    addDef, formId, subrecord
 } = require('../helpers');
 
 module.exports = () => {
     addDef('MDOB', 
-        req(subrecord('MDOB', formId('Menu Display Object')))
+        subrecord('MDOB', formId('Menu Display Object'))
     );
 };

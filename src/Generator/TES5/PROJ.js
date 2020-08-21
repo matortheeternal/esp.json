@@ -62,7 +62,7 @@ module.exports = () => {
             ]))),
             req(sortKey([0], memberStruct('Muzzle Flash Model', [
                 subrecord('NAM1', string('Model FileName')),
-                req(subrecord('NAM2', size(0, bytes('Texture Files Hashes'))))
+                subrecord('NAM2', size(0, bytes('Texture Files Hashes')))
             ]))),
             req(subrecord('VNAM', format(uint32('Sound Level'), def('SoundLevelEnum'))))
         ]

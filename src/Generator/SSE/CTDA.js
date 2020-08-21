@@ -1,25 +1,24 @@
 let {
-    addDef, def, uint8, format, req, 
-    opts, bytes, size, float, ckFormId, 
-    union, uint16, int32, uint32, enumeration, 
-    formId, sortKey, struct, subrecord, string, 
-    memberStruct
+    addDef, def, uint8, format, opts, 
+    bytes, size, float, ckFormId, union, 
+    uint16, int32, uint32, enumeration, formId, 
+    sortKey, struct, subrecord, string, memberStruct
 } = require('../helpers');
 
 module.exports = () => {
     addDef('CTDA', 
         sortKey([0], memberStruct('Condition', [
-            req(subrecord('CTDA', sortKey([3, 5], struct('', [
-                opts(req(format(uint8('Type'), def('CtdaTypeToStr'))), {
+            subrecord('CTDA', sortKey([3, 5], struct('', [
+                opts(format(uint8('Type'), def('CtdaTypeToStr')), {
                     "afterSet": "CtdaTypeAfterSet"
                 }),
-                req(size(3, bytes('Unused'))),
+                size(3, bytes('Unused')),
                 union('Comparison Value', 'CTDACompValueDecider', [
                     float('Comparison Value - Float'),
                     ckFormId('Comparison Value - Global', ['GLOB'])
                 ]),
                 format(uint16('Function'), def('CTDAFunctionToStr')),
-                req(size(2, bytes('Unused'))),
+                size(2, bytes('Unused')),
                 union('Parameter #1', 'CTDAParam1Decider', [
                     size(4, bytes('Unknown')),
                     opts(size(4, bytes('None')), {
@@ -261,7 +260,7 @@ module.exports = () => {
                     formId('Event Data'),
                     ckFormId('Knowable', ['MGEF', 'WOOP'])
                 ]),
-                opts(req(format(uint32('Run On'), enumeration({
+                opts(format(uint32('Run On'), enumeration({
                     0: 'Subject',
                     1: 'Target',
                     2: 'Reference',
@@ -270,7 +269,7 @@ module.exports = () => {
                     5: 'Quest Alias',
                     6: 'Package Data',
                     7: 'Event Data'
-                }))), {
+                })), {
                     "afterSet": "CTDARunOnAfterSet"
                 }),
                 union('Reference', 'CTDAReferenceDecider', [
@@ -281,8 +280,8 @@ module.exports = () => {
                         'PCON', 'PFLA'
                     ])
                 ]),
-                req(int32('Parameter #3'))
-            ])))),
+                int32('Parameter #3')
+            ]))),
             subrecord('CIS1', string('Parameter #1')),
             subrecord('CIS2', string('Parameter #2'))
         ]))

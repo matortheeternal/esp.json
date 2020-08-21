@@ -1,11 +1,11 @@
 let {
     addDef, flags, uint16, format, struct, 
-    subrecord, req
+    subrecord
 } = require('../helpers');
 
 module.exports = () => {
     addDef('QUSTAliasFlags', 
-        req(subrecord('FNAM', struct('Alias Flags', [
+        subrecord('FNAM', struct('Alias Flags', [
             format(uint16('Flags'), flags({
                 0: 'Reserves Location/Reference',
                 1: 'Optional',
@@ -28,6 +28,6 @@ module.exports = () => {
                 0: 'Allow Cleared',
                 1: 'Clear Names When Removed'
             }))
-        ])))
+        ]))
     );
 };

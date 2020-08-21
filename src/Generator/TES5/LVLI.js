@@ -19,24 +19,24 @@ module.exports = () => {
             })))),
             subrecord('LVLG', ckFormId('Global', ['GLOB'])),
             def('LLCT'),
-            req(elementCounter('LLCT - Count', 
+            elementCounter('LLCT - Count', 
                 sorted(memberArray('Leveled List Entries', 
                     sortKey([0], memberStruct('Leveled List Entry', [
                         subrecord('LVLO', sortKey([0, 2], struct('Base Data', [
                             uint16('Level'),
-                            req(size(2, bytes('Unknown'))),
+                            size(2, bytes('Unknown')),
                             ckFormId('Reference', [
                                 'ARMO', 'AMMO', 'APPA', 'MISC', 'WEAP',
                                 'BOOK', 'LVLI', 'KEYM', 'ALCH', 'LIGH',
                                 'INGR', 'SLGM', 'SCRL'
                             ]),
                             uint16('Count'),
-                            req(size(2, bytes('Unknown')))
+                            size(2, bytes('Unknown'))
                         ]))),
                         def('COED')
                     ]))
                 ))
-            ))
+            )
         ]
     })
 };

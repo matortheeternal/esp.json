@@ -1,6 +1,6 @@
 let {
-    def, string, subrecord, req, memberArray, 
-    uint8, IsSSE, flags, format, bytes, 
+    def, string, subrecord, memberArray, uint8, 
+    req, IsSSE, flags, format, bytes, 
     size, ckFormId, uint16, float, struct, 
     record
 } = require('../helpers');
@@ -11,7 +11,7 @@ module.exports = game => {
             def('EDID'),
             def('FULL'),
             memberArray('Unused', 
-                req(subrecord('NNAM', string('Noise Map')))
+                subrecord('NNAM', string('Noise Map'))
             ),
             req(subrecord('ANAM', uint8('Opacity'))),
             req(subrecord('FNAM', format(uint8('Flags'), flags({
@@ -24,7 +24,7 @@ module.exports = game => {
                 6: 'Unknown 6',
                 7: 'Unknown 7'
             })))),
-            req(subrecord('MNAM', size(0, bytes('Unused')))),
+            subrecord('MNAM', size(0, bytes('Unused'))),
             subrecord('TNAM', ckFormId('Material', ['MATT'])),
             subrecord('SNAM', ckFormId('Open Sound', ['SNDR', 'NULL'])),
             subrecord('XNAM', ckFormId('Spell', ['SPEL'])),
@@ -155,20 +155,20 @@ module.exports = game => {
                 ]))
             ]),
             req(subrecord('GNAM', size(0, bytes('Unused')))),
-            req(subrecord('NAM0', struct('Linear Velocity', [
+            subrecord('NAM0', struct('Linear Velocity', [
                 float('X'),
                 float('Y'),
                 float('Z')
-            ]))),
-            req(subrecord('NAM1', struct('Angular Velocity', [
+            ])),
+            subrecord('NAM1', struct('Angular Velocity', [
                 float('X'),
                 float('Y'),
                 float('Z')
-            ]))),
-            req(subrecord('NAM2', string('Noise Layer One - Noise Texture'))),
-            req(subrecord('NAM3', string('Noise Layer Two - Noise Texture'))),
-            req(subrecord('NAM4', string('Noise Layer Three - Noise Texture'))),
-            req(subrecord('NAM5', string('Flow Normals - Noise Texture')))
+            ])),
+            subrecord('NAM2', string('Noise Layer One - Noise Texture')),
+            subrecord('NAM3', string('Noise Layer Two - Noise Texture')),
+            subrecord('NAM4', string('Noise Layer Three - Noise Texture')),
+            subrecord('NAM5', string('Flow Normals - Noise Texture'))
         ]
     })
 };

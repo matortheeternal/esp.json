@@ -1,12 +1,11 @@
 let {
     addDef, def, flags, uint8, format, 
-    bytes, size, uint32, struct, subrecord, 
-    req
+    bytes, size, uint32, struct, subrecord
 } = require('../helpers');
 
 module.exports = () => {
     addDef('BODT', 
-        req(subrecord('BODT', struct('Body Template', [
+        subrecord('BODT', struct('Body Template', [
             def('FirstPersonFlagsU32'),
             format(uint8('General Flags'), flags({
                 0: '(ARMA)Modulates Voice',
@@ -20,6 +19,6 @@ module.exports = () => {
             })),
             size(3, bytes('Unused')),
             format(uint32('Armor Type'), def('ArmorTypeEnum'))
-        ])))
+        ]))
     );
 };

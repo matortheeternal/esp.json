@@ -87,7 +87,6 @@
             "signature": "ONAM",
             "name": "Overridden Forms",
             "type": "array",
-            "required": true,
             "element": {
                 "name": "Form",
                 "type": "formId",

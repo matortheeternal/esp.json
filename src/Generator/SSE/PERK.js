@@ -39,11 +39,11 @@ module.exports = () => {
             memberArray('Effects', 
                 sortKey([0, 1], memberStruct('Effect', [
                     subrecord('PRKE', sortKey([1, 2, 0], struct('Header', [
-                        opts(req(format(uint8('Type'), enumeration({
+                        opts(format(uint8('Type'), enumeration({
                             0: 'Quest + Stage',
                             1: 'Ability',
                             2: 'Entry Point'
-                        }))), {
+                        })), {
                             "afterSet": "PERKPRKETypeAfterSet"
                         }),
                         uint8('Rank'),
@@ -79,13 +79,13 @@ module.exports = () => {
                             uint8('Perk Condition Tab Count')
                         ]))
                     ]))),
-                    req(memberArray('Perk Conditions', 
+                    memberArray('Perk Conditions', 
                         sortKey([0], memberStruct('Perk Condition', [
                             subrecord('PRKC', int8('Run On (Tab Index)')),
                             req(def('CTDAs'))
                         ]))
-                    )),
-                    req(memberStruct('Function Parameters', [
+                    ),
+                    memberStruct('Function Parameters', [
                         subrecord('EPFT', format(uint8('Type'), enumeration({
                             0: 'None',
                             1: 'Float',
@@ -104,7 +104,7 @@ module.exports = () => {
                             })),
                             uint16('Fragment Index')
                         ])),
-                        req(subrecord('EPFD', union('Data', 'EPFDDecider', [
+                        subrecord('EPFD', union('Data', 'EPFDDecider', [
                             bytes('Unknown'),
                             float('Float'),
                             struct('Float, Float', [
@@ -120,8 +120,8 @@ module.exports = () => {
                                 format(uint32('Actor Value'), def('EPFDActorValueToStr')),
                                 float('Float')
                             ])
-                        ])))
-                    ])),
+                        ]))
+                    ]),
                     req(subrecord('PRKF', empty('End Marker')))
                 ]))
             )

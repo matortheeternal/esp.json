@@ -71,7 +71,6 @@
             "name": "Collides With",
             "type": "array",
             "sorted": true,
-            "required": true,
             "element": {
                 "name": "Forms",
                 "type": "formId",

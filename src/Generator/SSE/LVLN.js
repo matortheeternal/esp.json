@@ -17,20 +17,20 @@ module.exports = () => {
             })))),
             subrecord('LVLG', ckFormId('Global', ['GLOB'])),
             def('LLCT'),
-            req(elementCounter('LLCT - Count', 
+            elementCounter('LLCT - Count', 
                 sorted(memberArray('Leveled List Entries', 
                     sortKey([0], memberStruct('Leveled List Entry', [
                         subrecord('LVLO', sortKey([0, 2], struct('Base Data', [
                             int16('Level'),
-                            req(size(2, bytes('Unknown'))),
+                            size(2, bytes('Unknown')),
                             ckFormId('Reference', ['NPC_', 'LVLN']),
                             int16('Count'),
-                            req(size(2, bytes('Unknown')))
+                            size(2, bytes('Unknown'))
                         ]))),
                         def('COED')
                     ]))
                 ))
-            )),
+            ),
             def('MODL')
         ]
     })

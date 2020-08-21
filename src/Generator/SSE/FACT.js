@@ -65,7 +65,7 @@ module.exports = () => {
             subrecord('PLCN', ckFormId('Player Inventory Container', ['REFR'])),
             subrecord('CRGR', ckFormId('Shared Crime Faction List', ['FLST'])),
             subrecord('JOUT', ckFormId('Jail Outfit', ['OTFT'])),
-            req(subrecord('CRVA', struct('Crime Values', [
+            subrecord('CRVA', struct('Crime Values', [
                 format(uint8('Arrest'), enumeration({
                     0: 'False',
                     1: 'True'
@@ -82,7 +82,7 @@ module.exports = () => {
                 float('Steal Multiplier'),
                 uint16('Escape'),
                 uint16('Werewolf')
-            ]))),
+            ])),
             memberArray('Ranks', 
                 sortKey([0], memberStruct('Rank', [
                     subrecord('RNAM', uint32('Rank#')),

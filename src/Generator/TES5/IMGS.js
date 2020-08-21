@@ -1,7 +1,7 @@
 let {
     def, unknown, subrecord, float, struct, 
     bytes, size, enumeration, uint16, format, 
-    req, record
+    record
 } = require('../helpers');
 
 module.exports = () => {
@@ -29,7 +29,7 @@ module.exports = () => {
                 float('Amount'),
                 def('FloatColors', { name: 'Color' })
             ])),
-            req(subrecord('DNAM', struct('Depth of Field', [
+            subrecord('DNAM', struct('Depth of Field', [
                 float('Strength'),
                 float('Distance'),
                 float('Range'),
@@ -52,7 +52,7 @@ module.exports = () => {
                     17000: 'Radius 7',
                     17016: 'No Sky, Radius 7'
                 }))
-            ])))
+            ]))
         ]
     })
 };

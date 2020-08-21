@@ -58,7 +58,7 @@ module.exports = () => {
                 int32('Duration (minutes)')
             ]))),
             def('CTDAs'),
-            req(memberStruct('Idle Animations', [
+            memberStruct('Idle Animations', [
                 req(subrecord('IDLF', format(uint8('Flags'), enumeration({
                     0: 'Unknown',
                     8: 'Random',
@@ -77,7 +77,7 @@ module.exports = () => {
                     "afterSet": "IDLAsAfterSet"
                 }),
                 subrecord('IDLB', size(4, bytes('Unknown')))
-            ])),
+            ]),
             subrecord('CNAM', ckFormId('Combat Style', ['CSTY'])),
             subrecord('QNAM', ckFormId('Owner Quest', ['QUST'])),
             req(subrecord('PKCU', struct('Counter', [
@@ -87,7 +87,7 @@ module.exports = () => {
             ]))),
             memberStruct('Package Data', [
                 memberArray('Data Input Values', 
-                    req(memberStruct('Value', [
+                    memberStruct('Value', [
                         subrecord('ANAM', string('Type')),
                         subrecord('CNAM', union('Value', 'PubPackCNAMDecider', [
                             bytes('Unknown'),
@@ -105,14 +105,14 @@ module.exports = () => {
                             def('TargetData')
                         ])),
                         subrecord('TPIC', unknown())
-                    ]))
+                    ])
                 ),
                 def('UNAMs')
             ]),
             subrecord('XNAM', bytes('Marker')),
             memberStruct('Procedure Tree', [
                 memberArray('Branches', 
-                    req(elementCounter('CITC - Condition Count', 
+                    elementCounter('CITC - Condition Count', 
                         memberStruct('Branch', [
                             subrecord('ANAM', string('Branch Type')),
                             req(def('CITC')),
@@ -150,36 +150,36 @@ module.exports = () => {
                                 subrecord('PFOR', unknown())
                             )
                         ])
-                    ))
+                    )
                 )
             ]),
             def('UNAMs'),
             memberStruct('OnBegin', [
                 req(subrecord('POBA', empty('OnBegin Marker'))),
                 req(subrecord('INAM', ckFormId('Idle', ['IDLE', 'NULL']))),
-                req(subrecord('SCHR', size(0, bytes('Unused')))),
-                req(subrecord('SCTX', size(0, bytes('Unused')))),
-                req(subrecord('QNAM', size(0, bytes('Unused')))),
-                req(subrecord('TNAM', size(0, bytes('Unused')))),
+                subrecord('SCHR', size(0, bytes('Unused'))),
+                subrecord('SCTX', size(0, bytes('Unused'))),
+                subrecord('QNAM', size(0, bytes('Unused'))),
+                subrecord('TNAM', size(0, bytes('Unused'))),
                 def('PDTOs')
             ]),
             memberStruct('OnEnd', [
                 req(subrecord('POEA', empty('OnEnd Marker'))),
                 req(subrecord('INAM', ckFormId('Idle', ['IDLE', 'NULL']))),
-                req(subrecord('SCHR', size(0, bytes('Unused')))),
-                req(subrecord('SCTX', size(0, bytes('Unused')))),
-                req(subrecord('QNAM', size(0, bytes('Unused')))),
-                req(subrecord('TNAM', size(0, bytes('Unused')))),
+                subrecord('SCHR', size(0, bytes('Unused'))),
+                subrecord('SCTX', size(0, bytes('Unused'))),
+                subrecord('QNAM', size(0, bytes('Unused'))),
+                subrecord('TNAM', size(0, bytes('Unused'))),
                 def('PDTOs')
             ]),
             memberStruct('OnChange', [
                 req(subrecord('POCA', empty('OnChange Marker'))),
                 req(subrecord('INAM', ckFormId('Idle', ['IDLE', 'NULL']))),
-                req(subrecord('SCHR', size(0, bytes('Unused')))),
-                req(subrecord('SCDA', size(0, bytes('Unused')))),
-                req(subrecord('SCTX', size(0, bytes('Unused')))),
-                req(subrecord('QNAM', size(0, bytes('Unused')))),
-                req(subrecord('TNAM', size(0, bytes('Unused')))),
+                subrecord('SCHR', size(0, bytes('Unused'))),
+                subrecord('SCDA', size(0, bytes('Unused'))),
+                subrecord('SCTX', size(0, bytes('Unused'))),
+                subrecord('QNAM', size(0, bytes('Unused'))),
+                subrecord('TNAM', size(0, bytes('Unused'))),
                 def('PDTOs')
             ])
         ]

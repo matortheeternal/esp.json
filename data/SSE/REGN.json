@@ -149,7 +149,6 @@
                         "signature": "RDMO",
                         "name": "Music",
                         "type": "formId",
-                        "required": true,
                         "signatures": [
                             "MUSC"
                         ]
@@ -159,7 +158,6 @@
                         "name": "Sounds",
                         "type": "array",
                         "sorted": true,
-                        "required": true,
                         "element": {
                             "name": "Sound",
                             "type": "struct",
@@ -199,14 +197,12 @@
                         "signature": "RDMP",
                         "name": "Map Name",
                         "type": "string",
-                        "localized": true,
-                        "required": true
+                        "localized": true
                     },
                     {
                         "signature": "RDOT",
                         "name": "Objects",
                         "type": "array",
-                        "required": true,
                         "element": {
                             "name": "Object",
                             "type": "struct",
@@ -331,7 +327,6 @@
                         "name": "Grasses",
                         "type": "array",
                         "sorted": true,
-                        "required": true,
                         "element": {
                             "name": "Grass",
                             "type": "struct",
@@ -359,7 +354,6 @@
                         "name": "Weather Types",
                         "type": "array",
                         "sorted": true,
-                        "required": true,
                         "element": {
                             "name": "Weather Type",
                             "type": "struct",

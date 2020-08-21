@@ -19,11 +19,11 @@ module.exports = () => {
                 subrecord('TX07', string('Backlight Mask/Specular'))
             ]),
             def('DODT'),
-            req(subrecord('DNAM', format(uint16('Flags'), flags({
+            subrecord('DNAM', format(uint16('Flags'), flags({
                 0: 'No Specular Map',
                 1: 'Facegen Textures',
                 2: 'Has Model Space Normal Map'
-            }))))
+            })))
         ]
     })
 };

@@ -8,7 +8,7 @@ module.exports = game => {
     record('LTEX', 'Landscape Texture', {
         members: [
             def('EDID'),
-            req(subrecord('TNAM', ckFormId('Texture Set', ['TXST']))),
+            subrecord('TNAM', ckFormId('Texture Set', ['TXST'])),
             req(subrecord('MNAM', ckFormId('Material Type', ['MATT', 'NULL']))),
             req(subrecord('HNAM', struct('Havok Data', [
                 uint8('Friction'),

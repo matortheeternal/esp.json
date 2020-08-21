@@ -102,7 +102,6 @@
                             {
                                 "name": "Type",
                                 "type": "uint8",
-                                "required": true,
                                 "afterSet": "PERKPRKETypeAfterSet",
                                 "format": {
                                     "type": "enum",
@@ -223,7 +222,6 @@
                     {
                         "name": "Perk Conditions",
                         "type": "memberArray",
-                        "required": true,
                         "member": {
                             "name": "Perk Condition",
                             "type": "memberStruct",
@@ -246,7 +244,6 @@
                     {
                         "name": "Function Parameters",
                         "type": "memberStruct",
-                        "required": true,
                         "members": [
                             {
                                 "signature": "EPFT",
@@ -299,7 +296,6 @@
                                 "name": "Data",
                                 "type": "union",
                                 "decider": "EPFDDecider",
-                                "required": true,
                                 "elements": [
                                     {
                                         "name": "Unknown",

@@ -1,16 +1,15 @@
 let {
     addDef, string, prefix, def, uint8, 
-    format, req, opts, enumeration, int32, 
-    float, array, union, sortKey, struct, 
-    sorted
+    format, opts, enumeration, int32, float, 
+    array, union, sortKey, struct, sorted
 } = require('../helpers');
 
 module.exports = () => {
     addDef('ScriptProperties', 
-        req(prefix(2, sorted(array('Properties', 
+        prefix(2, sorted(array('Properties', 
             sortKey([0], struct('Property', [
                 prefix(2, string('propertyName')),
-                opts(req(format(uint8('Type'), def('PropTypeEnum'))), {
+                opts(format(uint8('Type'), def('PropTypeEnum')), {
                     "afterSet": "ScriptPropertyTypeAfterSet"
                 }),
                 opts(format(uint8('Flags'), enumeration({
@@ -55,6 +54,6 @@ module.exports = () => {
                     ))
                 ])
             ]))
-        ))))
+        )))
     );
 };

@@ -30,7 +30,7 @@ module.exports = () => {
             })))), {
                 "afterSet": "CELLDATAAfterSet"
             }),
-            req(subrecord('XCLC', struct('Grid', [
+            subrecord('XCLC', struct('Grid', [
                 int32('X'),
                 int32('Y'),
                 format(uint32('Force Hide Land'), flags({
@@ -39,8 +39,8 @@ module.exports = () => {
                     2: 'Quad 3',
                     3: 'Quad 4'
                 }))
-            ]))),
-            req(subrecord('XCLL', struct('Lighting', [
+            ])),
+            subrecord('XCLL', struct('Lighting', [
                 def('ByteColors', { name: 'Ambient Color' }),
                 def('ByteColors', { name: 'Directional Color' }),
                 def('ByteColors', { name: 'Fog Color Near' }),
@@ -69,12 +69,12 @@ module.exports = () => {
                     9: 'Fog Max',
                     10: 'Light Fade Distances'
                 }))
-            ]))),
+            ])),
             def('TVDT'),
             def('MaxHeightDataCELL'),
             req(subrecord('LTMP', ckFormId('Lighting Template', ['LGTM', 'NULL']))),
             subrecord('LNAM', size(0, bytes('Unknown'))),
-            req(subrecord('XCLW', float('Water Height'))),
+            subrecord('XCLW', float('Water Height')),
             subrecord('XNAM', string('Water Noise Texture')),
             subrecord('XCLR', sorted(array('Regions', 
                 ckFormId('Region', ['REGN'])

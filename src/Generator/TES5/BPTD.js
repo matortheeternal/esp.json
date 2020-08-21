@@ -14,7 +14,7 @@ module.exports = () => {
             req(memberArray('Body Parts', 
                 sortKey([2], memberStruct('Body Part', [
                     req(subrecord('BPTN', localized(string('Part Name')))),
-                    req(subrecord('PNAM', string('Pose Matching'))),
+                    subrecord('PNAM', string('Pose Matching')),
                     req(subrecord('BPNN', string('Part Node'))),
                     req(subrecord('BPNT', string('VATS Target'))),
                     req(subrecord('BPNI', string('IK Data - Start Node'))),

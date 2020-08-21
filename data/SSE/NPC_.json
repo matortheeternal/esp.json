@@ -77,8 +77,7 @@
                 },
                 {
                     "name": "Stamina Offset",
-                    "type": "int16",
-                    "required": true
+                    "type": "int16"
                 },
                 {
                     "name": "Level",
@@ -160,7 +159,6 @@
             "name": "Factions",
             "type": "memberArray",
             "sorted": true,
-            "required": true,
             "member": {
                 "signature": "SNAM",
                 "name": "Faction",
@@ -192,7 +190,6 @@
             "signature": "INAM",
             "name": "Death item",
             "type": "formId",
-            "required": true,
             "signatures": [
                 "LVLI"
             ]
@@ -201,7 +198,6 @@
             "signature": "VTCK",
             "name": "Voice",
             "type": "formId",
-            "required": true,
             "signatures": [
                 "VTYP"
             ]
@@ -237,7 +233,6 @@
             "signature": "WNAM",
             "name": "Worn Armor",
             "type": "formId",
-            "required": true,
             "signatures": [
                 "ARMO"
             ]
@@ -246,7 +241,6 @@
             "signature": "ANAM",
             "name": "Far away model",
             "type": "formId",
-            "required": true,
             "signatures": [
                 "ARMO"
             ]
@@ -255,7 +249,6 @@
             "signature": "ATKR",
             "name": "Attack Race",
             "type": "formId",
-            "required": true,
             "signatures": [
                 "RACE"
             ]
@@ -272,7 +265,6 @@
             "signature": "SPOR",
             "name": "Spectator override package list",
             "type": "formId",
-            "required": true,
             "signatures": [
                 "FLST"
             ]
@@ -281,7 +273,6 @@
             "signature": "OCOR",
             "name": "Observe dead body override package list",
             "type": "formId",
-            "required": true,
             "signatures": [
                 "FLST"
             ]
@@ -290,7 +281,6 @@
             "signature": "GWOR",
             "name": "Guard warn override package list",
             "type": "formId",
-            "required": true,
             "signatures": [
                 "FLST"
             ]
@@ -299,7 +289,6 @@
             "signature": "ECOR",
             "name": "Combat override package list",
             "type": "formId",
-            "required": true,
             "signatures": [
                 "FLST"
             ]
@@ -313,7 +302,6 @@
             "name": "Perks",
             "type": "memberArray",
             "sorted": true,
-            "required": true,
             "counter": {
                 "type": "elementCounter",
                 "path": "PRKZ - Perk Count"
@@ -357,7 +345,6 @@
         {
             "name": "Packages",
             "type": "memberArray",
-            "required": true,
             "member": {
                 "signature": "PKID",
                 "name": "Package",
@@ -400,7 +387,6 @@
             "signature": "DNAM",
             "name": "Player Skills",
             "type": "struct",
-            "required": true,
             "elements": [
                 {
                     "name": "Skill Values",
@@ -594,7 +580,6 @@
             "name": "Head Parts",
             "type": "memberArray",
             "sorted": true,
-            "required": true,
             "member": {
                 "signature": "PNAM",
                 "name": "Head Part",
@@ -608,7 +593,6 @@
             "signature": "HCLF",
             "name": "Hair Color",
             "type": "formId",
-            "required": true,
             "signatures": [
                 "CLFM"
             ]
@@ -617,7 +601,6 @@
             "signature": "ZNAM",
             "name": "Combat Style",
             "type": "formId",
-            "required": true,
             "signatures": [
                 "CSTY"
             ]
@@ -626,7 +609,6 @@
             "signature": "GNAM",
             "name": "Gift Filter",
             "type": "formId",
-            "required": true,
             "signatures": [
                 "FLST"
             ]
@@ -664,7 +646,6 @@
             "signature": "CSCR",
             "name": "Inherits Sounds From",
             "type": "formId",
-            "required": true,
             "signatures": [
                 "NPC_"
             ]
@@ -673,7 +654,6 @@
             "signature": "DOFT",
             "name": "Default outfit",
             "type": "formId",
-            "required": true,
             "signatures": [
                 "OTFT"
             ]
@@ -682,7 +662,6 @@
             "signature": "SOFT",
             "name": "Sleeping outfit",
             "type": "formId",
-            "required": true,
             "signatures": [
                 "OTFT"
             ]
@@ -691,7 +670,6 @@
             "signature": "DPLT",
             "name": "Default Package List",
             "type": "formId",
-            "required": true,
             "signatures": [
                 "FLST"
             ]
@@ -700,7 +678,6 @@
             "signature": "CRIF",
             "name": "Crime faction",
             "type": "formId",
-            "required": true,
             "signatures": [
                 "FACT"
             ]
@@ -709,7 +686,6 @@
             "signature": "FTST",
             "name": "Head texture",
             "type": "formId",
-            "required": true,
             "signatures": [
                 "TXST"
             ]
@@ -743,7 +719,6 @@
             "signature": "NAM9",
             "name": "Face morph",
             "type": "struct",
-            "required": true,
             "elements": [
                 {
                     "name": "Nose Long/Short",

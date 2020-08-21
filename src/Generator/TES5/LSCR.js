@@ -30,7 +30,7 @@ module.exports = () => {
                 float('Y'),
                 float('Z')
             ])),
-            req(subrecord('MOD2', string('Camera Path')))
+            subrecord('MOD2', string('Camera Path'))
         ]
     })
 };

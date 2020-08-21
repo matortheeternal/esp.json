@@ -1,10 +1,10 @@
 let {
-    addDef, float, struct, subrecord, req
+    addDef, float, struct, subrecord
 } = require('../helpers');
 
 module.exports = () => {
     addDef('PhonemeTargets', 
-        req(subrecord('PHWT', struct('Phoneme Target Weight', [
+        subrecord('PHWT', struct('Phoneme Target Weight', [
             float('Aah / LipBigAah'),
             float('BigAah / LipDST'),
             float('BMP / LipEee'),
@@ -21,6 +21,6 @@ module.exports = () => {
             float('R'),
             float('TH'),
             float('W')
-        ])))
+        ]))
     );
 };

@@ -31,10 +31,10 @@ module.exports = game => {
             def('DESC'),
             memberStruct('Has Scope', [
                 subrecord('MOD3', string('Model FileName')),
-                req(subrecord('MO3T', size(0, bytes('Texture Files Hashes')))),
+                subrecord('MO3T', size(0, bytes('Texture Files Hashes'))),
                 def('MO3S')
             ]),
-            req(subrecord('NNAM', size(0, bytes('Unused')))),
+            subrecord('NNAM', size(0, bytes('Unused'))),
             subrecord('INAM', ckFormId('Impact Data Set', ['IPDS', 'NULL'])),
             subrecord('WNAM', ckFormId('1st Person Model Object', ['STAT', 'NULL'])),
             subrecord('SNAM', ckFormId('Attack Sound', ['SNDR'])),

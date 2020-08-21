@@ -23,9 +23,9 @@ module.exports = () => {
             })))),
             req(subrecord('MNAM', string('Name'))),
             req(subrecord('INTV', uint32('Interactables Count'))),
-            req(subrecord('CNAM', sorted(array('Collides With', 
+            subrecord('CNAM', sorted(array('Collides With', 
                 ckFormId('Forms', ['COLL'])
-            ))))
+            )))
         ]
     })
 };

@@ -27,13 +27,13 @@ module.exports = () => {
                 req(subrecord('XPRD', float('Idle Time'))),
                 req(subrecord('XPPA', empty('Patrol Script Marker'))),
                 req(subrecord('INAM', ckFormId('Idle', ['IDLE', 'NULL']))),
-                req(memberStruct('Unused', [
+                memberStruct('Unused', [
                     subrecord('SCHR', unknown()),
                     subrecord('SCDA', unknown()),
                     subrecord('SCTX', unknown()),
                     subrecord('QNAM', unknown()),
                     subrecord('SCRO', unknown())
-                ])),
+                ]),
                 def('PDTOs'),
                 subrecord('TNAM', ckFormId('Topic', ['DIAL', 'NULL']))
             ]),
@@ -43,7 +43,7 @@ module.exports = () => {
             subrecord('XRDS', float('Radius')),
             subrecord('XHLP', float('Health')),
             sorted(memberArray('Linked References', 
-                req(subrecord('XLKR', sortKey([0], struct('Linked Reference', [
+                subrecord('XLKR', sortKey([0], struct('Linked Reference', [
                     ckFormId('Keyword/Ref', [
                         'KYWD', 'PLYR', 'ACHR', 'REFR', 'PGRE',
                         'PHZD', 'PMIS', 'PARW', 'PBAR', 'PBEA',
@@ -54,7 +54,7 @@ module.exports = () => {
                         'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON',
                         'PFLA'
                     ])
-                ]))))
+                ])))
             )),
             memberStruct('Activate Parents', [
                 subrecord('XAPD', format(uint8('Flags'), flags({

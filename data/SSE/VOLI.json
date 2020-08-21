@@ -20,22 +20,19 @@
             "signature": "ENAM",
             "name": "Red",
             "type": "float",
-            "scale": 255,
-            "required": true
+            "scale": 255
         },
         {
             "signature": "FNAM",
             "name": "Green",
             "type": "float",
-            "scale": 255,
-            "required": true
+            "scale": 255
         },
         {
             "signature": "GNAM",
             "name": "Blue",
             "type": "float",
-            "scale": 255,
-            "required": true
+            "scale": 255
         },
         {
             "signature": "HNAM",

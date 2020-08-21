@@ -6,7 +6,6 @@
             "signature": "BOD2",
             "name": "Biped Body Template",
             "type": "struct",
-            "required": true,
             "elements": [
                 {
                     "id": "FirstPersonFlagsU32"
@@ -45,7 +44,6 @@
             "signature": "BODT",
             "name": "Body Template",
             "type": "struct",
-            "required": true,
             "elements": [
                 {
                     "id": "FirstPersonFlagsU32"

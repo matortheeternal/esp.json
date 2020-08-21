@@ -28,15 +28,15 @@ module.exports = () => {
             subrecord('XNAM', uint32('Max concurrent quests')),
             subrecord('MNAM', uint32('Num quests to run')),
             req(subrecord('QNAM', uint32('Quest Count'))),
-            req(elementCounter('QNAM - Quest Count', 
+            elementCounter('QNAM - Quest Count', 
                 memberArray('Quests', 
                     sortKey([0], memberStruct('Quest', [
                         subrecord('NNAM', ckFormId('Quest', ['QUST'])),
                         subrecord('FNAM', unknown()),
-                        req(subrecord('RNAM', format(float('Hours until reset'), div(24))))
+                        subrecord('RNAM', format(float('Hours until reset'), div(24)))
                     ]))
                 )
-            ))
+            )
         ]
     })
 };

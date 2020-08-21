@@ -4,9 +4,9 @@ let {
 
 module.exports = () => {
     addDef('ICON', 
-        req(memberStruct('Icon', [
+        memberStruct('Icon', [
             req(subrecord('ICON', string('Large Icon FileName'))),
             subrecord('MICO', string('Small Icon FileName'))
-        ]))
+        ])
     );
 };

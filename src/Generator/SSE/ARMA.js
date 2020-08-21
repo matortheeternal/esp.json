@@ -27,24 +27,24 @@ module.exports = () => {
                 size(1, bytes('Unknown')),
                 float('Weapon Adjust')
             ]))),
-            req(memberStruct('Male world model', [
+            memberStruct('Male world model', [
                 subrecord('MOD2', string('Model FileName')),
-                req(subrecord('MO2T', size(0, bytes('Texture Files Hashes')))),
+                subrecord('MO2T', size(0, bytes('Texture Files Hashes'))),
                 def('MO2S')
-            ])),
+            ]),
             memberStruct('Female world model', [
                 subrecord('MOD3', string('Model FileName')),
-                req(subrecord('MO3T', size(0, bytes('Texture Files Hashes')))),
+                subrecord('MO3T', size(0, bytes('Texture Files Hashes'))),
                 def('MO3S')
             ]),
             memberStruct('Male 1st Person', [
                 subrecord('MOD4', string('Model FileName')),
-                req(subrecord('MO4T', size(0, bytes('Texture Files Hashes')))),
+                subrecord('MO4T', size(0, bytes('Texture Files Hashes'))),
                 def('MO4S')
             ]),
             memberStruct('Female 1st Person', [
                 subrecord('MOD5', string('Model FileName')),
-                req(subrecord('MO5T', size(0, bytes('Texture Files Hashes')))),
+                subrecord('MO5T', size(0, bytes('Texture Files Hashes'))),
                 def('MO5S')
             ]),
             subrecord('NAM0', ckFormId('Male Skin Texture', ['TXST', 'NULL'])),

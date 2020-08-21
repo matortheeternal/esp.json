@@ -56,7 +56,7 @@ module.exports = () => {
                     31: 'Invulnerable'
                 })),
                 req(int16('Magicka Offset')),
-                req(int16('Stamina Offset')),
+                int16('Stamina Offset'),
                 req(union('Level', 'NPCLevelDecider', [
                     req(int16('Level')),
                     req(format(int16('Level Mult'), div(1000)))
@@ -83,32 +83,32 @@ module.exports = () => {
                 req(int16('Health Offset')),
                 req(uint16('Bleedout Override'))
             ]))),
-            req(sorted(memberArray('Factions', 
+            sorted(memberArray('Factions', 
                 subrecord('SNAM', sortKey([0], struct('Faction', [
                     ckFormId('Faction', ['FACT']),
                     int8('Rank'),
                     size(3, bytes('Unused'))
                 ])))
-            ))),
-            req(subrecord('INAM', ckFormId('Death item', ['LVLI']))),
-            req(subrecord('VTCK', ckFormId('Voice', ['VTYP']))),
+            )),
+            subrecord('INAM', ckFormId('Death item', ['LVLI'])),
+            subrecord('VTCK', ckFormId('Voice', ['VTYP'])),
             subrecord('TPLT', ckFormId('Template', ['LVLN', 'NPC_'])),
             req(subrecord('RNAM', ckFormId('Race', ['RACE']))),
             def('SPCT'),
             def('SPLOs'),
             def('DEST'),
-            req(subrecord('WNAM', ckFormId('Worn Armor', ['ARMO']))),
-            req(subrecord('ANAM', ckFormId('Far away model', ['ARMO']))),
-            req(subrecord('ATKR', ckFormId('Attack Race', ['RACE']))),
+            subrecord('WNAM', ckFormId('Worn Armor', ['ARMO'])),
+            subrecord('ANAM', ckFormId('Far away model', ['ARMO'])),
+            subrecord('ATKR', ckFormId('Attack Race', ['RACE'])),
             sorted(memberArray('Attacks', 
                 def('AttackData')
             )),
-            req(subrecord('SPOR', ckFormId('Spectator override package list', ['FLST']))),
-            req(subrecord('OCOR', ckFormId('Observe dead body override package list', ['FLST']))),
-            req(subrecord('GWOR', ckFormId('Guard warn override package list', ['FLST']))),
-            req(subrecord('ECOR', ckFormId('Combat override package list', ['FLST']))),
+            subrecord('SPOR', ckFormId('Spectator override package list', ['FLST'])),
+            subrecord('OCOR', ckFormId('Observe dead body override package list', ['FLST'])),
+            subrecord('GWOR', ckFormId('Guard warn override package list', ['FLST'])),
+            subrecord('ECOR', ckFormId('Combat override package list', ['FLST'])),
             subrecord('PRKZ', uint32('Perk Count')),
-            req(elementCounter('PRKZ - Perk Count', 
+            elementCounter('PRKZ - Perk Count', 
                 sorted(memberArray('Perks', 
                     subrecord('PRKR', sortKey([0], struct('Perk', [
                         ckFormId('Perk', ['PERK']),
@@ -116,20 +116,20 @@ module.exports = () => {
                         size(3, bytes('Unused'))
                     ])))
                 ))
-            )),
+            ),
             def('COCT'),
             def('CNTOs'),
             def('AIDT'),
-            req(memberArray('Packages', 
+            memberArray('Packages', 
                 subrecord('PKID', ckFormId('Package', ['PACK']))
-            )),
+            ),
             def('KSIZ'),
             def('KWDAs'),
             req(subrecord('CNAM', ckFormId('Class', ['CLAS']))),
             def('FULL'),
             subrecord('SHRT', localized(string('Short Name'))),
             subrecord('DATA', bytes('Marker')),
-            req(subrecord('DNAM', struct('Player Skills', [
+            subrecord('DNAM', struct('Player Skills', [
                 struct('Skill Values', [
                     uint8('OneHanded'),
                     uint8('TwoHanded'),
@@ -177,30 +177,30 @@ module.exports = () => {
                 float('Far away model distance'),
                 uint8('Geared up weapons'),
                 size(3, bytes('Unused'))
-            ]))),
-            req(sorted(memberArray('Head Parts', 
+            ])),
+            sorted(memberArray('Head Parts', 
                 subrecord('PNAM', ckFormId('Head Part', ['HDPT']))
-            ))),
-            req(subrecord('HCLF', ckFormId('Hair Color', ['CLFM']))),
-            req(subrecord('ZNAM', ckFormId('Combat Style', ['CSTY']))),
-            req(subrecord('GNAM', ckFormId('Gift Filter', ['FLST']))),
+            )),
+            subrecord('HCLF', ckFormId('Hair Color', ['CLFM'])),
+            subrecord('ZNAM', ckFormId('Combat Style', ['CSTY'])),
+            subrecord('GNAM', ckFormId('Gift Filter', ['FLST'])),
             req(subrecord('NAM5', unknown())),
             req(subrecord('NAM6', float('Height'))),
             req(subrecord('NAM7', float('Weight'))),
             req(subrecord('NAM8', format(uint32('Sound Level'), def('SoundLevelEnum')))),
             def('CSDTs'),
-            req(subrecord('CSCR', ckFormId('Inherits Sounds From', ['NPC_']))),
-            req(subrecord('DOFT', ckFormId('Default outfit', ['OTFT']))),
-            req(subrecord('SOFT', ckFormId('Sleeping outfit', ['OTFT']))),
-            req(subrecord('DPLT', ckFormId('Default Package List', ['FLST']))),
-            req(subrecord('CRIF', ckFormId('Crime faction', ['FACT']))),
-            req(subrecord('FTST', ckFormId('Head texture', ['TXST']))),
+            subrecord('CSCR', ckFormId('Inherits Sounds From', ['NPC_'])),
+            subrecord('DOFT', ckFormId('Default outfit', ['OTFT'])),
+            subrecord('SOFT', ckFormId('Sleeping outfit', ['OTFT'])),
+            subrecord('DPLT', ckFormId('Default Package List', ['FLST'])),
+            subrecord('CRIF', ckFormId('Crime faction', ['FACT'])),
+            subrecord('FTST', ckFormId('Head texture', ['TXST'])),
             subrecord('QNAM', struct('Texture lighting', [
                 req(scale(255, float('Red'))),
                 req(scale(255, float('Green'))),
                 req(scale(255, float('Blue')))
             ])),
-            req(subrecord('NAM9', struct('Face morph', [
+            subrecord('NAM9', struct('Face morph', [
                 float('Nose Long/Short'),
                 float('Nose Up/Down'),
                 float('Jaw Up/Down'),
@@ -220,7 +220,7 @@ module.exports = () => {
                 float('Chin Underbite/Overbite'),
                 float('Eyes Farward/Back'),
                 float('Unknown')
-            ]))),
+            ])),
             subrecord('NAMA', struct('Face parts', [
                 uint32('Nose'),
                 int32('Unknown'),

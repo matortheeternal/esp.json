@@ -251,20 +251,17 @@
                         {
                             "name": "Red",
                             "type": "float",
-                            "scale": 255,
-                            "required": true
+                            "scale": 255
                         },
                         {
                             "name": "Green",
                             "type": "float",
-                            "scale": 255,
-                            "required": true
+                            "scale": 255
                         },
                         {
                             "name": "Blue",
                             "type": "float",
-                            "scale": 255,
-                            "required": true
+                            "scale": 255
                         }
                     ]
                 },
@@ -304,14 +301,12 @@
                         {
                             "name": "Width",
                             "type": "float",
-                            "scale": 2,
-                            "required": true
+                            "scale": 2
                         },
                         {
                             "name": "Height",
                             "type": "float",
-                            "scale": 2,
-                            "required": true
+                            "scale": 2
                         }
                     ]
                 },
@@ -396,14 +391,12 @@
                         {
                             "name": "Width",
                             "type": "float",
-                            "scale": 2,
-                            "required": true
+                            "scale": 2
                         },
                         {
                             "name": "Height",
                             "type": "float",
-                            "scale": 2,
-                            "required": true
+                            "scale": 2
                         }
                     ]
                 },
@@ -541,7 +534,6 @@
                 "signature": "XPWR",
                 "name": "Water",
                 "type": "struct",
-                "required": true,
                 "elements": [
                     {
                         "name": "Reference",
@@ -593,7 +585,6 @@
             "signature": "XLIG",
             "name": "Light Data",
             "type": "struct",
-            "required": true,
             "elements": [
                 {
                     "name": "FOV 90+/-",
@@ -875,7 +866,6 @@
             "signature": "XLOC",
             "name": "Lock Data",
             "type": "struct",
-            "required": true,
             "elements": [
                 {
                     "name": "Level",
@@ -1014,7 +1004,6 @@
                 "signature": "XLKR",
                 "name": "Linked Reference",
                 "type": "struct",
-                "required": true,
                 "elements": [
                     {
                         "name": "Keyword/Ref",
@@ -1088,15 +1077,13 @@
                         "signature": "SCHR",
                         "name": "Unused",
                         "type": "bytes",
-                        "size": 0,
-                        "required": true
+                        "size": 0
                     },
                     {
                         "signature": "SCTX",
                         "name": "Unused",
                         "type": "bytes",
-                        "size": 0,
-                        "required": true
+                        "size": 0
                     },
                     {
                         "id": "PDTOs"

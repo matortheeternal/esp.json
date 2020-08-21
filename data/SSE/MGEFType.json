@@ -1,7 +1,6 @@
 {
     "name": "Archtype",
     "type": "uint32",
-    "required": true,
     "afterSet": "MGEFArchtypeAfterSet",
     "format": {
         "type": "enum",

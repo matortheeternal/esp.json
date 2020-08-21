@@ -1,10 +1,10 @@
 let {
     def, flags, uint16, format, uint8, 
     bytes, size, uint32, struct, subrecord, 
-    string, ckFormId, memberArray, memberStruct, req, 
-    empty, sortKey, localized, opts, sorted, 
-    int32, formId, int16, enumeration, unordered, 
-    memberUnion, record
+    string, ckFormId, memberArray, memberStruct, empty, 
+    sortKey, localized, opts, sorted, req, 
+    int32, formId, int16, enumeration, memberUnion, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
@@ -39,9 +39,9 @@ module.exports = () => {
                 subrecord('QTGL', ckFormId('Global', ['GLOB']))
             ),
             subrecord('FLTR', string('Object Window Filter')),
-            req(memberStruct('Quest Dialogue Conditions', [
+            memberStruct('Quest Dialogue Conditions', [
                 def('CTDAs')
-            ])),
+            ]),
             subrecord('NEXT', empty('Marker')),
             def('CTDAs'),
             sorted(memberArray('Stages', 
@@ -67,9 +67,9 @@ module.exports = () => {
                                 "keepCase": true
                             }),
                             subrecord('NAM0', ckFormId('Next Quest', ['QUST'])),
-                            req(subrecord('SCHR', size(0, bytes('Unused')))),
-                            req(subrecord('SCTX', size(0, bytes('Unused')))),
-                            req(subrecord('QNAM', size(0, bytes('Unused'))))
+                            subrecord('SCHR', size(0, bytes('Unused'))),
+                            subrecord('SCTX', size(0, bytes('Unused'))),
+                            subrecord('QNAM', size(0, bytes('Unused')))
                         ])
                     )
                 ]))
@@ -100,7 +100,7 @@ module.exports = () => {
             subrecord('ANAM', uint32('Next Alias ID')),
             memberArray('Aliases', 
                 memberUnion('Alias', [
-                    req(unordered(sortKey([0], memberStruct('Alias', [
+                    sortKey([0], memberStruct('Alias', [
                         subrecord('ALST', uint32('Reference Alias ID')),
                         subrecord('ALID', string('Alias Name')),
                         def('QUSTAliasFlags'),
@@ -149,10 +149,10 @@ module.exports = () => {
                         def('KWDAs'),
                         def('COCT'),
                         def('CNTOs'),
-                        req(subrecord('SPOR', ckFormId('Spectator override package list', ['FLST']))),
-                        req(subrecord('OCOR', ckFormId('Observe dead body override package list', ['FLST']))),
-                        req(subrecord('GWOR', ckFormId('Guard warn override package list', ['FLST']))),
-                        req(subrecord('ECOR', ckFormId('Combat override package list', ['FLST']))),
+                        subrecord('SPOR', ckFormId('Spectator override package list', ['FLST'])),
+                        subrecord('OCOR', ckFormId('Observe dead body override package list', ['FLST'])),
+                        subrecord('GWOR', ckFormId('Guard warn override package list', ['FLST'])),
+                        subrecord('ECOR', ckFormId('Combat override package list', ['FLST'])),
                         subrecord('ALDN', ckFormId('Display Name', ['MESG'])),
                         memberArray('Alias Spells', 
                             subrecord('ALSP', ckFormId('Spell', ['SPEL']))
@@ -167,8 +167,8 @@ module.exports = () => {
                             'NPC_', 'FLST', 'NULL'
                         ])),
                         req(subrecord('ALED', empty('Alias End')))
-                    ])))),
-                    req(unordered(sortKey([0], memberStruct('Alias', [
+                    ])),
+                    sortKey([0], memberStruct('Alias', [
                         subrecord('ALLS', uint32('Location Alias ID')),
                         subrecord('ALID', string('Alias Name')),
                         def('QUSTAliasFlags'),
@@ -217,10 +217,10 @@ module.exports = () => {
                         def('KWDAs'),
                         def('COCT'),
                         def('CNTOs'),
-                        req(subrecord('SPOR', ckFormId('Spectator override package list', ['FLST']))),
-                        req(subrecord('OCOR', ckFormId('Observe dead body override package list', ['FLST']))),
-                        req(subrecord('GWOR', ckFormId('Guard warn override package list', ['FLST']))),
-                        req(subrecord('ECOR', ckFormId('Combat override package list', ['FLST']))),
+                        subrecord('SPOR', ckFormId('Spectator override package list', ['FLST'])),
+                        subrecord('OCOR', ckFormId('Observe dead body override package list', ['FLST'])),
+                        subrecord('GWOR', ckFormId('Guard warn override package list', ['FLST'])),
+                        subrecord('ECOR', ckFormId('Combat override package list', ['FLST'])),
                         subrecord('ALDN', ckFormId('Display Name', ['MESG'])),
                         memberArray('Alias Spells', 
                             subrecord('ALSP', ckFormId('Spell', ['SPEL']))
@@ -235,10 +235,10 @@ module.exports = () => {
                             'NPC_', 'FLST', 'NULL'
                         ])),
                         req(subrecord('ALED', empty('Alias End')))
-                    ]))))
+                    ]))
                 ])
             ),
-            req(subrecord('NNAM', string('Description'))),
+            subrecord('NNAM', string('Description')),
             memberArray('Targets', 
                 memberStruct('Target', [
                     subrecord('QSTA', struct('Target', [

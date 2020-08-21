@@ -3,7 +3,7 @@ let {
     format, div, struct, ckFormId, enumeration, 
     uint8, memberArray, formId, uint32, bytes, 
     size, localized, string, opts, memberStruct, 
-    empty, req, record
+    empty, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -75,13 +75,13 @@ module.exports = () => {
                 ])
             ),
             def('CTDAs'),
-            req(memberArray('Unknown', 
+            memberArray('Unknown', 
                 memberStruct('Unknown', [
                     subrecord('SCHR', unknown()),
                     subrecord('QNAM', formId('Unknown')),
                     subrecord('NEXT', empty('Marker'))
                 ])
-            )),
+            ),
             subrecord('RNAM', localized(string('Prompt'))),
             subrecord('ANAM', ckFormId('Speaker', ['NPC_'])),
             subrecord('TWAT', ckFormId('Walk Away Topic', ['DIAL'])),
