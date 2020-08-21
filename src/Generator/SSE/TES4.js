@@ -9,7 +9,6 @@ module.exports = game => {
     record('TES4', 'Main File Header', {
         flags: flags({
             0: 'ESM',
-            5: 'Deleted',
             7: 'Localized',
             9: IsSSE(game, ['ESL', '']),
             12: 'Ignored'

@@ -11,7 +11,7 @@ functionConverter('wbRStructExSK', [
     args.priority,
     args.required,
     args.dontShow,
-    args.boolean, // allow unordered
+    args.allowUnordered,
     args.afterLoad,
     args.afterSet,
     args.getCP
