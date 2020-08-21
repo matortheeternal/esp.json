@@ -42,6 +42,7 @@ let IsSSE = (game, options) => game === 'SSE' ? options[0] : options[1];
 
 // shared
 let req = obj => merge(obj, {required: true});
+let unordered = obj => merge(obj, {unordered: true});
 let def = (id, opts) => ({id, ...opts});
 let opts = (obj, opts) => merge(obj, opts);
 let sortKey = (sortKey, obj) => merge(obj, {sortKey});
@@ -119,7 +120,7 @@ let ctdaFunction = (index, name) => ({ type: 'ctdaFunction', index, name});
 module.exports = {
     addDef, getDefs, clearDefs, forEachDef, IsSSE,
     addMetaDef, getMetaDefs, getGroupOrder, setGroupOrder,
-    req, def, opts, sortKey, elementMap, inherit,
+    req, unordered, def, opts, sortKey, elementMap, inherit,
     localized, sorted, size, count, prefix, padding, labels,
     elementCounter, customCounter,
     format, div, scale, flags, showUnknown, enumeration, formatUnion,

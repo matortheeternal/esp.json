@@ -8,11 +8,11 @@ functionConverter('wbRStructSK', [
     args.signatures,        // aSkipSigs: TwbSignatures
     args.priority,          // aPriority: TwbConflictPriority = cpNormal
     args.required,          // aRequired: Boolean = False
-    args.identifier,        // aDontShow: TwbDontShowCallback = nil
-    args.boolean,           // aAllowUnordered: Boolean = False
-    args.identifier,        // aAfterLoad: TwbAfterLoadCallback = nil
+    args.dontShow,          // aDontShow: TwbDontShowCallback = nil
+    args.allowUnordered,    // aAllowUnordered: Boolean = False
+    args.afterLoad,         // aAfterLoad: TwbAfterLoadCallback = nil
     args.identifier,        // aAfterSet: TwbAfterSetCallback = nil
-    args.identifier         // aGetCP: TwbGetConflictPriority = nil
+    args.getCP              // aGetCP: TwbGetConflictPriority = nil
 ], ({sk, name, members, required}, converter) => {
     converter.addRequires('sortKey', 'memberStruct');
     let structDef = `memberStruct(${name}, ${members})`;

@@ -3,8 +3,8 @@ let {
     bytes, size, uint32, struct, subrecord, 
     string, ckFormId, memberArray, memberStruct, req, 
     empty, sortKey, localized, opts, sorted, 
-    int32, formId, int16, enumeration, memberUnion, 
-    record
+    int32, formId, int16, enumeration, unordered, 
+    memberUnion, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -100,7 +100,7 @@ module.exports = () => {
             subrecord('ANAM', uint32('Next Alias ID')),
             memberArray('Aliases', 
                 memberUnion('Alias', [
-                    req(sortKey([0], memberStruct('Alias', [
+                    req(unordered(sortKey([0], memberStruct('Alias', [
                         subrecord('ALST', uint32('Reference Alias ID')),
                         subrecord('ALID', string('Alias Name')),
                         def('QUSTAliasFlags'),
@@ -167,8 +167,8 @@ module.exports = () => {
                             'NPC_', 'FLST', 'NULL'
                         ])),
                         req(subrecord('ALED', empty('Alias End')))
-                    ]))),
-                    req(sortKey([0], memberStruct('Alias', [
+                    ])))),
+                    req(unordered(sortKey([0], memberStruct('Alias', [
                         subrecord('ALLS', uint32('Location Alias ID')),
                         subrecord('ALID', string('Alias Name')),
                         def('QUSTAliasFlags'),
@@ -235,7 +235,7 @@ module.exports = () => {
                             'NPC_', 'FLST', 'NULL'
                         ])),
                         req(subrecord('ALED', empty('Alias End')))
-                    ])))
+                    ]))))
                 ])
             ),
             req(subrecord('NNAM', string('Description'))),
