@@ -419,5 +419,13 @@
         {
             "id": "OFST"
         }
-    ]
+    ],
+    "containedInElement": {
+        "name": "Worldspace",
+        "type": "formId",
+        "required": true,
+        "signatures": [
+            "WRLD"
+        ]
+    }
 }

@@ -326,5 +326,13 @@
                 "IMGS"
             ]
         }
-    ]
+    ],
+    "containedInElement": {
+        "name": "Cell",
+        "type": "formId",
+        "required": true,
+        "signatures": [
+            "CELL"
+        ]
+    }
 }

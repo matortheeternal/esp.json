@@ -191,5 +191,13 @@
             "name": "Info Count",
             "type": "uint32"
         }
-    ]
+    ],
+    "containedInElement": {
+        "name": "Topic",
+        "type": "formId",
+        "required": true,
+        "signatures": [
+            "DIAL"
+        ]
+    }
 }
