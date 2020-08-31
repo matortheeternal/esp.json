@@ -1,5 +1,4 @@
 let defs = {};
-let metaDefs = {};
 let groupOrder = [];
 
 let separatePropsByType = (s, a, obj) => {
@@ -21,8 +20,6 @@ let merge = (obj1, obj2) => {
 // meta
 let addDef = (id, def) => defs[id] = def;
 let getDefs = () => defs;
-let addMetaDef = (id, def) => metaDefs[id] = def;
-let getMetaDefs = () => metaDefs;
 let setGroupOrder = (order) => groupOrder = order;
 let getGroupOrder = () => groupOrder;
 let clearDefs = () => defs = {};
@@ -118,7 +115,7 @@ let ctdaFunction = (index, name) => ({ type: 'ctdaFunction', index, name});
 
 module.exports = {
     addDef, getDefs, clearDefs, forEachDef, IsSSE,
-    addMetaDef, getMetaDefs, getGroupOrder, setGroupOrder,
+    getGroupOrder, setGroupOrder,
     req, unordered, def, opts, sortKey, elementMap,
     localized, sorted, size, count, prefix, padding, labels,
     elementCounter, customCounter,

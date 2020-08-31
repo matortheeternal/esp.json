@@ -1,4 +1,4 @@
-const {getGroupOrder, getDefs, getMetaDefs} = require('../../helpers');
+const {getGroupOrder, getDefs} = require('../../helpers');
 
 let GroupType = {
     Top: 0,
@@ -22,8 +22,8 @@ let group = (groupType, children) => ({
 let record = (id) => ({ id });
 
 let cellChildRecords = [
-    'NAVM', 'PGRD', 'LAND', 'REFR', 'PGRE', 'PMIS', 'ACRE',
-    'ACHR', 'PARW', 'PBEA', 'PFLA', 'PCON', 'PBAR', 'PHZD'
+    'NAVM', 'LAND', 'REFR', 'PGRE', 'PMIS', 'ACHR',
+    'PARW', 'PBEA', 'PFLA', 'PCON', 'PBAR', 'PHZD'
 ].map(sig => record(sig));
 
 let cellChildGroup = group(GroupType.CellChildren, [
@@ -74,13 +74,11 @@ let getGroupDefs = function() {
 
 module.exports = () => {
     let defs = getDefs();
-    let metaDefs = getMetaDefs();
 
     defs.cellChildGroup = cellChildGroup;
 
     defs.PluginFile = {
-        type: 'plugin',
-        ...metaDefs,
+        type: 'pluginFile',
         children: [
             record('TES4'),
             ...getGroupDefs()

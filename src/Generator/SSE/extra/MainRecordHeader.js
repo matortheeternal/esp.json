@@ -1,10 +1,10 @@
 let {
-    addMetaDef, string, size, uint32,
+    addDef, string, size, uint32,
     def, formId, bytes, uint16, struct
 } = require('../../helpers');
 
 module.exports = () => {
-    addMetaDef('MainRecordHeader',
+    addDef('MainRecordHeader',
         struct('Record Header', [
             size(4, string('Signature')),
             uint32('Data Size'),
