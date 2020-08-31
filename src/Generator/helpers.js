@@ -47,7 +47,6 @@ let def = (id, opts) => ({id, ...opts});
 let opts = (obj, opts) => merge(obj, opts);
 let sortKey = (sortKey, obj) => merge(obj, {sortKey});
 let elementMap = (elementMap, obj) => merge(obj, {elementMap});
-let inherit = (inheritFrom, obj) => merge(obj, {inheritFrom});
 
 // arrays and strings
 let localized = obj => merge(obj, {localized: true});
@@ -120,7 +119,7 @@ let ctdaFunction = (index, name) => ({ type: 'ctdaFunction', index, name});
 module.exports = {
     addDef, getDefs, clearDefs, forEachDef, IsSSE,
     addMetaDef, getMetaDefs, getGroupOrder, setGroupOrder,
-    req, unordered, def, opts, sortKey, elementMap, inherit,
+    req, unordered, def, opts, sortKey, elementMap,
     localized, sorted, size, count, prefix, padding, labels,
     elementCounter, customCounter,
     format, div, scale, flags, showUnknown, enumeration, formatUnion,
