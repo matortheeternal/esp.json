@@ -13,8 +13,6 @@ let saveDefs = function(game) {
     let outputPath = path.resolve('data', `${game}.json`);
     let gameDefs = {
         game: game,
-        metaDefs: getMetaDefs(),
-        groupOrder: getGroupOrder(),
         defs: getDefs()
     };
     fs.writeFileSync(outputPath, JSON.stringify(gameDefs));
