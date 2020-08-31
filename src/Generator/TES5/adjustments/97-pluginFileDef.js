@@ -70,7 +70,7 @@ let getGroupDefs = function() {
             ...(children && {children})
         };
     });
-}
+};
 
 module.exports = () => {
     let defs = getDefs();
