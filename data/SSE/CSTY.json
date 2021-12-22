@@ -63,7 +63,8 @@
         },
         {
             "signature": "CSMD",
-            "type": "bytes"
+            "type": "bytes",
+            "conflicts": "Ignore"
         },
         {
             "signature": "CSME",

@@ -1,10 +1,10 @@
 let {
     flags, def, req, uint32, format, 
-    int16, div, union, uint16, struct, 
-    subrecord, ckFormId, int8, bytes, size, 
-    sortKey, sorted, memberArray, uint8, elementCounter, 
-    localized, string, float, unknown, scale, 
-    int32, memberStruct, record
+    int16, div, union, uint16, conflict, 
+    struct, subrecord, ckFormId, int8, bytes, 
+    size, sortKey, sorted, memberArray, uint8, 
+    elementCounter, localized, string, float, unknown, 
+    scale, int32, memberStruct, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -64,7 +64,7 @@ module.exports = () => {
                 req(uint16('Calc min level')),
                 req(uint16('Calc max level')),
                 req(uint16('Speed Multiplier')),
-                req(int16('Disposition Base (unused)')),
+                req(conflict('Ignore', int16('Disposition Base (unused)'))),
                 format(uint16('Template Flags'), flags({
                     0: 'Use Traits',
                     1: 'Use Stats',
@@ -87,7 +87,7 @@ module.exports = () => {
                 subrecord('SNAM', sortKey([0], struct('Faction', [
                     ckFormId('Faction', ['FACT']),
                     int8('Rank'),
-                    size(3, bytes('Unused'))
+                    conflict('Ignore', size(3, bytes('Unused')))
                 ])))
             )),
             subrecord('INAM', ckFormId('Death item', ['LVLI'])),
@@ -107,13 +107,13 @@ module.exports = () => {
             subrecord('OCOR', ckFormId('Observe dead body override package list', ['FLST'])),
             subrecord('GWOR', ckFormId('Guard warn override package list', ['FLST'])),
             subrecord('ECOR', ckFormId('Combat override package list', ['FLST'])),
-            subrecord('PRKZ', uint32('Perk Count')),
+            subrecord('PRKZ', conflict('Benign', uint32('Perk Count'))),
             elementCounter('PRKZ - Perk Count', 
                 sorted(memberArray('Perks', 
                     subrecord('PRKR', sortKey([0], struct('Perk', [
                         ckFormId('Perk', ['PERK']),
                         uint8('Rank'),
-                        size(3, bytes('Unused'))
+                        conflict('Ignore', size(3, bytes('Unused')))
                     ])))
                 ))
             ),
@@ -127,7 +127,7 @@ module.exports = () => {
             def('KWDAs'),
             req(subrecord('CNAM', ckFormId('Class', ['CLAS']))),
             def('FULL'),
-            subrecord('SHRT', localized(string('Short Name'))),
+            subrecord('SHRT', conflict('Translate', localized(string('Short Name')))),
             subrecord('DATA', bytes('Marker')),
             subrecord('DNAM', struct('Player Skills', [
                 struct('Skill Values', [
@@ -173,10 +173,10 @@ module.exports = () => {
                 uint16('Health'),
                 uint16('Magicka'),
                 uint16('Stamina'),
-                size(2, bytes('Unused')),
+                conflict('Ignore', size(2, bytes('Unused'))),
                 float('Far away model distance'),
                 uint8('Geared up weapons'),
-                size(3, bytes('Unused'))
+                conflict('Ignore', size(3, bytes('Unused')))
             ])),
             sorted(memberArray('Head Parts', 
                 subrecord('PNAM', ckFormId('Head Part', ['HDPT']))

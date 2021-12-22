@@ -1,164 +1,164 @@
 let {
-    def, ckFormId, int16, struct, array, 
-    subrecord, memberArray, float, record
+    def, ckFormId, conflict, int16, struct, 
+    array, subrecord, memberArray, float, record
 } = require('../helpers');
 
 module.exports = () => {
     record('LCTN', 'Location', {
         members: [
             def('EDID'),
-            subrecord('ACPR', array('Actor Cell Persistent Reference', 
-                struct('', [
-                    ckFormId('Actor', [
+            subrecord('ACPR', conflict('Benign', array('Actor Cell Persistent Reference', 
+                conflict('Benign', struct('', [
+                    conflict('Benign', ckFormId('Actor', [
                         'PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD',
                         'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON',
                         'PFLA'
-                    ]),
-                    ckFormId('Location', ['WRLD', 'CELL']),
-                    int16('Grid Y'),
-                    int16('Grid X')
-                ])
-            )),
-            subrecord('LCPR', array('Location Cell Persistent Reference', 
-                struct('', [
-                    ckFormId('Actor', [
+                    ])),
+                    conflict('Benign', ckFormId('Location', ['WRLD', 'CELL'])),
+                    conflict('Benign', int16('Grid Y')),
+                    conflict('Benign', int16('Grid X'))
+                ]))
+            ))),
+            subrecord('LCPR', conflict('Benign', array('Location Cell Persistent Reference', 
+                conflict('Benign', struct('', [
+                    conflict('Benign', ckFormId('Actor', [
                         'PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD',
                         'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON',
                         'PFLA'
-                    ]),
-                    ckFormId('Location', ['WRLD', 'CELL']),
-                    int16('Grid Y'),
-                    int16('Grid X')
-                ])
-            )),
+                    ])),
+                    conflict('Benign', ckFormId('Location', ['WRLD', 'CELL'])),
+                    conflict('Benign', int16('Grid Y')),
+                    conflict('Benign', int16('Grid X'))
+                ]))
+            ))),
             subrecord('RCPR', array('Reference Cell Persistent Reference', 
-                ckFormId('Ref', ['ACHR', 'REFR'])
+                conflict('Benign', ckFormId('Ref', ['ACHR', 'REFR']))
             )),
-            subrecord('ACUN', array('Actor Cell Unique', 
-                struct('', [
-                    ckFormId('Actor', ['NPC_']),
-                    ckFormId('Ref', ['ACHR']),
-                    ckFormId('Location', ['LCTN', 'NULL'])
-                ])
-            )),
-            subrecord('LCUN', array('Location Cell Unique', 
-                struct('', [
-                    ckFormId('Actor', ['NPC_']),
-                    ckFormId('Ref', ['ACHR']),
-                    ckFormId('Location', ['LCTN', 'NULL'])
-                ])
-            )),
+            subrecord('ACUN', conflict('Benign', array('Actor Cell Unique', 
+                conflict('Benign', struct('', [
+                    conflict('Benign', ckFormId('Actor', ['NPC_'])),
+                    conflict('Benign', ckFormId('Ref', ['ACHR'])),
+                    conflict('Benign', ckFormId('Location', ['LCTN', 'NULL']))
+                ]))
+            ))),
+            subrecord('LCUN', conflict('Benign', array('Location Cell Unique', 
+                conflict('Benign', struct('', [
+                    conflict('Benign', ckFormId('Actor', ['NPC_'])),
+                    conflict('Benign', ckFormId('Ref', ['ACHR'])),
+                    conflict('Benign', ckFormId('Location', ['LCTN', 'NULL']))
+                ]))
+            ))),
             subrecord('RCUN', array('Reference Cell Unique', 
-                ckFormId('Actor', ['NPC_'])
+                conflict('Benign', ckFormId('Actor', ['NPC_']))
             )),
-            subrecord('ACSR', array('Actor Cell Static Reference', 
-                struct('', [
-                    ckFormId('Loc Ref Type', ['LCRT']),
-                    ckFormId('Marker', [
+            subrecord('ACSR', conflict('Benign', array('Actor Cell Static Reference', 
+                conflict('Benign', struct('', [
+                    conflict('Benign', ckFormId('Loc Ref Type', ['LCRT'])),
+                    conflict('Benign', ckFormId('Marker', [
                         'PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD',
                         'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON',
                         'PFLA'
-                    ]),
-                    ckFormId('Location', ['WRLD', 'CELL']),
-                    int16('Grid Y'),
-                    int16('Grid X')
-                ])
-            )),
-            subrecord('LCSR', array('Location Cell Static Reference', 
-                struct('', [
-                    ckFormId('Loc Ref Type', ['LCRT']),
-                    ckFormId('Marker', [
+                    ])),
+                    conflict('Benign', ckFormId('Location', ['WRLD', 'CELL'])),
+                    conflict('Benign', int16('Grid Y')),
+                    conflict('Benign', int16('Grid X'))
+                ]))
+            ))),
+            subrecord('LCSR', conflict('Benign', array('Location Cell Static Reference', 
+                conflict('Benign', struct('', [
+                    conflict('Benign', ckFormId('Loc Ref Type', ['LCRT'])),
+                    conflict('Benign', ckFormId('Marker', [
                         'PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD',
                         'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON',
                         'PFLA'
-                    ]),
-                    ckFormId('Location', ['WRLD', 'CELL']),
-                    int16('Grid Y'),
-                    int16('Grid X')
-                ])
-            )),
-            subrecord('RCSR', array('Reference Cell Static Reference', 
-                ckFormId('Ref', ['ACHR', 'REFR'])
-            )),
-            memberArray('Actor Cell Encounter Cell', 
-                subrecord('ACEC', struct('Unknown', [
-                    ckFormId('Location', ['WRLD', 'CELL']),
+                    ])),
+                    conflict('Benign', ckFormId('Location', ['WRLD', 'CELL'])),
+                    conflict('Benign', int16('Grid Y')),
+                    conflict('Benign', int16('Grid X'))
+                ]))
+            ))),
+            subrecord('RCSR', conflict('Benign', array('Reference Cell Static Reference', 
+                conflict('Benign', ckFormId('Ref', ['ACHR', 'REFR']))
+            ))),
+            conflict('Benign', memberArray('Actor Cell Encounter Cell', 
+                subrecord('ACEC', conflict('Benign', struct('Unknown', [
+                    conflict('Benign', ckFormId('Location', ['WRLD', 'CELL'])),
                     array('Coordinates', 
                         struct('', [
-                            int16('Grid Y'),
-                            int16('Grid X')
+                            conflict('Benign', int16('Grid Y')),
+                            conflict('Benign', int16('Grid X'))
                         ])
                     )
-                ]))
-            ),
-            memberArray('Location Cell Encounter Cell', 
+                ])))
+            )),
+            conflict('Benign', memberArray('Location Cell Encounter Cell', 
                 subrecord('LCEC', struct('Unknown', [
-                    ckFormId('Location', ['WRLD', 'CELL']),
+                    conflict('Benign', ckFormId('Location', ['WRLD', 'CELL'])),
                     array('Coordinates', 
                         struct('', [
-                            int16('Grid Y'),
-                            int16('Grid X')
+                            conflict('Benign', int16('Grid Y')),
+                            conflict('Benign', int16('Grid X'))
                         ])
                     )
                 ]))
-            ),
-            memberArray('Reference Cell Encounter Cell', 
+            )),
+            conflict('Benign', memberArray('Reference Cell Encounter Cell', 
                 subrecord('RCEC', struct('Unknown', [
-                    ckFormId('Location', ['WRLD', 'CELL']),
+                    conflict('Benign', ckFormId('Location', ['WRLD', 'CELL'])),
                     array('Coordinates', 
                         struct('', [
-                            int16('Grid Y'),
-                            int16('Grid X')
+                            conflict('Benign', int16('Grid Y')),
+                            conflict('Benign', int16('Grid X'))
                         ])
                     )
                 ]))
-            ),
-            subrecord('ACID', array('Actor Cell Marker Reference', 
-                ckFormId('Ref', [
+            )),
+            subrecord('ACID', conflict('Benign', array('Actor Cell Marker Reference', 
+                conflict('Benign', ckFormId('Ref', [
                     'PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD',
                     'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON',
                     'PFLA'
-                ])
-            )),
-            subrecord('LCID', array('Location Cell Marker Reference', 
-                ckFormId('Ref', [
+                ]))
+            ))),
+            subrecord('LCID', conflict('Benign', array('Location Cell Marker Reference', 
+                conflict('Benign', ckFormId('Ref', [
                     'PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD',
                     'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON',
                     'PFLA'
-                ])
-            )),
-            subrecord('ACEP', array('Actor Cell Enable Point', 
+                ]))
+            ))),
+            subrecord('ACEP', conflict('Benign', array('Actor Cell Enable Point', 
                 struct('', [
-                    ckFormId('Actor', [
+                    conflict('Benign', ckFormId('Actor', [
                         'PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD',
                         'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON',
                         'PFLA'
-                    ]),
-                    ckFormId('Ref', [
+                    ])),
+                    conflict('Benign', ckFormId('Ref', [
                         'PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD',
                         'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON',
                         'PFLA'
-                    ]),
-                    int16('Grid Y'),
-                    int16('Grid X')
+                    ])),
+                    conflict('Benign', int16('Grid Y')),
+                    conflict('Benign', int16('Grid X'))
                 ])
-            )),
-            subrecord('LCEP', array('Location Cell Enable Point', 
+            ))),
+            subrecord('LCEP', conflict('Benign', array('Location Cell Enable Point', 
                 struct('', [
-                    ckFormId('Actor', [
+                    conflict('Benign', ckFormId('Actor', [
                         'PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD',
                         'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON',
                         'PFLA'
-                    ]),
-                    ckFormId('Ref', [
+                    ])),
+                    conflict('Benign', ckFormId('Ref', [
                         'PLYR', 'ACHR', 'REFR', 'PGRE', 'PHZD',
                         'PMIS', 'PARW', 'PBAR', 'PBEA', 'PCON',
                         'PFLA'
-                    ]),
-                    int16('Grid Y'),
-                    int16('Grid X')
+                    ])),
+                    conflict('Benign', int16('Grid Y')),
+                    conflict('Benign', int16('Grid X'))
                 ])
-            )),
+            ))),
             def('FULL'),
             def('KSIZ'),
             def('KWDAs'),

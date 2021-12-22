@@ -89,6 +89,7 @@
                         "signature": "NAM1",
                         "name": "FileName",
                         "type": "string",
+                        "conflicts": "Translate",
                         "required": true
                     }
                 ]

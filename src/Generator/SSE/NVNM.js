@@ -2,7 +2,7 @@ let {
     addDef, uint32, opts, bytes, size, 
     ckFormId, int16, struct, union, float, 
     sortKey, array, prefix, def, format, 
-    flags, uint16, sorted, subrecord
+    flags, uint16, conflict, sorted, subrecord
 } = require('../helpers');
 
 module.exports = () => {
@@ -91,13 +91,13 @@ module.exports = () => {
             )), {
                 "notAlignable": 1
             }),
-            opts(prefix(4, array('Edge Links', 
-                struct('Edge Link', [
-                    size(4, bytes('Unknown')),
-                    ckFormId('Mesh', ['NAVM']),
-                    int16('Triangle')
-                ])
-            )), {
+            opts(conflict('Ignore', prefix(4, array('Edge Links', 
+                conflict('Ignore', struct('Edge Link', [
+                    conflict('Ignore', size(4, bytes('Unknown'))),
+                    conflict('Ignore', ckFormId('Mesh', ['NAVM'])),
+                    conflict('Ignore', int16('Triangle'))
+                ]))
+            ))), {
                 "notAlignable": 1
             }),
             prefix(4, sorted(array('Door Triangles', 

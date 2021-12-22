@@ -16,6 +16,7 @@
         {
             "name": "Large References",
             "type": "memberArray",
+            "conflicts": "Ignore",
             "notAlignable": 1,
             "member": {
                 "signature": "RNAM",
@@ -24,11 +25,13 @@
                 "elements": [
                     {
                         "name": "Y",
-                        "type": "int16"
+                        "type": "int16",
+                        "conflicts": "Ignore"
                     },
                     {
                         "name": "X",
-                        "type": "int16"
+                        "type": "int16",
+                        "conflicts": "Ignore"
                     },
                     {
                         "name": "References",
@@ -42,17 +45,20 @@
                                 {
                                     "name": "Ref",
                                     "type": "formId",
+                                    "conflicts": "Ignore",
                                     "signatures": [
                                         "REFR"
                                     ]
                                 },
                                 {
                                     "name": "Y",
-                                    "type": "int16"
+                                    "type": "int16",
+                                    "conflicts": "Ignore"
                                 },
                                 {
                                     "name": "X",
-                                    "type": "int16"
+                                    "type": "int16",
+                                    "conflicts": "Ignore"
                                 }
                             ]
                         }
@@ -337,6 +343,7 @@
                     "signature": "NAM0",
                     "name": "Min",
                     "type": "struct",
+                    "conflicts": "Ignore",
                     "required": true,
                     "elements": [
                         {
@@ -361,6 +368,7 @@
                     "signature": "NAM9",
                     "name": "Max",
                     "type": "struct",
+                    "conflicts": "Ignore",
                     "required": true,
                     "elements": [
                         {
@@ -394,7 +402,8 @@
         {
             "signature": "NNAM",
             "name": "Canopy Shadow (unused)",
-            "type": "string"
+            "type": "string",
+            "conflicts": "Ignore"
         },
         {
             "signature": "XNAM",
@@ -414,7 +423,8 @@
         {
             "signature": "XWEM",
             "name": "Water Environment Map (unused)",
-            "type": "string"
+            "type": "string",
+            "conflicts": "Ignore"
         },
         {
             "id": "OFST"

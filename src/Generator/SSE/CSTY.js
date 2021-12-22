@@ -1,6 +1,7 @@
 let {
     flags, def, float, struct, subrecord, 
-    req, unknown, uint32, format, record
+    req, unknown, conflict, uint32, format, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
@@ -23,7 +24,7 @@ module.exports = () => {
                 float('Equipment Score Mult - Staff'),
                 float('Avoid Threat Chance')
             ]))),
-            subrecord('CSMD', unknown()),
+            subrecord('CSMD', conflict('Ignore', unknown())),
             subrecord('CSME', struct('Melee', [
                 float('Attack Staggered Mult'),
                 float('Power Attack Staggered Mult'),

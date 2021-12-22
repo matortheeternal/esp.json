@@ -1,9 +1,9 @@
 let {
-    flags, def, IsSSE, int16, ckFormId, 
-    struct, array, prefix, opts, subrecord, 
-    memberArray, uint8, format, bytes, size, 
-    req, memberStruct, float, string, int32, 
-    div, record
+    flags, def, IsSSE, int16, conflict, 
+    ckFormId, struct, array, prefix, opts, 
+    subrecord, memberArray, uint8, format, bytes, 
+    size, req, memberStruct, float, string, 
+    int32, div, record
 } = require('../helpers');
 
 module.exports = game => {
@@ -14,21 +14,21 @@ module.exports = game => {
         }),
         members: [
             def('EDID'),
-            opts(memberArray(IsSSE(game, ['Large References', 'Unused RNAM']), 
+            opts(conflict('Ignore', memberArray(IsSSE(game, ['Large References', 'Unused RNAM']), 
                 subrecord('RNAM', struct('Grid', [
-                    int16('Y'),
-                    int16('X'),
+                    conflict('Ignore', int16('Y')),
+                    conflict('Ignore', int16('X')),
                     opts(prefix(4, array('References', 
                         struct('Reference', [
-                            ckFormId('Ref', ['REFR']),
-                            int16('Y'),
-                            int16('X')
+                            conflict('Ignore', ckFormId('Ref', ['REFR'])),
+                            conflict('Ignore', int16('Y')),
+                            conflict('Ignore', int16('X'))
                         ])
                     )), {
                         "notAlignable": 1
                     })
                 ]))
-            ), {
+            )), {
                 "notAlignable": 1
             }),
             def('MaxHeightDataWRLD'),
@@ -106,21 +106,21 @@ module.exports = game => {
                 7: 'No Grass'
             })))),
             memberStruct('Object Bounds', [
-                req(subrecord('NAM0', struct('Min', [
+                req(subrecord('NAM0', conflict('Ignore', struct('Min', [
                     format(float('X'), div(4096)),
                     format(float('Y'), div(4096))
-                ]))),
-                req(subrecord('NAM9', struct('Max', [
+                ])))),
+                req(subrecord('NAM9', conflict('Ignore', struct('Max', [
                     format(float('X'), div(4096)),
                     format(float('Y'), div(4096))
-                ])))
+                ]))))
             ]),
             subrecord('ZNAM', ckFormId('Music', ['MUSC'])),
-            subrecord('NNAM', string('Canopy Shadow (unused)')),
+            subrecord('NNAM', conflict('Ignore', string('Canopy Shadow (unused)'))),
             subrecord('XNAM', string('Water Noise Texture')),
             subrecord('TNAM', string('HD LOD Diffuse Texture')),
             subrecord('UNAM', string('HD LOD Normal Texture')),
-            subrecord('XWEM', string('Water Environment Map (unused)')),
+            subrecord('XWEM', conflict('Ignore', string('Water Environment Map (unused)'))),
             def('OFST')
         ]
     })

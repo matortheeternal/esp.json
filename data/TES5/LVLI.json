@@ -63,7 +63,8 @@
                             {
                                 "name": "Unknown",
                                 "type": "bytes",
-                                "size": 2
+                                "size": 2,
+                                "conflicts": "Ignore"
                             },
                             {
                                 "name": "Reference",
@@ -91,7 +92,8 @@
                             {
                                 "name": "Unknown",
                                 "type": "bytes",
-                                "size": 2
+                                "size": 2,
+                                "conflicts": "Ignore"
                             }
                         ],
                         "sortKey": [

@@ -383,6 +383,7 @@
             "signature": "XPTL",
             "name": "Room Portal (unused)",
             "type": "struct",
+            "conflicts": "Ignore",
             "elements": [
                 {
                     "name": "Size",
@@ -513,7 +514,8 @@
         {
             "signature": "XMBP",
             "name": "MultiBound Primitive Marker",
-            "type": "empty"
+            "type": "empty",
+            "conflicts": "Ignore"
         },
         {
             "id": "XRGD"
@@ -672,13 +674,15 @@
             "signature": "XWCN",
             "name": "Unknown",
             "type": "bytes",
-            "size": 0
+            "size": 0,
+            "conflicts": "Ignore"
         },
         {
             "signature": "XWCS",
             "name": "Unknown",
             "type": "bytes",
-            "size": 0
+            "size": 0,
+            "conflicts": "Ignore"
         },
         {
             "signature": "XWCU",
@@ -885,7 +889,8 @@
                 {
                     "name": "Unused",
                     "type": "bytes",
-                    "size": 3
+                    "size": 3,
+                    "conflicts": "Ignore"
                 },
                 {
                     "name": "Key",
@@ -910,12 +915,14 @@
                 {
                     "name": "Unused",
                     "type": "bytes",
-                    "size": 3
+                    "size": 3,
+                    "conflicts": "Ignore"
                 },
                 {
                     "name": "Unused",
                     "type": "bytes",
-                    "size": 8
+                    "size": 8,
+                    "conflicts": "Ignore"
                 }
             ]
         },
@@ -949,7 +956,8 @@
                 {
                     "name": "Unused",
                     "type": "bytes",
-                    "size": 2
+                    "size": 2,
+                    "conflicts": "Ignore"
                 }
             ]
         },
@@ -988,6 +996,7 @@
             "signature": "XLRL",
             "name": "Location Reference",
             "type": "formId",
+            "conflicts": "BenignIfAdded",
             "signatures": [
                 "LCRT",
                 "LCTN",
@@ -1077,13 +1086,15 @@
                         "signature": "SCHR",
                         "name": "Unused",
                         "type": "bytes",
-                        "size": 0
+                        "size": 0,
+                        "conflicts": "Ignore"
                     },
                     {
                         "signature": "SCTX",
                         "name": "Unused",
                         "type": "bytes",
-                        "size": 0
+                        "size": 0,
+                        "conflicts": "Ignore"
                     },
                     {
                         "id": "PDTOs"

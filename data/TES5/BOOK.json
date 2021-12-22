@@ -27,6 +27,7 @@
             "name": "Book Text",
             "type": "string",
             "localized": true,
+            "conflicts": "Translate",
             "required": true,
             "keepCase": true
         },
@@ -128,7 +129,8 @@
             "signature": "CNAM",
             "name": "Description",
             "type": "string",
-            "localized": true
+            "localized": true,
+            "conflicts": "Translate"
         }
     ]
 }

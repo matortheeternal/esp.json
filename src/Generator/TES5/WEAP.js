@@ -1,8 +1,8 @@
 let {
     flags, def, req, uint16, subrecord, 
-    ckFormId, string, bytes, size, memberStruct, 
-    uint32, float, struct, uint8, format, 
-    enumeration, int32, IsSSE, record
+    ckFormId, string, bytes, size, conflict, 
+    memberStruct, uint32, float, struct, uint8, 
+    format, enumeration, int32, IsSSE, record
 } = require('../helpers');
 
 module.exports = game => {
@@ -31,10 +31,10 @@ module.exports = game => {
             def('DESC'),
             memberStruct('Has Scope', [
                 subrecord('MOD3', string('Model FileName')),
-                subrecord('MO3T', size(0, bytes('Texture Files Hashes'))),
+                subrecord('MO3T', conflict('Ignore', size(0, bytes('Texture Files Hashes')))),
                 def('MO3S')
             ]),
-            subrecord('NNAM', size(0, bytes('Unused'))),
+            subrecord('NNAM', conflict('Ignore', size(0, bytes('Unused')))),
             subrecord('INAM', ckFormId('Impact Data Set', ['IPDS', 'NULL'])),
             subrecord('WNAM', ckFormId('1st Person Model Object', ['STAT', 'NULL'])),
             subrecord('SNAM', ckFormId('Attack Sound', ['SNDR'])),
@@ -51,7 +51,7 @@ module.exports = game => {
             ])),
             subrecord('DNAM', struct('Data', [
                 format(uint8('Animation Type'), def('WeaponAnimTypeEnum')),
-                size(3, bytes('Unused')),
+                conflict('Ignore', size(3, bytes('Unused'))),
                 float('Speed'),
                 float('Reach'),
                 format(uint16('Flags'), flags({
@@ -64,7 +64,7 @@ module.exports = game => {
                     6: 'Don\'t Use 1st Person IS Anim (unused)',
                     7: 'Non-playable'
                 })),
-                size(2, bytes('Unused')),
+                conflict('Ignore', size(2, bytes('Unused'))),
                 float('Sight FOV'),
                 size(4, bytes('Unknown')),
                 uint8('Base VATS To-Hit Chance'),
@@ -110,23 +110,23 @@ module.exports = game => {
             IsSSE(game, [
                 subrecord('CRDT', struct('Critical Data', [
                     uint16('Damage'),
-                    size(2, bytes('Unused')),
+                    conflict('Ignore', size(2, bytes('Unused'))),
                     float('% Mult'),
                     format(uint8('Flags'), flags({
                         0: 'On Death'
                     })),
-                    size(7, bytes('Unused')),
+                    conflict('Ignore', size(7, bytes('Unused'))),
                     ckFormId('Effect', ['SPEL', 'NULL']),
-                    size(4, bytes('Unused'))
+                    conflict('Ignore', size(4, bytes('Unused')))
                 ])),
                 subrecord('CRDT', struct('Critical Data', [
                     uint16('Damage'),
-                    size(2, bytes('Unused')),
+                    conflict('Ignore', size(2, bytes('Unused'))),
                     float('% Mult'),
                     format(uint8('Flags'), flags({
                         0: 'On Death'
                     })),
-                    size(3, bytes('Unused')),
+                    conflict('Ignore', size(3, bytes('Unused'))),
                     ckFormId('Effect', ['SPEL', 'NULL'])
                 ]))
             ]),

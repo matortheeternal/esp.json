@@ -15,7 +15,8 @@
             "member": {
                 "signature": "NNAM",
                 "name": "Noise Map",
-                "type": "string"
+                "type": "string",
+                "conflicts": "Ignore"
             }
         },
         {
@@ -47,7 +48,8 @@
             "signature": "MNAM",
             "name": "Unused",
             "type": "bytes",
-            "size": 0
+            "size": 0,
+            "conflicts": "Ignore"
         },
         {
             "signature": "TNAM",

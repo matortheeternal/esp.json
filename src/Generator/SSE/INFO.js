@@ -1,9 +1,9 @@
 let {
     flags, def, unknown, subrecord, uint16, 
-    format, div, struct, ckFormId, enumeration, 
-    uint8, memberArray, formId, uint32, bytes, 
-    size, localized, string, opts, memberStruct, 
-    empty, record
+    format, div, struct, ckFormId, conflict, 
+    enumeration, uint8, memberArray, formId, uint32, 
+    bytes, size, localized, string, opts, 
+    memberStruct, empty, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -38,7 +38,7 @@ module.exports = () => {
                 format(uint16('Reset Hours'), div(2730))
             ])),
             subrecord('TPIC', ckFormId('Topic', ['DIAL'])),
-            subrecord('PNAM', ckFormId('Previous INFO', ['INFO', 'NULL'])),
+            subrecord('PNAM', conflict('Benign', ckFormId('Previous INFO', ['INFO', 'NULL']))),
             subrecord('CNAM', format(uint8('Favor Level'), enumeration({
                 0: 'None',
                 1: 'Small',
@@ -65,7 +65,7 @@ module.exports = () => {
                         })),
                         size(3, bytes('Unused'))
                     ])),
-                    opts(subrecord('NAM1', localized(string('Response Text'))), {
+                    opts(subrecord('NAM1', conflict('Translate', localized(string('Response Text')))), {
                         "keepCase": true
                     }),
                     subrecord('NAM2', string('Script Notes')),
@@ -75,14 +75,14 @@ module.exports = () => {
                 ])
             ),
             def('CTDAs'),
-            memberArray('Unknown', 
+            conflict('Ignore', memberArray('Unknown', 
                 memberStruct('Unknown', [
                     subrecord('SCHR', unknown()),
                     subrecord('QNAM', formId('Unknown')),
                     subrecord('NEXT', empty('Marker'))
                 ])
-            ),
-            subrecord('RNAM', localized(string('Prompt'))),
+            )),
+            subrecord('RNAM', conflict('Translate', localized(string('Prompt')))),
             subrecord('ANAM', ckFormId('Speaker', ['NPC_'])),
             subrecord('TWAT', ckFormId('Walk Away Topic', ['DIAL'])),
             subrecord('ONAM', ckFormId('Audio Output Override', ['SOPM']))

@@ -34,7 +34,8 @@
         {
             "name": "Unused",
             "type": "bytes",
-            "size": 3
+            "size": 3,
+            "conflicts": "Ignore"
         }
     ]
 }

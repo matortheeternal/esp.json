@@ -1,7 +1,7 @@
 let {
     addDef, def, int32, format, ckFormId, 
-    bytes, size, uint32, union, struct, 
-    subrecord
+    bytes, size, conflict, uint32, union, 
+    struct, subrecord
 } = require('../helpers');
 
 module.exports = () => {
@@ -15,8 +15,8 @@ module.exports = () => {
                     'PBEA', 'PCON', 'PFLA'
                 ]),
                 ckFormId('Cell', ['NULL', 'CELL']),
-                size(4, bytes('Near Package Start Location')),
-                size(4, bytes('Near Editor Location')),
+                conflict('Ignore', size(4, bytes('Near Package Start Location'))),
+                conflict('Ignore', size(4, bytes('Near Editor Location'))),
                 ckFormId('Object ID', [
                     'NULL', 'ACTI', 'DOOR', 'STAT', 'MSTT',
                     'FURN', 'SPEL', 'SCRL', 'NPC_', 'CONT',
@@ -26,12 +26,12 @@ module.exports = () => {
                 ]),
                 format(uint32('Object Type'), def('ObjectTypeEnum')),
                 ckFormId('Keyword', ['NULL', 'KYWD']),
-                size(4, bytes('Unused')),
+                conflict('Ignore', size(4, bytes('Unused'))),
                 format(int32('Alias'), def('PackageLocationAliasToStr')),
                 format(int32('Reference'), def('PackageLocationAliasToStr')),
-                size(4, bytes('Unknown')),
-                size(4, bytes('Unknown')),
-                size(4, bytes('Unknown'))
+                conflict('Ignore', size(4, bytes('Unknown'))),
+                conflict('Ignore', size(4, bytes('Unknown'))),
+                conflict('Ignore', size(4, bytes('Unknown')))
             ]),
             int32('Radius')
         ]))

@@ -209,7 +209,8 @@
                                     },
                                     {
                                         "name": "Perk Condition Tab Count",
-                                        "type": "uint8"
+                                        "type": "uint8",
+                                        "conflicts": "Ignore"
                                     }
                                 ],
                                 "sortKey": [
@@ -267,7 +268,8 @@
                                 "signature": "EPF2",
                                 "name": "Button Label",
                                 "type": "string",
-                                "localized": true
+                                "localized": true,
+                                "conflicts": "Translate"
                             },
                             {
                                 "signature": "EPF3",
@@ -342,12 +344,14 @@
                                     },
                                     {
                                         "name": "Text",
-                                        "type": "string"
+                                        "type": "string",
+                                        "conflicts": "Translate"
                                     },
                                     {
                                         "name": "Text",
                                         "type": "string",
-                                        "localized": true
+                                        "localized": true,
+                                        "conflicts": "Translate"
                                     },
                                     {
                                         "name": "Actor Value, Float",
@@ -374,6 +378,7 @@
                         "signature": "PRKF",
                         "name": "End Marker",
                         "type": "empty",
+                        "conflicts": "Ignore",
                         "required": true
                     }
                 ],

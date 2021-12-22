@@ -1,9 +1,9 @@
 let {
-    def, localized, string, subrecord, req, 
-    float, flags, uint8, format, enumeration, 
-    int8, uint16, ckFormId, int32, struct, 
-    bytes, size, memberArray, sortKey, memberStruct, 
-    record
+    def, localized, string, conflict, subrecord, 
+    req, float, flags, uint8, format, 
+    enumeration, int8, uint16, ckFormId, int32, 
+    struct, bytes, size, memberArray, sortKey, 
+    memberStruct, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -13,7 +13,7 @@ module.exports = () => {
             def('MODL'),
             req(memberArray('Body Parts', 
                 sortKey([2], memberStruct('Body Part', [
-                    req(subrecord('BPTN', localized(string('Part Name')))),
+                    req(subrecord('BPTN', conflict('Translate', localized(string('Part Name'))))),
                     subrecord('PNAM', string('Pose Matching')),
                     req(subrecord('BPNN', string('Part Node'))),
                     req(subrecord('BPNT', string('VATS Target'))),

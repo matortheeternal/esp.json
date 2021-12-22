@@ -1,8 +1,8 @@
 let {
     flags, showUnknown, def, ckFormId, subrecord, 
     req, float, empty, unknown, memberStruct, 
-    int32, sortKey, struct, sorted, memberArray, 
-    uint8, format, array, record
+    conflict, int32, sortKey, struct, sorted, 
+    memberArray, uint8, format, array, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -27,13 +27,13 @@ module.exports = () => {
                 req(subrecord('XPRD', float('Idle Time'))),
                 req(subrecord('XPPA', empty('Patrol Script Marker'))),
                 req(subrecord('INAM', ckFormId('Idle', ['IDLE', 'NULL']))),
-                memberStruct('Unused', [
+                conflict('Ignore', memberStruct('Unused', [
                     subrecord('SCHR', unknown()),
                     subrecord('SCDA', unknown()),
                     subrecord('SCTX', unknown()),
                     subrecord('QNAM', unknown()),
                     subrecord('SCRO', unknown())
-                ]),
+                ])),
                 def('PDTOs'),
                 subrecord('TNAM', ckFormId('Topic', ['DIAL', 'NULL']))
             ]),
@@ -76,9 +76,9 @@ module.exports = () => {
                 def('ByteColors', { name: 'Link End Color' })
             ])),
             subrecord('XLCN', ckFormId('Persistent Location', ['LCTN'])),
-            subrecord('XLRL', ckFormId('Location Reference', [
+            subrecord('XLRL', conflict('BenignIfAdded', ckFormId('Location Reference', [
                 'LCRT', 'LCTN', 'NULL'
-            ])),
+            ]))),
             subrecord('XIS2', empty('Ignored by Sandbox')),
             subrecord('XLRT', array('Location Ref Type', 
                 ckFormId('Ref', ['LCRT', 'NULL'])

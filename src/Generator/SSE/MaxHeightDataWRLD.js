@@ -1,20 +1,20 @@
 let {
-    addDef, int16, struct, bytes, size, 
-    subrecord
+    addDef, int16, conflict, struct, bytes, 
+    size, subrecord
 } = require('../helpers');
 
 module.exports = () => {
     addDef('MaxHeightDataWRLD', 
-        subrecord('MHDT', struct('Max Height Data', [
+        subrecord('MHDT', conflict('NormalIgnoreEmpty', struct('Max Height Data', [
             struct('Min', [
-                int16('X'),
-                int16('Y')
+                conflict('NormalIgnoreEmpty', int16('X')),
+                conflict('NormalIgnoreEmpty', int16('Y'))
             ]),
             struct('Max', [
-                int16('X'),
-                int16('Y')
+                conflict('NormalIgnoreEmpty', int16('X')),
+                conflict('NormalIgnoreEmpty', int16('Y'))
             ]),
-            size(0, bytes('Cell Data'))
-        ]))
+            conflict('NormalIgnoreEmpty', size(0, bytes('Cell Data')))
+        ])))
     );
 };

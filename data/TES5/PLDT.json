@@ -45,12 +45,14 @@
                 {
                     "name": "Near Package Start Location",
                     "type": "bytes",
-                    "size": 4
+                    "size": 4,
+                    "conflicts": "Ignore"
                 },
                 {
                     "name": "Near Editor Location",
                     "type": "bytes",
-                    "size": 4
+                    "size": 4,
+                    "conflicts": "Ignore"
                 },
                 {
                     "name": "Object ID",
@@ -98,7 +100,8 @@
                 {
                     "name": "Unused",
                     "type": "bytes",
-                    "size": 4
+                    "size": 4,
+                    "conflicts": "Ignore"
                 },
                 {
                     "name": "Alias",
@@ -117,17 +120,20 @@
                 {
                     "name": "Unknown",
                     "type": "bytes",
-                    "size": 4
+                    "size": 4,
+                    "conflicts": "Ignore"
                 },
                 {
                     "name": "Unknown",
                     "type": "bytes",
-                    "size": 4
+                    "size": 4,
+                    "conflicts": "Ignore"
                 },
                 {
                     "name": "Unknown",
                     "type": "bytes",
-                    "size": 4
+                    "size": 4,
+                    "conflicts": "Ignore"
                 }
             ]
         },

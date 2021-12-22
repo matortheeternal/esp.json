@@ -1,14 +1,14 @@
 let {
-    addDef, int8, uint16, string, prefix, 
-    int16, int32, sortKey, struct, sorted, 
-    array, customCounter, opts
+    addDef, int8, uint16, conflict, string, 
+    prefix, int16, int32, sortKey, struct, 
+    sorted, array, customCounter, opts
 } = require('../helpers');
 
 module.exports = () => {
     addDef('ScriptFragmentsQuest', 
         opts(struct('Script Fragments', [
             int8('Unknown'),
-            uint16('FragmentCount'),
+            conflict('Benign', uint16('FragmentCount')),
             prefix(2, string('FileName')),
             opts(customCounter('ScriptFragmentsQuestCounter', 
                 sorted(array('Fragments', 

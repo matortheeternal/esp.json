@@ -1,9 +1,9 @@
 let {
-    addDef, uint8, subrecord
+    addDef, uint8, conflict, subrecord
 } = require('../helpers');
 
 module.exports = () => {
     addDef('LLCT', 
-        subrecord('LLCT', uint8('Count'))
+        subrecord('LLCT', conflict('Benign', uint8('Count')))
     );
 };

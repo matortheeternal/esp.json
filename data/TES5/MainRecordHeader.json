@@ -5,18 +5,21 @@
         {
             "name": "Signature",
             "type": "string",
-            "size": 4
+            "size": 4,
+            "conflicts": "Critical"
         },
         {
             "name": "Data Size",
-            "type": "uint32"
+            "type": "uint32",
+            "conflicts": "Ignore"
         },
         {
             "id": "RecordFlags"
         },
         {
             "name": "FormID",
-            "type": "formId"
+            "type": "formId",
+            "conflicts": "FormID"
         },
         {
             "name": "Version Control Info 1",
@@ -25,12 +28,14 @@
         },
         {
             "name": "Form Version",
-            "type": "uint16"
+            "type": "uint16",
+            "conflicts": "Ignore"
         },
         {
             "name": "Version Control Info 2",
             "type": "bytes",
-            "size": 2
+            "size": 2,
+            "conflicts": "Ignore"
         }
     ]
 }

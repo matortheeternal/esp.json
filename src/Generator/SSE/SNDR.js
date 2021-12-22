@@ -1,8 +1,8 @@
 let {
     def, unknown, subrecord, formId, ckFormId, 
-    string, memberStruct, memberArray, localized, bytes, 
-    size, enumeration, uint8, format, struct, 
-    int8, div, uint16, record
+    string, memberStruct, memberArray, localized, conflict, 
+    bytes, size, enumeration, uint8, format, 
+    struct, int8, div, uint16, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -18,7 +18,7 @@ module.exports = () => {
                 ])
             ),
             subrecord('ONAM', ckFormId('Output Model', ['SOPM', 'NULL'])),
-            subrecord('FNAM', localized(string('String'))),
+            subrecord('FNAM', conflict('Ignore', localized(string('String')))),
             def('CTDAs'),
             subrecord('LNAM', struct('Values', [
                 size(1, bytes('Unknown')),

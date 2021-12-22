@@ -44,6 +44,7 @@ let def = (id, opts) => ({id, ...opts});
 let opts = (obj, opts) => merge(obj, opts);
 let sortKey = (sortKey, obj) => merge(obj, {sortKey});
 let elementMap = (elementMap, obj) => merge(obj, {elementMap});
+let conflict = (conflictLabel, obj) => merge(obj, { conflicts: conflictLabel });
 
 // arrays and strings
 let localized = obj => merge(obj, {localized: true});
@@ -116,7 +117,7 @@ let ctdaFunction = (index, name) => ({ type: 'ctdaFunction', index, name});
 module.exports = {
     addDef, getDefs, clearDefs, forEachDef, IsSSE,
     getGroupOrder, setGroupOrder,
-    req, unordered, def, opts, sortKey, elementMap,
+    req, unordered, def, opts, sortKey, elementMap, conflict,
     localized, sorted, size, count, prefix, padding, labels,
     elementCounter, customCounter,
     format, div, scale, flags, showUnknown, enumeration, formatUnion,

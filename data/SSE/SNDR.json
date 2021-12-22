@@ -52,7 +52,8 @@
             "signature": "FNAM",
             "name": "String",
             "type": "string",
-            "localized": true
+            "localized": true,
+            "conflicts": "Ignore"
         },
         {
             "id": "CTDAs"

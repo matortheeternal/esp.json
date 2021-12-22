@@ -7,7 +7,6 @@ let exSk = { type: 'array of number', name: 'exSk' };
 let validFlstRefs = { type: 'array of signature', name: 'validFlstRefs' };
 let defaultNumber = { type: 'number', name: 'default' };
 let digits = { type: 'mathExpr', name: 'digits' };
-let priority = {type: 'conflictPriority', name: 'priority'};
 let afterLoad = {type: 'identifier', name: 'afterLoad'};
 let dontShow = {type: 'identifier', name: 'dontShow'};
 let normalizer = {type: 'identifier', name: 'normalizer'};
@@ -53,7 +52,7 @@ module.exports = {
     // extension types
     ...extTypes,
     // unimplemented extension types
-    priority, afterLoad, dontShow, getCP, digits, validFlstRefs,
-    exSk, normalizer, defaultNumber, persistent, isReference,
+    afterLoad, dontShow, getCP, digits, validFlstRefs, exSk, 
+    normalizer, defaultNumber, persistent, isReference,
     matchSize, isSorted, addInfo, optionalFromElement, labels
 };

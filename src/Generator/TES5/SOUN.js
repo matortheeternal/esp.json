@@ -1,6 +1,6 @@
 let {
-    def, req, unknown, subrecord, ckFormId, 
-    record
+    def, req, unknown, conflict, subrecord, 
+    ckFormId, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -8,8 +8,8 @@ module.exports = () => {
         members: [
             def('EDID'),
             req(def('OBND')),
-            subrecord('FNAM', unknown()),
-            subrecord('SNDD', unknown()),
+            subrecord('FNAM', conflict('Ignore', unknown())),
+            subrecord('SNDD', conflict('Ignore', unknown())),
             subrecord('SDSC', ckFormId('Sound Descriptor', ['SNDR', 'NULL']))
         ]
     })

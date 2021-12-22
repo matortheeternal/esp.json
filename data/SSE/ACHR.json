@@ -74,6 +74,7 @@
                 {
                     "name": "Unused",
                     "type": "memberStruct",
+                    "conflicts": "Ignore",
                     "members": [
                         {
                             "signature": "SCHR",
@@ -268,6 +269,7 @@
             "signature": "XLRL",
             "name": "Location Reference",
             "type": "formId",
+            "conflicts": "BenignIfAdded",
             "signatures": [
                 "LCRT",
                 "LCTN",

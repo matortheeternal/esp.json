@@ -1,8 +1,8 @@
 let {
     def, req, flags, uint16, format, 
     enumeration, float, ckFormId, struct, subrecord, 
-    string, bytes, size, sortKey, memberStruct, 
-    uint32, record
+    string, bytes, size, conflict, sortKey, 
+    memberStruct, uint32, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -62,7 +62,7 @@ module.exports = () => {
             ]))),
             req(sortKey([0], memberStruct('Muzzle Flash Model', [
                 subrecord('NAM1', string('Model FileName')),
-                subrecord('NAM2', size(0, bytes('Texture Files Hashes')))
+                subrecord('NAM2', conflict('Ignore', size(0, bytes('Texture Files Hashes'))))
             ]))),
             req(subrecord('VNAM', format(uint32('Sound Level'), def('SoundLevelEnum'))))
         ]

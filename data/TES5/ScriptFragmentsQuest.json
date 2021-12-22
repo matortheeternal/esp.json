@@ -9,7 +9,8 @@
         },
         {
             "name": "FragmentCount",
-            "type": "uint16"
+            "type": "uint16",
+            "conflicts": "Benign"
         },
         {
             "name": "FileName",

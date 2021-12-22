@@ -19,7 +19,8 @@
         {
             "signature": "LFSP",
             "name": "Count",
-            "type": "uint32"
+            "type": "uint32",
+            "conflicts": "Benign"
         },
         {
             "name": "Lens Flare Sprites",

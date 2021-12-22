@@ -1,10 +1,10 @@
 let {
     def, uint32, format, enumeration, uint8, 
     bytes, size, uint16, struct, subrecord, 
-    req, int8, int32, float, ckFormId, 
-    array, opts, memberStruct, string, union, 
-    unknown, memberArray, flags, elementCounter, empty, 
-    record
+    req, int8, conflict, int32, float, 
+    ckFormId, array, opts, memberStruct, string, 
+    union, unknown, memberArray, flags, elementCounter, 
+    empty, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -54,7 +54,7 @@ module.exports = () => {
                 uint8('Date'),
                 int8('Hour'),
                 int8('Minute'),
-                size(3, bytes('Unused')),
+                conflict('Ignore', size(3, bytes('Unused'))),
                 int32('Duration (minutes)')
             ]))),
             def('CTDAs'),
@@ -67,7 +67,7 @@ module.exports = () => {
                     13: 'Run in Sequence, Do Once'
                 })))),
                 req(subrecord('IDLC', struct('', [
-                    uint8('Animation Count'),
+                    conflict('Benign', uint8('Animation Count')),
                     size(3, bytes('Unknown'))
                 ]))),
                 req(subrecord('IDLT', float('Idle Timer Setting'))),
@@ -76,7 +76,7 @@ module.exports = () => {
                 ))), {
                     "afterSet": "IDLAsAfterSet"
                 }),
-                subrecord('IDLB', size(4, bytes('Unknown')))
+                subrecord('IDLB', conflict('Ignore', size(4, bytes('Unknown'))))
             ]),
             subrecord('CNAM', ckFormId('Combat Style', ['CSTY'])),
             subrecord('QNAM', ckFormId('Owner Quest', ['QUST'])),
@@ -146,9 +146,9 @@ module.exports = () => {
                                     size(3, bytes('Unknown'))
                                 ]))
                             ),
-                            memberArray('Unknown', 
+                            conflict('Ignore', memberArray('Unknown', 
                                 subrecord('PFOR', unknown())
-                            )
+                            ))
                         ])
                     )
                 )
@@ -157,29 +157,29 @@ module.exports = () => {
             memberStruct('OnBegin', [
                 req(subrecord('POBA', empty('OnBegin Marker'))),
                 req(subrecord('INAM', ckFormId('Idle', ['IDLE', 'NULL']))),
-                subrecord('SCHR', size(0, bytes('Unused'))),
-                subrecord('SCTX', size(0, bytes('Unused'))),
-                subrecord('QNAM', size(0, bytes('Unused'))),
-                subrecord('TNAM', size(0, bytes('Unused'))),
+                subrecord('SCHR', conflict('Ignore', size(0, bytes('Unused')))),
+                subrecord('SCTX', conflict('Ignore', size(0, bytes('Unused')))),
+                subrecord('QNAM', conflict('Ignore', size(0, bytes('Unused')))),
+                subrecord('TNAM', conflict('Ignore', size(0, bytes('Unused')))),
                 def('PDTOs')
             ]),
             memberStruct('OnEnd', [
                 req(subrecord('POEA', empty('OnEnd Marker'))),
                 req(subrecord('INAM', ckFormId('Idle', ['IDLE', 'NULL']))),
-                subrecord('SCHR', size(0, bytes('Unused'))),
-                subrecord('SCTX', size(0, bytes('Unused'))),
-                subrecord('QNAM', size(0, bytes('Unused'))),
-                subrecord('TNAM', size(0, bytes('Unused'))),
+                subrecord('SCHR', conflict('Ignore', size(0, bytes('Unused')))),
+                subrecord('SCTX', conflict('Ignore', size(0, bytes('Unused')))),
+                subrecord('QNAM', conflict('Ignore', size(0, bytes('Unused')))),
+                subrecord('TNAM', conflict('Ignore', size(0, bytes('Unused')))),
                 def('PDTOs')
             ]),
             memberStruct('OnChange', [
                 req(subrecord('POCA', empty('OnChange Marker'))),
                 req(subrecord('INAM', ckFormId('Idle', ['IDLE', 'NULL']))),
-                subrecord('SCHR', size(0, bytes('Unused'))),
-                subrecord('SCDA', size(0, bytes('Unused'))),
-                subrecord('SCTX', size(0, bytes('Unused'))),
-                subrecord('QNAM', size(0, bytes('Unused'))),
-                subrecord('TNAM', size(0, bytes('Unused'))),
+                subrecord('SCHR', conflict('Ignore', size(0, bytes('Unused')))),
+                subrecord('SCDA', conflict('Ignore', size(0, bytes('Unused')))),
+                subrecord('SCTX', conflict('Ignore', size(0, bytes('Unused')))),
+                subrecord('QNAM', conflict('Ignore', size(0, bytes('Unused')))),
+                subrecord('TNAM', conflict('Ignore', size(0, bytes('Unused')))),
                 def('PDTOs')
             ])
         ]

@@ -1,6 +1,7 @@
 let {
-    addDef, ckFormId, bytes, size, int32, 
-    union, float, sortKey, struct, subrecord
+    addDef, ckFormId, bytes, size, conflict, 
+    int32, union, float, sortKey, struct, 
+    subrecord
 } = require('../helpers');
 
 module.exports = () => {
@@ -10,7 +11,7 @@ module.exports = () => {
                 'NPC_', 'FACT', 'NULL'
             ]),
             union('Global Variable / Required Rank', 'COEDOwnerDecider', [
-                size(4, bytes('Unused')),
+                conflict('Ignore', size(4, bytes('Unused'))),
                 ckFormId('Global Variable', ['GLOB', 'NULL']),
                 int32('Required Rank')
             ]),

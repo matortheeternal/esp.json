@@ -35,7 +35,8 @@
         {
             "signature": "IDLC",
             "name": "Animation Count",
-            "type": "uint8"
+            "type": "uint8",
+            "conflicts": "Benign"
         },
         {
             "signature": "IDLT",

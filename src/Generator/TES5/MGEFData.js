@@ -1,8 +1,8 @@
 let {
     addDef, flags, uint32, format, float, 
-    formId, ckFormId, union, opts, def, 
-    int32, uint16, bytes, size, struct, 
-    subrecord, req, memberStruct
+    formId, conflict, ckFormId, union, opts, 
+    def, int32, uint16, bytes, size, 
+    struct, subrecord, req, memberStruct
 } = require('../helpers');
 
 module.exports = () => {
@@ -45,7 +45,7 @@ module.exports = () => {
                 })),
                 float('Base Cost'),
                 opts(union('Assoc. Item', 'MGEFAssocItemDecider', [
-                    formId('Unused'),
+                    conflict('Ignore', formId('Unused')),
                     ckFormId('Assoc. Item', ['LIGH', 'NULL']),
                     ckFormId('Assoc. Item', [
                         'WEAP', 'ARMO', 'NULL'

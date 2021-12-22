@@ -17,6 +17,7 @@
             "signature": "INAM",
             "name": "Icon (unused)",
             "type": "formId",
+            "conflicts": "Ignore",
             "required": true,
             "signatures": [
                 "NULL"
@@ -60,7 +61,8 @@
                         "signature": "ITXT",
                         "name": "Button Text",
                         "type": "string",
-                        "localized": true
+                        "localized": true,
+                        "conflicts": "Translate"
                     },
                     {
                         "id": "CTDAs"

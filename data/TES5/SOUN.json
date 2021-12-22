@@ -12,11 +12,13 @@
         },
         {
             "signature": "FNAM",
-            "type": "bytes"
+            "type": "bytes",
+            "conflicts": "Ignore"
         },
         {
             "signature": "SNDD",
-            "type": "bytes"
+            "type": "bytes",
+            "conflicts": "Ignore"
         },
         {
             "signature": "SDSC",

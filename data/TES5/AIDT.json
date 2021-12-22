@@ -94,7 +94,8 @@
                 },
                 {
                     "name": "Unused",
-                    "type": "uint8"
+                    "type": "uint8",
+                    "conflicts": "Ignore"
                 },
                 {
                     "name": "Warn",

@@ -2,8 +2,8 @@ let {
     def, ckFormId, int32, enumeration, uint32, 
     format, sortKey, struct, subrecord, sorted, 
     memberArray, flags, req, uint8, uint16, 
-    float, localized, string, memberStruct, bytes, 
-    size, record
+    float, localized, string, conflict, memberStruct, 
+    bytes, size, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -86,8 +86,8 @@ module.exports = () => {
             memberArray('Ranks', 
                 sortKey([0], memberStruct('Rank', [
                     subrecord('RNAM', uint32('Rank#')),
-                    subrecord('MNAM', localized(string('Male Title'))),
-                    subrecord('FNAM', localized(string('Female Title'))),
+                    subrecord('MNAM', conflict('Translate', localized(string('Male Title')))),
+                    subrecord('FNAM', conflict('Translate', localized(string('Female Title')))),
                     subrecord('INAM', string('Insignia Unused'))
                 ]))
             ),

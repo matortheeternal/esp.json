@@ -1,7 +1,7 @@
 let {
-    def, float, subrecord, uint32, string, 
-    flags, format, struct, memberStruct, memberArray, 
-    elementCounter, record
+    def, float, subrecord, uint32, conflict, 
+    string, flags, format, struct, memberStruct, 
+    memberArray, elementCounter, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -10,7 +10,7 @@ module.exports = () => {
             def('EDID'),
             subrecord('CNAM', float('Color Influence')),
             subrecord('DNAM', float('Fade Distance Radius Scale')),
-            subrecord('LFSP', uint32('Count')),
+            subrecord('LFSP', conflict('Benign', uint32('Count'))),
             elementCounter('LFSP - Count', 
                 memberArray('Lens Flare Sprites', 
                     memberStruct('Flare', [

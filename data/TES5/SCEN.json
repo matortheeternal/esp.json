@@ -67,6 +67,7 @@
                     {
                         "name": "Unused",
                         "type": "memberStruct",
+                        "conflicts": "Ignore",
                         "members": [
                             {
                                 "signature": "SCHR",
@@ -98,6 +99,7 @@
                     {
                         "name": "Unused",
                         "type": "memberStruct",
+                        "conflicts": "Ignore",
                         "members": [
                             {
                                 "signature": "SCHR",
@@ -313,6 +315,7 @@
                     {
                         "name": "Unused",
                         "type": "memberStruct",
+                        "conflicts": "Ignore",
                         "members": [
                             {
                                 "signature": "SCHR",
@@ -347,6 +350,7 @@
         {
             "name": "Unused",
             "type": "memberStruct",
+            "conflicts": "Ignore",
             "members": [
                 {
                     "signature": "SCHR",
@@ -378,6 +382,7 @@
         {
             "name": "Unused",
             "type": "memberStruct",
+            "conflicts": "Ignore",
             "members": [
                 {
                     "signature": "SCHR",

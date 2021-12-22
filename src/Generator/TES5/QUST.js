@@ -1,10 +1,10 @@
 let {
     def, flags, uint16, format, uint8, 
-    bytes, size, uint32, struct, subrecord, 
-    string, ckFormId, memberArray, memberStruct, empty, 
-    sortKey, localized, opts, sorted, req, 
-    int32, formId, int16, enumeration, memberUnion, 
-    record
+    conflict, bytes, size, uint32, struct, 
+    subrecord, string, ckFormId, memberArray, memberStruct, 
+    empty, sortKey, localized, opts, sorted, 
+    req, int32, formId, int16, enumeration, 
+    memberUnion, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -30,7 +30,7 @@ module.exports = () => {
                     12: 'Unknown 13'
                 })),
                 uint8('Priority'),
-                uint8('Form Version'),
+                conflict('Ignore', uint8('Form Version')),
                 size(4, bytes('Unknown')),
                 format(uint32('Type'), def('QuestTypeEnum'))
             ])),
@@ -38,7 +38,7 @@ module.exports = () => {
             memberArray('Text Display Globals', 
                 subrecord('QTGL', ckFormId('Global', ['GLOB']))
             ),
-            subrecord('FLTR', string('Object Window Filter')),
+            subrecord('FLTR', conflict('Translate', string('Object Window Filter'))),
             memberStruct('Quest Dialogue Conditions', [
                 def('CTDAs')
             ]),
@@ -63,13 +63,13 @@ module.exports = () => {
                                 1: 'Fail Quest'
                             }))),
                             def('CTDAs'),
-                            opts(subrecord('CNAM', localized(string('Log Entry'))), {
+                            opts(subrecord('CNAM', conflict('Translate', localized(string('Log Entry')))), {
                                 "keepCase": true
                             }),
                             subrecord('NAM0', ckFormId('Next Quest', ['QUST'])),
-                            subrecord('SCHR', size(0, bytes('Unused'))),
-                            subrecord('SCTX', size(0, bytes('Unused'))),
-                            subrecord('QNAM', size(0, bytes('Unused')))
+                            subrecord('SCHR', conflict('Ignore', size(0, bytes('Unused')))),
+                            subrecord('SCTX', conflict('Ignore', size(0, bytes('Unused')))),
+                            subrecord('QNAM', conflict('Ignore', size(0, bytes('Unused'))))
                         ])
                     )
                 ]))
@@ -80,7 +80,7 @@ module.exports = () => {
                     subrecord('FNAM', format(uint32('Flags'), flags({
                         0: 'ORed With Previous'
                     }))),
-                    opts(req(subrecord('NNAM', localized(string('Display Text')))), {
+                    opts(req(subrecord('NNAM', conflict('Translate', localized(string('Display Text'))))), {
                         "keepCase": true
                     }),
                     memberArray('Targets', 

@@ -1,8 +1,8 @@
 let {
-    def, string, subrecord, memberArray, uint8, 
-    req, IsSSE, flags, format, bytes, 
-    size, ckFormId, uint16, float, struct, 
-    record
+    def, string, conflict, subrecord, memberArray, 
+    uint8, req, IsSSE, flags, format, 
+    bytes, size, ckFormId, uint16, float, 
+    struct, record
 } = require('../helpers');
 
 module.exports = game => {
@@ -11,7 +11,7 @@ module.exports = game => {
             def('EDID'),
             def('FULL'),
             memberArray('Unused', 
-                subrecord('NNAM', string('Noise Map'))
+                subrecord('NNAM', conflict('Ignore', string('Noise Map')))
             ),
             req(subrecord('ANAM', uint8('Opacity'))),
             req(subrecord('FNAM', format(uint8('Flags'), flags({
@@ -24,13 +24,13 @@ module.exports = game => {
                 6: 'Unknown 6',
                 7: 'Unknown 7'
             })))),
-            subrecord('MNAM', size(0, bytes('Unused'))),
+            subrecord('MNAM', conflict('Ignore', size(0, bytes('Unused')))),
             subrecord('TNAM', ckFormId('Material', ['MATT'])),
             subrecord('SNAM', ckFormId('Open Sound', ['SNDR', 'NULL'])),
             subrecord('XNAM', ckFormId('Spell', ['SPEL'])),
             subrecord('INAM', ckFormId('Image Space', ['IMGS'])),
             IsSSE(game, [
-                req(subrecord('DATA', uint16('Unused'))),
+                req(subrecord('DATA', conflict('Ignore', uint16('Unused')))),
                 req(subrecord('DATA', uint16('Damage Per Second')))
             ]),
             IsSSE(game, [

@@ -20,7 +20,8 @@
                 {
                     "name": "Unused",
                     "type": "bytes",
-                    "size": 4
+                    "size": 4,
+                    "conflicts": "Ignore"
                 },
                 {
                     "name": "Global Variable",

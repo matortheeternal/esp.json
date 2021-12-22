@@ -1,6 +1,6 @@
 let {
-    def, ckFormId, subrecord, req, uint32, 
-    format, unknown, record
+    def, ckFormId, subrecord, conflict, req, 
+    uint32, format, unknown, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -10,9 +10,9 @@ module.exports = () => {
             subrecord('PNAM', ckFormId('Parent ', [
                 'SMQN', 'SMBN', 'SMEN', 'NULL'
             ])),
-            subrecord('SNAM', ckFormId('Previous Sibling ', [
+            subrecord('SNAM', conflict('Benign', ckFormId('Previous Sibling ', [
                 'SMQN', 'SMBN', 'SMEN', 'NULL'
-            ])),
+            ]))),
             req(def('CITC')),
             def('CTDAsCount'),
             subrecord('DNAM', format(uint32('Flags'), def('SMNodeFlags'))),

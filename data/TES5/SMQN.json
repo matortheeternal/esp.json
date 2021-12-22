@@ -21,6 +21,7 @@
             "signature": "SNAM",
             "name": "Previous Sibling ",
             "type": "formId",
+            "conflicts": "Benign",
             "signatures": [
                 "SMQN",
                 "SMBN",
@@ -75,11 +76,13 @@
             "signature": "QNAM",
             "name": "Quest Count",
             "type": "uint32",
+            "conflicts": "Benign",
             "required": true
         },
         {
             "name": "Quests",
             "type": "memberArray",
+            "conflicts": "Benign",
             "counter": {
                 "type": "elementCounter",
                 "path": "QNAM - Quest Count"
@@ -92,18 +95,21 @@
                         "signature": "NNAM",
                         "name": "Quest",
                         "type": "formId",
+                        "conflicts": "Benign",
                         "signatures": [
                             "QUST"
                         ]
                     },
                     {
                         "signature": "FNAM",
-                        "type": "bytes"
+                        "type": "bytes",
+                        "conflicts": "Benign"
                     },
                     {
                         "signature": "RNAM",
                         "name": "Hours until reset",
                         "type": "float",
+                        "conflicts": "Benign",
                         "format": {
                             "type": "divide",
                             "value": 24

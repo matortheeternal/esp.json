@@ -1,8 +1,8 @@
 let {
     def, flags, uint32, format, subrecord, 
-    empty, string, memberStruct, unknown, memberArray, 
-    enumeration, uint16, int32, float, ckFormId, 
-    record
+    empty, string, memberStruct, unknown, conflict, 
+    memberArray, enumeration, uint16, int32, float, 
+    ckFormId, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -28,21 +28,21 @@ module.exports = () => {
                     memberStruct('Completion Conditions', [
                         def('CTDAs')
                     ]),
-                    memberStruct('Unused', [
+                    conflict('Ignore', memberStruct('Unused', [
                         subrecord('SCHR', unknown()),
                         subrecord('SCDA', unknown()),
                         subrecord('SCTX', unknown()),
                         subrecord('QNAM', unknown()),
                         subrecord('SCRO', unknown())
-                    ]),
+                    ])),
                     subrecord('NEXT', empty('Marker')),
-                    memberStruct('Unused', [
+                    conflict('Ignore', memberStruct('Unused', [
                         subrecord('SCHR', unknown()),
                         subrecord('SCDA', unknown()),
                         subrecord('SCTX', unknown()),
                         subrecord('QNAM', unknown()),
                         subrecord('SCRO', unknown())
-                    ]),
+                    ])),
                     subrecord('WNAM', uint32('Editor Width')),
                     subrecord('HNAM', empty('Marker Phase End'))
                 ])
@@ -109,31 +109,31 @@ module.exports = () => {
                     subrecord('DMIN', float('Looping - Min')),
                     subrecord('DEMO', format(uint32('Emotion Type'), def('EmotionTypeEnum'))),
                     subrecord('DEVA', uint32('Emotion Value')),
-                    memberStruct('Unused', [
+                    conflict('Ignore', memberStruct('Unused', [
                         subrecord('SCHR', unknown()),
                         subrecord('SCDA', unknown()),
                         subrecord('SCTX', unknown()),
                         subrecord('QNAM', unknown()),
                         subrecord('SCRO', unknown())
-                    ]),
+                    ])),
                     subrecord('ANAM', empty('End Marker'))
                 ])
             ),
-            memberStruct('Unused', [
+            conflict('Ignore', memberStruct('Unused', [
                 subrecord('SCHR', unknown()),
                 subrecord('SCDA', unknown()),
                 subrecord('SCTX', unknown()),
                 subrecord('QNAM', unknown()),
                 subrecord('SCRO', unknown())
-            ]),
+            ])),
             subrecord('NEXT', empty('Marker')),
-            memberStruct('Unused', [
+            conflict('Ignore', memberStruct('Unused', [
                 subrecord('SCHR', unknown()),
                 subrecord('SCDA', unknown()),
                 subrecord('SCTX', unknown()),
                 subrecord('QNAM', unknown()),
                 subrecord('SCRO', unknown())
-            ]),
+            ])),
             subrecord('PNAM', ckFormId('Quest', ['QUST'])),
             subrecord('INAM', uint32('Last Action Index')),
             subrecord('VNAM', unknown()),

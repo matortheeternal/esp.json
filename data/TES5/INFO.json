@@ -72,6 +72,7 @@
             "signature": "PNAM",
             "name": "Previous INFO",
             "type": "formId",
+            "conflicts": "Benign",
             "signatures": [
                 "INFO",
                 "NULL"
@@ -177,6 +178,7 @@
                         "name": "Response Text",
                         "type": "string",
                         "localized": true,
+                        "conflicts": "Translate",
                         "keepCase": true
                     },
                     {
@@ -214,6 +216,7 @@
         {
             "name": "Unknown",
             "type": "memberArray",
+            "conflicts": "Ignore",
             "member": {
                 "name": "Unknown",
                 "type": "memberStruct",
@@ -239,7 +242,8 @@
             "signature": "RNAM",
             "name": "Prompt",
             "type": "string",
-            "localized": true
+            "localized": true,
+            "conflicts": "Translate"
         },
         {
             "signature": "ANAM",

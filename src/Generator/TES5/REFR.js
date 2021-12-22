@@ -2,9 +2,9 @@ let {
     flags, showUnknown, formatUnion, def, ckFormId, 
     subrecord, req, float, struct, scale, 
     enumeration, uint32, format, unknown, array, 
-    uint8, bytes, size, sorted, memberArray, 
-    memberStruct, empty, sortKey, int16, int32, 
-    record
+    conflict, uint8, bytes, size, sorted, 
+    memberArray, memberStruct, empty, sortKey, int16, 
+    int32, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -180,7 +180,7 @@ module.exports = () => {
                     ckFormId('Destination', ['REFR', 'NULL'])
                 ])
             )),
-            subrecord('XPTL', struct('Room Portal (unused)', [
+            subrecord('XPTL', conflict('Ignore', struct('Room Portal (unused)', [
                 struct('Size', [
                     scale(2, float('Width')),
                     scale(2, float('Height'))
@@ -196,7 +196,7 @@ module.exports = () => {
                     float('q3'),
                     float('q4')
                 ])
-            ])),
+            ]))),
             memberStruct('Bound Data', [
                 subrecord('XRMR', struct('Header', [
                     uint8('Linked Rooms Count'),
@@ -218,7 +218,7 @@ module.exports = () => {
                     subrecord('XLRM', ckFormId('Linked Room', ['REFR']))
                 ))
             ]),
-            subrecord('XMBP', empty('MultiBound Primitive Marker')),
+            subrecord('XMBP', conflict('Ignore', empty('MultiBound Primitive Marker'))),
             def('XRGD'),
             def('XRGB'),
             subrecord('XRDS', float('Radius')),
@@ -255,8 +255,8 @@ module.exports = () => {
             ])),
             subrecord('XTNM', ckFormId('Teleport Message Box', ['MESG'])),
             subrecord('XMBR', ckFormId('MultiBound Reference', ['REFR'])),
-            subrecord('XWCN', size(0, bytes('Unknown'))),
-            subrecord('XWCS', size(0, bytes('Unknown'))),
+            subrecord('XWCN', conflict('Ignore', size(0, bytes('Unknown')))),
+            subrecord('XWCS', conflict('Ignore', size(0, bytes('Unknown')))),
             subrecord('XWCU', struct('Water Velocity', [
                 float('X Offset'),
                 float('Y Offset'),
@@ -309,21 +309,21 @@ module.exports = () => {
                     100: 'Master',
                     255: 'Requires Key'
                 })),
-                size(3, bytes('Unused')),
+                conflict('Ignore', size(3, bytes('Unused'))),
                 ckFormId('Key', ['KEYM', 'NULL']),
                 format(uint8('Flags'), flags({
                     0: '',
                     1: '',
                     2: 'Leveled Lock'
                 })),
-                size(3, bytes('Unused')),
-                size(8, bytes('Unused'))
+                conflict('Ignore', size(3, bytes('Unused'))),
+                conflict('Ignore', size(8, bytes('Unused')))
             ])),
             subrecord('XEZN', ckFormId('Encounter Zone', ['ECZN'])),
             subrecord('XNDP', struct('Navigation Door Link', [
                 ckFormId('Navigation Mesh', ['NAVM']),
                 format(int16('Teleport Marker Triangle'), def('REFRNavmeshTriangleToStr')),
-                size(2, bytes('Unused'))
+                conflict('Ignore', size(2, bytes('Unused')))
             ])),
             subrecord('XLRT', array('Location Ref Type', 
                 ckFormId('Ref', ['LCRT', 'NULL'])
@@ -332,9 +332,9 @@ module.exports = () => {
             def('Ownership'),
             subrecord('XCNT', int32('Item Count')),
             subrecord('XCHG', float('Charge')),
-            subrecord('XLRL', ckFormId('Location Reference', [
+            subrecord('XLRL', conflict('BenignIfAdded', ckFormId('Location Reference', [
                 'LCRT', 'LCTN', 'NULL'
-            ])),
+            ]))),
             def('XESP'),
             memberArray('Linked References', 
                 subrecord('XLKR', struct('Linked Reference', [
@@ -355,8 +355,8 @@ module.exports = () => {
                     req(subrecord('XPRD', float('Idle Time'))),
                     req(subrecord('XPPA', empty('Patrol Script Marker'))),
                     req(subrecord('INAM', ckFormId('Idle', ['IDLE', 'NULL']))),
-                    subrecord('SCHR', size(0, bytes('Unused'))),
-                    subrecord('SCTX', size(0, bytes('Unused'))),
+                    subrecord('SCHR', conflict('Ignore', size(0, bytes('Unused')))),
+                    subrecord('SCTX', conflict('Ignore', size(0, bytes('Unused')))),
                     def('PDTOs')
                 ])
             ),

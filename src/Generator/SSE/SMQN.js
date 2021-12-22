@@ -1,8 +1,8 @@
 let {
-    def, ckFormId, subrecord, req, uint16, 
-    format, flags, struct, uint32, unknown, 
-    float, div, sortKey, memberStruct, memberArray, 
-    elementCounter, record
+    def, ckFormId, subrecord, conflict, req, 
+    uint16, format, flags, struct, uint32, 
+    unknown, float, div, sortKey, memberStruct, 
+    memberArray, elementCounter, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -12,9 +12,9 @@ module.exports = () => {
             subrecord('PNAM', ckFormId('Parent ', [
                 'SMQN', 'SMBN', 'SMEN', 'NULL'
             ])),
-            subrecord('SNAM', ckFormId('Previous Sibling ', [
+            subrecord('SNAM', conflict('Benign', ckFormId('Previous Sibling ', [
                 'SMQN', 'SMBN', 'SMEN', 'NULL'
-            ])),
+            ]))),
             req(def('CITC')),
             def('CTDAsCount'),
             subrecord('DNAM', struct('Flags', [
@@ -27,15 +27,15 @@ module.exports = () => {
             ])),
             subrecord('XNAM', uint32('Max concurrent quests')),
             subrecord('MNAM', uint32('Num quests to run')),
-            req(subrecord('QNAM', uint32('Quest Count'))),
+            req(subrecord('QNAM', conflict('Benign', uint32('Quest Count')))),
             elementCounter('QNAM - Quest Count', 
-                memberArray('Quests', 
+                conflict('Benign', memberArray('Quests', 
                     sortKey([0], memberStruct('Quest', [
-                        subrecord('NNAM', ckFormId('Quest', ['QUST'])),
-                        subrecord('FNAM', unknown()),
-                        subrecord('RNAM', format(float('Hours until reset'), div(24)))
+                        subrecord('NNAM', conflict('Benign', ckFormId('Quest', ['QUST']))),
+                        subrecord('FNAM', conflict('Benign', unknown())),
+                        subrecord('RNAM', format(conflict('Benign', float('Hours until reset')), div(24)))
                     ]))
-                )
+                ))
             )
         ]
     })

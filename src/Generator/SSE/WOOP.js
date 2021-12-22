@@ -1,6 +1,6 @@
 let {
-    def, localized, string, subrecord, req, 
-    record
+    def, localized, string, conflict, subrecord, 
+    req, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -8,7 +8,7 @@ module.exports = () => {
         members: [
             def('EDID'),
             def('FULL'),
-            req(subrecord('TNAM', localized(string('Translation'))))
+            req(subrecord('TNAM', conflict('Translate', localized(string('Translation')))))
         ]
     })
 };

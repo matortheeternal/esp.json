@@ -1,9 +1,9 @@
 let {
     flags, def, req, enumeration, uint8, 
     format, struct, subrecord, ckFormId, opts, 
-    sortKey, bytes, size, union, int8, 
-    memberArray, memberStruct, localized, string, uint16, 
-    float, uint32, empty, record
+    sortKey, bytes, size, conflict, union, 
+    int8, memberArray, memberStruct, localized, string, 
+    uint16, float, uint32, empty, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -76,7 +76,7 @@ module.exports = () => {
                                 14: 'Multiply 1 + Actor Value Mult',
                                 15: 'Set Text'
                             })),
-                            uint8('Perk Condition Tab Count')
+                            conflict('Ignore', uint8('Perk Condition Tab Count'))
                         ]))
                     ]))),
                     memberArray('Perk Conditions', 
@@ -96,7 +96,7 @@ module.exports = () => {
                             6: 'string',
                             7: 'lstring'
                         }))),
-                        subrecord('EPF2', localized(string('Button Label'))),
+                        subrecord('EPF2', conflict('Translate', localized(string('Button Label')))),
                         subrecord('EPF3', struct('Script Flags', [
                             format(uint16('Script Flags'), flags({
                                 0: 'Run Immediately',
@@ -114,15 +114,15 @@ module.exports = () => {
                             ckFormId('Leveled Item', ['LVLI']),
                             ckFormId('Spell', ['SPEL']),
                             ckFormId('Spell', ['SPEL']),
-                            string('Text'),
-                            localized(string('Text')),
+                            conflict('Translate', string('Text')),
+                            conflict('Translate', localized(string('Text'))),
                             struct('Actor Value, Float', [
                                 format(uint32('Actor Value'), def('EPFDActorValueToStr')),
                                 float('Float')
                             ])
                         ]))
                     ]),
-                    req(subrecord('PRKF', empty('End Marker')))
+                    req(subrecord('PRKF', conflict('Ignore', empty('End Marker'))))
                 ]))
             )
         ]

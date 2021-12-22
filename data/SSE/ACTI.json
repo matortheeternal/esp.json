@@ -98,7 +98,8 @@
             "signature": "RNAM",
             "name": "Activate Text Override",
             "type": "string",
-            "localized": true
+            "localized": true,
+            "conflicts": "Translate"
         },
         {
             "signature": "FNAM",

@@ -39,24 +39,28 @@
             "signature": "OFST",
             "name": "Unknown",
             "type": "bytes",
-            "size": 0
+            "size": 0,
+            "conflicts": "Ignore"
         },
         {
             "signature": "DELE",
             "name": "Unknown",
             "type": "bytes",
-            "size": 0
+            "size": 0,
+            "conflicts": "Ignore"
         },
         {
             "signature": "CNAM",
             "name": "Author",
             "type": "string",
+            "conflicts": "Translate",
             "required": true
         },
         {
             "signature": "SNAM",
             "name": "Description",
-            "type": "string"
+            "type": "string",
+            "conflicts": "Translate"
         },
         {
             "name": "Master Files",
@@ -77,6 +81,7 @@
                         "name": "Unknown",
                         "type": "bytes",
                         "size": 8,
+                        "conflicts": "Ignore",
                         "required": true
                     }
                 ]

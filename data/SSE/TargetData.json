@@ -94,12 +94,14 @@
                 {
                     "name": "Unknown",
                     "type": "bytes",
-                    "size": 4
+                    "size": 4,
+                    "conflicts": "Ignore"
                 },
                 {
                     "name": "Unknown",
                     "type": "bytes",
-                    "size": 4
+                    "size": 4,
+                    "conflicts": "Ignore"
                 }
             ]
         },

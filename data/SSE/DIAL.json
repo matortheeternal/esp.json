@@ -189,7 +189,8 @@
         {
             "signature": "TIFC",
             "name": "Info Count",
-            "type": "uint32"
+            "type": "uint32",
+            "conflicts": "Benign"
         }
     ],
     "containedInElement": {

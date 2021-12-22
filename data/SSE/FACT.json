@@ -223,13 +223,15 @@
                         "signature": "MNAM",
                         "name": "Male Title",
                         "type": "string",
-                        "localized": true
+                        "localized": true,
+                        "conflicts": "Translate"
                     },
                     {
                         "signature": "FNAM",
                         "name": "Female Title",
                         "type": "string",
-                        "localized": true
+                        "localized": true,
+                        "conflicts": "Translate"
                     },
                     {
                         "signature": "INAM",

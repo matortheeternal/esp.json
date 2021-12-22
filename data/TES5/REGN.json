@@ -197,7 +197,8 @@
                         "signature": "RDMP",
                         "name": "Map Name",
                         "type": "string",
-                        "localized": true
+                        "localized": true,
+                        "conflicts": "Translate"
                     },
                     {
                         "signature": "RDOT",

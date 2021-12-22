@@ -61,7 +61,8 @@
                     "elements": [
                         {
                             "name": "Unused",
-                            "type": "formId"
+                            "type": "formId",
+                            "conflicts": "Ignore"
                         },
                         {
                             "name": "Assoc. Item",

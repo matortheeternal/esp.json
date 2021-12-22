@@ -1,10 +1,10 @@
 let {
-    addDef, string, subrecord, opts
+    addDef, string, conflict, subrecord, opts
 } = require('../helpers');
 
 module.exports = () => {
     addDef('EDID', 
-        opts(subrecord('EDID', string('Editor ID')), {
+        opts(subrecord('EDID', conflict('Override', string('Editor ID'))), {
             "keepCase": true
         })
     );

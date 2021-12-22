@@ -9,7 +9,8 @@
             "elements": [
                 {
                     "name": "Unused",
-                    "type": "uint16"
+                    "type": "uint16",
+                    "conflicts": "Ignore"
                 },
                 {
                     "name": "Alias",
@@ -50,7 +51,8 @@
                 },
                 {
                     "name": "Unused",
-                    "type": "uint16"
+                    "type": "uint16",
+                    "conflicts": "Ignore"
                 }
             ],
             "sortKey": [

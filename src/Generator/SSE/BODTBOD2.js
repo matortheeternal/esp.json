@@ -1,7 +1,7 @@
 let {
     addDef, def, flags, int0, format, 
     empty, uint32, struct, subrecord, uint8, 
-    bytes, size, memberUnion
+    bytes, size, conflict, memberUnion
 } = require('../helpers');
 
 module.exports = () => {
@@ -34,7 +34,7 @@ module.exports = () => {
                     6: 'Unknown 7',
                     7: 'Unknown 8'
                 })),
-                size(3, bytes('Unused')),
+                conflict('Ignore', size(3, bytes('Unused'))),
                 format(uint32('Armor Type'), def('ArmorTypeEnum'))
             ]))
         ])

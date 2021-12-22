@@ -49,6 +49,7 @@
             "signature": "DATA",
             "name": "Data (unused)",
             "type": "struct",
+            "conflicts": "Ignore",
             "required": true,
             "elements": [
                 {

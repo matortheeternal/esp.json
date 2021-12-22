@@ -1,7 +1,7 @@
 let {
     addDef, enumeration, int32, format, ckFormId, 
     def, uint32, formId, bytes, size, 
-    union, struct
+    conflict, union, struct
 } = require('../helpers');
 
 module.exports = () => {
@@ -33,8 +33,8 @@ module.exports = () => {
                 format(uint32('Object Type'), def('ObjectTypeEnum')),
                 formId('Reference'),
                 format(int32('Alias'), def('PackageLocationAliasToStr')),
-                size(4, bytes('Unknown')),
-                size(4, bytes('Unknown'))
+                conflict('Ignore', size(4, bytes('Unknown'))),
+                conflict('Ignore', size(4, bytes('Unknown')))
             ]),
             int32('Count / Distance')
         ])
