@@ -1,8 +1,9 @@
 let {
     flags, showUnknown, def, ckFormId, subrecord, 
     req, float, empty, unknown, memberStruct, 
-    conflict, int32, sortKey, struct, sorted, 
-    memberArray, uint8, format, array, record
+    conflict, opts, int32, sortKey, struct, 
+    sorted, memberArray, uint8, format, array, 
+    record
 } = require('../helpers');
 
 module.exports = () => {
@@ -38,7 +39,9 @@ module.exports = () => {
                 subrecord('TNAM', ckFormId('Topic', ['DIAL', 'NULL']))
             ]),
             def('XLCM'),
-            subrecord('XMRC', ckFormId('Merchant Container', ['REFR'])),
+            opts(subrecord('XMRC', ckFormId('Merchant Container', ['REFR'])), {
+                "persistent": true
+            }),
             subrecord('XCNT', int32('Count')),
             subrecord('XRDS', float('Radius')),
             subrecord('XHLP', float('Health')),

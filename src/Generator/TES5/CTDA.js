@@ -80,7 +80,7 @@ module.exports = () => {
                     opts(uint32('VATS Value Param (INVALID)'), {
                         "zeroSortKey": 1
                     }),
-                    ckFormId('Referenceable Object', [
+                    opts(ckFormId('Referenceable Object', [
                         'NULL', 'NPC_', 'PROJ', 'TREE', 'SOUN',
                         'ACTI', 'DOOR', 'STAT', 'FURN', 'CONT',
                         'ARMO', 'AMMO', 'MISC', 'WEAP', 'BOOK',
@@ -88,7 +88,9 @@ module.exports = () => {
                         'IDLM', 'ARMA', 'MSTT', 'TACT', 'LVLI',
                         'LVSP', 'SPEL', 'SCRL', 'SHOU', 'SLGM',
                         'ENCH', 'FLOR', 'FLST'
-                    ]),
+                    ]), {
+                        "validateFlstRefs": true
+                    }),
                     ckFormId('Region', ['REGN']),
                     ckFormId('Keyword', ['KYWD', 'NULL']),
                     format(uint32('Player Action'), def('AdvanceActionEnum')),
@@ -170,9 +172,13 @@ module.exports = () => {
                     format(uint32('VATS Value Function'), def('VATSValueFunctionEnum')),
                     union('VATS Value Param', 'CTDAParam2VATSValueParamDecider', [
                         ckFormId('Weapon', ['WEAP']),
-                        ckFormId('Weapon List', ['FLST']),
+                        opts(ckFormId('Weapon List', ['FLST']), {
+                            "validateFlstRefs": true
+                        }),
                         ckFormId('Target', ['NPC_']),
-                        ckFormId('Target List', ['FLST']),
+                        opts(ckFormId('Target List', ['FLST']), {
+                            "validateFlstRefs": true
+                        }),
                         conflict('Ignore', size(4, bytes('Unknown'))),
                         format(int32('Target Part'), def('ActorValueEnum')),
                         format(uint32('VATS Action'), enumeration({
@@ -196,7 +202,9 @@ module.exports = () => {
                             "zeroSortKey": 1
                         }),
                         ckFormId('Critical Effect', ['SPEL']),
-                        ckFormId('Critical Effect List', ['FLST']),
+                        opts(ckFormId('Critical Effect List', ['FLST']), {
+                            "validateFlstRefs": true
+                        }),
                         opts(conflict('Ignore', size(4, bytes('Unknown'))), {
                             "zeroSortKey": 1
                         }),
@@ -228,7 +236,7 @@ module.exports = () => {
                         format(uint32('Delivery Type'), def('TargetEnum')),
                         format(uint32('Casting Type'), def('CastEnum'))
                     ]),
-                    ckFormId('Referenceable Object', [
+                    opts(ckFormId('Referenceable Object', [
                         'NULL', 'NPC_', 'PROJ', 'TREE', 'SOUN',
                         'ACTI', 'DOOR', 'STAT', 'FURN', 'CONT',
                         'ARMO', 'AMMO', 'MISC', 'WEAP', 'BOOK',
@@ -236,7 +244,9 @@ module.exports = () => {
                         'IDLM', 'ARMA', 'MSTT', 'TACT', 'FLST',
                         'LVLI', 'LVSP', 'SPEL', 'SCRL', 'SHOU',
                         'SLGM', 'ENCH'
-                    ]),
+                    ]), {
+                        "validateFlstRefs": true
+                    }),
                     ckFormId('Region', ['REGN']),
                     ckFormId('Keyword', ['KYWD', 'NULL']),
                     format(uint32('Player Action'), def('AdvanceActionEnum')),

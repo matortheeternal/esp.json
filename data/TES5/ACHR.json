@@ -119,6 +119,7 @@
             "signature": "XMRC",
             "name": "Merchant Container",
             "type": "formId",
+            "persistent": true,
             "signatures": [
                 "REFR"
             ]

@@ -1,7 +1,7 @@
 let {
     addDef, enumeration, int32, format, ckFormId, 
-    def, uint32, formId, bytes, size, 
-    conflict, union, struct
+    opts, def, uint32, formId, bytes, 
+    size, conflict, union, struct
 } = require('../helpers');
 
 module.exports = () => {
@@ -17,11 +17,13 @@ module.exports = () => {
                 6: 'Self'
             })),
             union('Target', 'TypeDecider', [
-                ckFormId('Reference', [
+                opts(ckFormId('Reference', [
                     'NULL', 'PLYR', 'ACHR', 'REFR', 'PGRE',
                     'PHZD', 'PMIS', 'PARW', 'PBAR', 'PBEA',
                     'PCON', 'PFLA'
-                ]),
+                ]), {
+                    "persistent": true
+                }),
                 ckFormId('Object ID', [
                     'NULL', 'ACTI', 'DOOR', 'STAT', 'MSTT',
                     'FURN', 'SPEL', 'SCRL', 'NPC_', 'CONT',

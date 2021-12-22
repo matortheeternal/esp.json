@@ -242,10 +242,12 @@ module.exports = () => {
             memberArray('Targets', 
                 memberStruct('Target', [
                     subrecord('QSTA', struct('Target', [
-                        ckFormId('Target', [
+                        opts(ckFormId('Target', [
                             'ACHR', 'REFR', 'PGRE', 'PHZD', 'PMIS',
                             'PARW', 'PBAR', 'PBEA', 'PCON', 'PFLA'
-                        ]),
+                        ]), {
+                            "persistent": true
+                        }),
                         format(uint8('Flags'), flags({
                             0: 'Compass Marker Ignores Locks'
                         })),

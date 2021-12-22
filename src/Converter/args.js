@@ -4,7 +4,6 @@ let extTypes = loadFilesToDictionary('Converter/args');
 
 // TODO: implement these
 let exSk = { type: 'array of number', name: 'exSk' };
-let validFlstRefs = { type: 'array of signature', name: 'validFlstRefs' };
 let defaultNumber = { type: 'number', name: 'default' };
 let digits = { type: 'mathExpr', name: 'digits' };
 let afterLoad = {type: 'identifier', name: 'afterLoad'};
@@ -14,9 +13,8 @@ let addInfo = {type: 'identifier', name: 'addInfo'};
 let isSorted = {type: 'identifier', name: 'isSorted'};
 let getCP = {type: 'identifier', name: 'getCP'};
 let isReference = {type: 'boolean', name: 'isReference'};
-let persistent = {type: 'boolean', name: 'persistent'};
-let matchSize = {type: 'boolean',name: 'matchSize'};
-let optionalFromElement = {type: 'number',name: 'optionalFromElement'};
+let matchSize = {type: 'boolean', name: 'matchSize'};
+let optionalFromElement = {type: 'number', name: 'optionalFromElement'};
 let labels = { type: 'array of string', name: 'labels' };
 
 module.exports = {
@@ -52,7 +50,7 @@ module.exports = {
     // extension types
     ...extTypes,
     // unimplemented extension types
-    afterLoad, dontShow, getCP, digits, validFlstRefs, exSk, 
-    normalizer, defaultNumber, persistent, isReference,
-    matchSize, isSorted, addInfo, optionalFromElement, labels
+    afterLoad, dontShow, getCP, digits, exSk, optionalFromElement, 
+    normalizer, defaultNumber, isReference, matchSize, isSorted, 
+    addInfo, labels
 };

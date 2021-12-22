@@ -3,8 +3,8 @@ let {
     subrecord, req, float, struct, scale, 
     enumeration, uint32, format, unknown, array, 
     conflict, uint8, bytes, size, sorted, 
-    memberArray, memberStruct, empty, sortKey, int16, 
-    int32, record
+    memberArray, memberStruct, empty, sortKey, opts, 
+    int16, int32, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -247,7 +247,9 @@ module.exports = () => {
                 uint8('Base')
             ])),
             subrecord('XTEL', struct('Teleport Destination', [
-                ckFormId('Door', ['REFR']),
+                opts(ckFormId('Door', ['REFR']), {
+                    "persistent": true
+                }),
                 def('PosRot'),
                 format(uint32('Flags'), flags({
                     0: 'No Alarm'

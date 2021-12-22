@@ -357,6 +357,7 @@
                         {
                             "name": "Referenceable Object",
                             "type": "formId",
+                            "validateFlstRefs": true,
                             "signatures": [
                                 "NULL",
                                 "NPC_",
@@ -832,6 +833,7 @@
                                 {
                                     "name": "Weapon List",
                                     "type": "formId",
+                                    "validateFlstRefs": true,
                                     "signatures": [
                                         "FLST"
                                     ]
@@ -846,6 +848,7 @@
                                 {
                                     "name": "Target List",
                                     "type": "formId",
+                                    "validateFlstRefs": true,
                                     "signatures": [
                                         "FLST"
                                     ]
@@ -908,6 +911,7 @@
                                 {
                                     "name": "Critical Effect List",
                                     "type": "formId",
+                                    "validateFlstRefs": true,
                                     "signatures": [
                                         "FLST"
                                     ]
@@ -996,6 +1000,7 @@
                         {
                             "name": "Referenceable Object",
                             "type": "formId",
+                            "validateFlstRefs": true,
                             "signatures": [
                                 "NULL",
                                 "NPC_",
