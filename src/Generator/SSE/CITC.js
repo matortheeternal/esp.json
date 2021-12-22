@@ -1,9 +1,9 @@
 let {
-    addDef, uint32, conflict, subrecord
+    addDef, uint32, conflictType, subrecord
 } = require('../helpers');
 
 module.exports = () => {
     addDef('CITC', 
-        subrecord('CITC', conflict('Benign', uint32('Condition Count')))
+        subrecord('CITC', conflictType('Benign', uint32('Condition Count')))
     );
 };

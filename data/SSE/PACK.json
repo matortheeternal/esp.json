@@ -126,7 +126,7 @@
                     "name": "Unused",
                     "type": "bytes",
                     "size": 3,
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 },
                 {
                     "name": "Duration (minutes)",
@@ -166,7 +166,7 @@
                         {
                             "name": "Animation Count",
                             "type": "uint8",
-                            "conflicts": "Benign"
+                            "conflictType": "Benign"
                         },
                         {
                             "name": "Unknown",
@@ -200,7 +200,7 @@
                     "name": "Unknown",
                     "type": "bytes",
                     "size": 4,
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 }
             ]
         },
@@ -462,7 +462,7 @@
                             {
                                 "name": "Unknown",
                                 "type": "memberArray",
-                                "conflicts": "Ignore",
+                                "conflictType": "Ignore",
                                 "member": {
                                     "signature": "PFOR",
                                     "type": "bytes"
@@ -501,28 +501,28 @@
                     "name": "Unused",
                     "type": "bytes",
                     "size": 0,
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 },
                 {
                     "signature": "SCTX",
                     "name": "Unused",
                     "type": "bytes",
                     "size": 0,
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 },
                 {
                     "signature": "QNAM",
                     "name": "Unused",
                     "type": "bytes",
                     "size": 0,
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 },
                 {
                     "signature": "TNAM",
                     "name": "Unused",
                     "type": "bytes",
                     "size": 0,
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 },
                 {
                     "id": "PDTOs"
@@ -554,28 +554,28 @@
                     "name": "Unused",
                     "type": "bytes",
                     "size": 0,
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 },
                 {
                     "signature": "SCTX",
                     "name": "Unused",
                     "type": "bytes",
                     "size": 0,
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 },
                 {
                     "signature": "QNAM",
                     "name": "Unused",
                     "type": "bytes",
                     "size": 0,
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 },
                 {
                     "signature": "TNAM",
                     "name": "Unused",
                     "type": "bytes",
                     "size": 0,
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 },
                 {
                     "id": "PDTOs"
@@ -607,35 +607,35 @@
                     "name": "Unused",
                     "type": "bytes",
                     "size": 0,
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 },
                 {
                     "signature": "SCDA",
                     "name": "Unused",
                     "type": "bytes",
                     "size": 0,
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 },
                 {
                     "signature": "SCTX",
                     "name": "Unused",
                     "type": "bytes",
                     "size": 0,
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 },
                 {
                     "signature": "QNAM",
                     "name": "Unused",
                     "type": "bytes",
                     "size": 0,
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 },
                 {
                     "signature": "TNAM",
                     "name": "Unused",
                     "type": "bytes",
                     "size": 0,
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 },
                 {
                     "id": "PDTOs"

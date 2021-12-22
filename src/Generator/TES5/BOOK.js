@@ -1,5 +1,5 @@
 let {
-    def, req, localized, string, conflict, 
+    def, req, localized, string, conflictType, 
     subrecord, opts, flags, uint8, format, 
     enumeration, bytes, size, int32, ckFormId, 
     union, uint32, float, struct, record
@@ -14,7 +14,7 @@ module.exports = () => {
             def('FULL'),
             def('MODL'),
             def('ICON'),
-            opts(req(subrecord('DESC', conflict('Translate', localized(string('Book Text'))))), {
+            opts(req(subrecord('DESC', conflictType('Translate', localized(string('Book Text'))))), {
                 "keepCase": true
             }),
             def('DEST'),
@@ -46,7 +46,7 @@ module.exports = () => {
                 float('Weight')
             ]))),
             subrecord('INAM', ckFormId('Inventory Art', ['STAT'])),
-            subrecord('CNAM', conflict('Translate', localized(string('Description'))))
+            subrecord('CNAM', conflictType('Translate', localized(string('Description'))))
         ]
     })
 };

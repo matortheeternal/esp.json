@@ -1,6 +1,6 @@
 let {
     flags, def, req, float, ckFormId, 
-    uint8, format, bytes, size, conflict, 
+    uint8, format, bytes, size, conflictType, 
     struct, subrecord, IsSSE, string, record
 } = require('../helpers');
 
@@ -51,7 +51,7 @@ module.exports = game => {
                     format(uint8('Flags'), flags({
                         0: 'Considered Snow'
                     })),
-                    conflict('Ignore', size(3, bytes('Unused')))
+                    conflictType('Ignore', size(3, bytes('Unused')))
                 ]))),
                 req(subrecord('DNAM', struct('Direction Material', [
                     float('Max Angle (30-120)'),

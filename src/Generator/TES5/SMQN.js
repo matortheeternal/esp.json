@@ -1,5 +1,5 @@
 let {
-    def, ckFormId, subrecord, conflict, req, 
+    def, ckFormId, subrecord, conflictType, req, 
     uint16, format, flags, struct, uint32, 
     unknown, float, div, sortKey, memberStruct, 
     memberArray, elementCounter, record
@@ -12,7 +12,7 @@ module.exports = () => {
             subrecord('PNAM', ckFormId('Parent ', [
                 'SMQN', 'SMBN', 'SMEN', 'NULL'
             ])),
-            subrecord('SNAM', conflict('Benign', ckFormId('Previous Sibling ', [
+            subrecord('SNAM', conflictType('Benign', ckFormId('Previous Sibling ', [
                 'SMQN', 'SMBN', 'SMEN', 'NULL'
             ]))),
             req(def('CITC')),
@@ -27,13 +27,13 @@ module.exports = () => {
             ])),
             subrecord('XNAM', uint32('Max concurrent quests')),
             subrecord('MNAM', uint32('Num quests to run')),
-            req(subrecord('QNAM', conflict('Benign', uint32('Quest Count')))),
+            req(subrecord('QNAM', conflictType('Benign', uint32('Quest Count')))),
             elementCounter('QNAM - Quest Count', 
-                conflict('Benign', memberArray('Quests', 
+                conflictType('Benign', memberArray('Quests', 
                     sortKey([0], memberStruct('Quest', [
-                        subrecord('NNAM', conflict('Benign', ckFormId('Quest', ['QUST']))),
-                        subrecord('FNAM', conflict('Benign', unknown())),
-                        subrecord('RNAM', format(conflict('Benign', float('Hours until reset')), div(24)))
+                        subrecord('NNAM', conflictType('Benign', ckFormId('Quest', ['QUST']))),
+                        subrecord('FNAM', conflictType('Benign', unknown())),
+                        subrecord('RNAM', format(conflictType('Benign', float('Hours until reset')), div(24)))
                     ]))
                 ))
             )

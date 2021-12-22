@@ -8,7 +8,7 @@ functionConverter('wbRStructExSK', [
     args.name,
     args.fields,
     args.signatures,
-    args.priority,
+    args.conflictType,
     args.required,
     args.dontShow,
     args.allowUnordered,

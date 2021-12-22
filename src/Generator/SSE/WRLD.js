@@ -1,5 +1,5 @@
 let {
-    flags, def, IsSSE, int16, conflict, 
+    flags, def, IsSSE, int16, conflictType, 
     ckFormId, struct, array, prefix, opts, 
     subrecord, memberArray, uint8, format, bytes, 
     size, req, memberStruct, float, string, 
@@ -14,15 +14,15 @@ module.exports = game => {
         }),
         members: [
             def('EDID'),
-            opts(conflict('Ignore', memberArray(IsSSE(game, ['Large References', 'Unused RNAM']), 
+            opts(conflictType('Ignore', memberArray(IsSSE(game, ['Large References', 'Unused RNAM']), 
                 subrecord('RNAM', struct('Grid', [
-                    conflict('Ignore', int16('Y')),
-                    conflict('Ignore', int16('X')),
+                    conflictType('Ignore', int16('Y')),
+                    conflictType('Ignore', int16('X')),
                     opts(prefix(4, array('References', 
                         struct('Reference', [
-                            conflict('Ignore', ckFormId('Ref', ['REFR'])),
-                            conflict('Ignore', int16('Y')),
-                            conflict('Ignore', int16('X'))
+                            conflictType('Ignore', ckFormId('Ref', ['REFR'])),
+                            conflictType('Ignore', int16('Y')),
+                            conflictType('Ignore', int16('X'))
                         ])
                     )), {
                         "notAlignable": 1
@@ -106,21 +106,21 @@ module.exports = game => {
                 7: 'No Grass'
             })))),
             memberStruct('Object Bounds', [
-                req(subrecord('NAM0', conflict('Ignore', struct('Min', [
+                req(subrecord('NAM0', conflictType('Ignore', struct('Min', [
                     format(float('X'), div(4096)),
                     format(float('Y'), div(4096))
                 ])))),
-                req(subrecord('NAM9', conflict('Ignore', struct('Max', [
+                req(subrecord('NAM9', conflictType('Ignore', struct('Max', [
                     format(float('X'), div(4096)),
                     format(float('Y'), div(4096))
                 ]))))
             ]),
             subrecord('ZNAM', ckFormId('Music', ['MUSC'])),
-            subrecord('NNAM', conflict('Ignore', string('Canopy Shadow (unused)'))),
+            subrecord('NNAM', conflictType('Ignore', string('Canopy Shadow (unused)'))),
             subrecord('XNAM', string('Water Noise Texture')),
             subrecord('TNAM', string('HD LOD Diffuse Texture')),
             subrecord('UNAM', string('HD LOD Normal Texture')),
-            subrecord('XWEM', conflict('Ignore', string('Water Environment Map (unused)'))),
+            subrecord('XWEM', conflictType('Ignore', string('Water Environment Map (unused)'))),
             def('OFST')
         ]
     })

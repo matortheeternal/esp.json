@@ -1,6 +1,6 @@
 let {
     def, flags, uint32, format, subrecord, 
-    empty, string, memberStruct, unknown, conflict, 
+    empty, string, memberStruct, unknown, conflictType, 
     memberArray, enumeration, uint16, int32, float, 
     ckFormId, record
 } = require('../helpers');
@@ -28,7 +28,7 @@ module.exports = () => {
                     memberStruct('Completion Conditions', [
                         def('CTDAs')
                     ]),
-                    conflict('Ignore', memberStruct('Unused', [
+                    conflictType('Ignore', memberStruct('Unused', [
                         subrecord('SCHR', unknown()),
                         subrecord('SCDA', unknown()),
                         subrecord('SCTX', unknown()),
@@ -36,7 +36,7 @@ module.exports = () => {
                         subrecord('SCRO', unknown())
                     ])),
                     subrecord('NEXT', empty('Marker')),
-                    conflict('Ignore', memberStruct('Unused', [
+                    conflictType('Ignore', memberStruct('Unused', [
                         subrecord('SCHR', unknown()),
                         subrecord('SCDA', unknown()),
                         subrecord('SCTX', unknown()),
@@ -109,7 +109,7 @@ module.exports = () => {
                     subrecord('DMIN', float('Looping - Min')),
                     subrecord('DEMO', format(uint32('Emotion Type'), def('EmotionTypeEnum'))),
                     subrecord('DEVA', uint32('Emotion Value')),
-                    conflict('Ignore', memberStruct('Unused', [
+                    conflictType('Ignore', memberStruct('Unused', [
                         subrecord('SCHR', unknown()),
                         subrecord('SCDA', unknown()),
                         subrecord('SCTX', unknown()),
@@ -119,7 +119,7 @@ module.exports = () => {
                     subrecord('ANAM', empty('End Marker'))
                 ])
             ),
-            conflict('Ignore', memberStruct('Unused', [
+            conflictType('Ignore', memberStruct('Unused', [
                 subrecord('SCHR', unknown()),
                 subrecord('SCDA', unknown()),
                 subrecord('SCTX', unknown()),
@@ -127,7 +127,7 @@ module.exports = () => {
                 subrecord('SCRO', unknown())
             ])),
             subrecord('NEXT', empty('Marker')),
-            conflict('Ignore', memberStruct('Unused', [
+            conflictType('Ignore', memberStruct('Unused', [
                 subrecord('SCHR', unknown()),
                 subrecord('SCDA', unknown()),
                 subrecord('SCTX', unknown()),

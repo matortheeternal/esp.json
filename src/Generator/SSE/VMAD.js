@@ -1,15 +1,15 @@
 let {
-    addDef, int16, conflict, opts, def, 
+    addDef, int16, conflictType, opts, def, 
     sorted, array, prefix, struct, subrecord
 } = require('../helpers');
 
 module.exports = () => {
     addDef('VMAD', 
         subrecord('VMAD', struct('Virtual Machine Adapter', [
-            opts(conflict('Ignore', int16('Version')), {
+            opts(conflictType('Ignore', int16('Version')), {
                 "defaultNativeValue": 5
             }),
-            opts(conflict('Ignore', int16('Object Format')), {
+            opts(conflictType('Ignore', int16('Object Format')), {
                 "defaultNativeValue": 2
             }),
             prefix(2, sorted(array('Scripts', 

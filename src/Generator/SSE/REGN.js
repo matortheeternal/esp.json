@@ -3,7 +3,7 @@ let {
     struct, subrecord, req, ckFormId, uint32, 
     float, array, memberStruct, memberArray, enumeration, 
     format, sortKey, sorted, localized, string, 
-    conflict, uint16, record
+    conflictType, uint16, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -73,7 +73,7 @@ module.exports = () => {
                             float('Chance')
                         ]))
                     ))),
-                    subrecord('RDMP', conflict('Translate', localized(string('Map Name')))),
+                    subrecord('RDMP', conflictType('Translate', localized(string('Map Name')))),
                     subrecord('RDOT', array('Objects', 
                         struct('Object', [
                             ckFormId('Object', [

@@ -8,7 +8,7 @@ functionConverter('wbRStructs', [
     args.elementName,
     args.members,
     args.signatures,
-    args.priority,
+    args.conflictType,
     args.required,
     args.dontShow,
     args.getCP

@@ -4,7 +4,7 @@ let {subrecordAndField} = require('../converters'),
 subrecordAndField('wbLenString', [
     args.name,
     args.prefix,
-    args.priority,
+    args.conflictType,
     args.required,
     args.dontShow,
     args.getCP

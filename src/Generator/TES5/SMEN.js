@@ -1,5 +1,5 @@
 let {
-    def, ckFormId, subrecord, conflict, req, 
+    def, ckFormId, subrecord, conflictType, req, 
     uint32, format, unknown, string, size, 
     record
 } = require('../helpers');
@@ -11,7 +11,7 @@ module.exports = () => {
             subrecord('PNAM', ckFormId('Parent ', [
                 'SMQN', 'SMBN', 'SMEN', 'NULL'
             ])),
-            subrecord('SNAM', conflict('Benign', ckFormId('Previous Sibling ', [
+            subrecord('SNAM', conflictType('Benign', ckFormId('Previous Sibling ', [
                 'SMQN', 'SMBN', 'SMEN', 'NULL'
             ]))),
             req(def('CITC')),

@@ -10,7 +10,7 @@
                 {
                     "name": "Unused",
                     "type": "uint16",
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 },
                 {
                     "name": "Alias",
@@ -52,7 +52,7 @@
                 {
                     "name": "Unused",
                     "type": "uint16",
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 }
             ],
             "sortKey": [

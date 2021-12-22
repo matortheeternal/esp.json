@@ -8,7 +8,7 @@ functionConverter('wbRStructsSK', [
     args.sk,
     args.members,
     args.signatures,
-    args.priority,
+    args.conflictType,
     args.required,
     args.afterLoad,
     args.afterSet,

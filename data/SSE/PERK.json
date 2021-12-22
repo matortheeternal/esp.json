@@ -210,7 +210,7 @@
                                     {
                                         "name": "Perk Condition Tab Count",
                                         "type": "uint8",
-                                        "conflicts": "Ignore"
+                                        "conflictType": "Ignore"
                                     }
                                 ],
                                 "sortKey": [
@@ -269,7 +269,7 @@
                                 "name": "Button Label",
                                 "type": "string",
                                 "localized": true,
-                                "conflicts": "Translate"
+                                "conflictType": "Translate"
                             },
                             {
                                 "signature": "EPF3",
@@ -345,13 +345,13 @@
                                     {
                                         "name": "Text",
                                         "type": "string",
-                                        "conflicts": "Translate"
+                                        "conflictType": "Translate"
                                     },
                                     {
                                         "name": "Text",
                                         "type": "string",
                                         "localized": true,
-                                        "conflicts": "Translate"
+                                        "conflictType": "Translate"
                                     },
                                     {
                                         "name": "Actor Value, Float",
@@ -378,7 +378,7 @@
                         "signature": "PRKF",
                         "name": "End Marker",
                         "type": "empty",
-                        "conflicts": "Ignore",
+                        "conflictType": "Ignore",
                         "required": true
                     }
                 ],

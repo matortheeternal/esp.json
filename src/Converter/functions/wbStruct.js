@@ -6,7 +6,7 @@ let {subrecordAndField} = require('../converters'),
 subrecordAndField('wbStruct', [
     args.name,
     args.fields,
-    args.priority,
+    args.conflictType,
     args.required,
     args.dontShow,
     args.optionalFromElement,

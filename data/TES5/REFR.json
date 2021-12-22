@@ -383,7 +383,7 @@
             "signature": "XPTL",
             "name": "Room Portal (unused)",
             "type": "struct",
-            "conflicts": "Ignore",
+            "conflictType": "Ignore",
             "elements": [
                 {
                     "name": "Size",
@@ -515,7 +515,7 @@
             "signature": "XMBP",
             "name": "MultiBound Primitive Marker",
             "type": "empty",
-            "conflicts": "Ignore"
+            "conflictType": "Ignore"
         },
         {
             "id": "XRGD"
@@ -676,14 +676,14 @@
             "name": "Unknown",
             "type": "bytes",
             "size": 0,
-            "conflicts": "Ignore"
+            "conflictType": "Ignore"
         },
         {
             "signature": "XWCS",
             "name": "Unknown",
             "type": "bytes",
             "size": 0,
-            "conflicts": "Ignore"
+            "conflictType": "Ignore"
         },
         {
             "signature": "XWCU",
@@ -891,7 +891,7 @@
                     "name": "Unused",
                     "type": "bytes",
                     "size": 3,
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 },
                 {
                     "name": "Key",
@@ -917,13 +917,13 @@
                     "name": "Unused",
                     "type": "bytes",
                     "size": 3,
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 },
                 {
                     "name": "Unused",
                     "type": "bytes",
                     "size": 8,
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 }
             ]
         },
@@ -958,7 +958,7 @@
                     "name": "Unused",
                     "type": "bytes",
                     "size": 2,
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 }
             ]
         },
@@ -997,7 +997,7 @@
             "signature": "XLRL",
             "name": "Location Reference",
             "type": "formId",
-            "conflicts": "BenignIfAdded",
+            "conflictType": "BenignIfAdded",
             "signatures": [
                 "LCRT",
                 "LCTN",
@@ -1088,14 +1088,14 @@
                         "name": "Unused",
                         "type": "bytes",
                         "size": 0,
-                        "conflicts": "Ignore"
+                        "conflictType": "Ignore"
                     },
                     {
                         "signature": "SCTX",
                         "name": "Unused",
                         "type": "bytes",
                         "size": 0,
-                        "conflicts": "Ignore"
+                        "conflictType": "Ignore"
                     },
                     {
                         "id": "PDTOs"

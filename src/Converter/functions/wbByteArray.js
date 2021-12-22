@@ -9,7 +9,7 @@ let convertByteArray = function(args, converter) {
 subrecordAndField('wbByteArray', [
     args.name,
     args.size,
-    args.priority,
+    args.conflictType,
     args.required,
     args.dontShow,
     args.getCP

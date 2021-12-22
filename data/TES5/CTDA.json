@@ -19,7 +19,7 @@
                     "name": "Unused",
                     "type": "bytes",
                     "size": 3,
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 },
                 {
                     "name": "Comparison Value",
@@ -50,7 +50,7 @@
                     "name": "Unused",
                     "type": "bytes",
                     "size": 2,
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 },
                 {
                     "name": "Parameter #1",
@@ -66,7 +66,7 @@
                             "name": "None",
                             "type": "bytes",
                             "size": 4,
-                            "conflicts": "Ignore",
+                            "conflictType": "Ignore",
                             "zeroSortKey": 1
                         },
                         {
@@ -533,7 +533,7 @@
                             "name": "None",
                             "type": "bytes",
                             "size": 4,
-                            "conflicts": "Ignore",
+                            "conflictType": "Ignore",
                             "zeroSortKey": 1
                         },
                         {
@@ -857,7 +857,7 @@
                                     "name": "Unknown",
                                     "type": "bytes",
                                     "size": 4,
-                                    "conflicts": "Ignore"
+                                    "conflictType": "Ignore"
                                 },
                                 {
                                     "name": "Target Part",
@@ -891,14 +891,14 @@
                                     "name": "Unknown",
                                     "type": "bytes",
                                     "size": 4,
-                                    "conflicts": "Ignore",
+                                    "conflictType": "Ignore",
                                     "zeroSortKey": 1
                                 },
                                 {
                                     "name": "Unknown",
                                     "type": "bytes",
                                     "size": 4,
-                                    "conflicts": "Ignore",
+                                    "conflictType": "Ignore",
                                     "zeroSortKey": 1
                                 },
                                 {
@@ -920,28 +920,28 @@
                                     "name": "Unknown",
                                     "type": "bytes",
                                     "size": 4,
-                                    "conflicts": "Ignore",
+                                    "conflictType": "Ignore",
                                     "zeroSortKey": 1
                                 },
                                 {
                                     "name": "Unknown",
                                     "type": "bytes",
                                     "size": 4,
-                                    "conflicts": "Ignore",
+                                    "conflictType": "Ignore",
                                     "zeroSortKey": 1
                                 },
                                 {
                                     "name": "Unknown",
                                     "type": "bytes",
                                     "size": 4,
-                                    "conflicts": "Ignore",
+                                    "conflictType": "Ignore",
                                     "zeroSortKey": 1
                                 },
                                 {
                                     "name": "Unknown",
                                     "type": "bytes",
                                     "size": 4,
-                                    "conflicts": "Ignore",
+                                    "conflictType": "Ignore",
                                     "zeroSortKey": 1
                                 },
                                 {
@@ -955,14 +955,14 @@
                                     "name": "Unknown",
                                     "type": "bytes",
                                     "size": 4,
-                                    "conflicts": "Ignore",
+                                    "conflictType": "Ignore",
                                     "zeroSortKey": 1
                                 },
                                 {
                                     "name": "Unknown",
                                     "type": "bytes",
                                     "size": 4,
-                                    "conflicts": "Ignore",
+                                    "conflictType": "Ignore",
                                     "zeroSortKey": 1
                                 },
                                 {
@@ -1187,7 +1187,7 @@
                         {
                             "name": "Unused",
                             "type": "uint32",
-                            "conflicts": "Ignore"
+                            "conflictType": "Ignore"
                         },
                         {
                             "name": "Reference",

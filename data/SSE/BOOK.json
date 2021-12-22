@@ -27,7 +27,7 @@
             "name": "Book Text",
             "type": "string",
             "localized": true,
-            "conflicts": "Translate",
+            "conflictType": "Translate",
             "required": true,
             "keepCase": true
         },
@@ -130,7 +130,7 @@
             "name": "Description",
             "type": "string",
             "localized": true,
-            "conflicts": "Translate"
+            "conflictType": "Translate"
         }
     ]
 }

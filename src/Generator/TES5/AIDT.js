@@ -1,5 +1,5 @@
 let {
-    addDef, enumeration, uint8, format, conflict, 
+    addDef, enumeration, uint8, format, conflictType, 
     uint32, struct, subrecord, req
 } = require('../helpers');
 
@@ -46,7 +46,7 @@ module.exports = () => {
                     0: 'False',
                     1: 'True'
                 })),
-                conflict('Ignore', uint8('Unused')),
+                conflictType('Ignore', uint8('Unused')),
                 uint32('Warn'),
                 uint32('Warn/Attack'),
                 uint32('Attack')

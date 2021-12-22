@@ -2,7 +2,7 @@
     "signature": "MHDT",
     "name": "Max Height Data",
     "type": "struct",
-    "conflicts": "NormalIgnoreEmpty",
+    "conflictType": "NormalIgnoreEmpty",
     "elements": [
         {
             "name": "Min",
@@ -11,12 +11,12 @@
                 {
                     "name": "X",
                     "type": "int16",
-                    "conflicts": "NormalIgnoreEmpty"
+                    "conflictType": "NormalIgnoreEmpty"
                 },
                 {
                     "name": "Y",
                     "type": "int16",
-                    "conflicts": "NormalIgnoreEmpty"
+                    "conflictType": "NormalIgnoreEmpty"
                 }
             ]
         },
@@ -27,12 +27,12 @@
                 {
                     "name": "X",
                     "type": "int16",
-                    "conflicts": "NormalIgnoreEmpty"
+                    "conflictType": "NormalIgnoreEmpty"
                 },
                 {
                     "name": "Y",
                     "type": "int16",
-                    "conflicts": "NormalIgnoreEmpty"
+                    "conflictType": "NormalIgnoreEmpty"
                 }
             ]
         },
@@ -40,7 +40,7 @@
             "name": "Cell Data",
             "type": "bytes",
             "size": 0,
-            "conflicts": "NormalIgnoreEmpty"
+            "conflictType": "NormalIgnoreEmpty"
         }
     ]
 }

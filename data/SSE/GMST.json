@@ -7,7 +7,7 @@
             "signature": "EDID",
             "name": "Editor ID",
             "type": "string",
-            "conflicts": "Critical",
+            "conflictType": "Critical",
             "required": true,
             "afterSet": "GMSTEDIDAfterSet"
         },
@@ -22,7 +22,7 @@
                     "name": "Name",
                     "type": "string",
                     "localized": true,
-                    "conflicts": "Translate"
+                    "conflictType": "Translate"
                 },
                 {
                     "name": "Int",

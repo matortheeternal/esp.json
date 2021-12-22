@@ -1,5 +1,5 @@
 let {
-    def, enumeration, uint32, conflict, format, 
+    def, enumeration, uint32, conflictType, format, 
     formId, sortKey, struct, sorted, array, 
     subrecord, req, record
 } = require('../helpers');
@@ -8,9 +8,9 @@ module.exports = () => {
     record('DOBJ', 'Default Object Manager', {
         members: [
             def('EDID'),
-            req(subrecord('DNAM', conflict('NormalIgnoreEmpty', sorted(array('Objects', 
+            req(subrecord('DNAM', conflictType('NormalIgnoreEmpty', sorted(array('Objects', 
                 sortKey([0], struct('Object', [
-                    format(conflict('NormalIgnoreEmpty', uint32('Use')), enumeration({
+                    format(conflictType('NormalIgnoreEmpty', uint32('Use')), enumeration({
                         0: 'None',
                         'RADA': 'RADA (Unused)',
                         'MORP': 'MORP (Unused)',
@@ -383,7 +383,7 @@ module.exports = () => {
                         'SRVS': 'Survival Mode - Show Option',
                         'SRVT': 'Survival Mode - Toggle'
                     })),
-                    conflict('NormalIgnoreEmpty', formId('Object ID'))
+                    conflictType('NormalIgnoreEmpty', formId('Object ID'))
                 ]))
             )))))
         ]

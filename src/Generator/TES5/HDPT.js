@@ -1,7 +1,7 @@
 let {
     flags, def, uint8, format, subrecord, 
     req, enumeration, uint32, ckFormId, sorted, 
-    memberArray, string, conflict, memberStruct, record
+    memberArray, string, conflictType, memberStruct, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -40,7 +40,7 @@ module.exports = () => {
                         1: 'Tri',
                         2: 'Chargen Morph'
                     }))),
-                    req(subrecord('NAM1', conflict('Translate', string('FileName'))))
+                    req(subrecord('NAM1', conflictType('Translate', string('FileName'))))
                 ])
             ),
             subrecord('TNAM', ckFormId('Texture Set', ['TXST', 'NULL'])),

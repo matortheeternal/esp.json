@@ -1,6 +1,6 @@
 let {
     addDef, ckFormId, flags, uint8, format, 
-    bytes, size, conflict, struct, subrecord
+    bytes, size, conflictType, struct, subrecord
 } = require('../helpers');
 
 module.exports = () => {
@@ -15,7 +15,7 @@ module.exports = () => {
                 0: 'Set Enable State to Opposite of Parent',
                 1: 'Pop In'
             })),
-            conflict('Ignore', size(3, bytes('Unused')))
+            conflictType('Ignore', size(3, bytes('Unused')))
         ]))
     );
 };

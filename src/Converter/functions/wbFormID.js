@@ -4,7 +4,7 @@ let {subrecordAndField} = require('../converters'),
 // wbInterface.pas#7800
 subrecordAndField('wbFormID', [
     args.name,
-    args.priority,
+    args.conflictType,
     args.required,
     args.dontShow,
     args.getCP

@@ -1,5 +1,5 @@
 let {
-    addDef, int16, conflict, opts, def, 
+    addDef, int16, conflictType, opts, def, 
     sorted, array, prefix, sortKey, struct, 
     subrecord
 } = require('../helpers');
@@ -7,10 +7,10 @@ let {
 module.exports = () => {
     addDef('VMADFragmentedQUST', 
         subrecord('VMAD', struct('Virtual Machine Adapter', [
-            opts(conflict('Ignore', int16('Version')), {
+            opts(conflictType('Ignore', int16('Version')), {
                 "defaultNativeValue": 5
             }),
-            opts(conflict('Ignore', int16('Object Format')), {
+            opts(conflictType('Ignore', int16('Object Format')), {
                 "defaultNativeValue": 2
             }),
             prefix(2, sorted(array('Scripts', 
@@ -20,10 +20,10 @@ module.exports = () => {
             prefix(2, sorted(array('Aliases', 
                 sortKey([0], struct('Alias', [
                     def('ScriptPropertyObject'),
-                    opts(conflict('Ignore', int16('Version')), {
+                    opts(conflictType('Ignore', int16('Version')), {
                         "defaultNativeValue": 5
                     }),
-                    opts(conflict('Ignore', int16('Object Format')), {
+                    opts(conflictType('Ignore', int16('Object Format')), {
                         "defaultNativeValue": 2
                     }),
                     prefix(2, sorted(array('Alias Scripts', 

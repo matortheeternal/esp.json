@@ -16,7 +16,7 @@
         {
             "name": "Unused RNAM",
             "type": "memberArray",
-            "conflicts": "Ignore",
+            "conflictType": "Ignore",
             "notAlignable": 1,
             "member": {
                 "signature": "RNAM",
@@ -26,12 +26,12 @@
                     {
                         "name": "Y",
                         "type": "int16",
-                        "conflicts": "Ignore"
+                        "conflictType": "Ignore"
                     },
                     {
                         "name": "X",
                         "type": "int16",
-                        "conflicts": "Ignore"
+                        "conflictType": "Ignore"
                     },
                     {
                         "name": "References",
@@ -45,7 +45,7 @@
                                 {
                                     "name": "Ref",
                                     "type": "formId",
-                                    "conflicts": "Ignore",
+                                    "conflictType": "Ignore",
                                     "signatures": [
                                         "REFR"
                                     ]
@@ -53,12 +53,12 @@
                                 {
                                     "name": "Y",
                                     "type": "int16",
-                                    "conflicts": "Ignore"
+                                    "conflictType": "Ignore"
                                 },
                                 {
                                     "name": "X",
                                     "type": "int16",
-                                    "conflicts": "Ignore"
+                                    "conflictType": "Ignore"
                                 }
                             ]
                         }
@@ -343,7 +343,7 @@
                     "signature": "NAM0",
                     "name": "Min",
                     "type": "struct",
-                    "conflicts": "Ignore",
+                    "conflictType": "Ignore",
                     "required": true,
                     "elements": [
                         {
@@ -368,7 +368,7 @@
                     "signature": "NAM9",
                     "name": "Max",
                     "type": "struct",
-                    "conflicts": "Ignore",
+                    "conflictType": "Ignore",
                     "required": true,
                     "elements": [
                         {
@@ -403,7 +403,7 @@
             "signature": "NNAM",
             "name": "Canopy Shadow (unused)",
             "type": "string",
-            "conflicts": "Ignore"
+            "conflictType": "Ignore"
         },
         {
             "signature": "XNAM",
@@ -424,7 +424,7 @@
             "signature": "XWEM",
             "name": "Water Environment Map (unused)",
             "type": "string",
-            "conflicts": "Ignore"
+            "conflictType": "Ignore"
         },
         {
             "id": "OFST"

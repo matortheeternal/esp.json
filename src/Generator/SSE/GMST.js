@@ -1,5 +1,5 @@
 let {
-    string, conflict, subrecord, req, opts, 
+    string, conflictType, subrecord, req, opts, 
     localized, int32, float, enumeration, uint32, 
     format, union, record
 } = require('../helpers');
@@ -7,11 +7,11 @@ let {
 module.exports = () => {
     record('GMST', 'Game Setting', {
         members: [
-            opts(req(subrecord('EDID', conflict('Critical', string('Editor ID')))), {
+            opts(req(subrecord('EDID', conflictType('Critical', string('Editor ID')))), {
                 "afterSet": "GMSTEDIDAfterSet"
             }),
             req(subrecord('DATA', union('Value', 'GMSTUnionDecider', [
-                conflict('Translate', localized(string('Name'))),
+                conflictType('Translate', localized(string('Name'))),
                 int32('Int'),
                 float('Float'),
                 format(uint32('Bool'), enumeration({

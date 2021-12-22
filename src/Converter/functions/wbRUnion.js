@@ -6,7 +6,7 @@ functionConverter('wbRUnion', [
     args.name,
     args.members,
     args.signatures,
-    args.priority,
+    args.conflictType,
     args.required,
     args.dontShow,
     args.getCP

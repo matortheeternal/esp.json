@@ -7,7 +7,7 @@ subrecordAndField('wbStructExSK', [
     args.exSk,
     args.name,
     args.fields,
-    args.priority,
+    args.conflictType,
     args.required,
     args.dontShow,
     args.optionalFromElement,

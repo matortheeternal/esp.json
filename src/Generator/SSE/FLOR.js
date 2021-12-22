@@ -1,6 +1,6 @@
 let {
     def, req, unknown, subrecord, localized, 
-    string, conflict, ckFormId, uint8, struct, 
+    string, conflictType, ckFormId, uint8, struct, 
     record
 } = require('../helpers');
 
@@ -16,7 +16,7 @@ module.exports = () => {
             def('KSIZ'),
             def('KWDAs'),
             subrecord('PNAM', unknown()),
-            subrecord('RNAM', conflict('Translate', localized(string('Activate Text Override')))),
+            subrecord('RNAM', conflictType('Translate', localized(string('Activate Text Override')))),
             subrecord('FNAM', unknown()),
             subrecord('PFIG', ckFormId('Ingredient', [
                 'INGR', 'ALCH', 'LVLI', 'MISC', 'NULL'

@@ -46,7 +46,7 @@
                 {
                     "name": "Form Version",
                     "type": "uint8",
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 },
                 {
                     "name": "Unknown",
@@ -84,7 +84,7 @@
             "signature": "FLTR",
             "name": "Object Window Filter",
             "type": "string",
-            "conflicts": "Translate"
+            "conflictType": "Translate"
         },
         {
             "name": "Quest Dialogue Conditions",
@@ -169,7 +169,7 @@
                                     "name": "Log Entry",
                                     "type": "string",
                                     "localized": true,
-                                    "conflicts": "Translate",
+                                    "conflictType": "Translate",
                                     "keepCase": true
                                 },
                                 {
@@ -185,21 +185,21 @@
                                     "name": "Unused",
                                     "type": "bytes",
                                     "size": 0,
-                                    "conflicts": "Ignore"
+                                    "conflictType": "Ignore"
                                 },
                                 {
                                     "signature": "SCTX",
                                     "name": "Unused",
                                     "type": "bytes",
                                     "size": 0,
-                                    "conflicts": "Ignore"
+                                    "conflictType": "Ignore"
                                 },
                                 {
                                     "signature": "QNAM",
                                     "name": "Unused",
                                     "type": "bytes",
                                     "size": 0,
-                                    "conflicts": "Ignore"
+                                    "conflictType": "Ignore"
                                 }
                             ]
                         }
@@ -238,7 +238,7 @@
                         "name": "Display Text",
                         "type": "string",
                         "localized": true,
-                        "conflicts": "Translate",
+                        "conflictType": "Translate",
                         "required": true,
                         "keepCase": true
                     },

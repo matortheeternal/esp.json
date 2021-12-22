@@ -12,7 +12,7 @@ let convertString = (args, converter) => {
 subrecordAndField('wbString', [
     args.name,
     args.stringSize,
-    args.priority,
+    args.conflictType,
     args.required,
     args.dontShow,
     args.afterSet,
@@ -24,7 +24,7 @@ functionConverter('wbString', [
     args.boolean, // forward
     args.name,
     args.stringSize,
-    args.priority,
+    args.conflictType,
     args.required,
     args.dontShow,
     args.afterSet,

@@ -1,5 +1,5 @@
 let {
-    def, unknown, conflict, subrecord, float, 
+    def, unknown, conflictType, subrecord, float, 
     struct, bytes, size, enumeration, uint16, 
     format, record
 } = require('../helpers');
@@ -8,7 +8,7 @@ module.exports = () => {
     record('IMGS', 'Image Space', {
         members: [
             def('EDID'),
-            subrecord('ENAM', conflict('Ignore', unknown())),
+            subrecord('ENAM', conflictType('Ignore', unknown())),
             subrecord('HNAM', struct('HDR', [
                 float('Eye Adapt Speed'),
                 float('Bloom Blur Radius'),

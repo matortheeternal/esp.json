@@ -38,7 +38,7 @@
             "name": "Activate Text Override",
             "type": "string",
             "localized": true,
-            "conflicts": "Translate"
+            "conflictType": "Translate"
         },
         {
             "signature": "FNAM",

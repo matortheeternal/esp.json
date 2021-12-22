@@ -1,7 +1,7 @@
 let {
     def, ckFormId, subrecord, uint8, flags, 
     format, bytes, size, float, struct, 
-    req, string, conflict, memberStruct, sorted, 
+    req, string, conflictType, memberStruct, sorted, 
     memberArray, record
 } = require('../helpers');
 
@@ -29,22 +29,22 @@ module.exports = () => {
             ]))),
             memberStruct('Male world model', [
                 subrecord('MOD2', string('Model FileName')),
-                subrecord('MO2T', conflict('Ignore', size(0, bytes('Texture Files Hashes')))),
+                subrecord('MO2T', conflictType('Ignore', size(0, bytes('Texture Files Hashes')))),
                 def('MO2S')
             ]),
             memberStruct('Female world model', [
                 subrecord('MOD3', string('Model FileName')),
-                subrecord('MO3T', conflict('Ignore', size(0, bytes('Texture Files Hashes')))),
+                subrecord('MO3T', conflictType('Ignore', size(0, bytes('Texture Files Hashes')))),
                 def('MO3S')
             ]),
             memberStruct('Male 1st Person', [
                 subrecord('MOD4', string('Model FileName')),
-                subrecord('MO4T', conflict('Ignore', size(0, bytes('Texture Files Hashes')))),
+                subrecord('MO4T', conflictType('Ignore', size(0, bytes('Texture Files Hashes')))),
                 def('MO4S')
             ]),
             memberStruct('Female 1st Person', [
                 subrecord('MOD5', string('Model FileName')),
-                subrecord('MO5T', conflict('Ignore', size(0, bytes('Texture Files Hashes')))),
+                subrecord('MO5T', conflictType('Ignore', size(0, bytes('Texture Files Hashes')))),
                 def('MO5S')
             ]),
             subrecord('NAM0', ckFormId('Male Skin Texture', ['TXST', 'NULL'])),

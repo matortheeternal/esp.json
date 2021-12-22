@@ -1,6 +1,6 @@
 let {
     flags, def, req, uint16, subrecord, 
-    string, bytes, size, conflict, memberStruct, 
+    string, bytes, size, conflictType, memberStruct, 
     ckFormId, memberArray, int32, float, struct, 
     div, format, record
 } = require('../helpers');
@@ -23,13 +23,13 @@ module.exports = () => {
             subrecord('EAMT', uint16('Enchantment Amount')),
             memberStruct('Male world model', [
                 subrecord('MOD2', string('Model FileName')),
-                subrecord('MO2T', conflict('Ignore', size(0, bytes('Texture Files Hashes')))),
+                subrecord('MO2T', conflictType('Ignore', size(0, bytes('Texture Files Hashes')))),
                 def('MO2S')
             ]),
             def('ICON'),
             memberStruct('Female world model', [
                 subrecord('MOD4', string('Model FileName')),
-                subrecord('MO4T', conflict('Ignore', size(0, bytes('Texture Files Hashes')))),
+                subrecord('MO4T', conflictType('Ignore', size(0, bytes('Texture Files Hashes')))),
                 def('MO4S')
             ]),
             def('ICO2'),

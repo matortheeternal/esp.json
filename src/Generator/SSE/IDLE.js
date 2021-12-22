@@ -1,7 +1,7 @@
 let {
     def, string, subrecord, ckFormId, struct, 
     req, uint8, flags, format, uint16, 
-    conflict, record
+    conflictType, record
 } = require('../helpers');
 
 module.exports = () => {
@@ -19,7 +19,7 @@ module.exports = () => {
                     'AACT', 'IDLE', 'NULL'
                 ])
             ]))),
-            req(subrecord('DATA', conflict('Ignore', struct('Data (unused)', [
+            req(subrecord('DATA', conflictType('Ignore', struct('Data (unused)', [
                 struct('Looping seconds (both 255 forever)', [
                     uint8('Min'),
                     uint8('Max')

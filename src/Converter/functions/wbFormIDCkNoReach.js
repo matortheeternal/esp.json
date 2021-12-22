@@ -11,7 +11,7 @@ subrecordAndField('wbFormIDCkNoReach', [
     args.name,
     args.signatures,
     args.persistent,
-    args.priority,
+    args.conflictType,
     args.required,
     args.dontShow,
     args.getCP
@@ -22,7 +22,7 @@ functionConverter('wbFormIDCkNoReach', [
     args.signatures,
     args.validFlstRefs,
     args.persistent,
-    args.priority,
+    args.conflictType,
     args.required,
     args.dontShow,
     args.getCP

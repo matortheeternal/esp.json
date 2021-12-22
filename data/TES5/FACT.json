@@ -224,14 +224,14 @@
                         "name": "Male Title",
                         "type": "string",
                         "localized": true,
-                        "conflicts": "Translate"
+                        "conflictType": "Translate"
                     },
                     {
                         "signature": "FNAM",
                         "name": "Female Title",
                         "type": "string",
                         "localized": true,
-                        "conflicts": "Translate"
+                        "conflictType": "Translate"
                     },
                     {
                         "signature": "INAM",

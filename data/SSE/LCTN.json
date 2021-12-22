@@ -10,16 +10,16 @@
             "signature": "ACPR",
             "name": "Actor Cell Persistent Reference",
             "type": "array",
-            "conflicts": "Benign",
+            "conflictType": "Benign",
             "element": {
                 "name": "",
                 "type": "struct",
-                "conflicts": "Benign",
+                "conflictType": "Benign",
                 "elements": [
                     {
                         "name": "Actor",
                         "type": "formId",
-                        "conflicts": "Benign",
+                        "conflictType": "Benign",
                         "signatures": [
                             "PLYR",
                             "ACHR",
@@ -37,7 +37,7 @@
                     {
                         "name": "Location",
                         "type": "formId",
-                        "conflicts": "Benign",
+                        "conflictType": "Benign",
                         "signatures": [
                             "WRLD",
                             "CELL"
@@ -46,12 +46,12 @@
                     {
                         "name": "Grid Y",
                         "type": "int16",
-                        "conflicts": "Benign"
+                        "conflictType": "Benign"
                     },
                     {
                         "name": "Grid X",
                         "type": "int16",
-                        "conflicts": "Benign"
+                        "conflictType": "Benign"
                     }
                 ]
             }
@@ -60,16 +60,16 @@
             "signature": "LCPR",
             "name": "Location Cell Persistent Reference",
             "type": "array",
-            "conflicts": "Benign",
+            "conflictType": "Benign",
             "element": {
                 "name": "",
                 "type": "struct",
-                "conflicts": "Benign",
+                "conflictType": "Benign",
                 "elements": [
                     {
                         "name": "Actor",
                         "type": "formId",
-                        "conflicts": "Benign",
+                        "conflictType": "Benign",
                         "signatures": [
                             "PLYR",
                             "ACHR",
@@ -87,7 +87,7 @@
                     {
                         "name": "Location",
                         "type": "formId",
-                        "conflicts": "Benign",
+                        "conflictType": "Benign",
                         "signatures": [
                             "WRLD",
                             "CELL"
@@ -96,12 +96,12 @@
                     {
                         "name": "Grid Y",
                         "type": "int16",
-                        "conflicts": "Benign"
+                        "conflictType": "Benign"
                     },
                     {
                         "name": "Grid X",
                         "type": "int16",
-                        "conflicts": "Benign"
+                        "conflictType": "Benign"
                     }
                 ]
             }
@@ -113,7 +113,7 @@
             "element": {
                 "name": "Ref",
                 "type": "formId",
-                "conflicts": "Benign",
+                "conflictType": "Benign",
                 "signatures": [
                     "ACHR",
                     "REFR"
@@ -124,16 +124,16 @@
             "signature": "ACUN",
             "name": "Actor Cell Unique",
             "type": "array",
-            "conflicts": "Benign",
+            "conflictType": "Benign",
             "element": {
                 "name": "",
                 "type": "struct",
-                "conflicts": "Benign",
+                "conflictType": "Benign",
                 "elements": [
                     {
                         "name": "Actor",
                         "type": "formId",
-                        "conflicts": "Benign",
+                        "conflictType": "Benign",
                         "signatures": [
                             "NPC_"
                         ]
@@ -141,7 +141,7 @@
                     {
                         "name": "Ref",
                         "type": "formId",
-                        "conflicts": "Benign",
+                        "conflictType": "Benign",
                         "signatures": [
                             "ACHR"
                         ]
@@ -149,7 +149,7 @@
                     {
                         "name": "Location",
                         "type": "formId",
-                        "conflicts": "Benign",
+                        "conflictType": "Benign",
                         "signatures": [
                             "LCTN",
                             "NULL"
@@ -162,16 +162,16 @@
             "signature": "LCUN",
             "name": "Location Cell Unique",
             "type": "array",
-            "conflicts": "Benign",
+            "conflictType": "Benign",
             "element": {
                 "name": "",
                 "type": "struct",
-                "conflicts": "Benign",
+                "conflictType": "Benign",
                 "elements": [
                     {
                         "name": "Actor",
                         "type": "formId",
-                        "conflicts": "Benign",
+                        "conflictType": "Benign",
                         "signatures": [
                             "NPC_"
                         ]
@@ -179,7 +179,7 @@
                     {
                         "name": "Ref",
                         "type": "formId",
-                        "conflicts": "Benign",
+                        "conflictType": "Benign",
                         "signatures": [
                             "ACHR"
                         ]
@@ -187,7 +187,7 @@
                     {
                         "name": "Location",
                         "type": "formId",
-                        "conflicts": "Benign",
+                        "conflictType": "Benign",
                         "signatures": [
                             "LCTN",
                             "NULL"
@@ -203,7 +203,7 @@
             "element": {
                 "name": "Actor",
                 "type": "formId",
-                "conflicts": "Benign",
+                "conflictType": "Benign",
                 "signatures": [
                     "NPC_"
                 ]
@@ -213,16 +213,16 @@
             "signature": "ACSR",
             "name": "Actor Cell Static Reference",
             "type": "array",
-            "conflicts": "Benign",
+            "conflictType": "Benign",
             "element": {
                 "name": "",
                 "type": "struct",
-                "conflicts": "Benign",
+                "conflictType": "Benign",
                 "elements": [
                     {
                         "name": "Loc Ref Type",
                         "type": "formId",
-                        "conflicts": "Benign",
+                        "conflictType": "Benign",
                         "signatures": [
                             "LCRT"
                         ]
@@ -230,7 +230,7 @@
                     {
                         "name": "Marker",
                         "type": "formId",
-                        "conflicts": "Benign",
+                        "conflictType": "Benign",
                         "signatures": [
                             "PLYR",
                             "ACHR",
@@ -248,7 +248,7 @@
                     {
                         "name": "Location",
                         "type": "formId",
-                        "conflicts": "Benign",
+                        "conflictType": "Benign",
                         "signatures": [
                             "WRLD",
                             "CELL"
@@ -257,12 +257,12 @@
                     {
                         "name": "Grid Y",
                         "type": "int16",
-                        "conflicts": "Benign"
+                        "conflictType": "Benign"
                     },
                     {
                         "name": "Grid X",
                         "type": "int16",
-                        "conflicts": "Benign"
+                        "conflictType": "Benign"
                     }
                 ]
             }
@@ -271,16 +271,16 @@
             "signature": "LCSR",
             "name": "Location Cell Static Reference",
             "type": "array",
-            "conflicts": "Benign",
+            "conflictType": "Benign",
             "element": {
                 "name": "",
                 "type": "struct",
-                "conflicts": "Benign",
+                "conflictType": "Benign",
                 "elements": [
                     {
                         "name": "Loc Ref Type",
                         "type": "formId",
-                        "conflicts": "Benign",
+                        "conflictType": "Benign",
                         "signatures": [
                             "LCRT"
                         ]
@@ -288,7 +288,7 @@
                     {
                         "name": "Marker",
                         "type": "formId",
-                        "conflicts": "Benign",
+                        "conflictType": "Benign",
                         "signatures": [
                             "PLYR",
                             "ACHR",
@@ -306,7 +306,7 @@
                     {
                         "name": "Location",
                         "type": "formId",
-                        "conflicts": "Benign",
+                        "conflictType": "Benign",
                         "signatures": [
                             "WRLD",
                             "CELL"
@@ -315,12 +315,12 @@
                     {
                         "name": "Grid Y",
                         "type": "int16",
-                        "conflicts": "Benign"
+                        "conflictType": "Benign"
                     },
                     {
                         "name": "Grid X",
                         "type": "int16",
-                        "conflicts": "Benign"
+                        "conflictType": "Benign"
                     }
                 ]
             }
@@ -329,11 +329,11 @@
             "signature": "RCSR",
             "name": "Reference Cell Static Reference",
             "type": "array",
-            "conflicts": "Benign",
+            "conflictType": "Benign",
             "element": {
                 "name": "Ref",
                 "type": "formId",
-                "conflicts": "Benign",
+                "conflictType": "Benign",
                 "signatures": [
                     "ACHR",
                     "REFR"
@@ -343,17 +343,17 @@
         {
             "name": "Actor Cell Encounter Cell",
             "type": "memberArray",
-            "conflicts": "Benign",
+            "conflictType": "Benign",
             "member": {
                 "signature": "ACEC",
                 "name": "Unknown",
                 "type": "struct",
-                "conflicts": "Benign",
+                "conflictType": "Benign",
                 "elements": [
                     {
                         "name": "Location",
                         "type": "formId",
-                        "conflicts": "Benign",
+                        "conflictType": "Benign",
                         "signatures": [
                             "WRLD",
                             "CELL"
@@ -369,12 +369,12 @@
                                 {
                                     "name": "Grid Y",
                                     "type": "int16",
-                                    "conflicts": "Benign"
+                                    "conflictType": "Benign"
                                 },
                                 {
                                     "name": "Grid X",
                                     "type": "int16",
-                                    "conflicts": "Benign"
+                                    "conflictType": "Benign"
                                 }
                             ]
                         }
@@ -385,7 +385,7 @@
         {
             "name": "Location Cell Encounter Cell",
             "type": "memberArray",
-            "conflicts": "Benign",
+            "conflictType": "Benign",
             "member": {
                 "signature": "LCEC",
                 "name": "Unknown",
@@ -394,7 +394,7 @@
                     {
                         "name": "Location",
                         "type": "formId",
-                        "conflicts": "Benign",
+                        "conflictType": "Benign",
                         "signatures": [
                             "WRLD",
                             "CELL"
@@ -410,12 +410,12 @@
                                 {
                                     "name": "Grid Y",
                                     "type": "int16",
-                                    "conflicts": "Benign"
+                                    "conflictType": "Benign"
                                 },
                                 {
                                     "name": "Grid X",
                                     "type": "int16",
-                                    "conflicts": "Benign"
+                                    "conflictType": "Benign"
                                 }
                             ]
                         }
@@ -426,7 +426,7 @@
         {
             "name": "Reference Cell Encounter Cell",
             "type": "memberArray",
-            "conflicts": "Benign",
+            "conflictType": "Benign",
             "member": {
                 "signature": "RCEC",
                 "name": "Unknown",
@@ -435,7 +435,7 @@
                     {
                         "name": "Location",
                         "type": "formId",
-                        "conflicts": "Benign",
+                        "conflictType": "Benign",
                         "signatures": [
                             "WRLD",
                             "CELL"
@@ -451,12 +451,12 @@
                                 {
                                     "name": "Grid Y",
                                     "type": "int16",
-                                    "conflicts": "Benign"
+                                    "conflictType": "Benign"
                                 },
                                 {
                                     "name": "Grid X",
                                     "type": "int16",
-                                    "conflicts": "Benign"
+                                    "conflictType": "Benign"
                                 }
                             ]
                         }
@@ -468,11 +468,11 @@
             "signature": "ACID",
             "name": "Actor Cell Marker Reference",
             "type": "array",
-            "conflicts": "Benign",
+            "conflictType": "Benign",
             "element": {
                 "name": "Ref",
                 "type": "formId",
-                "conflicts": "Benign",
+                "conflictType": "Benign",
                 "signatures": [
                     "PLYR",
                     "ACHR",
@@ -492,11 +492,11 @@
             "signature": "LCID",
             "name": "Location Cell Marker Reference",
             "type": "array",
-            "conflicts": "Benign",
+            "conflictType": "Benign",
             "element": {
                 "name": "Ref",
                 "type": "formId",
-                "conflicts": "Benign",
+                "conflictType": "Benign",
                 "signatures": [
                     "PLYR",
                     "ACHR",
@@ -516,7 +516,7 @@
             "signature": "ACEP",
             "name": "Actor Cell Enable Point",
             "type": "array",
-            "conflicts": "Benign",
+            "conflictType": "Benign",
             "element": {
                 "name": "",
                 "type": "struct",
@@ -524,7 +524,7 @@
                     {
                         "name": "Actor",
                         "type": "formId",
-                        "conflicts": "Benign",
+                        "conflictType": "Benign",
                         "signatures": [
                             "PLYR",
                             "ACHR",
@@ -542,7 +542,7 @@
                     {
                         "name": "Ref",
                         "type": "formId",
-                        "conflicts": "Benign",
+                        "conflictType": "Benign",
                         "signatures": [
                             "PLYR",
                             "ACHR",
@@ -560,12 +560,12 @@
                     {
                         "name": "Grid Y",
                         "type": "int16",
-                        "conflicts": "Benign"
+                        "conflictType": "Benign"
                     },
                     {
                         "name": "Grid X",
                         "type": "int16",
-                        "conflicts": "Benign"
+                        "conflictType": "Benign"
                     }
                 ]
             }
@@ -574,7 +574,7 @@
             "signature": "LCEP",
             "name": "Location Cell Enable Point",
             "type": "array",
-            "conflicts": "Benign",
+            "conflictType": "Benign",
             "element": {
                 "name": "",
                 "type": "struct",
@@ -582,7 +582,7 @@
                     {
                         "name": "Actor",
                         "type": "formId",
-                        "conflicts": "Benign",
+                        "conflictType": "Benign",
                         "signatures": [
                             "PLYR",
                             "ACHR",
@@ -600,7 +600,7 @@
                     {
                         "name": "Ref",
                         "type": "formId",
-                        "conflicts": "Benign",
+                        "conflictType": "Benign",
                         "signatures": [
                             "PLYR",
                             "ACHR",
@@ -618,12 +618,12 @@
                     {
                         "name": "Grid Y",
                         "type": "int16",
-                        "conflicts": "Benign"
+                        "conflictType": "Benign"
                     },
                     {
                         "name": "Grid X",
                         "type": "int16",
-                        "conflicts": "Benign"
+                        "conflictType": "Benign"
                     }
                 ]
             }

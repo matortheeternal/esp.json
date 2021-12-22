@@ -1,7 +1,7 @@
 let {
     IsSSE, flags, float, uint32, def, 
     format, struct, subrecord, req, bytes, 
-    size, conflict, string, memberStruct, memberArray, 
+    size, conflictType, string, memberStruct, memberArray, 
     opts, ckFormId, array, unknown, record
 } = require('../helpers');
 
@@ -19,14 +19,14 @@ module.exports = game => {
                 uint32('Number of Records'),
                 format(uint32('Next Object ID'), def('NextObjectIDToString'))
             ]))),
-            subrecord('OFST', conflict('Ignore', size(0, bytes('Unknown')))),
-            subrecord('DELE', conflict('Ignore', size(0, bytes('Unknown')))),
-            req(subrecord('CNAM', conflict('Translate', string('Author')))),
-            subrecord('SNAM', conflict('Translate', string('Description'))),
+            subrecord('OFST', conflictType('Ignore', size(0, bytes('Unknown')))),
+            subrecord('DELE', conflictType('Ignore', size(0, bytes('Unknown')))),
+            req(subrecord('CNAM', conflictType('Translate', string('Author')))),
+            subrecord('SNAM', conflictType('Translate', string('Description'))),
             opts(memberArray('Master Files', 
                 memberStruct('Master File', [
                     req(subrecord('MAST', string('FileName'))),
-                    req(subrecord('DATA', conflict('Ignore', size(8, bytes('Unknown')))))
+                    req(subrecord('DATA', conflictType('Ignore', size(8, bytes('Unknown')))))
                 ])
             ), {
                 "protected": 1

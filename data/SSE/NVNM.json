@@ -193,23 +193,23 @@
             "name": "Edge Links",
             "type": "array",
             "prefix": 4,
-            "conflicts": "Ignore",
+            "conflictType": "Ignore",
             "notAlignable": 1,
             "element": {
                 "name": "Edge Link",
                 "type": "struct",
-                "conflicts": "Ignore",
+                "conflictType": "Ignore",
                 "elements": [
                     {
                         "name": "Unknown",
                         "type": "bytes",
                         "size": 4,
-                        "conflicts": "Ignore"
+                        "conflictType": "Ignore"
                     },
                     {
                         "name": "Mesh",
                         "type": "formId",
-                        "conflicts": "Ignore",
+                        "conflictType": "Ignore",
                         "signatures": [
                             "NAVM"
                         ]
@@ -217,7 +217,7 @@
                     {
                         "name": "Triangle",
                         "type": "int16",
-                        "conflicts": "Ignore"
+                        "conflictType": "Ignore"
                     }
                 ]
             }

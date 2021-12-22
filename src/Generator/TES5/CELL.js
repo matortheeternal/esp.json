@@ -1,7 +1,7 @@
 let {
     flags, def, uint16, format, subrecord, 
     req, opts, int32, uint32, struct, 
-    float, ckFormId, bytes, size, conflict, 
+    float, ckFormId, bytes, size, conflictType, 
     string, sorted, array, record
 } = require('../helpers');
 
@@ -73,15 +73,15 @@ module.exports = () => {
             def('TVDT'),
             def('MaxHeightDataCELL'),
             req(subrecord('LTMP', ckFormId('Lighting Template', ['LGTM', 'NULL']))),
-            subrecord('LNAM', conflict('Ignore', size(0, bytes('Unknown')))),
+            subrecord('LNAM', conflictType('Ignore', size(0, bytes('Unknown')))),
             subrecord('XCLW', float('Water Height')),
             subrecord('XNAM', string('Water Noise Texture')),
             subrecord('XCLR', sorted(array('Regions', 
                 ckFormId('Region', ['REGN'])
             ))),
             subrecord('XLCN', ckFormId('Location', ['LCTN'])),
-            subrecord('XWCN', conflict('Ignore', size(0, bytes('Unknown')))),
-            subrecord('XWCS', conflict('Ignore', size(0, bytes('Unknown')))),
+            subrecord('XWCN', conflictType('Ignore', size(0, bytes('Unknown')))),
+            subrecord('XWCS', conflictType('Ignore', size(0, bytes('Unknown')))),
             subrecord('XWCU', struct('Water Velocity', [
                 float('X Offset'),
                 float('Y Offset'),

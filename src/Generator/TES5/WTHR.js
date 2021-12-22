@@ -1,6 +1,6 @@
 let {
     def, string, subrecord, bytes, size, 
-    conflict, unknown, ckFormId, req, uint8, 
+    conflictType, unknown, ckFormId, req, uint8, 
     format, array, opts, memberStruct, float, 
     struct, flags, uint32, enumeration, memberArray, 
     sorted, record
@@ -39,14 +39,14 @@ module.exports = () => {
             subrecord('J0TX', string('Cloud Texture Layer #26')),
             subrecord('K0TX', string('Cloud Texture Layer #27')),
             subrecord('L0TX', string('Cloud Texture Layer #28')),
-            subrecord('DNAM', conflict('Ignore', size(0, bytes('Unused')))),
-            subrecord('CNAM', conflict('Ignore', size(0, bytes('Unused')))),
-            subrecord('ANAM', conflict('Ignore', size(0, bytes('Unused')))),
-            subrecord('BNAM', conflict('Ignore', size(0, bytes('Unused')))),
+            subrecord('DNAM', conflictType('Ignore', size(0, bytes('Unused')))),
+            subrecord('CNAM', conflictType('Ignore', size(0, bytes('Unused')))),
+            subrecord('ANAM', conflictType('Ignore', size(0, bytes('Unused')))),
+            subrecord('BNAM', conflictType('Ignore', size(0, bytes('Unused')))),
             subrecord('LNAM', unknown()),
             subrecord('MNAM', ckFormId('Precipitation Type', ['SPGD', 'NULL'])),
             req(subrecord('NNAM', ckFormId('Visual Effect', ['RFCT', 'NULL']))),
-            subrecord('ONAM', conflict('Ignore', size(0, bytes('Unused')))),
+            subrecord('ONAM', conflictType('Ignore', size(0, bytes('Unused')))),
             memberStruct('Cloud Speed', [
                 opts(subrecord('RNAM', array('Y Speed', 
                     format(uint8('Layer'), def('CloudSpeedToStr'))
@@ -200,8 +200,8 @@ module.exports = () => {
                 subrecord('DALC', def('AmbientColors', { name: 'Sunset' })),
                 subrecord('DALC', def('AmbientColors', { name: 'Night' }))
             ])),
-            subrecord('NAM2', conflict('Ignore', size(0, bytes('Unused')))),
-            subrecord('NAM3', conflict('Ignore', size(0, bytes('Unused')))),
+            subrecord('NAM2', conflictType('Ignore', size(0, bytes('Unused')))),
+            subrecord('NAM3', conflictType('Ignore', size(0, bytes('Unused')))),
             memberStruct('Aurora', [
                 def('MODL')
             ]),

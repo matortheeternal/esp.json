@@ -90,7 +90,7 @@
                     "name": "Texture Files Hashes",
                     "type": "bytes",
                     "size": 0,
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 },
                 {
                     "id": "MO3S"
@@ -102,7 +102,7 @@
             "name": "Unused",
             "type": "bytes",
             "size": 0,
-            "conflicts": "Ignore"
+            "conflictType": "Ignore"
         },
         {
             "signature": "INAM",
@@ -213,7 +213,7 @@
                     "name": "Unused",
                     "type": "bytes",
                     "size": 3,
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 },
                 {
                     "name": "Speed",
@@ -244,7 +244,7 @@
                     "name": "Unused",
                     "type": "bytes",
                     "size": 2,
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 },
                 {
                     "name": "Sight FOV",
@@ -386,7 +386,7 @@
                     "name": "Unused",
                     "type": "bytes",
                     "size": 2,
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 },
                 {
                     "name": "% Mult",
@@ -406,7 +406,7 @@
                     "name": "Unused",
                     "type": "bytes",
                     "size": 7,
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 },
                 {
                     "name": "Effect",
@@ -420,7 +420,7 @@
                     "name": "Unused",
                     "type": "bytes",
                     "size": 4,
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 }
             ]
         },

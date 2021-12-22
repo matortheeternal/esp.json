@@ -1,6 +1,6 @@
 let {
     flags, def, req, uint8, format, 
-    subrecord, conflict, float, ckFormId, array, 
+    subrecord, conflictType, float, ckFormId, array, 
     opts, record
 } = require('../helpers');
 
@@ -20,7 +20,7 @@ module.exports = () => {
                 3: 'Unknown 3',
                 4: 'Ignored by Sandbox'
             }))),
-            subrecord('IDLC', conflict('Benign', uint8('Animation Count'))),
+            subrecord('IDLC', conflictType('Benign', uint8('Animation Count'))),
             subrecord('IDLT', float('Idle Timer Setting')),
             opts(subrecord('IDLA', array('Animations', 
                 ckFormId('Animation', ['IDLE'])

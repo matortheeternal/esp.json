@@ -4,7 +4,7 @@ let {subrecordAndField} = require('../converters'),
 subrecordAndField('wbLString', [
     args.name,
     args.stringSize,
-    args.priority,
+    args.conflictType,
     args.required,
     args.dontShow,
     args.afterSet,

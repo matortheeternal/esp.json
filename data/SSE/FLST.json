@@ -7,7 +7,7 @@
             "signature": "EDID",
             "name": "Editor ID",
             "type": "string",
-            "conflicts": "Benign",
+            "conflictType": "Benign",
             "required": true,
             "afterSet": "FLSTEDIDAfterSet"
         },

@@ -30,7 +30,7 @@ subrecordAndField('wbArray', [
     args.count,             // aCount: Integer = 0
     args.afterLoad,         // aAfterLoad: TwbAfterLoadCallback = nil
     args.afterSet,          // aAfterSet: TwbAfterSetCallback = nil
-    args.priority,          // aPriority: TwbConflictPriority = cpNormal
+    args.conflictType,          // aPriority: TwbConflictPriority = cpNormal
     args.required,          // aRequired: Boolean = False
     args.dontShow,          // aDontShow: TwbDontShowCallback = nil
     args.getCP              // aGetCP: TwbGetConflictPriority = nil
@@ -42,7 +42,7 @@ subrecordAndField('wbArray', [
     args.name,              // aName: string
     args.field,             // aElement: IwbValueDef
     args.count,             // aCount: Integer = 0
-    args.priority,          // aPriority: TwbConflictPriority = cpNormal
+    args.conflictType,          // aPriority: TwbConflictPriority = cpNormal
     args.required,          // aRequired: Boolean = False
     args.dontShow,          // aDontShow: TwbDontShowCallback = nil
     args.getCP              // aGetCP: TwbGetConflictPriority = nil
@@ -55,7 +55,7 @@ subrecordAndField('wbArray', [
     args.field,             // aElement: IwbValueDef
     args.count,             // aCount: Integer = 0
     args.afterLoad,         // aAfterLoad: TwbAfterLoadCallback = nil
-    args.priority,          // aPriority: TwbConflictPriority = cpNormal
+    args.conflictType,          // aPriority: TwbConflictPriority = cpNormal
     args.required,          // aRequired: Boolean = False
     args.dontShow,          // aDontShow: TwbDontShowCallback = nil
     args.getCP              // aGetCP: TwbGetConflictPriority = nil
@@ -68,7 +68,7 @@ subrecordAndField('wbArray', [
     args.name,              // aName: string
     args.field,             // aElement: IwbValueDef
     args.labels,            // aLabels: array of string
-    args.priority,          // aPriority: TwbConflictPriority = cpNormal
+    args.conflictType,          // aPriority: TwbConflictPriority = cpNormal
     args.required,          // aRequired: Boolean = False
     args.dontShow,          // aDontShow: TwbDontShowCallback = nil
     args.getCP              // aGetCP: TwbGetConflictPriority = nil
@@ -82,7 +82,7 @@ subrecordAndField('wbArray', [
     args.field,             // aElement: IwbValueDef
     args.labels,            // aLabels: array of string
     args.countCallback,     // aCountCallback: TwbCountCallback
-    args.priority,          // aPriority: TwbConflictPriority = cpNormal
+    args.conflictType,          // aPriority: TwbConflictPriority = cpNormal
     args.required,          // aRequired: Boolean = False
     args.dontShow,          // aDontShow: TwbDontShowCallback = nil
     args.getCP              // aGetCP: TwbGetConflictPriority = nil
@@ -94,7 +94,7 @@ subrecordAndField('wbArray', [
     args.name,              // aName: string
     args.field,             // aElement: IwbValueDef
     args.countCallback,     // aCountCallback: TwbCountCallback
-    args.priority,          // aPriority: TwbConflictPriority = cpNormal
+    args.conflictType,          // aPriority: TwbConflictPriority = cpNormal
     args.required,          // aRequired: Boolean = False
     args.dontShow,          // aDontShow: TwbDontShowCallback = nil
     args.getCP              // aGetCP: TwbGetConflictPriority = nil

@@ -13,7 +13,7 @@ subrecordAndField('wbUnion', [
     args.name,
     args.decider,
     args.members,
-    args.priority,
+    args.conflictType,
     args.required,
     args.dontShow,
     args.afterSet,

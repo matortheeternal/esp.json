@@ -10,7 +10,7 @@ functionConverter('wbRefRecord', [
     args.members,
     args.boolean, // allow unordered
     args.addInfo,
-    args.priority,
+    args.conflictType,
     args.required, // why is this a thing?
     args.afterLoad,
     args.afterSet
@@ -29,7 +29,7 @@ functionConverter('wbRefRecord', [
     args.members,
     args.boolean, // allow unordered
     args.addInfo,
-    args.priority,
+    args.conflictType,
     args.required, // why is this a thing?
     args.afterLoad,
     args.afterSet

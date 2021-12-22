@@ -40,7 +40,7 @@
         {
             "signature": "PNAM",
             "type": "bytes",
-            "conflicts": "Ignore",
+            "conflictType": "Ignore",
             "required": true
         },
         {
@@ -54,7 +54,7 @@
         {
             "signature": "FNAM",
             "type": "bytes",
-            "conflicts": "Ignore",
+            "conflictType": "Ignore",
             "required": true
         },
         {

@@ -119,7 +119,7 @@
                 {
                     "name": "Disposition Base (unused)",
                     "type": "int16",
-                    "conflicts": "Ignore",
+                    "conflictType": "Ignore",
                     "required": true
                 },
                 {
@@ -180,7 +180,7 @@
                         "name": "Unused",
                         "type": "bytes",
                         "size": 3,
-                        "conflicts": "Ignore"
+                        "conflictType": "Ignore"
                     }
                 ],
                 "sortKey": [
@@ -299,7 +299,7 @@
             "signature": "PRKZ",
             "name": "Perk Count",
             "type": "uint32",
-            "conflicts": "Benign"
+            "conflictType": "Benign"
         },
         {
             "name": "Perks",
@@ -329,7 +329,7 @@
                         "name": "Unused",
                         "type": "bytes",
                         "size": 3,
-                        "conflicts": "Ignore"
+                        "conflictType": "Ignore"
                     }
                 ],
                 "sortKey": [
@@ -381,7 +381,7 @@
             "name": "Short Name",
             "type": "string",
             "localized": true,
-            "conflicts": "Translate"
+            "conflictType": "Translate"
         },
         {
             "signature": "DATA",
@@ -565,7 +565,7 @@
                     "name": "Unused",
                     "type": "bytes",
                     "size": 2,
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 },
                 {
                     "name": "Far away model distance",
@@ -579,7 +579,7 @@
                     "name": "Unused",
                     "type": "bytes",
                     "size": 3,
-                    "conflicts": "Ignore"
+                    "conflictType": "Ignore"
                 }
             ]
         },

@@ -1,5 +1,5 @@
 let {
-    flags, def, req, unknown, conflict, 
+    flags, def, req, unknown, conflictType, 
     subrecord, ckFormId, record
 } = require('../helpers');
 
@@ -20,9 +20,9 @@ module.exports = () => {
             def('DEST'),
             def('KSIZ'),
             def('KWDAs'),
-            req(subrecord('PNAM', conflict('Ignore', unknown()))),
+            req(subrecord('PNAM', conflictType('Ignore', unknown()))),
             subrecord('SNAM', ckFormId('Looping Sound', ['SNDR'])),
-            req(subrecord('FNAM', conflict('Ignore', unknown()))),
+            req(subrecord('FNAM', conflictType('Ignore', unknown()))),
             subrecord('VNAM', ckFormId('Voice Type', ['VTYP']))
         ]
     })

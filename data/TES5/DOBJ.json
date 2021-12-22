@@ -11,7 +11,7 @@
             "name": "Objects",
             "type": "array",
             "sorted": true,
-            "conflicts": "NormalIgnoreEmpty",
+            "conflictType": "NormalIgnoreEmpty",
             "required": true,
             "element": {
                 "name": "Object",
@@ -20,7 +20,7 @@
                     {
                         "name": "Use",
                         "type": "uint32",
-                        "conflicts": "NormalIgnoreEmpty",
+                        "conflictType": "NormalIgnoreEmpty",
                         "format": {
                             "type": "enum",
                             "options": {
@@ -401,7 +401,7 @@
                     {
                         "name": "Object ID",
                         "type": "formId",
-                        "conflicts": "NormalIgnoreEmpty"
+                        "conflictType": "NormalIgnoreEmpty"
                     }
                 ],
                 "sortKey": [

@@ -16,7 +16,7 @@
                 "signature": "NNAM",
                 "name": "Noise Map",
                 "type": "string",
-                "conflicts": "Ignore"
+                "conflictType": "Ignore"
             }
         },
         {
@@ -49,7 +49,7 @@
             "name": "Unused",
             "type": "bytes",
             "size": 0,
-            "conflicts": "Ignore"
+            "conflictType": "Ignore"
         },
         {
             "signature": "TNAM",
@@ -88,7 +88,7 @@
             "signature": "DATA",
             "name": "Unused",
             "type": "uint16",
-            "conflicts": "Ignore",
+            "conflictType": "Ignore",
             "required": true
         },
         {

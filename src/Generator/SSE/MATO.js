@@ -1,5 +1,5 @@
 let {
-    def, bytes, size, conflict, subrecord, 
+    def, bytes, size, conflictType, subrecord, 
     memberArray, float, struct, flags, uint32, 
     format, uint8, req, IsSSE, record
 } = require('../helpers');
@@ -10,7 +10,7 @@ module.exports = game => {
             def('EDID'),
             def('MODL'),
             memberArray('Property Data', 
-                subrecord('DNAM', conflict('Ignore', size(0, bytes('Data'))))
+                subrecord('DNAM', conflictType('Ignore', size(0, bytes('Data'))))
             ),
             IsSSE(game, [
                 req(subrecord('DATA', struct('Directional Material Data', [
@@ -31,7 +31,7 @@ module.exports = game => {
                     format(uint8('Flags'), flags({
                         0: 'Snow'
                     })),
-                    conflict('Ignore', size(3, bytes('Unused')))
+                    conflictType('Ignore', size(3, bytes('Unused')))
                 ]))),
                 req(subrecord('DATA', struct('Directional Material Data', [
                     float('Falloff Scale'),

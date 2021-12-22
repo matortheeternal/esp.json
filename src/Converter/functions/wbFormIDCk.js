@@ -10,7 +10,7 @@ subrecordAndField('wbFormIDCk', [
     args.name,
     args.signatures,
     args.persistent,
-    args.priority,
+    args.conflictType,
     args.required,
     args.dontShow,
     args.afterSet
@@ -21,7 +21,7 @@ subrecordAndField('wbFormIDCk', [
     args.signatures,
     args.validFlstRefs,
     args.persistent,
-    args.priority,
+    args.conflictType,
     args.required,
     args.dontShow,
     args.afterSet

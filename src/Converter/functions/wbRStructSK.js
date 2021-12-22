@@ -6,7 +6,7 @@ functionConverter('wbRStructSK', [
     args.name,              // aName: string
     args.members,           // aMembers: array of IwbRecordMemberDef
     args.signatures,        // aSkipSigs: TwbSignatures
-    args.priority,          // aPriority: TwbConflictPriority = cpNormal
+    args.conflictType,          // aPriority: TwbConflictPriority = cpNormal
     args.required,          // aRequired: Boolean = False
     args.dontShow,          // aDontShow: TwbDontShowCallback = nil
     args.allowUnordered,    // aAllowUnordered: Boolean = False

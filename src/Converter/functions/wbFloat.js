@@ -10,7 +10,7 @@ let convertFloat = (args, converter) => {
 // wbInterface.pas#6867
 subrecordAndField('wbFloat', [
     args.name,
-    args.priority,
+    args.conflictType,
     args.required,
     args.scale,
     args.digits,
@@ -23,7 +23,7 @@ subrecordAndField('wbFloat', [
 // wbInterface.pas#6895
 functionConverter('wbFloat', [
     args.name,
-    args.priority,
+    args.conflictType,
     args.required,
     args.dontShow,
     args.afterSet,

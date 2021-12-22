@@ -40,27 +40,27 @@
             "name": "Unknown",
             "type": "bytes",
             "size": 0,
-            "conflicts": "Ignore"
+            "conflictType": "Ignore"
         },
         {
             "signature": "DELE",
             "name": "Unknown",
             "type": "bytes",
             "size": 0,
-            "conflicts": "Ignore"
+            "conflictType": "Ignore"
         },
         {
             "signature": "CNAM",
             "name": "Author",
             "type": "string",
-            "conflicts": "Translate",
+            "conflictType": "Translate",
             "required": true
         },
         {
             "signature": "SNAM",
             "name": "Description",
             "type": "string",
-            "conflicts": "Translate"
+            "conflictType": "Translate"
         },
         {
             "name": "Master Files",
@@ -81,7 +81,7 @@
                         "name": "Unknown",
                         "type": "bytes",
                         "size": 8,
-                        "conflicts": "Ignore",
+                        "conflictType": "Ignore",
                         "required": true
                     }
                 ]

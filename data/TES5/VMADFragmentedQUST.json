@@ -6,13 +6,13 @@
         {
             "name": "Version",
             "type": "int16",
-            "conflicts": "Ignore",
+            "conflictType": "Ignore",
             "defaultNativeValue": 5
         },
         {
             "name": "Object Format",
             "type": "int16",
-            "conflicts": "Ignore",
+            "conflictType": "Ignore",
             "defaultNativeValue": 2
         },
         {
@@ -42,13 +42,13 @@
                     {
                         "name": "Version",
                         "type": "int16",
-                        "conflicts": "Ignore",
+                        "conflictType": "Ignore",
                         "defaultNativeValue": 5
                     },
                     {
                         "name": "Object Format",
                         "type": "int16",
-                        "conflicts": "Ignore",
+                        "conflictType": "Ignore",
                         "defaultNativeValue": 2
                     },
                     {

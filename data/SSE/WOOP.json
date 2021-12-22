@@ -14,7 +14,7 @@
             "name": "Translation",
             "type": "string",
             "localized": true,
-            "conflicts": "Translate",
+            "conflictType": "Translate",
             "required": true
         }
     ]

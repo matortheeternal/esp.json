@@ -1,6 +1,6 @@
 let {
     flags, def, req, uint8, struct, 
-    subrecord, ckFormId, localized, string, conflict, 
+    subrecord, ckFormId, localized, string, conflictType, 
     uint16, format, record
 } = require('../helpers');
 
@@ -40,7 +40,7 @@ module.exports = () => {
             subrecord('SNAM', ckFormId('Sound - Looping', ['SNDR'])),
             subrecord('VNAM', ckFormId('Sound - Activation', ['SNDR'])),
             subrecord('WNAM', ckFormId('Water Type', ['WATR'])),
-            subrecord('RNAM', conflict('Translate', localized(string('Activate Text Override')))),
+            subrecord('RNAM', conflictType('Translate', localized(string('Activate Text Override')))),
             subrecord('FNAM', format(uint16('Flags'), flags({
                 0: 'No Displacement',
                 1: 'Ignored by Sandbox'

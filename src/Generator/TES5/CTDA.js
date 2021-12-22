@@ -1,6 +1,6 @@
 let {
     addDef, def, uint8, format, opts, 
-    bytes, size, conflict, float, ckFormId, 
+    bytes, size, conflictType, float, ckFormId, 
     union, uint16, int32, uint32, enumeration, 
     formId, sortKey, struct, subrecord, string, 
     memberStruct
@@ -13,16 +13,16 @@ module.exports = () => {
                 opts(format(uint8('Type'), def('CtdaTypeToStr')), {
                     "afterSet": "CtdaTypeAfterSet"
                 }),
-                conflict('Ignore', size(3, bytes('Unused'))),
+                conflictType('Ignore', size(3, bytes('Unused'))),
                 union('Comparison Value', 'CTDACompValueDecider', [
                     float('Comparison Value - Float'),
                     ckFormId('Comparison Value - Global', ['GLOB'])
                 ]),
                 format(uint16('Function'), def('CTDAFunctionToStr')),
-                conflict('Ignore', size(2, bytes('Unused'))),
+                conflictType('Ignore', size(2, bytes('Unused'))),
                 union('Parameter #1', 'CTDAParam1Decider', [
                     size(4, bytes('Unknown')),
-                    opts(conflict('Ignore', size(4, bytes('None'))), {
+                    opts(conflictType('Ignore', size(4, bytes('None'))), {
                         "zeroSortKey": 1
                     }),
                     int32('Integer'),
@@ -117,7 +117,7 @@ module.exports = () => {
                 ]),
                 union('Parameter #2', 'CTDAParam2Decider', [
                     size(4, bytes('Unknown')),
-                    opts(conflict('Ignore', size(4, bytes('None'))), {
+                    opts(conflictType('Ignore', size(4, bytes('None'))), {
                         "zeroSortKey": 1
                     }),
                     int32('Integer'),
@@ -179,7 +179,7 @@ module.exports = () => {
                         opts(ckFormId('Target List', ['FLST']), {
                             "validateFlstRefs": true
                         }),
-                        conflict('Ignore', size(4, bytes('Unknown'))),
+                        conflictType('Ignore', size(4, bytes('Unknown'))),
                         format(int32('Target Part'), def('ActorValueEnum')),
                         format(uint32('VATS Action'), enumeration({
                             0: 'Unarmed Attack',
@@ -195,33 +195,33 @@ module.exports = () => {
                             10: 'Heal',
                             11: 'Player Death'
                         })),
-                        opts(conflict('Ignore', size(4, bytes('Unknown'))), {
+                        opts(conflictType('Ignore', size(4, bytes('Unknown'))), {
                             "zeroSortKey": 1
                         }),
-                        opts(conflict('Ignore', size(4, bytes('Unknown'))), {
+                        opts(conflictType('Ignore', size(4, bytes('Unknown'))), {
                             "zeroSortKey": 1
                         }),
                         ckFormId('Critical Effect', ['SPEL']),
                         opts(ckFormId('Critical Effect List', ['FLST']), {
                             "validateFlstRefs": true
                         }),
-                        opts(conflict('Ignore', size(4, bytes('Unknown'))), {
+                        opts(conflictType('Ignore', size(4, bytes('Unknown'))), {
                             "zeroSortKey": 1
                         }),
-                        opts(conflict('Ignore', size(4, bytes('Unknown'))), {
+                        opts(conflictType('Ignore', size(4, bytes('Unknown'))), {
                             "zeroSortKey": 1
                         }),
-                        opts(conflict('Ignore', size(4, bytes('Unknown'))), {
+                        opts(conflictType('Ignore', size(4, bytes('Unknown'))), {
                             "zeroSortKey": 1
                         }),
-                        opts(conflict('Ignore', size(4, bytes('Unknown'))), {
+                        opts(conflictType('Ignore', size(4, bytes('Unknown'))), {
                             "zeroSortKey": 1
                         }),
                         format(uint32('Weapon Type'), def('WeaponAnimTypeEnum')),
-                        opts(conflict('Ignore', size(4, bytes('Unknown'))), {
+                        opts(conflictType('Ignore', size(4, bytes('Unknown'))), {
                             "zeroSortKey": 1
                         }),
-                        opts(conflict('Ignore', size(4, bytes('Unknown'))), {
+                        opts(conflictType('Ignore', size(4, bytes('Unknown'))), {
                             "zeroSortKey": 1
                         }),
                         format(uint32('Projectile Type'), enumeration({
@@ -284,7 +284,7 @@ module.exports = () => {
                     "afterSet": "CTDARunOnAfterSet"
                 }),
                 union('Reference', 'CTDAReferenceDecider', [
-                    conflict('Ignore', uint32('Unused')),
+                    conflictType('Ignore', uint32('Unused')),
                     ckFormId('Reference', [
                         'NULL', 'PLYR', 'ACHR', 'REFR', 'PGRE',
                         'PHZD', 'PMIS', 'PARW', 'PBAR', 'PBEA',
