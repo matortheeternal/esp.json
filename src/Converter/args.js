@@ -8,6 +8,7 @@ let defaultNumber = { type: 'number', name: 'default' };
 let digits = { type: 'mathExpr', name: 'digits' };
 let afterLoad = {type: 'identifier', name: 'afterLoad'};
 let dontShow = {type: 'identifier', name: 'dontShow'};
+let dontShowCallbacks = {type: 'array of identifier', name: 'dontShowCallbacks'};
 let normalizer = {type: 'identifier', name: 'normalizer'};
 let addInfo = {type: 'identifier', name: 'addInfo'};
 let isSorted = {type: 'identifier', name: 'isSorted'};
@@ -50,7 +51,7 @@ module.exports = {
     // extension types
     ...extTypes,
     // unimplemented extension types
-    afterLoad, dontShow, getCP, digits, exSk, optionalFromElement, 
-    normalizer, defaultNumber, isReference, matchSize, isSorted, 
-    addInfo, labels
+    afterLoad, dontShow, getCP, digits, exSk, optionalFromElement,
+    normalizer, defaultNumber, isReference, matchSize, isSorted,
+    addInfo, labels, dontShowCallbacks
 };

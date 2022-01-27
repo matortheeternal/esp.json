@@ -1,7 +1,7 @@
 let {subrecordAndField} = require('../converters'),
     args = require('../args');
 
-subrecordAndField('wbStringKC', [
+subrecordAndField('wbStringLC', [
     args.name,
     args.stringSize,
     args.conflictType,
@@ -11,6 +11,6 @@ subrecordAndField('wbStringKC', [
     args.getCP
 ], (args, converter, opts) => {
     converter.addRequires('string');
-    opts.transform = 'keepcase';
+    opts.transform = 'lowercase';
     return  `string(${args.name})`;
 });

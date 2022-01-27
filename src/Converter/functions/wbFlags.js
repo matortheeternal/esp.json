@@ -15,6 +15,11 @@ functionConverter('wbFlags', [
     args.boolean // aUnknownIsUnused
 ], convertFlags);
 
+functionConverter('wbFlags', [
+    args.flagsField,
+    args.dontShowCallbacks
+], convertFlags);
+
 // TODO: handle flagsToIgnore ?
 functionConverter('wbFlags', [
     args.identifier,
@@ -26,6 +31,11 @@ functionConverter('wbFlags', [
 functionConverter('wbFlags', [
     args.flagsField,
     args.boolean // aUnknownIsUnused
+], convertFlags);
+
+functionConverter('wbFlags', [
+    args.flagsField,
+    args.identifier // aUnknownIsUnused
 ], convertFlags);
 
 functionConverter('wbFlags', [

@@ -65,6 +65,7 @@ let customCounter = (type, obj) => merge({
 // number formatting
 let format = (obj, format) => merge(obj, {format});
 let div = value => ({ type: 'divide', value });
+let mul = value => ({ type: 'multiply', value });
 let scale = (scale, obj) => merge(obj, {scale});
 let flags = flags => ({ type: 'flags', flags });
 let showUnknown = obj => merge(obj, {showUnknown: true});
@@ -120,7 +121,7 @@ module.exports = {
     req, unordered, def, opts, sortKey, elementMap, conflictType,
     localized, sorted, size, count, prefix, padding, labels,
     elementCounter, customCounter,
-    format, div, scale, flags, showUnknown, enumeration, formatUnion,
+    format, div, mul, scale, flags, showUnknown, enumeration, formatUnion,
     record, subrecord,
     memberArray, memberStruct, memberUnion,
     struct, array, union,

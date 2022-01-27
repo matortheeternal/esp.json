@@ -1,12 +1,18 @@
 let {typeParser} = require('../parsers');
 
 let sigExpr = /^[A-Z]{1}[A-Z0-9_]{3}/,
-    specialSigExpr = /^_([0-9A-F]{2}h?)_([A-Z0-9_]{3})/;
+    specialSigExpr = /^_([0-9A-F]{1,2}h?)_([A-Z0-9_]{3})/;
+
+let getCode = function(match) {
+    let code = match[1],
+        len = code.length;
+    if (len === 1) return `0${code}`;
+    if (match[2] === '0TX' && code[1] === '0' && len === 2) return '30';
+    return code.slice(0, 2);
+};
 
 let parseSpecialSig = function(match) {
-    if (match[2] === '0TX' && match[1][1] === '0' && match[1].length === 2)
-        return `\\x3${match[1][0]}${match[2]}`;
-    return `\\x${match[1].slice(0, 2)}${match[2]}`;
+    return `\\x${getCode(match)}${match[2]}`;
 };
 
 typeParser('signature', {
