@@ -1,0 +1,135 @@
+{
+    "signature": "AMMO",
+    "type": "record",
+    "name": "Ammunition",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "FULL",
+            "required": true
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "SCRI"
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "id": "YNAM"
+        },
+        {
+            "id": "ZNAM"
+        },
+        {
+            "signature": "DATA",
+            "name": "Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Speed",
+                    "type": "float"
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Ignores Normal Weapon Resistance",
+                            "1": "Non-Playable"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3
+                },
+                {
+                    "name": "Value",
+                    "type": "int32"
+                },
+                {
+                    "name": "Clip Rounds",
+                    "type": "uint8"
+                }
+            ]
+        },
+        {
+            "signature": "DAT2",
+            "name": "Data 2",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Proj. per Shot",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Projectile",
+                    "type": "formId",
+                    "signatures": [
+                        "PROJ",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                },
+                {
+                    "name": "Consumed Ammo",
+                    "type": "formId",
+                    "signatures": [
+                        "AMMO",
+                        "MISC",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Consumed Percentage",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "ONAM",
+            "name": "Short Name",
+            "type": "string",
+            "conflictType": "Translate",
+            "transform": "keepcase"
+        },
+        {
+            "signature": "QNAM",
+            "name": "Abbrev.",
+            "type": "string",
+            "conflictType": "Translate",
+            "transform": "keepcase"
+        },
+        {
+            "name": "Ammo Effects",
+            "type": "memberArray",
+            "member": {
+                "signature": "RCIL",
+                "name": "Effect",
+                "type": "formId",
+                "signatures": [
+                    "AMEF"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,77 @@
+{
+    "signature": "CONT",
+    "type": "record",
+    "name": "Container",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "SCRI"
+        },
+        {
+            "id": "CNTOs"
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "",
+                            "1": "Respawns"
+                        }
+                    }
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "SNAM",
+            "name": "Sound - Open",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        },
+        {
+            "signature": "QNAM",
+            "name": "Sound - Close",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        },
+        {
+            "signature": "RNAM",
+            "name": "Sound - Random/Looping",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        }
+    ]
+}

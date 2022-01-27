@@ -1,0 +1,32 @@
+{
+    "signature": "CDCK",
+    "type": "record",
+    "name": "Caravan Deck",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "name": "Cards",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "signature": "CARD",
+                "name": "Card",
+                "type": "formId",
+                "signatures": [
+                    "CCRD"
+                ]
+            }
+        },
+        {
+            "signature": "DATA",
+            "name": "Count (broken)",
+            "type": "uint32"
+        }
+    ]
+}

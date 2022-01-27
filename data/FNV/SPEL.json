@@ -1,0 +1,82 @@
+{
+    "signature": "SPEL",
+    "type": "record",
+    "name": "Actor Effect",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "signature": "SPIT",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Type",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Actor Effect",
+                            "1": "Disease",
+                            "2": "Power",
+                            "3": "Lesser Power",
+                            "4": "Ability",
+                            "5": "Poison",
+                            "6": "",
+                            "7": "",
+                            "8": "",
+                            "9": "",
+                            "10": "Addiction"
+                        }
+                    }
+                },
+                {
+                    "name": "Cost (Unused)",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Level (Unused)",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Unused"
+                        }
+                    }
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "No Auto-Calc",
+                            "1": "Immune to Silence 1?",
+                            "2": "PC Start Effect",
+                            "3": "Immune to Silence 2?",
+                            "4": "Area Effect Ignores LOS",
+                            "5": "Script Effect Always Applies",
+                            "6": "Disable Absorb/Reflect",
+                            "7": "Force Touch Explode"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3
+                }
+            ]
+        },
+        {
+            "id": "Effects",
+            "required": true
+        }
+    ]
+}

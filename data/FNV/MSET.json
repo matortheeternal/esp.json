@@ -1,0 +1,175 @@
+{
+    "signature": "MSET",
+    "type": "record",
+    "name": "Media Set",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "signature": "NAM1",
+            "name": "Type",
+            "type": "uint32",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "Battle Set",
+                    "1": "Location Set",
+                    "2": "Dungeon Set",
+                    "3": "Incidental Set",
+                    "-1": "No Set"
+                }
+            }
+        },
+        {
+            "signature": "NAM2",
+            "name": "Loop (B) / Battle (D) / Day Outer (L)",
+            "type": "string"
+        },
+        {
+            "signature": "NAM3",
+            "name": "Explore (D) / Day Middle (L)",
+            "type": "string"
+        },
+        {
+            "signature": "NAM4",
+            "name": "Suspense (D) / Day Inner (L)",
+            "type": "string"
+        },
+        {
+            "signature": "NAM5",
+            "name": "Night Outer (L)",
+            "type": "string"
+        },
+        {
+            "signature": "NAM6",
+            "name": "Night Middle (L)",
+            "type": "string"
+        },
+        {
+            "signature": "NAM7",
+            "name": "Night Inner (L)",
+            "type": "string"
+        },
+        {
+            "signature": "NAM8",
+            "name": "Loop dB (B) / Battle dB (D) / Day Outer dB (L)",
+            "type": "float"
+        },
+        {
+            "signature": "NAM9",
+            "name": "Explore dB (D) / Day Middle dB (L)",
+            "type": "float"
+        },
+        {
+            "signature": "NAM0",
+            "name": "Suspense dB (D) / Day Inner dB (L)",
+            "type": "float"
+        },
+        {
+            "signature": "ANAM",
+            "name": "Night Outer dB (L)",
+            "type": "float"
+        },
+        {
+            "signature": "BNAM",
+            "name": "Night Middle dB (L)",
+            "type": "float"
+        },
+        {
+            "signature": "CNAM",
+            "name": "Night Inner dB (L)",
+            "type": "float"
+        },
+        {
+            "signature": "JNAM",
+            "name": "Day Outer Boundary % (L)",
+            "type": "float"
+        },
+        {
+            "signature": "KNAM",
+            "name": "Day Middle Boundary % (L)",
+            "type": "float"
+        },
+        {
+            "signature": "LNAM",
+            "name": "Day Inner Boundary % (L)",
+            "type": "float"
+        },
+        {
+            "signature": "MNAM",
+            "name": "Night Outer Boundary % (L)",
+            "type": "float"
+        },
+        {
+            "signature": "NNAM",
+            "name": "Night Middle Boundary % (L)",
+            "type": "float"
+        },
+        {
+            "signature": "ONAM",
+            "name": "Night Inner Boundary % (L)",
+            "type": "float"
+        },
+        {
+            "signature": "PNAM",
+            "name": "Enable Flags",
+            "type": "uint8",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Day Outer",
+                    "1": "Day Middle",
+                    "2": "Day Inner",
+                    "3": "Night Outer",
+                    "4": "Night Middle",
+                    "5": "Night Inner"
+                }
+            }
+        },
+        {
+            "signature": "DNAM",
+            "name": "Wait Time (B) / Minimum Time On (D,L) / Daytime Min (I)",
+            "type": "float"
+        },
+        {
+            "signature": "ENAM",
+            "name": "Loop Fade Out (B) / Looping/Random Crossfade Overlap (D,L) / Nighttime Min (I)",
+            "type": "float"
+        },
+        {
+            "signature": "FNAM",
+            "name": "Recovery Time (B) / Layer Crossfade Time (D,L) / Daytime Max (I)",
+            "type": "float"
+        },
+        {
+            "signature": "GNAM",
+            "name": "Nighttime Max (I)",
+            "type": "float"
+        },
+        {
+            "signature": "HNAM",
+            "name": "Intro (B,D) / Daytime (I)",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        },
+        {
+            "signature": "INAM",
+            "name": "Outro (B,D) / Nighttime (I)",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        },
+        {
+            "signature": "DATA",
+            "type": "bytes"
+        }
+    ]
+}

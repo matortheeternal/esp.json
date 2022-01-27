@@ -1,0 +1,155 @@
+{
+    "signature": "DOBJ",
+    "type": "record",
+    "name": "Default Object Manager",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "signature": "DATA",
+            "name": "Default Objects",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Stimpack",
+                    "type": "formId"
+                },
+                {
+                    "name": "SuperStimpack",
+                    "type": "formId"
+                },
+                {
+                    "name": "RadX",
+                    "type": "formId"
+                },
+                {
+                    "name": "RadAway",
+                    "type": "formId"
+                },
+                {
+                    "name": "Morphine",
+                    "type": "formId"
+                },
+                {
+                    "name": "Perk Paralysis",
+                    "type": "formId"
+                },
+                {
+                    "name": "Player Faction",
+                    "type": "formId"
+                },
+                {
+                    "name": "Mysterious Stranger NPC",
+                    "type": "formId"
+                },
+                {
+                    "name": "Mysterious Stranger Faction",
+                    "type": "formId"
+                },
+                {
+                    "name": "Default Music",
+                    "type": "formId"
+                },
+                {
+                    "name": "Battle Music",
+                    "type": "formId"
+                },
+                {
+                    "name": "Death Music",
+                    "type": "formId"
+                },
+                {
+                    "name": "Success Music",
+                    "type": "formId"
+                },
+                {
+                    "name": "Level Up Music",
+                    "type": "formId"
+                },
+                {
+                    "name": "Player Voice (Male)",
+                    "type": "formId"
+                },
+                {
+                    "name": "Player Voice (Male Child)",
+                    "type": "formId"
+                },
+                {
+                    "name": "Player Voice (Female)",
+                    "type": "formId"
+                },
+                {
+                    "name": "Player Voice (Female Child)",
+                    "type": "formId"
+                },
+                {
+                    "name": "Eat Package Default Food",
+                    "type": "formId"
+                },
+                {
+                    "name": "Every Actor Ability",
+                    "type": "formId"
+                },
+                {
+                    "name": "Drug Wears Off Image Space",
+                    "type": "formId"
+                },
+                {
+                    "name": "Doctor's Bag",
+                    "type": "formId"
+                },
+                {
+                    "name": "Miss Fortune NPC",
+                    "type": "formId"
+                },
+                {
+                    "name": "Miss Fortune Faction",
+                    "type": "formId"
+                },
+                {
+                    "name": "Meltdown Explosion",
+                    "type": "formId"
+                },
+                {
+                    "name": "Unarmed Forward PA",
+                    "type": "formId"
+                },
+                {
+                    "name": "Unarmed Backward PA",
+                    "type": "formId"
+                },
+                {
+                    "name": "Unarmed Left PA",
+                    "type": "formId"
+                },
+                {
+                    "name": "Unarmed Right PA",
+                    "type": "formId"
+                },
+                {
+                    "name": "Unarmed Crouch PA",
+                    "type": "formId"
+                },
+                {
+                    "name": "Unarmed Counter PA",
+                    "type": "formId"
+                },
+                {
+                    "name": "Spotter Effect",
+                    "type": "formId"
+                },
+                {
+                    "name": "Item Detected Effect",
+                    "type": "formId"
+                },
+                {
+                    "name": "Cateye Mobile Effect (NYI)",
+                    "type": "formId"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,108 @@
+{
+    "signature": "LVLI",
+    "type": "record",
+    "name": "Leveled Item",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "signature": "LVLD",
+            "name": "Chance none",
+            "type": "uint8",
+            "required": true
+        },
+        {
+            "signature": "LVLF",
+            "name": "Flags",
+            "type": "uint8",
+            "required": true,
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Calculate from all levels <= player's level",
+                    "1": "Calculate for each item in count",
+                    "2": "Use All"
+                }
+            }
+        },
+        {
+            "signature": "LVLG",
+            "name": "Global",
+            "type": "formId",
+            "signatures": [
+                "GLOB"
+            ]
+        },
+        {
+            "name": "Leveled List Entries",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "name": "Leveled List Entry",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "LVLO",
+                        "name": "Base Data",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Level",
+                                "type": "int16"
+                            },
+                            {
+                                "name": "Unused",
+                                "type": "bytes",
+                                "size": 2
+                            },
+                            {
+                                "name": "Reference",
+                                "type": "formId",
+                                "signatures": [
+                                    "ARMO",
+                                    "AMMO",
+                                    "MISC",
+                                    "WEAP",
+                                    "BOOK",
+                                    "LVLI",
+                                    "KEYM",
+                                    "ALCH",
+                                    "NOTE",
+                                    "IMOD",
+                                    "CMNY",
+                                    "CCRD",
+                                    "CHIP"
+                                ]
+                            },
+                            {
+                                "name": "Count",
+                                "type": "int16"
+                            },
+                            {
+                                "name": "Unused",
+                                "type": "bytes",
+                                "size": 2
+                            }
+                        ],
+                        "sortKey": [
+                            0,
+                            2
+                        ]
+                    },
+                    {
+                        "id": "COED"
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "signature": "SLSD",
+    "name": "Local Variable Data",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Index",
+            "type": "uint32"
+        },
+        {
+            "name": "Unused",
+            "type": "bytes",
+            "size": 12
+        },
+        {
+            "name": "Flags",
+            "type": "uint8",
+            "conflictType": "Critical",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "IsLongOrShort"
+                }
+            }
+        },
+        {
+            "name": "Unused",
+            "type": "bytes",
+            "size": 7
+        }
+    ],
+    "sortKey": [
+        0
+    ]
+}

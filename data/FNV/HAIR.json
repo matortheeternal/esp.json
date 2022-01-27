@@ -1,0 +1,40 @@
+{
+    "signature": "HAIR",
+    "type": "record",
+    "name": "Hair",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "FULL",
+            "required": true
+        },
+        {
+            "id": "MODL",
+            "required": true
+        },
+        {
+            "signature": "ICON",
+            "name": "Texture",
+            "type": "string",
+            "required": true
+        },
+        {
+            "signature": "DATA",
+            "name": "Flags",
+            "type": "uint8",
+            "required": true,
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Playable",
+                    "1": "Not Male",
+                    "2": "Not Female",
+                    "3": "Fixed"
+                }
+            }
+        }
+    ]
+}

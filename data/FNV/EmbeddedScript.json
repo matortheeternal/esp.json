@@ -1,0 +1,49 @@
+{
+    "name": "Embedded Script",
+    "type": "memberStruct",
+    "members": [
+        {
+            "id": "SCHR",
+            "required": true
+        },
+        {
+            "signature": "SCDA",
+            "name": "Compiled Embedded Script",
+            "type": "bytes",
+            "size": 0
+        },
+        {
+            "signature": "SCTX",
+            "name": "Embedded Script Source",
+            "type": "string",
+            "transform": "script"
+        },
+        {
+            "name": "Local Variables",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "name": "Local Variable",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "id": "SLSD"
+                    },
+                    {
+                        "signature": "SCVR",
+                        "name": "Name",
+                        "type": "string",
+                        "conflictType": "Critical",
+                        "required": true
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        },
+        {
+            "id": "SCROs"
+        }
+    ]
+}

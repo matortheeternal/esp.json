@@ -1,0 +1,129 @@
+{
+    "signature": "BPTD",
+    "type": "record",
+    "name": "Body Part Data",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "MODL",
+            "required": true
+        },
+        {
+            "name": "Body Parts",
+            "type": "memberArray",
+            "member": {
+                "name": "Body Part",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "BPTN",
+                        "name": "Part Name",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "signature": "BPNN",
+                        "name": "Part Node",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "signature": "BPNT",
+                        "name": "VATS Target",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "signature": "BPNI",
+                        "name": "IK Data - Start Node",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "id": "BPNDStruct"
+                    },
+                    {
+                        "signature": "NAM1",
+                        "name": "Limb Replacement Model",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "signature": "NAM4",
+                        "name": "Gore Effects - Target Bone",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "signature": "NAM5",
+                        "name": "Texture Files Hashes",
+                        "type": "bytes",
+                        "size": 0,
+                        "conflictType": "Ignore"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Unnamed Body Parts",
+            "type": "memberArray",
+            "member": {
+                "name": "Body Part",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "BPNN",
+                        "name": "Part Node",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "signature": "BPNT",
+                        "name": "VATS Target",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "signature": "BPNI",
+                        "name": "IK Data - Start Node",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "id": "BPNDStruct"
+                    },
+                    {
+                        "signature": "NAM1",
+                        "name": "Limb Replacement Model",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "signature": "NAM4",
+                        "name": "Gore Effects - Target Bone",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "signature": "NAM5",
+                        "name": "Texture Files Hashes",
+                        "type": "bytes",
+                        "size": 0,
+                        "conflictType": "Ignore"
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "RAGA",
+            "name": "Ragdoll",
+            "type": "formId",
+            "signatures": [
+                "RGDL"
+            ]
+        }
+    ]
+}

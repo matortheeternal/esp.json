@@ -1,0 +1,21 @@
+{
+    "name": "References",
+    "type": "memberArray",
+    "notAlignable": 1,
+    "member": {
+        "name": "",
+        "type": "memberUnion",
+        "members": [
+            {
+                "signature": "SCRO",
+                "name": "Global Reference",
+                "type": "formId"
+            },
+            {
+                "signature": "SCRV",
+                "name": "Local Variable",
+                "type": "uint32"
+            }
+        ]
+    }
+}

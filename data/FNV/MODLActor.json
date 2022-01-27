@@ -1,0 +1,32 @@
+{
+    "name": "Model",
+    "type": "memberStruct",
+    "unordered": true,
+    "members": [
+        {
+            "signature": "MODL",
+            "name": "Model FileName",
+            "type": "string",
+            "required": true
+        },
+        {
+            "signature": "MODB",
+            "name": "Unknown",
+            "type": "bytes",
+            "size": 4,
+            "conflictType": "Ignore"
+        },
+        {
+            "id": "MODT"
+        },
+        {
+            "id": "MODS"
+        },
+        {
+            "id": "MODD"
+        }
+    ],
+    "sortKey": [
+        0
+    ]
+}

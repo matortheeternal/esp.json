@@ -1,0 +1,93 @@
+{
+    "signature": "TREE",
+    "type": "record",
+    "name": "Tree",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "MODL",
+            "required": true
+        },
+        {
+            "id": "ICON",
+            "required": true
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "signature": "SNAM",
+            "name": "SpeedTree Seeds",
+            "type": "array",
+            "sorted": true,
+            "required": true,
+            "element": {
+                "name": "SpeedTree Seed",
+                "type": "uint32"
+            }
+        },
+        {
+            "signature": "CNAM",
+            "name": "Tree Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Leaf Curvature",
+                    "type": "float"
+                },
+                {
+                    "name": "Minimum Leaf Angle",
+                    "type": "float"
+                },
+                {
+                    "name": "Maximum Leaf Angle",
+                    "type": "float"
+                },
+                {
+                    "name": "Branch Dimming Value",
+                    "type": "float"
+                },
+                {
+                    "name": "Leaf Dimming Value",
+                    "type": "float"
+                },
+                {
+                    "name": "Shadow Radius",
+                    "type": "int32"
+                },
+                {
+                    "name": "Rock Speed",
+                    "type": "float"
+                },
+                {
+                    "name": "Rustle Speed",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "BNAM",
+            "name": "Billboard Dimensions",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Width",
+                    "type": "float"
+                },
+                {
+                    "name": "Height",
+                    "type": "float"
+                }
+            ]
+        }
+    ]
+}

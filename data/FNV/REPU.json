@@ -1,0 +1,22 @@
+{
+    "signature": "REPU",
+    "type": "record",
+    "name": "Reputation",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "signature": "DATA",
+            "name": "Value",
+            "type": "float"
+        }
+    ]
+}

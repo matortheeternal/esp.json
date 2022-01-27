@@ -1,0 +1,766 @@
+{
+    "signature": "IMAD",
+    "type": "record",
+    "name": "Image Space Adapter",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "DNAM",
+            "name": "Data Count",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Animatable"
+                        }
+                    }
+                },
+                {
+                    "name": "Duration",
+                    "type": "float"
+                },
+                {
+                    "name": "HDR",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Eye Adapt Speed Mult",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Eye Adapt Speed Add",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Bloom Blur Radius Mult",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Bloom Blur Radius Add",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Bloom Threshold Mult",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Bloom Threshold Add",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Bloom Scale Mult",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Bloom Scale Add",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Target Lum Min Mult",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Target Lum Min Add",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Target Lum Max Mult",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Target Lum Max Add",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Sunlight Scale Mult",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Sunlight Scale Add",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Sky Scale Mult",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Sky Scale Add",
+                            "type": "uint32"
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown08 Mult",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Unknown48 Add",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Unknown09 Mult",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Unknown49 Add",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Unknown0A Mult",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Unknown4A Add",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Unknown0B Mult",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Unknown4B Add",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Unknown0C Mult",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Unknown4C Add",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Unknown0D Mult",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Unknown4D Add",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Unknown0E Mult",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Unknown4E Add",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Unknown0F Mult",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Unknown4F Add",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Unknown10 Mult",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Unknown50 Add",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Cinematic",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Saturation Mult",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Saturation Add",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Brightness Mult",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Brightness Add",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Contrast Mult",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Contrast Add",
+                            "type": "uint32"
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown14 Mult",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Unknown54 Add",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Tint Color",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Blur Radius",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Double Vision Strength",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Radial Blur Strength",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Radial Blur Ramp Up",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Radial Blur Start",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Radial Blur Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Use Target"
+                        }
+                    }
+                },
+                {
+                    "name": "Radial Blur Center X",
+                    "type": "float"
+                },
+                {
+                    "name": "Radial Blur Center Y",
+                    "type": "float"
+                },
+                {
+                    "name": "DoF Strength",
+                    "type": "uint32"
+                },
+                {
+                    "name": "DoF Distance",
+                    "type": "uint32"
+                },
+                {
+                    "name": "DoF Range",
+                    "type": "uint32"
+                },
+                {
+                    "name": "DoF Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Use Target"
+                        }
+                    }
+                },
+                {
+                    "name": "Radial Blur Ramp Down",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Radial Blur Down Start",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Fade Color",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Motion Blur Strength",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "signature": "BNAM",
+            "name": "Blur Radius",
+            "type": "array",
+            "element": {
+                "id": "TimeInterpolator"
+            }
+        },
+        {
+            "signature": "VNAM",
+            "name": "Double Vision Strength",
+            "type": "array",
+            "element": {
+                "id": "TimeInterpolator"
+            }
+        },
+        {
+            "signature": "TNAM",
+            "name": "Tint Color",
+            "type": "array",
+            "element": {
+                "id": "ColorInterpolator"
+            }
+        },
+        {
+            "signature": "NAM3",
+            "name": "Fade Color",
+            "type": "array",
+            "element": {
+                "id": "ColorInterpolator"
+            }
+        },
+        {
+            "signature": "RNAM",
+            "name": "Radial Blur Strength",
+            "type": "array",
+            "element": {
+                "id": "TimeInterpolator"
+            }
+        },
+        {
+            "signature": "SNAM",
+            "name": "Radial Blur Ramp Up",
+            "type": "array",
+            "element": {
+                "id": "TimeInterpolator"
+            }
+        },
+        {
+            "signature": "UNAM",
+            "name": "Radial Blur Start",
+            "type": "array",
+            "element": {
+                "id": "TimeInterpolator"
+            }
+        },
+        {
+            "signature": "NAM1",
+            "name": "Radial Blur Ramp Down",
+            "type": "array",
+            "element": {
+                "id": "TimeInterpolator"
+            }
+        },
+        {
+            "signature": "NAM2",
+            "name": "Radial Blur Down Start",
+            "type": "array",
+            "element": {
+                "id": "TimeInterpolator"
+            }
+        },
+        {
+            "signature": "WNAM",
+            "name": "DoF Strength",
+            "type": "array",
+            "element": {
+                "id": "TimeInterpolator"
+            }
+        },
+        {
+            "signature": "XNAM",
+            "name": "DoF Distance",
+            "type": "array",
+            "element": {
+                "id": "TimeInterpolator"
+            }
+        },
+        {
+            "signature": "YNAM",
+            "name": "DoF Range",
+            "type": "array",
+            "element": {
+                "id": "TimeInterpolator"
+            }
+        },
+        {
+            "signature": "NAM4",
+            "name": "Motion Blur Strength",
+            "type": "array",
+            "element": {
+                "id": "TimeInterpolator"
+            }
+        },
+        {
+            "name": "HDR",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "\u0000IAD",
+                    "name": "Eye Adapt Speed Mult",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "@IAD",
+                    "name": "Eye Adapt Speed Add",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "\u0001IAD",
+                    "name": "Bloom Blur Radius Mult",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "AIAD",
+                    "name": "Bloom Blur Radius Add",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "\u0002IAD",
+                    "name": "Bloom Threshold Mult",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "BIAD",
+                    "name": "Bloom Threshold Add",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "\u0003IAD",
+                    "name": "Bloom Scale Mult",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "CIAD",
+                    "name": "Bloom Scale Add",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "\u0004IAD",
+                    "name": "Target Lum Min Mult",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "DIAD",
+                    "name": "Target Lum Min Add",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "\u0005IAD",
+                    "name": "Target Lum Max Mult",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "EIAD",
+                    "name": "Target Lum Max Add",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "\u0006IAD",
+                    "name": "Sunlight Scale Mult",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "FIAD",
+                    "name": "Sunlight Scale Add",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "\u0007IAD",
+                    "name": "Sky Scale Mult",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "GIAD",
+                    "name": "Sky Scale Add",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "\bIAD",
+                    "name": "LUM Ramp No Tex Mult",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "HIAD",
+                    "name": "LUM Ramp No Tex Add",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "\tIAD",
+                    "name": "LUM Ramp Min Mult",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "IIAD",
+                    "name": "LUM Ramp Min Add",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "\nIAD",
+                    "name": "LUM Ramp Max Mult",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "JIAD",
+                    "name": "LUM Ramp Max Add",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "\u000bIAD",
+                    "name": "Sunlight Dimmer Mult",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "KIAD",
+                    "name": "Sunlight Dimmer Add",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "\fIAD",
+                    "name": "Grass Dimmer Mult",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "LIAD",
+                    "name": "Grass Dimmer Add",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "\rIAD",
+                    "name": "Tree Dimmer Mult",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "MIAD",
+                    "name": "Tree Dimmer Add",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Bloom",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "\u000eIAD",
+                    "name": "Blur Radius Mult",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "NIAD",
+                    "name": "Blur Radius Add",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "\u000fIAD",
+                    "name": "Alpha Mult Interior Mult",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "OIAD",
+                    "name": "Alpha Mult Interior Add",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "\u0010IAD",
+                    "name": "Alpha Mult Exterior Mult",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "PIAD",
+                    "name": "Alpha Mult Exterior Add",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Cinematic",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "\u0011IAD",
+                    "name": "Saturation Mult",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "QIAD",
+                    "name": "Saturation Add",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "\u0012IAD",
+                    "name": "Contrast Mult",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "RIAD",
+                    "name": "Contrast Add",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "\u0013IAD",
+                    "name": "Contrast Avg Mult",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "SIAD",
+                    "name": "Contrast Avg Add",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "\u0014IAD",
+                    "name": "Brightness Mult",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                },
+                {
+                    "signature": "TIAD",
+                    "name": "Brightness Add",
+                    "type": "array",
+                    "element": {
+                        "id": "TimeInterpolator"
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "RDSD",
+            "name": "Sound - Intro",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        },
+        {
+            "signature": "RDSI",
+            "name": "Sound - Outro",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        }
+    ]
+}

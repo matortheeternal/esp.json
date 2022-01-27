@@ -1,0 +1,35 @@
+{
+    "signature": "CMNY",
+    "type": "record",
+    "name": "Caravan Money",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "YNAM"
+        },
+        {
+            "id": "ZNAM"
+        },
+        {
+            "signature": "DATA",
+            "name": "Absolute Value",
+            "type": "uint32"
+        }
+    ]
+}

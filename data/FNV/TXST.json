@@ -1,0 +1,66 @@
+{
+    "signature": "TXST",
+    "type": "record",
+    "name": "Texture Set",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "name": "Textures (RGB/A)",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "TX00",
+                    "name": "Base Image / Transparency",
+                    "type": "string"
+                },
+                {
+                    "signature": "TX01",
+                    "name": "Normal Map / Specular",
+                    "type": "string"
+                },
+                {
+                    "signature": "TX02",
+                    "name": "Environment Map Mask / ?",
+                    "type": "string"
+                },
+                {
+                    "signature": "TX03",
+                    "name": "Glow Map / Unused",
+                    "type": "string"
+                },
+                {
+                    "signature": "TX04",
+                    "name": "Parallax Map / Unused",
+                    "type": "string"
+                },
+                {
+                    "signature": "TX05",
+                    "name": "Environment Map / Unused",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "id": "DODT"
+        },
+        {
+            "signature": "DNAM",
+            "name": "Flags",
+            "type": "uint16",
+            "required": true,
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "No Specular Map"
+                }
+            }
+        }
+    ]
+}

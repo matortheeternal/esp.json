@@ -1,0 +1,35 @@
+{
+    "signature": "XNAM",
+    "name": "Relation",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Faction",
+            "type": "formId",
+            "signatures": [
+                "FACT",
+                "RACE"
+            ]
+        },
+        {
+            "name": "Modifier",
+            "type": "int32"
+        },
+        {
+            "name": "Group Combat Reaction",
+            "type": "uint32",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "Neutral",
+                    "1": "Enemy",
+                    "2": "Ally",
+                    "3": "Friend"
+                }
+            }
+        }
+    ],
+    "sortKey": [
+        0
+    ]
+}

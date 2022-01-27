@@ -1,0 +1,161 @@
+{
+    "signature": "DIAL",
+    "type": "record",
+    "name": "Dialog Topic",
+    "members": [
+        {
+            "id": "EDIDReqKC"
+        },
+        {
+            "name": "Added Quests",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "name": "Added Quest",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "QSTI",
+                        "name": "Quest",
+                        "type": "formId",
+                        "conflictType": "Benign",
+                        "signatures": [
+                            "QUST"
+                        ]
+                    },
+                    {
+                        "name": "Shared Infos",
+                        "type": "memberArray",
+                        "member": {
+                            "name": "Shared Info",
+                            "type": "memberStruct",
+                            "members": [
+                                {
+                                    "signature": "INFC",
+                                    "name": "Info Connection",
+                                    "type": "formId",
+                                    "conflictType": "Benign",
+                                    "signatures": [
+                                        "INFO"
+                                    ]
+                                },
+                                {
+                                    "signature": "INFX",
+                                    "name": "Info Index",
+                                    "type": "int32",
+                                    "conflictType": "Benign"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        },
+        {
+            "name": "Removed Quests",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "name": "Removed Quest",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "QSTR",
+                        "name": "Quest",
+                        "type": "formId",
+                        "conflictType": "Benign",
+                        "signatures": [
+                            "QUST"
+                        ]
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        },
+        {
+            "name": "Unused",
+            "type": "memberArray",
+            "conflictType": "Ignore",
+            "member": {
+                "name": "Unused",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "INFC",
+                        "type": "bytes",
+                        "conflictType": "Ignore"
+                    },
+                    {
+                        "signature": "INFX",
+                        "type": "bytes",
+                        "conflictType": "Ignore"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "signature": "PNAM",
+            "name": "Priority",
+            "type": "float",
+            "required": true
+        },
+        {
+            "signature": "TDUM",
+            "name": "Dumb Response",
+            "type": "string",
+            "transform": "keepcase"
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Type",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Topic",
+                            "1": "Conversation",
+                            "2": "Combat",
+                            "3": "Persuasion",
+                            "4": "Detection",
+                            "5": "Service",
+                            "6": "Miscellaneous",
+                            "7": "Radio"
+                        }
+                    }
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Rumors",
+                            "1": "Top-level"
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "containedInElement": {
+        "name": "Topic",
+        "type": "formId",
+        "required": true,
+        "signatures": [
+            "DIAL"
+        ]
+    }
+}

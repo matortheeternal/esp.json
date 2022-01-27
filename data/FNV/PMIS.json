@@ -1,0 +1,315 @@
+{
+    "signature": "PMIS",
+    "type": "record",
+    "name": "Placed Missile",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "NAME",
+            "name": "Base",
+            "type": "formId",
+            "required": true,
+            "signatures": [
+                "PROJ"
+            ]
+        },
+        {
+            "signature": "XEZN",
+            "name": "Encounter Zone",
+            "type": "formId",
+            "signatures": [
+                "ECZN"
+            ]
+        },
+        {
+            "id": "XRGD"
+        },
+        {
+            "id": "XRGB"
+        },
+        {
+            "name": "Patrol Data",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "XPRD",
+                    "name": "Idle Time",
+                    "type": "float",
+                    "required": true
+                },
+                {
+                    "signature": "XPPA",
+                    "name": "Patrol Script Marker",
+                    "type": "empty",
+                    "required": true
+                },
+                {
+                    "signature": "INAM",
+                    "name": "Idle",
+                    "type": "formId",
+                    "required": true,
+                    "signatures": [
+                        "IDLE",
+                        "NULL"
+                    ]
+                },
+                {
+                    "id": "EmbeddedScript",
+                    "required": true
+                },
+                {
+                    "signature": "TNAM",
+                    "name": "Topic",
+                    "type": "formId",
+                    "required": true,
+                    "signatures": [
+                        "DIAL",
+                        "NULL"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Ownership",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "id": "XOWN"
+                },
+                {
+                    "signature": "XRNK",
+                    "name": "Faction rank",
+                    "type": "int32"
+                }
+            ]
+        },
+        {
+            "signature": "XCNT",
+            "name": "Count",
+            "type": "int32"
+        },
+        {
+            "signature": "XRDS",
+            "name": "Radius",
+            "type": "float"
+        },
+        {
+            "signature": "XHLP",
+            "name": "Health",
+            "type": "float"
+        },
+        {
+            "name": "Reflected/Refracted By",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "signature": "XPWR",
+                "name": "Water",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Reference",
+                        "type": "formId",
+                        "signatures": [
+                            "REFR"
+                        ]
+                    },
+                    {
+                        "name": "Type",
+                        "type": "uint32",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "Reflection",
+                                "1": "Refraction"
+                            }
+                        }
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        },
+        {
+            "name": "Linked Decals",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "signature": "XDCR",
+                "name": "Decal",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Reference",
+                        "type": "formId",
+                        "signatures": [
+                            "REFR"
+                        ]
+                    },
+                    {
+                        "type": "bytes"
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        },
+        {
+            "signature": "XLKR",
+            "name": "Linked Reference",
+            "type": "formId",
+            "signatures": [
+                "REFR",
+                "ACRE",
+                "ACHR",
+                "PGRE",
+                "PMIS",
+                "PBEA",
+                "PLYR"
+            ]
+        },
+        {
+            "signature": "XCLP",
+            "name": "Linked Reference Color",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Link Start Color",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Red",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Green",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Blue",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "Link End Color",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Red",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Green",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Blue",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Activate Parents",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "XAPD",
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Parent Activate Only"
+                        }
+                    }
+                },
+                {
+                    "name": "Activate Parent Refs",
+                    "type": "memberArray",
+                    "sorted": true,
+                    "member": {
+                        "signature": "XAPR",
+                        "name": "Activate Parent Ref",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Reference",
+                                "type": "formId",
+                                "signatures": [
+                                    "REFR",
+                                    "ACRE",
+                                    "ACHR",
+                                    "PGRE",
+                                    "PMIS",
+                                    "PBEA",
+                                    "PLYR"
+                                ]
+                            },
+                            {
+                                "name": "Delay",
+                                "type": "float"
+                            }
+                        ],
+                        "sortKey": [
+                            0
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "XATO",
+            "name": "Activation Prompt",
+            "type": "string",
+            "transform": "keepcase"
+        },
+        {
+            "id": "XESP"
+        },
+        {
+            "signature": "XEMI",
+            "name": "Emittance",
+            "type": "formId",
+            "signatures": [
+                "LIGH",
+                "REGN"
+            ]
+        },
+        {
+            "signature": "XMBR",
+            "name": "MultiBound Reference",
+            "type": "formId",
+            "signatures": [
+                "REFR"
+            ]
+        },
+        {
+            "signature": "XIBS",
+            "name": "Ignored By Sandbox",
+            "type": "empty"
+        },
+        {
+            "id": "XSCL"
+        },
+        {
+            "id": "DATAPosRot"
+        }
+    ]
+}

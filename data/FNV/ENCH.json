@@ -1,0 +1,66 @@
+{
+    "signature": "ENCH",
+    "type": "record",
+    "name": "Object Effect",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "signature": "ENIT",
+            "name": "Effect Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Type",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "",
+                            "1": "",
+                            "2": "Weapon",
+                            "3": "Apparel"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "No Auto-Calc",
+                            "1": "Auto Calculate",
+                            "2": "Hide Effect"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3
+                }
+            ]
+        },
+        {
+            "id": "Effects",
+            "required": true
+        }
+    ]
+}

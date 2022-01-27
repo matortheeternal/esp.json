@@ -1,0 +1,32 @@
+{
+    "signature": "RCCT",
+    "type": "record",
+    "name": "Recipe Category",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "signature": "DATA",
+            "name": "Flags",
+            "type": "uint8",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Subcategory?",
+                    "1": "",
+                    "2": "",
+                    "3": "",
+                    "4": "",
+                    "5": "",
+                    "6": "",
+                    "7": ""
+                }
+            }
+        }
+    ]
+}

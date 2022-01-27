@@ -1,0 +1,112 @@
+{
+    "signature": "CLAS",
+    "type": "record",
+    "name": "Class",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "FULL",
+            "required": true
+        },
+        {
+            "id": "DESC",
+            "required": true
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Tag Skills",
+                    "type": "array",
+                    "count": 4,
+                    "element": {
+                        "name": "Tag Skill",
+                        "type": "int32",
+                        "format": {
+                            "id": "ActorValueEnum"
+                        }
+                    }
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Playable",
+                            "1": "Guard"
+                        }
+                    }
+                },
+                {
+                    "name": "Buys/Sells and Services",
+                    "type": "uint32",
+                    "format": {
+                        "id": "ServiceFlags"
+                    }
+                },
+                {
+                    "name": "Teaches",
+                    "type": "int8",
+                    "format": {
+                        "id": "SkillEnum"
+                    }
+                },
+                {
+                    "name": "Maximum training level",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 2
+                }
+            ]
+        },
+        {
+            "signature": "ATTR",
+            "name": "Attributes",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Strength",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Perception",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Endurance",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Charisma",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Intelligence",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Agility",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Luck",
+                    "type": "uint8"
+                }
+            ]
+        }
+    ]
+}

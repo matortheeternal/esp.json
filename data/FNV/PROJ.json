@@ -1,0 +1,225 @@
+{
+    "signature": "PROJ",
+    "type": "record",
+    "name": "Projectile",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL",
+            "required": true
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "signature": "DATA",
+            "name": "Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Flags",
+                    "type": "uint16",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Hitscan",
+                            "1": "Explosion",
+                            "2": "Alt. Trigger",
+                            "3": "Muzzle Flash",
+                            "4": "",
+                            "5": "Can Be Disabled",
+                            "6": "Can Be Picked Up",
+                            "7": "Supersonic",
+                            "8": "Pins Limbs",
+                            "9": "Pass Through Small Transparent",
+                            "10": "Detonates",
+                            "11": "Rotation"
+                        }
+                    }
+                },
+                {
+                    "name": "Type",
+                    "type": "uint16",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "",
+                            "1": "Missile",
+                            "2": "Lobber",
+                            "3": "",
+                            "4": "Beam",
+                            "5": "",
+                            "6": "",
+                            "7": "",
+                            "8": "Flame",
+                            "9": "",
+                            "10": "",
+                            "11": "",
+                            "12": "",
+                            "13": "",
+                            "14": "",
+                            "15": "",
+                            "16": "Continuous Beam"
+                        }
+                    }
+                },
+                {
+                    "name": "Gravity",
+                    "type": "float"
+                },
+                {
+                    "name": "Speed",
+                    "type": "float"
+                },
+                {
+                    "name": "Range",
+                    "type": "float"
+                },
+                {
+                    "name": "Light",
+                    "type": "formId",
+                    "signatures": [
+                        "LIGH",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Muzzle Flash - Light",
+                    "type": "formId",
+                    "signatures": [
+                        "LIGH",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Tracer Chance",
+                    "type": "float"
+                },
+                {
+                    "name": "Explosion - Alt. Trigger - Proximity",
+                    "type": "float"
+                },
+                {
+                    "name": "Explosion - Alt. Trigger - Timer",
+                    "type": "float"
+                },
+                {
+                    "name": "Explosion",
+                    "type": "formId",
+                    "signatures": [
+                        "EXPL",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Sound",
+                    "type": "formId",
+                    "signatures": [
+                        "SOUN",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Muzzle Flash - Duration",
+                    "type": "float"
+                },
+                {
+                    "name": "Fade Duration",
+                    "type": "float"
+                },
+                {
+                    "name": "Impact Force",
+                    "type": "float"
+                },
+                {
+                    "name": "Sound - Countdown",
+                    "type": "formId",
+                    "signatures": [
+                        "SOUN",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Sound - Disable",
+                    "type": "formId",
+                    "signatures": [
+                        "SOUN",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Default Weapon Source",
+                    "type": "formId",
+                    "signatures": [
+                        "WEAP",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Rotation",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "X",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Y",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Z",
+                            "type": "float"
+                        }
+                    ]
+                },
+                {
+                    "name": "Bouncy Mult",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Muzzle Flash Model",
+            "type": "memberStruct",
+            "required": true,
+            "members": [
+                {
+                    "signature": "NAM1",
+                    "name": "Model FileName",
+                    "type": "string"
+                },
+                {
+                    "signature": "NAM2",
+                    "name": "Texture Files Hashes",
+                    "type": "bytes",
+                    "size": 0,
+                    "conflictType": "Ignore"
+                }
+            ],
+            "sortKey": [
+                0
+            ]
+        },
+        {
+            "signature": "VNAM",
+            "name": "Sound Level",
+            "type": "uint32",
+            "required": true,
+            "format": {
+                "id": "SoundLevelEnum"
+            }
+        }
+    ]
+}

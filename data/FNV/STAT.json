@@ -1,0 +1,47 @@
+{
+    "signature": "STAT",
+    "type": "record",
+    "name": "Static",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "signature": "BRUS",
+            "name": "Passthrough Sound",
+            "type": "int8",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "BushA",
+                    "1": "BushB",
+                    "2": "BushC",
+                    "3": "BushD",
+                    "4": "BushE",
+                    "5": "BushF",
+                    "6": "BushG",
+                    "7": "BushH",
+                    "8": "BushI",
+                    "9": "BushJ",
+                    "-1": "NONE"
+                }
+            }
+        },
+        {
+            "signature": "RNAM",
+            "name": "Sound - Looping/Random",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        }
+    ]
+}

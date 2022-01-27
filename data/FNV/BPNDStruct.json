@@ -1,0 +1,210 @@
+{
+    "signature": "BPND",
+    "name": "",
+    "type": "struct",
+    "required": true,
+    "elements": [
+        {
+            "name": "Damage Mult",
+            "type": "float"
+        },
+        {
+            "name": "Flags",
+            "type": "uint8",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Severable",
+                    "1": "IK Data",
+                    "2": "IK Data - Biped Data",
+                    "3": "Explodable",
+                    "4": "IK Data - Is Head",
+                    "5": "IK Data - Headtracking",
+                    "6": "To Hit Chance - Absolute"
+                }
+            }
+        },
+        {
+            "name": "Part Type",
+            "type": "uint8",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "Torso",
+                    "1": "Head 1",
+                    "2": "Head 2",
+                    "3": "Left Arm 1",
+                    "4": "Left Arm 2",
+                    "5": "Right Arm 1",
+                    "6": "Right Arm 2",
+                    "7": "Left Leg 1",
+                    "8": "Left Leg 2",
+                    "9": "Left Leg 3",
+                    "10": "Right Leg 1",
+                    "11": "Right Leg 2",
+                    "12": "Right Leg 3",
+                    "13": "Brain",
+                    "14": "Weapon"
+                }
+            }
+        },
+        {
+            "name": "Health Percent",
+            "type": "uint8"
+        },
+        {
+            "name": "Actor Value",
+            "type": "int8",
+            "format": {
+                "id": "ActorValueEnum"
+            }
+        },
+        {
+            "name": "To Hit Chance",
+            "type": "uint8"
+        },
+        {
+            "name": "Explodable - Explosion Chance %",
+            "type": "uint8"
+        },
+        {
+            "name": "Explodable - Debris Count",
+            "type": "uint16"
+        },
+        {
+            "name": "Explodable - Debris",
+            "type": "formId",
+            "signatures": [
+                "DEBR",
+                "NULL"
+            ]
+        },
+        {
+            "name": "Explodable - Explosion",
+            "type": "formId",
+            "signatures": [
+                "EXPL",
+                "NULL"
+            ]
+        },
+        {
+            "name": "Tracking Max Angle",
+            "type": "float"
+        },
+        {
+            "name": "Explodable - Debris Scale",
+            "type": "float"
+        },
+        {
+            "name": "Severable - Debris Count",
+            "type": "int32"
+        },
+        {
+            "name": "Severable - Debris",
+            "type": "formId",
+            "signatures": [
+                "DEBR",
+                "NULL"
+            ]
+        },
+        {
+            "name": "Severable - Explosion",
+            "type": "formId",
+            "signatures": [
+                "EXPL",
+                "NULL"
+            ]
+        },
+        {
+            "name": "Severable - Debris Scale",
+            "type": "float"
+        },
+        {
+            "name": "Gore Effects Positioning",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Translate",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "X",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Y",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Z",
+                            "type": "float"
+                        }
+                    ]
+                },
+                {
+                    "name": "Rotation",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "X",
+                            "type": "float",
+                            "required": true,
+                            "format": {
+                                "type": "RotationFactorFormat"
+                            }
+                        },
+                        {
+                            "name": "Y",
+                            "type": "float",
+                            "required": true,
+                            "format": {
+                                "type": "RotationFactorFormat"
+                            }
+                        },
+                        {
+                            "name": "Z",
+                            "type": "float",
+                            "required": true,
+                            "format": {
+                                "type": "RotationFactorFormat"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Severable - Impact DataSet",
+            "type": "formId",
+            "signatures": [
+                "IPDS",
+                "NULL"
+            ]
+        },
+        {
+            "name": "Explodable - Impact DataSet",
+            "type": "formId",
+            "signatures": [
+                "IPDS",
+                "NULL"
+            ]
+        },
+        {
+            "name": "Severable - Decal Count",
+            "type": "uint8"
+        },
+        {
+            "name": "Explodable - Decal Count",
+            "type": "uint8"
+        },
+        {
+            "name": "Unused",
+            "type": "bytes",
+            "size": 2
+        },
+        {
+            "name": "Limb Replacement Scale",
+            "type": "float"
+        }
+    ]
+}

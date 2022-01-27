@@ -1,0 +1,98 @@
+{
+    "signature": "CHAL",
+    "type": "record",
+    "name": "Challenge",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "SCRI"
+        },
+        {
+            "id": "DESC"
+        },
+        {
+            "signature": "DATA",
+            "name": "Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Type",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Kill from a Form List",
+                            "1": "Kill a specific FormID",
+                            "2": "Kill any in a category",
+                            "3": "Hit an Enemy",
+                            "4": "Discover a Map Marker",
+                            "5": "Use an Item",
+                            "6": "Acquire an Item",
+                            "7": "Use a Skill",
+                            "8": "Do Damage",
+                            "9": "Use an Item from a List",
+                            "10": "Acquire an Item from a List",
+                            "11": "Miscellaneous Stat",
+                            "12": "Craft Using an Item",
+                            "13": "Scripted Challenge"
+                        }
+                    }
+                },
+                {
+                    "name": "Threshold",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Start Disabled",
+                            "1": "Recurring",
+                            "2": "Show Zero Progress"
+                        }
+                    }
+                },
+                {
+                    "name": "Interval",
+                    "type": "uint32"
+                },
+                {
+                    "name": "(depends on type)",
+                    "type": "bytes",
+                    "size": 2
+                },
+                {
+                    "name": "(depends on type)",
+                    "type": "bytes",
+                    "size": 2
+                },
+                {
+                    "name": "(depends on type)",
+                    "type": "bytes",
+                    "size": 4
+                }
+            ]
+        },
+        {
+            "signature": "SNAM",
+            "name": "(depends on type)",
+            "type": "formId"
+        },
+        {
+            "signature": "XNAM",
+            "name": "(depends on type)",
+            "type": "formId"
+        }
+    ]
+}

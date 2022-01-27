@@ -1,0 +1,143 @@
+{
+    "signature": "ALOC",
+    "type": "record",
+    "name": "Media Location Controller",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "signature": "NAM1",
+            "name": "Flags and Enums, messily combined",
+            "type": "bytes"
+        },
+        {
+            "signature": "NAM2",
+            "type": "bytes"
+        },
+        {
+            "signature": "NAM3",
+            "type": "bytes"
+        },
+        {
+            "signature": "NAM4",
+            "name": "Location Delay",
+            "type": "float"
+        },
+        {
+            "signature": "NAM5",
+            "name": "Day Start",
+            "type": "uint32",
+            "format": {
+                "type": "AlocTimeFormat"
+            }
+        },
+        {
+            "signature": "NAM6",
+            "name": "Night Start",
+            "type": "uint32",
+            "format": {
+                "type": "AlocTimeFormat"
+            }
+        },
+        {
+            "signature": "NAM7",
+            "name": "Retrigger Delay",
+            "type": "float"
+        },
+        {
+            "name": "Neutral Sets",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "signature": "HNAM",
+                "name": "Media Set",
+                "type": "formId",
+                "signatures": [
+                    "MSET"
+                ]
+            }
+        },
+        {
+            "name": "Ally Sets",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "signature": "ZNAM",
+                "name": "Media Set",
+                "type": "formId",
+                "signatures": [
+                    "MSET"
+                ]
+            }
+        },
+        {
+            "name": "Friend Sets",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "signature": "XNAM",
+                "name": "Media Set",
+                "type": "formId",
+                "signatures": [
+                    "MSET"
+                ]
+            }
+        },
+        {
+            "name": "Enemy Sets",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "signature": "YNAM",
+                "name": "Media Set",
+                "type": "formId",
+                "signatures": [
+                    "MSET"
+                ]
+            }
+        },
+        {
+            "name": "Location Sets",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "signature": "LNAM",
+                "name": "Media Set",
+                "type": "formId",
+                "signatures": [
+                    "MSET"
+                ]
+            }
+        },
+        {
+            "name": "Battle Sets",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "signature": "GNAM",
+                "name": "Media Set",
+                "type": "formId",
+                "signatures": [
+                    "MSET"
+                ]
+            }
+        },
+        {
+            "signature": "RNAM",
+            "name": "Conditional Faction",
+            "type": "formId",
+            "signatures": [
+                "FACT"
+            ]
+        },
+        {
+            "signature": "FNAM",
+            "type": "bytes"
+        }
+    ]
+}

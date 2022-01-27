@@ -1,0 +1,124 @@
+{
+    "signature": "RCPE",
+    "type": "record",
+    "name": "Recipe",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "CTDAs"
+        },
+        {
+            "signature": "DATA",
+            "name": "Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Skill",
+                    "type": "int32",
+                    "format": {
+                        "id": "ActorValueEnum"
+                    }
+                },
+                {
+                    "name": "Level",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Category",
+                    "type": "formId",
+                    "signatures": [
+                        "RCCT",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Sub-Category",
+                    "type": "formId",
+                    "signatures": [
+                        "RCCT"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Ingredients",
+            "type": "memberArray",
+            "member": {
+                "name": "Ingredient",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "RCIL",
+                        "name": "Item",
+                        "type": "formId",
+                        "required": true,
+                        "signatures": [
+                            "ARMO",
+                            "AMMO",
+                            "MISC",
+                            "WEAP",
+                            "BOOK",
+                            "KEYM",
+                            "ALCH",
+                            "NOTE",
+                            "IMOD",
+                            "CMNY",
+                            "CCRD",
+                            "CHIP",
+                            "LIGH"
+                        ]
+                    },
+                    {
+                        "signature": "RCQY",
+                        "name": "Quantity",
+                        "type": "uint32",
+                        "required": true
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Outputs",
+            "type": "memberArray",
+            "member": {
+                "name": "Output",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "RCOD",
+                        "name": "Item",
+                        "type": "formId",
+                        "required": true,
+                        "signatures": [
+                            "ARMO",
+                            "AMMO",
+                            "MISC",
+                            "WEAP",
+                            "BOOK",
+                            "KEYM",
+                            "ALCH",
+                            "NOTE",
+                            "IMOD",
+                            "CMNY",
+                            "CCRD",
+                            "CHIP",
+                            "LIGH"
+                        ]
+                    },
+                    {
+                        "signature": "RCQY",
+                        "name": "Quantity",
+                        "type": "uint32",
+                        "required": true
+                    }
+                ]
+            }
+        }
+    ]
+}

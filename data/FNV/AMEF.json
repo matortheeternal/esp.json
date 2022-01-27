@@ -1,0 +1,52 @@
+{
+    "signature": "AMEF",
+    "type": "record",
+    "name": "Ammo Effect",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "signature": "DATA",
+            "name": "Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Type",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Damage Mod",
+                            "1": "DR Mod",
+                            "2": "DT Mod",
+                            "3": "Spread Mod",
+                            "4": "Weapon Condition Mod",
+                            "5": "Fatigue Mod"
+                        }
+                    }
+                },
+                {
+                    "name": "Operation",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Add",
+                            "1": "Multiply",
+                            "2": "Subtract"
+                        }
+                    }
+                },
+                {
+                    "name": "Value",
+                    "type": "float"
+                }
+            ]
+        }
+    ]
+}

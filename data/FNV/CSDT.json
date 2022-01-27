@@ -1,0 +1,73 @@
+{
+    "name": "Sound Type",
+    "type": "memberStruct",
+    "members": [
+        {
+            "signature": "CSDT",
+            "name": "Type",
+            "type": "uint32",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "Left Foot",
+                    "1": "Right Foot",
+                    "2": "Left Back Foot",
+                    "3": "Right Back Foot",
+                    "4": "Idle",
+                    "5": "Aware",
+                    "6": "Attack",
+                    "7": "Hit",
+                    "8": "Death",
+                    "9": "Weapon",
+                    "10": "Movement Loop",
+                    "11": "Conscious Loop",
+                    "12": "Auxiliary 1",
+                    "13": "Auxiliary 2",
+                    "14": "Auxiliary 3",
+                    "15": "Auxiliary 4",
+                    "16": "Auxiliary 5",
+                    "17": "Auxiliary 6",
+                    "18": "Auxiliary 7",
+                    "19": "Auxiliary 8",
+                    "20": "Auxiliary 8",
+                    "21": "Jump",
+                    "22": "PlayRandom/Loop"
+                }
+            }
+        },
+        {
+            "name": "Sounds",
+            "type": "memberArray",
+            "sorted": true,
+            "required": true,
+            "member": {
+                "name": "Sound",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "CSDI",
+                        "name": "Sound",
+                        "type": "formId",
+                        "required": true,
+                        "signatures": [
+                            "SOUN",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "signature": "CSDC",
+                        "name": "Sound Chance",
+                        "type": "uint8",
+                        "required": true
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        }
+    ],
+    "sortKey": [
+        0
+    ]
+}

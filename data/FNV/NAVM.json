@@ -1,0 +1,295 @@
+{
+    "signature": "NAVM",
+    "type": "record",
+    "name": "Navigation Mesh",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "NVER",
+            "name": "Version",
+            "type": "uint32"
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Cell",
+                    "type": "formId",
+                    "signatures": [
+                        "CELL"
+                    ]
+                },
+                {
+                    "name": "Vertex Count",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Triangle Count",
+                    "type": "uint32"
+                },
+                {
+                    "name": "External Connections Count",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Cover Triangle Count",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Doors Count",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "signature": "NVVX",
+            "name": "Vertices",
+            "type": "array",
+            "notAlignable": 1,
+            "element": {
+                "name": "Vertex",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "X",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Z",
+                        "type": "float"
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "NVTR",
+            "name": "Triangles",
+            "type": "array",
+            "notAlignable": 1,
+            "element": {
+                "name": "Triangle",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Vertices",
+                        "type": "array",
+                        "count": 3,
+                        "element": {
+                            "name": "Vertex",
+                            "type": "int16"
+                        }
+                    },
+                    {
+                        "name": "Edges",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "0 <-> 1",
+                                "type": "int16",
+                                "format": {
+                                    "type": "NVTREdgeFormat"
+                                }
+                            },
+                            {
+                                "name": "1 <-> 2",
+                                "type": "int16",
+                                "format": {
+                                    "type": "NVTREdgeFormat"
+                                }
+                            },
+                            {
+                                "name": "2 <-> 0",
+                                "type": "int16",
+                                "format": {
+                                    "type": "NVTREdgeFormat"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Flags",
+                        "type": "uint16",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "Edge 0 <-> 1 external",
+                                "1": "Edge 1 <-> 2 external",
+                                "2": "Edge 2 <-> 0 external",
+                                "3": "",
+                                "4": "No Large Creatures",
+                                "5": "Overlapping",
+                                "6": "Preferred",
+                                "7": "",
+                                "8": "Unknown 9",
+                                "9": "Water",
+                                "10": "Door",
+                                "11": "Found",
+                                "12": "Unknown 13",
+                                "13": "",
+                                "14": "",
+                                "15": ""
+                            }
+                        }
+                    },
+                    {
+                        "name": "Cover Flags",
+                        "type": "uint16",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "Edge 0 <-> 1 Cover Value 1/4",
+                                "1": "Edge 0 <-> 1 Cover Value 2/4",
+                                "2": "Edge 0 <-> 1 Cover Value 3/4",
+                                "3": "Edge 0 <-> 1 Cover Value 4/4",
+                                "4": "Edge 0 <-> 1 Left",
+                                "5": "Edge 0 <-> 1 Right",
+                                "6": "Edge 1 <-> 2 Cover Value 1/4",
+                                "7": "Edge 1 <-> 2 Cover Value 2/4",
+                                "8": "Edge 1 <-> 2 Cover Value 3/4",
+                                "9": "Edge 1 <-> 2 Cover Value 4/4",
+                                "10": "Edge 1 <-> 2 Left",
+                                "11": "Edge 1 <-> 2 Right",
+                                "12": "Unknown 13",
+                                "13": "Unknown 14",
+                                "14": "Unknown 15",
+                                "15": "Unknown 16"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "NVCA",
+            "name": "Cover Triangles",
+            "type": "array",
+            "element": {
+                "name": "Cover Triangle",
+                "type": "int16"
+            }
+        },
+        {
+            "signature": "NVDP",
+            "name": "Doors",
+            "type": "array",
+            "notAlignable": 1,
+            "element": {
+                "name": "Door",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Reference",
+                        "type": "formId",
+                        "signatures": [
+                            "REFR"
+                        ]
+                    },
+                    {
+                        "name": "Triangle",
+                        "type": "uint16"
+                    },
+                    {
+                        "name": "Unused",
+                        "type": "bytes",
+                        "size": 2
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "NVGD",
+            "name": "NavMesh Grid",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "NavMeshGrid Divisor",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Max X Distance",
+                    "type": "float"
+                },
+                {
+                    "name": "Max Y Distance",
+                    "type": "float"
+                },
+                {
+                    "name": "Min X",
+                    "type": "float"
+                },
+                {
+                    "name": "Min Y",
+                    "type": "float"
+                },
+                {
+                    "name": "Min Z",
+                    "type": "float"
+                },
+                {
+                    "name": "Max X",
+                    "type": "float"
+                },
+                {
+                    "name": "Max Y",
+                    "type": "float"
+                },
+                {
+                    "name": "Max Z",
+                    "type": "float"
+                },
+                {
+                    "name": "Cells",
+                    "type": "array",
+                    "notAlignable": 1,
+                    "element": {
+                        "name": "Cell",
+                        "type": "array",
+                        "prefix": 2,
+                        "element": {
+                            "name": "Triangle",
+                            "type": "int16",
+                            "notAlignable": 1
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "NVEX",
+            "name": "External Connections",
+            "type": "array",
+            "notAlignable": 1,
+            "element": {
+                "name": "Connection",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Navigation Mesh",
+                        "type": "formId",
+                        "signatures": [
+                            "NAVM",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "name": "Triangle",
+                        "type": "uint16"
+                    }
+                ]
+            }
+        }
+    ]
+}

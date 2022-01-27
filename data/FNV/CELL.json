@@ -1,0 +1,364 @@
+{
+    "signature": "CELL",
+    "type": "record",
+    "name": "Cell",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "signature": "DATA",
+            "name": "Flags",
+            "type": "uint8",
+            "required": true,
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Is Interior Cell",
+                    "1": "Has water",
+                    "2": "Invert Fast Travel behavior",
+                    "3": "No LOD Water",
+                    "4": "",
+                    "5": "Public place",
+                    "6": "Hand changed",
+                    "7": "Behave like exterior"
+                }
+            }
+        },
+        {
+            "signature": "XCLC",
+            "name": "Grid",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "X",
+                    "type": "int32"
+                },
+                {
+                    "name": "Y",
+                    "type": "int32"
+                },
+                {
+                    "name": "Force Hide Land",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Quad 1",
+                            "1": "Quad 2",
+                            "2": "Quad 3",
+                            "3": "Quad 4"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "XCLL",
+            "name": "Lighting",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Ambient Color",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Red",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Green",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Blue",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "Directional Color",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Red",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Green",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Blue",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "Fog Color",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Red",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Green",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Blue",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "Fog Near",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog Far",
+                    "type": "float"
+                },
+                {
+                    "name": "Directional Rotation XY",
+                    "type": "int32"
+                },
+                {
+                    "name": "Directional Rotation Z",
+                    "type": "int32"
+                },
+                {
+                    "name": "Directional Fade",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog Clip Dist",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog Power",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "IMPF",
+            "name": "Footstep Materials",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "ConcSolid",
+                    "type": "string",
+                    "size": 30
+                },
+                {
+                    "name": "ConcBroken",
+                    "type": "string",
+                    "size": 30
+                },
+                {
+                    "name": "MetalSolid",
+                    "type": "string",
+                    "size": 30
+                },
+                {
+                    "name": "MetalHollow",
+                    "type": "string",
+                    "size": 30
+                },
+                {
+                    "name": "MetalSheet",
+                    "type": "string",
+                    "size": 30
+                },
+                {
+                    "name": "Wood",
+                    "type": "string",
+                    "size": 30
+                },
+                {
+                    "name": "Sand",
+                    "type": "string",
+                    "size": 30
+                },
+                {
+                    "name": "Dirt",
+                    "type": "string",
+                    "size": 30
+                },
+                {
+                    "name": "Grass",
+                    "type": "string",
+                    "size": 30
+                },
+                {
+                    "name": "Water",
+                    "type": "string",
+                    "size": 30
+                }
+            ]
+        },
+        {
+            "name": "Light Template",
+            "type": "memberStruct",
+            "required": true,
+            "members": [
+                {
+                    "signature": "LTMP",
+                    "name": "Template",
+                    "type": "formId",
+                    "signatures": [
+                        "LGTM",
+                        "NULL"
+                    ]
+                },
+                {
+                    "signature": "LNAM",
+                    "name": "Inherit",
+                    "type": "uint32",
+                    "required": true,
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Ambient Color",
+                            "1": "Directional Color",
+                            "2": "Fog Color",
+                            "3": "Fog Near",
+                            "4": "Fog Far",
+                            "5": "Directional Rotation",
+                            "6": "Directional Fade",
+                            "7": "Clip Distance",
+                            "8": "Fog Power"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "XCLW",
+            "name": "Water Height",
+            "type": "float"
+        },
+        {
+            "signature": "XNAM",
+            "name": "Water Noise Texture",
+            "type": "string"
+        },
+        {
+            "signature": "XCLR",
+            "name": "Regions",
+            "type": "array",
+            "sorted": true,
+            "element": {
+                "name": "Region",
+                "type": "formId",
+                "signatures": [
+                    "REGN"
+                ]
+            }
+        },
+        {
+            "signature": "XCIM",
+            "name": "Image Space",
+            "type": "formId",
+            "signatures": [
+                "IMGS"
+            ]
+        },
+        {
+            "signature": "XCET",
+            "name": "Unknown",
+            "type": "bytes",
+            "size": 1,
+            "conflictType": "Ignore"
+        },
+        {
+            "signature": "XEZN",
+            "name": "Encounter Zone",
+            "type": "formId",
+            "signatures": [
+                "ECZN"
+            ]
+        },
+        {
+            "signature": "XCCM",
+            "name": "Climate",
+            "type": "formId",
+            "signatures": [
+                "CLMT"
+            ]
+        },
+        {
+            "signature": "XCWT",
+            "name": "Water",
+            "type": "formId",
+            "signatures": [
+                "WATR"
+            ]
+        },
+        {
+            "name": "Ownership",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "id": "XOWN"
+                },
+                {
+                    "signature": "XRNK",
+                    "name": "Faction rank",
+                    "type": "int32"
+                }
+            ]
+        },
+        {
+            "signature": "XCAS",
+            "name": "Acoustic Space",
+            "type": "formId",
+            "signatures": [
+                "ASPC"
+            ]
+        },
+        {
+            "signature": "XCMT",
+            "name": "Unused",
+            "type": "bytes",
+            "size": 1,
+            "conflictType": "Ignore"
+        },
+        {
+            "signature": "XCMO",
+            "name": "Music Type",
+            "type": "formId",
+            "signatures": [
+                "MUSC"
+            ]
+        }
+    ],
+    "containedInElement": {
+        "name": "Cell",
+        "type": "formId",
+        "required": true,
+        "signatures": [
+            "CELL"
+        ]
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "signature": "ADDN",
+    "type": "record",
+    "name": "Addon Node",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "MODL",
+            "required": true
+        },
+        {
+            "signature": "DATA",
+            "name": "Node Index",
+            "type": "int32",
+            "required": true
+        },
+        {
+            "signature": "SNAM",
+            "name": "Sound",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        },
+        {
+            "signature": "DNAM",
+            "name": "Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Master Particle System Cap",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 2
+                }
+            ]
+        }
+    ]
+}

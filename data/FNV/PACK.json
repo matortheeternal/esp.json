@@ -1,0 +1,1245 @@
+{
+    "signature": "PACK",
+    "type": "record",
+    "name": "Package",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "signature": "PKDT",
+            "name": "General",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "General Flags",
+                    "type": "uint32",
+                    "format": {
+                        "id": "PKDTFlags"
+                    }
+                },
+                {
+                    "name": "Type",
+                    "type": "uint8",
+                    "format": {
+                        "id": "PKDTType"
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 1
+                },
+                {
+                    "name": "Fallout Behavior Flags",
+                    "type": "uint16",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Hellos To Player",
+                            "1": "Random Conversations",
+                            "2": "Observe Combat Behavior",
+                            "3": "Unknown 4",
+                            "4": "Reaction To Player Actions",
+                            "5": "Friendly Fire Comments",
+                            "6": "Aggro Radius Behavior",
+                            "7": "Allow Idle Chatter",
+                            "8": "Avoid Radiation"
+                        }
+                    }
+                },
+                {
+                    "name": "Type Specific Flags",
+                    "type": "union",
+                    "decider": "PKDTSpecificFlagsDecider",
+                    "elements": [
+                        {
+                            "name": "Type Specific Flags (missing)",
+                            "type": "empty",
+                            "conflictType": "Ignore"
+                        },
+                        {
+                            "name": "Type Specific Flags - Find",
+                            "type": "uint16",
+                            "format": {
+                                "type": "flags",
+                                "flags": {
+                                    "0": "",
+                                    "1": "",
+                                    "2": "",
+                                    "3": "",
+                                    "4": "",
+                                    "5": "",
+                                    "6": "",
+                                    "7": "",
+                                    "8": "Find - Allow Buying",
+                                    "9": "Find - Allow Killing",
+                                    "10": "Find - Allow Stealing"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Type Specific Flags - Follow",
+                            "type": "uint16",
+                            "format": {
+                                "type": "flags",
+                                "flags": {}
+                            }
+                        },
+                        {
+                            "name": "Type Specific Flags - Escort",
+                            "type": "uint16",
+                            "format": {
+                                "type": "flags",
+                                "flags": {
+                                    "0": "",
+                                    "1": "",
+                                    "2": "",
+                                    "3": "",
+                                    "4": "",
+                                    "5": "",
+                                    "6": "",
+                                    "7": "",
+                                    "8": "Escort - Allow Buying",
+                                    "9": "Escort - Allow Killing",
+                                    "10": "Escort - Allow Stealing"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Type Specific Flags - Eat",
+                            "type": "uint16",
+                            "format": {
+                                "type": "flags",
+                                "flags": {
+                                    "0": "",
+                                    "1": "",
+                                    "2": "",
+                                    "3": "",
+                                    "4": "",
+                                    "5": "",
+                                    "6": "",
+                                    "7": "",
+                                    "8": "Eat - Allow Buying",
+                                    "9": "Eat - Allow Killing",
+                                    "10": "Eat - Allow Stealing"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Type Specific Flags - Sleep",
+                            "type": "uint16",
+                            "format": {
+                                "type": "flags",
+                                "flags": {}
+                            }
+                        },
+                        {
+                            "name": "Type Specific Flags - Wander",
+                            "type": "uint16",
+                            "format": {
+                                "type": "flags",
+                                "flags": {
+                                    "0": "Wander - No Eating",
+                                    "1": "Wander - No Sleeping",
+                                    "2": "Wander - No Conversation",
+                                    "3": "Wander - No Idle Markers",
+                                    "4": "Wander - No Furniture",
+                                    "5": "Wander - No Wandering"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Type Specific Flags - Travel",
+                            "type": "uint16",
+                            "format": {
+                                "type": "flags",
+                                "flags": {}
+                            }
+                        },
+                        {
+                            "name": "Type Specific Flags - Accompany",
+                            "type": "uint16",
+                            "format": {
+                                "type": "flags",
+                                "flags": {}
+                            }
+                        },
+                        {
+                            "name": "Type Specific Flags - Use Item At",
+                            "type": "uint16",
+                            "format": {
+                                "type": "flags",
+                                "flags": {
+                                    "0": "",
+                                    "1": "Use Item At - Sit Down",
+                                    "2": "",
+                                    "3": "",
+                                    "4": "",
+                                    "5": "",
+                                    "6": "",
+                                    "7": "",
+                                    "8": "Use Item At - Allow Buying",
+                                    "9": "Use Item At - Allow Killing",
+                                    "10": "Use Item At - Allow Stealing"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Type Specific Flags - Ambush",
+                            "type": "uint16",
+                            "format": {
+                                "type": "flags",
+                                "flags": {
+                                    "0": "Ambush - Hide While Ambushing"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Type Specific Flags - Flee Not Combat",
+                            "type": "uint16",
+                            "format": {
+                                "type": "flags",
+                                "flags": {}
+                            }
+                        },
+                        {
+                            "name": "Type Specific Flags - ?",
+                            "type": "uint16",
+                            "format": {
+                                "type": "flags",
+                                "flags": {}
+                            }
+                        },
+                        {
+                            "name": "Type Specific Flags - Sandbox",
+                            "type": "uint16",
+                            "format": {
+                                "type": "flags",
+                                "flags": {
+                                    "0": "Sandbox - No Eating",
+                                    "1": "Sandbox - No Sleeping",
+                                    "2": "Sandbox - No Conversation",
+                                    "3": "Sandbox - No Idle Markers",
+                                    "4": "Sandbox - No Furniture",
+                                    "5": "Sandbox - No Wandering"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Type Specific Flags - Patrol",
+                            "type": "uint16",
+                            "format": {
+                                "type": "flags",
+                                "flags": {}
+                            }
+                        },
+                        {
+                            "name": "Type Specific Flags - Guard",
+                            "type": "uint16",
+                            "format": {
+                                "type": "flags",
+                                "flags": {
+                                    "0": "",
+                                    "1": "",
+                                    "2": "Guard - Remain Near Reference to Guard"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Type Specific Flags - Dialogue",
+                            "type": "uint16",
+                            "format": {
+                                "type": "flags",
+                                "flags": {}
+                            }
+                        },
+                        {
+                            "name": "Type Specific Flags - Use Weapon",
+                            "type": "uint16",
+                            "format": {
+                                "type": "flags",
+                                "flags": {}
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 2
+                }
+            ]
+        },
+        {
+            "name": "Locations",
+            "type": "memberStruct",
+            "unordered": true,
+            "members": [
+                {
+                    "signature": "PLDT",
+                    "name": "Location 1",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Type",
+                            "type": "int32",
+                            "format": {
+                                "type": "enum",
+                                "options": {
+                                    "0": "Near reference",
+                                    "1": "In cell",
+                                    "2": "Near current location",
+                                    "3": "Near editor location",
+                                    "4": "Object ID",
+                                    "5": "Object Type",
+                                    "6": "Near linked reference",
+                                    "7": "At package location"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Location",
+                            "type": "union",
+                            "decider": "PxDTLocationDecider",
+                            "elements": [
+                                {
+                                    "name": "Reference",
+                                    "type": "formId",
+                                    "persistent": true,
+                                    "signatures": [
+                                        "REFR",
+                                        "PGRE",
+                                        "PMIS",
+                                        "PBEA",
+                                        "ACHR",
+                                        "ACRE",
+                                        "PLYR"
+                                    ]
+                                },
+                                {
+                                    "name": "Cell",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "CELL"
+                                    ]
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 4,
+                                    "conflictType": "Ignore"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 4,
+                                    "conflictType": "Ignore"
+                                },
+                                {
+                                    "name": "Object ID",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "ACTI",
+                                        "DOOR",
+                                        "STAT",
+                                        "FURN",
+                                        "CREA",
+                                        "SPEL",
+                                        "NPC_",
+                                        "CONT",
+                                        "ARMO",
+                                        "AMMO",
+                                        "MISC",
+                                        "WEAP",
+                                        "BOOK",
+                                        "KEYM",
+                                        "ALCH",
+                                        "LIGH",
+                                        "CHIP",
+                                        "CMNY",
+                                        "CCRD",
+                                        "IMOD"
+                                    ]
+                                },
+                                {
+                                    "name": "Object Type",
+                                    "type": "uint32",
+                                    "format": {
+                                        "id": "ObjectTypeEnum"
+                                    }
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 4,
+                                    "conflictType": "Ignore"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 4,
+                                    "conflictType": "Ignore"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Radius",
+                            "type": "int32"
+                        }
+                    ]
+                },
+                {
+                    "signature": "PLD2",
+                    "name": "Location 2",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Type",
+                            "type": "int32",
+                            "format": {
+                                "type": "enum",
+                                "options": {
+                                    "0": "Near reference",
+                                    "1": "In cell",
+                                    "2": "Near current location",
+                                    "3": "Near editor location",
+                                    "4": "Object ID",
+                                    "5": "Object Type",
+                                    "6": "Near linked reference",
+                                    "7": "At package location"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Location",
+                            "type": "union",
+                            "decider": "PxDTLocationDecider",
+                            "elements": [
+                                {
+                                    "name": "Reference",
+                                    "type": "formId",
+                                    "persistent": true,
+                                    "signatures": [
+                                        "REFR",
+                                        "PGRE",
+                                        "PMIS",
+                                        "PBEA",
+                                        "ACHR",
+                                        "ACRE",
+                                        "PLYR"
+                                    ]
+                                },
+                                {
+                                    "name": "Cell",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "CELL"
+                                    ]
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 4,
+                                    "conflictType": "Ignore"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 4,
+                                    "conflictType": "Ignore"
+                                },
+                                {
+                                    "name": "Object ID",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "ACTI",
+                                        "DOOR",
+                                        "STAT",
+                                        "FURN",
+                                        "CREA",
+                                        "SPEL",
+                                        "NPC_",
+                                        "CONT",
+                                        "ARMO",
+                                        "AMMO",
+                                        "MISC",
+                                        "WEAP",
+                                        "BOOK",
+                                        "KEYM",
+                                        "ALCH",
+                                        "LIGH",
+                                        "CHIP",
+                                        "CMNY",
+                                        "CCRD",
+                                        "IMOD"
+                                    ]
+                                },
+                                {
+                                    "name": "Object Type",
+                                    "type": "uint32",
+                                    "format": {
+                                        "id": "ObjectTypeEnum"
+                                    }
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 4,
+                                    "conflictType": "Ignore"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 4,
+                                    "conflictType": "Ignore"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Radius",
+                            "type": "int32"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "PSDT",
+            "name": "Schedule",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Month",
+                    "type": "int8"
+                },
+                {
+                    "name": "Day of week",
+                    "type": "int8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Sunday",
+                            "1": "Monday",
+                            "2": "Tuesday",
+                            "3": "Wednesday",
+                            "4": "Thursday",
+                            "5": "Friday",
+                            "6": "Saturday",
+                            "7": "Weekdays",
+                            "8": "Weekends",
+                            "9": "Monday, Wednesday, Friday",
+                            "10": "Tuesday, Thursday",
+                            "-1": "Any"
+                        }
+                    }
+                },
+                {
+                    "name": "Date",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Time",
+                    "type": "int8"
+                },
+                {
+                    "name": "Duration",
+                    "type": "int32"
+                }
+            ]
+        },
+        {
+            "signature": "PTDT",
+            "name": "Target 1",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Type",
+                    "type": "int32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Specific Reference",
+                            "1": "Object ID",
+                            "2": "Object Type",
+                            "3": "Linked Reference"
+                        }
+                    }
+                },
+                {
+                    "name": "Target",
+                    "type": "union",
+                    "decider": "PxDTLocationDecider",
+                    "elements": [
+                        {
+                            "name": "Reference",
+                            "type": "formId",
+                            "persistent": true,
+                            "signatures": [
+                                "ACHR",
+                                "ACRE",
+                                "REFR",
+                                "PGRE",
+                                "PMIS",
+                                "PBEA",
+                                "PLYR"
+                            ]
+                        },
+                        {
+                            "name": "Object ID",
+                            "type": "formId",
+                            "signatures": [
+                                "ACTI",
+                                "DOOR",
+                                "STAT",
+                                "FURN",
+                                "CREA",
+                                "SPEL",
+                                "NPC_",
+                                "LVLN",
+                                "LVLC",
+                                "CONT",
+                                "ARMO",
+                                "AMMO",
+                                "MISC",
+                                "WEAP",
+                                "BOOK",
+                                "KEYM",
+                                "ALCH",
+                                "LIGH",
+                                "FACT",
+                                "FLST",
+                                "IDLM",
+                                "CHIP",
+                                "CMNY",
+                                "CCRD",
+                                "IMOD"
+                            ]
+                        },
+                        {
+                            "name": "Object Type",
+                            "type": "uint32",
+                            "format": {
+                                "id": "ObjectTypeEnum"
+                            }
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 4,
+                            "conflictType": "Ignore"
+                        }
+                    ]
+                },
+                {
+                    "name": "Count / Distance",
+                    "type": "int32"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "id": "CTDAs"
+        },
+        {
+            "name": "Idle Animations",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "IDLF",
+                    "name": "Flags",
+                    "type": "uint8",
+                    "required": true,
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Run in Sequence",
+                            "1": "",
+                            "2": "Do Once"
+                        }
+                    }
+                },
+                {
+                    "signature": "IDLC",
+                    "name": "",
+                    "type": "struct",
+                    "required": true,
+                    "elements": [
+                        {
+                            "name": "Animation Count",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 3
+                        }
+                    ]
+                },
+                {
+                    "signature": "IDLT",
+                    "name": "Idle Timer Setting",
+                    "type": "float",
+                    "required": true
+                },
+                {
+                    "signature": "IDLA",
+                    "name": "Animations",
+                    "type": "array",
+                    "required": true,
+                    "afterSet": "IDLAsAfterSet",
+                    "element": {
+                        "name": "Animation",
+                        "type": "formId",
+                        "signatures": [
+                            "IDLE"
+                        ]
+                    }
+                },
+                {
+                    "signature": "IDLB",
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 4,
+                    "conflictType": "Ignore"
+                }
+            ]
+        },
+        {
+            "signature": "CNAM",
+            "name": "Combat Style",
+            "type": "formId",
+            "signatures": [
+                "CSTY"
+            ]
+        },
+        {
+            "signature": "PKED",
+            "name": "Eat Marker",
+            "type": "empty"
+        },
+        {
+            "signature": "PKE2",
+            "name": "Escort Distance",
+            "type": "uint32"
+        },
+        {
+            "signature": "PKFD",
+            "name": "Follow - Start Location - Trigger Radius",
+            "type": "float"
+        },
+        {
+            "signature": "PKPT",
+            "name": "Patrol Flags",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Repeatable",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "No",
+                            "1": "Yes"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 1
+                }
+            ]
+        },
+        {
+            "signature": "PKW3",
+            "name": "Use Weapon Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Always Hit",
+                            "1": "",
+                            "2": "",
+                            "3": "",
+                            "4": "",
+                            "5": "",
+                            "6": "",
+                            "7": "",
+                            "8": "Do No Damage",
+                            "9": "",
+                            "10": "",
+                            "11": "",
+                            "12": "",
+                            "13": "",
+                            "14": "",
+                            "15": "",
+                            "16": "Crouch To Reload",
+                            "17": "",
+                            "18": "",
+                            "19": "",
+                            "20": "",
+                            "21": "",
+                            "22": "",
+                            "23": "",
+                            "24": "Hold Fire When Blocked"
+                        }
+                    }
+                },
+                {
+                    "name": "Fire Rate",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Auto Fire",
+                            "1": "Volley Fire"
+                        }
+                    }
+                },
+                {
+                    "name": "Fire Count",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Number of Bursts",
+                            "1": "Repeat Fire"
+                        }
+                    }
+                },
+                {
+                    "name": "Number of Bursts",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Shoots Per Volleys",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Min",
+                            "type": "uint16"
+                        },
+                        {
+                            "name": "Max",
+                            "type": "uint16"
+                        }
+                    ]
+                },
+                {
+                    "name": "Pause Between Volleys",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Min",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Max",
+                            "type": "float"
+                        }
+                    ]
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 4
+                }
+            ]
+        },
+        {
+            "signature": "PTD2",
+            "name": "Target 2",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Type",
+                    "type": "int32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Specific reference",
+                            "1": "Object ID",
+                            "2": "Object Type",
+                            "3": "Linked Reference"
+                        }
+                    }
+                },
+                {
+                    "name": "Target",
+                    "type": "union",
+                    "decider": "PxDTLocationDecider",
+                    "elements": [
+                        {
+                            "name": "Reference",
+                            "type": "formId",
+                            "persistent": true,
+                            "signatures": [
+                                "ACHR",
+                                "ACRE",
+                                "REFR",
+                                "PGRE",
+                                "PMIS",
+                                "PBEA",
+                                "PLYR"
+                            ]
+                        },
+                        {
+                            "name": "Object ID",
+                            "type": "formId",
+                            "signatures": [
+                                "ACTI",
+                                "DOOR",
+                                "STAT",
+                                "FURN",
+                                "CREA",
+                                "SPEL",
+                                "NPC_",
+                                "LVLN",
+                                "LVLC",
+                                "CONT",
+                                "ARMO",
+                                "AMMO",
+                                "MISC",
+                                "WEAP",
+                                "BOOK",
+                                "KEYM",
+                                "ALCH",
+                                "LIGH",
+                                "FACT",
+                                "FLST",
+                                "CHIP",
+                                "CMNY",
+                                "CCRD",
+                                "IMOD"
+                            ]
+                        },
+                        {
+                            "name": "Object Type",
+                            "type": "uint32",
+                            "format": {
+                                "id": "ObjectTypeEnum"
+                            }
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 4,
+                            "conflictType": "Ignore"
+                        }
+                    ]
+                },
+                {
+                    "name": "Count / Distance",
+                    "type": "int32"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "PUID",
+            "name": "Use Item Marker",
+            "type": "empty"
+        },
+        {
+            "signature": "PKAM",
+            "name": "Ambush Marker",
+            "type": "empty"
+        },
+        {
+            "signature": "PKDD",
+            "name": "Dialogue Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "FOV",
+                    "type": "float"
+                },
+                {
+                    "name": "Topic",
+                    "type": "formId",
+                    "signatures": [
+                        "DIAL",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "No Headtracking",
+                            "1": "",
+                            "2": "",
+                            "3": "",
+                            "4": "",
+                            "5": "",
+                            "6": "",
+                            "7": "",
+                            "8": "Don't Control Target Movement"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Dialogue Type",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Conversation",
+                            "1": "Say To"
+                        }
+                    }
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                }
+            ]
+        },
+        {
+            "signature": "PLD2",
+            "name": "Location 2 (again??)",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Type",
+                    "type": "int32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Near reference",
+                            "1": "In cell",
+                            "2": "Near current location",
+                            "3": "Near editor location",
+                            "4": "Object ID",
+                            "5": "Object Type",
+                            "6": "Near linked reference",
+                            "7": "At package location"
+                        }
+                    }
+                },
+                {
+                    "name": "Location",
+                    "type": "union",
+                    "decider": "PxDTLocationDecider",
+                    "elements": [
+                        {
+                            "name": "Reference",
+                            "type": "formId",
+                            "persistent": true,
+                            "signatures": [
+                                "REFR",
+                                "PGRE",
+                                "PMIS",
+                                "PBEA",
+                                "ACHR",
+                                "ACRE",
+                                "PLYR"
+                            ]
+                        },
+                        {
+                            "name": "Cell",
+                            "type": "formId",
+                            "signatures": [
+                                "CELL"
+                            ]
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 4,
+                            "conflictType": "Ignore"
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 4,
+                            "conflictType": "Ignore"
+                        },
+                        {
+                            "name": "Object ID",
+                            "type": "formId",
+                            "signatures": [
+                                "ACTI",
+                                "DOOR",
+                                "STAT",
+                                "FURN",
+                                "CREA",
+                                "SPEL",
+                                "NPC_",
+                                "CONT",
+                                "ARMO",
+                                "AMMO",
+                                "MISC",
+                                "WEAP",
+                                "BOOK",
+                                "KEYM",
+                                "ALCH",
+                                "LIGH",
+                                "CHIP",
+                                "CMNY",
+                                "CCRD",
+                                "IMOD"
+                            ]
+                        },
+                        {
+                            "name": "Object Type",
+                            "type": "uint32",
+                            "format": {
+                                "id": "ObjectTypeEnum"
+                            }
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 4,
+                            "conflictType": "Ignore"
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 4,
+                            "conflictType": "Ignore"
+                        }
+                    ]
+                },
+                {
+                    "name": "Radius",
+                    "type": "int32"
+                }
+            ]
+        },
+        {
+            "name": "OnBegin",
+            "type": "memberStruct",
+            "required": true,
+            "members": [
+                {
+                    "signature": "POBA",
+                    "name": "OnBegin Marker",
+                    "type": "empty",
+                    "required": true
+                },
+                {
+                    "signature": "INAM",
+                    "name": "Idle",
+                    "type": "formId",
+                    "required": true,
+                    "signatures": [
+                        "IDLE",
+                        "NULL"
+                    ]
+                },
+                {
+                    "id": "EmbeddedScript",
+                    "required": true
+                },
+                {
+                    "signature": "TNAM",
+                    "name": "Topic",
+                    "type": "formId",
+                    "required": true,
+                    "signatures": [
+                        "DIAL",
+                        "NULL"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "OnEnd",
+            "type": "memberStruct",
+            "required": true,
+            "members": [
+                {
+                    "signature": "POEA",
+                    "name": "OnEnd Marker",
+                    "type": "empty",
+                    "required": true
+                },
+                {
+                    "signature": "INAM",
+                    "name": "Idle",
+                    "type": "formId",
+                    "required": true,
+                    "signatures": [
+                        "IDLE",
+                        "NULL"
+                    ]
+                },
+                {
+                    "id": "EmbeddedScript",
+                    "required": true
+                },
+                {
+                    "signature": "TNAM",
+                    "name": "Topic",
+                    "type": "formId",
+                    "required": true,
+                    "signatures": [
+                        "DIAL",
+                        "NULL"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "OnChange",
+            "type": "memberStruct",
+            "required": true,
+            "members": [
+                {
+                    "signature": "POCA",
+                    "name": "OnChange Marker",
+                    "type": "empty",
+                    "required": true
+                },
+                {
+                    "signature": "INAM",
+                    "name": "Idle",
+                    "type": "formId",
+                    "required": true,
+                    "signatures": [
+                        "IDLE",
+                        "NULL"
+                    ]
+                },
+                {
+                    "id": "EmbeddedScript",
+                    "required": true
+                },
+                {
+                    "signature": "TNAM",
+                    "name": "Topic",
+                    "type": "formId",
+                    "required": true,
+                    "signatures": [
+                        "DIAL",
+                        "NULL"
+                    ]
+                }
+            ]
+        }
+    ]
+}

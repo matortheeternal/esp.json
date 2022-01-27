@@ -1,0 +1,100 @@
+{
+    "signature": "ALCH",
+    "type": "record",
+    "name": "Ingestible",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "FULL",
+            "required": true
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "SCRI"
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "id": "YNAM"
+        },
+        {
+            "id": "ZNAM"
+        },
+        {
+            "id": "ETYP",
+            "required": true
+        },
+        {
+            "signature": "DATA",
+            "name": "Weight",
+            "type": "float",
+            "required": true
+        },
+        {
+            "signature": "ENIT",
+            "name": "Effect Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Value",
+                    "type": "int32"
+                },
+                {
+                    "name": "Flags?",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "No Auto-Calc (Unused)",
+                            "1": "Food Item",
+                            "2": "Medicine"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3
+                },
+                {
+                    "name": "Withdrawal Effect",
+                    "type": "formId",
+                    "signatures": [
+                        "SPEL",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Addiction Chance",
+                    "type": "float"
+                },
+                {
+                    "name": "Sound - Consume",
+                    "type": "formId",
+                    "signatures": [
+                        "SOUN",
+                        "NULL"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "Effects",
+            "required": true
+        }
+    ]
+}

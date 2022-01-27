@@ -1,0 +1,95 @@
+{
+    "signature": "LSCR",
+    "type": "record",
+    "name": "Load Screen",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "10": "Displays In Main Menu",
+            "12": "Ignored"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "ICON",
+            "required": true
+        },
+        {
+            "id": "DESC",
+            "required": true
+        },
+        {
+            "name": "Locations",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "signature": "LNAM",
+                "name": "Location",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Direct",
+                        "type": "formId",
+                        "signatures": [
+                            "CELL",
+                            "WRLD",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "name": "Indirect",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "World",
+                                "type": "formId",
+                                "signatures": [
+                                    "NULL",
+                                    "WRLD"
+                                ]
+                            },
+                            {
+                                "name": "Grid",
+                                "type": "struct",
+                                "elements": [
+                                    {
+                                        "name": "Y",
+                                        "type": "int16"
+                                    },
+                                    {
+                                        "name": "X",
+                                        "type": "int16"
+                                    }
+                                ],
+                                "sortKey": [
+                                    0,
+                                    1
+                                ]
+                            }
+                        ],
+                        "sortKey": [
+                            0,
+                            1
+                        ]
+                    }
+                ],
+                "sortKey": [
+                    0,
+                    1
+                ]
+            }
+        },
+        {
+            "signature": "WMI1",
+            "name": "Load Screen Type",
+            "type": "formId",
+            "signatures": [
+                "LSCT"
+            ]
+        }
+    ]
+}

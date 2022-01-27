@@ -1,0 +1,907 @@
+{
+    "signature": "WEAP",
+    "type": "record",
+    "name": "Weapon",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "SCRI"
+        },
+        {
+            "id": "EITM"
+        },
+        {
+            "signature": "EAMT",
+            "name": "Enchantment Charge Amount",
+            "type": "int16"
+        },
+        {
+            "signature": "NAM0",
+            "name": "Ammo",
+            "type": "formId",
+            "signatures": [
+                "AMMO",
+                "FLST"
+            ]
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "id": "REPL"
+        },
+        {
+            "id": "ETYP",
+            "required": true
+        },
+        {
+            "id": "BIPL"
+        },
+        {
+            "id": "YNAM"
+        },
+        {
+            "id": "ZNAM"
+        },
+        {
+            "name": "Shell Casing Model",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "MOD2",
+                    "name": "Model FileName",
+                    "type": "string"
+                },
+                {
+                    "signature": "MO2T",
+                    "name": "Texture Files Hashes",
+                    "type": "bytes",
+                    "size": 0,
+                    "conflictType": "Ignore"
+                },
+                {
+                    "id": "MO2S"
+                }
+            ]
+        },
+        {
+            "name": "Scope Model",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "MOD3",
+                    "name": "Model FileName",
+                    "type": "string"
+                },
+                {
+                    "signature": "MO3T",
+                    "name": "Texture Files Hashes",
+                    "type": "bytes",
+                    "size": 0,
+                    "conflictType": "Ignore"
+                },
+                {
+                    "id": "MO3S"
+                }
+            ]
+        },
+        {
+            "signature": "EFSD",
+            "name": "Scope Effect",
+            "type": "formId",
+            "signatures": [
+                "EFSH"
+            ]
+        },
+        {
+            "name": "World Model",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "MOD4",
+                    "name": "Model FileName",
+                    "type": "string"
+                },
+                {
+                    "signature": "MO4T",
+                    "name": "Texture Files Hashes",
+                    "type": "bytes",
+                    "size": 0,
+                    "conflictType": "Ignore"
+                },
+                {
+                    "id": "MO4S"
+                }
+            ]
+        },
+        {
+            "signature": "MWD1",
+            "name": "Model - Mod 1",
+            "type": "string"
+        },
+        {
+            "signature": "MWD2",
+            "name": "Model - Mod 2",
+            "type": "string"
+        },
+        {
+            "signature": "MWD3",
+            "name": "Model - Mod 1 and 2",
+            "type": "string"
+        },
+        {
+            "signature": "MWD4",
+            "name": "Model - Mod 3",
+            "type": "string"
+        },
+        {
+            "signature": "MWD5",
+            "name": "Model - Mod 1 and 3",
+            "type": "string"
+        },
+        {
+            "signature": "MWD6",
+            "name": "Model - Mod 2 and 3",
+            "type": "string"
+        },
+        {
+            "signature": "MWD7",
+            "name": "Model - Mod 1, 2 and 3",
+            "type": "string"
+        },
+        {
+            "signature": "VANM",
+            "name": "VATS Attack Name",
+            "type": "string",
+            "conflictType": "Translate"
+        },
+        {
+            "signature": "NNAM",
+            "name": "Embedded Weapon Node",
+            "type": "string"
+        },
+        {
+            "signature": "INAM",
+            "name": "Impact DataSet",
+            "type": "formId",
+            "signatures": [
+                "IPDS"
+            ]
+        },
+        {
+            "signature": "WNAM",
+            "name": "1st Person Model",
+            "type": "formId",
+            "signatures": [
+                "STAT"
+            ]
+        },
+        {
+            "signature": "WNM1",
+            "name": "1st Person Model - Mod 1",
+            "type": "formId",
+            "signatures": [
+                "STAT"
+            ]
+        },
+        {
+            "signature": "WNM2",
+            "name": "1st Person Model - Mod 2",
+            "type": "formId",
+            "signatures": [
+                "STAT"
+            ]
+        },
+        {
+            "signature": "WNM3",
+            "name": "1st Person Model - Mod 1 and 2",
+            "type": "formId",
+            "signatures": [
+                "STAT"
+            ]
+        },
+        {
+            "signature": "WNM4",
+            "name": "1st Person Model - Mod 3",
+            "type": "formId",
+            "signatures": [
+                "STAT"
+            ]
+        },
+        {
+            "signature": "WNM5",
+            "name": "1st Person Model - Mod 1 and 3",
+            "type": "formId",
+            "signatures": [
+                "STAT"
+            ]
+        },
+        {
+            "signature": "WNM6",
+            "name": "1st Person Model - Mod 2 and 3",
+            "type": "formId",
+            "signatures": [
+                "STAT"
+            ]
+        },
+        {
+            "signature": "WNM7",
+            "name": "1st Person Model - Mod 1, 2 and 3",
+            "type": "formId",
+            "signatures": [
+                "STAT"
+            ]
+        },
+        {
+            "signature": "WMI1",
+            "name": "Weapon Mod 1",
+            "type": "formId",
+            "signatures": [
+                "IMOD"
+            ]
+        },
+        {
+            "signature": "WMI2",
+            "name": "Weapon Mod 2",
+            "type": "formId",
+            "signatures": [
+                "IMOD"
+            ]
+        },
+        {
+            "signature": "WMI3",
+            "name": "Weapon Mod 3",
+            "type": "formId",
+            "signatures": [
+                "IMOD"
+            ]
+        },
+        {
+            "name": "Sound - Gun",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "SNAM",
+                    "name": "Shoot 3D",
+                    "type": "formId",
+                    "signatures": [
+                        "SOUN"
+                    ]
+                },
+                {
+                    "signature": "SNAM",
+                    "name": "Shoot Dist",
+                    "type": "formId",
+                    "signatures": [
+                        "SOUN"
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "XNAM",
+            "name": "Sound - Gun - Shoot 2D",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        },
+        {
+            "signature": "NAM7",
+            "name": "Sound - Gun - Shoot 3D Looping",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        },
+        {
+            "signature": "TNAM",
+            "name": "Sound - Melee - Swing / Gun - No Ammo",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        },
+        {
+            "signature": "NAM6",
+            "name": "Sound - Block",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        },
+        {
+            "signature": "UNAM",
+            "name": "Sound - Idle",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        },
+        {
+            "signature": "NAM9",
+            "name": "Sound - Equip",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        },
+        {
+            "signature": "NAM8",
+            "name": "Sound - Unequip",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        },
+        {
+            "name": "Sound - Mod 1",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "WMS1",
+                    "name": "Shoot 3D",
+                    "type": "formId",
+                    "signatures": [
+                        "SOUN"
+                    ]
+                },
+                {
+                    "signature": "WMS1",
+                    "name": "Shoot Dist",
+                    "type": "formId",
+                    "signatures": [
+                        "SOUN"
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "WMS2",
+            "name": "Sound - Mod 1 - Shoot 2D",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Value",
+                    "type": "int32"
+                },
+                {
+                    "name": "Health",
+                    "type": "int32"
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                },
+                {
+                    "name": "Base Damage",
+                    "type": "int16"
+                },
+                {
+                    "name": "Clip Size",
+                    "type": "uint8"
+                }
+            ]
+        },
+        {
+            "signature": "DNAM",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Animation Type",
+                    "type": "uint32",
+                    "format": {
+                        "id": "WeaponAnimTypeEnum"
+                    }
+                },
+                {
+                    "name": "Animation Multiplier",
+                    "type": "float"
+                },
+                {
+                    "name": "Reach",
+                    "type": "float"
+                },
+                {
+                    "name": "Flags 1",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Ignores Normal Weapon Resistance",
+                            "1": "Is Automatic",
+                            "2": "Has Scope",
+                            "3": "Can't Drop",
+                            "4": "Hide Backpack",
+                            "5": "Embedded Weapon",
+                            "6": "Don't Use 1st Person IS Animations",
+                            "7": "Non-Playable"
+                        }
+                    }
+                },
+                {
+                    "name": "Grip Animation",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "230": "HandGrip1",
+                            "231": "HandGrip2",
+                            "232": "HandGrip3",
+                            "233": "HandGrip4",
+                            "234": "HandGrip5",
+                            "235": "HandGrip6",
+                            "255": "DEFAULT"
+                        }
+                    }
+                },
+                {
+                    "name": "Ammo Use",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Reload Animation",
+                    "type": "uint8",
+                    "format": {
+                        "id": "ReloadAnimEnum"
+                    }
+                },
+                {
+                    "name": "Min Spread",
+                    "type": "float"
+                },
+                {
+                    "name": "Spread",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                },
+                {
+                    "name": "Sight FOV",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                },
+                {
+                    "name": "Projectile",
+                    "type": "formId",
+                    "signatures": [
+                        "PROJ",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Base VATS To-Hit Chance",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Attack Animation",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "26": "AttackLeft",
+                            "32": "AttackRight",
+                            "38": "Attack3",
+                            "44": "Attack4",
+                            "50": "Attack5",
+                            "56": "Attack6",
+                            "62": "Attack7",
+                            "68": "Attack8",
+                            "74": "AttackLoop",
+                            "80": "AttackSpin",
+                            "86": "AttackSpin2",
+                            "102": "PlaceMine",
+                            "108": "PlaceMine2",
+                            "114": "AttackThrow",
+                            "120": "AttackThrow2",
+                            "126": "AttackThrow3",
+                            "132": "AttackThrow4",
+                            "138": "AttackThrow5",
+                            "144": "Attack9",
+                            "150": "AttackThrow6",
+                            "156": "AttackThrow7",
+                            "162": "AttackThrow8",
+                            "255": "DEFAULT"
+                        }
+                    }
+                },
+                {
+                    "name": "Projectile Count",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Embedded Weapon - Actor Value",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Perception",
+                            "1": "Endurance",
+                            "2": "Left Attack",
+                            "3": "Right Attack",
+                            "4": "Left Mobility",
+                            "5": "Right Mobilty",
+                            "6": "Brain"
+                        }
+                    }
+                },
+                {
+                    "name": "Min Range",
+                    "type": "float"
+                },
+                {
+                    "name": "Max Range",
+                    "type": "float"
+                },
+                {
+                    "name": "On Hit",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Normal formula behavior",
+                            "1": "Dismember Only",
+                            "2": "Explode Only",
+                            "3": "No Dismember/Explode"
+                        }
+                    }
+                },
+                {
+                    "name": "Flags 2",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Player Only",
+                            "1": "NPCs Use Ammo",
+                            "2": "No Jam After Reload",
+                            "3": "Override - Action Points",
+                            "4": "Minor Crime",
+                            "5": "Range - Fixed",
+                            "6": "Not Used In Normal Combat",
+                            "7": "Override - Damage to Weapon Mult",
+                            "8": "Don't Use 3rd Person IS Animations",
+                            "9": "Short Burst",
+                            "10": "Rumble Alternate",
+                            "11": "Long Burst",
+                            "12": "Scope has NightVision",
+                            "13": "Scope from Mod"
+                        }
+                    }
+                },
+                {
+                    "name": "Animation Attack Multiplier",
+                    "type": "float"
+                },
+                {
+                    "name": "Fire Rate",
+                    "type": "float"
+                },
+                {
+                    "name": "Override - Action Points",
+                    "type": "float"
+                },
+                {
+                    "name": "Rumble - Left Motor Strength",
+                    "type": "float"
+                },
+                {
+                    "name": "Rumble - Right Motor Strength",
+                    "type": "float"
+                },
+                {
+                    "name": "Rumble - Duration",
+                    "type": "float"
+                },
+                {
+                    "name": "Override - Damage to Weapon Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Attack Shots/Sec",
+                    "type": "float"
+                },
+                {
+                    "name": "Reload Time",
+                    "type": "float"
+                },
+                {
+                    "name": "Jam Time",
+                    "type": "float"
+                },
+                {
+                    "name": "Aim Arc",
+                    "type": "float"
+                },
+                {
+                    "name": "Skill",
+                    "type": "int32",
+                    "format": {
+                        "id": "ActorValueEnum"
+                    }
+                },
+                {
+                    "name": "Rumble - Pattern",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Constant",
+                            "1": "Square",
+                            "2": "Triangle",
+                            "3": "Sawtooth"
+                        }
+                    }
+                },
+                {
+                    "name": "Rumble - Wavelength",
+                    "type": "float"
+                },
+                {
+                    "name": "Limb Dmg Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Resist Type",
+                    "type": "int32",
+                    "format": {
+                        "id": "ActorValueEnum"
+                    }
+                },
+                {
+                    "name": "Sight Usage",
+                    "type": "float"
+                },
+                {
+                    "name": "Semi-Automatic Fire Delay Min",
+                    "type": "float"
+                },
+                {
+                    "name": "Semi-Automatic Fire Delay Max",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                },
+                {
+                    "name": "Effect - Mod 1",
+                    "type": "uint32",
+                    "format": {
+                        "id": "ModEffectEnum"
+                    }
+                },
+                {
+                    "name": "Effect - Mod 2",
+                    "type": "uint32",
+                    "format": {
+                        "id": "ModEffectEnum"
+                    }
+                },
+                {
+                    "name": "Effect - Mod 3",
+                    "type": "uint32",
+                    "format": {
+                        "id": "ModEffectEnum"
+                    }
+                },
+                {
+                    "name": "Value A - Mod 1",
+                    "type": "float"
+                },
+                {
+                    "name": "Value A - Mod 2",
+                    "type": "float"
+                },
+                {
+                    "name": "Value A - Mod 3",
+                    "type": "float"
+                },
+                {
+                    "name": "Power Attack Animation Override",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "0?",
+                            "97": "AttackCustom1Power",
+                            "98": "AttackCustom2Power",
+                            "99": "AttackCustom3Power",
+                            "100": "AttackCustom4Power",
+                            "101": "AttackCustom5Power",
+                            "255": "DEFAULT"
+                        }
+                    }
+                },
+                {
+                    "name": "Strength Req",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 1
+                },
+                {
+                    "name": "Reload Animation - Mod",
+                    "type": "uint8",
+                    "format": {
+                        "id": "ReloadAnimEnum"
+                    }
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 2
+                },
+                {
+                    "name": "Regen Rate",
+                    "type": "float"
+                },
+                {
+                    "name": "Kill Impulse",
+                    "type": "float"
+                },
+                {
+                    "name": "Value B - Mod 1",
+                    "type": "float"
+                },
+                {
+                    "name": "Value B - Mod 2",
+                    "type": "float"
+                },
+                {
+                    "name": "Value B - Mod 3",
+                    "type": "float"
+                },
+                {
+                    "name": "Impulse Dist",
+                    "type": "float"
+                },
+                {
+                    "name": "Skill Req",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "signature": "CRDT",
+            "name": "Critical Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Critical Damage",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 2
+                },
+                {
+                    "name": "Crit % Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "On Death"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3
+                },
+                {
+                    "name": "Effect",
+                    "type": "formId",
+                    "signatures": [
+                        "SPEL",
+                        "NULL"
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "VATS",
+            "name": "VATS",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Effect",
+                    "type": "formId",
+                    "signatures": [
+                        "SPEL",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Skill",
+                    "type": "float"
+                },
+                {
+                    "name": "Dam. Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "AP",
+                    "type": "float"
+                },
+                {
+                    "name": "Silent",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "No",
+                            "1": "Yes"
+                        }
+                    }
+                },
+                {
+                    "name": "Mod Required",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "No",
+                            "1": "Yes"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 2
+                }
+            ]
+        },
+        {
+            "signature": "VNAM",
+            "name": "Sound Level",
+            "type": "uint32",
+            "required": true,
+            "format": {
+                "id": "SoundLevelEnum"
+            }
+        }
+    ]
+}

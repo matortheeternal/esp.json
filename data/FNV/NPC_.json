@@ -1,0 +1,545 @@
+{
+    "signature": "NPC_",
+    "type": "record",
+    "name": "Non-Player Character",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "FULLActor"
+        },
+        {
+            "id": "MODLActor"
+        },
+        {
+            "signature": "ACBS",
+            "name": "Configuration",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Female",
+                            "1": "Essential",
+                            "2": "Is CharGen Face Preset",
+                            "3": "Respawn",
+                            "4": "Auto-calc stats",
+                            "5": "",
+                            "6": "",
+                            "7": "PC Level Mult",
+                            "8": "Use Template",
+                            "9": "No Low Level Processing",
+                            "10": "",
+                            "11": "No Blood Spray",
+                            "12": "No Blood Decal",
+                            "13": "",
+                            "14": "",
+                            "15": "",
+                            "16": "",
+                            "17": "",
+                            "18": "",
+                            "19": "",
+                            "20": "No VATS Melee",
+                            "21": "",
+                            "22": "Can be all races",
+                            "23": "Autocalc Service",
+                            "24": "",
+                            "25": "",
+                            "26": "No Knockdowns",
+                            "27": "Not Pushable",
+                            "28": "Unknown 28",
+                            "29": "",
+                            "30": "No Rotating To Head-track",
+                            "31": ""
+                        }
+                    }
+                },
+                {
+                    "name": "Fatigue",
+                    "type": "uint16",
+                    "required": true
+                },
+                {
+                    "name": "Barter gold",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Level",
+                    "type": "union",
+                    "decider": "CreaLevelDecider",
+                    "required": true,
+                    "elements": [
+                        {
+                            "name": "Level",
+                            "type": "int16",
+                            "required": true
+                        },
+                        {
+                            "name": "Level Mult",
+                            "type": "int16",
+                            "required": true,
+                            "format": {
+                                "type": "divide",
+                                "value": 1000
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Calc min",
+                    "type": "uint16",
+                    "required": true
+                },
+                {
+                    "name": "Calc max",
+                    "type": "uint16",
+                    "required": true
+                },
+                {
+                    "name": "Speed Multiplier",
+                    "type": "uint16",
+                    "required": true
+                },
+                {
+                    "name": "Karma (Alignment)",
+                    "type": "float"
+                },
+                {
+                    "name": "Disposition Base",
+                    "type": "int16"
+                },
+                {
+                    "name": "Template Flags",
+                    "type": "uint16",
+                    "format": {
+                        "id": "TemplateFlags"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Factions",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "signature": "SNAM",
+                "name": "Faction",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Faction",
+                        "type": "formId",
+                        "signatures": [
+                            "FACT"
+                        ]
+                    },
+                    {
+                        "name": "Rank",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "Unused",
+                        "type": "bytes",
+                        "size": 3
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        },
+        {
+            "signature": "INAM",
+            "name": "Death item",
+            "type": "formId",
+            "signatures": [
+                "LVLI"
+            ]
+        },
+        {
+            "signature": "VTCK",
+            "name": "Voice",
+            "type": "formId",
+            "required": true,
+            "signatures": [
+                "VTYP"
+            ]
+        },
+        {
+            "signature": "TPLT",
+            "name": "Template",
+            "type": "formId",
+            "signatures": [
+                "LVLN",
+                "NPC_"
+            ]
+        },
+        {
+            "signature": "RNAM",
+            "name": "Race",
+            "type": "formId",
+            "required": true,
+            "signatures": [
+                "RACE"
+            ]
+        },
+        {
+            "id": "SPLOs"
+        },
+        {
+            "signature": "EITM",
+            "name": "Unarmed Attack Effect",
+            "type": "formId",
+            "signatures": [
+                "ENCH",
+                "SPEL"
+            ]
+        },
+        {
+            "signature": "EAMT",
+            "name": "Unarmed Attack Animation",
+            "type": "uint16",
+            "required": true,
+            "format": {
+                "id": "AttackAnimationEnum"
+            }
+        },
+        {
+            "id": "DESTActor"
+        },
+        {
+            "id": "SCRIActor"
+        },
+        {
+            "name": "Items",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "id": "CNTO"
+            }
+        },
+        {
+            "id": "AIDT"
+        },
+        {
+            "name": "Packages",
+            "type": "memberArray",
+            "member": {
+                "signature": "PKID",
+                "name": "Package",
+                "type": "formId",
+                "signatures": [
+                    "PACK"
+                ]
+            }
+        },
+        {
+            "signature": "KFFZ",
+            "name": "Animations",
+            "type": "array",
+            "sorted": true,
+            "element": {
+                "name": "Animation",
+                "type": "string",
+                "transform": "lowercase"
+            }
+        },
+        {
+            "signature": "CNAM",
+            "name": "Class",
+            "type": "formId",
+            "required": true,
+            "signatures": [
+                "CLAS"
+            ]
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Base Health",
+                    "type": "int32"
+                },
+                {
+                    "name": "Attributes",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Strength",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Perception",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Endurance",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Charisma",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Intelligence",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Agility",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Luck",
+                            "type": "uint8"
+                        }
+                    ]
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes"
+                }
+            ]
+        },
+        {
+            "signature": "DNAM",
+            "name": "",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Skill Values",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Barter",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Big Guns",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Energy Weapons",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Explosives",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Lockpick",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Medicine",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Melee Weapons",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Repair",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Science",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Guns",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Sneak",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Speech",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Survival",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Unarmed",
+                            "type": "uint8"
+                        }
+                    ]
+                },
+                {
+                    "name": "Skill Offsets",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Barter",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Big Guns",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Energy Weapons",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Explosives",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Lockpick",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Medicine",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Melee Weapons",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Repair",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Science",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Guns",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Sneak",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Speech",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Survival",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Unarmed",
+                            "type": "uint8"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Head Parts",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "signature": "PNAM",
+                "name": "Head Part",
+                "type": "formId",
+                "signatures": [
+                    "HDPT"
+                ]
+            }
+        },
+        {
+            "signature": "HNAM",
+            "name": "Hair",
+            "type": "formId",
+            "signatures": [
+                "HAIR"
+            ]
+        },
+        {
+            "signature": "LNAM",
+            "name": "Hair length",
+            "type": "float"
+        },
+        {
+            "signature": "ENAM",
+            "name": "Eyes",
+            "type": "formId",
+            "signatures": [
+                "EYES"
+            ]
+        },
+        {
+            "signature": "HCLR",
+            "name": "Hair color",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Red",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Green",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Blue",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 1
+                }
+            ]
+        },
+        {
+            "signature": "ZNAM",
+            "name": "Combat Style",
+            "type": "formId",
+            "signatures": [
+                "CSTY"
+            ]
+        },
+        {
+            "signature": "NAM4",
+            "name": "Impact Material Type",
+            "type": "uint32",
+            "required": true,
+            "format": {
+                "id": "ImpactMaterialTypeEnum"
+            }
+        },
+        {
+            "id": "FaceGenNPC"
+        },
+        {
+            "signature": "NAM5",
+            "name": "Unknown",
+            "type": "uint16",
+            "required": true
+        },
+        {
+            "signature": "NAM6",
+            "name": "Height",
+            "type": "float",
+            "required": true
+        },
+        {
+            "signature": "NAM7",
+            "name": "Weight",
+            "type": "float",
+            "required": true
+        }
+    ]
+}

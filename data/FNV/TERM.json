@@ -1,0 +1,168 @@
+{
+    "signature": "TERM",
+    "type": "record",
+    "name": "Terminal",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "SCRI"
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "id": "DESC",
+            "required": true
+        },
+        {
+            "signature": "SNAM",
+            "name": "Sound - Looping",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        },
+        {
+            "signature": "PNAM",
+            "name": "Password Note",
+            "type": "formId",
+            "signatures": [
+                "NOTE"
+            ]
+        },
+        {
+            "signature": "DNAM",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Base Hacking Difficulty",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Very Easy",
+                            "1": "Easy",
+                            "2": "Average",
+                            "3": "Hard",
+                            "4": "Very Hard",
+                            "5": "Requires Key"
+                        }
+                    }
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Leveled",
+                            "1": "Unlocked",
+                            "2": "Alternate Colors",
+                            "3": "Hide Welcome Text when displaying Image"
+                        }
+                    }
+                },
+                {
+                    "name": "ServerType",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "-Server 1-",
+                            "1": "-Server 2-",
+                            "2": "-Server 3-",
+                            "3": "-Server 4-",
+                            "4": "-Server 5-",
+                            "5": "-Server 6-",
+                            "6": "-Server 7-",
+                            "7": "-Server 8-",
+                            "8": "-Server 9-",
+                            "9": "-Server 10-"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 1
+                }
+            ]
+        },
+        {
+            "name": "Menu Items",
+            "type": "memberArray",
+            "member": {
+                "name": "Menu Item",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "ITXT",
+                        "name": "Item Text",
+                        "type": "string",
+                        "conflictType": "Translate",
+                        "transform": "keepcase"
+                    },
+                    {
+                        "signature": "RNAM",
+                        "name": "Result Text",
+                        "type": "string",
+                        "conflictType": "Translate",
+                        "required": true,
+                        "transform": "keepcase"
+                    },
+                    {
+                        "signature": "ANAM",
+                        "name": "Flags",
+                        "type": "uint8",
+                        "required": true,
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "Add Note",
+                                "1": "Force Redraw"
+                            }
+                        }
+                    },
+                    {
+                        "signature": "INAM",
+                        "name": "Display Note",
+                        "type": "formId",
+                        "signatures": [
+                            "NOTE"
+                        ]
+                    },
+                    {
+                        "signature": "TNAM",
+                        "name": "Sub Menu",
+                        "type": "formId",
+                        "signatures": [
+                            "TERM"
+                        ]
+                    },
+                    {
+                        "id": "EmbeddedScript",
+                        "required": true
+                    },
+                    {
+                        "id": "CTDAs"
+                    }
+                ]
+            }
+        }
+    ]
+}

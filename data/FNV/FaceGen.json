@@ -1,0 +1,37 @@
+{
+    "name": "FaceGen Data",
+    "type": "memberStruct",
+    "required": true,
+    "members": [
+        {
+            "signature": "FGGS",
+            "name": "FaceGen Geometry-Symmetric",
+            "type": "array",
+            "required": true,
+            "element": {
+                "name": "Value",
+                "type": "float"
+            }
+        },
+        {
+            "signature": "FGGA",
+            "name": "FaceGen Geometry-Asymmetric",
+            "type": "array",
+            "required": true,
+            "element": {
+                "name": "Value",
+                "type": "float"
+            }
+        },
+        {
+            "signature": "FGTS",
+            "name": "FaceGen Texture-Symmetric",
+            "type": "array",
+            "required": true,
+            "element": {
+                "name": "Value",
+                "type": "float"
+            }
+        }
+    ]
+}

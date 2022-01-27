@@ -1,0 +1,15 @@
+{
+    "signature": "MICN",
+    "type": "record",
+    "name": "Menu Icon",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "ICON",
+            "required": true
+        }
+    ]
+}

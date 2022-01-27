@@ -1,0 +1,30 @@
+{
+    "signature": "DEHY",
+    "type": "record",
+    "name": "Dehydration Stage",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Trigger Threshold",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Actor Effect",
+                    "type": "formId",
+                    "signatures": [
+                        "SPEL"
+                    ]
+                }
+            ]
+        }
+    ]
+}

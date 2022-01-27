@@ -1,0 +1,47 @@
+{
+    "signature": "SCHR",
+    "name": "Basic Script Data",
+    "type": "struct",
+    "required": true,
+    "elements": [
+        {
+            "name": "Unused",
+            "type": "bytes",
+            "size": 4
+        },
+        {
+            "name": "RefCount",
+            "type": "uint32"
+        },
+        {
+            "name": "CompiledSize",
+            "type": "uint32"
+        },
+        {
+            "name": "VariableCount",
+            "type": "uint32"
+        },
+        {
+            "name": "Type",
+            "type": "uint16",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "Object",
+                    "1": "Quest",
+                    "256": "Effect"
+                }
+            }
+        },
+        {
+            "name": "Flags",
+            "type": "uint16",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Enabled"
+                }
+            }
+        }
+    ]
+}

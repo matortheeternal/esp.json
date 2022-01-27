@@ -1,0 +1,339 @@
+{
+    "signature": "INFO",
+    "type": "record",
+    "name": "Dialog response",
+    "members": [
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Type",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Topic",
+                            "1": "Conversation",
+                            "2": "Combat",
+                            "3": "Persuasion",
+                            "4": "Detection",
+                            "5": "Service",
+                            "6": "Miscellaneous",
+                            "7": "Radio"
+                        }
+                    }
+                },
+                {
+                    "name": "Next Speaker",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Target",
+                            "1": "Self",
+                            "2": "Either"
+                        }
+                    }
+                },
+                {
+                    "name": "Flags 1",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Goodbye",
+                            "1": "Random",
+                            "2": "Say Once",
+                            "3": "Run Immediately",
+                            "4": "Info Refusal",
+                            "5": "Random End",
+                            "6": "Run for Rumors",
+                            "7": "Speech Challenge"
+                        }
+                    }
+                },
+                {
+                    "name": "Flags 2",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Say Once a Day",
+                            "1": "Always Darken",
+                            "2": "Unknown 2",
+                            "3": "Unknown 3",
+                            "4": "Low Intelligence",
+                            "5": "High Intelligence"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "QSTI",
+            "name": "Quest",
+            "type": "formId",
+            "required": true,
+            "signatures": [
+                "QUST"
+            ]
+        },
+        {
+            "signature": "TPIC",
+            "name": "Topic",
+            "type": "formId",
+            "signatures": [
+                "DIAL"
+            ]
+        },
+        {
+            "signature": "PNAM",
+            "name": "Previous INFO",
+            "type": "formId",
+            "signatures": [
+                "INFO",
+                "NULL"
+            ]
+        },
+        {
+            "name": "Add Topics",
+            "type": "memberArray",
+            "member": {
+                "signature": "NAME",
+                "name": "Topic",
+                "type": "formId",
+                "signatures": [
+                    "DIAL"
+                ]
+            }
+        },
+        {
+            "name": "Responses",
+            "type": "memberArray",
+            "member": {
+                "name": "Response",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "TRDT",
+                        "name": "Response Data",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Emotion Type",
+                                "type": "uint32",
+                                "format": {
+                                    "type": "enum",
+                                    "options": {
+                                        "0": "Neutral",
+                                        "1": "Anger",
+                                        "2": "Disgust",
+                                        "3": "Fear",
+                                        "4": "Sad",
+                                        "5": "Happy",
+                                        "6": "Surprise",
+                                        "7": "Pained"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Emotion Value",
+                                "type": "int32"
+                            },
+                            {
+                                "name": "Unused",
+                                "type": "bytes",
+                                "size": 4
+                            },
+                            {
+                                "name": "Response number",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "Unused",
+                                "type": "bytes",
+                                "size": 3
+                            },
+                            {
+                                "name": "Sound",
+                                "type": "formId",
+                                "signatures": [
+                                    "SOUN",
+                                    "NULL"
+                                ]
+                            },
+                            {
+                                "name": "Flags",
+                                "type": "uint8",
+                                "format": {
+                                    "type": "flags",
+                                    "flags": {
+                                        "0": "Use Emotion Animation"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Unused",
+                                "type": "bytes",
+                                "size": 3
+                            }
+                        ]
+                    },
+                    {
+                        "signature": "NAM1",
+                        "name": "Response Text",
+                        "type": "string",
+                        "conflictType": "Translate",
+                        "required": true,
+                        "transform": "keepcase"
+                    },
+                    {
+                        "signature": "NAM2",
+                        "name": "Script Notes",
+                        "type": "string",
+                        "conflictType": "Translate",
+                        "required": true
+                    },
+                    {
+                        "signature": "NAM3",
+                        "name": "Edits",
+                        "type": "string"
+                    },
+                    {
+                        "signature": "SNAM",
+                        "name": "Speaker Animation",
+                        "type": "formId",
+                        "signatures": [
+                            "IDLE"
+                        ]
+                    },
+                    {
+                        "signature": "LNAM",
+                        "name": "Listener Animation",
+                        "type": "formId",
+                        "signatures": [
+                            "IDLE"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": "CTDAs"
+        },
+        {
+            "name": "Choices",
+            "type": "memberArray",
+            "member": {
+                "signature": "TCLT",
+                "name": "Choice",
+                "type": "formId",
+                "signatures": [
+                    "DIAL"
+                ]
+            }
+        },
+        {
+            "name": "Link From",
+            "type": "memberArray",
+            "member": {
+                "signature": "TCLF",
+                "name": "Topic",
+                "type": "formId",
+                "signatures": [
+                    "DIAL"
+                ]
+            }
+        },
+        {
+            "name": "Follow Up",
+            "type": "memberArray",
+            "member": {
+                "signature": "TCFU",
+                "name": "Info",
+                "type": "formId",
+                "signatures": [
+                    "INFO"
+                ]
+            }
+        },
+        {
+            "name": "Script (Begin)",
+            "type": "memberStruct",
+            "required": true,
+            "members": [
+                {
+                    "id": "EmbeddedScript",
+                    "required": true
+                }
+            ]
+        },
+        {
+            "name": "Script (End)",
+            "type": "memberStruct",
+            "required": true,
+            "members": [
+                {
+                    "signature": "NEXT",
+                    "name": "Marker",
+                    "type": "empty"
+                },
+                {
+                    "id": "EmbeddedScript",
+                    "required": true
+                }
+            ]
+        },
+        {
+            "signature": "SNDD",
+            "name": "Unused",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        },
+        {
+            "signature": "RNAM",
+            "name": "Prompt",
+            "type": "string",
+            "transform": "keepcase"
+        },
+        {
+            "signature": "ANAM",
+            "name": "Speaker",
+            "type": "formId",
+            "signatures": [
+                "CREA",
+                "NPC_"
+            ]
+        },
+        {
+            "signature": "KNAM",
+            "name": "ActorValue/Perk",
+            "type": "formId",
+            "signatures": [
+                "AVIF",
+                "PERK"
+            ]
+        },
+        {
+            "signature": "DNAM",
+            "name": "Speech Challenge",
+            "type": "uint32",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "---",
+                    "1": "Very Easy",
+                    "2": "Easy",
+                    "3": "Average",
+                    "4": "Hard",
+                    "5": "Very Hard"
+                }
+            }
+        }
+    ]
+}

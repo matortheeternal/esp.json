@@ -1,0 +1,39 @@
+{
+    "signature": "EFIT",
+    "name": "",
+    "type": "struct",
+    "required": true,
+    "elements": [
+        {
+            "name": "Magnitude",
+            "type": "uint32"
+        },
+        {
+            "name": "Area",
+            "type": "uint32"
+        },
+        {
+            "name": "Duration",
+            "type": "uint32"
+        },
+        {
+            "name": "Type",
+            "type": "uint32",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "Self",
+                    "1": "Touch",
+                    "2": "Target"
+                }
+            }
+        },
+        {
+            "id": "ActorValue"
+        }
+    ],
+    "sortKey": [
+        3,
+        4
+    ]
+}

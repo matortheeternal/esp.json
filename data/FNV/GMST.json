@@ -1,0 +1,37 @@
+{
+    "signature": "GMST",
+    "type": "record",
+    "name": "Game Setting",
+    "members": [
+        {
+            "signature": "EDID",
+            "name": "Editor ID",
+            "type": "string",
+            "conflictType": "Critical",
+            "required": true,
+            "afterSet": "GMSTEDIDAfterSet"
+        },
+        {
+            "signature": "DATA",
+            "name": "Value",
+            "type": "union",
+            "decider": "GMSTUnionDecider",
+            "required": true,
+            "elements": [
+                {
+                    "name": "",
+                    "type": "string",
+                    "conflictType": "Translate"
+                },
+                {
+                    "name": "",
+                    "type": "int32"
+                },
+                {
+                    "name": "",
+                    "type": "float"
+                }
+            ]
+        }
+    ]
+}

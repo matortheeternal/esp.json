@@ -1,0 +1,179 @@
+{
+    "signature": "LSCT",
+    "type": "record",
+    "name": "Load Screen Type",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "signature": "DATA",
+            "name": "Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Type",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "None",
+                            "1": "XP Progress",
+                            "2": "Objective",
+                            "3": "Tip",
+                            "4": "Stats"
+                        }
+                    }
+                },
+                {
+                    "name": "Data 1",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "X",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Y",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Width",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Height",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Orientation",
+                            "type": "float",
+                            "required": true,
+                            "format": {
+                                "type": "RotationFactorFormat"
+                            }
+                        },
+                        {
+                            "name": "Font",
+                            "type": "uint32",
+                            "format": {
+                                "type": "enum",
+                                "options": {
+                                    "0": "",
+                                    "1": "2",
+                                    "2": "3",
+                                    "3": "4",
+                                    "4": "5",
+                                    "5": "6",
+                                    "6": "7",
+                                    "7": "8"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Font Color",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "R",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "G",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "B",
+                                    "type": "float"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Font",
+                            "type": "uint32",
+                            "format": {
+                                "type": "enum",
+                                "options": {
+                                    "0": "",
+                                    "1": "Left",
+                                    "2": "Center",
+                                    "3": "",
+                                    "4": "Right"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 20
+                },
+                {
+                    "name": "Data 2",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Font",
+                            "type": "uint32",
+                            "format": {
+                                "type": "enum",
+                                "options": {
+                                    "0": "",
+                                    "1": "2",
+                                    "2": "3",
+                                    "3": "4",
+                                    "4": "5",
+                                    "5": "6",
+                                    "6": "7",
+                                    "7": "8"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Font Color",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "R",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "G",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "B",
+                                    "type": "float"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "",
+                            "type": "bytes",
+                            "size": 4
+                        },
+                        {
+                            "name": "Stats",
+                            "type": "uint32",
+                            "format": {
+                                "type": "enum",
+                                "options": {
+                                    "0": "",
+                                    "1": "2",
+                                    "2": "3",
+                                    "3": "4",
+                                    "4": "5",
+                                    "5": "6",
+                                    "6": "7",
+                                    "7": "8"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

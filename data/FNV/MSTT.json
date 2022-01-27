@@ -1,0 +1,40 @@
+{
+    "signature": "MSTT",
+    "type": "record",
+    "name": "Moveable Static",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL",
+            "required": true
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "signature": "DATA",
+            "name": "Unknown",
+            "type": "bytes",
+            "size": 1,
+            "required": true
+        },
+        {
+            "signature": "SNAM",
+            "name": "Sound",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        }
+    ]
+}

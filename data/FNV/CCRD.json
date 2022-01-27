@@ -1,0 +1,102 @@
+{
+    "signature": "CCRD",
+    "type": "record",
+    "name": "Caravan Card",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "SCRI"
+        },
+        {
+            "id": "YNAM"
+        },
+        {
+            "id": "ZNAM"
+        },
+        {
+            "name": "High Res Image",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "TX00",
+                    "name": "Face",
+                    "type": "string"
+                },
+                {
+                    "signature": "TX01",
+                    "name": "Back",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Card",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "INTV",
+                    "name": "Suit",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "",
+                            "1": "Hearts",
+                            "2": "Spades",
+                            "3": "Diamonds",
+                            "4": "Clubs",
+                            "5": "Joker"
+                        }
+                    }
+                },
+                {
+                    "signature": "INTV",
+                    "name": "Value",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "",
+                            "1": "Ace",
+                            "2": "2",
+                            "3": "3",
+                            "4": "4",
+                            "5": "5",
+                            "6": "6",
+                            "7": "7",
+                            "8": "8",
+                            "9": "9",
+                            "10": "10",
+                            "11": "",
+                            "12": "Jack",
+                            "13": "Queen",
+                            "14": "King",
+                            "15": "Joker"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "DATA",
+            "name": "Value",
+            "type": "uint32"
+        }
+    ]
+}

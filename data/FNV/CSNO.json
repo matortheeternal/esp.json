@@ -1,0 +1,228 @@
+{
+    "signature": "CSNO",
+    "type": "record",
+    "name": "Casino",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "signature": "DATA",
+            "name": "Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Decks % Before Shuffle",
+                    "type": "float"
+                },
+                {
+                    "name": "BlackJack Payout Ratio",
+                    "type": "float"
+                },
+                {
+                    "name": "Slot Reel Stops",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Symbol 1",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Symbol 2",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Symbol 3",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Symbol 4",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Symbol 5",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Symbol 6",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Symbol W",
+                            "type": "uint32"
+                        }
+                    ]
+                },
+                {
+                    "name": "Number of Decks",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Max Winnings",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Currency",
+                    "type": "formId",
+                    "signatures": [
+                        "CHIP"
+                    ]
+                },
+                {
+                    "name": "Casino Winnings Quest",
+                    "type": "formId",
+                    "signatures": [
+                        "QUST"
+                    ]
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Dealer Stay on Soft 17"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Casino Chip Models",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "MODL",
+                    "name": "$1 Chip",
+                    "type": "string"
+                },
+                {
+                    "signature": "MODL",
+                    "name": "$5 Chip",
+                    "type": "string"
+                },
+                {
+                    "signature": "MODL",
+                    "name": "$10 Chip",
+                    "type": "string"
+                },
+                {
+                    "signature": "MODL",
+                    "name": "$25 Chip",
+                    "type": "string"
+                },
+                {
+                    "signature": "MODL",
+                    "name": "$100 Chip",
+                    "type": "string"
+                },
+                {
+                    "signature": "MODL",
+                    "name": "$500 Chip",
+                    "type": "string"
+                },
+                {
+                    "signature": "MODL",
+                    "name": "Roulette Chip",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "signature": "MODL",
+            "name": "Slot Machine Model",
+            "type": "string"
+        },
+        {
+            "signature": "MOD2",
+            "name": "Slot Machine Model (again?)",
+            "type": "string"
+        },
+        {
+            "signature": "MOD3",
+            "name": "BlackJack Table Model",
+            "type": "string"
+        },
+        {
+            "signature": "MODT",
+            "name": "BlackJack Table Model related",
+            "type": "string"
+        },
+        {
+            "signature": "MOD4",
+            "name": "Roulette Table Model",
+            "type": "string"
+        },
+        {
+            "name": "Slot Reel Textures",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "ICON",
+                    "name": "Symbol 1",
+                    "type": "string"
+                },
+                {
+                    "signature": "ICON",
+                    "name": "Symbol 2",
+                    "type": "string"
+                },
+                {
+                    "signature": "ICON",
+                    "name": "Symbol 3",
+                    "type": "string"
+                },
+                {
+                    "signature": "ICON",
+                    "name": "Symbol 4",
+                    "type": "string"
+                },
+                {
+                    "signature": "ICON",
+                    "name": "Symbol 5",
+                    "type": "string"
+                },
+                {
+                    "signature": "ICON",
+                    "name": "Symbol 6",
+                    "type": "string"
+                },
+                {
+                    "signature": "ICON",
+                    "name": "Symbol W",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "BlackJack Decks",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "ICO2",
+                    "name": "Deck 1",
+                    "type": "string"
+                },
+                {
+                    "signature": "ICO2",
+                    "name": "Deck 2",
+                    "type": "string"
+                },
+                {
+                    "signature": "ICO2",
+                    "name": "Deck 3",
+                    "type": "string"
+                },
+                {
+                    "signature": "ICO2",
+                    "name": "Deck 4",
+                    "type": "string"
+                }
+            ]
+        }
+    ]
+}

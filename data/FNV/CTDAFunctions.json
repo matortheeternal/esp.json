@@ -1,0 +1,1791 @@
+{
+    "type": "ctdaFunctions",
+    "ctdaFunctions": [
+        {
+            "type": "ctdaFunction",
+            "index": 1,
+            "name": "GetDistance",
+            "paramType1": "ptObjectReference"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 5,
+            "name": "GetLocked"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 6,
+            "name": "GetPos",
+            "paramType1": "ptAxis"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 8,
+            "name": "GetAngle",
+            "paramType1": "ptAxis"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 10,
+            "name": "GetStartingPos",
+            "paramType1": "ptAxis"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 11,
+            "name": "GetStartingAngle",
+            "paramType1": "ptAxis"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 12,
+            "name": "GetSecondsPassed"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 14,
+            "name": "GetActorValue",
+            "paramType1": "ptActorValue"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 18,
+            "name": "GetCurrentTime"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 24,
+            "name": "GetScale"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 25,
+            "name": "IsMoving"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 26,
+            "name": "IsTurning"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 27,
+            "name": "GetLineOfSight",
+            "paramType1": "ptObjectReference"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 32,
+            "name": "GetInSameCell",
+            "paramType1": "ptObjectReference"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 35,
+            "name": "GetDisabled"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 36,
+            "name": "MenuMode"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 39,
+            "name": "GetDisease"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 40,
+            "name": "GetVampire"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 41,
+            "name": "GetClothingValue"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 42,
+            "name": "SameFaction",
+            "paramType1": "ptActor"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 43,
+            "name": "SameRace",
+            "paramType1": "ptActor"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 44,
+            "name": "SameSex",
+            "paramType1": "ptActor"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 45,
+            "name": "GetDetected",
+            "paramType1": "ptActor"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 46,
+            "name": "GetDead"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 47,
+            "name": "GetItemCount",
+            "paramType1": "ptInventoryObject"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 48,
+            "name": "GetGold"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 49,
+            "name": "GetSleeping"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 50,
+            "name": "GetTalkedToPC"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 53,
+            "name": "GetScriptVariable",
+            "paramType1": "ptObjectReference",
+            "paramType2": "ptVariableName"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 56,
+            "name": "GetQuestRunning",
+            "paramType1": "ptQuest"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 58,
+            "name": "GetStage",
+            "paramType1": "ptQuest"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 59,
+            "name": "GetStageDone",
+            "paramType1": "ptQuest",
+            "paramType2": "ptQuestStage"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 60,
+            "name": "GetFactionRankDifference",
+            "paramType1": "ptFaction",
+            "paramType2": "ptActor"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 61,
+            "name": "GetAlarmed"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 62,
+            "name": "IsRaining"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 63,
+            "name": "GetAttacked"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 64,
+            "name": "GetIsCreature"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 65,
+            "name": "GetLockLevel"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 66,
+            "name": "GetShouldAttack",
+            "paramType1": "ptActor"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 67,
+            "name": "GetInCell",
+            "paramType1": "ptCell"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 68,
+            "name": "GetIsClass",
+            "paramType1": "ptClass"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 69,
+            "name": "GetIsRace",
+            "paramType1": "ptRace"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 70,
+            "name": "GetIsSex",
+            "paramType1": "ptSex"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 71,
+            "name": "GetInFaction",
+            "paramType1": "ptFaction"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 72,
+            "name": "GetIsID",
+            "paramType1": "ptReferencableObject"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 73,
+            "name": "GetFactionRank",
+            "paramType1": "ptFaction"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 74,
+            "name": "GetGlobalValue",
+            "paramType1": "ptGlobal"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 75,
+            "name": "IsSnowing"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 76,
+            "name": "GetDisposition",
+            "paramType1": "ptActor"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 77,
+            "name": "GetRandomPercent"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 79,
+            "name": "GetQuestVariable",
+            "paramType1": "ptQuest",
+            "paramType2": "ptVariableName"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 80,
+            "name": "GetLevel"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 81,
+            "name": "GetArmorRating"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 84,
+            "name": "GetDeadCount",
+            "paramType1": "ptActorBase"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 91,
+            "name": "GetIsAlerted"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 98,
+            "name": "GetPlayerControlsDisabled",
+            "paramType1": "ptInteger",
+            "paramType2": "ptInteger"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 99,
+            "name": "GetHeadingAngle",
+            "paramType1": "ptObjectReference"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 101,
+            "name": "IsWeaponOut"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 102,
+            "name": "IsTorchOut"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 103,
+            "name": "IsShieldOut"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 106,
+            "name": "IsFacingUp"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 107,
+            "name": "GetKnockedState"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 108,
+            "name": "GetWeaponAnimType"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 109,
+            "name": "IsWeaponSkillType",
+            "paramType1": "ptActorValue"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 110,
+            "name": "GetCurrentAIPackage"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 111,
+            "name": "IsWaiting"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 112,
+            "name": "IsIdlePlaying"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 116,
+            "name": "GetMinorCrimeCount"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 117,
+            "name": "GetMajorCrimeCount"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 118,
+            "name": "GetActorAggroRadiusViolated"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 122,
+            "name": "GetCrime",
+            "paramType1": "ptActor",
+            "paramType2": "ptCrimeType"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 123,
+            "name": "IsGreetingPlayer"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 125,
+            "name": "IsGuard"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 127,
+            "name": "HasBeenEaten"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 128,
+            "name": "GetFatiguePercentage"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 129,
+            "name": "GetPCIsClass",
+            "paramType1": "ptClass"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 130,
+            "name": "GetPCIsRace",
+            "paramType1": "ptRace"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 131,
+            "name": "GetPCIsSex",
+            "paramType1": "ptSex"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 132,
+            "name": "GetPCInFaction",
+            "paramType1": "ptFaction"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 133,
+            "name": "SameFactionAsPC"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 134,
+            "name": "SameRaceAsPC"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 135,
+            "name": "SameSexAsPC"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 136,
+            "name": "GetIsReference",
+            "paramType1": "ptObjectReference"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 141,
+            "name": "IsTalking"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 142,
+            "name": "GetWalkSpeed"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 143,
+            "name": "GetCurrentAIProcedure"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 144,
+            "name": "GetTrespassWarningLevel"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 145,
+            "name": "IsTrespassing"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 146,
+            "name": "IsInMyOwnedCell"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 147,
+            "name": "GetWindSpeed"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 148,
+            "name": "GetCurrentWeatherPercent"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 149,
+            "name": "GetIsCurrentWeather",
+            "paramType1": "ptWeather"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 150,
+            "name": "IsContinuingPackagePCNear"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 153,
+            "name": "CanHaveFlames"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 154,
+            "name": "HasFlames"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 157,
+            "name": "GetOpenState"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 159,
+            "name": "GetSitting"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 160,
+            "name": "GetFurnitureMarkerID"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 161,
+            "name": "GetIsCurrentPackage",
+            "paramType1": "ptPackage"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 162,
+            "name": "IsCurrentFurnitureRef",
+            "paramType1": "ptObjectReference"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 163,
+            "name": "IsCurrentFurnitureObj",
+            "paramType1": "ptFurniture"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 170,
+            "name": "GetDayOfWeek"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 172,
+            "name": "GetTalkedToPCParam",
+            "paramType1": "ptActor"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 175,
+            "name": "IsPCSleeping"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 176,
+            "name": "IsPCAMurderer"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 180,
+            "name": "GetDetectionLevel",
+            "paramType1": "ptActor"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 182,
+            "name": "GetEquipped",
+            "paramType1": "ptInventoryObject"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 185,
+            "name": "IsSwimming"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 190,
+            "name": "GetAmountSoldStolen"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 192,
+            "name": "GetIgnoreCrime"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 193,
+            "name": "GetPCExpelled",
+            "paramType1": "ptFaction"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 195,
+            "name": "GetPCFactionMurder",
+            "paramType1": "ptFaction"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 197,
+            "name": "GetPCEnemyofFaction",
+            "paramType1": "ptFaction"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 199,
+            "name": "GetPCFactionAttack",
+            "paramType1": "ptFaction"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 203,
+            "name": "GetDestroyed"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 214,
+            "name": "HasMagicEffect",
+            "paramType1": "ptMagicEffect"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 215,
+            "name": "GetDefaultOpen"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 219,
+            "name": "GetAnimAction"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 223,
+            "name": "IsSpellTarget",
+            "paramType1": "ptMagicItem"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 224,
+            "name": "GetVATSMode"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 225,
+            "name": "GetPersuasionNumber"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 226,
+            "name": "GetSandman"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 227,
+            "name": "GetCannibal"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 228,
+            "name": "GetIsClassDefault",
+            "paramType1": "ptClass"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 229,
+            "name": "GetClassDefaultMatch"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 230,
+            "name": "GetInCellParam",
+            "paramType1": "ptCell",
+            "paramType2": "ptObjectReference"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 235,
+            "name": "GetVatsTargetHeight"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 237,
+            "name": "GetIsGhost"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 242,
+            "name": "GetUnconscious"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 244,
+            "name": "GetRestrained"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 246,
+            "name": "GetIsUsedItem",
+            "paramType1": "ptReferencableObject"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 247,
+            "name": "GetIsUsedItemType",
+            "paramType1": "ptFormType"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 254,
+            "name": "GetIsPlayableRace"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 255,
+            "name": "GetOffersServicesNow"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 258,
+            "name": "GetUsedItemLevel"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 259,
+            "name": "GetUsedItemActivate"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 264,
+            "name": "GetBarterGold"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 265,
+            "name": "IsTimePassing"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 266,
+            "name": "IsPleasant"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 267,
+            "name": "IsCloudy"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 274,
+            "name": "GetArmorRatingUpperBody"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 277,
+            "name": "GetBaseActorValue",
+            "paramType1": "ptActorValue"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 278,
+            "name": "IsOwner",
+            "paramType1": "ptOwner"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 280,
+            "name": "IsCellOwner",
+            "paramType1": "ptCell",
+            "paramType2": "ptOwner"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 282,
+            "name": "IsHorseStolen"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 285,
+            "name": "IsLeftUp"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 286,
+            "name": "IsSneaking"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 287,
+            "name": "IsRunning"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 288,
+            "name": "GetFriendHit"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 289,
+            "name": "IsInCombat"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 300,
+            "name": "IsInInterior"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 304,
+            "name": "IsWaterObject"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 306,
+            "name": "IsActorUsingATorch"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 309,
+            "name": "IsXBox"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 310,
+            "name": "GetInWorldspace",
+            "paramType1": "ptWorldspace"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 312,
+            "name": "GetPCMiscStat",
+            "paramType1": "ptMiscStat"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 313,
+            "name": "IsActorEvil"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 314,
+            "name": "IsActorAVictim"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 315,
+            "name": "GetTotalPersuasionNumber"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 318,
+            "name": "GetIdleDoneOnce"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 320,
+            "name": "GetNoRumors"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 323,
+            "name": "WhichServiceMenu"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 327,
+            "name": "IsRidingHorse"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 332,
+            "name": "IsInDangerousWater"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 338,
+            "name": "GetIgnoreFriendlyHits"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 339,
+            "name": "IsPlayersLastRiddenHorse"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 353,
+            "name": "IsActor"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 354,
+            "name": "IsEssential"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 358,
+            "name": "IsPlayerMovingIntoNewSpace"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 361,
+            "name": "GetTimeDead"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 362,
+            "name": "GetPlayerHasLastRiddenHorse"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 365,
+            "name": "IsChild"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 367,
+            "name": "GetLastPlayerAction"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 368,
+            "name": "IsPlayerActionActive"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 370,
+            "name": "IsTalkingActivatorActor",
+            "paramType1": "ptActor"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 372,
+            "name": "IsInList",
+            "paramType1": "ptFormList"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 382,
+            "name": "GetHasNote"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 391,
+            "name": "GetHitLocation"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 392,
+            "name": "IsPC1stPerson"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 397,
+            "name": "GetCauseofDeath"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 398,
+            "name": "IsLimbGone"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 399,
+            "name": "IsWeaponInList",
+            "paramType1": "ptFormList"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 403,
+            "name": "HasFriendDisposition"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 408,
+            "name": "GetVATSValue",
+            "paramType1": "ptVATSValueFunction",
+            "paramType2": "ptVATSValueParam"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 409,
+            "name": "IsKiller",
+            "paramType1": "ptActor"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 410,
+            "name": "IsKillerObject",
+            "paramType1": "ptFormList"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 411,
+            "name": "GetFactionCombatReaction",
+            "paramType1": "ptFaction",
+            "paramType2": "ptFaction"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 415,
+            "name": "Exists",
+            "paramType1": "ptObjectReference"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 416,
+            "name": "GetGroupMemberCount"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 417,
+            "name": "GetGroupTargetCount"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 420,
+            "name": "GetObjectiveCompleted",
+            "paramType1": "ptQuest"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 421,
+            "name": "GetObjectiveDisplayed",
+            "paramType1": "ptQuest"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 427,
+            "name": "GetIsVoiceType",
+            "paramType1": "ptVoiceType"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 428,
+            "name": "GetPlantedExplosive"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 430,
+            "name": "IsActorTalkingThroughActivator"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 431,
+            "name": "GetHealthPercentage"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 433,
+            "name": "GetIsObjectType",
+            "paramType1": "ptFormType"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 435,
+            "name": "GetDialogueEmotion"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 436,
+            "name": "GetDialogueEmotionValue"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 438,
+            "name": "GetIsCreatureType"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 446,
+            "name": "GetInZone",
+            "paramType1": "ptEncounterZone"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 449,
+            "name": "HasPerk",
+            "paramType1": "ptPerk",
+            "paramType2": "ptInteger"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 450,
+            "name": "GetFactionRelation",
+            "paramType1": "ptActor"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 451,
+            "name": "IsLastIdlePlayed",
+            "paramType1": "ptIdleForm"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 454,
+            "name": "GetPlayerTeammate"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 455,
+            "name": "GetPlayerTeammateCount"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 459,
+            "name": "GetActorCrimePlayerEnemy"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 460,
+            "name": "GetActorFactionPlayerEnemy"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 462,
+            "name": "IsPlayerTagSkill",
+            "paramType1": "ptActorValue"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 464,
+            "name": "IsPlayerGrabbedRef",
+            "paramType1": "ptObjectReference"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 471,
+            "name": "GetDestructionStage"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 474,
+            "name": "GetIsAlignment",
+            "paramType1": "ptAlignment"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 478,
+            "name": "GetThreatRatio",
+            "paramType1": "ptActor"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 480,
+            "name": "GetIsUsedItemEquipType",
+            "paramType1": "ptEquipType"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 489,
+            "name": "GetConcussed"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 492,
+            "name": "GetMapMarkerVisible"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 495,
+            "name": "GetPermanentActorValue",
+            "paramType1": "ptActorValue"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 496,
+            "name": "GetKillingBlowLimb"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 500,
+            "name": "GetWeaponHealthPerc"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 503,
+            "name": "GetRadiationLevel"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 510,
+            "name": "GetLastHitCritical"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 515,
+            "name": "IsCombatTarget",
+            "paramType1": "ptActor"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 518,
+            "name": "GetVATSRightAreaFree",
+            "paramType1": "ptObjectReference"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 519,
+            "name": "GetVATSLeftAreaFree",
+            "paramType1": "ptObjectReference"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 520,
+            "name": "GetVATSBackAreaFree",
+            "paramType1": "ptObjectReference"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 521,
+            "name": "GetVATSFrontAreaFree",
+            "paramType1": "ptObjectReference"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 522,
+            "name": "GetIsLockBroken"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 523,
+            "name": "IsPS3"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 524,
+            "name": "IsWin32"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 525,
+            "name": "GetVATSRightTargetVisible",
+            "paramType1": "ptObjectReference"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 526,
+            "name": "GetVATSLeftTargetVisible",
+            "paramType1": "ptObjectReference"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 527,
+            "name": "GetVATSBackTargetVisible",
+            "paramType1": "ptObjectReference"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 528,
+            "name": "GetVATSFrontTargetVisible",
+            "paramType1": "ptObjectReference"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 531,
+            "name": "IsInCriticalStage",
+            "paramType1": "ptCriticalStage"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 533,
+            "name": "GetXPForNextLevel"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 546,
+            "name": "GetQuestCompleted",
+            "paramType1": "ptQuest"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 550,
+            "name": "IsGoreDisabled"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 555,
+            "name": "GetSpellUsageNum",
+            "paramType1": "ptMagicItem"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 557,
+            "name": "GetActorsInHigh"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 558,
+            "name": "HasLoaded3D"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 573,
+            "name": "GetReputation",
+            "paramType2": "ptInteger"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 574,
+            "name": "GetReputationPct",
+            "paramType2": "ptInteger"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 575,
+            "name": "GetReputationThreshold",
+            "paramType2": "ptInteger"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 586,
+            "name": "IsHardcore"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 601,
+            "name": "GetForceHitReaction"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 607,
+            "name": "ChallengeLocked"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 610,
+            "name": "GetCasinoWinningStage"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 612,
+            "name": "PlayerInRegion",
+            "paramType1": "ptRegion"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 614,
+            "name": "GetChallengeCompleted"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 619,
+            "name": "IsAlwaysHardcore"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 1024,
+            "name": "GetNVSEVersion"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 1025,
+            "name": "GetNVSERevision"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 1026,
+            "name": "GetNVSEBeta"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 1028,
+            "name": "GetWeight",
+            "paramType1": "ptInventoryObject"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 1076,
+            "name": "GetWeaponHasScope",
+            "paramType1": "ptInventoryObject"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 1089,
+            "name": "ListGetFormIndex",
+            "paramType1": "ptFormList",
+            "paramType2": "ptFormType"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 1107,
+            "name": "IsKeyPressed",
+            "paramType1": "ptInteger",
+            "paramType2": "ptInteger"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 1131,
+            "name": "IsControlPressed",
+            "paramType1": "ptInteger"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 1271,
+            "name": "HasOwnership",
+            "paramType1": "ptObjectReference"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 1272,
+            "name": "IsOwned",
+            "paramType1": "ptActor"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 1274,
+            "name": "GetDialogueTarget",
+            "paramType1": "ptActor"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 1275,
+            "name": "GetDialogueSubject",
+            "paramType1": "ptActor"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 1276,
+            "name": "GetDialogueSpeaker",
+            "paramType1": "ptActor"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 1278,
+            "name": "GetAgeClass",
+            "paramType1": "ptActorBase"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 1286,
+            "name": "GetTokenValue",
+            "paramType1": "ptFormType"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 1288,
+            "name": "GetTokenRef",
+            "paramType1": "ptFormType"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 1291,
+            "name": "GetPaired",
+            "paramType1": "ptInventoryObject",
+            "paramType2": "ptActorBase"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 1292,
+            "name": "GetRespawn",
+            "paramType1": "ptActorBase"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 1294,
+            "name": "GetPermanent",
+            "paramType1": "ptObjectReference"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 1297,
+            "name": "IsRefInList",
+            "paramType1": "ptFormList",
+            "paramType2": "ptFormType"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 1301,
+            "name": "GetPackageCount",
+            "paramType1": "ptObjectReference"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 1440,
+            "name": "IsPlayerSwimming"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 1441,
+            "name": "GetTFC"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 1475,
+            "name": "GetPerkRank",
+            "paramType1": "ptPerk",
+            "paramType2": "ptActor"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 1476,
+            "name": "GetAltPerkRank",
+            "paramType1": "ptPerk",
+            "paramType2": "ptActor"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 1541,
+            "name": "GetActorFIKstatus"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 4352,
+            "name": "GetExtendedActorVariable",
+            "paramType1": "ptInventoryObject"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 4353,
+            "name": "GetBaseExtendedActorVariable",
+            "paramType1": "ptInventoryObject"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 4355,
+            "name": "GetModExtendedActorVariable",
+            "paramType1": "ptInventoryObject"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 4420,
+            "name": "NX_GetEVFl",
+            "paramType1": "ptNone"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 4426,
+            "name": "NX_GetQVEVFl",
+            "paramType1": "ptQuest",
+            "paramType2": "ptInteger"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 4612,
+            "name": "IsButtonPressed",
+            "paramType1": "ptInteger"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 4613,
+            "name": "GetLeftStickX"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 4614,
+            "name": "GetLeftStickY"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 4615,
+            "name": "GetRightStickX"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 4616,
+            "name": "GetRightStickY"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 4617,
+            "name": "GetLeftTrigger"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 4618,
+            "name": "GetRightTrigger"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 4708,
+            "name": "GetArmorClass"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 4709,
+            "name": "IsRaceInList",
+            "paramType1": "ptFormList"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 4758,
+            "name": "IsButtonDisabled",
+            "paramType1": "ptInteger"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 4761,
+            "name": "IsButtonHeld",
+            "paramType1": "ptInteger"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 4774,
+            "name": "IsTriggerDisabled",
+            "paramType1": "ptInteger"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 4777,
+            "name": "IsTriggerHeld",
+            "paramType1": "ptInteger"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 4822,
+            "name": "GetReferenceFlag",
+            "paramType1": "ptInteger"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 4832,
+            "name": "GetDistance2D",
+            "paramType1": "ptObjectReference"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 4833,
+            "name": "GetDistance3D",
+            "paramType1": "ptObjectReference"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 4843,
+            "name": "PlayerHasKey"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 4897,
+            "name": "ActorHasEffect",
+            "paramType1": "ptMagicEffect"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 5637,
+            "name": "GetIsPoisoned"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 5708,
+            "name": "IsEquippedWeaponSilenced"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 5709,
+            "name": "IsEquippedWeaponScoped"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 5947,
+            "name": "GetActorLightAmount"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 5951,
+            "name": "GetGameDifficulty"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 5962,
+            "name": "GetPCDetectionState"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 5993,
+            "name": "IsAttacking"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 5994,
+            "name": "GetPCUsingScope"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 6010,
+            "name": "GetPCUsingIronSights"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 6012,
+            "name": "GetRadiationLevelAlt"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 6013,
+            "name": "IsInWater"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 6058,
+            "name": "GetAlwaysRun"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 6059,
+            "name": "GetAutoMove"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 6061,
+            "name": "GetIsRagdolled"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 6065,
+            "name": "AuxVarGetFltCond",
+            "paramType1": "ptQuest",
+            "paramType2": "ptInteger"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 6069,
+            "name": "IsInAir"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 6070,
+            "name": "GetHasContact"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 6072,
+            "name": "GetHasContactBase"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 6073,
+            "name": "GetHasContactType",
+            "paramType1": "ptInteger"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 6124,
+            "name": "IsSpellTargetAlt",
+            "paramType1": "ptMagicItem"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 6167,
+            "name": "IsIdlePlayingEx"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 6186,
+            "name": "IsInCharGen"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 6192,
+            "name": "GetWaterImmersionPerc"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 6204,
+            "name": "IsFleeing"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 6217,
+            "name": "GetTargetUnreachable"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 6268,
+            "name": "IsInKillCam"
+        },
+        {
+            "type": "ctdaFunction",
+            "index": 10247,
+            "name": "TTW_GetEquippedWeaponSkill"
+        }
+    ]
+}
