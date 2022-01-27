@@ -1,0 +1,20 @@
+let {
+    addDef, flags
+} = require('../helpers');
+
+module.exports = () => {
+    addDef('TemplateFlags', 
+        flags({
+            0: 'Use Traits',
+            1: 'Use Stats',
+            2: 'Use Factions',
+            3: 'Use Actor Effect List',
+            4: 'Use AI Data',
+            5: 'Use AI Packages',
+            6: 'Use Model/Animation',
+            7: 'Use Base Data',
+            8: 'Use Inventory',
+            9: 'Use Script'
+        })
+    );
+};

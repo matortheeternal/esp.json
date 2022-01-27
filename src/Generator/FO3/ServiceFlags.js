@@ -1,0 +1,28 @@
+let {
+    addDef, flags
+} = require('../helpers');
+
+module.exports = () => {
+    addDef('ServiceFlags', 
+        flags({
+            0: 'Weapons',
+            1: 'Armor',
+            2: 'Alcohol',
+            3: 'Books',
+            4: 'Food',
+            5: 'Chems',
+            6: 'Stimpacks',
+            7: 'Lights?',
+            8: '',
+            9: '',
+            10: 'Miscellaneous',
+            11: '',
+            12: '',
+            13: 'Potions?',
+            14: 'Training',
+            15: '',
+            16: 'Recharge',
+            17: 'Repair'
+        })
+    );
+};
