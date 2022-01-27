@@ -14,10 +14,10 @@ git clone --recursive https://github.com/matortheeternal/esp.json
 To convert the xEdit definitions to `src/Generator/{game}` run: 
 
 ```
-npm run convert -- {game} {source}
+npm run convert -- {game} {source?}
 ```
 
-To build xEdit definition data files run:
+To build definition data files run:
 
 ```
 npm run build -- {game}
