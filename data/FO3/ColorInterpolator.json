@@ -1,0 +1,30 @@
+{
+    "name": "Data",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Time",
+            "type": "float"
+        },
+        {
+            "name": "Red",
+            "type": "float",
+            "scale": 255
+        },
+        {
+            "name": "Green",
+            "type": "float",
+            "scale": 255
+        },
+        {
+            "name": "Blue",
+            "type": "float",
+            "scale": 255
+        },
+        {
+            "name": "Alpha",
+            "type": "float",
+            "scale": 255
+        }
+    ]
+}

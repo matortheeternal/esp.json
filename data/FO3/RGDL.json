@@ -1,0 +1,277 @@
+{
+    "signature": "RGDL",
+    "type": "record",
+    "name": "Ragdoll",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "signature": "NVER",
+            "name": "Version",
+            "type": "uint32",
+            "required": true
+        },
+        {
+            "signature": "DATA",
+            "name": "General Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Dynamic Bone Count",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Enabled",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Feedback",
+                            "type": "uint8",
+                            "format": {
+                                "type": "enum",
+                                "options": {
+                                    "0": "No",
+                                    "1": "Yes"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Foot IK (broken, don't use)",
+                            "type": "uint8",
+                            "format": {
+                                "type": "enum",
+                                "options": {
+                                    "0": "No",
+                                    "1": "Yes"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Look IK (broken, don't use)",
+                            "type": "uint8",
+                            "format": {
+                                "type": "enum",
+                                "options": {
+                                    "0": "No",
+                                    "1": "Yes"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Grab IK (broken, don't use)",
+                            "type": "uint8",
+                            "format": {
+                                "type": "enum",
+                                "options": {
+                                    "0": "No",
+                                    "1": "Yes"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Pose Matching",
+                            "type": "uint8",
+                            "format": {
+                                "type": "enum",
+                                "options": {
+                                    "0": "No",
+                                    "1": "Yes"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 1
+                }
+            ]
+        },
+        {
+            "signature": "XNAM",
+            "name": "Actor Base",
+            "type": "formId",
+            "required": true,
+            "signatures": [
+                "CREA",
+                "NPC_"
+            ]
+        },
+        {
+            "signature": "TNAM",
+            "name": "Body Part Data",
+            "type": "formId",
+            "required": true,
+            "signatures": [
+                "BPTD"
+            ]
+        },
+        {
+            "signature": "RAFD",
+            "name": "Feedback Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Dynamic/Keyframe Blend Amount",
+                    "type": "float"
+                },
+                {
+                    "name": "Hierarchy Gain",
+                    "type": "float"
+                },
+                {
+                    "name": "Position Gain",
+                    "type": "float"
+                },
+                {
+                    "name": "Velocity Gain",
+                    "type": "float"
+                },
+                {
+                    "name": "Acceleration Gain",
+                    "type": "float"
+                },
+                {
+                    "name": "Snap Gain",
+                    "type": "float"
+                },
+                {
+                    "name": "Velocity Damping",
+                    "type": "float"
+                },
+                {
+                    "name": "Snap Max Settings",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Linear Velocity",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Angular Velocity",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Linear Distance",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Angular Distance",
+                            "type": "float"
+                        }
+                    ]
+                },
+                {
+                    "name": "Position Max Velocity",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Linear",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Angular",
+                            "type": "float"
+                        }
+                    ]
+                },
+                {
+                    "name": "Position Max Velocity",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Projectile",
+                            "type": "int32",
+                            "format": {
+                                "type": "divide",
+                                "value": 1000
+                            }
+                        },
+                        {
+                            "name": "Melee",
+                            "type": "int32",
+                            "format": {
+                                "type": "divide",
+                                "value": 1000
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "RAFB",
+            "name": "Feedback Dynamic Bones",
+            "type": "array",
+            "element": {
+                "name": "Bone",
+                "type": "uint16"
+            }
+        },
+        {
+            "signature": "RAPS",
+            "name": "Pose Matching Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Match Bones",
+                    "type": "array",
+                    "count": 3,
+                    "element": {
+                        "name": "Bone",
+                        "type": "uint16",
+                        "format": {
+                            "type": "HideFFFF_Format"
+                        }
+                    }
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Disable On Move"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 1
+                },
+                {
+                    "name": "Motors Strength",
+                    "type": "float"
+                },
+                {
+                    "name": "Pose Activation Delay Time",
+                    "type": "float"
+                },
+                {
+                    "name": "Match Error Allowance",
+                    "type": "float"
+                },
+                {
+                    "name": "Displacement To Disable",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "ANAM",
+            "name": "Death Pose",
+            "type": "string"
+        }
+    ]
+}

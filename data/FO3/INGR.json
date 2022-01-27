@@ -1,0 +1,69 @@
+{
+    "signature": "INGR",
+    "type": "record",
+    "name": "Ingredient",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "SCRI"
+        },
+        {
+            "id": "ETYP",
+            "required": true
+        },
+        {
+            "signature": "DATA",
+            "name": "Weight",
+            "type": "float",
+            "required": true
+        },
+        {
+            "signature": "ENIT",
+            "name": "Effect Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Value",
+                    "type": "int32"
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "No auto-calculation",
+                            "1": "Food item"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3
+                }
+            ]
+        },
+        {
+            "id": "Effects",
+            "required": true
+        }
+    ]
+}

@@ -1,0 +1,103 @@
+{
+    "signature": "SCOL",
+    "type": "record",
+    "name": "Static Collection",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "MODL",
+            "required": true
+        },
+        {
+            "name": "Parts",
+            "type": "memberArray",
+            "required": true,
+            "member": {
+                "name": "Part",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "ONAM",
+                        "name": "Static",
+                        "type": "formId",
+                        "signatures": [
+                            "STAT"
+                        ]
+                    },
+                    {
+                        "signature": "DATA",
+                        "name": "Placements",
+                        "type": "array",
+                        "sorted": true,
+                        "required": true,
+                        "element": {
+                            "name": "Placement",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Position",
+                                    "type": "struct",
+                                    "elements": [
+                                        {
+                                            "name": "X",
+                                            "type": "float"
+                                        },
+                                        {
+                                            "name": "Y",
+                                            "type": "float"
+                                        },
+                                        {
+                                            "name": "Z",
+                                            "type": "float"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Rotation",
+                                    "type": "struct",
+                                    "elements": [
+                                        {
+                                            "name": "X",
+                                            "type": "float",
+                                            "required": true,
+                                            "format": {
+                                                "type": "RotationFactorFormat"
+                                            }
+                                        },
+                                        {
+                                            "name": "Y",
+                                            "type": "float",
+                                            "required": true,
+                                            "format": {
+                                                "type": "RotationFactorFormat"
+                                            }
+                                        },
+                                        {
+                                            "name": "Z",
+                                            "type": "float",
+                                            "required": true,
+                                            "format": {
+                                                "type": "RotationFactorFormat"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Scale",
+                                    "type": "float"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

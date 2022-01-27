@@ -1,0 +1,43 @@
+{
+    "name": "Item",
+    "type": "memberStruct",
+    "members": [
+        {
+            "signature": "CNTO",
+            "name": "Item",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Item",
+                    "type": "formId",
+                    "signatures": [
+                        "ARMO",
+                        "AMMO",
+                        "MISC",
+                        "WEAP",
+                        "BOOK",
+                        "LVLI",
+                        "KEYM",
+                        "ALCH",
+                        "NOTE",
+                        "MSTT",
+                        "STAT"
+                    ]
+                },
+                {
+                    "name": "Count",
+                    "type": "int32"
+                }
+            ],
+            "sortKey": [
+                0
+            ]
+        },
+        {
+            "id": "COED"
+        }
+    ],
+    "sortKey": [
+        0
+    ]
+}

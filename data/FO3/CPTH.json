@@ -1,0 +1,64 @@
+{
+    "signature": "CPTH",
+    "type": "record",
+    "name": "Camera Path",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "CTDAs"
+        },
+        {
+            "signature": "ANAM",
+            "name": "Related Camera Paths",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Parent",
+                    "type": "formId",
+                    "signatures": [
+                        "CPTH",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Previous Sibling",
+                    "type": "formId",
+                    "signatures": [
+                        "CPTH",
+                        "NULL"
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "DATA",
+            "name": "Camera Zoom",
+            "type": "uint8",
+            "required": true,
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "Default",
+                    "1": "Disable",
+                    "2": "Shot List"
+                }
+            }
+        },
+        {
+            "name": "Camera Shots",
+            "type": "memberArray",
+            "member": {
+                "signature": "SNAM",
+                "name": "Camera Shot",
+                "type": "formId",
+                "signatures": [
+                    "CAMS"
+                ]
+            }
+        }
+    ]
+}

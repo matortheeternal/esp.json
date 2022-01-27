@@ -1,0 +1,75 @@
+{
+    "signature": "PWAT",
+    "type": "record",
+    "name": "Placeable Water",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "MODL",
+            "required": true
+        },
+        {
+            "signature": "DNAM",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Reflects",
+                            "1": "Reflects - Actors",
+                            "2": "Reflects - Land",
+                            "3": "Reflects - LOD Land",
+                            "4": "Reflects - LOD Buildings",
+                            "5": "Reflects - Trees",
+                            "6": "Reflects - Sky",
+                            "7": "Reflects - Dynamic Objects",
+                            "8": "Reflects - Dead Bodies",
+                            "9": "Refracts",
+                            "10": "Refracts - Actors",
+                            "11": "Refracts - Land",
+                            "12": "",
+                            "13": "",
+                            "14": "",
+                            "15": "",
+                            "16": "Refracts - Dynamic Objects",
+                            "17": "Refracts - Dead Bodies",
+                            "18": "Silhouette Reflections",
+                            "19": "",
+                            "20": "",
+                            "21": "",
+                            "22": "",
+                            "23": "",
+                            "24": "",
+                            "25": "",
+                            "26": "",
+                            "27": "",
+                            "28": "Depth",
+                            "29": "Object Texture Coordinates",
+                            "30": "",
+                            "31": "No Underwater Fog"
+                        }
+                    }
+                },
+                {
+                    "name": "Water",
+                    "type": "formId",
+                    "signatures": [
+                        "WATR"
+                    ]
+                }
+            ]
+        }
+    ]
+}

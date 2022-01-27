@@ -1,0 +1,28 @@
+{
+    "name": "FaceGen Data",
+    "type": "memberStruct",
+    "required": true,
+    "members": [
+        {
+            "signature": "FGGS",
+            "name": "FaceGen Geometry-Symmetric",
+            "type": "bytes",
+            "size": 0,
+            "required": true
+        },
+        {
+            "signature": "FGGA",
+            "name": "FaceGen Geometry-Asymmetric",
+            "type": "bytes",
+            "size": 0,
+            "required": true
+        },
+        {
+            "signature": "FGTS",
+            "name": "FaceGen Texture-Symmetric",
+            "type": "bytes",
+            "size": 0,
+            "required": true
+        }
+    ]
+}

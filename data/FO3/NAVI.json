@@ -1,0 +1,117 @@
+{
+    "signature": "NAVI",
+    "type": "record",
+    "name": "Navigation Mesh Info Map",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "NVER",
+            "name": "Version",
+            "type": "uint32"
+        },
+        {
+            "name": "Navigation Map Infos",
+            "type": "memberArray",
+            "member": {
+                "signature": "NVMI",
+                "name": "Navigation Map Info",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Navigation Mesh",
+                        "type": "formId",
+                        "signatures": [
+                            "NAVM"
+                        ]
+                    },
+                    {
+                        "name": "Location",
+                        "type": "formId",
+                        "signatures": [
+                            "CELL",
+                            "WRLD"
+                        ]
+                    },
+                    {
+                        "name": "Grid",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "X",
+                                "type": "int16"
+                            },
+                            {
+                                "name": "Y",
+                                "type": "int16"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "bytes"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Navigation Connection Infos",
+            "type": "memberArray",
+            "member": {
+                "signature": "NVCI",
+                "name": "Navigation Connection Info",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Unknown",
+                        "type": "formId",
+                        "signatures": [
+                            "NAVM"
+                        ]
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "array",
+                        "prefix": 4,
+                        "element": {
+                            "name": "Unknown",
+                            "type": "formId",
+                            "signatures": [
+                                "NAVM"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "array",
+                        "prefix": 4,
+                        "element": {
+                            "name": "Unknown",
+                            "type": "formId",
+                            "signatures": [
+                                "NAVM"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "Doors",
+                        "type": "array",
+                        "prefix": 4,
+                        "element": {
+                            "name": "Door",
+                            "type": "formId",
+                            "signatures": [
+                                "REFR"
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

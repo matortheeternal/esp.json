@@ -1,0 +1,59 @@
+{
+    "signature": "ACTI",
+    "type": "record",
+    "name": "Activator",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "SCRI"
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "signature": "SNAM",
+            "name": "Sound - Looping",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        },
+        {
+            "signature": "VNAM",
+            "name": "Sound - Activation",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        },
+        {
+            "signature": "RNAM",
+            "name": "Radio Station",
+            "type": "formId",
+            "signatures": [
+                "TACT"
+            ]
+        },
+        {
+            "signature": "WNAM",
+            "name": "Water Type",
+            "type": "formId",
+            "signatures": [
+                "WATR"
+            ]
+        }
+    ]
+}

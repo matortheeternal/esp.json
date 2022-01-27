@@ -1,0 +1,67 @@
+{
+    "signature": "IDLM",
+    "type": "record",
+    "name": "Idle Marker",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "signature": "IDLF",
+            "name": "Flags",
+            "type": "uint8",
+            "required": true,
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Run in Sequence",
+                    "1": "",
+                    "2": "Do Once"
+                }
+            }
+        },
+        {
+            "signature": "IDLC",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Animation Count",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3
+                }
+            ]
+        },
+        {
+            "signature": "IDLT",
+            "name": "Idle Timer Setting",
+            "type": "float",
+            "required": true
+        },
+        {
+            "signature": "IDLA",
+            "name": "Animations",
+            "type": "array",
+            "required": true,
+            "afterSet": "IDLAsAfterSet",
+            "element": {
+                "name": "Animation",
+                "type": "formId",
+                "signatures": [
+                    "IDLE",
+                    "NULL"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,52 @@
+{
+    "signature": "ECZN",
+    "type": "record",
+    "name": "Encounter Zone",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Owner",
+                    "type": "formId",
+                    "signatures": [
+                        "NPC_",
+                        "FACT",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Rank",
+                    "type": "int8"
+                },
+                {
+                    "name": "Minimum Level",
+                    "type": "int8"
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Never Resets",
+                            "1": "Match PC Below Minimum Level"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 1
+                }
+            ]
+        }
+    ]
+}

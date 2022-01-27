@@ -1,0 +1,352 @@
+{
+    "signature": "CSTY",
+    "type": "record",
+    "name": "Combat Style",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "signature": "CSTD",
+            "name": "Advanced - Standard",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Maneuver Decision - Dodge % Chance",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Maneuver Decision - Left/Right % Chance",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 2
+                },
+                {
+                    "name": "Maneuver Decision - Dodge L/R Timer (min)",
+                    "type": "float"
+                },
+                {
+                    "name": "Maneuver Decision - Dodge L/R Timer (max)",
+                    "type": "float"
+                },
+                {
+                    "name": "Maneuver Decision - Dodge Forward Timer (min)",
+                    "type": "float"
+                },
+                {
+                    "name": "Maneuver Decision - Dodge Forward Timer (max)",
+                    "type": "float"
+                },
+                {
+                    "name": "Maneuver Decision - Dodge Back Timer Min",
+                    "type": "float"
+                },
+                {
+                    "name": "Maneuver Decision - Dodge Back Timer Max",
+                    "type": "float"
+                },
+                {
+                    "name": "Maneuver Decision - Idle Timer min",
+                    "type": "float"
+                },
+                {
+                    "name": "Maneuver Decision - Idle Timer max",
+                    "type": "float"
+                },
+                {
+                    "name": "Melee Decision - Block % Chance",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Melee Decision - Attack % Chance",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 2
+                },
+                {
+                    "name": "Melee Decision - Recoil/Stagger Bonus to Attack",
+                    "type": "float"
+                },
+                {
+                    "name": "Melee Decision - Unconscious Bonus to Attack",
+                    "type": "float"
+                },
+                {
+                    "name": "Melee Decision - Hand-To-Hand Bonus to Attack",
+                    "type": "float"
+                },
+                {
+                    "name": "Melee Decision - Power Attacks - Power Attack % Chance",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3
+                },
+                {
+                    "name": "Melee Decision - Power Attacks - Recoil/Stagger Bonus to Power",
+                    "type": "float"
+                },
+                {
+                    "name": "Melee Decision - Power Attacks - Unconscious Bonus to Power Attack",
+                    "type": "float"
+                },
+                {
+                    "name": "Melee Decision - Power Attacks - Normal",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Melee Decision - Power Attacks - Forward",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Melee Decision - Power Attacks - Back",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Melee Decision - Power Attacks - Left",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Melee Decision - Power Attacks - Right",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3
+                },
+                {
+                    "name": "Melee Decision - Hold Timer (min)",
+                    "type": "float"
+                },
+                {
+                    "name": "Melee Decision - Hold Timer (max)",
+                    "type": "float"
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint16",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Choose Attack using % Chance",
+                            "1": "Melee Alert OK",
+                            "2": "Flee Based on Personal Survival",
+                            "3": "",
+                            "4": "Ignore Threats",
+                            "5": "Ignore Damaging Self",
+                            "6": "Ignore Damaging Group",
+                            "7": "Ignore Damaging Spectators",
+                            "8": "Cannot Use Stealthboy"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 2
+                },
+                {
+                    "name": "Maneuver Decision - Acrobatic Dodge % Chance",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Melee Decision - Power Attacks - Rushing Attack % Chance",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 2
+                },
+                {
+                    "name": "Melee Decision - Power Attacks - Rushing Attack Distance Mult",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "CSAD",
+            "name": "Advanced - Advanced",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Dodge Fatigue Mod Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Dodge Fatigue Mod Base",
+                    "type": "float"
+                },
+                {
+                    "name": "Encumb. Speed Mod Base",
+                    "type": "float"
+                },
+                {
+                    "name": "Encumb. Speed Mod Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Dodge While Under Attack Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Dodge Not Under Attack Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Dodge Back While Under Attack Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Dodge Back Not Under Attack Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Dodge Forward While Attacking Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Dodge Forward Not Attacking Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Block Skill Modifier Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Block Skill Modifier Base",
+                    "type": "float"
+                },
+                {
+                    "name": "Block While Under Attack Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Block Not Under Attack Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Attack Skill Modifier Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Attack Skill Modifier Base",
+                    "type": "float"
+                },
+                {
+                    "name": "Attack While Under Attack Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Attack Not Under Attack Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Attack During Block Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Power Att. Fatigue Mod Base",
+                    "type": "float"
+                },
+                {
+                    "name": "Power Att. Fatigue Mod Mult",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "CSSD",
+            "name": "Simple",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Cover Search Radius",
+                    "type": "float"
+                },
+                {
+                    "name": "Take Cover Chance",
+                    "type": "float"
+                },
+                {
+                    "name": "Wait Timer (min)",
+                    "type": "float"
+                },
+                {
+                    "name": "Wait Timer (max)",
+                    "type": "float"
+                },
+                {
+                    "name": "Wait to Fire Timer (min)",
+                    "type": "float"
+                },
+                {
+                    "name": "Wait to Fire Timer (max)",
+                    "type": "float"
+                },
+                {
+                    "name": "Fire Timer (min)",
+                    "type": "float"
+                },
+                {
+                    "name": "Fire Timer (max)",
+                    "type": "float"
+                },
+                {
+                    "name": "Ranged Weapon Range Mult (min)",
+                    "type": "float"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Weapon Restrictions",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "None",
+                            "1": "Melee Only",
+                            "2": "Ranged Only"
+                        }
+                    }
+                },
+                {
+                    "name": "Ranged Weapon Range Mult (max)",
+                    "type": "float"
+                },
+                {
+                    "name": "Max Targeting FOV",
+                    "type": "float"
+                },
+                {
+                    "name": "Combat Radius",
+                    "type": "float"
+                },
+                {
+                    "name": "Semi-Auto Firing Delay Mult (min)",
+                    "type": "float"
+                },
+                {
+                    "name": "Semi-Auto Firing Delay Mult (max)",
+                    "type": "float"
+                }
+            ]
+        }
+    ]
+}

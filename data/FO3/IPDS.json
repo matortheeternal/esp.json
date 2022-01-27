@@ -1,0 +1,115 @@
+{
+    "signature": "IPDS",
+    "type": "record",
+    "name": "Impact DataSet",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "signature": "DATA",
+            "name": "Impacts",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Stone",
+                    "type": "formId",
+                    "signatures": [
+                        "IPCT",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Dirt",
+                    "type": "formId",
+                    "signatures": [
+                        "IPCT",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Grass",
+                    "type": "formId",
+                    "signatures": [
+                        "IPCT",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Glass",
+                    "type": "formId",
+                    "signatures": [
+                        "IPCT",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Metal",
+                    "type": "formId",
+                    "signatures": [
+                        "IPCT",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Wood",
+                    "type": "formId",
+                    "signatures": [
+                        "IPCT",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Organic",
+                    "type": "formId",
+                    "signatures": [
+                        "IPCT",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Cloth",
+                    "type": "formId",
+                    "signatures": [
+                        "IPCT",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Water",
+                    "type": "formId",
+                    "signatures": [
+                        "IPCT",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Hollow Metal",
+                    "type": "formId",
+                    "signatures": [
+                        "IPCT",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Organic Bug",
+                    "type": "formId",
+                    "signatures": [
+                        "IPCT",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Organic Glow",
+                    "type": "formId",
+                    "signatures": [
+                        "IPCT",
+                        "NULL"
+                    ]
+                }
+            ]
+        }
+    ]
+}

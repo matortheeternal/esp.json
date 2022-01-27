@@ -1,0 +1,261 @@
+{
+    "signature": "IMGS",
+    "type": "record",
+    "name": "Image Space",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "signature": "DNAM",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "HDR",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Eye Adapt Speed",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Blur Radius",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Blur Passes",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Emissive Mult",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Target LUM",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Upper LUM Clamp",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Bright Scale",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Bright Clamp",
+                            "type": "float"
+                        },
+                        {
+                            "name": "LUM Ramp No Tex",
+                            "type": "float"
+                        },
+                        {
+                            "name": "LUM Ramp Min",
+                            "type": "float"
+                        },
+                        {
+                            "name": "LUM Ramp Max",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Sunlight Dimmer",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Grass Dimmer",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Tree Dimmer",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Skin Dimmer",
+                            "type": "union",
+                            "decider": "IMGSSkinDimmerDecider",
+                            "elements": [
+                                {
+                                    "name": "Skin Dimmer",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "Skin Dimmer",
+                                    "type": "empty",
+                                    "conflictType": "Ignore"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Bloom",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Blur Radius",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Alpha Mult Interior",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Alpha Mult Exterior",
+                            "type": "float"
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Hit",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Blur Radius",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Blur Damping Constant",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Damping Constant",
+                            "type": "float"
+                        }
+                    ]
+                },
+                {
+                    "name": "Night Eye",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Tint Color",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "float",
+                                    "scale": 255
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "float",
+                                    "scale": 255
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "float",
+                                    "scale": 255
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Brightness",
+                            "type": "float"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cinematic",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Saturation",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Contrast",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Avg Lum Value",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "Value",
+                                    "type": "float"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Cinematic - Brightness - Value",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Tint",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Color",
+                                    "type": "struct",
+                                    "elements": [
+                                        {
+                                            "name": "Red",
+                                            "type": "float",
+                                            "scale": 255
+                                        },
+                                        {
+                                            "name": "Green",
+                                            "type": "float",
+                                            "scale": 255
+                                        },
+                                        {
+                                            "name": "Blue",
+                                            "type": "float",
+                                            "scale": 255
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Value",
+                                    "type": "float"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Saturation",
+                            "1": "Contrast",
+                            "2": "Tint",
+                            "3": "Brightness"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3
+                }
+            ]
+        }
+    ]
+}

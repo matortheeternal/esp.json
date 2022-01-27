@@ -1,0 +1,185 @@
+{
+    "signature": "ARMA",
+    "type": "record",
+    "name": "Armor Addon",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "BMDT"
+        },
+        {
+            "name": "Male biped model",
+            "type": "memberStruct",
+            "unordered": true,
+            "members": [
+                {
+                    "signature": "MODL",
+                    "name": "Model FileName",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "signature": "MODT",
+                    "name": "Texture Files Hashes",
+                    "type": "bytes",
+                    "size": 0,
+                    "conflictType": "Ignore"
+                },
+                {
+                    "id": "MODS"
+                },
+                {
+                    "id": "MODD"
+                }
+            ]
+        },
+        {
+            "name": "Male world model",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "MOD2",
+                    "name": "Model FileName",
+                    "type": "string"
+                },
+                {
+                    "signature": "MO2T",
+                    "name": "Texture Files Hashes",
+                    "type": "bytes",
+                    "size": 0,
+                    "conflictType": "Ignore"
+                },
+                {
+                    "id": "MO2S"
+                }
+            ]
+        },
+        {
+            "signature": "ICON",
+            "name": "Male icon FileName",
+            "type": "string"
+        },
+        {
+            "signature": "MICO",
+            "name": "Male mico FileName",
+            "type": "string"
+        },
+        {
+            "name": "Female biped model",
+            "type": "memberStruct",
+            "unordered": true,
+            "members": [
+                {
+                    "signature": "MOD3",
+                    "name": "Model FileName",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "signature": "MO3T",
+                    "name": "Texture Files Hashes",
+                    "type": "bytes",
+                    "size": 0,
+                    "conflictType": "Ignore"
+                },
+                {
+                    "id": "MO3S"
+                },
+                {
+                    "id": "MOSD"
+                }
+            ]
+        },
+        {
+            "name": "Female world model",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "MOD4",
+                    "name": "Model FileName",
+                    "type": "string"
+                },
+                {
+                    "signature": "MO4T",
+                    "name": "Texture Files Hashes",
+                    "type": "bytes",
+                    "size": 0,
+                    "conflictType": "Ignore"
+                },
+                {
+                    "id": "MO4S"
+                }
+            ]
+        },
+        {
+            "signature": "ICO2",
+            "name": "Female icon FileName",
+            "type": "string"
+        },
+        {
+            "signature": "MIC2",
+            "name": "Female mico FileName",
+            "type": "string"
+        },
+        {
+            "id": "ETYP",
+            "required": true
+        },
+        {
+            "signature": "DATA",
+            "name": "Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Value",
+                    "type": "int32"
+                },
+                {
+                    "name": "Max Condition",
+                    "type": "int32"
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "DNAM",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "AR",
+                    "type": "int16",
+                    "format": {
+                        "type": "divide",
+                        "value": 100
+                    }
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint16",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Modulates Voice"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

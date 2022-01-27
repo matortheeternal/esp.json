@@ -1,0 +1,16 @@
+{
+    "name": "Icon",
+    "type": "memberStruct",
+    "members": [
+        {
+            "signature": "ICON",
+            "name": "Large Icon FileName",
+            "type": "string"
+        },
+        {
+            "signature": "MICO",
+            "name": "Small Icon FileName",
+            "type": "string"
+        }
+    ]
+}

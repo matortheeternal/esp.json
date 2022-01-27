@@ -1,0 +1,14 @@
+{
+    "name": "Data",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Time",
+            "type": "float"
+        },
+        {
+            "name": "Value",
+            "type": "float"
+        }
+    ]
+}

@@ -1,0 +1,93 @@
+{
+    "signature": "FACT",
+    "type": "record",
+    "name": "Faction",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "XNAMs"
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Flags 1",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Hidden from PC",
+                            "1": "Evil",
+                            "2": "Special Combat"
+                        }
+                    }
+                },
+                {
+                    "name": "Flags 2",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Track Crime",
+                            "1": "Allow Sell"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 2
+                }
+            ]
+        },
+        {
+            "signature": "CNAM",
+            "name": "Unused",
+            "type": "float"
+        },
+        {
+            "name": "Ranks",
+            "type": "memberArray",
+            "member": {
+                "name": "Rank",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "RNAM",
+                        "name": "Rank#",
+                        "type": "int32"
+                    },
+                    {
+                        "signature": "MNAM",
+                        "name": "Male",
+                        "type": "string",
+                        "conflictType": "Translate"
+                    },
+                    {
+                        "signature": "FNAM",
+                        "name": "Female",
+                        "type": "string",
+                        "conflictType": "Translate"
+                    },
+                    {
+                        "signature": "INAM",
+                        "name": "Insignia (Unused)",
+                        "type": "string"
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        }
+    ]
+}

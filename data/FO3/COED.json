@@ -1,0 +1,48 @@
+{
+    "signature": "COED",
+    "name": "Extra Data",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Owner",
+            "type": "formId",
+            "signatures": [
+                "NPC_",
+                "FACT",
+                "NULL"
+            ]
+        },
+        {
+            "name": "Global Variable / Required Rank",
+            "type": "union",
+            "decider": "COEDOwnerDecider",
+            "elements": [
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 4,
+                    "conflictType": "Ignore"
+                },
+                {
+                    "name": "Global Variable",
+                    "type": "formId",
+                    "signatures": [
+                        "GLOB",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Required Rank",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "name": "Item Condition",
+            "type": "float"
+        }
+    ],
+    "sortKey": [
+        2
+    ]
+}

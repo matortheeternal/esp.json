@@ -1,0 +1,44 @@
+{
+    "signature": "TACT",
+    "type": "record",
+    "name": "Talking Activator",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL",
+            "required": true
+        },
+        {
+            "id": "SCRI"
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "signature": "SNAM",
+            "name": "Sound",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        },
+        {
+            "signature": "VNAM",
+            "name": "Voice Type",
+            "type": "formId",
+            "signatures": [
+                "VTYP"
+            ]
+        }
+    ]
+}

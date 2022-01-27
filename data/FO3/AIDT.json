@@ -1,0 +1,78 @@
+{
+    "signature": "AIDT",
+    "name": "AI Data",
+    "type": "struct",
+    "required": true,
+    "elements": [
+        {
+            "name": "Aggression",
+            "type": "uint8",
+            "format": {
+                "id": "AgressionEnum"
+            }
+        },
+        {
+            "name": "Confidence",
+            "type": "uint8",
+            "format": {
+                "id": "ConfidenceEnum"
+            }
+        },
+        {
+            "name": "Energy Level",
+            "type": "uint8"
+        },
+        {
+            "name": "Responsibility",
+            "type": "uint8"
+        },
+        {
+            "name": "Mood",
+            "type": "uint8",
+            "format": {
+                "id": "MoodEnum"
+            }
+        },
+        {
+            "name": "Unused",
+            "type": "bytes",
+            "size": 3
+        },
+        {
+            "name": "Buys/Sells and Services",
+            "type": "uint32",
+            "format": {
+                "id": "ServiceFlags"
+            }
+        },
+        {
+            "name": "Teaches",
+            "type": "int8",
+            "format": {
+                "id": "SkillEnum"
+            }
+        },
+        {
+            "name": "Maximum training level",
+            "type": "uint8"
+        },
+        {
+            "name": "Assistance",
+            "type": "int8",
+            "format": {
+                "id": "AssistanceEnum"
+            }
+        },
+        {
+            "name": "Aggro Radius Behavior",
+            "type": "uint8",
+            "format": {
+                "id": "AggroRadiusFlags"
+            }
+        },
+        {
+            "name": "Aggro Radius",
+            "type": "int32"
+        }
+    ]
+}

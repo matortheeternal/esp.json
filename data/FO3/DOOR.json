@@ -1,0 +1,68 @@
+{
+    "signature": "DOOR",
+    "type": "record",
+    "name": "Door",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL",
+            "required": true
+        },
+        {
+            "id": "SCRI"
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "signature": "SNAM",
+            "name": "Sound - Open",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        },
+        {
+            "signature": "ANAM",
+            "name": "Sound - Close",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        },
+        {
+            "signature": "BNAM",
+            "name": "Sound - Looping",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        },
+        {
+            "signature": "FNAM",
+            "name": "Flags",
+            "type": "uint8",
+            "required": true,
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "",
+                    "1": "Automatic Door",
+                    "2": "Hidden",
+                    "3": "Minimal Use",
+                    "4": "Sliding Door"
+                }
+            }
+        }
+    ]
+}

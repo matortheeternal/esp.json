@@ -1,0 +1,508 @@
+{
+    "signature": "RACE",
+    "type": "record",
+    "name": "Race",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "FULL",
+            "required": true
+        },
+        {
+            "id": "DESC",
+            "required": true
+        },
+        {
+            "id": "XNAMs"
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Skill Boosts",
+                    "type": "array",
+                    "sorted": true,
+                    "count": 7,
+                    "element": {
+                        "name": "Skill Boost",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Skill",
+                                "type": "int8",
+                                "format": {
+                                    "id": "ActorValueEnum"
+                                }
+                            },
+                            {
+                                "name": "Boost",
+                                "type": "int8"
+                            }
+                        ],
+                        "sortKey": [
+                            0
+                        ]
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 2
+                },
+                {
+                    "name": "Male Height",
+                    "type": "float"
+                },
+                {
+                    "name": "Female Height",
+                    "type": "float"
+                },
+                {
+                    "name": "Male Weight",
+                    "type": "float"
+                },
+                {
+                    "name": "Female Weight",
+                    "type": "float"
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Playable",
+                            "1": "",
+                            "2": "Child"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "ONAM",
+            "name": "Older",
+            "type": "formId",
+            "signatures": [
+                "RACE"
+            ]
+        },
+        {
+            "signature": "YNAM",
+            "name": "Younger",
+            "type": "formId",
+            "signatures": [
+                "RACE"
+            ]
+        },
+        {
+            "signature": "NAM2",
+            "name": "Unknown Marker",
+            "type": "empty",
+            "required": true
+        },
+        {
+            "signature": "VTCK",
+            "name": "Voices",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Male",
+                    "type": "formId",
+                    "signatures": [
+                        "VTYP"
+                    ]
+                },
+                {
+                    "name": "Female",
+                    "type": "formId",
+                    "signatures": [
+                        "VTYP"
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "DNAM",
+            "name": "Default Hair Styles",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Male",
+                    "type": "formId",
+                    "signatures": [
+                        "HAIR",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Female",
+                    "type": "formId",
+                    "signatures": [
+                        "HAIR",
+                        "NULL"
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "CNAM",
+            "name": "Default Hair Colors",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Male",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Bleached",
+                            "1": "Brown",
+                            "2": "Chocolate",
+                            "3": "Platinum",
+                            "4": "Cornsilk",
+                            "5": "Suede",
+                            "6": "Pecan",
+                            "7": "Auburn",
+                            "8": "Ginger",
+                            "9": "Honey",
+                            "10": "Gold",
+                            "11": "Rosewood",
+                            "12": "Black",
+                            "13": "Chestnut",
+                            "14": "Steel",
+                            "15": "Champagne"
+                        }
+                    }
+                },
+                {
+                    "name": "Female",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Bleached",
+                            "1": "Brown",
+                            "2": "Chocolate",
+                            "3": "Platinum",
+                            "4": "Cornsilk",
+                            "5": "Suede",
+                            "6": "Pecan",
+                            "7": "Auburn",
+                            "8": "Ginger",
+                            "9": "Honey",
+                            "10": "Gold",
+                            "11": "Rosewood",
+                            "12": "Black",
+                            "13": "Chestnut",
+                            "14": "Steel",
+                            "15": "Champagne"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "PNAM",
+            "name": "FaceGen - Main clamp",
+            "type": "float",
+            "required": true
+        },
+        {
+            "signature": "UNAM",
+            "name": "FaceGen - Face clamp",
+            "type": "float",
+            "required": true
+        },
+        {
+            "signature": "ATTR",
+            "name": "Unused",
+            "type": "bytes",
+            "size": 0,
+            "required": true
+        },
+        {
+            "name": "Head Data",
+            "type": "memberStruct",
+            "required": true,
+            "members": [
+                {
+                    "signature": "NAM0",
+                    "name": "Head Data Marker",
+                    "type": "empty",
+                    "required": true
+                },
+                {
+                    "name": "Male Head Data",
+                    "type": "memberStruct",
+                    "required": true,
+                    "members": [
+                        {
+                            "signature": "MNAM",
+                            "name": "Male Data Marker",
+                            "type": "empty",
+                            "required": true
+                        },
+                        {
+                            "name": "Parts",
+                            "type": "memberArray",
+                            "sorted": true,
+                            "required": true,
+                            "member": {
+                                "name": "Part",
+                                "type": "memberStruct",
+                                "members": [
+                                    {
+                                        "signature": "INDX",
+                                        "name": "Index",
+                                        "type": "uint32",
+                                        "format": {
+                                            "id": "HeadPartIndexEnum"
+                                        }
+                                    },
+                                    {
+                                        "id": "MODL",
+                                        "required": true
+                                    },
+                                    {
+                                        "id": "ICON"
+                                    }
+                                ],
+                                "sortKey": [
+                                    0
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Female Head Data",
+                    "type": "memberStruct",
+                    "required": true,
+                    "members": [
+                        {
+                            "signature": "FNAM",
+                            "name": "Female Data Marker",
+                            "type": "empty",
+                            "required": true
+                        },
+                        {
+                            "name": "Parts",
+                            "type": "memberArray",
+                            "sorted": true,
+                            "required": true,
+                            "member": {
+                                "name": "Part",
+                                "type": "memberStruct",
+                                "members": [
+                                    {
+                                        "signature": "INDX",
+                                        "name": "Index",
+                                        "type": "uint32",
+                                        "format": {
+                                            "id": "HeadPartIndexEnum"
+                                        }
+                                    },
+                                    {
+                                        "id": "MODL",
+                                        "required": true
+                                    },
+                                    {
+                                        "id": "ICON"
+                                    }
+                                ],
+                                "sortKey": [
+                                    0
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Body Data",
+            "type": "memberStruct",
+            "required": true,
+            "members": [
+                {
+                    "signature": "NAM1",
+                    "name": "Body Data Marker",
+                    "type": "empty",
+                    "required": true
+                },
+                {
+                    "name": "Male Body Data",
+                    "type": "memberStruct",
+                    "required": true,
+                    "members": [
+                        {
+                            "signature": "MNAM",
+                            "name": "Male Data Marker",
+                            "type": "empty"
+                        },
+                        {
+                            "name": "Parts",
+                            "type": "memberArray",
+                            "sorted": true,
+                            "required": true,
+                            "member": {
+                                "name": "Part",
+                                "type": "memberStruct",
+                                "members": [
+                                    {
+                                        "signature": "INDX",
+                                        "name": "Index",
+                                        "type": "uint32",
+                                        "format": {
+                                            "id": "BodyPartIndexEnum"
+                                        }
+                                    },
+                                    {
+                                        "id": "ICON"
+                                    },
+                                    {
+                                        "id": "MODL",
+                                        "required": true
+                                    }
+                                ],
+                                "sortKey": [
+                                    0
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Female Body Data",
+                    "type": "memberStruct",
+                    "required": true,
+                    "members": [
+                        {
+                            "signature": "FNAM",
+                            "name": "Female Data Marker",
+                            "type": "empty",
+                            "required": true
+                        },
+                        {
+                            "name": "Parts",
+                            "type": "memberArray",
+                            "sorted": true,
+                            "required": true,
+                            "member": {
+                                "name": "Part",
+                                "type": "memberStruct",
+                                "members": [
+                                    {
+                                        "signature": "INDX",
+                                        "name": "Index",
+                                        "type": "uint32",
+                                        "format": {
+                                            "id": "BodyPartIndexEnum"
+                                        }
+                                    },
+                                    {
+                                        "id": "ICON"
+                                    },
+                                    {
+                                        "id": "MODL",
+                                        "required": true
+                                    }
+                                ],
+                                "sortKey": [
+                                    0
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "HNAM",
+            "name": "Hairs",
+            "type": "array",
+            "sorted": true,
+            "required": true,
+            "element": {
+                "name": "Hair",
+                "type": "formId",
+                "signatures": [
+                    "HAIR"
+                ]
+            }
+        },
+        {
+            "signature": "ENAM",
+            "name": "Eyes",
+            "type": "array",
+            "sorted": true,
+            "required": true,
+            "element": {
+                "name": "Eye",
+                "type": "formId",
+                "signatures": [
+                    "EYES"
+                ]
+            }
+        },
+        {
+            "name": "FaceGen Data",
+            "type": "memberStruct",
+            "required": true,
+            "members": [
+                {
+                    "name": "Male FaceGen Data",
+                    "type": "memberStruct",
+                    "required": true,
+                    "members": [
+                        {
+                            "signature": "MNAM",
+                            "name": "Male Data Marker",
+                            "type": "empty",
+                            "required": true
+                        },
+                        {
+                            "id": "FaceGen"
+                        },
+                        {
+                            "signature": "SNAM",
+                            "type": "bytes",
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "name": "Female FaceGen Data",
+                    "type": "memberStruct",
+                    "required": true,
+                    "members": [
+                        {
+                            "signature": "FNAM",
+                            "name": "Female Data Marker",
+                            "type": "empty",
+                            "required": true
+                        },
+                        {
+                            "id": "FaceGen"
+                        },
+                        {
+                            "signature": "SNAM",
+                            "type": "bytes",
+                            "required": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

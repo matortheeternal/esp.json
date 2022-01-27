@@ -1,0 +1,362 @@
+{
+    "signature": "PERK",
+    "type": "record",
+    "name": "Perk",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "DESC",
+            "required": true
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "CTDAs"
+        },
+        {
+            "signature": "DATA",
+            "name": "Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Trait",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "No",
+                            "1": "Yes"
+                        }
+                    }
+                },
+                {
+                    "name": "Min Level",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Ranks",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Playable",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "No",
+                            "1": "Yes"
+                        }
+                    }
+                },
+                {
+                    "name": "Hidden",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "No",
+                            "1": "Yes"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Effects",
+            "type": "memberArray",
+            "member": {
+                "name": "Effect",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "PRKE",
+                        "name": "Header",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Type",
+                                "type": "uint8",
+                                "afterSet": "PERKPRKETypeAfterSet",
+                                "format": {
+                                    "type": "enum",
+                                    "options": {
+                                        "0": "Quest + Stage",
+                                        "1": "Ability",
+                                        "2": "Entry Point"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Rank",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "Priority",
+                                "type": "uint8"
+                            }
+                        ],
+                        "sortKey": [
+                            1,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "signature": "DATA",
+                        "name": "Effect Data",
+                        "type": "union",
+                        "decider": "PerkDATADecider",
+                        "required": true,
+                        "elements": [
+                            {
+                                "name": "Quest + Stage",
+                                "type": "struct",
+                                "elements": [
+                                    {
+                                        "name": "Quest",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "QUST"
+                                        ]
+                                    },
+                                    {
+                                        "name": "Quest Stage",
+                                        "type": "uint8",
+                                        "format": {
+                                            "type": "PerkDATAQuestStageFormat"
+                                        }
+                                    },
+                                    {
+                                        "name": "Unused",
+                                        "type": "bytes",
+                                        "size": 3
+                                    }
+                                ],
+                                "sortKey": [
+                                    0,
+                                    1
+                                ]
+                            },
+                            {
+                                "name": "Ability",
+                                "type": "formId",
+                                "signatures": [
+                                    "SPEL"
+                                ]
+                            },
+                            {
+                                "name": "Entry Point",
+                                "type": "struct",
+                                "elements": [
+                                    {
+                                        "name": "Entry Point",
+                                        "type": "uint8",
+                                        "required": true,
+                                        "afterSet": "PERKEntryPointAfterSet",
+                                        "format": {
+                                            "type": "enum",
+                                            "options": {
+                                                "0": "Calculate Weapon Damage",
+                                                "1": "Calculate My Critical Hit Chance",
+                                                "2": "Calculate My Critical Hit Damage",
+                                                "3": "Calculate Weapon Attack AP Cost",
+                                                "4": "Calculate Mine Explode Chance",
+                                                "5": "Adjust Range Penalty",
+                                                "6": "Adjust Limb Damage",
+                                                "7": "Calculate Weapon Range",
+                                                "8": "Calculate To Hit Chance",
+                                                "9": "Adjust Experience Points",
+                                                "10": "Adjust Gained Skill Points",
+                                                "11": "Adjust Book Skill Points",
+                                                "12": "Modify Recovered Health",
+                                                "13": "Calculate Inventory AP Cost",
+                                                "14": "Get Disposition",
+                                                "15": "Get Should Attack",
+                                                "16": "Get Should Assist",
+                                                "17": "Calculate Buy Price",
+                                                "18": "Get Bad Karma",
+                                                "19": "Get Good Karma",
+                                                "20": "Ignore Locked Terminal",
+                                                "21": "Add Leveled List On Death",
+                                                "22": "Get Max Carry Weight",
+                                                "23": "Modify Addiction Chance",
+                                                "24": "Modify Addiction Duration",
+                                                "25": "Modify Positive Chem Duration",
+                                                "26": "Adjust Drinking Radiation",
+                                                "27": "Activate",
+                                                "28": "Mysterious Stranger",
+                                                "29": "Has Paralyzing Palm",
+                                                "30": "Hacking Science Bonus",
+                                                "31": "Ignore Running During Detection",
+                                                "32": "Ignore Broken Lock",
+                                                "33": "Has Concentrated Fire",
+                                                "34": "Calculate Gun Spread",
+                                                "35": "Player Kill AP Reward",
+                                                "36": "Modify Enemy Critical Hit Chance"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "Function",
+                                        "type": "uint8",
+                                        "afterSet": "PerkDATAFunctionAfterSet",
+                                        "format": {
+                                            "type": "PerkDATAFunctionFormat"
+                                        }
+                                    },
+                                    {
+                                        "name": "Perk Condition Tab Count",
+                                        "type": "uint8",
+                                        "conflictType": "Ignore"
+                                    }
+                                ],
+                                "sortKey": [
+                                    0,
+                                    1
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Perk Conditions",
+                        "type": "memberArray",
+                        "member": {
+                            "name": "Perk Condition",
+                            "type": "memberStruct",
+                            "members": [
+                                {
+                                    "signature": "PRKC",
+                                    "name": "Run On",
+                                    "type": "int8",
+                                    "format": {
+                                        "type": "PRKCFormat"
+                                    }
+                                },
+                                {
+                                    "id": "CTDAs",
+                                    "required": true
+                                }
+                            ],
+                            "sortKey": [
+                                0
+                            ]
+                        }
+                    },
+                    {
+                        "name": "Entry Point Function Parameters",
+                        "type": "memberStruct",
+                        "members": [
+                            {
+                                "signature": "EPFT",
+                                "name": "Type",
+                                "type": "uint8",
+                                "conflictType": "Ignore",
+                                "afterSet": "PerkEPFTAfterSet",
+                                "format": {
+                                    "type": "PerkEPFTFormat"
+                                }
+                            },
+                            {
+                                "signature": "EPFD",
+                                "name": "Data",
+                                "type": "union",
+                                "decider": "EPFDDecider",
+                                "elements": [
+                                    {
+                                        "name": "Unknown",
+                                        "type": "bytes"
+                                    },
+                                    {
+                                        "name": "Float",
+                                        "type": "float"
+                                    },
+                                    {
+                                        "name": "Float, Float",
+                                        "type": "struct",
+                                        "elements": [
+                                            {
+                                                "name": "Float 1",
+                                                "type": "float"
+                                            },
+                                            {
+                                                "name": "Float 2",
+                                                "type": "float"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "Leveled Item",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "LVLI"
+                                        ]
+                                    },
+                                    {
+                                        "name": "None (Script)",
+                                        "type": "empty"
+                                    },
+                                    {
+                                        "name": "Actor Value, Float",
+                                        "type": "struct",
+                                        "elements": [
+                                            {
+                                                "name": "Actor Value",
+                                                "type": "uint32",
+                                                "format": {
+                                                    "type": "EPFDActorValueFormat"
+                                                }
+                                            },
+                                            {
+                                                "name": "Float",
+                                                "type": "float"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "signature": "EPF2",
+                                "name": "Button Label",
+                                "type": "string",
+                                "transform": "keepcase"
+                            },
+                            {
+                                "signature": "EPF3",
+                                "name": "Script Flags",
+                                "type": "uint16",
+                                "format": {
+                                    "type": "flags",
+                                    "flags": {
+                                        "0": "Run Immediately"
+                                    }
+                                }
+                            },
+                            {
+                                "id": "EmbeddedScriptPerk"
+                            }
+                        ]
+                    },
+                    {
+                        "signature": "PRKF",
+                        "name": "End Marker",
+                        "type": "empty",
+                        "conflictType": "Ignore",
+                        "required": true
+                    }
+                ],
+                "sortKey": [
+                    0,
+                    1
+                ]
+            }
+        }
+    ]
+}

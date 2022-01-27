@@ -1,0 +1,28 @@
+{
+    "signature": "AVIF",
+    "type": "record",
+    "name": "ActorValue Information",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "DESC",
+            "required": true
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "signature": "ANAM",
+            "name": "Short Name",
+            "type": "string",
+            "conflictType": "Translate",
+            "transform": "keepcase"
+        }
+    ]
+}

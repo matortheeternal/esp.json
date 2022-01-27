@@ -1,0 +1,116 @@
+{
+    "signature": "LGTM",
+    "type": "record",
+    "name": "Lighting Template",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "signature": "DATA",
+            "name": "Lighting",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Ambient Color",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Red",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Green",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Blue",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "Directional Color",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Red",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Green",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Blue",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "Fog Color",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Red",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Green",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Blue",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "Fog Near",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog Far",
+                    "type": "float"
+                },
+                {
+                    "name": "Directional Rotation XY",
+                    "type": "int32"
+                },
+                {
+                    "name": "Directional Rotation Z",
+                    "type": "int32"
+                },
+                {
+                    "name": "Directional Fade",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog Clip Dist",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog Power",
+                    "type": "float"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "signature": "MUSC",
+    "type": "record",
+    "name": "Music Type",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "signature": "FNAM",
+            "name": "FileName",
+            "type": "string"
+        }
+    ]
+}

@@ -1,0 +1,94 @@
+{
+    "signature": "IDLE",
+    "type": "record",
+    "name": "Idle Animation",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "MODL",
+            "required": true
+        },
+        {
+            "id": "CTDAs"
+        },
+        {
+            "signature": "ANAM",
+            "name": "Related Idle Animations",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Parent",
+                    "type": "formId",
+                    "signatures": [
+                        "IDLE",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Previous Sibling",
+                    "type": "formId",
+                    "signatures": [
+                        "IDLE",
+                        "NULL"
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Animation Group Section",
+                    "type": "uint8",
+                    "format": {
+                        "type": "IdleAnamFormat"
+                    }
+                },
+                {
+                    "name": "Looping",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Min",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Max",
+                            "type": "uint8"
+                        }
+                    ]
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 1
+                },
+                {
+                    "name": "Replay Delay",
+                    "type": "int16"
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "No attacking"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 1
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "signature": "MODD",
+    "name": "FaceGen Model Flags",
+    "type": "uint8",
+    "format": {
+        "type": "flags",
+        "flags": {
+            "0": "Head",
+            "1": "Torso",
+            "2": "Right Hand",
+            "3": "Left Hand"
+        }
+    }
+}

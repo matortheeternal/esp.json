@@ -1,0 +1,43 @@
+{
+    "signature": "HDPT",
+    "type": "record",
+    "name": "Head Part",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "FULL",
+            "required": true
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "signature": "DATA",
+            "name": "Flags",
+            "type": "uint8",
+            "required": true,
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Playable"
+                }
+            }
+        },
+        {
+            "name": "Extra Parts",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "signature": "HNAM",
+                "name": "Part",
+                "type": "formId",
+                "signatures": [
+                    "HDPT"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,105 @@
+{
+    "signature": "NOTE",
+    "type": "record",
+    "name": "Note",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "YNAM"
+        },
+        {
+            "id": "ZNAM"
+        },
+        {
+            "signature": "DATA",
+            "name": "Type",
+            "type": "uint8",
+            "required": true,
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "Sound",
+                    "1": "Text",
+                    "2": "Image",
+                    "3": "Voice"
+                }
+            }
+        },
+        {
+            "name": "Quests",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "signature": "ONAM",
+                "name": "Quest",
+                "type": "formId",
+                "signatures": [
+                    "QUST"
+                ]
+            }
+        },
+        {
+            "signature": "XNAM",
+            "name": "Texture",
+            "type": "string"
+        },
+        {
+            "signature": "TNAM",
+            "name": "Text / Topic",
+            "type": "union",
+            "decider": "NOTETNAMDecide",
+            "elements": [
+                {
+                    "name": "Text",
+                    "type": "string",
+                    "transform": "keepcase"
+                },
+                {
+                    "name": "Topic",
+                    "type": "formId",
+                    "signatures": [
+                        "DIAL"
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "SNAM",
+            "name": "Sound / NPC",
+            "type": "union",
+            "decider": "NOTESNAMDecide",
+            "elements": [
+                {
+                    "name": "Sound",
+                    "type": "formId",
+                    "signatures": [
+                        "SOUN"
+                    ]
+                },
+                {
+                    "name": "NPC",
+                    "type": "formId",
+                    "signatures": [
+                        "NPC_"
+                    ]
+                }
+            ]
+        }
+    ]
+}

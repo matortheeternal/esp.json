@@ -1,0 +1,261 @@
+{
+    "signature": "LAND",
+    "type": "record",
+    "name": "Landscape",
+    "members": [
+        {
+            "signature": "DATA",
+            "name": "Unknown",
+            "type": "bytes"
+        },
+        {
+            "signature": "VNML",
+            "name": "Vertex Normals",
+            "type": "array",
+            "count": 33,
+            "element": {
+                "name": "Row",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Columns",
+                        "type": "array",
+                        "count": 33,
+                        "element": {
+                            "name": "Column",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "X",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Y",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Z",
+                                    "type": "uint8"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "VHGT",
+            "name": "Vertext Height Map",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Offset",
+                    "type": "float"
+                },
+                {
+                    "name": "Rows",
+                    "type": "array",
+                    "count": 33,
+                    "element": {
+                        "name": "Row",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Columns",
+                                "type": "array",
+                                "count": 33,
+                                "element": {
+                                    "name": "Column",
+                                    "type": "uint8"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3
+                }
+            ]
+        },
+        {
+            "signature": "VCLR",
+            "name": "Vertex Colours",
+            "type": "array",
+            "count": 33,
+            "element": {
+                "name": "Row",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Columns",
+                        "type": "array",
+                        "count": 33,
+                        "element": {
+                            "name": "Column",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "X",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Y",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Z",
+                                    "type": "uint8"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Layers",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "name": "Layer",
+                "type": "memberUnion",
+                "members": [
+                    {
+                        "name": "Base Layer",
+                        "type": "memberStruct",
+                        "members": [
+                            {
+                                "signature": "BTXT",
+                                "name": "Base Layer Header",
+                                "type": "struct",
+                                "elements": [
+                                    {
+                                        "name": "Texture",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "LTEX",
+                                            "NULL"
+                                        ]
+                                    },
+                                    {
+                                        "name": "Quadrant",
+                                        "type": "uint8",
+                                        "format": {
+                                            "id": "QuadrantEnum"
+                                        }
+                                    },
+                                    {
+                                        "name": "Unused",
+                                        "type": "bytes",
+                                        "size": 1
+                                    },
+                                    {
+                                        "name": "Layer",
+                                        "type": "int16"
+                                    }
+                                ],
+                                "sortKey": [
+                                    1,
+                                    3
+                                ]
+                            }
+                        ],
+                        "sortKey": [
+                            0
+                        ]
+                    },
+                    {
+                        "name": "Alpha Layer",
+                        "type": "memberStruct",
+                        "members": [
+                            {
+                                "signature": "ATXT",
+                                "name": "Alpha Layer Header",
+                                "type": "struct",
+                                "elements": [
+                                    {
+                                        "name": "Texture",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "LTEX",
+                                            "NULL"
+                                        ]
+                                    },
+                                    {
+                                        "name": "Quadrant",
+                                        "type": "uint8",
+                                        "format": {
+                                            "id": "QuadrantEnum"
+                                        }
+                                    },
+                                    {
+                                        "name": "Unused",
+                                        "type": "bytes",
+                                        "size": 1
+                                    },
+                                    {
+                                        "name": "Layer",
+                                        "type": "int16"
+                                    }
+                                ],
+                                "sortKey": [
+                                    1,
+                                    3
+                                ]
+                            },
+                            {
+                                "signature": "VTXT",
+                                "name": "Alpha Layer Data",
+                                "type": "array",
+                                "sorted": true,
+                                "element": {
+                                    "name": "Cell",
+                                    "type": "struct",
+                                    "elements": [
+                                        {
+                                            "name": "Position",
+                                            "type": "uint16",
+                                            "format": {
+                                                "type": "AtxtPositionFormat"
+                                            }
+                                        },
+                                        {
+                                            "name": "Unused",
+                                            "type": "bytes",
+                                            "size": 2
+                                        },
+                                        {
+                                            "name": "Opacity",
+                                            "type": "float"
+                                        }
+                                    ],
+                                    "sortKey": [
+                                        0
+                                    ]
+                                }
+                            }
+                        ],
+                        "sortKey": [
+                            0
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "VTEX",
+            "name": "Textures",
+            "type": "array",
+            "element": {
+                "name": "Texture",
+                "type": "formId",
+                "signatures": [
+                    "LTEX",
+                    "NULL"
+                ]
+            }
+        }
+    ]
+}

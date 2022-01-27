@@ -1,0 +1,35 @@
+{
+    "signature": "FURN",
+    "type": "record",
+    "name": "Furniture",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL",
+            "required": true
+        },
+        {
+            "id": "SCRI"
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "signature": "MNAM",
+            "name": "Marker Flags",
+            "type": "bytes",
+            "size": 0,
+            "required": true
+        }
+    ]
+}

@@ -1,0 +1,77 @@
+{
+    "signature": "AMMO",
+    "type": "record",
+    "name": "Ammunition",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "FULL",
+            "required": true
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "id": "YNAM"
+        },
+        {
+            "id": "ZNAM"
+        },
+        {
+            "signature": "DATA",
+            "name": "Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Speed",
+                    "type": "float"
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Ignores Normal Weapon Resistance",
+                            "1": "Non-Playable"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3
+                },
+                {
+                    "name": "Value",
+                    "type": "int32"
+                },
+                {
+                    "name": "Clip Rounds",
+                    "type": "uint8"
+                }
+            ]
+        },
+        {
+            "signature": "ONAM",
+            "name": "Short Name",
+            "type": "string",
+            "conflictType": "Translate",
+            "transform": "keepcase"
+        }
+    ]
+}

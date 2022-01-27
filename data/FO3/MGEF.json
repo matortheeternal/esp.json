@@ -1,0 +1,235 @@
+{
+    "signature": "MGEF",
+    "type": "record",
+    "name": "Base Effect",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "DESC",
+            "required": true
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "signature": "DATA",
+            "name": "Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Hostile",
+                            "1": "Recover",
+                            "2": "Detrimental",
+                            "3": "",
+                            "4": "Self",
+                            "5": "Touch",
+                            "6": "Target",
+                            "7": "No Duration",
+                            "8": "No Magnitude",
+                            "9": "No Area",
+                            "10": "FX Persist",
+                            "11": "",
+                            "12": "Gory Visuals",
+                            "13": "Display Name Only",
+                            "14": "",
+                            "15": "Radio Broadcast ??",
+                            "16": "",
+                            "17": "",
+                            "18": "",
+                            "19": "Use skill",
+                            "20": "Use attribute",
+                            "21": "",
+                            "22": "",
+                            "23": "",
+                            "24": "Painless",
+                            "25": "Spray projectile type (or Fog if Bolt is specified as well)",
+                            "26": "Bolt projectile type (or Fog if Spray is specified as well)",
+                            "27": "No Hit Effect",
+                            "28": "No Death Dispel",
+                            "29": "????"
+                        }
+                    }
+                },
+                {
+                    "name": "Base cost (Unused)",
+                    "type": "float"
+                },
+                {
+                    "name": "Assoc. Item",
+                    "type": "union",
+                    "decider": "MGEFFAssocItemDecider",
+                    "afterSet": "MGEFFAssocItemAfterSet",
+                    "elements": [
+                        {
+                            "name": "Unused",
+                            "type": "formId",
+                            "conflictType": "Ignore"
+                        },
+                        {
+                            "name": "Assoc. Item",
+                            "type": "formId"
+                        },
+                        {
+                            "name": "Assoc. Script",
+                            "type": "formId",
+                            "signatures": [
+                                "SCPT",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Assoc. Item",
+                            "type": "formId",
+                            "signatures": [
+                                "WEAP",
+                                "ARMO",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Assoc. Creature",
+                            "type": "formId",
+                            "signatures": [
+                                "CREA"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Magic School (Unused)",
+                    "type": "int32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "-1": "None"
+                        }
+                    }
+                },
+                {
+                    "name": "Resistance Type",
+                    "type": "int32",
+                    "format": {
+                        "id": "ActorValueEnum"
+                    }
+                },
+                {
+                    "name": "Counter effect count",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 2
+                },
+                {
+                    "name": "Light",
+                    "type": "formId",
+                    "signatures": [
+                        "LIGH",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Projectile speed",
+                    "type": "float"
+                },
+                {
+                    "name": "Effect Shader",
+                    "type": "formId",
+                    "signatures": [
+                        "EFSH",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Object Display Shader",
+                    "type": "formId",
+                    "signatures": [
+                        "EFSH",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Effect sound",
+                    "type": "formId",
+                    "signatures": [
+                        "NULL",
+                        "SOUN"
+                    ]
+                },
+                {
+                    "name": "Bolt sound",
+                    "type": "formId",
+                    "signatures": [
+                        "NULL",
+                        "SOUN"
+                    ]
+                },
+                {
+                    "name": "Hit sound",
+                    "type": "formId",
+                    "signatures": [
+                        "NULL",
+                        "SOUN"
+                    ]
+                },
+                {
+                    "name": "Area sound",
+                    "type": "formId",
+                    "signatures": [
+                        "NULL",
+                        "SOUN"
+                    ]
+                },
+                {
+                    "name": "Constant Effect enchantment factor  (Unused)",
+                    "type": "float"
+                },
+                {
+                    "name": "Constant Effect barter factor (Unused)",
+                    "type": "float"
+                },
+                {
+                    "name": "Archtype",
+                    "type": "uint32",
+                    "afterSet": "MGEFArchtypeAfterSet",
+                    "format": {
+                        "id": "ArchtypeEnum"
+                    }
+                },
+                {
+                    "id": "ActorValue"
+                }
+            ]
+        },
+        {
+            "name": "Counter Effects",
+            "type": "memberArray",
+            "sorted": true,
+            "afterSet": "CounterEffectsAfterSet",
+            "member": {
+                "signature": "ESCE",
+                "name": "Effect",
+                "type": "formId",
+                "signatures": [
+                    "MGEF"
+                ]
+            }
+        }
+    ]
+}

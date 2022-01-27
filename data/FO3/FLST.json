@@ -1,0 +1,25 @@
+{
+    "signature": "FLST",
+    "type": "record",
+    "name": "FormID List",
+    "members": [
+        {
+            "signature": "EDID",
+            "name": "Editor ID",
+            "type": "string",
+            "conflictType": "Benign",
+            "required": true,
+            "afterSet": "FLSTEDIDAfterSet"
+        },
+        {
+            "name": "FormIDs",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "signature": "LNAM",
+                "name": "FormID",
+                "type": "formId"
+            }
+        }
+    ]
+}

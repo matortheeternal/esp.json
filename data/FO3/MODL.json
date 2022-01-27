@@ -1,0 +1,36 @@
+{
+    "name": "Model",
+    "type": "memberStruct",
+    "unordered": true,
+    "members": [
+        {
+            "signature": "MODL",
+            "name": "Model FileName",
+            "type": "string",
+            "required": true
+        },
+        {
+            "signature": "MODB",
+            "name": "Unknown",
+            "type": "bytes",
+            "size": 4,
+            "conflictType": "Ignore"
+        },
+        {
+            "signature": "MODT",
+            "name": "Texture Files Hashes",
+            "type": "bytes",
+            "size": 0,
+            "conflictType": "Ignore"
+        },
+        {
+            "id": "MODS"
+        },
+        {
+            "id": "MODD"
+        }
+    ],
+    "sortKey": [
+        0
+    ]
+}

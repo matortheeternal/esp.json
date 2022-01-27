@@ -1,0 +1,137 @@
+{
+    "signature": "MESG",
+    "type": "record",
+    "name": "Message",
+    "members": [
+        {
+            "id": "EDID",
+            "required": true
+        },
+        {
+            "id": "DESC",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "signature": "INAM",
+            "name": "Icon",
+            "type": "formId",
+            "required": true,
+            "signatures": [
+                "MICN",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "NAM0",
+            "name": "Unused",
+            "type": "bytes",
+            "size": 0,
+            "conflictType": "Ignore"
+        },
+        {
+            "signature": "NAM1",
+            "name": "Unused",
+            "type": "bytes",
+            "size": 0,
+            "conflictType": "Ignore"
+        },
+        {
+            "signature": "NAM2",
+            "name": "Unused",
+            "type": "bytes",
+            "size": 0,
+            "conflictType": "Ignore"
+        },
+        {
+            "signature": "NAM3",
+            "name": "Unused",
+            "type": "bytes",
+            "size": 0,
+            "conflictType": "Ignore"
+        },
+        {
+            "signature": "NAM4",
+            "name": "Unused",
+            "type": "bytes",
+            "size": 0,
+            "conflictType": "Ignore"
+        },
+        {
+            "signature": "NAM5",
+            "name": "Unused",
+            "type": "bytes",
+            "size": 0,
+            "conflictType": "Ignore"
+        },
+        {
+            "signature": "NAM6",
+            "name": "Unused",
+            "type": "bytes",
+            "size": 0,
+            "conflictType": "Ignore"
+        },
+        {
+            "signature": "NAM7",
+            "name": "Unused",
+            "type": "bytes",
+            "size": 0,
+            "conflictType": "Ignore"
+        },
+        {
+            "signature": "NAM8",
+            "name": "Unused",
+            "type": "bytes",
+            "size": 0,
+            "conflictType": "Ignore"
+        },
+        {
+            "signature": "NAM9",
+            "name": "Unused",
+            "type": "bytes",
+            "size": 0,
+            "conflictType": "Ignore"
+        },
+        {
+            "signature": "DNAM",
+            "name": "Flags",
+            "type": "uint32",
+            "required": true,
+            "afterSet": "MESGDNAMAfterSet",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Message Box",
+                    "1": "Auto Display"
+                }
+            }
+        },
+        {
+            "signature": "TNAM",
+            "name": "Display Time",
+            "type": "uint32"
+        },
+        {
+            "name": "Menu Buttons",
+            "type": "memberArray",
+            "member": {
+                "name": "Menu Button",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "ITXT",
+                        "name": "Button Text",
+                        "type": "string",
+                        "conflictType": "Translate",
+                        "transform": "keepcase"
+                    },
+                    {
+                        "id": "CTDAs"
+                    }
+                ]
+            }
+        }
+    ]
+}
