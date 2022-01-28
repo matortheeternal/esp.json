@@ -14,6 +14,6 @@ subrecordAndField('wbLStringKC', [
     args.getCP
 ], (args, converter, opts) => {
     converter.addRequires('localized', 'string');
-    opts.keepCase = true;
+    opts.transform = 'keepcase';
     return `localized(string(${args.name}))`;
 });

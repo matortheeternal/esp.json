@@ -4,5 +4,5 @@ let {functionConverter} = require('../converters'),
 functionConverter('SetDefaultEditValue', [
     args.string
 ], (args, converter, opts) => {
-    opts.defaultEditValue = args.values[0].slice(1, -1);
+    opts.defaultValue = args.values[0].slice(1, -1);
 });

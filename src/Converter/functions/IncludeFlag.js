@@ -22,5 +22,6 @@ functionConverter('IncludeFlag', [
     let key = dataFlagName && flags[dataFlagName];
     let apply = !args.values[1] || truthyExprs.includes(args.values[1]);
     if (!key || !apply) return;
-    opts[key] = 1;
+    if (!opts.defFlags) opts.defFlags = [];
+    opts.defFlags.push(key);
 });

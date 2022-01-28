@@ -4,5 +4,5 @@ let {functionConverter} = require('../converters'),
 functionConverter('SetDefaultNativeValue', [
     args.number
 ], (args, converter, opts) => {
-    opts.defaultNativeValue = args.values[0];
+    opts.defaultData = args.values[0];
 });
