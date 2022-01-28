@@ -16,7 +16,7 @@ module.exports = () => {
             def('MODL'),
             def('ICON'),
             def('MICO'),
-            def('DESCreq'),
+            req(def('DESC')),
             def('DEST'),
             def('YNAM'),
             def('ZNAM'),

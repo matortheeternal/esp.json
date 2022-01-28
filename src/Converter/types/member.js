@@ -5,7 +5,7 @@ typeParser('member', {
     test: parser => parser.matchOne(['function', 'identifier']),
     parse: (match, parser) => {
         if (match.type === 'function') return match.value;
-        if (match.value.endsWith('Req')) {
+        if (match.value.endsWith('Req') || match.value.endsWith('req')) {
             parser.addRequires('req', 'def');
             return `req(def('${match.value.slice(0, -3)}'))`;
         }
