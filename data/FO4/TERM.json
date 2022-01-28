@@ -1,0 +1,248 @@
+{
+    "signature": "TERM",
+    "type": "record",
+    "name": "Terminal",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "4": "Unknown 4",
+            "12": "Ignored",
+            "13": "Unknown 13",
+            "15": "Has Distant LOD",
+            "16": "Random Anim Start"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "VMADFragmentedPERK"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "PTRN"
+        },
+        {
+            "signature": "NAM0",
+            "name": "Header Text",
+            "type": "string",
+            "localized": true,
+            "keepCase": true
+        },
+        {
+            "signature": "WNAM",
+            "name": "Welcome Text",
+            "type": "string",
+            "localized": true,
+            "keepCase": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "KSIZ"
+        },
+        {
+            "id": "KWDAs"
+        },
+        {
+            "id": "PRPS"
+        },
+        {
+            "signature": "PNAM",
+            "type": "bytes"
+        },
+        {
+            "signature": "SNAM",
+            "name": "Looping Sound",
+            "type": "formId",
+            "signatures": [
+                "SNDR"
+            ]
+        },
+        {
+            "signature": "FNAM",
+            "type": "bytes"
+        },
+        {
+            "signature": "COCT",
+            "name": "Holds Holotape (Count)",
+            "type": "uint32"
+        },
+        {
+            "name": "Holotapes",
+            "type": "memberArray",
+            "counter": {
+                "type": "elementCounter",
+                "path": "COCT - Holds Holotape (Count)"
+            },
+            "member": {
+                "signature": "CNTO",
+                "name": "Holotape",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Item",
+                        "type": "formId",
+                        "signatures": [
+                            "NULL",
+                            "NOTE"
+                        ]
+                    },
+                    {
+                        "name": "Count",
+                        "type": "int32"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "MNAMFurnitureMarker"
+        },
+        {
+            "signature": "WBDT",
+            "name": "Workbench Data (unused)",
+            "type": "bytes",
+            "size": 0
+        },
+        {
+            "signature": "XMRK",
+            "name": "Marker Model",
+            "type": "string"
+        },
+        {
+            "id": "SNAMMarkerParams"
+        },
+        {
+            "signature": "BSIZ",
+            "name": "Count",
+            "type": "uint32",
+            "conflictType": "Benign"
+        },
+        {
+            "name": "Body Text",
+            "type": "memberArray",
+            "counter": {
+                "type": "elementCounter",
+                "path": "BSIZ - Count"
+            },
+            "member": {
+                "name": "Item",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "BTXT",
+                        "name": "Text",
+                        "type": "string",
+                        "localized": true,
+                        "conflictType": "Translate",
+                        "keepCase": true
+                    },
+                    {
+                        "id": "CTDAs"
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "ISIZ",
+            "name": "Count",
+            "type": "uint32",
+            "conflictType": "Benign"
+        },
+        {
+            "name": "Menu Items",
+            "type": "memberArray",
+            "counter": {
+                "type": "elementCounter",
+                "path": "ISIZ - Count"
+            },
+            "member": {
+                "name": "Menu Item",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "ITXT",
+                        "name": "Item Text",
+                        "type": "string",
+                        "localized": true,
+                        "conflictType": "Translate",
+                        "keepCase": true
+                    },
+                    {
+                        "signature": "RNAM",
+                        "name": "Response Text",
+                        "type": "string",
+                        "localized": true,
+                        "conflictType": "Translate",
+                        "keepCase": true
+                    },
+                    {
+                        "signature": "ANAM",
+                        "name": "Type",
+                        "type": "uint8",
+                        "required": true,
+                        "format": {
+                            "type": "enum",
+                            "options": {
+                                "0": "Unknown 0",
+                                "1": "Unknown 1",
+                                "2": "Unknown 2",
+                                "3": "Unknown 3",
+                                "4": "Submenu - Terminal",
+                                "5": "Submenu - Return to Top Level",
+                                "6": "Submenu - Force Redraw",
+                                "7": "Unknown 7",
+                                "8": "Display Text",
+                                "9": "Unknown 9",
+                                "10": "Unknown 10",
+                                "11": "Unknown 11",
+                                "12": "Unknown 12",
+                                "13": "Unknown 13",
+                                "14": "Unknown 14",
+                                "15": "Unknown 15",
+                                "16": "Display Image"
+                            }
+                        }
+                    },
+                    {
+                        "signature": "ITID",
+                        "name": "Item ID",
+                        "type": "uint16"
+                    },
+                    {
+                        "signature": "UNAM",
+                        "name": "Display Text",
+                        "type": "string",
+                        "localized": true,
+                        "conflictType": "Translate",
+                        "keepCase": true
+                    },
+                    {
+                        "signature": "VNAM",
+                        "name": "Show Image",
+                        "type": "string"
+                    },
+                    {
+                        "signature": "TNAM",
+                        "name": "Submenu",
+                        "type": "formId",
+                        "signatures": [
+                            "TERM"
+                        ]
+                    },
+                    {
+                        "id": "CTDAs"
+                    }
+                ]
+            }
+        }
+    ]
+}

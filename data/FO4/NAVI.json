@@ -1,0 +1,290 @@
+{
+    "signature": "NAVI",
+    "type": "record",
+    "name": "Navigation Mesh Info Map",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "NVER",
+            "name": "Version",
+            "type": "uint32"
+        },
+        {
+            "name": "Navigation Map Infos",
+            "type": "memberArray",
+            "member": {
+                "signature": "NVMI",
+                "name": "Navigation Map Info",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Navigation Mesh",
+                        "type": "formId",
+                        "signatures": [
+                            "NAVM"
+                        ]
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "X",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Z",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Preferred Merges Flag",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Merged To",
+                        "type": "array",
+                        "prefix": 4,
+                        "element": {
+                            "name": "Mesh",
+                            "type": "formId",
+                            "signatures": [
+                                "NAVM"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "Preferred Merges",
+                        "type": "array",
+                        "prefix": 4,
+                        "element": {
+                            "name": "Mesh",
+                            "type": "formId",
+                            "signatures": [
+                                "NAVM"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "Linked Doors",
+                        "type": "array",
+                        "prefix": 4,
+                        "element": {
+                            "name": "Door",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Unknown",
+                                    "type": "bytes",
+                                    "size": 4
+                                },
+                                {
+                                    "name": "Door Ref",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "REFR"
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "Is Island",
+                        "type": "uint8",
+                        "format": {
+                            "id": "BoolEnum"
+                        }
+                    },
+                    {
+                        "name": "Island",
+                        "type": "union",
+                        "decider": "NAVIIslandDataDecider",
+                        "elements": [
+                            {
+                                "id": "Null"
+                            },
+                            {
+                                "name": "Island Data",
+                                "type": "struct",
+                                "elements": [
+                                    {
+                                        "name": "Min X",
+                                        "type": "float"
+                                    },
+                                    {
+                                        "name": "Min Y",
+                                        "type": "float"
+                                    },
+                                    {
+                                        "name": "Min Z",
+                                        "type": "float"
+                                    },
+                                    {
+                                        "name": "Max X",
+                                        "type": "float"
+                                    },
+                                    {
+                                        "name": "Max Y",
+                                        "type": "float"
+                                    },
+                                    {
+                                        "name": "Max Z",
+                                        "type": "float"
+                                    },
+                                    {
+                                        "name": "Triangles",
+                                        "type": "array",
+                                        "prefix": 4,
+                                        "element": {
+                                            "name": "Triangle",
+                                            "type": "struct",
+                                            "elements": [
+                                                {
+                                                    "name": "Vertices",
+                                                    "type": "array",
+                                                    "count": 3,
+                                                    "element": {
+                                                        "name": "Vertex",
+                                                        "type": "int16"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "Vertices",
+                                        "type": "array",
+                                        "prefix": 4,
+                                        "element": {
+                                            "name": "Vertex",
+                                            "type": "struct",
+                                            "elements": [
+                                                {
+                                                    "name": "X",
+                                                    "type": "float"
+                                                },
+                                                {
+                                                    "name": "Y",
+                                                    "type": "float"
+                                                },
+                                                {
+                                                    "name": "Z",
+                                                    "type": "float"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Parent Worldspace",
+                        "type": "formId",
+                        "signatures": [
+                            "WRLD",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "name": "Parent",
+                        "type": "union",
+                        "decider": "NAVIParentDecider",
+                        "elements": [
+                            {
+                                "name": "Coordinates",
+                                "type": "struct",
+                                "elements": [
+                                    {
+                                        "name": "Grid Y",
+                                        "type": "int16"
+                                    },
+                                    {
+                                        "name": "Grid X",
+                                        "type": "int16"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Parent Cell",
+                                "type": "formId",
+                                "signatures": [
+                                    "CELL"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "NVPP",
+            "name": "Preferred Pathing",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "NavMeshes",
+                    "type": "array",
+                    "prefix": 4,
+                    "element": {
+                        "name": "Set",
+                        "type": "array",
+                        "prefix": 4,
+                        "element": {
+                            "name": "",
+                            "type": "formId",
+                            "signatures": [
+                                "NAVM"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "NavMesh Tree?",
+                    "type": "array",
+                    "prefix": 4,
+                    "element": {
+                        "name": "",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "NavMesh",
+                                "type": "formId",
+                                "signatures": [
+                                    "NAVM"
+                                ]
+                            },
+                            {
+                                "name": "Index/Node",
+                                "type": "uint32"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "NVSI",
+            "name": "Unknown",
+            "type": "array",
+            "element": {
+                "name": "Navigation Mesh",
+                "type": "formId",
+                "signatures": [
+                    "NAVM"
+                ]
+            }
+        }
+    ]
+}

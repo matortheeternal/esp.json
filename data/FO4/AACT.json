@@ -1,0 +1,44 @@
+{
+    "signature": "AACT",
+    "type": "record",
+    "name": "Action",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "12": "Ignored",
+            "15": "Restricted"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "CNAM"
+        },
+        {
+            "signature": "DNAM",
+            "name": "Notes",
+            "type": "string"
+        },
+        {
+            "signature": "TNAM",
+            "name": "Type",
+            "type": "uint32",
+            "format": {
+                "id": "KeywordTypeEnum"
+            }
+        },
+        {
+            "signature": "DATA",
+            "name": "Attraction Rule",
+            "type": "formId",
+            "signatures": [
+                "AORU"
+            ]
+        },
+        {
+            "id": "FULL"
+        }
+    ]
+}

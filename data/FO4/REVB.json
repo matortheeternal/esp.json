@@ -1,0 +1,79 @@
+{
+    "signature": "REVB",
+    "type": "record",
+    "name": "Reverb Parameters",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "DATA",
+            "name": "Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Decay Time (ms)",
+                    "type": "uint16"
+                },
+                {
+                    "name": "HF Reference (Hz)",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Room Filter",
+                    "type": "int8"
+                },
+                {
+                    "name": "Room HF Filter",
+                    "type": "int8"
+                },
+                {
+                    "name": "Reflections",
+                    "type": "int8"
+                },
+                {
+                    "name": "Reverb Amp",
+                    "type": "int8"
+                },
+                {
+                    "name": "Decay HF Ratio",
+                    "type": "uint8",
+                    "format": {
+                        "type": "divide",
+                        "value": 100
+                    }
+                },
+                {
+                    "name": "Reflect Delay (ms), scaled",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Reverb Delay (ms)",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Diffusion %",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Density %",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "uint8"
+                }
+            ]
+        },
+        {
+            "signature": "ANAM",
+            "name": "Reverb Class",
+            "type": "uint32",
+            "required": true,
+            "format": {
+                "id": "ReverbClassEnum"
+            }
+        }
+    ]
+}

@@ -1,0 +1,79 @@
+{
+    "signature": "LSCR",
+    "type": "record",
+    "name": "Load Screen",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "10": "Displays In Main Menu",
+            "12": "Ignored",
+            "15": "No Rotation"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "DESC",
+            "required": true
+        },
+        {
+            "id": "CTDAs"
+        },
+        {
+            "signature": "NNAM",
+            "name": "Loading Screen NIF",
+            "type": "formId",
+            "required": true,
+            "signatures": [
+                "STAT",
+                "SCOL",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "TNAM",
+            "name": "Transform",
+            "type": "formId",
+            "signatures": [
+                "TRNS"
+            ]
+        },
+        {
+            "signature": "ONAM",
+            "name": "Rotation",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Min",
+                    "type": "int16"
+                },
+                {
+                    "name": "Max",
+                    "type": "int16"
+                }
+            ]
+        },
+        {
+            "signature": "ZNAM",
+            "name": "Zoom",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Min",
+                    "type": "float"
+                },
+                {
+                    "name": "Max",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "MOD2",
+            "name": "Camera Path",
+            "type": "string"
+        }
+    ]
+}

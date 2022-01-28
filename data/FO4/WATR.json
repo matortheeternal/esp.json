@@ -1,0 +1,389 @@
+{
+    "signature": "WATR",
+    "type": "record",
+    "name": "Water",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "signature": "ANAM",
+            "name": "Opacity (unused)",
+            "type": "uint8"
+        },
+        {
+            "signature": "FNAM",
+            "name": "Flags",
+            "type": "uint8",
+            "required": true,
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Dangerous",
+                    "1": "Unknown 1",
+                    "2": "Directional Sound"
+                }
+            }
+        },
+        {
+            "signature": "TNAM",
+            "name": "Material (unused)",
+            "type": "formId",
+            "signatures": [
+                "MATT"
+            ]
+        },
+        {
+            "signature": "SNAM",
+            "name": "Open Sound",
+            "type": "formId",
+            "signatures": [
+                "SNDR",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "XNAM",
+            "name": "Consume Spell",
+            "type": "formId",
+            "signatures": [
+                "SPEL"
+            ]
+        },
+        {
+            "signature": "YNAM",
+            "name": "Contact Spell",
+            "type": "formId",
+            "signatures": [
+                "SPEL"
+            ]
+        },
+        {
+            "signature": "INAM",
+            "name": "Image Space",
+            "type": "formId",
+            "signatures": [
+                "IMGS"
+            ]
+        },
+        {
+            "signature": "DATA",
+            "name": "Unused",
+            "type": "bytes",
+            "size": 0
+        },
+        {
+            "signature": "DNAM",
+            "name": "Visual Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Fog Properties",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Depth Amount",
+                            "type": "float"
+                        },
+                        {
+                            "id": "ByteColors",
+                            "name": "Shallow Color"
+                        },
+                        {
+                            "id": "ByteColors",
+                            "name": "Deep Color"
+                        },
+                        {
+                            "name": "Color Shallow Range",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Color Deep Range",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Shallow Alpha",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Deep Alpha",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Alpha Shallow Range",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Alpha Deep Range",
+                            "type": "float"
+                        },
+                        {
+                            "id": "ByteColors",
+                            "name": "Underwater Color"
+                        },
+                        {
+                            "name": "Underwater Fog Amount",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Underwater Near Fog",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Underwater Far Fog",
+                            "type": "float"
+                        }
+                    ]
+                },
+                {
+                    "name": "Physical Properties",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Normal Magnitude",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Shallow Normal Falloff",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Deep Normal Falloff",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Reflectivity Amount",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Fresnel Amount",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Surface Effect Falloff",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Displacement Simulator",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Force",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "Velocity",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "Falloff",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "Dampener",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "Starting Size",
+                                    "type": "float"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "ByteColors",
+                            "name": "Reflection Color"
+                        }
+                    ]
+                },
+                {
+                    "name": "Specular Properties",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Sun Specular Power",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Sun Specular Magnitude",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Sun Sparkle Power",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Sun Sparkle Magnitude",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Interior Specular Radius",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Interior Specular Brightness",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Interior Specular Power",
+                            "type": "float"
+                        }
+                    ]
+                },
+                {
+                    "name": "Noise Properties",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Layer 1 - Wind Direction",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Layer 2 - Wind Direction",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Layer 3 - Wind Direction",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Layer 1 - Wind Speed",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Layer 2 - Wind Speed",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Layer 3 - Wind Speed",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Layer 1 - Amplitude Scale",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Layer 2 - Amplitude Scale",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Layer 3 - Amplitude Scale",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Layer 1 - UV Scale",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Layer 2 - UV Scale",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Layer 3 - UV Scale",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Layer 1 - Noise Falloff",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Layer 2 - Noise Falloff",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Layer 3 - Noise Falloff",
+                            "type": "float"
+                        }
+                    ]
+                },
+                {
+                    "name": "Silt Properties",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Silt Amount",
+                            "type": "float"
+                        },
+                        {
+                            "id": "ByteColors",
+                            "name": "Light Color"
+                        },
+                        {
+                            "id": "ByteColors",
+                            "name": "Dark Color"
+                        }
+                    ]
+                },
+                {
+                    "name": "Screen Space Reflections",
+                    "type": "uint8",
+                    "format": {
+                        "id": "BoolEnum"
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "GNAM",
+            "name": "Unused",
+            "type": "bytes",
+            "size": 0
+        },
+        {
+            "signature": "NAM0",
+            "name": "Linear Velocity",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "X",
+                    "type": "float"
+                },
+                {
+                    "name": "Y",
+                    "type": "float"
+                },
+                {
+                    "name": "Z",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "NAM1",
+            "name": "Angular Velocity",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "X",
+                    "type": "float"
+                },
+                {
+                    "name": "Y",
+                    "type": "float"
+                },
+                {
+                    "name": "Z",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "NAM2",
+            "name": "Layer 1 Noise Texture",
+            "type": "string"
+        },
+        {
+            "signature": "NAM3",
+            "name": "Layer 2 Noise Texture",
+            "type": "string"
+        },
+        {
+            "signature": "NAM4",
+            "name": "Layer 3 Noise Texture",
+            "type": "string"
+        }
+    ]
+}

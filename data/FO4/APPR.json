@@ -1,0 +1,12 @@
+{
+    "signature": "APPR",
+    "name": "Attach Parent Slots",
+    "type": "array",
+    "element": {
+        "name": "Keyword",
+        "type": "formId",
+        "signatures": [
+            "KYWD"
+        ]
+    }
+}

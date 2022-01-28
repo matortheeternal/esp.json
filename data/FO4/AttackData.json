@@ -1,0 +1,127 @@
+{
+    "name": "Attack",
+    "type": "memberStruct",
+    "members": [
+        {
+            "signature": "ATKD",
+            "name": "Attack Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Damage Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Attack Chance",
+                    "type": "float"
+                },
+                {
+                    "name": "Attack Spell",
+                    "type": "formId",
+                    "signatures": [
+                        "SPEL",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Attack Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Ignore Weapon",
+                            "1": "Bash Attack",
+                            "2": "Power Attack",
+                            "3": "Charge Attack",
+                            "4": "Rotating Attack",
+                            "5": "Continuous Attack",
+                            "6": "Unknown 6",
+                            "7": "Unknown 7",
+                            "8": "Unknown 8",
+                            "9": "Unknown 9",
+                            "10": "Unknown 10",
+                            "11": "Unknown 11",
+                            "12": "Unknown 12",
+                            "13": "Unknown 13",
+                            "14": "Unknown 14",
+                            "15": "Unknown 15",
+                            "16": "Unknown 16",
+                            "17": "Unknown 17",
+                            "18": "Unknown 18",
+                            "19": "Unknown 19",
+                            "20": "Unknown 20",
+                            "21": "Unknown 21",
+                            "22": "Unknown 22",
+                            "23": "Unknown 23",
+                            "24": "Unknown 24",
+                            "25": "Unknown 25",
+                            "26": "Unknown 26",
+                            "27": "Unknown 27",
+                            "28": "Unknown 28",
+                            "29": "Unknown 29",
+                            "30": "Unknown 30",
+                            "31": "Override Data"
+                        }
+                    }
+                },
+                {
+                    "name": "Attack Angle",
+                    "type": "float"
+                },
+                {
+                    "name": "Strike Angle",
+                    "type": "float"
+                },
+                {
+                    "name": "Stagger",
+                    "type": "float"
+                },
+                {
+                    "name": "Knockdown",
+                    "type": "float"
+                },
+                {
+                    "name": "Recovery Time",
+                    "type": "float"
+                },
+                {
+                    "name": "Action Points Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Stagger Offset",
+                    "type": "int32"
+                }
+            ]
+        },
+        {
+            "signature": "ATKE",
+            "name": "Attack Event",
+            "type": "string"
+        },
+        {
+            "signature": "ATKW",
+            "name": "Weapon Slot",
+            "type": "formId",
+            "signatures": [
+                "EQUP"
+            ]
+        },
+        {
+            "signature": "ATKS",
+            "name": "Required Slot",
+            "type": "formId",
+            "signatures": [
+                "EQUP"
+            ]
+        },
+        {
+            "signature": "ATKT",
+            "name": "Description",
+            "type": "string"
+        }
+    ],
+    "sortKey": [
+        1
+    ]
+}

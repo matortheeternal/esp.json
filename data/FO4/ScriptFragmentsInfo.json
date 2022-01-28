@@ -1,0 +1,51 @@
+{
+    "name": "Script Fragments",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Unknown",
+            "type": "int8"
+        },
+        {
+            "name": "Flags",
+            "type": "uint8",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "OnBegin",
+                    "1": "OnEnd"
+                }
+            }
+        },
+        {
+            "id": "ScriptEntry"
+        },
+        {
+            "name": "Fragments",
+            "type": "array",
+            "counter": {
+                "type": "ScriptFragmentsInfoCounter"
+            },
+            "element": {
+                "name": "Fragment",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Unknown",
+                        "type": "int8"
+                    },
+                    {
+                        "name": "ScriptName",
+                        "type": "string",
+                        "prefix": 2
+                    },
+                    {
+                        "name": "FragmentName",
+                        "type": "string",
+                        "prefix": 2
+                    }
+                ]
+            }
+        }
+    ]
+}

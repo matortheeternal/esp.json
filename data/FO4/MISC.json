@@ -1,0 +1,107 @@
+{
+    "signature": "MISC",
+    "type": "record",
+    "name": "Misc. Item",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "11": "Calc From Components",
+            "12": "Ignored",
+            "13": "Pack-In Use Only"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "VMAD"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "PTRN"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "MICO"
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "id": "YNAM"
+        },
+        {
+            "id": "ZNAM"
+        },
+        {
+            "id": "KSIZ"
+        },
+        {
+            "id": "KWDAs"
+        },
+        {
+            "signature": "FIMD",
+            "name": "Featured Item Message",
+            "type": "formId"
+        },
+        {
+            "signature": "DATA",
+            "name": "Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Value",
+                    "type": "int32"
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "CVPA",
+            "name": "Components",
+            "type": "array",
+            "element": {
+                "name": "Component",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Component",
+                        "type": "formId",
+                        "signatures": {
+                            "id": "sigBaseObjects"
+                        }
+                    },
+                    {
+                        "name": "Count",
+                        "type": "uint32"
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "CDIX",
+            "name": "Component Display Indices",
+            "type": "array",
+            "element": {
+                "name": "Display Index",
+                "type": "uint8"
+            }
+        }
+    ]
+}

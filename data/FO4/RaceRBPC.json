@@ -1,0 +1,24 @@
+{
+    "signature": "RBPC",
+    "name": "Biped Object Conditions",
+    "type": "array",
+    "element": {
+        "name": "Slot 30+",
+        "type": "union",
+        "decider": "FormVer78Decider",
+        "elements": [
+            {
+                "name": "Slot 30+",
+                "type": "uint32"
+            },
+            {
+                "name": "Slot 30+",
+                "type": "formId",
+                "signatures": [
+                    "AVIF",
+                    "NULL"
+                ]
+            }
+        ]
+    }
+}

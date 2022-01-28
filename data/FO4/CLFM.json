@@ -1,0 +1,45 @@
+{
+    "signature": "CLFM",
+    "type": "record",
+    "name": "Color",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "2": "Non-Playable",
+            "12": "Ignored"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "signature": "CNAM",
+            "name": "Color/Index",
+            "type": "uint32",
+            "format": {
+                "type": "CLFMColorFormat"
+            }
+        },
+        {
+            "signature": "FNAM",
+            "name": "Flags",
+            "type": "uint32",
+            "required": true,
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Playable",
+                    "1": "Remapping Index",
+                    "2": "Extended LUT"
+                }
+            }
+        },
+        {
+            "id": "CTDAs"
+        }
+    ]
+}

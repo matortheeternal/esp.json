@@ -1,0 +1,54 @@
+{
+    "name": "Bone Data",
+    "type": "memberArray",
+    "member": {
+        "name": "Data",
+        "type": "memberStruct",
+        "members": [
+            {
+                "signature": "BSMP",
+                "name": "Gender",
+                "type": "uint32",
+                "format": {
+                    "type": "enum",
+                    "options": {
+                        "0": "Male",
+                        "1": "Female"
+                    }
+                }
+            },
+            {
+                "name": "Bones",
+                "type": "memberArray",
+                "member": {
+                    "name": "Bone",
+                    "type": "memberStruct",
+                    "members": [
+                        {
+                            "signature": "BSMB",
+                            "name": "Name",
+                            "type": "string"
+                        },
+                        {
+                            "signature": "BSMS",
+                            "name": "Values",
+                            "type": "array",
+                            "notAlignable": 1,
+                            "element": {
+                                "name": "Value",
+                                "type": "float"
+                            }
+                        },
+                        {
+                            "signature": "BMMP",
+                            "type": "bytes"
+                        }
+                    ],
+                    "sortKey": [
+                        0
+                    ]
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,648 @@
+{
+    "signature": "SCEN",
+    "type": "record",
+    "name": "Scene",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "VMADFragmentedSCEN"
+        },
+        {
+            "signature": "FNAM",
+            "name": "Flags",
+            "type": "uint32",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Begin on Quest Start",
+                    "1": "Stop on Quest End",
+                    "2": "Unknown 2",
+                    "3": "Repeat Conditions While True",
+                    "4": "Interruptible",
+                    "5": "Unknown 5",
+                    "6": "Prevent Player Exit Dialogue",
+                    "7": "Unknown 7",
+                    "8": "Unknown 8",
+                    "9": "Unknown 9",
+                    "10": "Unknown 10",
+                    "11": "Disable Dialogue Camera",
+                    "12": "No Follower Idle Chatter"
+                }
+            }
+        },
+        {
+            "name": "Phases",
+            "type": "memberArray",
+            "member": {
+                "name": "Phase",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "HNAM",
+                        "name": "Marker Phase Start",
+                        "type": "empty"
+                    },
+                    {
+                        "signature": "NAM0",
+                        "name": "Name",
+                        "type": "string"
+                    },
+                    {
+                        "name": "Start Conditions",
+                        "type": "memberStruct",
+                        "members": [
+                            {
+                                "id": "CTDAs"
+                            }
+                        ]
+                    },
+                    {
+                        "signature": "NEXT",
+                        "name": "Marker Start Conditions",
+                        "type": "empty"
+                    },
+                    {
+                        "name": "Completion Conditions",
+                        "type": "memberStruct",
+                        "members": [
+                            {
+                                "id": "CTDAs"
+                            }
+                        ]
+                    },
+                    {
+                        "signature": "NEXT",
+                        "name": "Marker Completion Conditions",
+                        "type": "empty"
+                    },
+                    {
+                        "signature": "WNAM",
+                        "name": "Editor Width",
+                        "type": "uint32"
+                    },
+                    {
+                        "signature": "FNAM",
+                        "name": "Flags",
+                        "type": "uint16",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "Start - WalkAway Phase",
+                                "1": "Don't Run End Scripts on Scene Jump",
+                                "2": "Start - Inherit In Templated Scenes"
+                            }
+                        }
+                    },
+                    {
+                        "signature": "SCQS",
+                        "name": "Set Parent Quest Stage",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "On Start",
+                                "type": "int16"
+                            },
+                            {
+                                "name": "On Completion",
+                                "type": "int16"
+                            }
+                        ]
+                    },
+                    {
+                        "signature": "HNAM",
+                        "name": "Marker Phase End",
+                        "type": "empty"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Actors",
+            "type": "memberArray",
+            "member": {
+                "name": "Actor",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "ALID",
+                        "name": "Alias ID",
+                        "type": "int32"
+                    },
+                    {
+                        "signature": "LNAM",
+                        "name": "Flags",
+                        "type": "uint32",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "No Player Activation",
+                                "1": "Optional",
+                                "2": "Run Only Scene Packages",
+                                "3": "No Command State"
+                            }
+                        }
+                    },
+                    {
+                        "signature": "DNAM",
+                        "name": "Behaviour Flags",
+                        "type": "uint32",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "Death Pause",
+                                "1": "Death End",
+                                "2": "Combat Pause",
+                                "3": "Combat End",
+                                "4": "Dialogue Pause",
+                                "5": "Dialogue End",
+                                "6": "OBS_COM Pause",
+                                "7": "OBS_COM End"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Actions",
+            "type": "memberArray",
+            "member": {
+                "name": "Action",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "ANAM",
+                        "name": "Type",
+                        "type": "uint16",
+                        "format": {
+                            "type": "enum",
+                            "options": {
+                                "0": "Dialogue",
+                                "1": "Package",
+                                "2": "Timer",
+                                "3": "Player Dialogue",
+                                "4": "Start Scene",
+                                "5": "NPC Response Dialogue",
+                                "6": "Radio"
+                            }
+                        }
+                    },
+                    {
+                        "signature": "NAM0",
+                        "name": "Name",
+                        "type": "string"
+                    },
+                    {
+                        "signature": "ALID",
+                        "name": "Alias ID",
+                        "type": "int32"
+                    },
+                    {
+                        "signature": "INAM",
+                        "name": "Index",
+                        "type": "uint32"
+                    },
+                    {
+                        "signature": "FNAM",
+                        "name": "Flags",
+                        "type": "uint32",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "Unknown 0",
+                                "1": "Unknown 1",
+                                "2": "Unknown 2",
+                                "3": "Unknown 3",
+                                "4": "Unknown 4",
+                                "5": "Unknown 5",
+                                "6": "Unknown 6",
+                                "7": "Player Positive Use Dialogue Subtype / Hold Into Next Scene",
+                                "8": "Player Negative Use Dialogue Subtype",
+                                "9": "Player Neutral Use Dialogue Subtype",
+                                "10": "Use Dialogue Subtype",
+                                "11": "Player Question Use Dialogue Subtype",
+                                "12": "Keep/Clear Target on Action End",
+                                "13": "Unknown 13",
+                                "14": "Unknown 14",
+                                "15": "Face Target",
+                                "16": "Looping",
+                                "17": "Headtrack Player",
+                                "18": "Unknown 18",
+                                "19": "Ignore For Completion",
+                                "20": "Unknown 20",
+                                "21": "Camera Speaker Target",
+                                "22": "Complete Face Target",
+                                "23": "Unknown 23",
+                                "24": "Unknown 24",
+                                "25": "Unknown 25",
+                                "26": "Unknown 26",
+                                "27": "NPC Positive Use Dialogue Subtype",
+                                "28": "NPC Negative Use Dialogue Subtype",
+                                "29": "NPC Neutral Use Dialogue Subtype",
+                                "30": "NPC Question Use Dialogue Subtype"
+                            }
+                        }
+                    },
+                    {
+                        "signature": "SNAM",
+                        "name": "Start Phase",
+                        "type": "uint32"
+                    },
+                    {
+                        "signature": "ENAM",
+                        "name": "End Phase",
+                        "type": "uint32"
+                    },
+                    {
+                        "signature": "SNAM",
+                        "name": "Timer - Max Seconds",
+                        "type": "float"
+                    },
+                    {
+                        "signature": "SCQS",
+                        "name": "Set Parent Quest Stage",
+                        "type": "int16"
+                    },
+                    {
+                        "signature": "TNAM",
+                        "name": "Timer - Min Seconds",
+                        "type": "float"
+                    },
+                    {
+                        "signature": "STSC",
+                        "type": "bytes"
+                    },
+                    {
+                        "name": "Start Scenes",
+                        "type": "memberArray",
+                        "member": {
+                            "name": "Start Scene",
+                            "type": "memberStruct",
+                            "members": [
+                                {
+                                    "signature": "LCEP",
+                                    "name": "Scene",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "SCEN"
+                                    ]
+                                },
+                                {
+                                    "signature": "INTT",
+                                    "name": "Phase Index",
+                                    "type": "uint16"
+                                },
+                                {
+                                    "signature": "SSPN",
+                                    "name": "Start Phase for Scene",
+                                    "type": "string"
+                                },
+                                {
+                                    "id": "CITC"
+                                },
+                                {
+                                    "id": "CTDAs"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "signature": "PTOP",
+                        "name": "Player Positive Response",
+                        "type": "formId",
+                        "signatures": [
+                            "DIAL"
+                        ]
+                    },
+                    {
+                        "signature": "NTOP",
+                        "name": "Player Negative Response",
+                        "type": "formId",
+                        "signatures": [
+                            "DIAL"
+                        ]
+                    },
+                    {
+                        "signature": "NETO",
+                        "name": "Player Neutral Response",
+                        "type": "formId",
+                        "signatures": [
+                            "DIAL"
+                        ]
+                    },
+                    {
+                        "signature": "QTOP",
+                        "name": "Player Question Response",
+                        "type": "formId",
+                        "signatures": [
+                            "DIAL"
+                        ]
+                    },
+                    {
+                        "signature": "VENC",
+                        "name": "Player Positive Dialogue Subtype",
+                        "type": "formId",
+                        "signatures": [
+                            "KYWD"
+                        ]
+                    },
+                    {
+                        "signature": "PLVD",
+                        "name": "Player Negative Dialogue Subtype",
+                        "type": "formId",
+                        "signatures": [
+                            "KYWD"
+                        ]
+                    },
+                    {
+                        "signature": "JOUT",
+                        "name": "Player Neutral Dialogue Subtype",
+                        "type": "formId",
+                        "signatures": [
+                            "KYWD"
+                        ]
+                    },
+                    {
+                        "signature": "DALC",
+                        "name": "Player Question Dialogue Subtype",
+                        "type": "formId",
+                        "signatures": [
+                            "KYWD"
+                        ]
+                    },
+                    {
+                        "signature": "DTID",
+                        "name": "NPC Headtracking",
+                        "type": "array",
+                        "element": {
+                            "name": "Actor ID",
+                            "type": "int32"
+                        }
+                    },
+                    {
+                        "signature": "NPOT",
+                        "name": "NPC Positive Response",
+                        "type": "formId",
+                        "signatures": [
+                            "DIAL"
+                        ]
+                    },
+                    {
+                        "signature": "NNGT",
+                        "name": "NPC Negative Response",
+                        "type": "formId",
+                        "signatures": [
+                            "DIAL"
+                        ]
+                    },
+                    {
+                        "signature": "NNUT",
+                        "name": "NPC Neutral Response",
+                        "type": "formId",
+                        "signatures": [
+                            "DIAL"
+                        ]
+                    },
+                    {
+                        "signature": "NQUT",
+                        "name": "NPC Question Response",
+                        "type": "formId",
+                        "signatures": [
+                            "DIAL"
+                        ]
+                    },
+                    {
+                        "signature": "NPOS",
+                        "name": "NPC Positive Dialogue Subtype",
+                        "type": "formId",
+                        "signatures": [
+                            "KYWD"
+                        ]
+                    },
+                    {
+                        "signature": "NNGS",
+                        "name": "NPC Negative Dialogue Subtype",
+                        "type": "formId",
+                        "signatures": [
+                            "KYWD"
+                        ]
+                    },
+                    {
+                        "signature": "NNUS",
+                        "name": "NPC Neutral Dialogue Subtype",
+                        "type": "formId",
+                        "signatures": [
+                            "KYWD"
+                        ]
+                    },
+                    {
+                        "signature": "NQUS",
+                        "name": "NPC Question Dialogue Subtype",
+                        "type": "formId",
+                        "signatures": [
+                            "KYWD"
+                        ]
+                    },
+                    {
+                        "signature": "DTGT",
+                        "name": "Dialogue Target Actor",
+                        "type": "int32"
+                    },
+                    {
+                        "name": "Packages",
+                        "type": "memberArray",
+                        "member": {
+                            "signature": "PNAM",
+                            "name": "Package",
+                            "type": "formId",
+                            "signatures": [
+                                "PACK"
+                            ]
+                        }
+                    },
+                    {
+                        "signature": "DATA",
+                        "name": "Topic",
+                        "type": "formId",
+                        "signatures": [
+                            "DIAL",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "signature": "HTID",
+                        "name": "",
+                        "type": "union",
+                        "decider": "SceneActionSoundDecider",
+                        "elements": [
+                            {
+                                "name": "End Scene Say Greeting",
+                                "type": "empty"
+                            },
+                            {
+                                "name": "Play Sound",
+                                "type": "formId",
+                                "signatures": [
+                                    "SNDR",
+                                    "NULL"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "signature": "DMAX",
+                        "name": "Looping - Max",
+                        "type": "float"
+                    },
+                    {
+                        "signature": "DMIN",
+                        "name": "Looping - Min",
+                        "type": "float"
+                    },
+                    {
+                        "signature": "CRIS",
+                        "name": "Camera",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "FOV On Player Camera",
+                                "type": "float"
+                            },
+                            {
+                                "name": "Rate Of Camera Change",
+                                "type": "float"
+                            }
+                        ]
+                    },
+                    {
+                        "signature": "DEMO",
+                        "name": "Emotion Type",
+                        "type": "uint32",
+                        "format": {
+                            "id": "EmotionTypeEnum"
+                        }
+                    },
+                    {
+                        "signature": "DEVA",
+                        "name": "Emotion Value",
+                        "type": "uint32"
+                    },
+                    {
+                        "signature": "HTID",
+                        "name": "Player Headtracking",
+                        "type": "array",
+                        "element": {
+                            "name": "Actor ID",
+                            "type": "int32"
+                        }
+                    },
+                    {
+                        "signature": "VENC",
+                        "name": "Dialogue Subtype",
+                        "type": "formId",
+                        "signatures": [
+                            "KYWD"
+                        ]
+                    },
+                    {
+                        "signature": "PNAM",
+                        "name": "AnimArchType",
+                        "type": "formId",
+                        "signatures": [
+                            "KYWD"
+                        ]
+                    },
+                    {
+                        "signature": "ONAM",
+                        "name": "Audio Output Override",
+                        "type": "formId",
+                        "signatures": [
+                            "SOPM"
+                        ]
+                    },
+                    {
+                        "signature": "ANAM",
+                        "name": "End Marker",
+                        "type": "empty"
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "PNAM",
+            "name": "Quest",
+            "type": "formId",
+            "signatures": [
+                "QUST"
+            ]
+        },
+        {
+            "signature": "INAM",
+            "name": "Last Action Index",
+            "type": "uint32"
+        },
+        {
+            "signature": "VNAM",
+            "type": "bytes"
+        },
+        {
+            "signature": "CNAM",
+            "name": "Camera Distance Override",
+            "type": "float"
+        },
+        {
+            "signature": "ACTV",
+            "name": "Dialogue Distance Override",
+            "type": "float"
+        },
+        {
+            "signature": "CRIS",
+            "name": "FOV Override",
+            "type": "float"
+        },
+        {
+            "id": "KSIZ"
+        },
+        {
+            "id": "KWDAs"
+        },
+        {
+            "id": "CTDAs"
+        },
+        {
+            "signature": "SCQS",
+            "name": "Set Parent Quest Stage",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "On Begin",
+                    "type": "int16"
+                },
+                {
+                    "name": "On End",
+                    "type": "int16"
+                }
+            ]
+        },
+        {
+            "signature": "NNAM",
+            "name": "Notes",
+            "type": "string"
+        },
+        {
+            "signature": "TNAM",
+            "name": "Template Scene",
+            "type": "formId",
+            "signatures": [
+                "SCEN"
+            ]
+        },
+        {
+            "signature": "XNAM",
+            "name": "Index",
+            "type": "uint32"
+        }
+    ]
+}

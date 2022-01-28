@@ -1,0 +1,145 @@
+{
+    "name": "Struct",
+    "type": "array",
+    "sorted": true,
+    "prefix": 4,
+    "element": {
+        "name": "Member",
+        "type": "struct",
+        "elements": [
+            {
+                "name": "memberName",
+                "type": "string",
+                "prefix": 2
+            },
+            {
+                "name": "Type",
+                "type": "uint8",
+                "afterSet": "ScriptPropertyTypeAfterSet",
+                "format": {
+                    "id": "PropTypeEnum"
+                }
+            },
+            {
+                "name": "Flags",
+                "type": "uint8",
+                "defaultEditValue": "Edited",
+                "format": {
+                    "type": "enum",
+                    "options": {
+                        "0": "",
+                        "1": "Edited",
+                        "2": "",
+                        "3": "Removed"
+                    }
+                }
+            },
+            {
+                "name": "Value",
+                "type": "union",
+                "decider": "ScriptPropertyDecider",
+                "elements": [
+                    {
+                        "id": "Null"
+                    },
+                    {
+                        "id": "ScriptPropertyObject"
+                    },
+                    {
+                        "name": "String",
+                        "type": "string",
+                        "prefix": 2,
+                        "encoding": "EncodingVMAD"
+                    },
+                    {
+                        "name": "Int32",
+                        "type": "int32"
+                    },
+                    {
+                        "name": "Float",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Bool",
+                        "type": "uint8",
+                        "format": {
+                            "id": "BoolEnum"
+                        }
+                    },
+                    {
+                        "name": "Struct",
+                        "type": "recursive",
+                        "levelsUp": 3
+                    },
+                    {
+                        "name": "Struct",
+                        "type": "recursive",
+                        "levelsUp": 3
+                    },
+                    {
+                        "name": "Array of Object",
+                        "type": "array",
+                        "prefix": 4,
+                        "element": {
+                            "id": "ScriptPropertyObject"
+                        }
+                    },
+                    {
+                        "name": "Array of String",
+                        "type": "array",
+                        "prefix": 4,
+                        "element": {
+                            "name": "Element",
+                            "type": "string",
+                            "prefix": 2,
+                            "encoding": "EncodingVMAD"
+                        }
+                    },
+                    {
+                        "name": "Array of Int32",
+                        "type": "array",
+                        "prefix": 4,
+                        "element": {
+                            "name": "Element",
+                            "type": "int32"
+                        }
+                    },
+                    {
+                        "name": "Array of Float",
+                        "type": "array",
+                        "prefix": 4,
+                        "element": {
+                            "name": "Element",
+                            "type": "float"
+                        }
+                    },
+                    {
+                        "name": "Array of Bool",
+                        "type": "array",
+                        "prefix": 4,
+                        "element": {
+                            "name": "Element",
+                            "type": "uint8",
+                            "format": {
+                                "id": "BoolEnum"
+                            }
+                        }
+                    },
+                    {
+                        "name": "Array of Struct",
+                        "type": "array",
+                        "prefix": 4,
+                        "element": {
+                            "name": "Struct",
+                            "type": "recursive",
+                            "levelsUp": 4
+                        }
+                    }
+                ]
+            }
+        ],
+        "sortKey": [
+            0
+        ]
+    }
+}

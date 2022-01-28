@@ -1,0 +1,28 @@
+{
+    "signature": "VMAD",
+    "name": "Virtual Machine Adapter",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Version",
+            "type": "int16",
+            "conflictType": "Ignore",
+            "defaultNativeValue": 6
+        },
+        {
+            "name": "Object Format",
+            "type": "int16",
+            "conflictType": "Ignore",
+            "defaultNativeValue": 2
+        },
+        {
+            "name": "Scripts",
+            "type": "array",
+            "sorted": true,
+            "prefix": 2,
+            "element": {
+                "id": "ScriptEntry"
+            }
+        }
+    ]
+}

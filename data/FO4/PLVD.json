@@ -1,0 +1,148 @@
+{
+    "signature": "PLVD",
+    "name": "Location",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Type",
+            "type": "int32",
+            "format": {
+                "id": "LocationEnum"
+            }
+        },
+        {
+            "name": "Location Value",
+            "type": "union",
+            "decider": "TypeDecider",
+            "elements": [
+                {
+                    "name": "Reference",
+                    "type": "formId",
+                    "signatures": {
+                        "id": "sigReferences"
+                    }
+                },
+                {
+                    "name": "Cell",
+                    "type": "formId",
+                    "signatures": [
+                        "NULL",
+                        "CELL"
+                    ]
+                },
+                {
+                    "name": "Near Package Start Location",
+                    "type": "bytes",
+                    "size": 4,
+                    "conflictType": "Ignore"
+                },
+                {
+                    "name": "Near Editor Location",
+                    "type": "bytes",
+                    "size": 4,
+                    "conflictType": "Ignore"
+                },
+                {
+                    "name": "Object ID",
+                    "type": "formId",
+                    "signatures": [
+                        "NULL",
+                        "ACTI",
+                        "DOOR",
+                        "STAT",
+                        "MSTT",
+                        "FURN",
+                        "SPEL",
+                        "NPC_",
+                        "CONT",
+                        "ARMO",
+                        "AMMO",
+                        "MISC",
+                        "WEAP",
+                        "OMOD",
+                        "BOOK",
+                        "NOTE",
+                        "KEYM",
+                        "ALCH",
+                        "INGR",
+                        "LIGH",
+                        "FACT",
+                        "FLST",
+                        "IDLM",
+                        "TXST",
+                        "PROJ"
+                    ]
+                },
+                {
+                    "name": "Object Type",
+                    "type": "uint32",
+                    "format": {
+                        "id": "ObjectTypeEnum"
+                    }
+                },
+                {
+                    "name": "Keyword",
+                    "type": "formId",
+                    "signatures": [
+                        "NULL",
+                        "KYWD"
+                    ]
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 4,
+                    "conflictType": "Ignore"
+                },
+                {
+                    "name": "Ref Alias",
+                    "type": "int32",
+                    "format": {
+                        "type": "PackageLocationAliasFormat"
+                    }
+                },
+                {
+                    "name": "Loc Alias",
+                    "type": "int32",
+                    "format": {
+                        "type": "PackageLocationAliasFormat"
+                    }
+                },
+                {
+                    "name": "Interrupt Data",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Packdata Target",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4,
+                    "conflictType": "Ignore"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Ref Collection Alias",
+                    "type": "int32",
+                    "format": {
+                        "type": "PackageLocationAliasFormat"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Radius",
+            "type": "int32"
+        },
+        {
+            "name": "Collection Index",
+            "type": "uint32"
+        }
+    ]
+}

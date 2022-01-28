@@ -1,0 +1,408 @@
+{
+    "signature": "REGN",
+    "type": "record",
+    "name": "Region",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "6": "Border Region",
+            "12": "Ignored"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "RCLR",
+            "name": "Map Color",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Red",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Green",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Blue",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 1
+                }
+            ]
+        },
+        {
+            "signature": "WNAM",
+            "name": "Worldspace",
+            "type": "formId",
+            "signatures": [
+                "WRLD"
+            ]
+        },
+        {
+            "name": "Region Areas",
+            "type": "memberArray",
+            "member": {
+                "name": "Region Area",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "RPLI",
+                        "name": "Edge Fall-off",
+                        "type": "uint32"
+                    },
+                    {
+                        "signature": "RPLD",
+                        "name": "Region Point List Data",
+                        "type": "array",
+                        "element": {
+                            "name": "Point",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "X",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "Y",
+                                    "type": "float"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "signature": "ANAM",
+                        "type": "bytes"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Region Data Entries",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "name": "Region Data Entry",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "RDAT",
+                        "name": "Data Header",
+                        "type": "struct",
+                        "required": true,
+                        "elements": [
+                            {
+                                "name": "Type",
+                                "type": "uint32",
+                                "format": {
+                                    "type": "enum",
+                                    "options": {
+                                        "0": "Unknown 0",
+                                        "1": "Unknown 1",
+                                        "2": "Objects",
+                                        "3": "Weather",
+                                        "4": "Map",
+                                        "5": "Land",
+                                        "6": "Grass",
+                                        "7": "Sound",
+                                        "8": "Imposter",
+                                        "9": "Unknown 10",
+                                        "10": "Unknown 11",
+                                        "11": "Unknown 12",
+                                        "12": "Unknown 13",
+                                        "13": "Unknown 14",
+                                        "14": "Unknown 15",
+                                        "15": "Unknown 16"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Flags",
+                                "type": "uint8",
+                                "format": {
+                                    "type": "flags",
+                                    "flags": {
+                                        "0": "Override"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Priority",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "Unknown",
+                                "type": "bytes"
+                            }
+                        ],
+                        "sortKey": [
+                            0
+                        ]
+                    },
+                    {
+                        "id": "ICON"
+                    },
+                    {
+                        "signature": "RDMO",
+                        "name": "Music",
+                        "type": "formId",
+                        "signatures": [
+                            "MUSC"
+                        ]
+                    },
+                    {
+                        "signature": "RDSA",
+                        "name": "Sounds",
+                        "type": "array",
+                        "sorted": true,
+                        "element": {
+                            "name": "Sound",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Sound",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "SNDR",
+                                        "NULL"
+                                    ]
+                                },
+                                {
+                                    "name": "Flags",
+                                    "type": "uint32",
+                                    "format": {
+                                        "type": "flags",
+                                        "flags": {
+                                            "0": "Pleasant",
+                                            "1": "Cloudy",
+                                            "2": "Rainy",
+                                            "3": "Snowy"
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "Chance",
+                                    "type": "float"
+                                }
+                            ],
+                            "sortKey": [
+                                0
+                            ]
+                        }
+                    },
+                    {
+                        "signature": "RDMP",
+                        "name": "Map Name",
+                        "type": "string",
+                        "localized": true,
+                        "conflictType": "Translate"
+                    },
+                    {
+                        "signature": "RDOT",
+                        "name": "Objects",
+                        "type": "array",
+                        "element": {
+                            "name": "Object",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Object",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "TREE",
+                                        "FLOR",
+                                        "STAT",
+                                        "LTEX",
+                                        "MSTT"
+                                    ]
+                                },
+                                {
+                                    "name": "Parent Index",
+                                    "type": "uint16",
+                                    "format": {
+                                        "type": "HideFFFF_Format"
+                                    }
+                                },
+                                {
+                                    "name": "Unknown",
+                                    "type": "bytes",
+                                    "size": 2
+                                },
+                                {
+                                    "name": "Density",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "Clustering",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Min Slope",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Max Slope",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Flags",
+                                    "type": "uint8",
+                                    "format": {
+                                        "type": "flags",
+                                        "flags": {
+                                            "0": "Conform to slope",
+                                            "1": "Paint Vertices",
+                                            "2": "Size Variance +/-",
+                                            "3": "X +/-",
+                                            "4": "Y +/-",
+                                            "5": "Z +/-",
+                                            "6": "Tree",
+                                            "7": "Huge Rock"
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "Radius wrt Parent",
+                                    "type": "uint16"
+                                },
+                                {
+                                    "name": "Radius",
+                                    "type": "uint16"
+                                },
+                                {
+                                    "name": "Min Height",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "Max Height",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "Sink",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "Sink Variance",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "Size Variance",
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "Angle Variance",
+                                    "type": "struct",
+                                    "elements": [
+                                        {
+                                            "name": "X",
+                                            "type": "uint16"
+                                        },
+                                        {
+                                            "name": "Y",
+                                            "type": "uint16"
+                                        },
+                                        {
+                                            "name": "Z",
+                                            "type": "uint16"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Unknown",
+                                    "type": "bytes",
+                                    "size": 2
+                                },
+                                {
+                                    "name": "Unknown",
+                                    "type": "bytes",
+                                    "size": 4
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "signature": "RDGS",
+                        "name": "Grasses",
+                        "type": "array",
+                        "sorted": true,
+                        "element": {
+                            "name": "Grass",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Grass",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "GRAS"
+                                    ]
+                                },
+                                {
+                                    "name": "Unknown",
+                                    "type": "bytes",
+                                    "size": 4
+                                }
+                            ],
+                            "sortKey": [
+                                0
+                            ]
+                        }
+                    },
+                    {
+                        "signature": "RDWT",
+                        "name": "Weather Types",
+                        "type": "array",
+                        "sorted": true,
+                        "element": {
+                            "name": "Weather Type",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Weather",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "WTHR"
+                                    ]
+                                },
+                                {
+                                    "name": "Chance",
+                                    "type": "uint32"
+                                },
+                                {
+                                    "name": "Global",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "GLOB",
+                                        "NULL"
+                                    ]
+                                }
+                            ],
+                            "sortKey": [
+                                0
+                            ]
+                        }
+                    },
+                    {
+                        "signature": "RLDM",
+                        "name": "LOD Display Distance Multiplier",
+                        "type": "float"
+                    },
+                    {
+                        "signature": "ANAM",
+                        "name": "Occlusion Accuracy Dist",
+                        "type": "float"
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        }
+    ]
+}

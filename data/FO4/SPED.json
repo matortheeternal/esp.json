@@ -1,0 +1,152 @@
+{
+    "signature": "SPED",
+    "name": "Movement Data",
+    "type": "struct",
+    "required": true,
+    "elements": [
+        {
+            "name": "Unknown",
+            "type": "float"
+        },
+        {
+            "name": "Walk - Left",
+            "type": "float"
+        },
+        {
+            "name": "Run - Left",
+            "type": "float"
+        },
+        {
+            "name": "Unknown",
+            "type": "float"
+        },
+        {
+            "name": "Unknown",
+            "type": "float"
+        },
+        {
+            "name": "Walk - Right",
+            "type": "float"
+        },
+        {
+            "name": "Run - Right",
+            "type": "float"
+        },
+        {
+            "name": "Unknown",
+            "type": "float"
+        },
+        {
+            "name": "Unknown",
+            "type": "float"
+        },
+        {
+            "name": "Walk - Forward",
+            "type": "float"
+        },
+        {
+            "name": "Run - Forward",
+            "type": "float"
+        },
+        {
+            "name": "Sprint - Forward",
+            "type": "float"
+        },
+        {
+            "name": "Unknown",
+            "type": "float"
+        },
+        {
+            "name": "Walk - Back",
+            "type": "float"
+        },
+        {
+            "name": "Run - Back",
+            "type": "float"
+        },
+        {
+            "name": "Unknown",
+            "type": "float"
+        },
+        {
+            "name": "Standing - Pitch",
+            "type": "float",
+            "required": true,
+            "format": {
+                "type": "RotationFactorFormat"
+            }
+        },
+        {
+            "name": "Walk - Pitch",
+            "type": "float",
+            "required": true,
+            "format": {
+                "type": "RotationFactorFormat"
+            }
+        },
+        {
+            "name": "Run - Pitch",
+            "type": "float",
+            "required": true,
+            "format": {
+                "type": "RotationFactorFormat"
+            }
+        },
+        {
+            "name": "Sprint - Pitch",
+            "type": "float",
+            "required": true,
+            "format": {
+                "type": "RotationFactorFormat"
+            }
+        },
+        {
+            "name": "Unknown",
+            "type": "float"
+        },
+        {
+            "name": "Unknown",
+            "type": "float"
+        },
+        {
+            "name": "Unknown",
+            "type": "float"
+        },
+        {
+            "name": "Unknown",
+            "type": "float"
+        },
+        {
+            "name": "Standing - Yaw",
+            "type": "float",
+            "required": true,
+            "format": {
+                "type": "RotationFactorFormat"
+            }
+        },
+        {
+            "name": "Walk - Yaw",
+            "type": "float",
+            "required": true,
+            "format": {
+                "type": "RotationFactorFormat"
+            }
+        },
+        {
+            "name": "Run - Yaw",
+            "type": "float",
+            "required": true,
+            "format": {
+                "type": "RotationFactorFormat"
+            }
+        },
+        {
+            "name": "Sprint - Yaw",
+            "type": "float",
+            "required": true,
+            "format": {
+                "type": "RotationFactorFormat"
+            }
+        }
+    ]
+}

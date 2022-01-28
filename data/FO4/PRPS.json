@@ -1,0 +1,22 @@
+{
+    "signature": "PRPS",
+    "name": "Properties",
+    "type": "array",
+    "sorted": true,
+    "element": {
+        "name": "Property",
+        "type": "struct",
+        "elements": [
+            {
+                "id": "ActorValue"
+            },
+            {
+                "name": "Value",
+                "type": "float"
+            }
+        ],
+        "sortKey": [
+            0
+        ]
+    }
+}

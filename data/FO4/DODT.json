@@ -1,0 +1,66 @@
+{
+    "signature": "DODT",
+    "name": "Decal Data",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Min Width",
+            "type": "float"
+        },
+        {
+            "name": "Max Width",
+            "type": "float"
+        },
+        {
+            "name": "Min Height",
+            "type": "float"
+        },
+        {
+            "name": "Max Height",
+            "type": "float"
+        },
+        {
+            "name": "Depth",
+            "type": "float"
+        },
+        {
+            "name": "Shininess",
+            "type": "float"
+        },
+        {
+            "name": "Parallax",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Passes",
+                    "type": "uint8"
+                }
+            ]
+        },
+        {
+            "name": "Flags",
+            "type": "uint8",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "POM Shadows",
+                    "1": "Alpha - Blending",
+                    "2": "Alpha - Testing",
+                    "3": "No Subtextures"
+                }
+            }
+        },
+        {
+            "name": "Alpha Threshold?",
+            "type": "uint16"
+        },
+        {
+            "id": "ByteColors",
+            "name": "Color"
+        }
+    ]
+}

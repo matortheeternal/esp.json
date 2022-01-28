@@ -1,0 +1,37 @@
+{
+    "signature": "SCSN",
+    "type": "record",
+    "name": "Audio Category Snapshot",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "PNAM",
+            "name": "Priority",
+            "type": "uint16"
+        },
+        {
+            "name": "Category Multipliers",
+            "type": "memberArray",
+            "member": {
+                "signature": "CNAM",
+                "name": "Category Multiplier",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Categoty",
+                        "type": "formId",
+                        "signatures": [
+                            "SNCT"
+                        ]
+                    },
+                    {
+                        "name": "Multiplier",
+                        "type": "float"
+                    }
+                ]
+            }
+        }
+    ]
+}

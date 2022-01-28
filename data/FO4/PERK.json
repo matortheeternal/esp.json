@@ -1,0 +1,388 @@
+{
+    "signature": "PERK",
+    "type": "record",
+    "name": "Perk",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "2": "Non-Playable",
+            "12": "Ignored"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "VMADFragmentedPERK"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "DESC",
+            "required": true
+        },
+        {
+            "signature": "ICON",
+            "name": "Image",
+            "type": "string"
+        },
+        {
+            "id": "CTDAs"
+        },
+        {
+            "signature": "DATA",
+            "name": "Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Trait",
+                    "type": "uint8",
+                    "format": {
+                        "id": "BoolEnum"
+                    }
+                },
+                {
+                    "name": "Level",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Num Ranks",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Playable",
+                    "type": "uint8",
+                    "format": {
+                        "id": "BoolEnum"
+                    }
+                },
+                {
+                    "name": "Hidden",
+                    "type": "uint8",
+                    "format": {
+                        "id": "BoolEnum"
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "SNAM",
+            "name": "Sound",
+            "type": "formId",
+            "signatures": [
+                "SNDR"
+            ]
+        },
+        {
+            "signature": "NNAM",
+            "name": "Next Perk",
+            "type": "formId",
+            "signatures": [
+                "PERK",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "FNAM",
+            "name": "SWF",
+            "type": "string"
+        },
+        {
+            "name": "Effects",
+            "type": "memberArray",
+            "member": {
+                "name": "Effect",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "PRKE",
+                        "name": "Header",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Type",
+                                "type": "uint8",
+                                "afterSet": "PERKPRKETypeAfterSet",
+                                "format": {
+                                    "type": "enum",
+                                    "options": {
+                                        "0": "Quest + Stage",
+                                        "1": "Ability",
+                                        "2": "Entry Point"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Rank",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "Priority",
+                                "type": "uint8"
+                            }
+                        ],
+                        "sortKey": [
+                            1,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "signature": "DATA",
+                        "name": "Effect Data",
+                        "type": "union",
+                        "decider": "PerkDATADecider",
+                        "required": true,
+                        "elements": [
+                            {
+                                "name": "Quest + Stage",
+                                "type": "struct",
+                                "elements": [
+                                    {
+                                        "name": "Quest",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "QUST"
+                                        ]
+                                    },
+                                    {
+                                        "name": "Quest Stage",
+                                        "type": "uint16",
+                                        "format": {
+                                            "type": "PerkDATAQuestStageFormat"
+                                        }
+                                    }
+                                ],
+                                "sortKey": [
+                                    0,
+                                    1
+                                ]
+                            },
+                            {
+                                "name": "Ability",
+                                "type": "formId",
+                                "signatures": [
+                                    "SPEL"
+                                ]
+                            },
+                            {
+                                "name": "Entry Point",
+                                "type": "struct",
+                                "elements": [
+                                    {
+                                        "name": "Entry Point",
+                                        "type": "uint8",
+                                        "required": true,
+                                        "format": {
+                                            "id": "EntryPointsEnum"
+                                        }
+                                    },
+                                    {
+                                        "name": "Function",
+                                        "type": "uint8",
+                                        "format": {
+                                            "type": "enum",
+                                            "options": {
+                                                "0": "Unknown 0",
+                                                "1": "Set Value",
+                                                "2": "Add Value",
+                                                "3": "Multiply Value",
+                                                "4": "Add Range To Value",
+                                                "5": "Add Actor Value Mult",
+                                                "6": "Absolute Value",
+                                                "7": "Negative Absolute Value",
+                                                "8": "Add Leveled List",
+                                                "9": "Add Activate Choice",
+                                                "10": "Select Spell",
+                                                "11": "Select Text",
+                                                "12": "Set to Actor Value Mult",
+                                                "13": "Multiply Actor Value Mult",
+                                                "14": "Multiply 1 + Actor Value Mult",
+                                                "15": "Set Text"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "Perk Condition Tab Count",
+                                        "type": "uint8",
+                                        "conflictType": "Ignore"
+                                    }
+                                ],
+                                "sortKey": [
+                                    0,
+                                    1
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Perk Conditions",
+                        "type": "memberArray",
+                        "member": {
+                            "name": "Perk Condition",
+                            "type": "memberStruct",
+                            "members": [
+                                {
+                                    "signature": "PRKC",
+                                    "name": "Run On (Tab Index)",
+                                    "type": "int8"
+                                },
+                                {
+                                    "id": "CTDAs",
+                                    "required": true
+                                }
+                            ],
+                            "sortKey": [
+                                0
+                            ]
+                        }
+                    },
+                    {
+                        "name": "Function Parameters",
+                        "type": "memberStruct",
+                        "members": [
+                            {
+                                "signature": "EPFT",
+                                "name": "Type",
+                                "type": "uint8",
+                                "format": {
+                                    "type": "enum",
+                                    "options": {
+                                        "0": "None",
+                                        "1": "Float",
+                                        "2": "Float/AV,Float",
+                                        "3": "LVLI",
+                                        "4": "SPEL,lstring,flags",
+                                        "5": "SPEL",
+                                        "6": "string",
+                                        "7": "lstring",
+                                        "8": "AVIF"
+                                    }
+                                }
+                            },
+                            {
+                                "signature": "EPFB",
+                                "name": "Perk Entry ID (unique)",
+                                "type": "uint16"
+                            },
+                            {
+                                "signature": "EPF2",
+                                "name": "Button Label",
+                                "type": "string",
+                                "localized": true,
+                                "conflictType": "Translate"
+                            },
+                            {
+                                "signature": "EPF3",
+                                "name": "Script Flags",
+                                "type": "struct",
+                                "elements": [
+                                    {
+                                        "name": "Script Flags",
+                                        "type": "uint16",
+                                        "format": {
+                                            "type": "flags",
+                                            "flags": {
+                                                "0": "Run Immediately",
+                                                "1": "Replace Default"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "signature": "EPFD",
+                                "name": "Data",
+                                "type": "union",
+                                "decider": "EPFDDecider",
+                                "elements": [
+                                    {
+                                        "name": "Unknown",
+                                        "type": "bytes"
+                                    },
+                                    {
+                                        "name": "Float",
+                                        "type": "float"
+                                    },
+                                    {
+                                        "name": "Float, Float",
+                                        "type": "struct",
+                                        "elements": [
+                                            {
+                                                "name": "Float 1",
+                                                "type": "float"
+                                            },
+                                            {
+                                                "name": "Float 2",
+                                                "type": "float"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "Leveled Item",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "LVLI"
+                                        ]
+                                    },
+                                    {
+                                        "name": "Spell",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "SPEL"
+                                        ]
+                                    },
+                                    {
+                                        "name": "Spell",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "SPEL"
+                                        ]
+                                    },
+                                    {
+                                        "name": "Text",
+                                        "type": "string",
+                                        "conflictType": "Translate"
+                                    },
+                                    {
+                                        "name": "Text",
+                                        "type": "string",
+                                        "localized": true,
+                                        "conflictType": "Translate"
+                                    },
+                                    {
+                                        "name": "Actor Value, Float",
+                                        "type": "struct",
+                                        "elements": [
+                                            {
+                                                "id": "ActorValue"
+                                            },
+                                            {
+                                                "name": "Float",
+                                                "type": "float"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "signature": "PRKF",
+                        "name": "End Marker",
+                        "type": "empty",
+                        "conflictType": "Ignore",
+                        "required": true
+                    }
+                ],
+                "sortKey": [
+                    0,
+                    1
+                ]
+            }
+        }
+    ]
+}

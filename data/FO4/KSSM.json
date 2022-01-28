@@ -1,0 +1,80 @@
+{
+    "signature": "KSSM",
+    "type": "record",
+    "name": "Sound Keyword Mapping",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "DNAM",
+            "name": "Primary Descriptor",
+            "type": "formId",
+            "signatures": [
+                "SNDR"
+            ]
+        },
+        {
+            "signature": "ENAM",
+            "name": "Exterior Tail",
+            "type": "formId",
+            "signatures": [
+                "SNDR"
+            ]
+        },
+        {
+            "signature": "VNAM",
+            "name": "VATS Descriptor",
+            "type": "formId",
+            "signatures": [
+                "SNDR"
+            ]
+        },
+        {
+            "signature": "TNAM",
+            "name": "VATS Threshold",
+            "type": "float"
+        },
+        {
+            "name": "Keywords",
+            "type": "memberArray",
+            "member": {
+                "signature": "KNAM",
+                "name": "Keyword",
+                "type": "formId",
+                "signatures": [
+                    "KYWD"
+                ]
+            }
+        },
+        {
+            "name": "Sounds",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "signature": "RNAM",
+                "name": "Sound",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Reverb Class",
+                        "type": "uint32",
+                        "format": {
+                            "id": "ReverbClassEnum"
+                        }
+                    },
+                    {
+                        "name": "Descriptor",
+                        "type": "formId",
+                        "signatures": [
+                            "SNDR"
+                        ]
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        }
+    ]
+}

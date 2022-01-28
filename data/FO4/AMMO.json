@@ -1,0 +1,125 @@
+{
+    "signature": "AMMO",
+    "type": "record",
+    "name": "Ammunition",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "2": "Non-Playable",
+            "12": "Ignored"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "PTRN"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "id": "YNAM"
+        },
+        {
+            "id": "ZNAM"
+        },
+        {
+            "id": "DESC"
+        },
+        {
+            "id": "KSIZ"
+        },
+        {
+            "id": "KWDAs"
+        },
+        {
+            "signature": "DATA",
+            "name": "Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Value",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "DNAM",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Projectile",
+                    "type": "formId",
+                    "signatures": [
+                        "PROJ",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Ignores Normal Weapon Resistance",
+                            "1": "Non-Playable",
+                            "2": "Has Count Based 3D"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3
+                },
+                {
+                    "name": "Damage",
+                    "type": "float"
+                },
+                {
+                    "name": "Health",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "signature": "ONAM",
+            "name": "Short Name",
+            "type": "string",
+            "localized": true,
+            "conflictType": "Translate",
+            "keepCase": true
+        },
+        {
+            "signature": "NAM1",
+            "name": "Casing Model",
+            "type": "string"
+        },
+        {
+            "signature": "NAM2",
+            "name": "Texture Files Hashes",
+            "type": "bytes",
+            "size": 0,
+            "conflictType": "Ignore"
+        }
+    ]
+}

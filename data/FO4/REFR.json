@@ -1,0 +1,1389 @@
+{
+    "signature": "REFR",
+    "type": "record",
+    "name": "Placed Object",
+    "flags": {
+        "type": "formatUnion",
+        "decider": "REFRRecordFlagsDecider",
+        "formats": [
+            {
+                "type": "flags",
+                "showUnknown": true,
+                "flags": {
+                    "4": "Ground Piece",
+                    "5": "Deleted",
+                    "8": "LOD Respects Enable State",
+                    "10": "Persistent",
+                    "11": "Initially Disabled",
+                    "12": "Ignored",
+                    "16": "Is Full LOD",
+                    "26": "Filter (Collision Geometry)",
+                    "27": "Bounding Box (Collision Geometry)",
+                    "28": "Reflected By Auto Water",
+                    "30": "Ground",
+                    "31": "Multibound"
+                }
+            },
+            {
+                "type": "flags",
+                "showUnknown": true,
+                "flags": {
+                    "4": "Ground Piece",
+                    "5": "Deleted",
+                    "8": "LOD Respects Enable State",
+                    "9": "Hidden From Local Map",
+                    "10": "Persistent",
+                    "11": "Initially Disabled",
+                    "12": "Ignored",
+                    "15": "Visible when distant",
+                    "16": "Is Full LOD",
+                    "26": "Filter (Collision Geometry)",
+                    "27": "Bounding Box (Collision Geometry)",
+                    "28": "Reflected By Auto Water",
+                    "29": "Don't Havok Settle",
+                    "30": "No Respawn",
+                    "31": "Multibound"
+                }
+            },
+            {
+                "type": "flags",
+                "showUnknown": true,
+                "flags": {
+                    "4": "Ground Piece",
+                    "5": "Deleted",
+                    "10": "Persistent",
+                    "11": "Initially Disabled",
+                    "12": "Ignored",
+                    "16": "Is Full LOD",
+                    "25": "No AI Acquire",
+                    "26": "Filter (Collision Geometry)",
+                    "27": "Bounding Box (Collision Geometry)",
+                    "29": "Don't Havok Settle",
+                    "30": "Ground",
+                    "31": "Multibound"
+                }
+            },
+            {
+                "type": "flags",
+                "showUnknown": true,
+                "flags": {
+                    "2": "Minimal Use Door",
+                    "5": "Deleted",
+                    "6": "Hidden From Local Map",
+                    "8": "Inaccessible",
+                    "10": "Persistent",
+                    "11": "Initially Disabled",
+                    "12": "Ignored",
+                    "16": "Is Full LOD",
+                    "26": "Filter (Collision Geometry)",
+                    "27": "Bounding Box (Collision Geometry)",
+                    "29": "Don't Havok Settle",
+                    "30": "No Respawn",
+                    "31": "Multibound"
+                }
+            },
+            {
+                "type": "flags",
+                "showUnknown": true,
+                "flags": {
+                    "5": "Deleted",
+                    "8": "Doesn't Light Water",
+                    "9": "Casts Shadows",
+                    "10": "Persistent",
+                    "11": "Initially Disabled",
+                    "12": "Ignored",
+                    "16": "Never Fades",
+                    "17": "Doesn't Light Landscape",
+                    "25": "No AI Acquire",
+                    "28": "Reflected By Auto Water",
+                    "29": "Don't Havok Settle",
+                    "30": "No Respawn",
+                    "31": "Multibound"
+                }
+            },
+            {
+                "type": "flags",
+                "showUnknown": true,
+                "flags": {
+                    "4": "Ground Piece",
+                    "5": "Deleted",
+                    "9": "Motion Blur",
+                    "10": "Persistent",
+                    "11": "Initially Disabled",
+                    "12": "Ignored",
+                    "16": "Is Full LOD",
+                    "26": "Filter (Collision Geometry)",
+                    "27": "Bounding Box (Collision Geometry)",
+                    "28": "Reflected By Auto Water",
+                    "29": "Don't Havok Settle",
+                    "30": "No Respawn",
+                    "31": "Multibound"
+                }
+            },
+            {
+                "type": "flags",
+                "showUnknown": true,
+                "flags": {
+                    "5": "Deleted",
+                    "10": "Persistent",
+                    "11": "Initially Disabled",
+                    "12": "Ignored",
+                    "16": "Is Full LOD",
+                    "28": "Reflected By Auto Water",
+                    "29": "Don't Havok Settle",
+                    "30": "No Respawn",
+                    "31": "Multibound"
+                }
+            },
+            {
+                "type": "flags",
+                "showUnknown": true,
+                "flags": {
+                    "4": "Ground Piece",
+                    "5": "Deleted",
+                    "10": "Persistent",
+                    "11": "Initially Disabled",
+                    "12": "Ignored",
+                    "16": "Is Full LOD",
+                    "25": "No AI Acquire",
+                    "28": "Reflected By Auto Water",
+                    "29": "Don't Havok Settle",
+                    "30": "No Respawn",
+                    "31": "Multibound"
+                }
+            }
+        ]
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "VMAD"
+        },
+        {
+            "signature": "NAME",
+            "name": "Base",
+            "type": "formId",
+            "required": true,
+            "signatures": {
+                "id": "sigBaseObjects"
+            }
+        },
+        {
+            "signature": "XMBO",
+            "name": "Bound Half Extents",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "X",
+                    "type": "float"
+                },
+                {
+                    "name": "Y",
+                    "type": "float"
+                },
+                {
+                    "name": "Z",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "XPRM",
+            "name": "Primitive",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Bounds",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "X",
+                            "type": "float",
+                            "scale": 2,
+                            "required": true
+                        },
+                        {
+                            "name": "Y",
+                            "type": "float",
+                            "scale": 2,
+                            "required": true
+                        },
+                        {
+                            "name": "Z",
+                            "type": "float",
+                            "scale": 2,
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "id": "FloatColors",
+                    "name": "Color"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                },
+                {
+                    "name": "Type",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "None",
+                            "1": "Box",
+                            "2": "Sphere",
+                            "3": "Plane",
+                            "4": "Line",
+                            "5": "Ellipsoid"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "XPOD",
+            "name": "Portal Data",
+            "type": "array",
+            "element": {
+                "name": "References",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Origin",
+                        "type": "formId",
+                        "signatures": [
+                            "REFR",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "name": "Destination",
+                        "type": "formId",
+                        "signatures": [
+                            "REFR",
+                            "NULL"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "XPTL",
+            "name": "Room Portal",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Size",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Width",
+                            "type": "float",
+                            "scale": 2
+                        },
+                        {
+                            "name": "Height",
+                            "type": "float",
+                            "scale": 2
+                        }
+                    ]
+                },
+                {
+                    "name": "Position",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "X",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Y",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Z",
+                            "type": "float"
+                        }
+                    ]
+                },
+                {
+                    "name": "Rotation (Quaternion?)",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "q1",
+                            "type": "float"
+                        },
+                        {
+                            "name": "q2",
+                            "type": "float"
+                        },
+                        {
+                            "name": "q3",
+                            "type": "float"
+                        },
+                        {
+                            "name": "q4",
+                            "type": "float"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "XORD",
+            "type": "bytes"
+        },
+        {
+            "signature": "XOCP",
+            "name": "Occlusion Plane Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Size",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Width",
+                            "type": "float",
+                            "scale": 2
+                        },
+                        {
+                            "name": "Height",
+                            "type": "float",
+                            "scale": 2
+                        }
+                    ]
+                },
+                {
+                    "name": "Position",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "X",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Y",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Z",
+                            "type": "float"
+                        }
+                    ]
+                },
+                {
+                    "name": "Rotation (Quaternion?)",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "q1",
+                            "type": "float"
+                        },
+                        {
+                            "name": "q2",
+                            "type": "float"
+                        },
+                        {
+                            "name": "q3",
+                            "type": "float"
+                        },
+                        {
+                            "name": "q4",
+                            "type": "float"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Bound Data",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "XRMR",
+                    "name": "Header",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Linked Rooms Count",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Flags",
+                            "type": "uint8",
+                            "format": {
+                                "type": "flags",
+                                "flags": {
+                                    "0": "Unknown 1",
+                                    "1": "Unknown 2",
+                                    "2": "Unknown 3",
+                                    "3": "Unknown 4",
+                                    "4": "Unknown 5",
+                                    "5": "Unknown 6",
+                                    "6": "Has Image Space",
+                                    "7": "Has Lighting Template"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 2
+                        }
+                    ]
+                },
+                {
+                    "signature": "LNAM",
+                    "name": "Lighting Template",
+                    "type": "formId",
+                    "signatures": [
+                        "LGTM"
+                    ]
+                },
+                {
+                    "signature": "INAM",
+                    "name": "Image Space",
+                    "type": "formId",
+                    "signatures": [
+                        "IMGS"
+                    ]
+                },
+                {
+                    "name": "Linked Rooms",
+                    "type": "memberArray",
+                    "sorted": true,
+                    "member": {
+                        "signature": "XLRM",
+                        "name": "Linked Room",
+                        "type": "formId",
+                        "signatures": [
+                            "REFR"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "XMBP",
+            "name": "MultiBound Primitive Marker",
+            "type": "empty",
+            "conflictType": "Ignore"
+        },
+        {
+            "id": "XRGD"
+        },
+        {
+            "id": "XRGB"
+        },
+        {
+            "signature": "XRDS",
+            "name": "Radius",
+            "type": "float"
+        },
+        {
+            "id": "XSCL"
+        },
+        {
+            "signature": "XEMI",
+            "name": "Emittance",
+            "type": "formId",
+            "signatures": [
+                "LIGH",
+                "REGN"
+            ]
+        },
+        {
+            "signature": "XLIG",
+            "name": "Light Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "FOV 90+/-",
+                    "type": "float"
+                },
+                {
+                    "name": "Fade 1.0+/-",
+                    "type": "float"
+                },
+                {
+                    "name": "End Distance Cap",
+                    "type": "float"
+                },
+                {
+                    "name": "Shadow Depth Bias",
+                    "type": "float"
+                },
+                {
+                    "name": "Near Clip",
+                    "type": "float"
+                },
+                {
+                    "name": "Volumetric Intensity",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Lit Water",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "signature": "XLTW",
+                "name": "Water",
+                "type": "formId",
+                "signatures": [
+                    "REFR"
+                ]
+            }
+        },
+        {
+            "signature": "XALP",
+            "name": "Alpha",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Cutoff",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Base",
+                    "type": "uint8"
+                }
+            ]
+        },
+        {
+            "signature": "XTEL",
+            "name": "Teleport Destination",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Door",
+                    "type": "formId",
+                    "persistent": true,
+                    "signatures": [
+                        "REFR"
+                    ]
+                },
+                {
+                    "id": "PosRot"
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "No Alarm",
+                            "1": "No Load Screen",
+                            "2": "Relative Position"
+                        }
+                    }
+                },
+                {
+                    "name": "Transition Interior",
+                    "type": "formId",
+                    "signatures": [
+                        "CELL",
+                        "NULL"
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "XTNM",
+            "name": "Teleport Loc Name",
+            "type": "formId",
+            "signatures": [
+                "MESG"
+            ]
+        },
+        {
+            "signature": "XMBR",
+            "name": "MultiBound Reference",
+            "type": "formId",
+            "signatures": [
+                "REFR"
+            ]
+        },
+        {
+            "signature": "XWCN",
+            "type": "bytes"
+        },
+        {
+            "signature": "XWCU",
+            "name": "Water Velocity",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "X Offset",
+                    "type": "float"
+                },
+                {
+                    "name": "Y Offset",
+                    "type": "float"
+                },
+                {
+                    "name": "Z Offset",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "X Angle",
+                    "type": "float"
+                },
+                {
+                    "name": "Y Angle",
+                    "type": "float"
+                },
+                {
+                    "name": "Z Angle",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 0
+                }
+            ]
+        },
+        {
+            "signature": "XASP",
+            "name": "Acoustic Restriction",
+            "type": "formId",
+            "signatures": [
+                "REFR"
+            ]
+        },
+        {
+            "signature": "XATP",
+            "name": "Activation Point",
+            "type": "empty"
+        },
+        {
+            "signature": "XAMC",
+            "name": "Ammo Count",
+            "type": "uint32"
+        },
+        {
+            "signature": "XLKT",
+            "name": "Linked Ref Transient",
+            "type": "empty"
+        },
+        {
+            "signature": "XLYR",
+            "name": "Layer",
+            "type": "formId",
+            "signatures": [
+                "LAYR"
+            ]
+        },
+        {
+            "signature": "XMSP",
+            "name": "Material Swap",
+            "type": "formId",
+            "signatures": [
+                "MSWP"
+            ]
+        },
+        {
+            "signature": "XRFG",
+            "name": "Reference Group",
+            "type": "formId",
+            "signatures": [
+                "RFGP"
+            ]
+        },
+        {
+            "signature": "XRDO",
+            "name": "Radio",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Frequency",
+                    "type": "float"
+                },
+                {
+                    "name": "Min Weak Distance",
+                    "type": "float"
+                },
+                {
+                    "name": "Max Weak Distance",
+                    "type": "float"
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Ignores Distance Checks"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "XBSD",
+            "name": "Spline",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Slack",
+                    "type": "float"
+                },
+                {
+                    "name": "Thickness",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "float"
+                },
+                {
+                    "name": "Wind - Detached End",
+                    "type": "uint8",
+                    "format": {
+                        "id": "BoolEnum"
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 0
+                }
+            ]
+        },
+        {
+            "signature": "XPDD",
+            "name": "Projected Decal",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Width Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Height Scale",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "XSPC",
+            "name": "Spawn Container",
+            "type": "formId",
+            "signatures": [
+                "REFR"
+            ]
+        },
+        {
+            "name": "Activate Parents",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "XAPD",
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Parent Activate Only"
+                        }
+                    }
+                },
+                {
+                    "name": "Activate Parent Refs",
+                    "type": "memberArray",
+                    "sorted": true,
+                    "member": {
+                        "signature": "XAPR",
+                        "name": "Activate Parent Ref",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Reference",
+                                "type": "formId",
+                                "signatures": {
+                                    "id": "sigReferences"
+                                }
+                            },
+                            {
+                                "name": "Delay",
+                                "type": "float"
+                            }
+                        ],
+                        "sortKey": [
+                            0
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "XLIB",
+            "name": "Leveled Item Base Object",
+            "type": "formId",
+            "signatures": [
+                "LVLI"
+            ]
+        },
+        {
+            "id": "XLCM"
+        },
+        {
+            "signature": "XLCN",
+            "name": "Persistent Location",
+            "type": "formId",
+            "signatures": [
+                "LCTN"
+            ]
+        },
+        {
+            "signature": "XTRI",
+            "name": "Collision Layer",
+            "type": "uint32"
+        },
+        {
+            "signature": "XLOC",
+            "name": "Lock Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Level",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "None",
+                            "1": "Novice 1",
+                            "25": "Novice 25",
+                            "50": "Advanced",
+                            "75": "Expert",
+                            "100": "Master",
+                            "251": "Barred",
+                            "252": "Chained",
+                            "253": "Requires Terminal",
+                            "254": "Inaccessible",
+                            "255": "Requires Key"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3,
+                    "conflictType": "Ignore"
+                },
+                {
+                    "name": "Key",
+                    "type": "formId",
+                    "signatures": [
+                        "KEYM",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "",
+                            "1": "",
+                            "2": "Leveled Lock"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3,
+                    "conflictType": "Ignore"
+                },
+                {
+                    "type": "bytes"
+                }
+            ]
+        },
+        {
+            "signature": "XEZN",
+            "name": "Encounter Zone",
+            "type": "formId",
+            "signatures": [
+                "ECZN"
+            ]
+        },
+        {
+            "signature": "XNDP",
+            "name": "Navigation Door Link",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Navigation Mesh",
+                    "type": "formId",
+                    "signatures": [
+                        "NAVM"
+                    ]
+                },
+                {
+                    "name": "Teleport Marker Triangle",
+                    "type": "int16",
+                    "format": {
+                        "type": "REFRNavmeshTriangleFormat"
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 2,
+                    "conflictType": "Ignore"
+                }
+            ]
+        },
+        {
+            "signature": "XLRL",
+            "name": "Location Reference",
+            "type": "formId",
+            "conflictType": "BenignIfAdded",
+            "signatures": [
+                "LCRT",
+                "LCTN",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "XLRT",
+            "name": "Location Ref Type",
+            "type": "array",
+            "element": {
+                "name": "Ref",
+                "type": "formId",
+                "signatures": [
+                    "LCRT",
+                    "NULL"
+                ]
+            }
+        },
+        {
+            "signature": "XIS2",
+            "name": "Ignored by Sandbox",
+            "type": "empty"
+        },
+        {
+            "id": "XOWN"
+        },
+        {
+            "id": "XRNK"
+        },
+        {
+            "signature": "XCNT",
+            "name": "Item Count",
+            "type": "int32"
+        },
+        {
+            "signature": "XHLT",
+            "name": "Health %",
+            "type": "uint32"
+        },
+        {
+            "id": "XESP"
+        },
+        {
+            "name": "Linked References",
+            "type": "memberArray",
+            "member": {
+                "signature": "XLKR",
+                "name": "Linked Reference",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Keyword/Ref",
+                        "type": "formId",
+                        "signatures": [
+                            "KYWD",
+                            "PLYR",
+                            "ACHR",
+                            "REFR",
+                            "PGRE",
+                            "PHZD",
+                            "PMIS",
+                            "PARW",
+                            "PBAR",
+                            "PBEA",
+                            "PCON",
+                            "PFLA",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "name": "Ref",
+                        "type": "formId",
+                        "signatures": {
+                            "id": "sigReferences"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Patrol",
+            "type": "memberArray",
+            "member": {
+                "name": "Data",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "XPRD",
+                        "name": "Idle Time",
+                        "type": "float",
+                        "required": true
+                    },
+                    {
+                        "signature": "XPPA",
+                        "name": "Patrol Script Marker",
+                        "type": "empty",
+                        "required": true
+                    },
+                    {
+                        "signature": "INAM",
+                        "name": "Idle",
+                        "type": "formId",
+                        "required": true,
+                        "signatures": [
+                            "IDLE",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "id": "PDTOs"
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "XACT",
+            "name": "Action Flag",
+            "type": "uint32",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Use Default",
+                    "1": "Activate",
+                    "2": "Open",
+                    "3": "Open by Default"
+                }
+            }
+        },
+        {
+            "signature": "XHTW",
+            "name": "Head-Tracking Weight",
+            "type": "float"
+        },
+        {
+            "signature": "XFVC",
+            "name": "Favor Cost",
+            "type": "float"
+        },
+        {
+            "signature": "ONAM",
+            "name": "Open by Default",
+            "type": "empty"
+        },
+        {
+            "name": "Map Marker",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "XMRK",
+                    "name": "Map Marker Data",
+                    "type": "empty"
+                },
+                {
+                    "signature": "FNAM",
+                    "name": "Map Flags",
+                    "type": "uint8",
+                    "required": true,
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Visible",
+                            "1": "Can Travel To",
+                            "2": "\"Show All\" Hidden",
+                            "3": "Use Location Name"
+                        }
+                    }
+                },
+                {
+                    "id": "FULL",
+                    "required": true
+                },
+                {
+                    "signature": "TNAM",
+                    "name": "",
+                    "type": "struct",
+                    "required": true,
+                    "elements": [
+                        {
+                            "name": "Type",
+                            "type": "uint8",
+                            "format": {
+                                "type": "enum",
+                                "options": {
+                                    "0": "Cave",
+                                    "1": "City",
+                                    "2": "Diamond City",
+                                    "3": "Encampment",
+                                    "4": "Factory / Industrial Site",
+                                    "5": "Gov't Building / Monument",
+                                    "6": "Metro Station",
+                                    "7": "Military Base",
+                                    "8": "Natural Landmark",
+                                    "9": "Office / Civic Building",
+                                    "10": "Ruins - Town",
+                                    "11": "Ruins - Urban",
+                                    "12": "Sanctuary",
+                                    "13": "Settlement",
+                                    "14": "Sewer / Utility Tunnels",
+                                    "15": "Vault",
+                                    "16": "Airfield",
+                                    "17": "Bunker Hill",
+                                    "18": "Camper",
+                                    "19": "Car",
+                                    "20": "Church",
+                                    "21": "Country Club",
+                                    "22": "Custom House",
+                                    "23": "Drive-In",
+                                    "24": "Elevated Highway",
+                                    "25": "Faneuil Hall",
+                                    "26": "Farm",
+                                    "27": "Filling Station",
+                                    "28": "Forested",
+                                    "29": "Goodneighbor",
+                                    "30": "Graveyard",
+                                    "31": "Hospital",
+                                    "32": "Industrial Dome",
+                                    "33": "Industrial Stacks",
+                                    "34": "Institute",
+                                    "35": "Irish Pride",
+                                    "36": "Junkyard",
+                                    "37": "Observatory",
+                                    "38": "Pier",
+                                    "39": "Pond / Lake",
+                                    "40": "Quarry",
+                                    "41": "Radioactive Area",
+                                    "42": "Radio Tower",
+                                    "43": "Salem",
+                                    "44": "School",
+                                    "45": "Shipwreck",
+                                    "46": "Submarine",
+                                    "47": "Swan Pond",
+                                    "48": "Synth Head",
+                                    "49": "Town",
+                                    "50": "Brotherhood of Steel",
+                                    "51": "Brownstone Townhouse",
+                                    "52": "Bunker",
+                                    "53": "Castle",
+                                    "54": "Skyscraper",
+                                    "55": "Libertalia",
+                                    "56": "Low-Rise Building",
+                                    "57": "Minutemen",
+                                    "58": "Police Station",
+                                    "59": "Prydwen",
+                                    "60": "Railroad - Faction",
+                                    "61": "Railroad",
+                                    "62": "Satellite",
+                                    "63": "Sentinel",
+                                    "64": "USS Constitution",
+                                    "65": "Mechanist LairRaider settlementVassal settlementPotential Vassal settlement",
+                                    "66": "Custom 66",
+                                    "67": "Custom 67",
+                                    "68": "Custom 68",
+                                    "69": "Custom 69",
+                                    "70": "Custom 70",
+                                    "71": "Custom 71",
+                                    "72": "Custom 72",
+                                    "73": "Custom 73",
+                                    "74": "Custom 74",
+                                    "75": "Custom 75",
+                                    "76": "Custom 76",
+                                    "77": "Custom 77",
+                                    "78": "Custom 78",
+                                    "79": "Custom 79",
+                                    "80": "Custom 80",
+                                    "81": "Custom 81",
+                                    "82": "Custom 82",
+                                    "83": "Custom 83",
+                                    "84": "Custom 84",
+                                    "85": "Custom 85",
+                                    "86": "Custom 86",
+                                    "87": "Custom 87",
+                                    "88": "Custom 88",
+                                    "89": "Custom 89",
+                                    "90": "Custom 90",
+                                    "91": "Custom 91",
+                                    "92": "Custom 92",
+                                    "93": "Custom 93",
+                                    "94": "Custom 94",
+                                    "95": "Custom 95",
+                                    "96": "Custom 96",
+                                    "97": "Custom 97",
+                                    "98": "Custom 98",
+                                    "99": "Custom 99"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "XATR",
+            "name": "Attach Ref",
+            "type": "formId",
+            "signatures": [
+                "REFR",
+                "PGRE",
+                "PHZD",
+                "PMIS",
+                "PARW",
+                "PBAR",
+                "PBEA",
+                "PCON",
+                "PFLA",
+                "ACHR"
+            ]
+        },
+        {
+            "name": "Spline Connection",
+            "type": "memberArray",
+            "member": {
+                "signature": "XPLK",
+                "name": "Link",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Ref",
+                        "type": "formId",
+                        "signatures": [
+                            "REFR",
+                            "ACHR"
+                        ]
+                    },
+                    {
+                        "type": "bytes"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Power Grid",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "XWPG",
+                    "name": "Count",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Connections",
+                    "type": "memberArray",
+                    "member": {
+                        "signature": "XWPN",
+                        "name": "Connection",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Node 1",
+                                "type": "formId",
+                                "signatures": [
+                                    "REFR",
+                                    "ACHR",
+                                    "NULL"
+                                ]
+                            },
+                            {
+                                "name": "Node 2",
+                                "type": "formId",
+                                "signatures": [
+                                    "REFR",
+                                    "ACHR",
+                                    "NULL"
+                                ]
+                            },
+                            {
+                                "name": "Line",
+                                "type": "formId",
+                                "signatures": [
+                                    "REFR",
+                                    "NULL"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "XCVR",
+            "type": "bytes"
+        },
+        {
+            "signature": "XCVL",
+            "type": "bytes"
+        },
+        {
+            "signature": "XCZR",
+            "name": "Unknown",
+            "type": "formId",
+            "signatures": {
+                "id": "sigReferences"
+            }
+        },
+        {
+            "signature": "XCZA",
+            "type": "bytes"
+        },
+        {
+            "signature": "XCZC",
+            "name": "Unknown",
+            "type": "formId",
+            "signatures": [
+                "CELL",
+                "NULL"
+            ]
+        },
+        {
+            "id": "XLOD"
+        },
+        {
+            "id": "DataPosRot"
+        },
+        {
+            "signature": "MNAM",
+            "name": "Comments",
+            "type": "string"
+        }
+    ]
+}

@@ -1,0 +1,137 @@
+{
+    "signature": "IPCT",
+    "type": "record",
+    "name": "Impact",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Effect - Duration",
+                    "type": "float"
+                },
+                {
+                    "name": "Effect - Orientation",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Surface Normal",
+                            "1": "Projectile Vector",
+                            "2": "Projectile Reflection"
+                        }
+                    }
+                },
+                {
+                    "name": "Angle Threshold",
+                    "type": "float"
+                },
+                {
+                    "name": "Placement Radius",
+                    "type": "float"
+                },
+                {
+                    "name": "Sound Level",
+                    "type": "uint32",
+                    "format": {
+                        "id": "SoundLevelEnum"
+                    }
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "No Decal Data"
+                        }
+                    }
+                },
+                {
+                    "name": "Impact Result",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Default",
+                            "1": "Destroy",
+                            "2": "Bounce",
+                            "3": "Impale",
+                            "4": "Stick"
+                        }
+                    }
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 2
+                }
+            ]
+        },
+        {
+            "id": "DODT"
+        },
+        {
+            "signature": "DNAM",
+            "name": "Texture Set",
+            "type": "formId",
+            "signatures": [
+                "TXST"
+            ]
+        },
+        {
+            "signature": "ENAM",
+            "name": "Secondary Texture Set",
+            "type": "formId",
+            "signatures": [
+                "TXST"
+            ]
+        },
+        {
+            "signature": "SNAM",
+            "name": "Sound 1",
+            "type": "formId",
+            "signatures": [
+                "SNDR"
+            ]
+        },
+        {
+            "signature": "NAM1",
+            "name": "Sound 2",
+            "type": "formId",
+            "signatures": [
+                "SNDR"
+            ]
+        },
+        {
+            "signature": "NAM3",
+            "name": "Footstep Explosion",
+            "type": "formId",
+            "signatures": [
+                "EXPL"
+            ]
+        },
+        {
+            "signature": "NAM2",
+            "name": "Hazard",
+            "type": "formId",
+            "signatures": [
+                "HAZD"
+            ]
+        },
+        {
+            "signature": "FNAM",
+            "name": "Footstep Particle Max Dist",
+            "type": "float"
+        }
+    ]
+}

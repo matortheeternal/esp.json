@@ -1,0 +1,338 @@
+{
+    "signature": "ACHR",
+    "type": "record",
+    "name": "Placed NPC",
+    "flags": {
+        "type": "flags",
+        "showUnknown": true,
+        "flags": {
+            "5": "Deleted",
+            "9": "Starts Dead",
+            "10": "Persistent",
+            "11": "Initially Disabled",
+            "12": "Ignored",
+            "13": "Starts Unconscious",
+            "25": "No AI Acquire",
+            "29": "Don't Havok Settle"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "VMAD"
+        },
+        {
+            "signature": "NAME",
+            "name": "Base",
+            "type": "formId",
+            "required": true,
+            "signatures": [
+                "NPC_"
+            ]
+        },
+        {
+            "signature": "XEZN",
+            "name": "Encounter Zone",
+            "type": "formId",
+            "signatures": [
+                "ECZN"
+            ]
+        },
+        {
+            "id": "XRGD"
+        },
+        {
+            "id": "XRGB"
+        },
+        {
+            "name": "Patrol Data",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "XPRD",
+                    "name": "Idle Time",
+                    "type": "float",
+                    "required": true
+                },
+                {
+                    "signature": "XPPA",
+                    "name": "Patrol Script Marker",
+                    "type": "empty",
+                    "required": true
+                },
+                {
+                    "signature": "INAM",
+                    "name": "Idle",
+                    "type": "formId",
+                    "required": true,
+                    "signatures": [
+                        "IDLE",
+                        "NULL"
+                    ]
+                },
+                {
+                    "id": "PDTOs"
+                },
+                {
+                    "signature": "TNAM",
+                    "name": "Topic",
+                    "type": "formId",
+                    "signatures": [
+                        "DIAL",
+                        "NULL"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "XLCM"
+        },
+        {
+            "signature": "XCNT",
+            "name": "Count",
+            "type": "int32"
+        },
+        {
+            "signature": "XRDS",
+            "name": "Radius",
+            "type": "float"
+        },
+        {
+            "signature": "XHLT",
+            "name": "Health %",
+            "type": "uint32"
+        },
+        {
+            "name": "Linked References",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "signature": "XLKR",
+                "name": "Linked Reference",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Keyword/Ref",
+                        "type": "formId",
+                        "signatures": [
+                            "KYWD",
+                            "PLYR",
+                            "ACHR",
+                            "REFR",
+                            "PGRE",
+                            "PHZD",
+                            "PMIS",
+                            "PARW",
+                            "PBAR",
+                            "PBEA",
+                            "PCON",
+                            "PFLA",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "name": "Ref",
+                        "type": "formId",
+                        "signatures": {
+                            "id": "sigReferences"
+                        }
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        },
+        {
+            "name": "Activate Parents",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "XAPD",
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Parent Activate Only"
+                        }
+                    }
+                },
+                {
+                    "name": "Activate Parent Refs",
+                    "type": "memberArray",
+                    "sorted": true,
+                    "member": {
+                        "signature": "XAPR",
+                        "name": "Activate Parent Ref",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Reference",
+                                "type": "formId",
+                                "signatures": {
+                                    "id": "sigReferences"
+                                }
+                            },
+                            {
+                                "name": "Delay",
+                                "type": "float"
+                            }
+                        ],
+                        "sortKey": [
+                            0
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "XATP",
+            "name": "Activation Point",
+            "type": "empty"
+        },
+        {
+            "signature": "XLKT",
+            "name": "Linked Ref Transient",
+            "type": "empty"
+        },
+        {
+            "signature": "XRFG",
+            "name": "Reference Group",
+            "type": "formId",
+            "signatures": [
+                "RFGP"
+            ]
+        },
+        {
+            "signature": "XLYR",
+            "name": "Layer",
+            "type": "formId",
+            "signatures": [
+                "LAYR"
+            ]
+        },
+        {
+            "signature": "XMSP",
+            "name": "Material Swap",
+            "type": "formId",
+            "signatures": [
+                "MSWP"
+            ]
+        },
+        {
+            "signature": "XLCN",
+            "name": "Persistent Location",
+            "type": "formId",
+            "signatures": [
+                "LCTN"
+            ]
+        },
+        {
+            "signature": "XLRL",
+            "name": "Location Reference",
+            "type": "formId",
+            "conflictType": "BenignIfAdded",
+            "signatures": [
+                "LCRT",
+                "LCTN",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "XLRT",
+            "name": "Location Ref Type",
+            "type": "array",
+            "element": {
+                "name": "Ref",
+                "type": "formId",
+                "signatures": [
+                    "LCRT",
+                    "NULL"
+                ]
+            }
+        },
+        {
+            "signature": "XIS2",
+            "name": "Ignored by Sandbox",
+            "type": "empty"
+        },
+        {
+            "name": "Spline Connection",
+            "type": "memberArray",
+            "member": {
+                "signature": "XPLK",
+                "name": "Link",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Ref",
+                        "type": "formId",
+                        "signatures": [
+                            "REFR",
+                            "ACHR"
+                        ]
+                    },
+                    {
+                        "type": "bytes"
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "XHTW",
+            "name": "Head-Tracking Weight",
+            "type": "float"
+        },
+        {
+            "signature": "XFVC",
+            "name": "Favor Cost",
+            "type": "float"
+        },
+        {
+            "id": "XESP"
+        },
+        {
+            "id": "XOWN"
+        },
+        {
+            "id": "XRNK"
+        },
+        {
+            "signature": "XEMI",
+            "name": "Emittance",
+            "type": "formId",
+            "signatures": [
+                "LIGH",
+                "REGN"
+            ]
+        },
+        {
+            "signature": "XMBR",
+            "name": "MultiBound Reference",
+            "type": "formId",
+            "signatures": {
+                "id": "sigReferences"
+            }
+        },
+        {
+            "signature": "XIBS",
+            "name": "Ignored By Sandbox",
+            "type": "empty"
+        },
+        {
+            "id": "XSCL"
+        },
+        {
+            "id": "DATAPosRot"
+        },
+        {
+            "signature": "MNAM",
+            "name": "Comments",
+            "type": "string",
+            "id": "DataPosRot"
+        }
+    ]
+}

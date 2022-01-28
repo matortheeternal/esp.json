@@ -1,0 +1,996 @@
+{
+    "signature": "NPC_",
+    "type": "record",
+    "name": "Non-Player Character (Actor)",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "10": "Unknown 10",
+            "12": "Ignored",
+            "18": "Compressed",
+            "19": "Unknown 19",
+            "29": "Bleedout Override"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "VMAD"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "PTRN"
+        },
+        {
+            "id": "STCP"
+        },
+        {
+            "signature": "ACBS",
+            "name": "Configuration",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Female",
+                            "1": "Essential",
+                            "2": "Is CharGen Face Preset",
+                            "3": "Respawn",
+                            "4": "Auto-calc stats",
+                            "5": "Unique",
+                            "6": "Doesn't affect stealth meter",
+                            "7": "PC Level Mult",
+                            "8": "Unknown 8",
+                            "9": "Calc For Each Template",
+                            "10": "Unknown 10",
+                            "11": "Protected",
+                            "12": "Unknown 12",
+                            "13": "Unknown 13",
+                            "14": "Summonable",
+                            "15": "Unknown 15",
+                            "16": "Doesn't bleed",
+                            "17": "Unknown 17",
+                            "18": "Bleedout Override",
+                            "19": "Opposite Gender Anims",
+                            "20": "Simple Actor",
+                            "21": "Unknown 21",
+                            "22": "Unknown 22",
+                            "23": "No Activation/Hellos",
+                            "24": "Diffuse Alpha Test",
+                            "25": "Unknown 25",
+                            "26": "Unknown 26",
+                            "27": "Unknown 27",
+                            "28": "Unknown 28",
+                            "29": "Is Ghost",
+                            "30": "Unknown 30",
+                            "31": "Invulnerable"
+                        }
+                    }
+                },
+                {
+                    "name": "XP Value Offset",
+                    "type": "int16",
+                    "required": true
+                },
+                {
+                    "name": "Level",
+                    "type": "union",
+                    "decider": "NPCLevelDecider",
+                    "required": true,
+                    "elements": [
+                        {
+                            "name": "Level",
+                            "type": "int16",
+                            "required": true
+                        },
+                        {
+                            "name": "Level Mult",
+                            "type": "int16",
+                            "required": true,
+                            "format": {
+                                "type": "divide",
+                                "value": 1000
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Calc min level",
+                    "type": "uint16",
+                    "required": true
+                },
+                {
+                    "name": "Calc max level",
+                    "type": "uint16",
+                    "required": true
+                },
+                {
+                    "name": "Disposition Base",
+                    "type": "int16"
+                },
+                {
+                    "name": "Use Template Actors",
+                    "type": "uint16",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Traits",
+                            "1": "Stats",
+                            "2": "Factions",
+                            "3": "Spell List",
+                            "4": "AI Data",
+                            "5": "AI Packages",
+                            "6": "Model/Animation",
+                            "7": "Base Data",
+                            "8": "Inventory",
+                            "9": "Script",
+                            "10": "Def Pack List",
+                            "11": "Attack Data",
+                            "12": "Keywords"
+                        }
+                    }
+                },
+                {
+                    "name": "Bleedout Override",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 2
+                }
+            ]
+        },
+        {
+            "name": "Factions",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "signature": "SNAM",
+                "name": "Faction",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Faction",
+                        "type": "formId",
+                        "signatures": [
+                            "FACT"
+                        ]
+                    },
+                    {
+                        "name": "Rank",
+                        "type": "int8"
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        },
+        {
+            "signature": "INAM",
+            "name": "Death item",
+            "type": "formId",
+            "signatures": [
+                "LVLI"
+            ]
+        },
+        {
+            "signature": "VTCK",
+            "name": "Voice",
+            "type": "formId",
+            "signatures": [
+                "VTYP"
+            ]
+        },
+        {
+            "signature": "TPLT",
+            "name": "Default Template",
+            "type": "formId",
+            "signatures": [
+                "LVLN",
+                "NPC_"
+            ]
+        },
+        {
+            "signature": "LTPT",
+            "name": "Legendary Template",
+            "type": "formId",
+            "signatures": [
+                "LVLN",
+                "NPC_"
+            ]
+        },
+        {
+            "signature": "LTPC",
+            "name": "Legendary Chance",
+            "type": "formId",
+            "signatures": [
+                "GLOB"
+            ]
+        },
+        {
+            "signature": "TPTA",
+            "name": "Template Actors",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Traits",
+                    "type": "formId",
+                    "signatures": [
+                        "LVLN",
+                        "NPC_",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Stats",
+                    "type": "formId",
+                    "signatures": [
+                        "LVLN",
+                        "NPC_",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Factions",
+                    "type": "formId",
+                    "signatures": [
+                        "LVLN",
+                        "NPC_",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Spell List",
+                    "type": "formId",
+                    "signatures": [
+                        "LVLN",
+                        "NPC_",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "AI Data",
+                    "type": "formId",
+                    "signatures": [
+                        "LVLN",
+                        "NPC_",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "AI Packages",
+                    "type": "formId",
+                    "signatures": [
+                        "LVLN",
+                        "NPC_",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Model/Animation",
+                    "type": "formId",
+                    "signatures": [
+                        "LVLN",
+                        "NPC_",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Base Data",
+                    "type": "formId",
+                    "signatures": [
+                        "LVLN",
+                        "NPC_",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Inventory",
+                    "type": "formId",
+                    "signatures": [
+                        "LVLN",
+                        "NPC_",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Script",
+                    "type": "formId",
+                    "signatures": [
+                        "LVLN",
+                        "NPC_",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Def Pack List",
+                    "type": "formId",
+                    "signatures": [
+                        "LVLN",
+                        "NPC_",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Attack Data",
+                    "type": "formId",
+                    "signatures": [
+                        "LVLN",
+                        "NPC_",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Keywords",
+                    "type": "formId",
+                    "signatures": [
+                        "LVLN",
+                        "NPC_",
+                        "NULL"
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "RNAM",
+            "name": "Race",
+            "type": "formId",
+            "required": true,
+            "signatures": [
+                "RACE"
+            ]
+        },
+        {
+            "id": "SPCT"
+        },
+        {
+            "id": "SPLOs"
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "signature": "WNAM",
+            "name": "Skin",
+            "type": "formId",
+            "signatures": [
+                "ARMO"
+            ]
+        },
+        {
+            "signature": "ANAM",
+            "name": "Far away model",
+            "type": "formId",
+            "signatures": [
+                "ARMO"
+            ]
+        },
+        {
+            "signature": "ATKR",
+            "name": "Attack Race",
+            "type": "formId",
+            "signatures": [
+                "RACE"
+            ]
+        },
+        {
+            "name": "Attacks",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "id": "AttackData"
+            }
+        },
+        {
+            "signature": "SPOR",
+            "name": "Spectator Override Package List",
+            "type": "formId",
+            "signatures": [
+                "FLST"
+            ]
+        },
+        {
+            "signature": "OCOR",
+            "name": "Observe Dead Body Override Package List",
+            "type": "formId",
+            "signatures": [
+                "FLST"
+            ]
+        },
+        {
+            "signature": "GWOR",
+            "name": "Guard Warn Override Package List",
+            "type": "formId",
+            "signatures": [
+                "FLST"
+            ]
+        },
+        {
+            "signature": "ECOR",
+            "name": "Combat Override Package List",
+            "type": "formId",
+            "signatures": [
+                "FLST"
+            ]
+        },
+        {
+            "signature": "FCPL",
+            "name": "Follower Command Package List",
+            "type": "formId",
+            "signatures": [
+                "FLST"
+            ]
+        },
+        {
+            "signature": "RCLR",
+            "name": "Follower Elevator Package List",
+            "type": "formId",
+            "signatures": [
+                "FLST"
+            ]
+        },
+        {
+            "signature": "PRKZ",
+            "name": "Perk Count",
+            "type": "uint32",
+            "conflictType": "Benign"
+        },
+        {
+            "name": "Perks",
+            "type": "memberArray",
+            "sorted": true,
+            "counter": {
+                "type": "elementCounter",
+                "path": "PRKZ - Perk Count"
+            },
+            "member": {
+                "signature": "PRKR",
+                "name": "Perk",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Perk",
+                        "type": "formId",
+                        "signatures": [
+                            "PERK"
+                        ]
+                    },
+                    {
+                        "name": "Rank",
+                        "type": "uint8"
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        },
+        {
+            "id": "PRPS"
+        },
+        {
+            "id": "FTYP"
+        },
+        {
+            "id": "NTRM"
+        },
+        {
+            "id": "COCT"
+        },
+        {
+            "id": "CNTOs"
+        },
+        {
+            "id": "AIDT"
+        },
+        {
+            "name": "Packages",
+            "type": "memberArray",
+            "member": {
+                "signature": "PKID",
+                "name": "Package",
+                "type": "formId",
+                "signatures": [
+                    "PACK"
+                ]
+            }
+        },
+        {
+            "id": "KSIZ"
+        },
+        {
+            "id": "KWDAs"
+        },
+        {
+            "id": "APPR"
+        },
+        {
+            "id": "ObjectTemplate"
+        },
+        {
+            "signature": "CNAM",
+            "name": "Class",
+            "type": "formId",
+            "required": true,
+            "signatures": [
+                "CLAS"
+            ]
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "signature": "SHRT",
+            "name": "Short Name",
+            "type": "string",
+            "localized": true,
+            "conflictType": "Translate",
+            "keepCase": true
+        },
+        {
+            "signature": "DATA",
+            "name": "Marker",
+            "type": "bytes"
+        },
+        {
+            "signature": "DNAM",
+            "name": "",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Unknown",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Far Away Model Distance",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Geared Up Weapons",
+                    "type": "uint16"
+                }
+            ]
+        },
+        {
+            "name": "Head Parts",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "signature": "PNAM",
+                "name": "Head Part",
+                "type": "formId",
+                "signatures": [
+                    "HDPT"
+                ]
+            }
+        },
+        {
+            "signature": "HCLF",
+            "name": "Hair Color",
+            "type": "formId",
+            "signatures": [
+                "CLFM"
+            ]
+        },
+        {
+            "signature": "BCLF",
+            "name": "Facial Hair Color",
+            "type": "formId",
+            "signatures": [
+                "CLFM"
+            ]
+        },
+        {
+            "signature": "ZNAM",
+            "name": "Combat Style",
+            "type": "formId",
+            "signatures": [
+                "CSTY"
+            ]
+        },
+        {
+            "signature": "GNAM",
+            "name": "Gift Filter",
+            "type": "formId",
+            "signatures": [
+                "FLST"
+            ]
+        },
+        {
+            "signature": "NAM5",
+            "type": "bytes",
+            "required": true
+        },
+        {
+            "signature": "NAM6",
+            "name": "Height Min",
+            "type": "float",
+            "required": true
+        },
+        {
+            "signature": "NAM7",
+            "name": "Unused",
+            "type": "float",
+            "required": true
+        },
+        {
+            "signature": "NAM4",
+            "name": "Height Max",
+            "type": "float"
+        },
+        {
+            "signature": "MWGT",
+            "name": "Weight",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Thin",
+                    "type": "float"
+                },
+                {
+                    "name": "Muscular",
+                    "type": "float"
+                },
+                {
+                    "name": "Fat",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "NAM8",
+            "name": "Sound Level",
+            "type": "uint32",
+            "required": true,
+            "format": {
+                "id": "SoundLevelEnum"
+            }
+        },
+        {
+            "name": "Actor Sounds",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "CS2H",
+                    "name": "Count",
+                    "type": "uint32",
+                    "conflictType": "Benign",
+                    "required": true
+                },
+                {
+                    "name": "Sounds",
+                    "type": "memberArray",
+                    "sorted": true,
+                    "counter": {
+                        "type": "elementCounter",
+                        "path": "CS2H - Count"
+                    },
+                    "member": {
+                        "name": "Sound",
+                        "type": "memberStruct",
+                        "unordered": true,
+                        "members": [
+                            {
+                                "signature": "CS2K",
+                                "name": "Keyword",
+                                "type": "formId",
+                                "signatures": [
+                                    "KYWD"
+                                ]
+                            },
+                            {
+                                "signature": "CS2D",
+                                "name": "Sound",
+                                "type": "formId",
+                                "required": true,
+                                "signatures": [
+                                    "SNDR"
+                                ]
+                            }
+                        ],
+                        "sortKey": [
+                            0
+                        ]
+                    }
+                },
+                {
+                    "signature": "CS2E",
+                    "name": "End Marker",
+                    "type": "empty",
+                    "required": true
+                },
+                {
+                    "signature": "CS2F",
+                    "name": "Finalize",
+                    "type": "bytes",
+                    "size": 1,
+                    "required": true
+                }
+            ]
+        },
+        {
+            "signature": "CSCR",
+            "name": "Inherits Sounds From",
+            "type": "formId",
+            "signatures": [
+                "NPC_"
+            ]
+        },
+        {
+            "signature": "PFRN",
+            "name": "Power Armor Stand",
+            "type": "formId",
+            "signatures": [
+                "FURN"
+            ]
+        },
+        {
+            "signature": "DOFT",
+            "name": "Default Outfit",
+            "type": "formId",
+            "signatures": [
+                "OTFT"
+            ]
+        },
+        {
+            "signature": "SOFT",
+            "name": "Sleeping Outfit",
+            "type": "formId",
+            "signatures": [
+                "OTFT"
+            ]
+        },
+        {
+            "signature": "DPLT",
+            "name": "Default Package List",
+            "type": "formId",
+            "signatures": [
+                "FLST"
+            ]
+        },
+        {
+            "signature": "CRIF",
+            "name": "Crime Faction",
+            "type": "formId",
+            "signatures": [
+                "FACT"
+            ]
+        },
+        {
+            "signature": "FTST",
+            "name": "Head Texture",
+            "type": "formId",
+            "signatures": [
+                "TXST"
+            ]
+        },
+        {
+            "signature": "QNAM",
+            "name": "Texture lighting",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Red",
+                    "type": "float",
+                    "scale": 255,
+                    "required": true
+                },
+                {
+                    "name": "Green",
+                    "type": "float",
+                    "scale": 255,
+                    "required": true
+                },
+                {
+                    "name": "Blue",
+                    "type": "float",
+                    "scale": 255,
+                    "required": true
+                },
+                {
+                    "name": "Alpha",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "MSDK",
+            "name": "Morph Keys",
+            "type": "array",
+            "element": {
+                "name": "Key",
+                "type": "uint32",
+                "format": {
+                    "type": "MorphValueFormat"
+                }
+            }
+        },
+        {
+            "signature": "MSDV",
+            "name": "Morph Values",
+            "type": "array",
+            "element": {
+                "name": "Value",
+                "type": "float"
+            }
+        },
+        {
+            "name": "Face Tinting Layers",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "name": "Layer",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "TETI",
+                        "name": "Index",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Data Type",
+                                "type": "uint16",
+                                "format": {
+                                    "type": "enum",
+                                    "options": {
+                                        "0": "",
+                                        "1": "Value/Color",
+                                        "2": "Value"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Index",
+                                "type": "uint16",
+                                "format": {
+                                    "type": "TintLayerFormat"
+                                }
+                            }
+                        ],
+                        "sortKey": [
+                            1
+                        ]
+                    },
+                    {
+                        "signature": "TEND",
+                        "name": "Data",
+                        "type": "struct",
+                        "required": true,
+                        "elements": [
+                            {
+                                "name": "Value",
+                                "type": "uint8",
+                                "format": {
+                                    "type": "divide",
+                                    "value": 100
+                                }
+                            },
+                            {
+                                "id": "ByteColors",
+                                "name": "Color"
+                            },
+                            {
+                                "name": "Template Color Index",
+                                "type": "int16"
+                            }
+                        ]
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        },
+        {
+            "signature": "MRSV",
+            "name": "Body Morph Region Values",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Head",
+                    "type": "float"
+                },
+                {
+                    "name": "Upper Torso",
+                    "type": "float"
+                },
+                {
+                    "name": "Arms",
+                    "type": "float"
+                },
+                {
+                    "name": "Lower Torso",
+                    "type": "float"
+                },
+                {
+                    "name": "Legs",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Face Morphs",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "name": "Face Morph",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "FMRI",
+                        "name": "Index",
+                        "type": "uint32",
+                        "format": {
+                            "type": "FaceMorphFormat"
+                        }
+                    },
+                    {
+                        "signature": "FMRS",
+                        "name": "Values",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Position - X",
+                                "type": "float"
+                            },
+                            {
+                                "name": "Position - Y",
+                                "type": "float"
+                            },
+                            {
+                                "name": "Position - Z",
+                                "type": "float"
+                            },
+                            {
+                                "name": "Rotation - X",
+                                "type": "float"
+                            },
+                            {
+                                "name": "Rotation - Y",
+                                "type": "float"
+                            },
+                            {
+                                "name": "Rotation - Z",
+                                "type": "float"
+                            },
+                            {
+                                "name": "Scale",
+                                "type": "float"
+                            },
+                            {
+                                "name": "Unknown",
+                                "type": "bytes"
+                            }
+                        ]
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        },
+        {
+            "signature": "FMIN",
+            "name": "Facial Morph Intensity",
+            "type": "float"
+        },
+        {
+            "id": "ATTX"
+        }
+    ]
+}

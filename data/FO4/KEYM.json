@@ -1,0 +1,72 @@
+{
+    "signature": "KEYM",
+    "type": "record",
+    "name": "Key",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "11": "Calc Value From Components",
+            "12": "Ignored",
+            "13": "Pack-In Use Only"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "VMAD"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "PTRN"
+        },
+        {
+            "id": "FULL",
+            "required": true
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "MICO"
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "id": "YNAM"
+        },
+        {
+            "id": "ZNAM"
+        },
+        {
+            "id": "KSIZ"
+        },
+        {
+            "id": "KWDAs"
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Value",
+                    "type": "int32"
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                }
+            ]
+        }
+    ]
+}

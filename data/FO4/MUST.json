@@ -1,0 +1,92 @@
+{
+    "signature": "MUST",
+    "type": "record",
+    "name": "Music Track",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "CNAM",
+            "name": "Track Type",
+            "type": "uint32",
+            "required": true,
+            "format": {
+                "type": "enum",
+                "options": {
+                    "603355331": "Palette",
+                    "1859641416": "Single Track",
+                    "2712257749": "Silent Track"
+                }
+            }
+        },
+        {
+            "signature": "FLTV",
+            "name": "Duration",
+            "type": "float"
+        },
+        {
+            "signature": "DNAM",
+            "name": "Fade-Out",
+            "type": "float"
+        },
+        {
+            "signature": "ANAM",
+            "name": "Track FileName",
+            "type": "string"
+        },
+        {
+            "signature": "BNAM",
+            "name": "Finale FileName",
+            "type": "string"
+        },
+        {
+            "signature": "LNAM",
+            "name": "Loop Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Loop Begins",
+                    "type": "float"
+                },
+                {
+                    "name": "Loop Ends",
+                    "type": "float"
+                },
+                {
+                    "name": "Loop Count",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "signature": "FNAM",
+            "name": "Cue Points",
+            "type": "array",
+            "notAlignable": 1,
+            "element": {
+                "name": "Point",
+                "type": "float"
+            }
+        },
+        {
+            "id": "CITC"
+        },
+        {
+            "id": "CTDAsCount"
+        },
+        {
+            "signature": "SNAM",
+            "name": "Tracks",
+            "type": "array",
+            "element": {
+                "name": "Track",
+                "type": "formId",
+                "signatures": [
+                    "MUST",
+                    "NULL"
+                ]
+            }
+        }
+    ]
+}

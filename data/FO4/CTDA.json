@@ -1,0 +1,1127 @@
+{
+    "name": "Condition",
+    "type": "memberStruct",
+    "members": [
+        {
+            "signature": "CTDA",
+            "name": "",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Type",
+                    "type": "uint8",
+                    "afterSet": "CtdaTypeAfterSet",
+                    "format": {
+                        "type": "CtdaTypeFormat"
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3,
+                    "conflictType": "Ignore"
+                },
+                {
+                    "name": "Comparison Value",
+                    "type": "union",
+                    "decider": "CTDACompValueDecider",
+                    "elements": [
+                        {
+                            "name": "Comparison Value - Float",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Comparison Value - Global",
+                            "type": "formId",
+                            "signatures": [
+                                "GLOB"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Function",
+                    "type": "uint16",
+                    "format": {
+                        "type": "CTDAFunctionFormat"
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 2,
+                    "conflictType": "Ignore"
+                },
+                {
+                    "name": "Parameter #1",
+                    "type": "union",
+                    "decider": "CTDAParam1Decider",
+                    "elements": [
+                        {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 4,
+                            "zeroSortKey": 1
+                        },
+                        {
+                            "name": "None",
+                            "type": "bytes",
+                            "size": 4,
+                            "conflictType": "Ignore",
+                            "zeroSortKey": 1
+                        },
+                        {
+                            "name": "String",
+                            "type": "uint32",
+                            "format": {
+                                "type": "CTDAParam1StringFormat"
+                            }
+                        },
+                        {
+                            "name": "Integer",
+                            "type": "int32"
+                        },
+                        {
+                            "name": "Float",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Actor",
+                            "type": "formId",
+                            "signatures": [
+                                "NULL",
+                                "PLYR",
+                                "ACHR",
+                                "REFR"
+                            ]
+                        },
+                        {
+                            "name": "Actor Base",
+                            "type": "formId",
+                            "signatures": [
+                                "NPC_"
+                            ]
+                        },
+                        {
+                            "id": "ActorValue"
+                        },
+                        {
+                            "name": "Player Action",
+                            "type": "uint32",
+                            "format": {
+                                "id": "AdvanceActionEnum"
+                            }
+                        },
+                        {
+                            "name": "Alias",
+                            "type": "int32",
+                            "format": {
+                                "type": "ConditionAliasFormat"
+                            }
+                        },
+                        {
+                            "name": "Alignment",
+                            "type": "uint32",
+                            "format": {
+                                "id": "AlignmentEnum"
+                            }
+                        },
+                        {
+                            "name": "Association Type",
+                            "type": "formId",
+                            "signatures": [
+                                "ASTP"
+                            ]
+                        },
+                        {
+                            "name": "Axis",
+                            "type": "uint32",
+                            "format": {
+                                "id": "AxisEnum"
+                            }
+                        },
+                        {
+                            "name": "Casting Type",
+                            "type": "uint32",
+                            "format": {
+                                "id": "CastingSourceEnum"
+                            }
+                        },
+                        {
+                            "name": "Cell",
+                            "type": "formId",
+                            "signatures": [
+                                "CELL"
+                            ]
+                        },
+                        {
+                            "name": "Class",
+                            "type": "formId",
+                            "signatures": [
+                                "CLAS"
+                            ]
+                        },
+                        {
+                            "name": "Crime Type",
+                            "type": "uint32",
+                            "format": {
+                                "id": "CrimeTypeEnum"
+                            }
+                        },
+                        {
+                            "name": "Critical Stage",
+                            "type": "uint32",
+                            "format": {
+                                "id": "CriticalStageEnum"
+                            }
+                        },
+                        {
+                            "name": "Encounter Zone",
+                            "type": "formId",
+                            "signatures": [
+                                "ECZN"
+                            ]
+                        },
+                        {
+                            "name": "Equip Type",
+                            "type": "formId",
+                            "signatures": [
+                                "EQUP"
+                            ]
+                        },
+                        {
+                            "name": "Event",
+                            "type": "uint32",
+                            "format": {
+                                "type": "EventFunctionAndMemberFormat"
+                            }
+                        },
+                        {
+                            "name": "Event Data",
+                            "type": "formId"
+                        },
+                        {
+                            "name": "Faction",
+                            "type": "formId",
+                            "signatures": [
+                                "FACT"
+                            ]
+                        },
+                        {
+                            "name": "Form List",
+                            "type": "formId",
+                            "signatures": [
+                                "FLST"
+                            ]
+                        },
+                        {
+                            "name": "Form Type",
+                            "type": "uint32",
+                            "format": {
+                                "id": "FormTypeEnum"
+                            }
+                        },
+                        {
+                            "name": "Furniture",
+                            "type": "formId",
+                            "signatures": [
+                                "FURN",
+                                "FLST"
+                            ]
+                        },
+                        {
+                            "name": "Furniture Anim",
+                            "type": "uint32",
+                            "format": {
+                                "id": "FurnitureAnimTypeEnum"
+                            }
+                        },
+                        {
+                            "name": "Furniture Entry",
+                            "type": "uint32",
+                            "format": {
+                                "type": "enum",
+                                "options": {
+                                    "65536": "Front",
+                                    "131072": "Behind",
+                                    "262144": "Right",
+                                    "524288": "Left",
+                                    "1048576": "Up"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Global",
+                            "type": "formId",
+                            "signatures": [
+                                "GLOB"
+                            ]
+                        },
+                        {
+                            "name": "Idle",
+                            "type": "formId",
+                            "signatures": [
+                                "IDLE"
+                            ]
+                        },
+                        {
+                            "name": "Inventory Object",
+                            "type": "formId",
+                            "signatures": {
+                                "id": "sigBaseObjects"
+                            }
+                        },
+                        {
+                            "name": "Keyword",
+                            "type": "formId",
+                            "signatures": [
+                                "KYWD",
+                                "FLST",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Location",
+                            "type": "formId",
+                            "signatures": [
+                                "LCTN"
+                            ]
+                        },
+                        {
+                            "name": "Base Effect",
+                            "type": "formId",
+                            "signatures": [
+                                "MGEF"
+                            ]
+                        },
+                        {
+                            "name": "Effect Item",
+                            "type": "formId",
+                            "signatures": [
+                                "SPEL",
+                                "ENCH",
+                                "ALCH",
+                                "INGR",
+                                "SCRL"
+                            ]
+                        },
+                        {
+                            "name": "Misc Stat",
+                            "type": "uint32",
+                            "format": {
+                                "id": "MiscStatEnum"
+                            }
+                        },
+                        {
+                            "name": "Object Reference",
+                            "type": "formId",
+                            "signatures": {
+                                "id": "sigReferences"
+                            }
+                        },
+                        {
+                            "name": "Owner",
+                            "type": "formId",
+                            "signatures": [
+                                "NULL",
+                                "FACT",
+                                "NPC_"
+                            ]
+                        },
+                        {
+                            "name": "Package",
+                            "type": "formId",
+                            "signatures": [
+                                "PACK"
+                            ]
+                        },
+                        {
+                            "name": "Packdata ID",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Perk",
+                            "type": "formId",
+                            "signatures": [
+                                "PERK"
+                            ]
+                        },
+                        {
+                            "name": "Quest",
+                            "type": "formId",
+                            "overlayCallback": "CTDAParamQuestOverlay",
+                            "signatures": [
+                                "QUST"
+                            ]
+                        },
+                        {
+                            "name": "Quest Stage",
+                            "type": "uint32",
+                            "format": {
+                                "type": "CTDAParam2QuestStageFormat"
+                            }
+                        },
+                        {
+                            "name": "Race",
+                            "type": "formId",
+                            "signatures": [
+                                "RACE"
+                            ]
+                        },
+                        {
+                            "name": "Referenceable Object",
+                            "type": "formId",
+                            "signatures": {
+                                "id": "sigBaseObjects"
+                            }
+                        },
+                        {
+                            "name": "Location Ref Type",
+                            "type": "formId",
+                            "signatures": [
+                                "LCRT"
+                            ]
+                        },
+                        {
+                            "name": "Region",
+                            "type": "formId",
+                            "signatures": [
+                                "REGN"
+                            ]
+                        },
+                        {
+                            "name": "Scene",
+                            "type": "formId",
+                            "signatures": [
+                                "NULL",
+                                "SCEN"
+                            ]
+                        },
+                        {
+                            "name": "Sex",
+                            "type": "uint32",
+                            "format": {
+                                "id": "SexEnum"
+                            }
+                        },
+                        {
+                            "name": "Shout",
+                            "type": "formId",
+                            "signatures": [
+                                "SHOU"
+                            ]
+                        },
+                        {
+                            "name": "Variable Name (unused)",
+                            "type": "bytes",
+                            "size": 4,
+                            "conflictType": "Ignore",
+                            "zeroSortKey": 1
+                        },
+                        {
+                            "name": "VATS Value Function",
+                            "type": "uint32",
+                            "format": {
+                                "id": "VatsValueFunctionEnum"
+                            }
+                        },
+                        {
+                            "name": "VATS Value Param (unused)",
+                            "type": "uint32",
+                            "zeroSortKey": 1
+                        },
+                        {
+                            "name": "Voice Type",
+                            "type": "formId",
+                            "signatures": [
+                                "VTYP",
+                                "FLST"
+                            ]
+                        },
+                        {
+                            "name": "Ward State",
+                            "type": "uint32",
+                            "format": {
+                                "id": "WardStateEnum"
+                            }
+                        },
+                        {
+                            "name": "Weather",
+                            "type": "formId",
+                            "signatures": [
+                                "WTHR"
+                            ]
+                        },
+                        {
+                            "name": "Worldspace",
+                            "type": "formId",
+                            "signatures": [
+                                "WRLD",
+                                "FLST"
+                            ]
+                        },
+                        {
+                            "name": "Damage Type",
+                            "type": "formId",
+                            "signatures": [
+                                "DMGT",
+                                "FLST"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Parameter #2",
+                    "type": "union",
+                    "decider": "CTDAParam2Decider",
+                    "elements": [
+                        {
+                            "name": "Unknown",
+                            "type": "bytes",
+                            "size": 4,
+                            "zeroSortKey": 1
+                        },
+                        {
+                            "name": "None",
+                            "type": "bytes",
+                            "size": 4,
+                            "conflictType": "Ignore",
+                            "zeroSortKey": 1
+                        },
+                        {
+                            "name": "String",
+                            "type": "uint32",
+                            "format": {
+                                "type": "CTDAParam2StringFormat"
+                            }
+                        },
+                        {
+                            "name": "Integer",
+                            "type": "int32"
+                        },
+                        {
+                            "name": "Float",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Actor",
+                            "type": "formId",
+                            "signatures": [
+                                "NULL",
+                                "PLYR",
+                                "ACHR",
+                                "REFR"
+                            ]
+                        },
+                        {
+                            "name": "Actor Base",
+                            "type": "formId",
+                            "signatures": [
+                                "NPC_"
+                            ]
+                        },
+                        {
+                            "id": "ActorValue"
+                        },
+                        {
+                            "name": "Player Action",
+                            "type": "uint32",
+                            "format": {
+                                "id": "AdvanceActionEnum"
+                            }
+                        },
+                        {
+                            "name": "Alias",
+                            "type": "int32",
+                            "format": {
+                                "type": "ConditionAliasFormat"
+                            }
+                        },
+                        {
+                            "name": "Alignment",
+                            "type": "uint32",
+                            "format": {
+                                "id": "AlignmentEnum"
+                            }
+                        },
+                        {
+                            "name": "Association Type",
+                            "type": "formId",
+                            "signatures": [
+                                "ASTP"
+                            ]
+                        },
+                        {
+                            "name": "Axis",
+                            "type": "uint32",
+                            "format": {
+                                "id": "AxisEnum"
+                            }
+                        },
+                        {
+                            "name": "Casting Type",
+                            "type": "uint32",
+                            "format": {
+                                "id": "CastingSourceEnum"
+                            }
+                        },
+                        {
+                            "name": "Cell",
+                            "type": "formId",
+                            "signatures": [
+                                "CELL"
+                            ]
+                        },
+                        {
+                            "name": "Class",
+                            "type": "formId",
+                            "signatures": [
+                                "CLAS"
+                            ]
+                        },
+                        {
+                            "name": "Crime Type",
+                            "type": "uint32",
+                            "format": {
+                                "id": "CrimeTypeEnum"
+                            }
+                        },
+                        {
+                            "name": "Critical Stage",
+                            "type": "uint32",
+                            "format": {
+                                "id": "CriticalStageEnum"
+                            }
+                        },
+                        {
+                            "name": "Encounter Zone",
+                            "type": "formId",
+                            "signatures": [
+                                "ECZN"
+                            ]
+                        },
+                        {
+                            "name": "Equip Type",
+                            "type": "formId",
+                            "signatures": [
+                                "EQUP"
+                            ]
+                        },
+                        {
+                            "name": "Event",
+                            "type": "uint32",
+                            "format": {
+                                "type": "EventFunctionAndMemberFormat"
+                            }
+                        },
+                        {
+                            "name": "Event Data",
+                            "type": "formId"
+                        },
+                        {
+                            "name": "Faction",
+                            "type": "formId",
+                            "signatures": [
+                                "FACT"
+                            ]
+                        },
+                        {
+                            "name": "Form List",
+                            "type": "formId",
+                            "signatures": [
+                                "FLST"
+                            ]
+                        },
+                        {
+                            "name": "Form Type",
+                            "type": "uint32",
+                            "format": {
+                                "id": "FormTypeEnum"
+                            }
+                        },
+                        {
+                            "name": "Furniture",
+                            "type": "formId",
+                            "signatures": [
+                                "FURN",
+                                "FLST"
+                            ]
+                        },
+                        {
+                            "name": "Furniture Anim",
+                            "type": "uint32",
+                            "format": {
+                                "id": "FurnitureAnimTypeEnum"
+                            }
+                        },
+                        {
+                            "name": "Furniture Entry",
+                            "type": "uint32",
+                            "format": {
+                                "type": "enum",
+                                "options": {
+                                    "65536": "Front",
+                                    "131072": "Behind",
+                                    "262144": "Right",
+                                    "524288": "Left",
+                                    "1048576": "Up"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Global",
+                            "type": "formId",
+                            "signatures": [
+                                "GLOB"
+                            ]
+                        },
+                        {
+                            "name": "Idle",
+                            "type": "formId",
+                            "signatures": [
+                                "IDLE"
+                            ]
+                        },
+                        {
+                            "name": "Inventory Object",
+                            "type": "formId",
+                            "signatures": {
+                                "id": "sigBaseObjects"
+                            }
+                        },
+                        {
+                            "name": "Keyword",
+                            "type": "formId",
+                            "signatures": [
+                                "KYWD",
+                                "FLST",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Location",
+                            "type": "formId",
+                            "signatures": [
+                                "LCTN"
+                            ]
+                        },
+                        {
+                            "name": "Base Effect",
+                            "type": "formId",
+                            "signatures": [
+                                "MGEF"
+                            ]
+                        },
+                        {
+                            "name": "Effect Item",
+                            "type": "formId",
+                            "signatures": [
+                                "SPEL",
+                                "ENCH",
+                                "ALCH",
+                                "INGR",
+                                "SCRL"
+                            ]
+                        },
+                        {
+                            "name": "Misc Stat",
+                            "type": "uint32",
+                            "format": {
+                                "id": "MiscStatEnum"
+                            }
+                        },
+                        {
+                            "name": "Object Reference",
+                            "type": "formId",
+                            "signatures": {
+                                "id": "sigReferences"
+                            }
+                        },
+                        {
+                            "name": "Owner",
+                            "type": "formId",
+                            "signatures": [
+                                "NULL",
+                                "FACT",
+                                "NPC_"
+                            ]
+                        },
+                        {
+                            "name": "Package",
+                            "type": "formId",
+                            "signatures": [
+                                "PACK"
+                            ]
+                        },
+                        {
+                            "name": "Packdata ID",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Perk",
+                            "type": "formId",
+                            "signatures": [
+                                "PERK"
+                            ]
+                        },
+                        {
+                            "name": "Quest",
+                            "type": "formId",
+                            "signatures": [
+                                "QUST"
+                            ]
+                        },
+                        {
+                            "name": "Quest Stage",
+                            "type": "uint32",
+                            "format": {
+                                "type": "CTDAParam2QuestStageFormat"
+                            }
+                        },
+                        {
+                            "name": "Race",
+                            "type": "formId",
+                            "signatures": [
+                                "RACE"
+                            ]
+                        },
+                        {
+                            "name": "Referenceable Object",
+                            "type": "formId",
+                            "signatures": {
+                                "id": "sigBaseObjects"
+                            }
+                        },
+                        {
+                            "name": "Location Ref Type",
+                            "type": "formId",
+                            "signatures": [
+                                "LCRT"
+                            ]
+                        },
+                        {
+                            "name": "Region",
+                            "type": "formId",
+                            "signatures": [
+                                "REGN"
+                            ]
+                        },
+                        {
+                            "name": "Scene",
+                            "type": "formId",
+                            "signatures": [
+                                "NULL",
+                                "SCEN"
+                            ]
+                        },
+                        {
+                            "name": "Sex",
+                            "type": "uint32",
+                            "format": {
+                                "id": "SexEnum"
+                            }
+                        },
+                        {
+                            "name": "Shout",
+                            "type": "formId",
+                            "signatures": [
+                                "SHOU"
+                            ]
+                        },
+                        {
+                            "name": "Variable Name (unused)",
+                            "type": "bytes",
+                            "size": 4,
+                            "conflictType": "Ignore"
+                        },
+                        {
+                            "name": "VATS Value Function",
+                            "type": "uint32",
+                            "format": {
+                                "id": "VatsValueFunctionEnum"
+                            }
+                        },
+                        {
+                            "name": "VATS Value Param",
+                            "type": "union",
+                            "decider": "CTDAParam2VATSValueParamDecider",
+                            "elements": [
+                                {
+                                    "name": "Weapon",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "WEAP"
+                                    ]
+                                },
+                                {
+                                    "name": "Weapon List",
+                                    "type": "formId",
+                                    "validateFlstRefs": true,
+                                    "signatures": [
+                                        "FLST"
+                                    ]
+                                },
+                                {
+                                    "name": "Target",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "NPC_"
+                                    ]
+                                },
+                                {
+                                    "name": "Target List",
+                                    "type": "formId",
+                                    "validateFlstRefs": true,
+                                    "signatures": [
+                                        "FLST"
+                                    ]
+                                },
+                                {
+                                    "name": "Unknown",
+                                    "type": "bytes",
+                                    "size": 4,
+                                    "conflictType": "Ignore"
+                                },
+                                {
+                                    "name": "Target Part",
+                                    "type": "int32",
+                                    "format": {
+                                        "id": "ActorValueEnum"
+                                    }
+                                },
+                                {
+                                    "name": "VATS Action",
+                                    "type": "uint32",
+                                    "format": {
+                                        "type": "enum",
+                                        "options": {
+                                            "0": "Unarmed Attack",
+                                            "1": "One Hand Melee Attack",
+                                            "2": "Two Hand Melee Attack",
+                                            "3": "Magic Attack",
+                                            "4": "Ranged Attack",
+                                            "5": "Reload",
+                                            "6": "Crouch",
+                                            "7": "Stand",
+                                            "8": "Switch Weapon",
+                                            "9": "Toggle Weapon Drawn",
+                                            "10": "Heal",
+                                            "11": "Player Death"
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "Unknown",
+                                    "type": "bytes",
+                                    "size": 4,
+                                    "conflictType": "Ignore",
+                                    "zeroSortKey": 1
+                                },
+                                {
+                                    "name": "Unknown",
+                                    "type": "bytes",
+                                    "size": 4,
+                                    "conflictType": "Ignore",
+                                    "zeroSortKey": 1
+                                },
+                                {
+                                    "name": "Critical Effect",
+                                    "type": "formId",
+                                    "signatures": [
+                                        "SPEL"
+                                    ]
+                                },
+                                {
+                                    "name": "Critical Effect List",
+                                    "type": "formId",
+                                    "validateFlstRefs": true,
+                                    "signatures": [
+                                        "FLST"
+                                    ]
+                                },
+                                {
+                                    "name": "Unknown",
+                                    "type": "bytes",
+                                    "size": 4,
+                                    "conflictType": "Ignore",
+                                    "zeroSortKey": 1
+                                },
+                                {
+                                    "name": "Unknown",
+                                    "type": "bytes",
+                                    "size": 4,
+                                    "conflictType": "Ignore",
+                                    "zeroSortKey": 1
+                                },
+                                {
+                                    "name": "Unknown",
+                                    "type": "bytes",
+                                    "size": 4,
+                                    "conflictType": "Ignore",
+                                    "zeroSortKey": 1
+                                },
+                                {
+                                    "name": "Unknown",
+                                    "type": "bytes",
+                                    "size": 4,
+                                    "conflictType": "Ignore",
+                                    "zeroSortKey": 1
+                                },
+                                {
+                                    "name": "Weapon Type",
+                                    "type": "uint32",
+                                    "format": {
+                                        "id": "WeaponAnimTypeEnum"
+                                    }
+                                },
+                                {
+                                    "name": "Unknown",
+                                    "type": "bytes",
+                                    "size": 4,
+                                    "conflictType": "Ignore",
+                                    "zeroSortKey": 1
+                                },
+                                {
+                                    "name": "Unknown",
+                                    "type": "bytes",
+                                    "size": 4,
+                                    "conflictType": "Ignore",
+                                    "zeroSortKey": 1
+                                },
+                                {
+                                    "name": "Projectile Type",
+                                    "type": "uint32",
+                                    "format": {
+                                        "type": "enum",
+                                        "options": {
+                                            "0": "Missile",
+                                            "1": "Lobber",
+                                            "2": "Beam",
+                                            "3": "Flame",
+                                            "4": "Cone",
+                                            "5": "Barrier",
+                                            "6": "Arrow"
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "Delivery Type",
+                                    "type": "uint32",
+                                    "format": {
+                                        "id": "TargetEnum"
+                                    }
+                                },
+                                {
+                                    "name": "Casting Type",
+                                    "type": "uint32",
+                                    "format": {
+                                        "id": "CastEnum"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Voice Type",
+                            "type": "formId",
+                            "signatures": [
+                                "VTYP",
+                                "FLST"
+                            ]
+                        },
+                        {
+                            "name": "Ward State",
+                            "type": "uint32",
+                            "format": {
+                                "id": "WardStateEnum"
+                            }
+                        },
+                        {
+                            "name": "Weather",
+                            "type": "formId",
+                            "signatures": [
+                                "WTHR"
+                            ]
+                        },
+                        {
+                            "name": "Worldspace",
+                            "type": "formId",
+                            "signatures": [
+                                "WRLD",
+                                "FLST"
+                            ]
+                        },
+                        {
+                            "name": "Damage Type",
+                            "type": "formId",
+                            "signatures": [
+                                "DMGT",
+                                "FLST"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Run On",
+                    "type": "uint32",
+                    "afterSet": "CTDARunOnAfterSet",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Subject",
+                            "1": "Target",
+                            "2": "Reference",
+                            "3": "Combat Target",
+                            "4": "Linked Reference",
+                            "5": "Quest Alias",
+                            "6": "Package Data",
+                            "7": "Event Data",
+                            "8": "Command Target",
+                            "9": "Event Camera Ref",
+                            "10": "My Killer"
+                        }
+                    }
+                },
+                {
+                    "name": "Reference",
+                    "type": "union",
+                    "decider": "CTDAReferenceDecider",
+                    "elements": [
+                        {
+                            "name": "Unused",
+                            "type": "uint32",
+                            "conflictType": "Ignore"
+                        },
+                        {
+                            "name": "Reference",
+                            "type": "formId",
+                            "signatures": {
+                                "id": "sigReferences"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Parameter #3",
+                    "type": "int32"
+                }
+            ],
+            "sortKey": [
+                3,
+                5
+            ]
+        },
+        {
+            "signature": "CIS1",
+            "name": "Parameter #1",
+            "type": "string"
+        },
+        {
+            "signature": "CIS2",
+            "name": "Parameter #2",
+            "type": "string"
+        }
+    ],
+    "sortKey": [
+        0
+    ]
+}

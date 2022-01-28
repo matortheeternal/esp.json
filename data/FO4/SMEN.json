@@ -1,0 +1,58 @@
+{
+    "signature": "SMEN",
+    "type": "record",
+    "name": "Story Manager Event Node",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "PNAM",
+            "name": "Parent ",
+            "type": "formId",
+            "signatures": [
+                "SMQN",
+                "SMBN",
+                "SMEN",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "SNAM",
+            "name": "Previous Sibling ",
+            "type": "formId",
+            "conflictType": "Benign",
+            "signatures": [
+                "SMQN",
+                "SMBN",
+                "SMEN",
+                "NULL"
+            ]
+        },
+        {
+            "id": "CITC",
+            "required": true
+        },
+        {
+            "id": "CTDAsCount"
+        },
+        {
+            "signature": "DNAM",
+            "name": "Flags",
+            "type": "uint32",
+            "format": {
+                "id": "SMNodeFlags"
+            }
+        },
+        {
+            "signature": "XNAM",
+            "type": "bytes"
+        },
+        {
+            "signature": "ENAM",
+            "name": "Type",
+            "type": "string",
+            "size": 4
+        }
+    ]
+}

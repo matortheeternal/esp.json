@@ -1,0 +1,152 @@
+{
+    "signature": "LVLI",
+    "type": "record",
+    "name": "Leveled Item",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "LVLD"
+        },
+        {
+            "signature": "LVLM",
+            "name": "Max Count",
+            "type": "uint8"
+        },
+        {
+            "signature": "LVLF",
+            "name": "Flags",
+            "type": "uint8",
+            "required": true,
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Calculate from all levels <= player's level",
+                    "1": "Calculate for each item in count",
+                    "2": "Use All"
+                }
+            }
+        },
+        {
+            "signature": "LVLG",
+            "name": "Use Global",
+            "type": "formId",
+            "signatures": [
+                "GLOB"
+            ]
+        },
+        {
+            "id": "LLCT"
+        },
+        {
+            "name": "Leveled List Entries",
+            "type": "memberArray",
+            "sorted": true,
+            "counter": {
+                "type": "elementCounter",
+                "path": "LLCT - Count"
+            },
+            "member": {
+                "name": "Leveled List Entry",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "LVLO",
+                        "name": "Base Data",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Level",
+                                "type": "uint16"
+                            },
+                            {
+                                "name": "Unused",
+                                "type": "bytes",
+                                "size": 2,
+                                "conflictType": "Ignore"
+                            },
+                            {
+                                "name": "Reference",
+                                "type": "formId",
+                                "signatures": {
+                                    "id": "sigBaseObjects"
+                                }
+                            },
+                            {
+                                "name": "Count",
+                                "type": "uint16"
+                            },
+                            {
+                                "name": "Chance None",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "Unused",
+                                "type": "bytes",
+                                "size": 1,
+                                "conflictType": "Ignore"
+                            }
+                        ],
+                        "sortKey": [
+                            0,
+                            2
+                        ]
+                    },
+                    {
+                        "id": "COED"
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        },
+        {
+            "signature": "LLKC",
+            "name": "Filter Keyword Chances",
+            "type": "array",
+            "sorted": true,
+            "element": {
+                "name": "Filter",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Keyword",
+                        "type": "formId",
+                        "signatures": [
+                            "KYWD"
+                        ]
+                    },
+                    {
+                        "name": "Chance",
+                        "type": "uint32"
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        },
+        {
+            "signature": "LVSG",
+            "name": "Epic Loot Chance",
+            "type": "formId",
+            "signatures": [
+                "GLOB"
+            ]
+        },
+        {
+            "signature": "ONAM",
+            "name": "Override Name",
+            "type": "string",
+            "localized": true,
+            "conflictType": "Translate",
+            "keepCase": true
+        }
+    ]
+}

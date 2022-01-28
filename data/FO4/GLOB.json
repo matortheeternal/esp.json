@@ -1,0 +1,40 @@
+{
+    "signature": "GLOB",
+    "type": "record",
+    "name": "Global",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "6": "Constant",
+            "12": "Ignored"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "FNAM",
+            "name": "Type",
+            "type": "uint8",
+            "required": true,
+            "defaultEditValue": "Float",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "Unknown",
+                    "98": "Boolean",
+                    "102": "Float",
+                    "108": "Long",
+                    "115": "Short"
+                }
+            }
+        },
+        {
+            "signature": "FLTV",
+            "name": "Value",
+            "type": "float",
+            "required": true
+        }
+    ]
+}

@@ -1,0 +1,86 @@
+{
+    "signature": "MGEF",
+    "type": "record",
+    "name": "Magic Effect",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "VMAD"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MDOB"
+        },
+        {
+            "id": "KSIZ"
+        },
+        {
+            "id": "KWDAs"
+        },
+        {
+            "id": "MGEFData"
+        },
+        {
+            "name": "Counter Effects",
+            "type": "memberArray",
+            "sorted": true,
+            "afterSet": "CounterEffectsAfterSet",
+            "member": {
+                "signature": "ESCE",
+                "name": "Effect",
+                "type": "formId",
+                "signatures": [
+                    "MGEF"
+                ]
+            }
+        },
+        {
+            "signature": "SNDD",
+            "name": "Sounds",
+            "type": "array",
+            "element": {
+                "name": "",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Type",
+                        "type": "uint32",
+                        "format": {
+                            "type": "enum",
+                            "options": {
+                                "0": "Sheathe/Draw",
+                                "1": "Charge",
+                                "2": "Ready",
+                                "3": "Release",
+                                "4": "Concentration Cast Loop",
+                                "5": "On Hit"
+                            }
+                        }
+                    },
+                    {
+                        "name": "Sound",
+                        "type": "formId",
+                        "signatures": [
+                            "SNDR"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "DNAM",
+            "name": "Magic Item Description",
+            "type": "string",
+            "localized": true,
+            "conflictType": "Translate",
+            "keepCase": true
+        },
+        {
+            "id": "CTDAs"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "signature": "MNAM",
+    "name": "PreCut Map Entries",
+    "type": "array",
+    "sorted": true,
+    "element": {
+        "name": "PreCut Map Entry",
+        "type": "struct",
+        "elements": [
+            {
+                "name": "Reference",
+                "type": "formId"
+            },
+            {
+                "name": "Triangles",
+                "type": "array",
+                "sorted": true,
+                "prefix": 2,
+                "element": {
+                    "name": "Triangle",
+                    "type": "uint16",
+                    "linksToCallback": "TriangleLinksTo"
+                }
+            }
+        ],
+        "sortKey": [
+            0
+        ]
+    }
+}

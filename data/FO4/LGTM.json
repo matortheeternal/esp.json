@@ -1,0 +1,142 @@
+{
+    "signature": "LGTM",
+    "type": "record",
+    "name": "Lighting Template",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "DATA",
+            "name": "Lighting",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "id": "ByteColors",
+                    "name": "Ambient Color"
+                },
+                {
+                    "id": "ByteColors",
+                    "name": "Directional Color"
+                },
+                {
+                    "id": "ByteColors",
+                    "name": "Fog Color Near"
+                },
+                {
+                    "name": "Fog Near",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog Far",
+                    "type": "float"
+                },
+                {
+                    "name": "Directional Rotation XY",
+                    "type": "int32"
+                },
+                {
+                    "name": "Directional Rotation Z",
+                    "type": "int32"
+                },
+                {
+                    "name": "Directional Fade",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog Clip Distance",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog Power",
+                    "type": "float"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 32,
+                    "conflictType": "Ignore"
+                },
+                {
+                    "id": "ByteColors",
+                    "name": "Fog Color Far"
+                },
+                {
+                    "name": "Fog Max",
+                    "type": "float"
+                },
+                {
+                    "name": "Light Fade Begin",
+                    "type": "float"
+                },
+                {
+                    "name": "Light Fade End",
+                    "type": "float"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 4,
+                    "conflictType": "Ignore"
+                },
+                {
+                    "name": "Near Height Mid",
+                    "type": "float"
+                },
+                {
+                    "name": "Near Height Range",
+                    "type": "float"
+                },
+                {
+                    "id": "ByteColors",
+                    "name": "Fog Color High Near"
+                },
+                {
+                    "id": "ByteColors",
+                    "name": "Fog Color High Far"
+                },
+                {
+                    "name": "High Density Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog Near Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog Far Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog High Near Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog High Far Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Far Height Mid",
+                    "type": "float"
+                },
+                {
+                    "name": "Far Height Range",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "DALC",
+            "id": "AmbientColors"
+        },
+        {
+            "signature": "WGDR",
+            "name": "God Rays",
+            "type": "formId",
+            "signatures": [
+                "GDRY"
+            ]
+        }
+    ]
+}

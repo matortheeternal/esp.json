@@ -1,0 +1,151 @@
+{
+    "signature": "STAT",
+    "type": "record",
+    "name": "Static",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "0": "",
+            "1": "",
+            "2": "Heading Marker",
+            "3": "",
+            "4": "Non Occluder",
+            "5": "Deleted",
+            "6": "Has Tree LOD",
+            "7": "Add-On LOD Object",
+            "8": "",
+            "9": "Hidden From Local Map",
+            "10": "Headtrack Marker",
+            "11": "Used as Platform",
+            "12": "",
+            "13": "Pack-In Use Only",
+            "14": "",
+            "15": "Has Distant LOD",
+            "16": "",
+            "17": "Uses HD LOD Texture",
+            "18": "",
+            "19": "Has Currents",
+            "20": "",
+            "21": "",
+            "22": "",
+            "23": "Is Marker",
+            "24": "",
+            "25": "Obstacle",
+            "26": "NavMesh Generation - Filter",
+            "27": "NavMesh Generation - Bounding Box",
+            "28": "Show In World Map (Sky Cell Only)",
+            "29": "",
+            "30": "NavMesh Generation - Ground",
+            "31": ""
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "VMAD"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "PTRN"
+        },
+        {
+            "id": "FTYP"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "PRPS"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "signature": "DNAM",
+            "name": "Direction Material",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Max Angle (30-120)",
+                    "type": "float"
+                },
+                {
+                    "name": "Material",
+                    "type": "formId",
+                    "signatures": [
+                        "MATO",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Leaf Amplitude",
+                    "type": "float"
+                },
+                {
+                    "name": "Leaf Frequency",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "id": "NVNM"
+        },
+        {
+            "signature": "MNAM",
+            "name": "Distant LOD",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Level 0",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Mesh",
+                            "type": "string",
+                            "size": 260
+                        }
+                    ]
+                },
+                {
+                    "name": "Level 1",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Mesh",
+                            "type": "string",
+                            "size": 260
+                        }
+                    ]
+                },
+                {
+                    "name": "Level 2",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Mesh",
+                            "type": "string",
+                            "size": 260
+                        }
+                    ]
+                },
+                {
+                    "name": "Level 3",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Mesh",
+                            "type": "string",
+                            "size": 260
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

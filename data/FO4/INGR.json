@@ -1,0 +1,97 @@
+{
+    "signature": "INGR",
+    "type": "record",
+    "name": "Ingredient",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "VMAD"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "KSIZ"
+        },
+        {
+            "id": "KWDAs"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "MICO"
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "id": "ETYP"
+        },
+        {
+            "id": "YNAM"
+        },
+        {
+            "id": "ZNAM"
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Value",
+                    "type": "int32"
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "ENIT",
+            "name": "Effect Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Ingredient Value",
+                    "type": "int32"
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "No auto-calculation",
+                            "1": "Food item",
+                            "2": "Unknown 3",
+                            "3": "Unknown 4",
+                            "4": "Unknown 5",
+                            "5": "Unknown 6",
+                            "6": "Unknown 7",
+                            "7": "Unknown 8",
+                            "8": "References Persist"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": "Effects",
+            "required": true
+        }
+    ]
+}

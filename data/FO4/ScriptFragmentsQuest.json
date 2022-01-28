@@ -1,0 +1,89 @@
+{
+    "name": "Script Fragments",
+    "type": "struct",
+    "afterSet": "ScriptFragmentsQuestAfterSet",
+    "elements": [
+        {
+            "name": "Unknown",
+            "type": "int8"
+        },
+        {
+            "name": "FragmentCount",
+            "type": "uint16",
+            "conflictType": "Benign"
+        },
+        {
+            "name": "ScriptName",
+            "type": "string",
+            "prefix": 2,
+            "afterSet": "ScriptFragmentsQuestScriptNameAfterSet"
+        },
+        {
+            "name": "Script",
+            "type": "union",
+            "decider": "ScriptFragmentsEmptyScriptDecider",
+            "elements": [
+                {
+                    "name": "Script Data",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "id": "ScriptFlags"
+                        },
+                        {
+                            "id": "ScriptProperties"
+                        }
+                    ]
+                },
+                {
+                    "id": "Null"
+                }
+            ]
+        },
+        {
+            "name": "Fragments",
+            "type": "array",
+            "sorted": true,
+            "afterSet": "ScriptFragmentsQuestFragmentsAfterSet",
+            "counter": {
+                "type": "ScriptFragmentsQuestCounter"
+            },
+            "element": {
+                "name": "Fragment",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Quest Stage",
+                        "type": "uint16"
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "int16"
+                    },
+                    {
+                        "name": "Quest Stage Index",
+                        "type": "int32"
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "int8"
+                    },
+                    {
+                        "name": "ScriptName",
+                        "type": "string",
+                        "prefix": 2
+                    },
+                    {
+                        "name": "FragmentName",
+                        "type": "string",
+                        "prefix": 2
+                    }
+                ],
+                "sortKey": [
+                    0,
+                    2
+                ]
+            }
+        }
+    ]
+}

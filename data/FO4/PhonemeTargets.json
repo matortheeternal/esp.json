@@ -1,0 +1,74 @@
+{
+    "signature": "PHWT",
+    "name": "Phoneme Target Weight",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Aah / LipBigAah",
+            "type": "float"
+        },
+        {
+            "name": "BigAah / LipDST",
+            "type": "float"
+        },
+        {
+            "name": "BMP / LipEee",
+            "type": "float"
+        },
+        {
+            "name": "ChJsh / LipFV",
+            "type": "float"
+        },
+        {
+            "name": "DST / LipK",
+            "type": "float"
+        },
+        {
+            "name": "Eee / LipL",
+            "type": "float"
+        },
+        {
+            "name": "Eh / LipR",
+            "type": "float"
+        },
+        {
+            "name": "FV / LipTh",
+            "type": "float"
+        },
+        {
+            "name": "I",
+            "type": "float"
+        },
+        {
+            "name": "K",
+            "type": "float"
+        },
+        {
+            "name": "N",
+            "type": "float"
+        },
+        {
+            "name": "Oh",
+            "type": "float"
+        },
+        {
+            "name": "OohQ",
+            "type": "float"
+        },
+        {
+            "name": "R",
+            "type": "float"
+        },
+        {
+            "name": "TH",
+            "type": "float"
+        },
+        {
+            "name": "W",
+            "type": "float"
+        },
+        {
+            "type": "bytes"
+        }
+    ]
+}

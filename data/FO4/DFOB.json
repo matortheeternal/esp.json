@@ -1,0 +1,15 @@
+{
+    "signature": "DFOB",
+    "type": "record",
+    "name": "Default Object",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "DATA",
+            "name": "Object",
+            "type": "formId"
+        }
+    ]
+}

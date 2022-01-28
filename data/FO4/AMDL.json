@@ -1,0 +1,81 @@
+{
+    "signature": "AMDL",
+    "type": "record",
+    "name": "Aim Model",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "DNAM",
+            "name": "Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Cone of Fire - Min Angle",
+                    "type": "float"
+                },
+                {
+                    "name": "Cone of Fire - Max Angle",
+                    "type": "float"
+                },
+                {
+                    "name": "Cone of Fire - Increase Per Shot",
+                    "type": "float"
+                },
+                {
+                    "name": "Cone of Fire - Decrease Per Sec",
+                    "type": "float"
+                },
+                {
+                    "name": "Cone of Fire - Decrease Delay MS",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Cone of Fire - Sneak Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Recoil - Diminish Spring Force",
+                    "type": "float"
+                },
+                {
+                    "name": "Recoil - Diminish Sights Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Recoil - Max Per Shot",
+                    "type": "float"
+                },
+                {
+                    "name": "Recoil - Min Per Shot",
+                    "type": "float"
+                },
+                {
+                    "name": "Recoil - Hip Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Runaway - Recoil Shots",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Recoil - Arc",
+                    "type": "float"
+                },
+                {
+                    "name": "Recoil - Arc Rotate",
+                    "type": "float"
+                },
+                {
+                    "name": "Cone of Fire - Iron Sights Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Stability - Base Stability",
+                    "type": "float"
+                }
+            ]
+        }
+    ]
+}

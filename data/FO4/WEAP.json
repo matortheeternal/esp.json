@@ -1,0 +1,568 @@
+{
+    "signature": "WEAP",
+    "type": "record",
+    "name": "Weapon",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "2": "Non-Playable",
+            "12": "Ignored",
+            "30": "High-Res 1st Person Only"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "VMAD"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "PTRN"
+        },
+        {
+            "id": "STCP"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "MICO"
+        },
+        {
+            "id": "EITM"
+        },
+        {
+            "signature": "EAMT",
+            "name": "Enchantment Amount",
+            "type": "uint16"
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "id": "ETYP"
+        },
+        {
+            "signature": "BIDS",
+            "name": "Block Bash Impact Data Set",
+            "type": "formId",
+            "signatures": [
+                "IPDS",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "BAMT",
+            "name": "Alternate Block Material",
+            "type": "formId",
+            "signatures": [
+                "MATT",
+                "NULL"
+            ]
+        },
+        {
+            "id": "YNAM"
+        },
+        {
+            "id": "ZNAM"
+        },
+        {
+            "id": "KSIZ"
+        },
+        {
+            "id": "KWDAs"
+        },
+        {
+            "id": "DESC"
+        },
+        {
+            "signature": "INRD",
+            "name": "Instance Naming",
+            "type": "formId",
+            "signatures": [
+                "INNR"
+            ]
+        },
+        {
+            "id": "APPR"
+        },
+        {
+            "id": "ObjectTemplate"
+        },
+        {
+            "signature": "NNAM",
+            "name": "Embedded Weapon Mod",
+            "type": "formId",
+            "signatures": [
+                "OMOD"
+            ]
+        },
+        {
+            "name": "1st Person Model",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "MOD4",
+                    "name": "Model FileName",
+                    "type": "string"
+                },
+                {
+                    "signature": "MO4T",
+                    "name": "Texture Files Hashes",
+                    "type": "bytes",
+                    "size": 0,
+                    "conflictType": "Ignore"
+                },
+                {
+                    "id": "MO4S"
+                },
+                {
+                    "id": "MO4C"
+                },
+                {
+                    "id": "MO4F"
+                }
+            ]
+        },
+        {
+            "signature": "DNAM",
+            "name": "Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Ammo",
+                    "type": "formId",
+                    "signatures": [
+                        "AMMO",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Speed",
+                    "type": "float"
+                },
+                {
+                    "name": "Reload Speed",
+                    "type": "float"
+                },
+                {
+                    "name": "Reach",
+                    "type": "float"
+                },
+                {
+                    "name": "Min Range",
+                    "type": "float"
+                },
+                {
+                    "name": "Max Range",
+                    "type": "float"
+                },
+                {
+                    "name": "Attack Delay",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Damage - OutOfRange Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "On Hit",
+                    "type": "uint32",
+                    "format": {
+                        "id": "HitBehaviourEnum"
+                    }
+                },
+                {
+                    "name": "Skill",
+                    "type": "formId",
+                    "signatures": [
+                        "AVIF",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Resist",
+                    "type": "formId",
+                    "signatures": [
+                        "AVIF",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Player Only",
+                            "1": "NPCs Use Ammo",
+                            "2": "No Jam After Reload",
+                            "3": "Charging Reload",
+                            "4": "Minor Crime",
+                            "5": "Fixed Range",
+                            "6": "Not Used In Normal Combat",
+                            "7": "Unknown 8",
+                            "8": "Crit Effect - on Death",
+                            "9": "Charging Attack",
+                            "10": "Unknown 11",
+                            "11": "Hold Input To Power",
+                            "12": "Non Hostile",
+                            "13": "Bound Weapon",
+                            "14": "Ignores Normal Weapon Resistance",
+                            "15": "Automatic",
+                            "16": "Repeatable Single Fire",
+                            "17": "Can't Drop",
+                            "18": "Hide Backpack",
+                            "19": "Embedded Weapon",
+                            "20": "Not Playable",
+                            "21": "Has Scope",
+                            "22": "Bolt Action",
+                            "23": "Secondary Weapon",
+                            "24": "Disable Shells",
+                            "25": "Unknown 26",
+                            "26": "Unknown 27",
+                            "27": "Unknown 28",
+                            "28": "Unknown 29",
+                            "29": "Unknown 30",
+                            "30": "Unknown 31",
+                            "31": "Unknown 32"
+                        }
+                    }
+                },
+                {
+                    "name": "Capacity",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Animation Type",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "HandToHandMelee",
+                            "1": "OneHandSword",
+                            "2": "OneHandDagger",
+                            "3": "OneHandAxe",
+                            "4": "OneHandMace",
+                            "5": "TwoHandSword",
+                            "6": "TwoHandAxe",
+                            "7": "Bow",
+                            "8": "Staff",
+                            "9": "Gun",
+                            "10": "Grenade",
+                            "11": "Mine"
+                        }
+                    }
+                },
+                {
+                    "name": "Damage - Secondary",
+                    "type": "float"
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                },
+                {
+                    "name": "Value",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Damage - Base",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Sound Level",
+                    "type": "uint32",
+                    "format": {
+                        "id": "SoundLevelEnum"
+                    }
+                },
+                {
+                    "name": "Sound - Attack",
+                    "type": "formId",
+                    "signatures": [
+                        "SNDR",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Sound - Attack 2D",
+                    "type": "formId",
+                    "signatures": [
+                        "SNDR",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Sound - Attack Loop",
+                    "type": "formId",
+                    "signatures": [
+                        "SNDR",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Sound - Attack Fail",
+                    "type": "formId",
+                    "signatures": [
+                        "SNDR",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Sound - Idle",
+                    "type": "formId",
+                    "signatures": [
+                        "SNDR",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Sound - Equip Sound",
+                    "type": "formId",
+                    "signatures": [
+                        "SNDR",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Sound - UnEquip Sound",
+                    "type": "formId",
+                    "signatures": [
+                        "SNDR",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Sound - Fast Equip Sound",
+                    "type": "formId",
+                    "signatures": [
+                        "SNDR",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Accuracy Bonus",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Animation Attack Seconds",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 2
+                },
+                {
+                    "name": "Action Point Cost",
+                    "type": "float"
+                },
+                {
+                    "name": "Full Power Seconds",
+                    "type": "float"
+                },
+                {
+                    "name": "Min Power Per Shot",
+                    "type": "float"
+                },
+                {
+                    "name": "Stagger",
+                    "type": "uint32",
+                    "format": {
+                        "id": "StaggerEnum"
+                    }
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                }
+            ]
+        },
+        {
+            "signature": "FNAM",
+            "name": "",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Animation Fire Seconds",
+                    "type": "float"
+                },
+                {
+                    "name": "Rumble - Left Motor Strength",
+                    "type": "float"
+                },
+                {
+                    "name": "Rumble - Right Motor Strength",
+                    "type": "float"
+                },
+                {
+                    "name": "Rumble - Duration",
+                    "type": "float"
+                },
+                {
+                    "name": "Animation Reload Seconds",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Sighted Transition Seconds",
+                    "type": "float"
+                },
+                {
+                    "name": "# Projectiles",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Override Projectile",
+                    "type": "formId",
+                    "signatures": [
+                        "PROJ",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Pattern",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Constant",
+                            "1": "Square",
+                            "2": "Triangle",
+                            "3": "Sawtooth"
+                        }
+                    }
+                },
+                {
+                    "name": "Rumble - Peroid (ms)",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "signature": "CRDT",
+            "name": "Critical Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Crit Damage Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Crit Charge Bonus",
+                    "type": "float"
+                },
+                {
+                    "name": "Crit Effect",
+                    "type": "formId",
+                    "signatures": [
+                        "SPEL",
+                        "NULL"
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "INAM",
+            "name": "Impact Data Set",
+            "type": "formId",
+            "signatures": [
+                "IPDS"
+            ]
+        },
+        {
+            "signature": "LNAM",
+            "name": "NPC Add Ammo List",
+            "type": "formId",
+            "signatures": [
+                "LVLI"
+            ]
+        },
+        {
+            "signature": "WAMD",
+            "name": "Aim Model",
+            "type": "formId",
+            "signatures": [
+                "AMDL"
+            ]
+        },
+        {
+            "signature": "WZMD",
+            "name": "Zoom",
+            "type": "formId",
+            "signatures": [
+                "ZOOM"
+            ]
+        },
+        {
+            "signature": "CNAM",
+            "name": "Template",
+            "type": "formId",
+            "signatures": [
+                "WEAP"
+            ]
+        },
+        {
+            "signature": "DAMA",
+            "name": "Damage Types",
+            "type": "array",
+            "element": {
+                "name": "Damage Type",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Type",
+                        "type": "formId",
+                        "signatures": [
+                            "DMGT"
+                        ]
+                    },
+                    {
+                        "name": "Amount",
+                        "type": "uint32"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "FLTR"
+        },
+        {
+            "signature": "MASE",
+            "name": "Melee Speed",
+            "type": "uint32",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "Very Slow",
+                    "1": "Slow",
+                    "2": "Medium",
+                    "3": "Fast",
+                    "4": "Very Fast"
+                }
+            }
+        }
+    ]
+}

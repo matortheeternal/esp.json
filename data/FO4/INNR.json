@@ -1,0 +1,121 @@
+{
+    "signature": "INNR",
+    "type": "record",
+    "name": "Instance Naming Rules",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "UNAM",
+            "name": "Target",
+            "type": "uint32",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "None",
+                    "29": "Armor",
+                    "42": "Furniture",
+                    "43": "Weapon",
+                    "45": "Actor"
+                }
+            }
+        },
+        {
+            "name": "Naming Rules",
+            "type": "memberArray",
+            "member": {
+                "name": "Ruleset",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "VNAM",
+                        "name": "Count",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Names",
+                        "type": "memberArray",
+                        "counter": {
+                            "type": "elementCounter",
+                            "path": "VNAM - Count"
+                        },
+                        "member": {
+                            "name": "Name",
+                            "type": "memberStruct",
+                            "members": [
+                                {
+                                    "signature": "WNAM",
+                                    "name": "Text",
+                                    "type": "string",
+                                    "localized": true,
+                                    "conflictType": "Translate",
+                                    "keepCase": true
+                                },
+                                {
+                                    "id": "KSIZ"
+                                },
+                                {
+                                    "id": "KWDAs"
+                                },
+                                {
+                                    "signature": "XNAM",
+                                    "name": "Property",
+                                    "type": "struct",
+                                    "elements": [
+                                        {
+                                            "name": "Value",
+                                            "type": "float"
+                                        },
+                                        {
+                                            "name": "Target",
+                                            "type": "uint8",
+                                            "format": {
+                                                "type": "enum",
+                                                "options": {
+                                                    "0": "Enchantments",
+                                                    "1": "BashImpactDataSet",
+                                                    "2": "BlockMaterial",
+                                                    "3": "Keywords",
+                                                    "4": "Weight",
+                                                    "5": "Value",
+                                                    "6": "Rating",
+                                                    "7": "AddonIndex",
+                                                    "8": "BodyPart",
+                                                    "9": "DamageTypeValues",
+                                                    "10": "ActorValues",
+                                                    "11": "Health",
+                                                    "12": "ColorRemappingIndex",
+                                                    "13": "MaterialSwaps"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "Op",
+                                            "type": "uint8",
+                                            "format": {
+                                                "type": "enum",
+                                                "options": {
+                                                    "0": ">=",
+                                                    "1": ">",
+                                                    "2": "<=",
+                                                    "3": "<",
+                                                    "4": "="
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "signature": "YNAM",
+                                    "name": "Index",
+                                    "type": "uint16"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

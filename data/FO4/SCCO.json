@@ -1,0 +1,80 @@
+{
+    "signature": "SCCO",
+    "type": "record",
+    "name": "Scene Collection",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "QNAM",
+            "name": "Quest",
+            "type": "formId",
+            "signatures": [
+                "QUST"
+            ]
+        },
+        {
+            "name": "Scenes",
+            "type": "memberArray",
+            "member": {
+                "name": "Scene",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "SNAM",
+                        "name": "Scene",
+                        "type": "formId",
+                        "signatures": [
+                            "SCEN"
+                        ]
+                    },
+                    {
+                        "signature": "XNAM",
+                        "name": "Unknown",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Unknown",
+                                "type": "int32"
+                            },
+                            {
+                                "name": "Unknown",
+                                "type": "int32"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "VNAM",
+            "type": "bytes",
+            "required": true
+        },
+        {
+            "name": "Unknown",
+            "type": "memberArray",
+            "member": {
+                "signature": "XNAM",
+                "name": "Unknown",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Unknown",
+                        "type": "int32"
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "int32"
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "VNAM",
+            "type": "bytes",
+            "required": true
+        }
+    ]
+}

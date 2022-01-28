@@ -1,0 +1,62 @@
+{
+    "signature": "LTEX",
+    "type": "record",
+    "name": "Landscape Texture",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "TNAM",
+            "name": "Texture Set",
+            "type": "formId",
+            "signatures": [
+                "TXST"
+            ]
+        },
+        {
+            "signature": "MNAM",
+            "name": "Material Type",
+            "type": "formId",
+            "required": true,
+            "signatures": [
+                "MATT",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "HNAM",
+            "name": "Havok Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Friction",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Restitution",
+                    "type": "uint8"
+                }
+            ]
+        },
+        {
+            "signature": "SNAM",
+            "name": "Texture Specular Exponent",
+            "type": "uint8",
+            "required": true
+        },
+        {
+            "name": "Grasses",
+            "type": "memberArray",
+            "member": {
+                "signature": "GNAM",
+                "name": "Grass",
+                "type": "formId",
+                "signatures": [
+                    "GRAS"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,148 @@
+{
+    "signature": "CAMS",
+    "type": "record",
+    "name": "Camera Shot",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "CTDAs"
+        },
+        {
+            "signature": "DATA",
+            "name": "Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Action",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Shoot",
+                            "1": "Fly",
+                            "2": "Hit",
+                            "3": "Zoom"
+                        }
+                    }
+                },
+                {
+                    "name": "Location",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Attacker",
+                            "1": "Projectile",
+                            "2": "Target",
+                            "3": "Lead Actor"
+                        }
+                    }
+                },
+                {
+                    "name": "Target",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Attacker",
+                            "1": "Projectile",
+                            "2": "Target",
+                            "3": "Lead Actor"
+                        }
+                    }
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Position Follows Location",
+                            "1": "Rotation Follows Target",
+                            "2": "Don't Follow Bone",
+                            "3": "First Person Camera",
+                            "4": "No Tracer",
+                            "5": "Start At Time Zero",
+                            "6": "Don't Reset Location Spring",
+                            "7": "Don't Reset Target Spring"
+                        }
+                    }
+                },
+                {
+                    "name": "Time Multipliers",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Player",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Target",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Global",
+                            "type": "float"
+                        }
+                    ]
+                },
+                {
+                    "name": "Max Time",
+                    "type": "float"
+                },
+                {
+                    "name": "Min Time",
+                    "type": "float"
+                },
+                {
+                    "name": "Target % Between Actors",
+                    "type": "float"
+                },
+                {
+                    "name": "Near Target Distance",
+                    "type": "float"
+                },
+                {
+                    "name": "Location Spring",
+                    "type": "float"
+                },
+                {
+                    "name": "Target Spring",
+                    "type": "float"
+                },
+                {
+                    "name": "Rotation Offset",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "X",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Y",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Z",
+                            "type": "float"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "MNAM",
+            "name": "Image Space Modifier",
+            "type": "formId",
+            "signatures": [
+                "IMAD"
+            ]
+        }
+    ]
+}

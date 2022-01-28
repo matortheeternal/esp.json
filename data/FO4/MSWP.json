@@ -1,0 +1,56 @@
+{
+    "signature": "MSWP",
+    "type": "record",
+    "name": "Material Swap",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "12": "Ignored",
+            "16": "Custom Swap"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "FNAM",
+            "name": "Tree Folder",
+            "type": "string"
+        },
+        {
+            "name": "Material Substitutions",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "name": "Substitution",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "BNAM",
+                        "name": "Original Material",
+                        "type": "string"
+                    },
+                    {
+                        "signature": "SNAM",
+                        "name": "Replacement Material",
+                        "type": "string"
+                    },
+                    {
+                        "signature": "FNAM",
+                        "name": "Tree Folder (obsolete)",
+                        "type": "string"
+                    },
+                    {
+                        "signature": "CNAM",
+                        "name": "Color Remapping Index",
+                        "type": "float"
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        }
+    ]
+}

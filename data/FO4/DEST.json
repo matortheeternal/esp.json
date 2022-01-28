@@ -1,0 +1,167 @@
+{
+    "name": "Destructible",
+    "type": "memberStruct",
+    "members": [
+        {
+            "signature": "DEST",
+            "name": "Header",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Health",
+                    "type": "int32"
+                },
+                {
+                    "name": "DEST Count",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "VATS Targetable",
+                            "1": "Large Actor Destroys"
+                        }
+                    }
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 2
+                }
+            ]
+        },
+        {
+            "signature": "DAMC",
+            "name": "Resistances",
+            "type": "array",
+            "sorted": true,
+            "element": {
+                "name": "Resistance",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Damage Type",
+                        "type": "formId",
+                        "signatures": [
+                            "DMGT"
+                        ]
+                    },
+                    {
+                        "name": "Value",
+                        "type": "uint32"
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        },
+        {
+            "name": "Stages",
+            "type": "memberArray",
+            "member": {
+                "name": "Stage",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "DSTD",
+                        "name": "Destruction Stage Data",
+                        "type": "struct",
+                        "required": true,
+                        "elements": [
+                            {
+                                "name": "Health %",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "Index",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "Model Damage Stage",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "Flags",
+                                "type": "uint8",
+                                "format": {
+                                    "type": "flags",
+                                    "flags": {
+                                        "0": "Cap Damage",
+                                        "1": "Disable",
+                                        "2": "Destroy",
+                                        "3": "Ignore External Dmg",
+                                        "4": "Becomes Dynamic"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Self Damage per Second",
+                                "type": "int32"
+                            },
+                            {
+                                "name": "Explosion",
+                                "type": "formId",
+                                "signatures": [
+                                    "EXPL",
+                                    "NULL"
+                                ]
+                            },
+                            {
+                                "name": "Debris",
+                                "type": "formId",
+                                "signatures": [
+                                    "DEBR",
+                                    "NULL"
+                                ]
+                            },
+                            {
+                                "name": "Debris Count",
+                                "type": "int32"
+                            }
+                        ]
+                    },
+                    {
+                        "signature": "DSTA",
+                        "name": "Sequence Name",
+                        "type": "string"
+                    },
+                    {
+                        "name": "Model",
+                        "type": "memberStruct",
+                        "unordered": true,
+                        "members": [
+                            {
+                                "signature": "DMDL",
+                                "name": "Model FileName",
+                                "type": "string",
+                                "required": true
+                            },
+                            {
+                                "id": "DMDT"
+                            },
+                            {
+                                "id": "DMDC"
+                            },
+                            {
+                                "id": "DMDS"
+                            }
+                        ],
+                        "sortKey": [
+                            0
+                        ]
+                    },
+                    {
+                        "signature": "DSTF",
+                        "name": "End Marker",
+                        "type": "empty",
+                        "required": true
+                    }
+                ]
+            }
+        }
+    ]
+}

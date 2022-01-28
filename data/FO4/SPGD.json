@@ -1,0 +1,135 @@
+{
+    "signature": "SPGD",
+    "type": "record",
+    "name": "Shader Particle Geometry",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "DATA",
+            "name": "Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Gravity Velocity",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Rotation Velocity",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Particle Size X",
+                    "type": "float"
+                },
+                {
+                    "name": "Center Offset Min",
+                    "type": "float"
+                },
+                {
+                    "name": "Particle Size Y",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Center Offset Min",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Center Offset Max",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Initial Rotation",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "# of Subtextures X",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "# of Subtextures Y",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Type",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Rain",
+                            "1": "Snow"
+                        }
+                    }
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Box Size",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Particle Density",
+                    "type": "float"
+                },
+                {
+                    "type": "bytes"
+                }
+            ]
+        },
+        {
+            "signature": "MNAM",
+            "name": "Particle Texture",
+            "type": "string"
+        }
+    ]
+}

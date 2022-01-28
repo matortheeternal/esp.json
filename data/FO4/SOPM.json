@@ -1,0 +1,266 @@
+{
+    "signature": "SOPM",
+    "type": "record",
+    "name": "Sound Output Model",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "NAM1",
+            "name": "Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Attenuates With Distance",
+                            "1": "Allows Rumble",
+                            "2": "Applies Doppler",
+                            "3": "Applies Distance Delay",
+                            "4": "Player Output Model",
+                            "5": "Try Play on Controller",
+                            "6": "Causes Ducking",
+                            "7": "Avoids Ducking"
+                        }
+                    }
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 2
+                },
+                {
+                    "name": "Reverb Send %",
+                    "type": "uint8"
+                }
+            ]
+        },
+        {
+            "signature": "MNAM",
+            "name": "Type",
+            "type": "uint32",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "Uses HRTF",
+                    "1": "Defined Speaker Output"
+                }
+            }
+        },
+        {
+            "signature": "VNAM",
+            "name": "Static Attenuation",
+            "type": "int16",
+            "format": {
+                "type": "divide",
+                "value": 100
+            }
+        },
+        {
+            "signature": "ONAM",
+            "name": "Output Values",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Channels",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Channel 0",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "FL",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "FR",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "C",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "LFE",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "RL",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "RR",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "SL",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "SR",
+                                    "type": "uint8"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Channel 1",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "FL",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "FR",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "C",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "LFE",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "RL",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "RR",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "SL",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "SR",
+                                    "type": "uint8"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Channel 2? (unused)",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "FL",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "FR",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "C",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "LFE",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "RL",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "RR",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "SL",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "SR",
+                                    "type": "uint8"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "ATTN",
+            "name": "Attenuation Values",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Fade In Distance - Start",
+                    "type": "float"
+                },
+                {
+                    "name": "Fade In Distance - End",
+                    "type": "float"
+                },
+                {
+                    "name": "Fade Out Distance - Start",
+                    "type": "float"
+                },
+                {
+                    "name": "Fade Out Distance - End",
+                    "type": "float"
+                },
+                {
+                    "name": "Fade In Curve",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Value 1",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Value 2",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Value 3",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Value 4",
+                            "type": "uint8"
+                        }
+                    ]
+                },
+                {
+                    "name": "Fade Out Curve",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Value 1",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Value 2",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Value 3",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Value 4",
+                            "type": "uint8"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "ENAM",
+            "name": "Effect Chain",
+            "type": "formId",
+            "signatures": [
+                "AECH"
+            ]
+        }
+    ]
+}

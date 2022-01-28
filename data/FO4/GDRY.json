@@ -1,0 +1,53 @@
+{
+    "signature": "GDRY",
+    "type": "record",
+    "name": "God Rays",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "DATA",
+            "name": "Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "id": "FloatColors",
+                    "name": "Back Color"
+                },
+                {
+                    "id": "FloatColors",
+                    "name": "Fwd Color"
+                },
+                {
+                    "name": "Intensity",
+                    "type": "float"
+                },
+                {
+                    "name": "Air Color - Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Back Color - Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Fwd Color - Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Back Phase",
+                    "type": "float"
+                },
+                {
+                    "id": "FloatColors",
+                    "name": "Air Color"
+                },
+                {
+                    "name": "Fwd Phase",
+                    "type": "float"
+                }
+            ]
+        }
+    ]
+}

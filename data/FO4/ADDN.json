@@ -1,0 +1,64 @@
+{
+    "signature": "ADDN",
+    "type": "record",
+    "name": "Addon Node",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "signature": "DATA",
+            "name": "Node Index",
+            "type": "int32",
+            "required": true
+        },
+        {
+            "signature": "SNAM",
+            "name": "Sound",
+            "type": "formId",
+            "signatures": [
+                "SNDR"
+            ]
+        },
+        {
+            "signature": "LNAM",
+            "name": "Light",
+            "type": "formId",
+            "signatures": [
+                "LIGH"
+            ]
+        },
+        {
+            "signature": "DNAM",
+            "name": "Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Master Particle System Cap",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint16",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "No Master Particle System",
+                            "1": "Master Particle System",
+                            "2": "Always Loaded",
+                            "3": "Master Particle System and Always Loaded"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

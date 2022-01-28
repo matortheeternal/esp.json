@@ -1,0 +1,42 @@
+{
+    "signature": "NOCM",
+    "type": "record",
+    "name": "Navigation Mesh Obstacle Manager",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "name": "Unknown",
+            "type": "memberArray",
+            "member": {
+                "name": "Unknown",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "INDX",
+                        "name": "Index",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "memberArray",
+                        "member": {
+                            "signature": "DATA",
+                            "type": "bytes"
+                        }
+                    },
+                    {
+                        "signature": "INTV",
+                        "type": "bytes"
+                    },
+                    {
+                        "signature": "NAM1",
+                        "name": "Model",
+                        "type": "string"
+                    }
+                ]
+            }
+        }
+    ]
+}

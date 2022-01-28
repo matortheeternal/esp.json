@@ -1,0 +1,45 @@
+{
+    "signature": "EQUP",
+    "type": "record",
+    "name": "Equip Type",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "PNAM",
+            "name": "Slot Parents",
+            "type": "array",
+            "element": {
+                "name": "Parent",
+                "type": "formId",
+                "signatures": [
+                    "EQUP"
+                ]
+            }
+        },
+        {
+            "signature": "DATA",
+            "name": "Flags",
+            "type": "uint32",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Use All Parents",
+                    "1": "Parents Optional",
+                    "2": "Item Slot"
+                }
+            }
+        },
+        {
+            "signature": "ANAM",
+            "name": "Condition Actor Value",
+            "type": "formId",
+            "signatures": [
+                "AVIF",
+                "NULL",
+                "FFFF"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,45 @@
+{
+    "signature": "GMST",
+    "type": "record",
+    "name": "Game Setting",
+    "members": [
+        {
+            "signature": "EDID",
+            "name": "Editor ID",
+            "type": "string",
+            "conflictType": "Critical",
+            "required": true,
+            "afterSet": "GMSTEDIDAfterSet"
+        },
+        {
+            "signature": "DATA",
+            "name": "Value",
+            "type": "union",
+            "decider": "GMSTUnionDecider",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Name",
+                    "type": "string",
+                    "localized": true,
+                    "conflictType": "Translate"
+                },
+                {
+                    "name": "Int",
+                    "type": "int32"
+                },
+                {
+                    "name": "Float",
+                    "type": "float"
+                },
+                {
+                    "name": "Bool",
+                    "type": "uint32",
+                    "format": {
+                        "id": "BoolEnum"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,266 @@
+{
+    "signature": "ARMO",
+    "type": "record",
+    "name": "Armor",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "2": "Non-Playable",
+            "6": "Shield",
+            "10": "Unknown 10",
+            "12": "Ignored",
+            "15": "Unknown 15"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "VMAD"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "PTRN"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "EITM"
+        },
+        {
+            "name": "Male world model",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "MOD2",
+                    "name": "Model FileName",
+                    "type": "string"
+                },
+                {
+                    "signature": "MO2T",
+                    "name": "Texture Files Hashes",
+                    "type": "bytes",
+                    "size": 0,
+                    "conflictType": "Ignore"
+                },
+                {
+                    "id": "MODC"
+                },
+                {
+                    "id": "MO2S"
+                }
+            ]
+        },
+        {
+            "signature": "ICON",
+            "name": "Male Inventory Image",
+            "type": "string"
+        },
+        {
+            "signature": "MICO",
+            "name": "Male Message Icon",
+            "type": "string"
+        },
+        {
+            "name": "Female world model",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "MOD4",
+                    "name": "Model FileName",
+                    "type": "string"
+                },
+                {
+                    "signature": "MO4T",
+                    "name": "Texture Files Hashes",
+                    "type": "bytes",
+                    "size": 0,
+                    "conflictType": "Ignore"
+                },
+                {
+                    "id": "MODC"
+                },
+                {
+                    "id": "MO4S"
+                }
+            ]
+        },
+        {
+            "signature": "ICO2",
+            "name": "Female Inventory Image",
+            "type": "string"
+        },
+        {
+            "signature": "MIC2",
+            "name": "Female Message Icon",
+            "type": "string"
+        },
+        {
+            "id": "BOD2"
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "id": "YNAM"
+        },
+        {
+            "id": "ZNAM"
+        },
+        {
+            "id": "ETYP"
+        },
+        {
+            "signature": "BIDS",
+            "name": "Block Bash Impact Data Set",
+            "type": "formId",
+            "signatures": [
+                "IPDS",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "BAMT",
+            "name": "Alternate Block Material",
+            "type": "formId",
+            "signatures": [
+                "MATT",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "RNAM",
+            "name": "Race",
+            "type": "formId",
+            "signatures": [
+                "RACE"
+            ]
+        },
+        {
+            "id": "KSIZ"
+        },
+        {
+            "id": "KWDAs"
+        },
+        {
+            "id": "DESC"
+        },
+        {
+            "id": "INRD"
+        },
+        {
+            "name": "Models",
+            "type": "memberArray",
+            "member": {
+                "name": "Model",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "INDX",
+                        "name": "Addon Index",
+                        "type": "uint16"
+                    },
+                    {
+                        "signature": "MODL",
+                        "name": "Armor Addon",
+                        "type": "formId",
+                        "signatures": [
+                            "ARMA"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Value",
+                    "type": "int32"
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                },
+                {
+                    "name": "Health",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "signature": "FNAM",
+            "name": "",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Armor Rating",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Base Addon Index",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Stagger Rating",
+                    "type": "uint8",
+                    "format": {
+                        "id": "StaggerEnum"
+                    }
+                },
+                {
+                    "type": "bytes",
+                    "conflictType": "Ignore"
+                }
+            ]
+        },
+        {
+            "signature": "DAMA",
+            "name": "Resistances",
+            "type": "array",
+            "sorted": true,
+            "element": {
+                "name": "Resistance",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Damage Type",
+                        "type": "formId",
+                        "signatures": [
+                            "DMGT"
+                        ]
+                    },
+                    {
+                        "name": "Value",
+                        "type": "uint32"
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        },
+        {
+            "signature": "TNAM",
+            "name": "Template Armor",
+            "type": "formId",
+            "signatures": [
+                "ARMO"
+            ]
+        },
+        {
+            "id": "APPR"
+        },
+        {
+            "id": "ObjectTemplate"
+        }
+    ]
+}

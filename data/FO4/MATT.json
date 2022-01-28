@@ -1,0 +1,83 @@
+{
+    "signature": "MATT",
+    "type": "record",
+    "name": "Material Type",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "PNAM",
+            "name": "Material Parent",
+            "type": "formId",
+            "signatures": [
+                "MATT",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "MNAM",
+            "name": "Material Name",
+            "type": "string"
+        },
+        {
+            "signature": "CNAM",
+            "name": "Havok Display Color",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Red",
+                    "type": "float",
+                    "scale": 255,
+                    "required": true
+                },
+                {
+                    "name": "Green",
+                    "type": "float",
+                    "scale": 255,
+                    "required": true
+                },
+                {
+                    "name": "Blue",
+                    "type": "float",
+                    "scale": 255,
+                    "required": true
+                }
+            ]
+        },
+        {
+            "signature": "BNAM",
+            "name": "Buoyancy",
+            "type": "float"
+        },
+        {
+            "signature": "FNAM",
+            "name": "Flags",
+            "type": "uint32",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Stair Material",
+                    "1": "Arrows Stick",
+                    "2": "Can Tunnel"
+                }
+            }
+        },
+        {
+            "signature": "HNAM",
+            "name": "Havok Impact Data Set",
+            "type": "formId",
+            "signatures": [
+                "IPDS"
+            ]
+        },
+        {
+            "signature": "ANAM",
+            "name": "Breakable FX",
+            "type": "string"
+        },
+        {
+            "id": "MODT"
+        }
+    ]
+}

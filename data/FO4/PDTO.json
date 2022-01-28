@@ -1,0 +1,38 @@
+{
+    "signature": "PDTO",
+    "name": "Topic Data",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Type",
+            "type": "uint32",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "Topic Ref",
+                    "1": "Topic Subtype"
+                }
+            }
+        },
+        {
+            "name": "Data",
+            "type": "union",
+            "decider": "TypeDecider",
+            "elements": [
+                {
+                    "name": "Topic",
+                    "type": "formId",
+                    "signatures": [
+                        "DIAL",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Subtype",
+                    "type": "string",
+                    "size": 4
+                }
+            ]
+        }
+    ]
+}

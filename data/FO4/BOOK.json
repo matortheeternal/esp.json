@@ -1,0 +1,162 @@
+{
+    "signature": "BOOK",
+    "type": "record",
+    "name": "Book",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "VMAD"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "PTRN"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "MICO"
+        },
+        {
+            "id": "DESCreq"
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "id": "YNAM"
+        },
+        {
+            "id": "ZNAM"
+        },
+        {
+            "id": "KSIZ"
+        },
+        {
+            "id": "KWDAs"
+        },
+        {
+            "signature": "FIMD",
+            "name": "Featured Item Message",
+            "type": "formId",
+            "signatures": [
+                "MESG"
+            ]
+        },
+        {
+            "signature": "DATA",
+            "name": "Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Value",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "DNAM",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Advance Actor Value",
+                            "1": "Can't be Taken",
+                            "2": "Add Spell",
+                            "3": "Unknown 3",
+                            "4": "Add Perk"
+                        }
+                    }
+                },
+                {
+                    "name": "Teaches",
+                    "type": "union",
+                    "decider": "BOOKTeachesDecider",
+                    "elements": [
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 4
+                        },
+                        {
+                            "name": "Actor Value",
+                            "type": "formId",
+                            "signatures": [
+                                "AVIF",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Spell",
+                            "type": "formId",
+                            "signatures": [
+                                "SPEL",
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Perk",
+                            "type": "formId",
+                            "signatures": [
+                                "PERK",
+                                "NULL"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Text Offset",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "X",
+                            "type": "uint32"
+                        },
+                        {
+                            "name": "Y",
+                            "type": "uint32"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "CNAM",
+            "name": "Description",
+            "type": "string",
+            "localized": true,
+            "conflictType": "Translate",
+            "keepCase": true
+        },
+        {
+            "signature": "INAM",
+            "name": "Inventory Art",
+            "type": "formId",
+            "signatures": [
+                "STAT"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,55 @@
+{
+    "signature": "BNDS",
+    "type": "record",
+    "name": "Bendable Spline",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "OBND"
+        },
+        {
+            "signature": "DNAM",
+            "name": "Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Default Number of Tiles",
+                    "type": "float"
+                },
+                {
+                    "name": "Default Number of Slices",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Default Number of Tiles - Relative to Length",
+                    "type": "uint16",
+                    "format": {
+                        "id": "BoolEnum"
+                    }
+                },
+                {
+                    "id": "FloatColors",
+                    "name": "Default Color"
+                },
+                {
+                    "name": "Wind Settings - Sensibility",
+                    "type": "float"
+                },
+                {
+                    "name": "Wind Settings - Flexibility",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "TNAM",
+            "name": "Texture",
+            "type": "formId",
+            "signatures": [
+                "TXST"
+            ]
+        }
+    ]
+}

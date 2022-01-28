@@ -1,0 +1,139 @@
+{
+    "signature": "SCOL",
+    "type": "record",
+    "name": "Static Collection",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "4": "Non Occluder",
+            "9": "Hidden From Local Map",
+            "10": "Unknown 10",
+            "11": "Used as Platform",
+            "12": "Ignored",
+            "15": "Has Distant LOD",
+            "25": "Obstacle",
+            "26": "NavMesh Generation - Filter",
+            "27": "NavMesh Generation - Bounding Box",
+            "30": "NavMesh Generation - Ground"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "PTRN"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "FLTR"
+        },
+        {
+            "name": "Parts",
+            "type": "memberArray",
+            "required": true,
+            "member": {
+                "name": "Part",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "ONAM",
+                        "name": "Static",
+                        "type": "formId",
+                        "signatures": [
+                            "ACTI",
+                            "ALCH",
+                            "AMMO",
+                            "BOOK",
+                            "CONT",
+                            "DOOR",
+                            "FURN",
+                            "MISC",
+                            "MSTT",
+                            "STAT",
+                            "TERM",
+                            "WEAP"
+                        ]
+                    },
+                    {
+                        "signature": "DATA",
+                        "name": "Placements",
+                        "type": "array",
+                        "sorted": true,
+                        "required": true,
+                        "element": {
+                            "name": "Placement",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Position",
+                                    "type": "struct",
+                                    "elements": [
+                                        {
+                                            "name": "X",
+                                            "type": "float"
+                                        },
+                                        {
+                                            "name": "Y",
+                                            "type": "float"
+                                        },
+                                        {
+                                            "name": "Z",
+                                            "type": "float"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Rotation",
+                                    "type": "struct",
+                                    "elements": [
+                                        {
+                                            "name": "X",
+                                            "type": "float",
+                                            "required": true,
+                                            "format": {
+                                                "type": "RotationFactorFormat"
+                                            }
+                                        },
+                                        {
+                                            "name": "Y",
+                                            "type": "float",
+                                            "required": true,
+                                            "format": {
+                                                "type": "RotationFactorFormat"
+                                            }
+                                        },
+                                        {
+                                            "name": "Z",
+                                            "type": "float",
+                                            "required": true,
+                                            "format": {
+                                                "type": "RotationFactorFormat"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Scale",
+                                    "type": "float"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        }
+    ]
+}

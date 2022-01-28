@@ -1,0 +1,61 @@
+{
+    "signature": "SNAM",
+    "name": "Marker Parameters",
+    "type": "array",
+    "element": {
+        "name": "Marker",
+        "type": "struct",
+        "elements": [
+            {
+                "name": "Offset X",
+                "type": "float"
+            },
+            {
+                "name": "Offset Y",
+                "type": "float"
+            },
+            {
+                "name": "Offset Z",
+                "type": "float"
+            },
+            {
+                "name": "Rotation Z",
+                "type": "float",
+                "required": true,
+                "format": {
+                    "type": "RotationFactorFormat"
+                }
+            },
+            {
+                "name": "Keyword",
+                "type": "formId",
+                "signatures": [
+                    "KYWD",
+                    "NULL"
+                ]
+            },
+            {
+                "name": "Entry Types",
+                "type": "uint8",
+                "format": {
+                    "type": "flags",
+                    "flags": {
+                        "0": "Front",
+                        "1": "Rear",
+                        "2": "Right",
+                        "3": "Left",
+                        "4": "Other",
+                        "5": "Unused 5",
+                        "6": "Unused 6",
+                        "7": "Unused 7"
+                    }
+                }
+            },
+            {
+                "name": "Unknown",
+                "type": "bytes",
+                "size": 3
+            }
+        ]
+    }
+}

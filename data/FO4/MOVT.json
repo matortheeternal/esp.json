@@ -1,0 +1,55 @@
+{
+    "signature": "MOVT",
+    "type": "record",
+    "name": "Movement Type",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "MNAM",
+            "name": "Name",
+            "type": "string"
+        },
+        {
+            "id": "SPED"
+        },
+        {
+            "signature": "INAM",
+            "name": "Anim Change Thresholds (unused)",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Directional",
+                    "type": "float",
+                    "required": true,
+                    "format": {
+                        "type": "180DivPiFormat"
+                    }
+                },
+                {
+                    "name": "Movement Speed",
+                    "type": "float"
+                },
+                {
+                    "name": "Rotation Speed",
+                    "type": "float",
+                    "required": true,
+                    "format": {
+                        "type": "180DivPiFormat"
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "JNAM",
+            "name": "Float Height",
+            "type": "float"
+        },
+        {
+            "signature": "LNAM",
+            "name": "Flight - Angle Gain",
+            "type": "float"
+        }
+    ]
+}

@@ -1,0 +1,204 @@
+{
+    "signature": "SNDR",
+    "type": "record",
+    "name": "Sound Descriptor",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "NNAM",
+            "name": "Notes",
+            "type": "string"
+        },
+        {
+            "signature": "CNAM",
+            "name": "Descriptor Type",
+            "type": "uint32",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "519001098": "Standard",
+                    "1415912003": "Compound",
+                    "3977607907": "AutoWeapon"
+                }
+            }
+        },
+        {
+            "signature": "GNAM",
+            "name": "Category",
+            "type": "formId",
+            "signatures": [
+                "SNCT"
+            ]
+        },
+        {
+            "signature": "SNAM",
+            "name": "Alternate Sound For",
+            "type": "formId",
+            "signatures": [
+                "SNDR"
+            ]
+        },
+        {
+            "name": "Sounds",
+            "type": "memberArray",
+            "member": {
+                "name": "Sound Files",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "ANAM",
+                        "name": "File Name",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "ONAM",
+            "name": "Output Model",
+            "type": "formId",
+            "signatures": [
+                "SOPM"
+            ]
+        },
+        {
+            "id": "CTDAs"
+        },
+        {
+            "signature": "LNAM",
+            "name": "Values",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 1
+                },
+                {
+                    "name": "Looping",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "None",
+                            "8": "Loop",
+                            "16": "Envelope Fast",
+                            "32": "Envelope Slow"
+                        }
+                    }
+                },
+                {
+                    "name": "Sidechain",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Rumble Send Value = (Small / 7) + ((Big / 7) * 16)",
+                    "type": "uint8"
+                }
+            ]
+        },
+        {
+            "signature": "BNAM",
+            "name": "Data",
+            "type": "union",
+            "decider": "SNDRDataDecider",
+            "elements": [
+                {
+                    "name": "Values",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "% Frequency Shift",
+                            "type": "int8"
+                        },
+                        {
+                            "name": "% Frequency Variance",
+                            "type": "int8"
+                        },
+                        {
+                            "name": "Priority",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "db Variance",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Static Attenuation (db)",
+                            "type": "uint16",
+                            "format": {
+                                "type": "divide",
+                                "value": 100
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Base Descriptor",
+                    "type": "formId",
+                    "signatures": [
+                        "SNDR"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Descriptors",
+            "type": "memberArray",
+            "member": {
+                "signature": "DNAM",
+                "name": "Descriptor",
+                "type": "formId",
+                "signatures": [
+                    "SNDR"
+                ]
+            }
+        },
+        {
+            "signature": "ITMC",
+            "name": "Count",
+            "type": "uint32",
+            "conflictType": "Benign"
+        },
+        {
+            "name": "Rates of Fire",
+            "type": "memberArray",
+            "sorted": true,
+            "counter": {
+                "type": "elementCounter",
+                "path": "ITMC - Count"
+            },
+            "member": {
+                "name": "Sound",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "ITMS",
+                        "name": "Marker Start",
+                        "type": "empty"
+                    },
+                    {
+                        "signature": "INTV",
+                        "name": "RoF (RPM)",
+                        "type": "uint32"
+                    },
+                    {
+                        "signature": "FNAM",
+                        "name": "File",
+                        "type": "string"
+                    },
+                    {
+                        "signature": "ITME",
+                        "name": "Marker End",
+                        "type": "empty"
+                    }
+                ],
+                "sortKey": [
+                    1
+                ]
+            }
+        }
+    ]
+}

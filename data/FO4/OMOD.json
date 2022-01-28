@@ -1,0 +1,192 @@
+{
+    "signature": "OMOD",
+    "type": "record",
+    "name": "Object Modification",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "4": "Legendary Mod",
+            "7": "Mod Collection",
+            "12": "Ignored"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "DESC"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "signature": "DATA",
+            "name": "Data",
+            "type": "struct",
+            "afterSet": "OMODdataAfterSet",
+            "elements": [
+                {
+                    "name": "Include Count",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Property Count",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 2,
+                    "conflictType": "Ignore"
+                },
+                {
+                    "name": "Form Type",
+                    "type": "uint32",
+                    "defaultEditValue": "None",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "ARMO": "Armor",
+                            "NPC_": "Non-player character",
+                            "WEAP": "Weapon",
+                            "NONE": "None"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 2,
+                    "conflictType": "Ignore"
+                },
+                {
+                    "name": "Attach Point",
+                    "type": "formId",
+                    "signatures": [
+                        "KYWD",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Attach Parent Slots",
+                    "type": "array",
+                    "prefix": 4,
+                    "element": {
+                        "name": "Keyword",
+                        "type": "formId",
+                        "signatures": [
+                            "KYWD",
+                            "NULL"
+                        ]
+                    }
+                },
+                {
+                    "name": "Items",
+                    "type": "array",
+                    "prefix": 4,
+                    "element": {
+                        "name": "Item",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Value 1",
+                                "type": "bytes",
+                                "size": 4
+                            },
+                            {
+                                "name": "Value 2",
+                                "type": "bytes",
+                                "size": 4
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "Includes",
+                    "type": "array",
+                    "counter": {
+                        "type": "OMODDataIncludeCounter"
+                    },
+                    "element": {
+                        "name": "Include",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Mod",
+                                "type": "formId",
+                                "signatures": [
+                                    "OMOD"
+                                ]
+                            },
+                            {
+                                "name": "Minimum Level",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "Optional",
+                                "type": "uint8",
+                                "format": {
+                                    "id": "BoolEnum"
+                                }
+                            },
+                            {
+                                "name": "Don't Use All",
+                                "type": "uint8",
+                                "format": {
+                                    "id": "BoolEnum"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "ObjectModProperties"
+                }
+            ]
+        },
+        {
+            "signature": "MNAM",
+            "name": "Target OMOD Keywords",
+            "type": "array",
+            "element": {
+                "name": "Keyword",
+                "type": "formId",
+                "signatures": [
+                    "KYWD"
+                ]
+            }
+        },
+        {
+            "signature": "FNAM",
+            "name": "Filter Keywords",
+            "type": "array",
+            "element": {
+                "name": "Keyword",
+                "type": "formId",
+                "signatures": [
+                    "KYWD"
+                ]
+            }
+        },
+        {
+            "signature": "LNAM",
+            "name": "Loose Mod",
+            "type": "formId",
+            "signatures": {
+                "id": "sigBaseObjects"
+            }
+        },
+        {
+            "signature": "NAM1",
+            "name": "Priority",
+            "type": "uint8"
+        },
+        {
+            "id": "FLTR"
+        }
+    ]
+}

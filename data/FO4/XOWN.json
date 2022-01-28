@@ -1,0 +1,36 @@
+{
+    "signature": "XOWN",
+    "name": "Owner",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Owner",
+            "type": "formId",
+            "signatures": [
+                "FACT",
+                "ACHR",
+                "NPC_"
+            ]
+        },
+        {
+            "name": "Unknown",
+            "type": "bytes",
+            "size": 4
+        },
+        {
+            "name": "Flags",
+            "type": "uint8",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "No Crime"
+                }
+            }
+        },
+        {
+            "name": "Unused",
+            "type": "bytes",
+            "size": 3
+        }
+    ]
+}

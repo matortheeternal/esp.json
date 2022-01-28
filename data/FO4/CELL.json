@@ -1,0 +1,534 @@
+{
+    "signature": "CELL",
+    "type": "record",
+    "name": "Cell",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "7": "No Pre Vis",
+            "10": "Persistent",
+            "12": "Ignored",
+            "17": "Off Limits",
+            "18": "Compressed",
+            "19": "Can't Wait"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "signature": "DATA",
+            "name": "Flags",
+            "type": "uint16",
+            "required": true,
+            "afterSet": "CELLDATAAfterSet",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Is Interior Cell",
+                    "1": "Has Water",
+                    "2": "Can't Travel From Here",
+                    "3": "No LOD Water",
+                    "4": "Unknown 5",
+                    "5": "Public Area",
+                    "6": "Hand Changed",
+                    "7": "Show Sky",
+                    "8": "Use Sky Lighting",
+                    "9": "Unknown 10",
+                    "10": "Unknown 11",
+                    "11": "Sunlight Shadows",
+                    "12": "Distant LOD only",
+                    "13": "Player Followers Can't Travel Here",
+                    "14": "Unknown 15",
+                    "15": "Unknown 16"
+                }
+            }
+        },
+        {
+            "signature": "XCLC",
+            "name": "Grid",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "X",
+                    "type": "int32"
+                },
+                {
+                    "name": "Y",
+                    "type": "int32"
+                },
+                {
+                    "name": "Force Hide Land",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Quad 1",
+                            "1": "Quad 2",
+                            "2": "Quad 3",
+                            "3": "Quad 4"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "VISI",
+            "name": "PreVis Files Timestamp",
+            "type": "bytes",
+            "size": 2
+        },
+        {
+            "signature": "RVIS",
+            "name": "In PreVis File Of",
+            "type": "formId",
+            "signatures": [
+                "CELL"
+            ]
+        },
+        {
+            "signature": "PCMB",
+            "name": "PreCombined Files Timestamp",
+            "type": "bytes",
+            "size": 2
+        },
+        {
+            "signature": "XCLL",
+            "name": "Lighting",
+            "type": "struct",
+            "elements": [
+                {
+                    "id": "ByteColors",
+                    "name": "Ambient Color"
+                },
+                {
+                    "id": "ByteColors",
+                    "name": "Directional Color"
+                },
+                {
+                    "id": "ByteColors",
+                    "name": "Fog Color Near"
+                },
+                {
+                    "name": "Fog Near",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog Far",
+                    "type": "float"
+                },
+                {
+                    "name": "Directional Rotation XY",
+                    "type": "int32"
+                },
+                {
+                    "name": "Directional Rotation Z",
+                    "type": "int32"
+                },
+                {
+                    "name": "Directional Fade",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog Clip Distance",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog Power",
+                    "type": "float"
+                },
+                {
+                    "id": "AmbientColors"
+                },
+                {
+                    "id": "ByteColors",
+                    "name": "Fog Color Far"
+                },
+                {
+                    "name": "Fog Max",
+                    "type": "float"
+                },
+                {
+                    "name": "Light Fade Begin",
+                    "type": "float"
+                },
+                {
+                    "name": "Light Fade End",
+                    "type": "float"
+                },
+                {
+                    "name": "Inherits",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Ambient Color",
+                            "1": "Directional Color",
+                            "2": "Fog Color",
+                            "3": "Fog Near",
+                            "4": "Fog Far",
+                            "5": "Directional Rotation",
+                            "6": "Directional Fade",
+                            "7": "Clip Distance",
+                            "8": "Fog Power",
+                            "9": "Fog Max",
+                            "10": "Light Fade Distances"
+                        }
+                    }
+                },
+                {
+                    "name": "Near Height Mid",
+                    "type": "float"
+                },
+                {
+                    "name": "Near Height Range",
+                    "type": "float"
+                },
+                {
+                    "id": "ByteColors",
+                    "name": "Fog Color High Near"
+                },
+                {
+                    "id": "ByteColors",
+                    "name": "Fog Color High Far"
+                },
+                {
+                    "name": "High Density Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog Near Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog Far Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog High Near Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog High Far Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Far Height Mid",
+                    "type": "float"
+                },
+                {
+                    "name": "Far Height Range",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "CNAM",
+            "name": "Precombined Object Level XY",
+            "type": "uint8"
+        },
+        {
+            "signature": "ZNAM",
+            "name": "Precombined Object Level Z",
+            "type": "uint8"
+        },
+        {
+            "signature": "TVDT",
+            "name": "Unknown",
+            "type": "bytes",
+            "size": 0
+        },
+        {
+            "id": "MaxHeightDataCELL"
+        },
+        {
+            "signature": "LTMP",
+            "name": "Lighting Template",
+            "type": "formId",
+            "required": true,
+            "signatures": [
+                "LGTM",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "XCLW",
+            "name": "Water Height",
+            "type": "float"
+        },
+        {
+            "signature": "XCLR",
+            "name": "Regions",
+            "type": "array",
+            "sorted": true,
+            "element": {
+                "name": "Region",
+                "type": "formId",
+                "signatures": [
+                    "REGN"
+                ]
+            }
+        },
+        {
+            "signature": "XLCN",
+            "name": "Location",
+            "type": "formId",
+            "signatures": [
+                "LCTN"
+            ]
+        },
+        {
+            "signature": "XWCN",
+            "name": "Unknown",
+            "type": "bytes",
+            "size": 0,
+            "conflictType": "Ignore"
+        },
+        {
+            "signature": "XWCU",
+            "name": "Water Velocity",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "X Offset",
+                    "type": "float"
+                },
+                {
+                    "name": "Y Offset",
+                    "type": "float"
+                },
+                {
+                    "name": "Z Offset",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "X Angle",
+                    "type": "float"
+                },
+                {
+                    "name": "Y Angle",
+                    "type": "float"
+                },
+                {
+                    "name": "Z Angle",
+                    "type": "float"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 0
+                }
+            ]
+        },
+        {
+            "signature": "XCWT",
+            "name": "Water",
+            "type": "formId",
+            "signatures": [
+                "WATR"
+            ]
+        },
+        {
+            "id": "XOWN"
+        },
+        {
+            "id": "XRNK"
+        },
+        {
+            "signature": "XILL",
+            "name": "Lock List",
+            "type": "formId",
+            "signatures": [
+                "FLST",
+                "NPC_"
+            ]
+        },
+        {
+            "signature": "XILW",
+            "name": "Exterior LOD",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Worldspace",
+                    "type": "formId",
+                    "signatures": [
+                        "WRLD"
+                    ]
+                },
+                {
+                    "name": "Offset X",
+                    "type": "float"
+                },
+                {
+                    "name": "Offset Y",
+                    "type": "float"
+                },
+                {
+                    "name": "Offset Z",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "XWEM",
+            "name": "Water Environment Map",
+            "type": "string"
+        },
+        {
+            "signature": "XCCM",
+            "name": "Sky/Weather from Region",
+            "type": "formId",
+            "signatures": [
+                "REGN"
+            ]
+        },
+        {
+            "signature": "XCAS",
+            "name": "Acoustic Space",
+            "type": "formId",
+            "signatures": [
+                "ASPC"
+            ]
+        },
+        {
+            "signature": "XEZN",
+            "name": "Encounter Zone",
+            "type": "formId",
+            "signatures": [
+                "ECZN"
+            ]
+        },
+        {
+            "signature": "XCMO",
+            "name": "Music Type",
+            "type": "formId",
+            "signatures": [
+                "MUSC"
+            ]
+        },
+        {
+            "signature": "XCIM",
+            "name": "Image Space",
+            "type": "formId",
+            "signatures": [
+                "IMGS"
+            ]
+        },
+        {
+            "signature": "XGDR",
+            "name": "God Rays",
+            "type": "formId",
+            "signatures": [
+                "GDRY"
+            ]
+        },
+        {
+            "signature": "XPRI",
+            "name": "Physics References",
+            "type": "array",
+            "sorted": true,
+            "element": {
+                "name": "Reference",
+                "type": "formId",
+                "signatures": [
+                    "REFR",
+                    "PGRE",
+                    "PHZD",
+                    "PMIS",
+                    "PARW",
+                    "PBAR",
+                    "PBEA",
+                    "PCON",
+                    "PFLA"
+                ]
+            }
+        },
+        {
+            "signature": "XCRI",
+            "name": "Combined References",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Meshes Count",
+                    "type": "uint32"
+                },
+                {
+                    "name": "References Count",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Meshes",
+                    "type": "array",
+                    "sorted": true,
+                    "counter": {
+                        "type": "CELLCombinedMeshesCounter"
+                    },
+                    "element": {
+                        "name": "Combined Mesh",
+                        "type": "uint32",
+                        "format": {
+                            "type": "CombinedMeshIDFormat"
+                        }
+                    }
+                },
+                {
+                    "name": "References",
+                    "type": "array",
+                    "sorted": true,
+                    "afterSet": "CELLCombinedRefsAfterSet",
+                    "counter": {
+                        "type": "CELLCombinedRefsCounter"
+                    },
+                    "element": {
+                        "name": "Reference",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Reference",
+                                "type": "formId",
+                                "signatures": [
+                                    "REFR",
+                                    "PGRE",
+                                    "PHZD",
+                                    "PMIS",
+                                    "PARW",
+                                    "PBAR",
+                                    "PBEA",
+                                    "PCON",
+                                    "PFLA"
+                                ]
+                            },
+                            {
+                                "name": "Combined Mesh",
+                                "type": "uint32",
+                                "format": {
+                                    "type": "CombinedMeshIDFormat"
+                                }
+                            }
+                        ],
+                        "sortKey": [
+                            0
+                        ]
+                    }
+                }
+            ]
+        }
+    ],
+    "containedInElement": {
+        "name": "Cell",
+        "type": "formId",
+        "required": true,
+        "signatures": [
+            "CELL"
+        ]
+    }
+}

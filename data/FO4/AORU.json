@@ -1,0 +1,49 @@
+{
+    "signature": "AORU",
+    "type": "record",
+    "name": "Attraction Rule",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "AOR2",
+            "name": "Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Radius",
+                    "type": "float"
+                },
+                {
+                    "name": "Min Delay",
+                    "type": "float"
+                },
+                {
+                    "name": "Max Delay",
+                    "type": "float"
+                },
+                {
+                    "name": "Requires Line of Sight",
+                    "type": "uint8",
+                    "format": {
+                        "id": "BoolEnum"
+                    }
+                },
+                {
+                    "name": "Combat Target",
+                    "type": "uint8",
+                    "format": {
+                        "id": "BoolEnum"
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 2
+                }
+            ]
+        }
+    ]
+}

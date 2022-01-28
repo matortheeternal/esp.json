@@ -1,0 +1,51 @@
+{
+    "signature": "FSTS",
+    "type": "record",
+    "name": "Footstep Set",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "XCNT",
+            "name": "Count",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Walking",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Running",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Sprinting",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Sneaking",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Swimming",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "signature": "DATA",
+            "name": "Footstep Sets",
+            "type": "array",
+            "required": true,
+            "element": {
+                "name": "Footstep",
+                "type": "formId",
+                "signatures": [
+                    "FSTP"
+                ]
+            }
+        }
+    ]
+}

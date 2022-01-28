@@ -1,0 +1,121 @@
+{
+    "signature": "COBJ",
+    "type": "record",
+    "name": "Constructible Object",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "YNAM"
+        },
+        {
+            "id": "ZNAM"
+        },
+        {
+            "signature": "FVPA",
+            "name": "Components",
+            "type": "array",
+            "sorted": true,
+            "element": {
+                "name": "Component",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Component",
+                        "type": "formId",
+                        "signatures": {
+                            "id": "sigBaseObjects"
+                        }
+                    },
+                    {
+                        "name": "Count",
+                        "type": "uint32"
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        },
+        {
+            "id": "DESC"
+        },
+        {
+            "id": "CTDAs"
+        },
+        {
+            "signature": "CNAM",
+            "name": "Created Object",
+            "type": "formId",
+            "signatures": {
+                "id": "sigBaseObjects"
+            }
+        },
+        {
+            "signature": "BNAM",
+            "name": "Workbench Keyword",
+            "type": "formId",
+            "signatures": [
+                "KYWD"
+            ]
+        },
+        {
+            "signature": "NAM1",
+            "name": "Unused",
+            "type": "bytes",
+            "size": 0,
+            "conflictType": "Ignore"
+        },
+        {
+            "signature": "NAM2",
+            "name": "Unused",
+            "type": "bytes",
+            "size": 0,
+            "conflictType": "Ignore"
+        },
+        {
+            "signature": "NAM3",
+            "name": "Unused",
+            "type": "bytes",
+            "size": 0,
+            "conflictType": "Ignore"
+        },
+        {
+            "signature": "ANAM",
+            "name": "Menu Art Object",
+            "type": "formId",
+            "signatures": [
+                "ARTO"
+            ]
+        },
+        {
+            "signature": "FNAM",
+            "name": "Category",
+            "type": "array",
+            "sorted": true,
+            "element": {
+                "name": "Keyword",
+                "type": "formId",
+                "signatures": [
+                    "KYWD"
+                ]
+            }
+        },
+        {
+            "signature": "INTV",
+            "name": "Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Created Object Count",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Priority",
+                    "type": "uint16"
+                }
+            ]
+        }
+    ]
+}

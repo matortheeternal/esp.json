@@ -1,0 +1,45 @@
+{
+    "name": "Object Template",
+    "type": "memberStruct",
+    "members": [
+        {
+            "signature": "OBTE",
+            "name": "Count",
+            "type": "uint32",
+            "conflictType": "Benign"
+        },
+        {
+            "name": "Combinations",
+            "type": "memberArray",
+            "counter": {
+                "type": "elementCounter",
+                "path": "OBTE - Count"
+            },
+            "member": {
+                "name": "Combination",
+                "type": "memberStruct",
+                "unordered": true,
+                "members": [
+                    {
+                        "signature": "OBTF",
+                        "name": "Editor Only",
+                        "type": "empty"
+                    },
+                    {
+                        "id": "FULL"
+                    },
+                    {
+                        "id": "OBTS",
+                        "required": true
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "STOP",
+            "name": "Marker",
+            "type": "empty",
+            "required": true
+        }
+    ]
+}

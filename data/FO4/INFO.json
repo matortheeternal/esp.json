@@ -1,0 +1,327 @@
+{
+    "signature": "INFO",
+    "type": "record",
+    "name": "Dialog response",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "6": "Unknown 6",
+            "7": "Exclude From Export",
+            "12": "Ignored",
+            "13": "Actor Changed"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "VMADFragmentedINFO"
+        },
+        {
+            "signature": "ENAM",
+            "name": "Response flags",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Flags",
+                    "type": "uint16",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Start Scene on End",
+                            "1": "Random",
+                            "2": "Say Once",
+                            "3": "Requires Player Activation",
+                            "4": "Unknown 4",
+                            "5": "Random End",
+                            "6": "End Running Scene",
+                            "7": "ForceGreet Hello",
+                            "8": "Player Address",
+                            "9": "Unknown 9",
+                            "10": "Can Move While Greeting",
+                            "11": "No LIP File",
+                            "12": "Requires post-processing",
+                            "13": "Audio Output Override",
+                            "14": "Has Capture",
+                            "15": "Unknown 16"
+                        }
+                    }
+                },
+                {
+                    "name": "Reset Hours",
+                    "type": "uint16",
+                    "format": {
+                        "type": "divide",
+                        "value": 2730
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "TPIC",
+            "name": "Topic",
+            "type": "formId",
+            "signatures": [
+                "DIAL"
+            ]
+        },
+        {
+            "signature": "PNAM",
+            "name": "Previous INFO",
+            "type": "formId",
+            "conflictType": "Benign",
+            "signatures": [
+                "INFO",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "DNAM",
+            "name": "Shared INFO",
+            "type": "formId",
+            "signatures": [
+                "INFO"
+            ]
+        },
+        {
+            "signature": "GNAM",
+            "name": "INFO group",
+            "type": "formId",
+            "signatures": [
+                "INFO"
+            ]
+        },
+        {
+            "signature": "IOVR",
+            "name": "Override FileName",
+            "type": "string"
+        },
+        {
+            "name": "Responses",
+            "type": "memberArray",
+            "member": {
+                "name": "Response",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "TRDA",
+                        "name": "Response Data",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Emotion",
+                                "type": "formId",
+                                "signatures": [
+                                    "KYWD",
+                                    "FFFF"
+                                ]
+                            },
+                            {
+                                "name": "Response number",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "Unused",
+                                "type": "bytes",
+                                "size": 3
+                            },
+                            {
+                                "name": "Unknown",
+                                "type": "bytes",
+                                "size": 2
+                            },
+                            {
+                                "name": "Interrupt Percentage",
+                                "type": "uint16"
+                            },
+                            {
+                                "name": "Camera Target Alias",
+                                "type": "int32"
+                            },
+                            {
+                                "name": "Camera Location Alias",
+                                "type": "int32"
+                            }
+                        ]
+                    },
+                    {
+                        "signature": "NAM1",
+                        "name": "Response Text",
+                        "type": "string",
+                        "localized": true,
+                        "conflictType": "Translate",
+                        "required": true,
+                        "keepCase": true
+                    },
+                    {
+                        "signature": "NAM2",
+                        "name": "Script Notes",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "signature": "NAM3",
+                        "name": "Edits",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "signature": "NAM4",
+                        "name": "Alternate LIP Text",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "signature": "SNAM",
+                        "name": "Idle Animations: Speaker",
+                        "type": "formId",
+                        "signatures": [
+                            "IDLE"
+                        ]
+                    },
+                    {
+                        "signature": "LNAM",
+                        "name": "Idle Animations: Listener",
+                        "type": "formId",
+                        "signatures": [
+                            "IDLE"
+                        ]
+                    },
+                    {
+                        "signature": "TNAM",
+                        "name": "Interrupt Percentage",
+                        "type": "uint16"
+                    },
+                    {
+                        "signature": "NAM9",
+                        "name": "Text Hash",
+                        "type": "bytes"
+                    },
+                    {
+                        "signature": "SRAF",
+                        "name": "Camera Path",
+                        "type": "formId",
+                        "signatures": [
+                            "CPTH"
+                        ]
+                    },
+                    {
+                        "signature": "WZMD",
+                        "name": "Stop on Scene End",
+                        "type": "empty"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "CTDAs"
+        },
+        {
+            "signature": "RNAM",
+            "name": "Prompt",
+            "type": "string",
+            "localized": true,
+            "conflictType": "Translate",
+            "keepCase": true
+        },
+        {
+            "signature": "ANAM",
+            "name": "Speaker",
+            "type": "formId",
+            "signatures": [
+                "NPC_"
+            ]
+        },
+        {
+            "signature": "TSCE",
+            "name": "Start Scene",
+            "type": "formId",
+            "signatures": [
+                "SCEN"
+            ]
+        },
+        {
+            "signature": "INTV",
+            "type": "bytes"
+        },
+        {
+            "signature": "ALFA",
+            "name": "Forced Alias",
+            "type": "int32"
+        },
+        {
+            "signature": "ONAM",
+            "name": "Audio Output Override",
+            "type": "formId",
+            "signatures": [
+                "SOPM"
+            ]
+        },
+        {
+            "signature": "GREE",
+            "name": "Greet Distance",
+            "type": "uint32"
+        },
+        {
+            "signature": "TIQS",
+            "name": "Set Parent Quest Stage",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "On Begin",
+                    "type": "int16"
+                },
+                {
+                    "name": "On End",
+                    "type": "int16"
+                }
+            ]
+        },
+        {
+            "signature": "NAM0",
+            "name": "Start Scene Phase",
+            "type": "string"
+        },
+        {
+            "signature": "INCC",
+            "name": "Challenge",
+            "type": "uint32",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "None",
+                    "1": "Easy",
+                    "2": "Medium",
+                    "3": "Hard",
+                    "4": "Always Succeeds",
+                    "5": "Easy Repeatable",
+                    "6": "Medium Repeatable",
+                    "7": "Hard Repeatable"
+                }
+            }
+        },
+        {
+            "signature": "MODQ",
+            "name": "Reset Global",
+            "type": "formId",
+            "signatures": [
+                "GLOB"
+            ]
+        },
+        {
+            "signature": "INAM",
+            "name": "Subtitle Priority",
+            "type": "uint32",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "Low",
+                    "1": "Normal",
+                    "2": "Unknown 2",
+                    "3": "Force"
+                }
+            }
+        }
+    ]
+}

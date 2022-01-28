@@ -1,0 +1,419 @@
+{
+    "signature": "NVNM",
+    "name": "Navmesh Geometry",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Version",
+            "type": "uint32",
+            "defaultNativeValue": 15
+        },
+        {
+            "name": "Pathing Cell",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Magic",
+                    "type": "bytes",
+                    "size": 4,
+                    "defaultEditValue": "3C A0 E9 A5"
+                },
+                {
+                    "name": "Parent Worldspace",
+                    "type": "formId",
+                    "signatures": [
+                        "WRLD",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Parent",
+                    "type": "union",
+                    "decider": "NVNMParentDecider",
+                    "elements": [
+                        {
+                            "name": "Coordinates",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Grid Y",
+                                    "type": "int16"
+                                },
+                                {
+                                    "name": "Grid X",
+                                    "type": "int16"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Parent Cell",
+                            "type": "formId",
+                            "signatures": [
+                                "CELL"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Vertices",
+            "type": "array",
+            "prefix": 4,
+            "notAlignable": 1,
+            "element": {
+                "name": "Vertex",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "X",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Z",
+                        "type": "float"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Triangles",
+            "type": "array",
+            "prefix": 4,
+            "notAlignable": 1,
+            "element": {
+                "name": "Triangle",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Vertex 0",
+                        "type": "int16",
+                        "linksToCallback": "VertexLinksTo",
+                        "format": {
+                            "type": "Vertex0Format"
+                        }
+                    },
+                    {
+                        "name": "Vertex 1",
+                        "type": "int16",
+                        "linksToCallback": "VertexLinksTo",
+                        "format": {
+                            "type": "Vertex1Format"
+                        }
+                    },
+                    {
+                        "name": "Vertex 2",
+                        "type": "int16",
+                        "linksToCallback": "VertexLinksTo",
+                        "format": {
+                            "type": "Vertex2Format"
+                        }
+                    },
+                    {
+                        "name": "Edge 0-1",
+                        "type": "int16",
+                        "linksToCallback": "EdgeLinksTo0",
+                        "format": {
+                            "type": "Edge0Format"
+                        }
+                    },
+                    {
+                        "name": "Edge 1-2",
+                        "type": "int16",
+                        "linksToCallback": "EdgeLinksTo1",
+                        "format": {
+                            "type": "Edge1Format"
+                        }
+                    },
+                    {
+                        "name": "Edge 2-0",
+                        "type": "int16",
+                        "linksToCallback": "EdgeLinksTo2",
+                        "format": {
+                            "type": "Edge2Format"
+                        }
+                    },
+                    {
+                        "name": "Height",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "Flags",
+                        "type": "uint16",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "Edge 0-1 link",
+                                "1": "Edge 1-2 link",
+                                "2": "Edge 2-0 link",
+                                "3": "",
+                                "4": "No Large Creatures",
+                                "5": "Overlapping",
+                                "6": "Preferred",
+                                "7": "",
+                                "8": "Unknown 9",
+                                "9": "Water",
+                                "10": "Door",
+                                "11": "Found",
+                                "12": "Unknown 13",
+                                "13": "",
+                                "14": "",
+                                "15": ""
+                            }
+                        }
+                    },
+                    {
+                        "name": "Cover Flags",
+                        "type": "uint16",
+                        "format": {
+                            "type": "flags",
+                            "flags": {
+                                "0": "Edge 0-1 Cover Value 1/4",
+                                "1": "Edge 0-1 Cover Value 2/4",
+                                "2": "Edge 0-1 Cover Value 3/4",
+                                "3": "Edge 0-1 Cover Value 4/4",
+                                "4": "Edge 0-1 Left",
+                                "5": "Edge 0-1 Right",
+                                "6": "Edge 1-2 Cover Value 1/4",
+                                "7": "Edge 1-2 Cover Value 2/4",
+                                "8": "Edge 1-2 Cover Value 3/4",
+                                "9": "Edge 1-2 Cover Value 4/4",
+                                "10": "Edge 1-2 Left",
+                                "11": "Edge 1-2 Right",
+                                "12": "Unknown 13",
+                                "13": "Unknown 14",
+                                "14": "Unknown 15",
+                                "15": "Unknown 16"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Edge Links",
+            "type": "array",
+            "prefix": 4,
+            "conflictType": "Ignore",
+            "notAlignable": 1,
+            "element": {
+                "name": "Edge Link",
+                "type": "struct",
+                "conflictType": "Ignore",
+                "elements": [
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 4,
+                        "conflictType": "Ignore"
+                    },
+                    {
+                        "name": "Mesh",
+                        "type": "formId",
+                        "conflictType": "Ignore",
+                        "signatures": [
+                            "NAVM"
+                        ]
+                    },
+                    {
+                        "name": "Triangle",
+                        "type": "int16",
+                        "conflictType": "Ignore"
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "bytes",
+                        "size": 1,
+                        "conflictType": "Ignore"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Door Triangles",
+            "type": "array",
+            "sorted": true,
+            "prefix": 4,
+            "element": {
+                "name": "Door Triangle",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Triangle before door",
+                        "type": "uint16",
+                        "linksToCallback": "TriangleLinksTo"
+                    },
+                    {
+                        "name": "DTUnknown",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Door",
+                        "type": "union",
+                        "decider": "DoorTriangleDoorTriangleDecider",
+                        "elements": [
+                            {
+                                "id": "Null"
+                            },
+                            {
+                                "name": "Door",
+                                "type": "formId",
+                                "signatures": [
+                                    "REFR"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "sortKey": [
+                    0,
+                    2
+                ]
+            }
+        },
+        {
+            "name": "Unknown 5",
+            "type": "array",
+            "prefix": 4,
+            "notAlignable": 1,
+            "element": {
+                "name": "Unknown",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Unknown",
+                        "type": "uint16"
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "uint16"
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "uint32"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Unknown 6",
+            "type": "array",
+            "prefix": 4,
+            "notAlignable": 1,
+            "element": {
+                "name": "Unknown",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Unknown",
+                        "type": "uint16"
+                    },
+                    {
+                        "name": "Triangle",
+                        "type": "uint16",
+                        "linksToCallback": "TriangleLinksTo"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Waypoints",
+            "type": "array",
+            "prefix": 4,
+            "notAlignable": 1,
+            "element": {
+                "name": "Waypoint",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "X",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Z",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Triangle",
+                        "type": "uint16",
+                        "linksToCallback": "TriangleLinksTo"
+                    },
+                    {
+                        "name": "Unknown",
+                        "type": "uint32"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Navmesh Grid",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Navmesh Grid Size",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Max X Distance",
+                    "type": "float"
+                },
+                {
+                    "name": "Max Y Distance",
+                    "type": "float"
+                },
+                {
+                    "name": "Min X",
+                    "type": "float"
+                },
+                {
+                    "name": "Min Y",
+                    "type": "float"
+                },
+                {
+                    "name": "Min Z",
+                    "type": "float"
+                },
+                {
+                    "name": "Max X",
+                    "type": "float"
+                },
+                {
+                    "name": "Max Y",
+                    "type": "float"
+                },
+                {
+                    "name": "Max Z",
+                    "type": "float"
+                },
+                {
+                    "name": "NavMesh Grid Arrays",
+                    "type": "array",
+                    "notAlignable": 1,
+                    "element": {
+                        "name": "NavMeshGridCell",
+                        "type": "array",
+                        "prefix": 4,
+                        "notAlignable": 1,
+                        "element": {
+                            "name": "Triangle",
+                            "type": "int16",
+                            "linksToCallback": "TriangleLinksTo"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

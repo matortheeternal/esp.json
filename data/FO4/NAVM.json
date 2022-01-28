@@ -1,0 +1,37 @@
+{
+    "signature": "NAVM",
+    "type": "record",
+    "name": "Navigation Mesh",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "12": "Ignored",
+            "18": "Compressed",
+            "26": "AutoGen"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "NVNM"
+        },
+        {
+            "signature": "ONAM",
+            "type": "formId"
+        },
+        {
+            "signature": "NNAM",
+            "name": "Unknown",
+            "type": "array",
+            "element": {
+                "name": "Unknown",
+                "type": "uint16"
+            }
+        },
+        {
+            "id": "MNAMNAVM"
+        }
+    ]
+}

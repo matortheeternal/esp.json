@@ -1,0 +1,25 @@
+{
+    "signature": "EFIT",
+    "name": "",
+    "type": "struct",
+    "required": true,
+    "elements": [
+        {
+            "name": "Magnitude",
+            "type": "float",
+            "required": true
+        },
+        {
+            "name": "Area",
+            "type": "uint32"
+        },
+        {
+            "name": "Duration",
+            "type": "uint32"
+        }
+    ],
+    "sortKey": [
+        3,
+        4
+    ]
+}

@@ -1,0 +1,81 @@
+{
+    "signature": "RELA",
+    "type": "record",
+    "name": "Relationship",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "DATA",
+            "name": "Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Parent",
+                    "type": "formId",
+                    "signatures": [
+                        "NPC_",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Child",
+                    "type": "formId",
+                    "signatures": [
+                        "NPC_",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Rank",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Lover",
+                            "1": "Ally",
+                            "2": "Confidant",
+                            "3": "Friend",
+                            "4": "Acquaintance",
+                            "5": "Rival",
+                            "6": "Foe",
+                            "7": "Enemy",
+                            "8": "Archnemesis"
+                        }
+                    }
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 2
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Unknown 1",
+                            "1": "Unknown 2",
+                            "2": "Unknown 3",
+                            "3": "Unknown 4",
+                            "4": "Unknown 5",
+                            "5": "Unknown 6",
+                            "6": "Unknown 7",
+                            "7": "Secret"
+                        }
+                    }
+                },
+                {
+                    "name": "Association Type",
+                    "type": "formId",
+                    "signatures": [
+                        "ASTP",
+                        "NULL"
+                    ]
+                }
+            ]
+        }
+    ]
+}

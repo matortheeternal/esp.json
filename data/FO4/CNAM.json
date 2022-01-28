@@ -1,0 +1,24 @@
+{
+    "signature": "CNAM",
+    "name": "Color",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Red",
+            "type": "uint8"
+        },
+        {
+            "name": "Green",
+            "type": "uint8"
+        },
+        {
+            "name": "Blue",
+            "type": "uint8"
+        },
+        {
+            "name": "Unknown",
+            "type": "bytes",
+            "size": 1
+        }
+    ]
+}

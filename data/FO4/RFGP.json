@@ -1,0 +1,27 @@
+{
+    "signature": "RFGP",
+    "type": "record",
+    "name": "Reference Group",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "NNAM",
+            "name": "Name",
+            "type": "string"
+        },
+        {
+            "signature": "RNAM",
+            "name": "Reference",
+            "type": "formId",
+            "signatures": {
+                "id": "sigReferences"
+            }
+        },
+        {
+            "signature": "PNAM",
+            "type": "bytes"
+        }
+    ]
+}

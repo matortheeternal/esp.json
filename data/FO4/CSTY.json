@@ -1,0 +1,275 @@
+{
+    "signature": "CSTY",
+    "type": "record",
+    "name": "Combat Style",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "12": "Ignored",
+            "19": "Allow Dual Wielding"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "CSGD",
+            "name": "General",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Offensive Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Defensive Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Group Offensive Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Equipment Score Mult - Melee",
+                    "type": "float"
+                },
+                {
+                    "name": "Equipment Score Mult - Magic",
+                    "type": "float"
+                },
+                {
+                    "name": "Equipment Score Mult - Ranged",
+                    "type": "float"
+                },
+                {
+                    "name": "Equipment Score Mult - Shout",
+                    "type": "float"
+                },
+                {
+                    "name": "Equipment Score Mult - Unarmed",
+                    "type": "float"
+                },
+                {
+                    "name": "Equipment Score Mult - Staff",
+                    "type": "float"
+                },
+                {
+                    "name": "Avoid Threat Chance",
+                    "type": "float"
+                },
+                {
+                    "name": "Dodge Threat Chance",
+                    "type": "float"
+                },
+                {
+                    "name": "Evade Threat Chance",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "CSMD",
+            "type": "bytes",
+            "conflictType": "Ignore"
+        },
+        {
+            "signature": "CSME",
+            "name": "Melee",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Attack Staggered Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Power Attack Staggered Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Power Attack Blocking Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Bash Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Bash Recoil Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Bash Attack Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Bash Power Attack Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Special Attack Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Block When Staggered Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Attack When Staggered Mult",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "CSRA",
+            "name": "Ranged Accuracy Mult",
+            "type": "float",
+            "required": true
+        },
+        {
+            "signature": "CSCR",
+            "name": "Close Range",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Dueling - Circle Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Dueling - Fallback Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Flanking - Flank Distance",
+                    "type": "float"
+                },
+                {
+                    "name": "Flanking - Stalk Time",
+                    "type": "float"
+                },
+                {
+                    "name": "Charging - Charge Distance",
+                    "type": "float"
+                },
+                {
+                    "name": "Charging - Throw Probability",
+                    "type": "float"
+                },
+                {
+                    "name": "Charging - Sprint Fast Probability",
+                    "type": "float"
+                },
+                {
+                    "name": "Charging - Sideswipe Probability",
+                    "type": "float"
+                },
+                {
+                    "name": "Charging - Disengane Probability",
+                    "type": "float"
+                },
+                {
+                    "name": "Charging - Throw Max Targets",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Flanking - Flank Variance",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "CSLR",
+            "name": "Long Range",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Strafe Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Adjust Range Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Crouch Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Wait Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Range Mult",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "CSCV",
+            "name": "Cover Search Distance Mult",
+            "type": "float",
+            "required": true
+        },
+        {
+            "signature": "CSFL",
+            "name": "Flight",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Hover Chance",
+                    "type": "float"
+                },
+                {
+                    "name": "Dive Bomb Chance",
+                    "type": "float"
+                },
+                {
+                    "name": "Ground Attack Chance",
+                    "type": "float"
+                },
+                {
+                    "name": "Hover Time",
+                    "type": "float"
+                },
+                {
+                    "name": "Ground Attack Time",
+                    "type": "float"
+                },
+                {
+                    "name": "Perch Attack Chance",
+                    "type": "float"
+                },
+                {
+                    "name": "Perch Attack Time",
+                    "type": "float"
+                },
+                {
+                    "name": "Flying Attack Chance",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "DATA",
+            "name": "Flags",
+            "type": "uint32",
+            "required": true,
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Dueling",
+                    "1": "Flanking",
+                    "2": "Allow Dual Wielding",
+                    "3": "Charging",
+                    "4": "Retarget Any Nearby Melee Target",
+                    "5": "Unknown 5"
+                }
+            }
+        }
+    ]
+}

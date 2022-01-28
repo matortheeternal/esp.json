@@ -1,0 +1,40 @@
+{
+    "signature": "TRNS",
+    "type": "record",
+    "name": "Transform",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "12": "Ignored",
+            "16": "Around Origin"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "DATA",
+            "name": "Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "id": "PosRot"
+                },
+                {
+                    "name": "Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Zoom Min",
+                    "type": "float"
+                },
+                {
+                    "name": "Zoom Max",
+                    "type": "float"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,75 @@
+{
+    "signature": "SNCT",
+    "type": "record",
+    "name": "Sound Category",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "signature": "FNAM",
+            "name": "Flags",
+            "type": "uint32",
+            "required": true,
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Mute When Submerged",
+                    "1": "Should Appear on Menu",
+                    "2": "Immune to Time Speedup",
+                    "3": "Pause During Menus (Immed)",
+                    "4": "Pause During Menus (Fade)",
+                    "5": "Exclude from Player OPM Override",
+                    "6": "Pause During Start Menu"
+                }
+            }
+        },
+        {
+            "signature": "PNAM",
+            "name": "Parent Category",
+            "type": "formId",
+            "signatures": [
+                "SNCT"
+            ]
+        },
+        {
+            "signature": "ONAM",
+            "name": "Menu Slider Category",
+            "type": "formId",
+            "signatures": [
+                "SNCT"
+            ]
+        },
+        {
+            "signature": "VNAM",
+            "name": "Static Volume Multiplier",
+            "type": "uint16",
+            "format": {
+                "type": "divide",
+                "value": 65535
+            }
+        },
+        {
+            "signature": "UNAM",
+            "name": "Default Menu Value",
+            "type": "uint16",
+            "format": {
+                "type": "divide",
+                "value": 65535
+            }
+        },
+        {
+            "signature": "MNAM",
+            "name": "Min Frequency Multiplier",
+            "type": "float"
+        },
+        {
+            "signature": "CNAM",
+            "name": "Sidechain Target Multiplier",
+            "type": "float"
+        }
+    ]
+}

@@ -1,0 +1,98 @@
+{
+    "signature": "FLOR",
+    "type": "record",
+    "name": "Flora",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "VMAD"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "PTRN"
+        },
+        {
+            "id": "FULL",
+            "required": true
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "id": "KSIZ"
+        },
+        {
+            "id": "KWDAs"
+        },
+        {
+            "id": "PRPS"
+        },
+        {
+            "signature": "PNAM",
+            "type": "bytes"
+        },
+        {
+            "id": "ATTX"
+        },
+        {
+            "signature": "RNAM",
+            "name": "Activate Text Override",
+            "type": "string",
+            "localized": true,
+            "conflictType": "Translate",
+            "keepCase": true
+        },
+        {
+            "signature": "FNAM",
+            "type": "bytes"
+        },
+        {
+            "signature": "PFIG",
+            "name": "Ingredient",
+            "type": "formId",
+            "signatures": {
+                "id": "sigBaseObjects"
+            }
+        },
+        {
+            "signature": "SNAM",
+            "name": "Harvest Sound",
+            "type": "formId",
+            "signatures": [
+                "SNDR"
+            ]
+        },
+        {
+            "signature": "PFPC",
+            "name": "Ingredient Production",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Spring",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Summer ",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Fall",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Winter",
+                    "type": "uint8"
+                }
+            ]
+        }
+    ]
+}

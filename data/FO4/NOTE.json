@@ -1,0 +1,103 @@
+{
+    "signature": "NOTE",
+    "type": "record",
+    "name": "Note",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "VMAD"
+        },
+        {
+            "id": "OBND"
+        },
+        {
+            "id": "PTRN"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "YNAM"
+        },
+        {
+            "id": "ZNAM"
+        },
+        {
+            "signature": "DNAM",
+            "name": "Type",
+            "type": "uint8",
+            "required": true,
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "Sound",
+                    "1": "Voice",
+                    "2": "Program",
+                    "3": "Terminal"
+                }
+            }
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Value",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "SNAM",
+            "name": "Data",
+            "type": "union",
+            "decider": "NOTEDataDecider",
+            "elements": [
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Sound",
+                    "type": "formId",
+                    "signatures": [
+                        "SNDR"
+                    ]
+                },
+                {
+                    "name": "Scene",
+                    "type": "formId",
+                    "signatures": [
+                        "SCEN"
+                    ]
+                },
+                {
+                    "name": "Terminal",
+                    "type": "formId",
+                    "signatures": [
+                        "TERM"
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "PNAM",
+            "name": "Program File",
+            "type": "string"
+        }
+    ]
+}

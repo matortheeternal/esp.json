@@ -1,0 +1,234 @@
+{
+    "signature": "DIAL",
+    "type": "record",
+    "name": "Dialog Topic",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "signature": "PNAM",
+            "name": "Priority",
+            "type": "float",
+            "required": true
+        },
+        {
+            "signature": "BNAM",
+            "name": "Branch",
+            "type": "formId",
+            "signatures": [
+                "DLBR"
+            ]
+        },
+        {
+            "signature": "QNAM",
+            "name": "Quest",
+            "type": "formId",
+            "signatures": [
+                "QUST"
+            ]
+        },
+        {
+            "signature": "KNAM",
+            "name": "Keyword",
+            "type": "formId",
+            "signatures": [
+                "KYWD"
+            ]
+        },
+        {
+            "signature": "DATA",
+            "name": "Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Topic Flags",
+                    "type": "uint8",
+                    "required": true,
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Do All Before Repeating",
+                            "1": "Unknown 1",
+                            "2": "Unknown 2"
+                        }
+                    }
+                },
+                {
+                    "name": "Category",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Player",
+                            "1": "Command",
+                            "2": "Scene",
+                            "3": "Combat",
+                            "4": "Favor",
+                            "5": "Detection",
+                            "6": "Service",
+                            "7": "Miscellaneous"
+                        }
+                    }
+                },
+                {
+                    "name": "Subtype",
+                    "type": "uint16",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Custom",
+                            "1": "ForceGreet",
+                            "2": "Rumors",
+                            "3": "Custom",
+                            "4": "Call",
+                            "5": "Follow",
+                            "6": "Move",
+                            "7": "Attack",
+                            "8": "Inspect",
+                            "9": "Retrieve",
+                            "10": "Stay",
+                            "11": "Release",
+                            "12": "ShowRelationships",
+                            "13": "Reject",
+                            "14": "Heal",
+                            "15": "Assign",
+                            "16": "Enter",
+                            "17": "Custom",
+                            "18": "Show",
+                            "19": "Agree",
+                            "20": "Refuse",
+                            "21": "ExitFavorState",
+                            "22": "MoralRefusal",
+                            "23": "Trade",
+                            "24": "PathingRefusal",
+                            "25": "Attack",
+                            "26": "PowerAttack",
+                            "27": "Bash",
+                            "28": "Hit",
+                            "29": "Flee",
+                            "30": "BleedOut",
+                            "31": "AvoidThreat",
+                            "32": "Death",
+                            "33": "Block",
+                            "34": "Taunt",
+                            "35": "ThrowGrenade",
+                            "36": "AllyKilled",
+                            "37": "OrderFallback",
+                            "38": "OrderMoveUp",
+                            "39": "OrderFlank",
+                            "40": "OrderTakeCover",
+                            "41": "Retreat",
+                            "42": "CoverMe",
+                            "43": "SuppressiveFire",
+                            "44": "CrippledLimb",
+                            "45": "PairedAttack",
+                            "46": "Steal",
+                            "47": "Yield",
+                            "48": "AcceptYield",
+                            "49": "PickpocketCombat",
+                            "50": "Assault",
+                            "51": "Murder",
+                            "52": "AssaultNC",
+                            "53": "MurderNC",
+                            "54": "PickpocketNC",
+                            "55": "StealFromNC",
+                            "56": "TrespassAgainstNC",
+                            "57": "Trespass",
+                            "58": "UNUSED01",
+                            "59": "VoicePowerStartShort",
+                            "60": "VoicePowerStartLong",
+                            "61": "VoicePowerEndShort",
+                            "62": "VoicePowerEndLong",
+                            "63": "AlertIdle",
+                            "64": "LostIdle",
+                            "65": "NormalToAlert",
+                            "66": "NormalToCombat",
+                            "67": "NormalToLost",
+                            "68": "AlertToNormal",
+                            "69": "AlertToCombat",
+                            "70": "CombatToNormal",
+                            "71": "CombatToLost",
+                            "72": "LostToNormal",
+                            "73": "LostToCombat",
+                            "74": "DetectFriendDie",
+                            "75": "ServiceRefusal",
+                            "76": "Repair",
+                            "77": "Travel",
+                            "78": "Training",
+                            "79": "BarterExit",
+                            "80": "RepairExit",
+                            "81": "Recharge",
+                            "82": "RechargeExit",
+                            "83": "TrainingExit",
+                            "84": "ObserveCombat",
+                            "85": "NoticeCorpse",
+                            "86": "TimeToGo",
+                            "87": "Goodbye",
+                            "88": "Hello",
+                            "89": "SwingMeleeWeapon",
+                            "90": "ShootBow",
+                            "91": "ZKeyObject",
+                            "92": "Jump",
+                            "93": "KnockOverObject",
+                            "94": "DestroyObject",
+                            "95": "StandonFurniture",
+                            "96": "LockedObject",
+                            "97": "PickpocketTopic",
+                            "98": "PursueIdleTopic",
+                            "99": "SharedInfo",
+                            "100": "SceneChoice",
+                            "101": "PlayerCastProjectileSpell",
+                            "102": "PlayerCastSelfSpell",
+                            "103": "PlayerShout",
+                            "104": "Idle",
+                            "105": "EnterSprintBreath",
+                            "106": "EnterBowZoomBreath",
+                            "107": "ExitBowZoomBreath",
+                            "108": "ActorCollidewithActor",
+                            "109": "PlayerinIronSights",
+                            "110": "OutofBreath",
+                            "111": "CombatGrunt",
+                            "112": "LeaveWaterBreath",
+                            "113": "ImpatientPostitive",
+                            "114": "ImpatientNegative",
+                            "115": "ImpatientNeutral",
+                            "116": "ImpatientQuestion",
+                            "117": "WaitingForPlayerInput",
+                            "118": "Greeting",
+                            "119": "PlayerActivateDoor",
+                            "120": "PlayerActivateTerminals",
+                            "121": "PlayerActivateFurniture",
+                            "122": "PlayerActivateActivators",
+                            "123": "PlayerActivateContainer",
+                            "124": "PlayerAquireFeaturedItem"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "SNAM",
+            "name": "Subtype Name",
+            "type": "string",
+            "size": 4
+        },
+        {
+            "signature": "TIFC",
+            "name": "Info Count",
+            "type": "uint32",
+            "conflictType": "Benign"
+        }
+    ],
+    "containedInElement": {
+        "name": "Topic",
+        "type": "formId",
+        "required": true,
+        "signatures": [
+            "DIAL"
+        ]
+    }
+}

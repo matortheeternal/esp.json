@@ -1,0 +1,56 @@
+{
+    "signature": "ASPC",
+    "type": "record",
+    "name": "Acoustic Space",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "signature": "SNAM",
+            "name": "Looping Sound",
+            "type": "formId",
+            "signatures": [
+                "SNDR"
+            ]
+        },
+        {
+            "signature": "RDAT",
+            "name": "Use Sound from Region (Interiors Only)",
+            "type": "formId",
+            "signatures": [
+                "REGN"
+            ]
+        },
+        {
+            "signature": "BNAM",
+            "name": "Environment Type",
+            "type": "formId",
+            "signatures": [
+                "REVB"
+            ]
+        },
+        {
+            "signature": "XTRI",
+            "name": "Is Interior",
+            "type": "uint8",
+            "required": true,
+            "format": {
+                "id": "BoolEnum"
+            }
+        },
+        {
+            "signature": "WNAM",
+            "name": "Weather Attenuation (dB)",
+            "type": "uint16",
+            "format": {
+                "type": "divide",
+                "value": 100
+            }
+        }
+    ]
+}

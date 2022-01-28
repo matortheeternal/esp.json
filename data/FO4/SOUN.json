@@ -1,0 +1,45 @@
+{
+    "signature": "SOUN",
+    "type": "record",
+    "name": "Sound Marker",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "signature": "SDSC",
+            "name": "Sound Descriptor",
+            "type": "formId",
+            "signatures": [
+                "SNDR",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "REPT",
+            "name": "Repeat",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Min Time",
+                    "type": "float"
+                },
+                {
+                    "name": "Max Time",
+                    "type": "float"
+                },
+                {
+                    "name": "Stackable",
+                    "type": "uint8",
+                    "format": {
+                        "id": "BoolEnum"
+                    }
+                }
+            ]
+        }
+    ]
+}

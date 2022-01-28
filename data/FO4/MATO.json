@@ -1,0 +1,84 @@
+{
+    "signature": "MATO",
+    "type": "record",
+    "name": "Material Object",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "name": "Property Data",
+            "type": "memberArray",
+            "member": {
+                "signature": "DNAM",
+                "name": "Data",
+                "type": "bytes",
+                "size": 0,
+                "conflictType": "Ignore"
+            }
+        },
+        {
+            "signature": "DATA",
+            "name": "Directional Material Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Falloff Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Falloff Bias",
+                    "type": "float"
+                },
+                {
+                    "name": "Noise UV Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Material UV Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Projection Vector",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "X",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Y",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Z",
+                            "type": "float"
+                        }
+                    ]
+                },
+                {
+                    "name": "Normal Dampener",
+                    "type": "float"
+                },
+                {
+                    "id": "FloatColors",
+                    "name": "Single Pass Color"
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Single Pass"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

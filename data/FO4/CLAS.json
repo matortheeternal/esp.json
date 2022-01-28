@@ -1,0 +1,40 @@
+{
+    "signature": "CLAS",
+    "type": "record",
+    "name": "Class",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL",
+            "required": true
+        },
+        {
+            "id": "DESC",
+            "required": true
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "PRPS"
+        },
+        {
+            "signature": "DATA",
+            "name": "Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Bleedout Default",
+                    "type": "float"
+                }
+            ]
+        }
+    ]
+}

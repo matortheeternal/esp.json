@@ -1,0 +1,224 @@
+{
+    "signature": "FURN",
+    "type": "record",
+    "name": "Furniture",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "2": "Unknown 2",
+            "4": "Unknown 4",
+            "7": "Is Perch",
+            "12": "Ignored",
+            "13": "Unknown 13",
+            "15": "Has Distant LOD",
+            "16": "Random Anim Start",
+            "23": "Is Marker",
+            "25": "Power Armor",
+            "28": "Must Exit To Talk",
+            "29": "Child Can Use"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "VMAD"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "PTRN"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "DEST"
+        },
+        {
+            "id": "KSIZ"
+        },
+        {
+            "id": "KWDAs"
+        },
+        {
+            "id": "PRPS"
+        },
+        {
+            "id": "NTRM"
+        },
+        {
+            "id": "FTYP"
+        },
+        {
+            "signature": "PNAM",
+            "type": "bytes"
+        },
+        {
+            "signature": "WNAM",
+            "name": "Drinking Water Type",
+            "type": "formId",
+            "signatures": [
+                "WATR"
+            ]
+        },
+        {
+            "id": "ATTX"
+        },
+        {
+            "signature": "FNAM",
+            "name": "Flags",
+            "type": "uint16",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Unknown 0",
+                    "1": "Ignored By Sandbox"
+                }
+            }
+        },
+        {
+            "id": "CITC"
+        },
+        {
+            "id": "CTDAsCount"
+        },
+        {
+            "id": "COCT"
+        },
+        {
+            "id": "CNTOs"
+        },
+        {
+            "id": "MNAMFurnitureMarker"
+        },
+        {
+            "signature": "WBDT",
+            "name": "Workbench Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Bench Type",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "None",
+                            "1": "Create Object",
+                            "2": "Weapons",
+                            "3": "Enchanting (unused)",
+                            "4": "Enchanting Experiment (unused)",
+                            "5": "Alchemy",
+                            "6": "Alchemy Experiment (unused)",
+                            "7": "Armor",
+                            "8": "Power Armor",
+                            "9": "Robot Mod"
+                        }
+                    }
+                },
+                {
+                    "name": "Uses Skill",
+                    "type": "int8",
+                    "format": {
+                        "id": "SkillEnum"
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "NAM1",
+            "name": "Associated Form",
+            "type": "formId",
+            "signatures": [
+                "ARMO",
+                "WEAP",
+                "PERK",
+                "SPEL",
+                "HAZD"
+            ]
+        },
+        {
+            "name": "Markers",
+            "type": "memberArray",
+            "member": {
+                "name": "Marker",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "ENAM",
+                        "name": "Marker Index",
+                        "type": "int32"
+                    },
+                    {
+                        "signature": "NAM0",
+                        "name": "Disabled Entry Points",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Unknown",
+                                "type": "bytes",
+                                "size": 2
+                            },
+                            {
+                                "name": "Disabled Points",
+                                "type": "uint16",
+                                "format": {
+                                    "id": "FurnitureEntryTypeFlags"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Marker Entry Points",
+            "type": "memberArray",
+            "member": {
+                "signature": "FNPR",
+                "name": "Marker",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Type",
+                        "type": "uint16",
+                        "format": {
+                            "id": "FurnitureAnimTypeEnum"
+                        }
+                    },
+                    {
+                        "name": "Entry Points",
+                        "type": "uint16",
+                        "format": {
+                            "id": "FurnitureEntryTypeFlags"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "signature": "XMRK",
+            "name": "Marker Model",
+            "type": "string"
+        },
+        {
+            "id": "SNAMMarkerParams"
+        },
+        {
+            "id": "APPR"
+        },
+        {
+            "id": "ObjectTemplate"
+        },
+        {
+            "id": "NVNM"
+        }
+    ]
+}

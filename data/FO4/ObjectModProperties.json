@@ -1,0 +1,199 @@
+{
+    "name": "Properties",
+    "type": "array",
+    "sorted": true,
+    "counter": {
+        "type": "OMODDataPropertyCounter"
+    },
+    "element": {
+        "name": "Property",
+        "type": "struct",
+        "elements": [
+            {
+                "name": "Value Type",
+                "type": "uint8",
+                "format": {
+                    "type": "enum",
+                    "options": {
+                        "0": "Int",
+                        "1": "Float",
+                        "2": "Bool",
+                        "3": "Unknown 3",
+                        "4": "FormID,Int",
+                        "5": "Enum",
+                        "6": "FormID,Float"
+                    }
+                }
+            },
+            {
+                "name": "Unused",
+                "type": "bytes",
+                "size": 3,
+                "conflictType": "Ignore"
+            },
+            {
+                "name": "Function Type",
+                "type": "union",
+                "decider": "OMODDataFunctionTypeDecider",
+                "elements": [
+                    {
+                        "name": "Function Type",
+                        "type": "uint8",
+                        "format": {
+                            "type": "enum",
+                            "options": {
+                                "0": "SET",
+                                "1": "MUL+ADD",
+                                "2": "ADD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "Function Type",
+                        "type": "uint8",
+                        "format": {
+                            "type": "enum",
+                            "options": {
+                                "0": "SET",
+                                "1": "AND",
+                                "2": "OR"
+                            }
+                        }
+                    },
+                    {
+                        "name": "Function Type",
+                        "type": "uint8",
+                        "format": {
+                            "type": "enum",
+                            "options": {
+                                "0": "SET"
+                            }
+                        }
+                    },
+                    {
+                        "name": "Function Type",
+                        "type": "uint8",
+                        "format": {
+                            "type": "enum",
+                            "options": {
+                                "0": "SET",
+                                "1": "REM",
+                                "2": "ADD"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Unused",
+                "type": "bytes",
+                "size": 3,
+                "conflictType": "Ignore"
+            },
+            {
+                "name": "Property",
+                "type": "uint16",
+                "format": {
+                    "type": "ObjectModPropertyFormat"
+                }
+            },
+            {
+                "name": "Unused",
+                "type": "bytes",
+                "size": 2,
+                "conflictType": "Ignore"
+            },
+            {
+                "name": "Value 1",
+                "type": "union",
+                "decider": "OMODDataPropertyValue1Decider",
+                "elements": [
+                    {
+                        "name": "Value 1 - Unknown",
+                        "type": "bytes",
+                        "size": 4
+                    },
+                    {
+                        "name": "Value 1 - Int",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Value 1 - Float",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Value 1 - Bool",
+                        "type": "uint32",
+                        "format": {
+                            "id": "BoolEnum"
+                        }
+                    },
+                    {
+                        "name": "Value 1 - FormID",
+                        "type": "formId"
+                    },
+                    {
+                        "name": "Value 1 - Enum",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Sound Level",
+                        "type": "uint32",
+                        "format": {
+                            "id": "SoundLevelEnum"
+                        }
+                    },
+                    {
+                        "name": "Stagger Value",
+                        "type": "uint32",
+                        "format": {
+                            "id": "StaggerEnum"
+                        }
+                    },
+                    {
+                        "name": "Hit Behaviour",
+                        "type": "uint32",
+                        "format": {
+                            "id": "HitBehaviourEnum"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Value 2",
+                "type": "union",
+                "decider": "OMODDataPropertyValue2Decider",
+                "elements": [
+                    {
+                        "name": "Unused",
+                        "type": "bytes",
+                        "size": 4,
+                        "conflictType": "Ignore"
+                    },
+                    {
+                        "name": "Value 2 - Int",
+                        "type": "uint32"
+                    },
+                    {
+                        "name": "Value 2 - Float",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Value 2 - Bool",
+                        "type": "uint32",
+                        "format": {
+                            "id": "BoolEnum"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Step",
+                "type": "float"
+            }
+        ],
+        "sortKey": [
+            4
+        ]
+    }
+}

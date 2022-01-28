@@ -1,0 +1,36 @@
+{
+    "signature": "PKIN",
+    "type": "record",
+    "name": "Pack-In",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "9": "Prefab",
+            "12": "Ignored"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "OBND"
+        },
+        {
+            "id": "FLTR"
+        },
+        {
+            "signature": "CNAM",
+            "name": "Cell",
+            "type": "formId",
+            "signatures": [
+                "CELL"
+            ]
+        },
+        {
+            "signature": "VNAM",
+            "name": "Version",
+            "type": "uint32"
+        }
+    ]
+}

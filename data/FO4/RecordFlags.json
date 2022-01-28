@@ -1,0 +1,10 @@
+{
+    "name": "Record Flags",
+    "type": "uint32",
+    "format": {
+        "type": "flags",
+        "flags": {
+            "12": "Ignored"
+        }
+    }
+}

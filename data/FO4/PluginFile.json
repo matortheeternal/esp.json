@@ -1,0 +1,591 @@
+{
+    "type": "pluginFile",
+    "children": [
+        {
+            "id": "TES4"
+        },
+        {
+            "type": "group",
+            "signature": "GMST"
+        },
+        {
+            "type": "group",
+            "signature": "KYWD"
+        },
+        {
+            "type": "group",
+            "signature": "LCRT"
+        },
+        {
+            "type": "group",
+            "signature": "AACT"
+        },
+        {
+            "type": "group",
+            "signature": "TRNS"
+        },
+        {
+            "type": "group",
+            "signature": "CMPO"
+        },
+        {
+            "type": "group",
+            "signature": "TXST"
+        },
+        {
+            "type": "group",
+            "signature": "GLOB"
+        },
+        {
+            "type": "group",
+            "signature": "DMGT"
+        },
+        {
+            "type": "group",
+            "signature": "CLAS"
+        },
+        {
+            "type": "group",
+            "signature": "FACT"
+        },
+        {
+            "type": "group",
+            "signature": "HDPT"
+        },
+        {
+            "type": "group",
+            "signature": "EYES"
+        },
+        {
+            "type": "group",
+            "signature": "RACE"
+        },
+        {
+            "type": "group",
+            "signature": "SOUN"
+        },
+        {
+            "type": "group",
+            "signature": "ASPC"
+        },
+        {
+            "type": "group",
+            "signature": "MGEF"
+        },
+        {
+            "type": "group",
+            "signature": "LTEX"
+        },
+        {
+            "type": "group",
+            "signature": "ENCH"
+        },
+        {
+            "type": "group",
+            "signature": "SPEL"
+        },
+        {
+            "type": "group",
+            "signature": "ACTI"
+        },
+        {
+            "type": "group",
+            "signature": "TACT"
+        },
+        {
+            "type": "group",
+            "signature": "ARMO"
+        },
+        {
+            "type": "group",
+            "signature": "BOOK"
+        },
+        {
+            "type": "group",
+            "signature": "CONT"
+        },
+        {
+            "type": "group",
+            "signature": "DOOR"
+        },
+        {
+            "type": "group",
+            "signature": "INGR"
+        },
+        {
+            "type": "group",
+            "signature": "LIGH"
+        },
+        {
+            "type": "group",
+            "signature": "MISC"
+        },
+        {
+            "type": "group",
+            "signature": "STAT"
+        },
+        {
+            "type": "group",
+            "signature": "SCOL"
+        },
+        {
+            "type": "group",
+            "signature": "MSTT"
+        },
+        {
+            "type": "group",
+            "signature": "GRAS"
+        },
+        {
+            "type": "group",
+            "signature": "TREE"
+        },
+        {
+            "type": "group",
+            "signature": "FLOR"
+        },
+        {
+            "type": "group",
+            "signature": "FURN"
+        },
+        {
+            "type": "group",
+            "signature": "WEAP"
+        },
+        {
+            "type": "group",
+            "signature": "AMMO"
+        },
+        {
+            "type": "group",
+            "signature": "NPC_"
+        },
+        {
+            "type": "group",
+            "signature": "PLYR"
+        },
+        {
+            "type": "group",
+            "signature": "LVLN"
+        },
+        {
+            "type": "group",
+            "signature": "KEYM"
+        },
+        {
+            "type": "group",
+            "signature": "ALCH"
+        },
+        {
+            "type": "group",
+            "signature": "IDLM"
+        },
+        {
+            "type": "group",
+            "signature": "NOTE"
+        },
+        {
+            "type": "group",
+            "signature": "PROJ"
+        },
+        {
+            "type": "group",
+            "signature": "HAZD"
+        },
+        {
+            "type": "group",
+            "signature": "BNDS"
+        },
+        {
+            "type": "group",
+            "signature": "TERM"
+        },
+        {
+            "type": "group",
+            "signature": "LVLI"
+        },
+        {
+            "type": "group",
+            "signature": "WTHR"
+        },
+        {
+            "type": "group",
+            "signature": "CLMT"
+        },
+        {
+            "type": "group",
+            "signature": "SPGD"
+        },
+        {
+            "type": "group",
+            "signature": "RFCT"
+        },
+        {
+            "type": "group",
+            "signature": "REGN"
+        },
+        {
+            "type": "group",
+            "signature": "NAVI"
+        },
+        {
+            "type": "group",
+            "signature": "CELL",
+            "children": [
+                {
+                    "type": "group",
+                    "groupType": 2,
+                    "children": [
+                        {
+                            "type": "group",
+                            "groupType": 3,
+                            "children": [
+                                {
+                                    "id": "CELL"
+                                },
+                                {
+                                    "id": "cellChildGroup"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "signature": "WRLD",
+            "children": [
+                {
+                    "id": "WRLD"
+                },
+                {
+                    "type": "group",
+                    "groupType": 1,
+                    "children": [
+                        {
+                            "id": "CELL"
+                        },
+                        {
+                            "id": "cellChildGroup"
+                        },
+                        {
+                            "type": "group",
+                            "groupType": 4,
+                            "children": [
+                                {
+                                    "type": "group",
+                                    "groupType": 5,
+                                    "children": [
+                                        {
+                                            "id": "CELL"
+                                        },
+                                        {
+                                            "id": "cellChildGroup"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "signature": "QUST"
+        },
+        {
+            "type": "group",
+            "signature": "IDLE"
+        },
+        {
+            "type": "group",
+            "signature": "PACK"
+        },
+        {
+            "type": "group",
+            "signature": "CSTY"
+        },
+        {
+            "type": "group",
+            "signature": "LSCR"
+        },
+        {
+            "type": "group",
+            "signature": "LVSP"
+        },
+        {
+            "type": "group",
+            "signature": "ANIO"
+        },
+        {
+            "type": "group",
+            "signature": "WATR"
+        },
+        {
+            "type": "group",
+            "signature": "EFSH"
+        },
+        {
+            "type": "group",
+            "signature": "EXPL"
+        },
+        {
+            "type": "group",
+            "signature": "DEBR"
+        },
+        {
+            "type": "group",
+            "signature": "IMGS"
+        },
+        {
+            "type": "group",
+            "signature": "IMAD"
+        },
+        {
+            "type": "group",
+            "signature": "FLST"
+        },
+        {
+            "type": "group",
+            "signature": "PERK"
+        },
+        {
+            "type": "group",
+            "signature": "BPTD"
+        },
+        {
+            "type": "group",
+            "signature": "ADDN"
+        },
+        {
+            "type": "group",
+            "signature": "AVIF"
+        },
+        {
+            "type": "group",
+            "signature": "CAMS"
+        },
+        {
+            "type": "group",
+            "signature": "CPTH"
+        },
+        {
+            "type": "group",
+            "signature": "VTYP"
+        },
+        {
+            "type": "group",
+            "signature": "MATT"
+        },
+        {
+            "type": "group",
+            "signature": "IPCT"
+        },
+        {
+            "type": "group",
+            "signature": "IPDS"
+        },
+        {
+            "type": "group",
+            "signature": "ARMA"
+        },
+        {
+            "type": "group",
+            "signature": "ECZN"
+        },
+        {
+            "type": "group",
+            "signature": "LCTN"
+        },
+        {
+            "type": "group",
+            "signature": "MESG"
+        },
+        {
+            "type": "group",
+            "signature": "DOBJ"
+        },
+        {
+            "type": "group",
+            "signature": "DFOB"
+        },
+        {
+            "type": "group",
+            "signature": "LGTM"
+        },
+        {
+            "type": "group",
+            "signature": "MUSC"
+        },
+        {
+            "type": "group",
+            "signature": "FSTP"
+        },
+        {
+            "type": "group",
+            "signature": "FSTS"
+        },
+        {
+            "type": "group",
+            "signature": "SMBN"
+        },
+        {
+            "type": "group",
+            "signature": "SMQN"
+        },
+        {
+            "type": "group",
+            "signature": "SMEN"
+        },
+        {
+            "type": "group",
+            "signature": "DLBR"
+        },
+        {
+            "type": "group",
+            "signature": "MUST"
+        },
+        {
+            "type": "group",
+            "signature": "DLVW"
+        },
+        {
+            "type": "group",
+            "signature": "EQUP"
+        },
+        {
+            "type": "group",
+            "signature": "RELA"
+        },
+        {
+            "type": "group",
+            "signature": "SCEN"
+        },
+        {
+            "type": "group",
+            "signature": "ASTP"
+        },
+        {
+            "type": "group",
+            "signature": "OTFT"
+        },
+        {
+            "type": "group",
+            "signature": "ARTO"
+        },
+        {
+            "type": "group",
+            "signature": "MATO"
+        },
+        {
+            "type": "group",
+            "signature": "MOVT"
+        },
+        {
+            "type": "group",
+            "signature": "SNDR"
+        },
+        {
+            "type": "group",
+            "signature": "DUAL"
+        },
+        {
+            "type": "group",
+            "signature": "SNCT"
+        },
+        {
+            "type": "group",
+            "signature": "SOPM"
+        },
+        {
+            "type": "group",
+            "signature": "COLL"
+        },
+        {
+            "type": "group",
+            "signature": "CLFM"
+        },
+        {
+            "type": "group",
+            "signature": "REVB"
+        },
+        {
+            "type": "group",
+            "signature": "PKIN"
+        },
+        {
+            "type": "group",
+            "signature": "RFGP"
+        },
+        {
+            "type": "group",
+            "signature": "AMDL"
+        },
+        {
+            "type": "group",
+            "signature": "LAYR"
+        },
+        {
+            "type": "group",
+            "signature": "COBJ"
+        },
+        {
+            "type": "group",
+            "signature": "OMOD"
+        },
+        {
+            "type": "group",
+            "signature": "MSWP"
+        },
+        {
+            "type": "group",
+            "signature": "ZOOM"
+        },
+        {
+            "type": "group",
+            "signature": "INNR"
+        },
+        {
+            "type": "group",
+            "signature": "KSSM"
+        },
+        {
+            "type": "group",
+            "signature": "AECH"
+        },
+        {
+            "type": "group",
+            "signature": "SCCO"
+        },
+        {
+            "type": "group",
+            "signature": "AORU"
+        },
+        {
+            "type": "group",
+            "signature": "SCSN"
+        },
+        {
+            "type": "group",
+            "signature": "STAG"
+        },
+        {
+            "type": "group",
+            "signature": "NOCM"
+        },
+        {
+            "type": "group",
+            "signature": "LENS"
+        },
+        {
+            "type": "group",
+            "signature": "GDRY"
+        },
+        {
+            "type": "group",
+            "signature": "OVIS"
+        }
+    ]
+}

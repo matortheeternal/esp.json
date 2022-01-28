@@ -1,0 +1,40 @@
+{
+    "signature": "CMPO",
+    "type": "record",
+    "name": "Component",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "OBND"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "CUSD"
+        },
+        {
+            "signature": "DATA",
+            "name": "Auto Calc Value",
+            "type": "uint32"
+        },
+        {
+            "signature": "MNAM",
+            "name": "Scrap Item",
+            "type": "formId",
+            "signatures": [
+                "MISC"
+            ]
+        },
+        {
+            "signature": "GNAM",
+            "name": "Mod Scrap Scalar",
+            "type": "formId",
+            "signatures": [
+                "GLOB"
+            ]
+        }
+    ]
+}

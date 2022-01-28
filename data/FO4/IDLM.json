@@ -1,0 +1,77 @@
+{
+    "signature": "IDLM",
+    "type": "record",
+    "name": "Idle Marker",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "12": "Ignored",
+            "29": "Child Can Use"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "OBND",
+            "required": true
+        },
+        {
+            "id": "KSIZ"
+        },
+        {
+            "id": "KWDAs"
+        },
+        {
+            "signature": "IDLF",
+            "name": "Flags",
+            "type": "uint8",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Run in Sequence",
+                    "1": "Unknown 1",
+                    "2": "Do Once",
+                    "3": "Unknown 3",
+                    "4": "Ignored by Sandbox"
+                }
+            }
+        },
+        {
+            "signature": "IDLC",
+            "name": "Animation Count",
+            "type": "uint8",
+            "conflictType": "Benign"
+        },
+        {
+            "signature": "IDLT",
+            "name": "Idle Timer Setting",
+            "type": "float"
+        },
+        {
+            "signature": "IDLA",
+            "name": "Animations",
+            "type": "array",
+            "afterSet": "IDLAsAfterSet",
+            "element": {
+                "name": "Animation",
+                "type": "formId",
+                "signatures": [
+                    "IDLE"
+                ]
+            }
+        },
+        {
+            "signature": "QNAM",
+            "name": "Unknown",
+            "type": "formId",
+            "signatures": [
+                "KYWD"
+            ]
+        },
+        {
+            "id": "MODL"
+        }
+    ]
+}

@@ -1,0 +1,59 @@
+{
+    "signature": "OVIS",
+    "type": "record",
+    "name": "Object Visibility Manager",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "name": "Unknown",
+            "type": "memberArray",
+            "member": {
+                "name": "Unknown",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "INDX",
+                        "name": "Object",
+                        "type": "formId",
+                        "signatures": [
+                            "STAT"
+                        ]
+                    },
+                    {
+                        "signature": "DATA",
+                        "name": "Object Bounds",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "X1",
+                                "type": "float"
+                            },
+                            {
+                                "name": "Y1",
+                                "type": "float"
+                            },
+                            {
+                                "name": "Z1",
+                                "type": "float"
+                            },
+                            {
+                                "name": "X2",
+                                "type": "float"
+                            },
+                            {
+                                "name": "Y2",
+                                "type": "float"
+                            },
+                            {
+                                "name": "Z2",
+                                "type": "float"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

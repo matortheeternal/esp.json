@@ -1,0 +1,73 @@
+{
+    "signature": "ZOOM",
+    "type": "record",
+    "name": "Zoom",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "GNAM",
+            "name": "Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "FOV Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Overlay",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Default",
+                            "1": "Fine",
+                            "2": "Duplex",
+                            "3": "German",
+                            "4": "Dot",
+                            "5": "Mil-Dot",
+                            "6": "Circle",
+                            "7": "Old Rangefind",
+                            "8": "Modern Rangefind",
+                            "9": "SVD",
+                            "10": "Hand Painted",
+                            "11": "Binoculars",
+                            "12": "Cross",
+                            "13": "Double Zero",
+                            "14": "Rangefinder 1",
+                            "15": "Rangefinder 2",
+                            "16": "Rectangle"
+                        }
+                    }
+                },
+                {
+                    "name": "Imagespace Modifier",
+                    "type": "formId",
+                    "signatures": [
+                        "IMAD",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Camera Offset",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "X",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Y",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Z",
+                            "type": "float"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

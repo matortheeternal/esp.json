@@ -1,0 +1,12 @@
+{
+    "type": "enum",
+    "unknownOption": "<Unknown Compare operator>",
+    "options": {
+        "0": "Equal to",
+        "32": "Not equal to",
+        "64": "Greater than",
+        "96": "Greater than or equal to",
+        "128": "Less than",
+        "160": "Less than or equal to"
+    }
+}

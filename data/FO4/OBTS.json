@@ -1,0 +1,107 @@
+{
+    "signature": "OBTS",
+    "name": "Object Mod Template Item",
+    "type": "struct",
+    "required": true,
+    "elements": [
+        {
+            "name": "Include Count",
+            "type": "uint32"
+        },
+        {
+            "name": "Property Count",
+            "type": "uint32"
+        },
+        {
+            "name": "Level Min",
+            "type": "uint8"
+        },
+        {
+            "name": "Unused",
+            "type": "bytes",
+            "size": 1
+        },
+        {
+            "name": "Level Max",
+            "type": "uint8"
+        },
+        {
+            "name": "Unused",
+            "type": "bytes",
+            "size": 1
+        },
+        {
+            "name": "Addon Index",
+            "type": "int16"
+        },
+        {
+            "name": "Default",
+            "type": "uint8",
+            "format": {
+                "id": "BoolEnum"
+            }
+        },
+        {
+            "name": "Keywords",
+            "type": "array",
+            "prefix": 1,
+            "element": {
+                "name": "Keyword",
+                "type": "formId",
+                "signatures": [
+                    "KYWD",
+                    "NULL"
+                ]
+            }
+        },
+        {
+            "name": "Min Level For Ranks",
+            "type": "uint8"
+        },
+        {
+            "name": "Alt Levels Per Tier",
+            "type": "uint8"
+        },
+        {
+            "name": "Includes",
+            "type": "array",
+            "counter": {
+                "type": "OMODDataIncludeCounter"
+            },
+            "element": {
+                "name": "Include",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Mod",
+                        "type": "formId",
+                        "signatures": [
+                            "OMOD"
+                        ]
+                    },
+                    {
+                        "name": "Attach Point Index",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "Optional",
+                        "type": "uint8",
+                        "format": {
+                            "id": "BoolEnum"
+                        }
+                    },
+                    {
+                        "name": "Don't Use All",
+                        "type": "uint8",
+                        "format": {
+                            "id": "BoolEnum"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": "ObjectModProperties"
+        }
+    ]
+}

@@ -1,0 +1,97 @@
+{
+    "signature": "IDLE",
+    "type": "record",
+    "name": "Idle Animation",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "CTDAs"
+        },
+        {
+            "signature": "DNAM",
+            "name": "Behavior Graph",
+            "type": "string"
+        },
+        {
+            "signature": "ENAM",
+            "name": "Animation Event",
+            "type": "string"
+        },
+        {
+            "signature": "ANAM",
+            "name": "Related Idle Animations",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Parent",
+                    "type": "formId",
+                    "signatures": [
+                        "AACT",
+                        "IDLE",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Previous Sibling",
+                    "type": "formId",
+                    "signatures": [
+                        "AACT",
+                        "IDLE",
+                        "NULL"
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Looping seconds (both 255 forever)",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Min",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Max",
+                            "type": "uint8"
+                        }
+                    ]
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Parent",
+                            "1": "Sequence",
+                            "2": "No Attacking",
+                            "3": "Blocking"
+                        }
+                    }
+                },
+                {
+                    "name": "Animation Group Section",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Replay Delay",
+                    "type": "uint16"
+                }
+            ]
+        },
+        {
+            "signature": "GNAM",
+            "name": "Animation File",
+            "type": "string"
+        }
+    ]
+}

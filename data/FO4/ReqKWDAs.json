@@ -1,0 +1,19 @@
+{
+    "signature": "KWDA",
+    "name": "Keywords",
+    "type": "array",
+    "sorted": true,
+    "required": true,
+    "counter": {
+        "type": "elementCounter",
+        "path": "KSIZ - Keyword Count"
+    },
+    "element": {
+        "name": "Keyword",
+        "type": "formId",
+        "signatures": [
+            "KYWD",
+            "NULL"
+        ]
+    }
+}

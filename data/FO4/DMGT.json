@@ -1,0 +1,52 @@
+{
+    "signature": "DMGT",
+    "type": "record",
+    "name": "Damage Type",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "DNAM",
+            "name": "Data",
+            "type": "union",
+            "decider": "FormVer78Decider",
+            "elements": [
+                {
+                    "name": "Damage Types",
+                    "type": "array",
+                    "element": {
+                        "name": "Actor Value Index",
+                        "type": "uint32"
+                    }
+                },
+                {
+                    "name": "Damage Types",
+                    "type": "array",
+                    "element": {
+                        "name": "Damage Type",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Actor Value",
+                                "type": "formId",
+                                "signatures": [
+                                    "AVIF",
+                                    "NULL"
+                                ]
+                            },
+                            {
+                                "name": "Spell",
+                                "type": "formId",
+                                "signatures": [
+                                    "SPEL",
+                                    "NULL"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,88 @@
+{
+    "signature": "MESG",
+    "type": "record",
+    "name": "Message",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "DESC",
+            "required": true
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "signature": "INAM",
+            "name": "Icon (unused)",
+            "type": "formId",
+            "conflictType": "Ignore",
+            "required": true,
+            "signatures": [
+                "NULL"
+            ]
+        },
+        {
+            "signature": "QNAM",
+            "name": "Owner Quest",
+            "type": "formId",
+            "signatures": [
+                "QUST"
+            ]
+        },
+        {
+            "signature": "DNAM",
+            "name": "Flags",
+            "type": "uint32",
+            "required": true,
+            "afterSet": "MESGDNAMAfterSet",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Message Box",
+                    "1": "Delay Initial Display"
+                }
+            }
+        },
+        {
+            "signature": "TNAM",
+            "name": "Display Time",
+            "type": "uint32"
+        },
+        {
+            "signature": "SNAM",
+            "name": "SWF",
+            "type": "string"
+        },
+        {
+            "signature": "NNAM",
+            "name": "Short Title",
+            "type": "string",
+            "localized": true,
+            "conflictType": "Translate",
+            "keepCase": true
+        },
+        {
+            "name": "Menu Buttons",
+            "type": "memberArray",
+            "member": {
+                "name": "Menu Button",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "ITXT",
+                        "name": "Button Text",
+                        "type": "string",
+                        "localized": true,
+                        "conflictType": "Translate",
+                        "keepCase": true
+                    },
+                    {
+                        "id": "CTDAs"
+                    }
+                ]
+            }
+        }
+    ]
+}

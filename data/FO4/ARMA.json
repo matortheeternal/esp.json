@@ -1,0 +1,264 @@
+{
+    "signature": "ARMA",
+    "type": "record",
+    "name": "Armor Addon",
+    "flags": {
+        "type": "flags",
+        "flags": {
+            "6": "No Underarmor Scaling",
+            "9": "Unknown 9",
+            "12": "Ignored",
+            "30": "Hi-Res 1st Person Only"
+        }
+    },
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "BOD2"
+        },
+        {
+            "signature": "RNAM",
+            "name": "Race",
+            "type": "formId",
+            "signatures": [
+                "RACE"
+            ]
+        },
+        {
+            "signature": "DNAM",
+            "name": "Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Male Priority",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Female Priority",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Weight slider - Male",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Unknown 0",
+                            "1": "Enabled"
+                        }
+                    }
+                },
+                {
+                    "name": "Weight slider - Female",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Unknown 0",
+                            "1": "Enabled"
+                        }
+                    }
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 2
+                },
+                {
+                    "name": "Detection Sound Value",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "size": 1
+                },
+                {
+                    "name": "Weapon Adjust",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Male world model",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "MOD2",
+                    "name": "Model FileName",
+                    "type": "string"
+                },
+                {
+                    "signature": "MO2T",
+                    "name": "Texture Files Hashes",
+                    "type": "bytes",
+                    "size": 0,
+                    "conflictType": "Ignore"
+                },
+                {
+                    "id": "MO2C"
+                },
+                {
+                    "id": "MO2S"
+                },
+                {
+                    "id": "MO2F"
+                }
+            ]
+        },
+        {
+            "name": "Female world model",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "MOD3",
+                    "name": "Model FileName",
+                    "type": "string"
+                },
+                {
+                    "signature": "MO3T",
+                    "name": "Texture Files Hashes",
+                    "type": "bytes",
+                    "size": 0,
+                    "conflictType": "Ignore"
+                },
+                {
+                    "id": "MO3C"
+                },
+                {
+                    "id": "MO3S"
+                },
+                {
+                    "id": "MO3F"
+                }
+            ]
+        },
+        {
+            "name": "Male 1st Person",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "MOD4",
+                    "name": "Model FileName",
+                    "type": "string"
+                },
+                {
+                    "signature": "MO4T",
+                    "name": "Texture Files Hashes",
+                    "type": "bytes",
+                    "size": 0,
+                    "conflictType": "Ignore"
+                },
+                {
+                    "id": "MO4C"
+                },
+                {
+                    "id": "MO4S"
+                },
+                {
+                    "id": "MO4F"
+                }
+            ]
+        },
+        {
+            "name": "Female 1st Person",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "MOD5",
+                    "name": "Model FileName",
+                    "type": "string"
+                },
+                {
+                    "signature": "MO5T",
+                    "name": "Texture Files Hashes",
+                    "type": "bytes",
+                    "size": 0,
+                    "conflictType": "Ignore"
+                },
+                {
+                    "id": "MO5C"
+                },
+                {
+                    "id": "MO5S"
+                },
+                {
+                    "id": "MO5F"
+                }
+            ]
+        },
+        {
+            "signature": "NAM0",
+            "name": "Male Skin Texture",
+            "type": "formId",
+            "signatures": [
+                "TXST",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "NAM1",
+            "name": "Female Skin Texture",
+            "type": "formId",
+            "signatures": [
+                "TXST",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "NAM2",
+            "name": "Male Skin Texture Swap List",
+            "type": "formId",
+            "signatures": [
+                "FLST",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "NAM3",
+            "name": "Female Skin Texture Swap List",
+            "type": "formId",
+            "signatures": [
+                "FLST",
+                "NULL"
+            ]
+        },
+        {
+            "name": "Additional Races",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "signature": "MODL",
+                "name": "Race",
+                "type": "formId",
+                "signatures": [
+                    "RACE",
+                    "NULL"
+                ]
+            }
+        },
+        {
+            "signature": "SNDD",
+            "name": "Footstep Sound",
+            "type": "formId",
+            "signatures": [
+                "FSTS",
+                "NULL"
+            ]
+        },
+        {
+            "signature": "ONAM",
+            "name": "Art Object",
+            "type": "formId",
+            "signatures": [
+                "ARTO"
+            ]
+        },
+        {
+            "id": "BSMPSequence"
+        }
+    ]
+}

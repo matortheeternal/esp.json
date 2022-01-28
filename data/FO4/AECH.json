@@ -1,0 +1,122 @@
+{
+    "signature": "AECH",
+    "type": "record",
+    "name": "Audio Effect Chain",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "name": "Effects",
+            "type": "memberArray",
+            "member": {
+                "name": "Effect",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "KNAM",
+                        "name": "Type",
+                        "type": "uint32",
+                        "afterSet": "AECHTypeAfterSet",
+                        "format": {
+                            "type": "enum",
+                            "options": {
+                                "411269967": "BSDelayEffect",
+                                "2252866750": "BSOverdrive",
+                                "4015480703": "BSStateVariableFilter"
+                            }
+                        }
+                    },
+                    {
+                        "signature": "DNAM",
+                        "name": "Data",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Enabled",
+                                "type": "uint32",
+                                "format": {
+                                    "id": "BoolEnum"
+                                }
+                            },
+                            {
+                                "name": "Value",
+                                "type": "union",
+                                "decider": "AECHDataDecider",
+                                "elements": [
+                                    {
+                                        "name": "Overdrive",
+                                        "type": "struct",
+                                        "elements": [
+                                            {
+                                                "name": "Input Gain",
+                                                "type": "float"
+                                            },
+                                            {
+                                                "name": "Output Gain",
+                                                "type": "float"
+                                            },
+                                            {
+                                                "name": "Upper Threshold",
+                                                "type": "float"
+                                            },
+                                            {
+                                                "name": "Lower Threshold",
+                                                "type": "float"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "State Variable Filter",
+                                        "type": "struct",
+                                        "elements": [
+                                            {
+                                                "name": "Center Freq",
+                                                "type": "float"
+                                            },
+                                            {
+                                                "name": "Q Value",
+                                                "type": "float"
+                                            },
+                                            {
+                                                "name": "Filter Mode",
+                                                "type": "uint32",
+                                                "format": {
+                                                    "type": "enum",
+                                                    "options": {
+                                                        "0": "High Pass",
+                                                        "1": "Low Pass",
+                                                        "2": "Band Pass",
+                                                        "3": "Notch"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "Delay Effect",
+                                        "type": "struct",
+                                        "elements": [
+                                            {
+                                                "name": "Feedback %",
+                                                "type": "float"
+                                            },
+                                            {
+                                                "name": "Wet Mix %",
+                                                "type": "float"
+                                            },
+                                            {
+                                                "name": "Delay MS",
+                                                "type": "uint32"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

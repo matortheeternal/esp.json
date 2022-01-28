@@ -1,0 +1,364 @@
+{
+    "signature": "BPTD",
+    "type": "record",
+    "name": "Body Part Data",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "name": "Body Parts",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "name": "Body Part",
+                "type": "memberStruct",
+                "unordered": true,
+                "members": [
+                    {
+                        "signature": "BPTN",
+                        "name": "Part Name",
+                        "type": "string",
+                        "localized": true,
+                        "conflictType": "Translate"
+                    },
+                    {
+                        "signature": "BPNN",
+                        "name": "Part Node",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "signature": "BPNT",
+                        "name": "VATS Target",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "signature": "BPND",
+                        "name": "",
+                        "type": "struct",
+                        "required": true,
+                        "elements": [
+                            {
+                                "name": "Damage Mult",
+                                "type": "float"
+                            },
+                            {
+                                "name": "Explodable - Debris",
+                                "type": "formId",
+                                "signatures": [
+                                    "DEBR",
+                                    "NULL"
+                                ]
+                            },
+                            {
+                                "name": "Explodable - Explosion",
+                                "type": "formId",
+                                "signatures": [
+                                    "EXPL",
+                                    "NULL"
+                                ]
+                            },
+                            {
+                                "name": "Explodable - Debris Scale",
+                                "type": "float"
+                            },
+                            {
+                                "name": "Severable - Debris",
+                                "type": "formId",
+                                "signatures": [
+                                    "DEBR",
+                                    "NULL"
+                                ]
+                            },
+                            {
+                                "name": "Severable - Explosion",
+                                "type": "formId",
+                                "signatures": [
+                                    "EXPL",
+                                    "NULL"
+                                ]
+                            },
+                            {
+                                "name": "Severable - Debris Scale",
+                                "type": "float"
+                            },
+                            {
+                                "name": "Cut - Min",
+                                "type": "float"
+                            },
+                            {
+                                "name": "Cut - Max",
+                                "type": "float"
+                            },
+                            {
+                                "name": "Cut - Radius",
+                                "type": "float"
+                            },
+                            {
+                                "name": "Gore Effects - Local Rotate X",
+                                "type": "float",
+                                "required": true,
+                                "format": {
+                                    "type": "RotationFactorFormat"
+                                }
+                            },
+                            {
+                                "name": "Gore Effects - Local Rotate Y",
+                                "type": "float",
+                                "required": true,
+                                "format": {
+                                    "type": "RotationFactorFormat"
+                                }
+                            },
+                            {
+                                "name": "Cut - Tesselation",
+                                "type": "float"
+                            },
+                            {
+                                "name": "Severable - Impact DataSet",
+                                "type": "formId",
+                                "signatures": [
+                                    "IPDS",
+                                    "NULL"
+                                ]
+                            },
+                            {
+                                "name": "Explodable - Impact DataSet",
+                                "type": "formId",
+                                "signatures": [
+                                    "IPDS",
+                                    "NULL"
+                                ]
+                            },
+                            {
+                                "name": "Explodable - Limb Replacement Scale",
+                                "type": "float"
+                            },
+                            {
+                                "name": "Flags",
+                                "type": "uint8",
+                                "format": {
+                                    "type": "flags",
+                                    "flags": {
+                                        "0": "Severable",
+                                        "1": "Hit Reaction",
+                                        "2": "Hit Reaction - Default",
+                                        "3": "Explodable",
+                                        "4": "Cut - Meat Cap Sever",
+                                        "5": "On Cripple",
+                                        "6": "Explodable - Absolute Chance",
+                                        "7": "Show Cripple Geometry"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Part Type",
+                                "type": "uint8",
+                                "format": {
+                                    "type": "enum",
+                                    "options": {
+                                        "0": "Torso",
+                                        "1": "Head1",
+                                        "2": "Eye",
+                                        "3": "LookAt",
+                                        "4": "Fly Grab",
+                                        "5": "Head2",
+                                        "6": "LeftArm1",
+                                        "7": "LeftArm2",
+                                        "8": "RightArm1",
+                                        "9": "RightArm2",
+                                        "10": "LeftLeg1",
+                                        "11": "LeftLeg2",
+                                        "12": "LeftLeg3",
+                                        "13": "RightLeg1",
+                                        "14": "RightLeg2",
+                                        "15": "RightLeg3",
+                                        "16": "Brain",
+                                        "17": "Weapon",
+                                        "18": "Root",
+                                        "19": "COM",
+                                        "20": "Pelvis",
+                                        "21": "Camera",
+                                        "22": "Offset Root",
+                                        "23": "Left Foot",
+                                        "24": "Right Foot",
+                                        "25": "Face Target Source"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Health Percent",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "Actor Value",
+                                "type": "formId",
+                                "signatures": [
+                                    "AVIF",
+                                    "NULL"
+                                ]
+                            },
+                            {
+                                "name": "To Hit Chance",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "Explodable - Explosion Chance %",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "Non-Lethal Dismemberment Chance",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "Severable - Debris Count",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "Explodable - Debris Count",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "Severable - Decal Count",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "Explodable - Decal Count",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "Geometry Segment Index",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "On Cripple - Art Object",
+                                "type": "formId",
+                                "signatures": [
+                                    "ARTO",
+                                    "NULL"
+                                ]
+                            },
+                            {
+                                "name": "On Cripple - Debris",
+                                "type": "formId",
+                                "signatures": [
+                                    "DEBR",
+                                    "NULL"
+                                ]
+                            },
+                            {
+                                "name": "On Cripple - Explosion",
+                                "type": "formId",
+                                "signatures": [
+                                    "EXPL",
+                                    "NULL"
+                                ]
+                            },
+                            {
+                                "name": "On Cripple - Impact DataSet",
+                                "type": "formId",
+                                "signatures": [
+                                    "IPDS",
+                                    "NULL"
+                                ]
+                            },
+                            {
+                                "name": "On Cripple - Debris Scale",
+                                "type": "float"
+                            },
+                            {
+                                "name": "On Cripple - Debris Count",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "On Cripple - Decal Count",
+                                "type": "uint8"
+                            }
+                        ]
+                    },
+                    {
+                        "signature": "NAM1",
+                        "name": "Limb Replacement Model",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "signature": "NAM4",
+                        "name": "Gore Effects - Target Bone",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "signature": "NAM5",
+                        "name": "Texture Files Hashes",
+                        "type": "bytes",
+                        "size": 0
+                    },
+                    {
+                        "signature": "ENAM",
+                        "name": "Hit Reaction - Start",
+                        "type": "string"
+                    },
+                    {
+                        "signature": "FNAM",
+                        "name": "Hit Reaction - End",
+                        "type": "string"
+                    },
+                    {
+                        "signature": "BNAM",
+                        "name": "Gore Effects - Dismember Blood Art",
+                        "type": "formId",
+                        "signatures": [
+                            "ARTO"
+                        ]
+                    },
+                    {
+                        "signature": "INAM",
+                        "name": "Gore Effects - Blood Impact Material Type",
+                        "type": "formId",
+                        "signatures": [
+                            "MATT"
+                        ]
+                    },
+                    {
+                        "signature": "JNAM",
+                        "name": "On Cripple - Blood Impact Material Type",
+                        "type": "formId",
+                        "signatures": [
+                            "MATT"
+                        ]
+                    },
+                    {
+                        "signature": "CNAM",
+                        "name": "Meat Cap TextureSet",
+                        "type": "formId",
+                        "signatures": [
+                            "TXST"
+                        ]
+                    },
+                    {
+                        "signature": "NAM2",
+                        "name": "Collar TextureSet",
+                        "type": "formId",
+                        "signatures": [
+                            "TXST"
+                        ]
+                    },
+                    {
+                        "signature": "DNAM",
+                        "name": "Twist Variable Prefix",
+                        "type": "string"
+                    }
+                ],
+                "sortKey": [
+                    1
+                ]
+            }
+        }
+    ]
+}

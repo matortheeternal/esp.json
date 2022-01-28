@@ -1,0 +1,33 @@
+{
+    "signature": "STAG",
+    "type": "record",
+    "name": "Animation Sound Tag Set",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "name": "Sounds",
+            "type": "memberArray",
+            "member": {
+                "signature": "TNAM",
+                "name": "Sound",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Sound",
+                        "type": "formId",
+                        "signatures": [
+                            "SNDR",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "name": "Action",
+                        "type": "string"
+                    }
+                ]
+            }
+        }
+    ]
+}
