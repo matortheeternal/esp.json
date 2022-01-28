@@ -18,7 +18,7 @@ let convertProcedures = function(converter) {
     });
     converter.reset();
     converter.convertRegions({
-        start: /procedure (Define\w+?[a-z]);[\s\S]+?^begin/m,
+        start: /procedure (Define\w+?[a-z]?);[\s\S]+?^begin/m,
         end: /^end;/
     });
 };
