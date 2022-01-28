@@ -24,7 +24,15 @@ npm run build -- {game}
 ```
 
 Examples:
-- `npm run convert -- TES5`
+- `npm run convert -- FO4`
+- `npm run build -- FO4`
 - `npm run convert -- SSE TES5`
-- `npm run build -- TES5`
 - `npm run build -- SSE`
+- `npm run convert -- TES5`
+- `npm run build -- TES5`
+- `npm run convert -- TES4`
+- `npm run build -- TES4`
+- `npm run convert -- FO3`
+- `npm run build -- FO3`
+- `npm run convert -- FNV`
+- `npm run build -- FNV`
