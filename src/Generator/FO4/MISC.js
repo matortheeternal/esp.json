@@ -30,7 +30,7 @@ module.exports = () => {
                 int32('Value'),
                 float('Weight')
             ]))),
-            subrecord(CVPA, array('Components', 
+            subrecord('CVPA', array('Components', 
                 struct('Component', [
                     ckFormId('Component', def('sigBaseObjects')),
                     uint32('Count')

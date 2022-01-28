@@ -156,7 +156,7 @@ module.exports = () => {
             subrecord('WAMD', ckFormId('Aim Model', ['AMDL'])),
             subrecord('WZMD', ckFormId('Zoom', ['ZOOM'])),
             subrecord('CNAM', ckFormId('Template', ['WEAP'])),
-            subrecord(DAMA, array('Damage Types', 
+            subrecord('DAMA', array('Damage Types', 
                 struct('Damage Type', [
                     ckFormId('Type', ['DMGT']),
                     uint32('Amount')
