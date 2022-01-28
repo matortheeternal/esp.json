@@ -3,9 +3,19 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Game Definition File",
   "additionalProperties": false,
-  "patternProperties": {
-    "\\w+": {
-      "$ref": "definitionFile.schema.json"
+  "properties": {
+    "game": {
+      "type": "string",
+      "description": "An identifier for the game the definitions are associated with."
+    },
+    "defs": {
+      "type": "object",
+      "additionalProperties": false,
+      "patternProperties": {
+        "\\w+": {
+          "$ref": "definitionFile.schema.json"
+        }
+      }
     }
   }
 }
