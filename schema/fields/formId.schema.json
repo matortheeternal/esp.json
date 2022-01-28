@@ -12,10 +12,27 @@
       "$ref": "../shared/name.schema.json"
     },
     "signatures": {
-      "type": "array",
-      "items": {
-        "$ref": "../shared/signature.schema.json"
-      }
+      "oneOf": [
+        {
+          "type": "array",
+          "items": {
+            "$ref": "../shared/signature.schema.json"
+          }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "$ref": "../shared/id.schema.json"
+            }
+          }
+        }
+      ]
+    },
+    "defaultData": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Default data to use when initializing the field."
     }
   }
 }

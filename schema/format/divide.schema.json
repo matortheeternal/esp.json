@@ -1,0 +1,17 @@
+{
+  "$id": "esp.json/format/divide.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Divide",
+  "type": "object",
+  "required": ["type", "options"],
+  "properties": {
+    "type": {
+      "constant": "divide"
+    },
+    "value": {
+      "type": "number",
+      "description": "Number to divide by.",
+      "minimum": 1
+    }
+  }
+}

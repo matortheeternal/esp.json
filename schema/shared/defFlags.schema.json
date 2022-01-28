@@ -1,0 +1,14 @@
+{
+  "$id": "esp.json/shared/defFlags.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Definition flags",
+  "description": "Flags that indicate how certain implementation-specific behaviors should operate.",
+  "type": "array",
+  "items": {
+    "enum": [
+      "notAlignable", "zeroSortKey", "protected", "collapsed",
+      "noReport", "translatable", "allowAnyMember"
+    ]
+  },
+  "uniqueItems": true
+}

@@ -5,7 +5,7 @@
   "oneOf": [
     {
       "type": "object",
-      "required": ["signature", "type", "name", "def"],
+      "required": ["signature", "type", "name", "id"],
       "additionalProperties": false,
       "properties": {
         "signature": {
@@ -17,8 +17,8 @@
         "name": {
           "type": "string"
         },
-        "def": {
-          "$ref": "shared/def.schema.json"
+        "id": {
+          "$ref": "shared/id.schema.json"
         }
       }
     },

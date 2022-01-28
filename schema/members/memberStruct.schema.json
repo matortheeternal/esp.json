@@ -11,6 +11,10 @@
     "type": {
       "constant": "memberStruct"
     },
+    "unordered": {
+      "type": "boolean",
+      "description": "Indicates whether or not the struct can be initialized when finding a member subrecord other than the first member subrecord."
+    },
     "members": {
       "type": "array",
       "items": {

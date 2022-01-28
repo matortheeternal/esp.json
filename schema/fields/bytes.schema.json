@@ -16,6 +16,11 @@
     },
     "name": {
       "$ref": "../shared/name.schema.json"
+    },
+    "defaultValue": {
+      "type": "string",
+      "description": "Default value to use when initializing an element. This value should be parsed as a sequence of hexadecimal bytes.",
+      "examples": ["3C A0 E9 A5"]
     }
   }
 }

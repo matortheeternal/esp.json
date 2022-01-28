@@ -20,6 +20,10 @@
     },
     "name": {
       "$ref": "../shared/name.schema.json"
+    },
+    "transform": {
+      "description": "Transform method to use.",
+      "enum": ["keepcase", "lowercase", "script"]
     }
   }
 }

@@ -1,0 +1,7 @@
+{
+  "$id": "esp.json/shared/conflictType.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Conflict Type",
+  "description": "A string which identifies the conflict type to use when computing conflicts.",
+  "enum": ["Ignore", "BenignIfAdded", "Benign", "Override", "Translate", "NormalIgnoreEmpty", "Critical"]
+}

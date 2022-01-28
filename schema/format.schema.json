@@ -7,11 +7,11 @@
       "title": "Reference",
       "description": "A reference to a flags or enum esp.json definition.",
       "type": "object",
-      "required": ["def"],
+      "required": ["id"],
       "additionalProperties": false,
       "properties": {
-        "def": {
-          "$ref": "shared/def.schema.json"
+        "id": {
+          "$ref": "shared/id.schema.json"
         }
       }
     },
@@ -20,6 +20,9 @@
     },
     {
       "$ref": "format/enum.schema.json"
+    },
+    {
+      "$ref": "format/divide.schema.json"
     }
   ]
 }

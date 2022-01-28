@@ -42,6 +42,14 @@
     },
     "format": {
       "$ref": "../format.schema.json"
+    },
+    "defaultData": {
+      "type": "integer",
+      "description": "Default data to use when initializing an element."
+    },
+    "defaultValue": {
+      "type": "string",
+      "description": "Default value to use when initializing an element. This value gets parsed by the formatter."
     }
   }
 }

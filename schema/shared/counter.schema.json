@@ -1,0 +1,17 @@
+{
+  "$id": "esp.json/shared/counter.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Counter",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "The type of counter to use.  The base counter behavior uses the type `elementCounter`."
+    },
+    "path": {
+      "type": "string",
+      "description": "The path of the sibling counter element to use with an `elementCounter`."
+    }
+  }
+}

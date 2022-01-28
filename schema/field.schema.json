@@ -2,7 +2,18 @@
   "$id": "esp.json/field.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Data",
-  "anyOf": [
+  "properties": {
+    "conflictType": {
+      "$ref": "shared/conflictType.schema.json"
+    },
+    "required": {
+      "$ref": "shared/required.schema.json"
+    },
+    "defFlags": {
+      "$ref": "shared/defFlags.schema.json"
+    }
+  },
+  "oneOf": [
     {
       "$ref": "fields/struct.schema.json"
     },
@@ -26,6 +37,18 @@
     },
     {
       "$ref": "fields/empty.schema.json"
+    },
+    {
+      "type": "object",
+      "required": ["id"],
+      "properties": {
+        "id": {
+          "$ref": "shared/id.schema.json"
+        },
+        "name": {
+          "$ref": "shared/name.schema.json"
+        }
+      }
     }
   ]
 }

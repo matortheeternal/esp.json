@@ -11,6 +11,9 @@
     "type": {
       "constant": "memberArray"
     },
+    "counter": {
+      "$ref": "../shared/counter.schema.json"
+    },
     "sorted": {
       "$ref": "../shared/sorted.schema.json"
     },
