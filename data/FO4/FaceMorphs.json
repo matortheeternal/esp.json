@@ -1,0 +1,23 @@
+{
+    "type": "memberArray",
+    "member": {
+        "name": "Face Morph",
+        "type": "memberStruct",
+        "members": [
+            {
+                "signature": "FMRI",
+                "name": "Index",
+                "type": "uint32",
+                "format": {
+                    "type": "IntToHexStrFormat"
+                }
+            },
+            {
+                "signature": "FMRN",
+                "name": "Name",
+                "type": "string",
+                "localized": true
+            }
+        ]
+    }
+}

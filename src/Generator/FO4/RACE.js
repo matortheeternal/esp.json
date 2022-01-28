@@ -249,7 +249,7 @@ module.exports = () => {
                 subrecord('FTSM', ckFormId('Texture Set', ['TXST', 'NULL']))
             )),
             subrecord('DFTM', ckFormId('Male Default Face Texture', ['TXST'])),
-            def('TintGroups', { name: 'Male Tint Layers' }),
+            def('TintTemplateGroups', { name: 'Male Tint Layers' }),
             def('MorphGroups', { name: 'Male Morph Groups' }),
             def('FaceMorphs', { name: 'Male Face Morphs' }),
             subrecord('WMAP', string('Male Wrinkle Map Path')),
@@ -273,7 +273,7 @@ module.exports = () => {
                 subrecord('FTSF', ckFormId('Texture Set', ['TXST', 'NULL']))
             )),
             subrecord('DFTF', ckFormId('Female Default Face Texture', ['TXST'])),
-            def('TintGroups', { name: 'Female Tint Layers' }),
+            def('TintTemplateGroups', { name: 'Female Tint Layers' }),
             def('MorphGroups', { name: 'Female Morph Groups' }),
             def('FaceMorphs', { name: 'Female Face Morphs' }),
             subrecord('WMAP', string('Female Wrinkle Map Path')),

@@ -1,0 +1,82 @@
+{
+    "type": "memberArray",
+    "member": {
+        "name": "Morph Group",
+        "type": "memberStruct",
+        "members": [
+            {
+                "signature": "MPGN",
+                "name": "Name",
+                "type": "string"
+            },
+            {
+                "signature": "MPPC",
+                "name": "Count",
+                "type": "uint32",
+                "conflictType": "Benign"
+            },
+            {
+                "name": "Morph Presets",
+                "type": "memberArray",
+                "counter": {
+                    "type": "elementCounter",
+                    "path": "MPPC - Count"
+                },
+                "member": {
+                    "name": "Morph Preset",
+                    "type": "memberStruct",
+                    "members": [
+                        {
+                            "signature": "MPPI",
+                            "name": "Index",
+                            "type": "uint32",
+                            "format": {
+                                "type": "IntToHexStrFormat"
+                            }
+                        },
+                        {
+                            "signature": "MPPN",
+                            "name": "Name",
+                            "type": "string",
+                            "localized": true,
+                            "conflictType": "Translate"
+                        },
+                        {
+                            "signature": "MPPM",
+                            "name": "Unknown",
+                            "type": "string"
+                        },
+                        {
+                            "signature": "MPPT",
+                            "name": "Texture",
+                            "type": "formId",
+                            "signatures": [
+                                "TXST"
+                            ]
+                        },
+                        {
+                            "signature": "MPPF",
+                            "type": "bytes"
+                        }
+                    ]
+                }
+            },
+            {
+                "signature": "MPPK",
+                "type": "bytes"
+            },
+            {
+                "signature": "MPGS",
+                "name": "Unknown",
+                "type": "array",
+                "element": {
+                    "name": "Index",
+                    "type": "uint32",
+                    "format": {
+                        "type": "IntToHexStrFormat"
+                    }
+                }
+            }
+        ]
+    }
+}

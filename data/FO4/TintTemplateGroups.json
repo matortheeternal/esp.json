@@ -1,0 +1,158 @@
+{
+    "type": "memberArray",
+    "member": {
+        "name": "Group",
+        "type": "memberStruct",
+        "members": [
+            {
+                "signature": "TTGP",
+                "name": "Group Name",
+                "type": "string",
+                "localized": true,
+                "conflictType": "Translate"
+            },
+            {
+                "name": "Options",
+                "type": "memberArray",
+                "member": {
+                    "name": "Option",
+                    "type": "memberStruct",
+                    "members": [
+                        {
+                            "signature": "TETI",
+                            "name": "Index",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Slot",
+                                    "type": "uint16",
+                                    "format": {
+                                        "type": "enum",
+                                        "options": {
+                                            "0": "Forehead Mask",
+                                            "1": "Eyes Mask",
+                                            "2": "Nose Mask",
+                                            "3": "Ears Mask",
+                                            "4": "Cheeks Mask",
+                                            "5": "Mouth Mask",
+                                            "6": "Neck Mask",
+                                            "7": "Lip Color",
+                                            "8": "Cheek Color",
+                                            "9": "Eyeliner",
+                                            "10": "Eye Socket Upper",
+                                            "11": "Eye Socket Lower",
+                                            "12": "Skin Tone",
+                                            "13": "Paint",
+                                            "14": "Laugh Lines",
+                                            "15": "Cheek Color Lower",
+                                            "16": "Nose",
+                                            "17": "Chin",
+                                            "18": "Neck",
+                                            "19": "Forehead",
+                                            "20": "Dirt",
+                                            "21": "Scars",
+                                            "22": "Face Detail",
+                                            "23": "Brows",
+                                            "24": "Wrinkles",
+                                            "25": "Beards"
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "Index",
+                                    "type": "uint16"
+                                }
+                            ]
+                        },
+                        {
+                            "signature": "TTGP",
+                            "name": "Name",
+                            "type": "string",
+                            "localized": true,
+                            "conflictType": "Translate"
+                        },
+                        {
+                            "signature": "TTEF",
+                            "name": "Flags",
+                            "type": "uint16",
+                            "format": {
+                                "type": "flags",
+                                "flags": {
+                                    "0": "On/Off only",
+                                    "1": "Chargen Detail",
+                                    "2": "Takes Skin Tone"
+                                }
+                            }
+                        },
+                        {
+                            "id": "CTDAs"
+                        },
+                        {
+                            "name": "Textures",
+                            "type": "memberArray",
+                            "member": {
+                                "signature": "TTET",
+                                "name": "Texture",
+                                "type": "string"
+                            }
+                        },
+                        {
+                            "signature": "TTEB",
+                            "type": "bytes"
+                        },
+                        {
+                            "signature": "TTEC",
+                            "name": "Template Colors",
+                            "type": "array",
+                            "element": {
+                                "name": "Template Color",
+                                "type": "struct",
+                                "elements": [
+                                    {
+                                        "name": "Color",
+                                        "type": "formId",
+                                        "signatures": [
+                                            "CLFM"
+                                        ]
+                                    },
+                                    {
+                                        "name": "Alpha",
+                                        "type": "float"
+                                    },
+                                    {
+                                        "name": "Template Index",
+                                        "type": "uint16"
+                                    },
+                                    {
+                                        "name": "Blend Operation",
+                                        "type": "uint32",
+                                        "format": {
+                                            "type": "enum",
+                                            "options": {
+                                                "0": "Default",
+                                                "1": "Multiply",
+                                                "2": "Overlay",
+                                                "3": "Soft Light",
+                                                "4": "Hard Light"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "signature": "TTED",
+                            "name": "Default",
+                            "type": "float"
+                        }
+                    ]
+                }
+            },
+            {
+                "signature": "TTGE",
+                "name": "Category Index",
+                "type": "uint32"
+            }
+        ]
+    }
+}

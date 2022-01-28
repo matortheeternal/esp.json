@@ -7,5 +7,5 @@ functionConverter('wbTintTemplateGroups', [
 ], (args, converter) => {
     converter.addRequires('def');
     let [name] = args.values;
-    return `def('TintGroups', { name: ${name} })`;
+    return `def('TintTemplateGroups', { name: ${name} })`;
 });
