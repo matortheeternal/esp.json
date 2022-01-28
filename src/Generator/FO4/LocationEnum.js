@@ -1,0 +1,25 @@
+let {
+    addDef, enumeration
+} = require('../helpers');
+
+module.exports = () => {
+    addDef('LocationEnum', 
+        enumeration({
+            0: 'Near reference',
+            1: 'In cell',
+            2: 'Near package start location',
+            3: 'Near editor location',
+            4: 'Object ID',
+            5: 'Object Type',
+            6: 'Near linked reference',
+            7: 'At package location',
+            8: 'Alias (reference)',
+            9: 'Alias (location)',
+            10: 'Target',
+            11: 'Target (location)',
+            12: 'Near self',
+            13: 'Near Editor Location Cell',
+            14: 'Alias (ref collection)'
+        })
+    );
+};

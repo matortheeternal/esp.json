@@ -1,0 +1,18 @@
+let {
+    addDef, enumeration
+} = require('../helpers');
+
+module.exports = () => {
+    addDef('ZTestFuncEnum', 
+        enumeration({
+            0: '',
+            1: '',
+            2: '',
+            3: 'Equal To',
+            4: '',
+            5: 'Greater Than',
+            6: '',
+            7: 'Greater Than or Equal To'
+        })
+    );
+};

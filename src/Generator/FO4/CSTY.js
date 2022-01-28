@@ -1,0 +1,84 @@
+let {
+    flags, def, float, struct, subrecord, 
+    req, unknown, conflictType, uint32, format, 
+    record
+} = require('../helpers');
+
+module.exports = () => {
+    record('CSTY', 'Combat Style', {
+        flags: flags({
+            12: 'Ignored',
+            19: 'Allow Dual Wielding'
+        }),
+        members: [
+            def('EDID'),
+            req(subrecord('CSGD', struct('General', [
+                float('Offensive Mult'),
+                float('Defensive Mult'),
+                float('Group Offensive Mult'),
+                float('Equipment Score Mult - Melee'),
+                float('Equipment Score Mult - Magic'),
+                float('Equipment Score Mult - Ranged'),
+                float('Equipment Score Mult - Shout'),
+                float('Equipment Score Mult - Unarmed'),
+                float('Equipment Score Mult - Staff'),
+                float('Avoid Threat Chance'),
+                float('Dodge Threat Chance'),
+                float('Evade Threat Chance')
+            ]))),
+            subrecord('CSMD', conflictType('Ignore', unknown())),
+            req(subrecord('CSME', struct('Melee', [
+                float('Attack Staggered Mult'),
+                float('Power Attack Staggered Mult'),
+                float('Power Attack Blocking Mult'),
+                float('Bash Mult'),
+                float('Bash Recoil Mult'),
+                float('Bash Attack Mult'),
+                float('Bash Power Attack Mult'),
+                float('Special Attack Mult'),
+                float('Block When Staggered Mult'),
+                float('Attack When Staggered Mult')
+            ]))),
+            req(subrecord('CSRA', float('Ranged Accuracy Mult'))),
+            req(subrecord('CSCR', struct('Close Range', [
+                float('Dueling - Circle Mult'),
+                float('Dueling - Fallback Mult'),
+                float('Flanking - Flank Distance'),
+                float('Flanking - Stalk Time'),
+                float('Charging - Charge Distance'),
+                float('Charging - Throw Probability'),
+                float('Charging - Sprint Fast Probability'),
+                float('Charging - Sideswipe Probability'),
+                float('Charging - Disengane Probability'),
+                uint32('Charging - Throw Max Targets'),
+                float('Flanking - Flank Variance')
+            ]))),
+            req(subrecord('CSLR', struct('Long Range', [
+                float('Strafe Mult'),
+                float('Adjust Range Mult'),
+                float('Crouch Mult'),
+                float('Wait Mult'),
+                float('Range Mult')
+            ]))),
+            req(subrecord('CSCV', float('Cover Search Distance Mult'))),
+            req(subrecord('CSFL', struct('Flight', [
+                float('Hover Chance'),
+                float('Dive Bomb Chance'),
+                float('Ground Attack Chance'),
+                float('Hover Time'),
+                float('Ground Attack Time'),
+                float('Perch Attack Chance'),
+                float('Perch Attack Time'),
+                float('Flying Attack Chance')
+            ]))),
+            req(subrecord('DATA', format(uint32('Flags'), flags({
+                0: 'Dueling',
+                1: 'Flanking',
+                2: 'Allow Dual Wielding',
+                3: 'Charging',
+                4: 'Retarget Any Nearby Melee Target',
+                5: 'Unknown 5'
+            }))))
+        ]
+    })
+};

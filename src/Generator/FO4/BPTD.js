@@ -1,0 +1,107 @@
+let {
+    def, localized, string, conflictType, subrecord, 
+    req, float, ckFormId, format, flags, 
+    uint8, enumeration, struct, bytes, size, 
+    sortKey, memberStruct, unordered, sorted, memberArray, 
+    record
+} = require('../helpers');
+
+module.exports = () => {
+    record('BPTD', 'Body Part Data', {
+        members: [
+            def('EDID'),
+            def('MODL'),
+            sorted(memberArray('Body Parts', 
+                unordered(sortKey([1], memberStruct('Body Part', [
+                    subrecord('BPTN', conflictType('Translate', localized(string('Part Name')))),
+                    req(subrecord('BPNN', string('Part Node'))),
+                    req(subrecord('BPNT', string('VATS Target'))),
+                    req(subrecord('BPND', struct('', [
+                        float('Damage Mult'),
+                        ckFormId('Explodable - Debris', ['DEBR', 'NULL']),
+                        ckFormId('Explodable - Explosion', ['EXPL', 'NULL']),
+                        float('Explodable - Debris Scale'),
+                        ckFormId('Severable - Debris', ['DEBR', 'NULL']),
+                        ckFormId('Severable - Explosion', ['EXPL', 'NULL']),
+                        float('Severable - Debris Scale'),
+                        float('Cut - Min'),
+                        float('Cut - Max'),
+                        float('Cut - Radius'),
+                        req(format(float('Gore Effects - Local Rotate X'), def('RotationFactor'))),
+                        req(format(float('Gore Effects - Local Rotate Y'), def('RotationFactor'))),
+                        float('Cut - Tesselation'),
+                        ckFormId('Severable - Impact DataSet', ['IPDS', 'NULL']),
+                        ckFormId('Explodable - Impact DataSet', ['IPDS', 'NULL']),
+                        float('Explodable - Limb Replacement Scale'),
+                        format(uint8('Flags'), flags({
+                            0: 'Severable',
+                            1: 'Hit Reaction',
+                            2: 'Hit Reaction - Default',
+                            3: 'Explodable',
+                            4: 'Cut - Meat Cap Sever',
+                            5: 'On Cripple',
+                            6: 'Explodable - Absolute Chance',
+                            7: 'Show Cripple Geometry'
+                        })),
+                        format(uint8('Part Type'), enumeration({
+                            0: 'Torso',
+                            1: 'Head1',
+                            2: 'Eye',
+                            3: 'LookAt',
+                            4: 'Fly Grab',
+                            5: 'Head2',
+                            6: 'LeftArm1',
+                            7: 'LeftArm2',
+                            8: 'RightArm1',
+                            9: 'RightArm2',
+                            10: 'LeftLeg1',
+                            11: 'LeftLeg2',
+                            12: 'LeftLeg3',
+                            13: 'RightLeg1',
+                            14: 'RightLeg2',
+                            15: 'RightLeg3',
+                            16: 'Brain',
+                            17: 'Weapon',
+                            18: 'Root',
+                            19: 'COM',
+                            20: 'Pelvis',
+                            21: 'Camera',
+                            22: 'Offset Root',
+                            23: 'Left Foot',
+                            24: 'Right Foot',
+                            25: 'Face Target Source'
+                        })),
+                        uint8('Health Percent'),
+                        ckFormId('Actor Value', ['AVIF', 'NULL']),
+                        uint8('To Hit Chance'),
+                        uint8('Explodable - Explosion Chance %'),
+                        uint8('Non-Lethal Dismemberment Chance'),
+                        uint8('Severable - Debris Count'),
+                        uint8('Explodable - Debris Count'),
+                        uint8('Severable - Decal Count'),
+                        uint8('Explodable - Decal Count'),
+                        uint8('Geometry Segment Index'),
+                        ckFormId('On Cripple - Art Object', ['ARTO', 'NULL']),
+                        ckFormId('On Cripple - Debris', ['DEBR', 'NULL']),
+                        ckFormId('On Cripple - Explosion', ['EXPL', 'NULL']),
+                        ckFormId('On Cripple - Impact DataSet', ['IPDS', 'NULL']),
+                        float('On Cripple - Debris Scale'),
+                        uint8('On Cripple - Debris Count'),
+                        uint8('On Cripple - Decal Count')
+                    ]))),
+                    req(subrecord('NAM1', string('Limb Replacement Model'))),
+                    req(subrecord('NAM4', string('Gore Effects - Target Bone'))),
+                    subrecord('NAM5', size(0, bytes('Texture Files Hashes'))),
+                    subrecord('ENAM', string('Hit Reaction - Start')),
+                    subrecord('FNAM', string('Hit Reaction - End')),
+                    subrecord('BNAM', ckFormId('Gore Effects - Dismember Blood Art', ['ARTO'])),
+                    subrecord('INAM', ckFormId('Gore Effects - Blood Impact Material Type', ['MATT'])),
+                    subrecord('JNAM', ckFormId('On Cripple - Blood Impact Material Type', ['MATT'])),
+                    subrecord('CNAM', ckFormId('Meat Cap TextureSet', ['TXST'])),
+                    subrecord('NAM2', ckFormId('Collar TextureSet', ['TXST'])),
+                    subrecord('DNAM', string('Twist Variable Prefix'))
+                ])))
+            ))
+        ]
+    })
+};
