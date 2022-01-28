@@ -92,7 +92,7 @@
             "type": "string",
             "localized": true,
             "conflictType": "Translate",
-            "keepCase": true
+            "transform": "keepcase"
         },
         {
             "signature": "CNAM",
@@ -100,7 +100,7 @@
             "type": "string",
             "localized": true,
             "conflictType": "Translate",
-            "keepCase": true
+            "transform": "keepcase"
         }
     ]
 }

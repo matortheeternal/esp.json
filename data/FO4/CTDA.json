@@ -61,14 +61,18 @@
                             "name": "Unknown",
                             "type": "bytes",
                             "size": 4,
-                            "zeroSortKey": 1
+                            "defFlags": [
+                                "zeroSortKey"
+                            ]
                         },
                         {
                             "name": "None",
                             "type": "bytes",
                             "size": 4,
                             "conflictType": "Ignore",
-                            "zeroSortKey": 1
+                            "defFlags": [
+                                "zeroSortKey"
+                            ]
                         },
                         {
                             "name": "String",
@@ -416,7 +420,9 @@
                             "type": "bytes",
                             "size": 4,
                             "conflictType": "Ignore",
-                            "zeroSortKey": 1
+                            "defFlags": [
+                                "zeroSortKey"
+                            ]
                         },
                         {
                             "name": "VATS Value Function",
@@ -428,7 +434,9 @@
                         {
                             "name": "VATS Value Param (unused)",
                             "type": "uint32",
-                            "zeroSortKey": 1
+                            "defFlags": [
+                                "zeroSortKey"
+                            ]
                         },
                         {
                             "name": "Voice Type",
@@ -479,14 +487,18 @@
                             "name": "Unknown",
                             "type": "bytes",
                             "size": 4,
-                            "zeroSortKey": 1
+                            "defFlags": [
+                                "zeroSortKey"
+                            ]
                         },
                         {
                             "name": "None",
                             "type": "bytes",
                             "size": 4,
                             "conflictType": "Ignore",
-                            "zeroSortKey": 1
+                            "defFlags": [
+                                "zeroSortKey"
+                            ]
                         },
                         {
                             "name": "String",
@@ -915,14 +927,18 @@
                                     "type": "bytes",
                                     "size": 4,
                                     "conflictType": "Ignore",
-                                    "zeroSortKey": 1
+                                    "defFlags": [
+                                        "zeroSortKey"
+                                    ]
                                 },
                                 {
                                     "name": "Unknown",
                                     "type": "bytes",
                                     "size": 4,
                                     "conflictType": "Ignore",
-                                    "zeroSortKey": 1
+                                    "defFlags": [
+                                        "zeroSortKey"
+                                    ]
                                 },
                                 {
                                     "name": "Critical Effect",
@@ -944,28 +960,36 @@
                                     "type": "bytes",
                                     "size": 4,
                                     "conflictType": "Ignore",
-                                    "zeroSortKey": 1
+                                    "defFlags": [
+                                        "zeroSortKey"
+                                    ]
                                 },
                                 {
                                     "name": "Unknown",
                                     "type": "bytes",
                                     "size": 4,
                                     "conflictType": "Ignore",
-                                    "zeroSortKey": 1
+                                    "defFlags": [
+                                        "zeroSortKey"
+                                    ]
                                 },
                                 {
                                     "name": "Unknown",
                                     "type": "bytes",
                                     "size": 4,
                                     "conflictType": "Ignore",
-                                    "zeroSortKey": 1
+                                    "defFlags": [
+                                        "zeroSortKey"
+                                    ]
                                 },
                                 {
                                     "name": "Unknown",
                                     "type": "bytes",
                                     "size": 4,
                                     "conflictType": "Ignore",
-                                    "zeroSortKey": 1
+                                    "defFlags": [
+                                        "zeroSortKey"
+                                    ]
                                 },
                                 {
                                     "name": "Weapon Type",
@@ -979,14 +1003,18 @@
                                     "type": "bytes",
                                     "size": 4,
                                     "conflictType": "Ignore",
-                                    "zeroSortKey": 1
+                                    "defFlags": [
+                                        "zeroSortKey"
+                                    ]
                                 },
                                 {
                                     "name": "Unknown",
                                     "type": "bytes",
                                     "size": 4,
                                     "conflictType": "Ignore",
-                                    "zeroSortKey": 1
+                                    "defFlags": [
+                                        "zeroSortKey"
+                                    ]
                                 },
                                 {
                                     "name": "Projectile Type",

@@ -6,7 +6,7 @@
         {
             "name": "Version",
             "type": "uint32",
-            "defaultNativeValue": 15
+            "defaultData": 15
         },
         {
             "name": "Pathing Cell",
@@ -16,7 +16,7 @@
                     "name": "Magic",
                     "type": "bytes",
                     "size": 4,
-                    "defaultEditValue": "3C A0 E9 A5"
+                    "defaultValue": "3C A0 E9 A5"
                 },
                 {
                     "name": "Parent Worldspace",
@@ -60,7 +60,6 @@
             "name": "Vertices",
             "type": "array",
             "prefix": 4,
-            "notAlignable": 1,
             "element": {
                 "name": "Vertex",
                 "type": "struct",
@@ -78,13 +77,15 @@
                         "type": "float"
                     }
                 ]
-            }
+            },
+            "defFlags": [
+                "notAlignable"
+            ]
         },
         {
             "name": "Triangles",
             "type": "array",
             "prefix": 4,
-            "notAlignable": 1,
             "element": {
                 "name": "Triangle",
                 "type": "struct",
@@ -196,14 +197,16 @@
                         }
                     }
                 ]
-            }
+            },
+            "defFlags": [
+                "notAlignable"
+            ]
         },
         {
             "name": "Edge Links",
             "type": "array",
             "prefix": 4,
             "conflictType": "Ignore",
-            "notAlignable": 1,
             "element": {
                 "name": "Edge Link",
                 "type": "struct",
@@ -235,7 +238,10 @@
                         "conflictType": "Ignore"
                     }
                 ]
-            }
+            },
+            "defFlags": [
+                "notAlignable"
+            ]
         },
         {
             "name": "Door Triangles",
@@ -283,7 +289,6 @@
             "name": "Unknown 5",
             "type": "array",
             "prefix": 4,
-            "notAlignable": 1,
             "element": {
                 "name": "Unknown",
                 "type": "struct",
@@ -301,13 +306,15 @@
                         "type": "uint32"
                     }
                 ]
-            }
+            },
+            "defFlags": [
+                "notAlignable"
+            ]
         },
         {
             "name": "Unknown 6",
             "type": "array",
             "prefix": 4,
-            "notAlignable": 1,
             "element": {
                 "name": "Unknown",
                 "type": "struct",
@@ -322,13 +329,15 @@
                         "linksToCallback": "TriangleLinksTo"
                     }
                 ]
-            }
+            },
+            "defFlags": [
+                "notAlignable"
+            ]
         },
         {
             "name": "Waypoints",
             "type": "array",
             "prefix": 4,
-            "notAlignable": 1,
             "element": {
                 "name": "Waypoint",
                 "type": "struct",
@@ -355,7 +364,10 @@
                         "type": "uint32"
                     }
                 ]
-            }
+            },
+            "defFlags": [
+                "notAlignable"
+            ]
         },
         {
             "name": "Navmesh Grid",
@@ -400,18 +412,22 @@
                 {
                     "name": "NavMesh Grid Arrays",
                     "type": "array",
-                    "notAlignable": 1,
                     "element": {
                         "name": "NavMeshGridCell",
                         "type": "array",
                         "prefix": 4,
-                        "notAlignable": 1,
                         "element": {
                             "name": "Triangle",
                             "type": "int16",
                             "linksToCallback": "TriangleLinksTo"
-                        }
-                    }
+                        },
+                        "defFlags": [
+                            "notAlignable"
+                        ]
+                    },
+                    "defFlags": [
+                        "notAlignable"
+                    ]
                 }
             ]
         }

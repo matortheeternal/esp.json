@@ -27,7 +27,7 @@ module.exports = () => {
                     WEAP: 'Weapon',
                     NONE: 'None'
                 })), {
-                    "defaultEditValue": "None"
+                    "defaultValue": "None"
                 }),
                 conflictType('Ignore', size(2, bytes('Unused'))),
                 ckFormId('Attach Point', ['KYWD', 'NULL']),

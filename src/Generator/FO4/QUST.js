@@ -87,7 +87,7 @@ module.exports = () => {
                             def('CTDAs'),
                             subrecord('NAM2', string('Note')),
                             opts(subrecord('CNAM', conflictType('Translate', localized(string('Log Entry')))), {
-                                "keepCase": true
+                                "transform": "keepcase"
                             }),
                             subrecord('NAM0', ckFormId('Next Quest', ['QUST']))
                         ])
@@ -102,7 +102,7 @@ module.exports = () => {
                         1: 'No Stats Tracking'
                     }))),
                     opts(req(subrecord('NNAM', conflictType('Translate', localized(string('Display Text'))))), {
-                        "keepCase": true
+                        "transform": "keepcase"
                     }),
                     memberArray('Targets', 
                         memberStruct('Target', [

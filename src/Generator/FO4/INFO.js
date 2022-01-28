@@ -55,7 +55,7 @@ module.exports = () => {
                         int32('Camera Location Alias')
                     ])),
                     opts(req(subrecord('NAM1', conflictType('Translate', localized(string('Response Text'))))), {
-                        "keepCase": true
+                        "transform": "keepcase"
                     }),
                     req(subrecord('NAM2', string('Script Notes'))),
                     req(subrecord('NAM3', string('Edits'))),
@@ -70,7 +70,7 @@ module.exports = () => {
             ),
             def('CTDAs'),
             opts(subrecord('RNAM', conflictType('Translate', localized(string('Prompt')))), {
-                "keepCase": true
+                "transform": "keepcase"
             }),
             subrecord('ANAM', ckFormId('Speaker', ['NPC_'])),
             subrecord('TSCE', ckFormId('Start Scene', ['SCEN'])),

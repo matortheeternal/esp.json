@@ -19,7 +19,7 @@ module.exports = () => {
                     2: '',
                     3: 'Removed'
                 })), {
-                    "defaultEditValue": "Edited"
+                    "defaultValue": "Edited"
                 }),
                 union('Value', 'ScriptPropertyDecider', [
                     def('Null'),

@@ -61,7 +61,7 @@
             "type": "string",
             "localized": true,
             "conflictType": "Translate",
-            "keepCase": true
+            "transform": "keepcase"
         },
         {
             "name": "Menu Buttons",
@@ -76,7 +76,7 @@
                         "type": "string",
                         "localized": true,
                         "conflictType": "Translate",
-                        "keepCase": true
+                        "transform": "keepcase"
                     },
                     {
                         "id": "CTDAs"

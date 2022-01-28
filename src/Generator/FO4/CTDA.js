@@ -22,10 +22,14 @@ module.exports = () => {
                 conflictType('Ignore', size(2, bytes('Unused'))),
                 union('Parameter #1', 'CTDAParam1Decider', [
                     opts(size(4, bytes('Unknown')), {
-                        "zeroSortKey": 1
+                        "defFlags": [
+                            "zeroSortKey"
+                        ]
                     }),
                     opts(conflictType('Ignore', size(4, bytes('None'))), {
-                        "zeroSortKey": 1
+                        "defFlags": [
+                            "zeroSortKey"
+                        ]
                     }),
                     format(uint32('String'), def('CTDAParam1StringToString')),
                     int32('Integer'),
@@ -92,11 +96,15 @@ module.exports = () => {
                     format(uint32('Sex'), def('SexEnum')),
                     ckFormId('Shout', ['SHOU']),
                     opts(conflictType('Ignore', size(4, bytes('Variable Name (unused)'))), {
-                        "zeroSortKey": 1
+                        "defFlags": [
+                            "zeroSortKey"
+                        ]
                     }),
                     format(uint32('VATS Value Function'), def('VATSValueFunctionEnum')),
                     opts(uint32('VATS Value Param (unused)'), {
-                        "zeroSortKey": 1
+                        "defFlags": [
+                            "zeroSortKey"
+                        ]
                     }),
                     ckFormId('Voice Type', ['VTYP', 'FLST']),
                     format(uint32('Ward State'), def('WardStateEnum')),
@@ -106,10 +114,14 @@ module.exports = () => {
                 ]),
                 union('Parameter #2', 'CTDAParam2Decider', [
                     opts(size(4, bytes('Unknown')), {
-                        "zeroSortKey": 1
+                        "defFlags": [
+                            "zeroSortKey"
+                        ]
                     }),
                     opts(conflictType('Ignore', size(4, bytes('None'))), {
-                        "zeroSortKey": 1
+                        "defFlags": [
+                            "zeroSortKey"
+                        ]
                     }),
                     format(uint32('String'), def('CTDAParam2StringToString')),
                     int32('Integer'),
@@ -201,33 +213,49 @@ module.exports = () => {
                             11: 'Player Death'
                         })),
                         opts(conflictType('Ignore', size(4, bytes('Unknown'))), {
-                            "zeroSortKey": 1
+                            "defFlags": [
+                                "zeroSortKey"
+                            ]
                         }),
                         opts(conflictType('Ignore', size(4, bytes('Unknown'))), {
-                            "zeroSortKey": 1
+                            "defFlags": [
+                                "zeroSortKey"
+                            ]
                         }),
                         ckFormId('Critical Effect', ['SPEL']),
                         opts(ckFormId('Critical Effect List', ['FLST']), {
                             "validateFlstRefs": true
                         }),
                         opts(conflictType('Ignore', size(4, bytes('Unknown'))), {
-                            "zeroSortKey": 1
+                            "defFlags": [
+                                "zeroSortKey"
+                            ]
                         }),
                         opts(conflictType('Ignore', size(4, bytes('Unknown'))), {
-                            "zeroSortKey": 1
+                            "defFlags": [
+                                "zeroSortKey"
+                            ]
                         }),
                         opts(conflictType('Ignore', size(4, bytes('Unknown'))), {
-                            "zeroSortKey": 1
+                            "defFlags": [
+                                "zeroSortKey"
+                            ]
                         }),
                         opts(conflictType('Ignore', size(4, bytes('Unknown'))), {
-                            "zeroSortKey": 1
+                            "defFlags": [
+                                "zeroSortKey"
+                            ]
                         }),
                         format(uint32('Weapon Type'), def('WeaponAnimTypeEnum')),
                         opts(conflictType('Ignore', size(4, bytes('Unknown'))), {
-                            "zeroSortKey": 1
+                            "defFlags": [
+                                "zeroSortKey"
+                            ]
                         }),
                         opts(conflictType('Ignore', size(4, bytes('Unknown'))), {
-                            "zeroSortKey": 1
+                            "defFlags": [
+                                "zeroSortKey"
+                            ]
                         }),
                         format(uint32('Projectile Type'), enumeration({
                             0: 'Missile',

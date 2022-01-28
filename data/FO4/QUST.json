@@ -212,7 +212,7 @@
                                     "type": "string",
                                     "localized": true,
                                     "conflictType": "Translate",
-                                    "keepCase": true
+                                    "transform": "keepcase"
                                 },
                                 {
                                     "signature": "NAM0",
@@ -262,7 +262,7 @@
                         "localized": true,
                         "conflictType": "Translate",
                         "required": true,
-                        "keepCase": true
+                        "transform": "keepcase"
                     },
                     {
                         "name": "Targets",

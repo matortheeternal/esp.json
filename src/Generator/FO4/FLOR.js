@@ -20,7 +20,7 @@ module.exports = () => {
             subrecord('PNAM', unknown()),
             def('ATTX'),
             opts(subrecord('RNAM', conflictType('Translate', localized(string('Activate Text Override')))), {
-                "keepCase": true
+                "transform": "keepcase"
             }),
             subrecord('FNAM', unknown()),
             subrecord('PFIG', ckFormId('Ingredient', def('sigBaseObjects'))),

@@ -152,7 +152,7 @@
                         "localized": true,
                         "conflictType": "Translate",
                         "required": true,
-                        "keepCase": true
+                        "transform": "keepcase"
                     },
                     {
                         "signature": "NAM2",
@@ -223,7 +223,7 @@
             "type": "string",
             "localized": true,
             "conflictType": "Translate",
-            "keepCase": true
+            "transform": "keepcase"
         },
         {
             "signature": "ANAM",

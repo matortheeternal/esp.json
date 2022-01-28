@@ -177,7 +177,7 @@ module.exports = () => {
             req(subrecord('CNAM', ckFormId('Class', ['CLAS']))),
             def('FULL'),
             opts(subrecord('SHRT', conflictType('Translate', localized(string('Short Name')))), {
-                "keepCase": true
+                "transform": "keepcase"
             }),
             subrecord('DATA', bytes('Marker')),
             subrecord('DNAM', struct('', [

@@ -21,12 +21,12 @@ module.exports = () => {
             subrecord('TNAM', uint32('Display Time')),
             subrecord('SNAM', string('SWF')),
             opts(subrecord('NNAM', conflictType('Translate', localized(string('Short Title')))), {
-                "keepCase": true
+                "transform": "keepcase"
             }),
             memberArray('Menu Buttons', 
                 memberStruct('Menu Button', [
                     opts(subrecord('ITXT', conflictType('Translate', localized(string('Button Text')))), {
-                        "keepCase": true
+                        "transform": "keepcase"
                     }),
                     def('CTDAs')
                 ])

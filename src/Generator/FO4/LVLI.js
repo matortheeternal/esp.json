@@ -43,7 +43,7 @@ module.exports = () => {
             ))),
             subrecord('LVSG', ckFormId('Epic Loot Chance', ['GLOB'])),
             opts(subrecord('ONAM', conflictType('Translate', localized(string('Override Name')))), {
-                "keepCase": true
+                "transform": "keepcase"
             })
         ]
     })

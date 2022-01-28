@@ -21,10 +21,10 @@ module.exports = () => {
             req(def('OBND')),
             def('PTRN'),
             opts(subrecord('NAM0', localized(string('Header Text'))), {
-                "keepCase": true
+                "transform": "keepcase"
             }),
             opts(subrecord('WNAM', localized(string('Welcome Text'))), {
-                "keepCase": true
+                "transform": "keepcase"
             }),
             def('FULL'),
             def('MODL'),
@@ -52,7 +52,7 @@ module.exports = () => {
                 memberArray('Body Text', 
                     memberStruct('Item', [
                         opts(subrecord('BTXT', conflictType('Translate', localized(string('Text')))), {
-                            "keepCase": true
+                            "transform": "keepcase"
                         }),
                         def('CTDAs')
                     ])
@@ -63,10 +63,10 @@ module.exports = () => {
                 memberArray('Menu Items', 
                     memberStruct('Menu Item', [
                         opts(subrecord('ITXT', conflictType('Translate', localized(string('Item Text')))), {
-                            "keepCase": true
+                            "transform": "keepcase"
                         }),
                         opts(subrecord('RNAM', conflictType('Translate', localized(string('Response Text')))), {
-                            "keepCase": true
+                            "transform": "keepcase"
                         }),
                         req(subrecord('ANAM', format(uint8('Type'), enumeration({
                             0: 'Unknown 0',
@@ -89,7 +89,7 @@ module.exports = () => {
                         })))),
                         subrecord('ITID', uint16('Item ID')),
                         opts(subrecord('UNAM', conflictType('Translate', localized(string('Display Text')))), {
-                            "keepCase": true
+                            "transform": "keepcase"
                         }),
                         subrecord('VNAM', string('Show Image')),
                         subrecord('TNAM', ckFormId('Submenu', ['TERM'])),

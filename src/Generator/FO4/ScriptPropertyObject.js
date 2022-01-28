@@ -10,10 +10,12 @@ module.exports = () => {
             elementMap([2, 1, 0], sortKey([1], struct('Object v2', [
                 conflictType('Ignore', uint16('Unused')),
                 opts(format(int16('Alias'), def('ScriptObjectAliasToStr')), {
-                    "defaultEditValue": "None"
+                    "defaultValue": "None"
                 }),
                 opts(formId('FormID'), {
-                    "noReport": 1
+                    "defFlags": [
+                        "noReport"
+                    ]
                 })
             ]))),
             sortKey([1], struct('Object v1', [

@@ -37,10 +37,10 @@ module.exports = () => {
                 6: 'No "To" Text'
             })))),
             opts(subrecord('ONAM', conflictType('Translate', localized(string('Alternate Text - Open')))), {
-                "keepCase": true
+                "transform": "keepcase"
             }),
             opts(subrecord('CNAM', conflictType('Translate', localized(string('Alternate Text - Close')))), {
-                "keepCase": true
+                "transform": "keepcase"
             })
         ]
     })

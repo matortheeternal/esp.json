@@ -18,7 +18,9 @@ module.exports = () => {
                         opts(subrecord('BSMS', array('Values', 
                             float('Value')
                         )), {
-                            "notAlignable": 1
+                            "defFlags": [
+                                "notAlignable"
+                            ]
                         }),
                         subrecord('BMMP', unknown())
                     ]))

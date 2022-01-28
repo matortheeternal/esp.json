@@ -7,13 +7,13 @@
             "name": "Version",
             "type": "int16",
             "conflictType": "Ignore",
-            "defaultNativeValue": 6
+            "defaultData": 6
         },
         {
             "name": "Object Format",
             "type": "int16",
             "conflictType": "Ignore",
-            "defaultNativeValue": 2
+            "defaultData": 2
         },
         {
             "name": "Scripts",
@@ -43,13 +43,13 @@
                         "name": "Version",
                         "type": "int16",
                         "conflictType": "Ignore",
-                        "defaultNativeValue": 6
+                        "defaultData": 6
                     },
                     {
                         "name": "Object Format",
                         "type": "int16",
                         "conflictType": "Ignore",
-                        "defaultNativeValue": 2
+                        "defaultData": 2
                     },
                     {
                         "name": "Alias Scripts",

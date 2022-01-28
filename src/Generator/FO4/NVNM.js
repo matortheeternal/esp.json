@@ -10,11 +10,11 @@ module.exports = () => {
     addDef('NVNM', 
         subrecord('NVNM', struct('Navmesh Geometry', [
             opts(uint32('Version'), {
-                "defaultNativeValue": 15
+                "defaultData": 15
             }),
             struct('Pathing Cell', [
                 opts(size(4, bytes('Magic')), {
-                    "defaultEditValue": "3C A0 E9 A5"
+                    "defaultValue": "3C A0 E9 A5"
                 }),
                 ckFormId('Parent Worldspace', ['WRLD', 'NULL']),
                 union('Parent', 'NVNMParentDecider', [
@@ -32,7 +32,9 @@ module.exports = () => {
                     float('Z')
                 ])
             )), {
-                "notAlignable": 1
+                "defFlags": [
+                    "notAlignable"
+                ]
             }),
             opts(prefix(4, array('Triangles', 
                 struct('Triangle', [
@@ -94,7 +96,9 @@ module.exports = () => {
                     }))
                 ])
             )), {
-                "notAlignable": 1
+                "defFlags": [
+                    "notAlignable"
+                ]
             }),
             opts(conflictType('Ignore', prefix(4, array('Edge Links', 
                 conflictType('Ignore', struct('Edge Link', [
@@ -104,7 +108,9 @@ module.exports = () => {
                     conflictType('Ignore', size(1, bytes('Unknown')))
                 ]))
             ))), {
-                "notAlignable": 1
+                "defFlags": [
+                    "notAlignable"
+                ]
             }),
             prefix(4, sorted(array('Door Triangles', 
                 sortKey([0, 2], struct('Door Triangle', [
@@ -125,7 +131,9 @@ module.exports = () => {
                     uint32('Unknown')
                 ])
             )), {
-                "notAlignable": 1
+                "defFlags": [
+                    "notAlignable"
+                ]
             }),
             opts(prefix(4, array('Unknown 6', 
                 struct('Unknown', [
@@ -135,7 +143,9 @@ module.exports = () => {
                     })
                 ])
             )), {
-                "notAlignable": 1
+                "defFlags": [
+                    "notAlignable"
+                ]
             }),
             opts(prefix(4, array('Waypoints', 
                 struct('Waypoint', [
@@ -148,7 +158,9 @@ module.exports = () => {
                     uint32('Unknown')
                 ])
             )), {
-                "notAlignable": 1
+                "defFlags": [
+                    "notAlignable"
+                ]
             }),
             struct('Navmesh Grid', [
                 uint32('Navmesh Grid Size'),
@@ -166,10 +178,14 @@ module.exports = () => {
                             "linksToCallback": "TriangleLinksTo"
                         })
                     )), {
-                        "notAlignable": 1
+                        "defFlags": [
+                            "notAlignable"
+                        ]
                     })
                 ), {
-                    "notAlignable": 1
+                    "defFlags": [
+                        "notAlignable"
+                    ]
                 })
             ])
         ]))

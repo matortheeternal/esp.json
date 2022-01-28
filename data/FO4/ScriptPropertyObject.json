@@ -15,7 +15,7 @@
                 {
                     "name": "Alias",
                     "type": "int16",
-                    "defaultEditValue": "None",
+                    "defaultValue": "None",
                     "format": {
                         "type": "ScriptObjectAliasFormat"
                     }
@@ -23,7 +23,9 @@
                 {
                     "name": "FormID",
                     "type": "formId",
-                    "noReport": 1
+                    "defFlags": [
+                        "noReport"
+                    ]
                 }
             ],
             "sortKey": [

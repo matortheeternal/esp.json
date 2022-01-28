@@ -25,7 +25,9 @@ module.exports = () => {
             opts(subrecord('FNAM', array('Cue Points', 
                 float('Point')
             )), {
-                "notAlignable": 1
+                "defFlags": [
+                    "notAlignable"
+                ]
             }),
             def('CITC'),
             def('CTDAsCount'),

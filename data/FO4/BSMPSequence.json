@@ -33,11 +33,13 @@
                             "signature": "BSMS",
                             "name": "Values",
                             "type": "array",
-                            "notAlignable": 1,
                             "element": {
                                 "name": "Value",
                                 "type": "float"
-                            }
+                            },
+                            "defFlags": [
+                                "notAlignable"
+                            ]
                         },
                         {
                             "signature": "BMMP",

@@ -47,7 +47,7 @@ module.exports = () => {
                 ])
             ]))),
             opts(subrecord('CNAM', conflictType('Translate', localized(string('Description')))), {
-                "keepCase": true
+                "transform": "keepcase"
             }),
             subrecord('INAM', ckFormId('Inventory Art', ['STAT']))
         ]

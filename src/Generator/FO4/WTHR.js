@@ -51,18 +51,24 @@ module.exports = () => {
                 opts(subrecord('RNAM', array('Y Speed', 
                     format(uint8('Layer'), def('CloudSpeedToStr'))
                 )), {
-                    "notAlignable": 1
+                    "defFlags": [
+                        "notAlignable"
+                    ]
                 }),
                 opts(subrecord('QNAM', array('X Speed', 
                     format(uint8('Layer'), def('CloudSpeedToStr'))
                 )), {
-                    "notAlignable": 1
+                    "defFlags": [
+                        "notAlignable"
+                    ]
                 })
             ]),
             opts(subrecord('PNAM', array('Cloud Colors', 
                 def('WeatherColors', { name: 'Layer' })
             )), {
-                "notAlignable": 1
+                "defFlags": [
+                    "notAlignable"
+                ]
             }),
             opts(subrecord('JNAM', array('Cloud Alphas', 
                 struct('Layer', [
@@ -76,7 +82,9 @@ module.exports = () => {
                     float('LateSunset')
                 ])
             )), {
-                "notAlignable": 1
+                "defFlags": [
+                    "notAlignable"
+                ]
             }),
             req(subrecord('NAM0', struct('Weather Colors', [
                 def('WeatherColors', { name: 'Sky-Upper' }),
@@ -102,7 +110,9 @@ module.exports = () => {
             opts(subrecord('NAM4', array('Unknown', 
                 float('Unknown')
             )), {
-                "notAlignable": 1
+                "defFlags": [
+                    "notAlignable"
+                ]
             }),
             req(subrecord('FNAM', struct('Fog Distance', [
                 float('Day - Near'),

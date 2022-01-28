@@ -23,7 +23,7 @@ module.exports = () => {
                         memberArray('Names', 
                             memberStruct('Name', [
                                 opts(subrecord('WNAM', conflictType('Translate', localized(string('Text')))), {
-                                    "keepCase": true
+                                    "transform": "keepcase"
                                 }),
                                 def('KSIZ'),
                                 def('KWDAs'),

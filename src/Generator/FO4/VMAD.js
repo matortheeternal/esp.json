@@ -7,10 +7,10 @@ module.exports = () => {
     addDef('VMAD', 
         subrecord('VMAD', struct('Virtual Machine Adapter', [
             opts(conflictType('Ignore', int16('Version')), {
-                "defaultNativeValue": 6
+                "defaultData": 6
             }),
             opts(conflictType('Ignore', int16('Object Format')), {
-                "defaultNativeValue": 2
+                "defaultData": 2
             }),
             prefix(2, sorted(array('Scripts', 
                 def('ScriptEntry')

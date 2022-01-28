@@ -39,7 +39,7 @@ module.exports = () => {
                 uint32('Health')
             ]))),
             opts(subrecord('ONAM', conflictType('Translate', localized(string('Short Name')))), {
-                "keepCase": true
+                "transform": "keepcase"
             }),
             subrecord('NAM1', string('Casing Model')),
             subrecord('NAM2', conflictType('Ignore', size(0, bytes('Texture Files Hashes'))))

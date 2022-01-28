@@ -55,7 +55,7 @@ module.exports = () => {
                 ckFormId('Sound - Consume', ['SNDR', 'NULL'])
             ]))),
             opts(subrecord('DNAM', conflictType('Translate', localized(string('Addiction Name')))), {
-                "keepCase": true
+                "transform": "keepcase"
             }),
             req(def('Effects'))
         ]

@@ -6,7 +6,7 @@ let {
 module.exports = () => {
     addDef('DESC', 
         opts(subrecord('DESC', conflictType('Translate', localized(string('Description')))), {
-            "keepCase": true
+            "transform": "keepcase"
         })
     );
 };
