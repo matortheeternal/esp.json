@@ -1,0 +1,75 @@
+{
+    "signature": "LTEX",
+    "type": "record",
+    "name": "Landscape Texture",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "signature": "HNAM",
+            "name": "Havok Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Material Type",
+                    "type": "uint8",
+                    "required": true,
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "STONE",
+                            "1": "CLOTH",
+                            "2": "DIRT",
+                            "3": "GLASS",
+                            "4": "GRASS",
+                            "5": "METAL",
+                            "6": "ORGANIC",
+                            "7": "SKIN",
+                            "8": "WATER",
+                            "9": "WOOD",
+                            "10": "HEAVY STONE",
+                            "11": "HEAVY METAL",
+                            "12": "HEAVY WOOD",
+                            "13": "CHAIN",
+                            "14": "SNOW"
+                        }
+                    }
+                },
+                {
+                    "name": "Friction",
+                    "type": "uint8",
+                    "required": true
+                },
+                {
+                    "name": "Restitution",
+                    "type": "uint8",
+                    "required": true
+                }
+            ]
+        },
+        {
+            "signature": "SNAM",
+            "name": "Texture Specular Exponent",
+            "type": "uint8",
+            "required": true
+        },
+        {
+            "name": "Grasses",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "signature": "GNAM",
+                "name": "Grass",
+                "type": "formId",
+                "signatures": [
+                    "GRAS"
+                ]
+            }
+        }
+    ]
+}

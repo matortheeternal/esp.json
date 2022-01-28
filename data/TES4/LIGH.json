@@ -1,0 +1,110 @@
+{
+    "signature": "LIGH",
+    "type": "record",
+    "name": "Light",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "SCRI"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Time",
+                    "type": "int32"
+                },
+                {
+                    "name": "Radius",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Color",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Red",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Green",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Blue",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "uint8"
+                        }
+                    ]
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Dynamic",
+                            "1": "Can be Carried",
+                            "2": "Negative",
+                            "3": "Flicker",
+                            "4": "Unused",
+                            "5": "Off By Default",
+                            "6": "Flicker Slow",
+                            "7": "Pulse",
+                            "8": "Pulse Slow",
+                            "9": "Spot Light",
+                            "10": "Spot Shadow"
+                        }
+                    }
+                },
+                {
+                    "name": "Falloff Exponent",
+                    "type": "float"
+                },
+                {
+                    "name": "FOV",
+                    "type": "float"
+                },
+                {
+                    "name": "Value",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "FNAM",
+            "name": "Fade value",
+            "type": "float",
+            "required": true
+        },
+        {
+            "signature": "SNAM",
+            "name": "Sound",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        }
+    ]
+}

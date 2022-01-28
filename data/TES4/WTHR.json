@@ -1,0 +1,1207 @@
+{
+    "signature": "WTHR",
+    "type": "record",
+    "name": "Weather",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "CNAM",
+            "name": "Texture Lower Layer",
+            "type": "string"
+        },
+        {
+            "signature": "DNAM",
+            "name": "Texture Upper Layer",
+            "type": "string"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "signature": "NAM0",
+            "name": "Colors by Types/Times",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Sky-Upper",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Sunrise",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Day",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Sunset",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Night",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Fog",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Sunrise",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Day",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Sunset",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Night",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Clouds-Lower",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Sunrise",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Day",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Sunset",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Night",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Ambient",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Sunrise",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Day",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Sunset",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Night",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Sunlight",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Sunrise",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Day",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Sunset",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Night",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Sun",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Sunrise",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Day",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Sunset",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Night",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Stars",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Sunrise",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Day",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Sunset",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Night",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Sky-Lower",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Sunrise",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Day",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Sunset",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Night",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Horizon",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Sunrise",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Day",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Sunset",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Night",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Clouds-Upper",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Sunrise",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Day",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Sunset",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Night",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "Red",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Green",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Blue",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "name": "Unused",
+                                    "type": "bytes",
+                                    "size": 1
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "FNAM",
+            "name": "Fog Distance",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Day Near",
+                    "type": "float"
+                },
+                {
+                    "name": "Day Far",
+                    "type": "float"
+                },
+                {
+                    "name": "Night Near",
+                    "type": "float"
+                },
+                {
+                    "name": "Night Far",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "HNAM",
+            "name": "HDR Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Eye Adapt Speed",
+                    "type": "float"
+                },
+                {
+                    "name": "Blur Radius",
+                    "type": "float"
+                },
+                {
+                    "name": "Blur Passes",
+                    "type": "float"
+                },
+                {
+                    "name": "Emissive Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Target LUM",
+                    "type": "float"
+                },
+                {
+                    "name": "Upper LUM Clamp",
+                    "type": "float"
+                },
+                {
+                    "name": "Bright Scale",
+                    "type": "float"
+                },
+                {
+                    "name": "Bright Clamp",
+                    "type": "float"
+                },
+                {
+                    "name": "LUM Ramp No Tex",
+                    "type": "float"
+                },
+                {
+                    "name": "LUM Ramp Min",
+                    "type": "float"
+                },
+                {
+                    "name": "LUM Ramp Max",
+                    "type": "float"
+                },
+                {
+                    "name": "Sunlight Dimmer",
+                    "type": "float"
+                },
+                {
+                    "name": "Grass Dimmer",
+                    "type": "float"
+                },
+                {
+                    "name": "Tree Dimmer",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Wind Speed",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Cloud Speed (Lower)",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Cloud Speed (Upper)",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Trans Delta",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Sun Glare",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Sun Damage",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Precipitation - Begin Fade In",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Precipitation - End Fade Out",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Thunder/Lightning - Begin Fade In",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Thunder/Lightning - End Fade Out",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Thunder/Lightning - Frequency",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Weather Classification",
+                    "type": "uint8",
+                    "format": {
+                        "type": "WthrDataClassificationFormat"
+                    }
+                },
+                {
+                    "name": "Lightning Color",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Red",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Green",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Blue",
+                            "type": "uint8"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Sounds",
+            "type": "memberArray",
+            "member": {
+                "signature": "SNAM",
+                "name": "Sound",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Sound",
+                        "type": "formId",
+                        "signatures": [
+                            "SOUN"
+                        ]
+                    },
+                    {
+                        "name": "Type",
+                        "type": "uint32",
+                        "format": {
+                            "type": "enum",
+                            "options": {
+                                "0": "Default",
+                                "1": "Precip",
+                                "2": "Wind",
+                                "3": "Thunder"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,160 @@
+{
+    "signature": "SOUN",
+    "type": "record",
+    "name": "Sound",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "FNAM",
+            "name": "Sound FileName",
+            "type": "string"
+        },
+        {
+            "name": "Sound Data",
+            "type": "memberUnion",
+            "required": true,
+            "members": [
+                {
+                    "signature": "SNDX",
+                    "name": "Sound Data",
+                    "type": "struct",
+                    "required": true,
+                    "elements": [
+                        {
+                            "name": "Minimum attenuation distance",
+                            "type": "uint8",
+                            "format": {
+                                "type": "multiply",
+                                "value": 5
+                            }
+                        },
+                        {
+                            "name": "Maximum attenuation distance",
+                            "type": "uint8",
+                            "format": {
+                                "type": "multiply",
+                                "value": 100
+                            }
+                        },
+                        {
+                            "name": "Frequency adjustment %",
+                            "type": "int8"
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 1
+                        },
+                        {
+                            "name": "Flags",
+                            "type": "uint16",
+                            "format": {
+                                "type": "flags",
+                                "flags": {
+                                    "0": "Random Frequency Shift",
+                                    "1": "Play At Random",
+                                    "2": "Environment Ignored",
+                                    "3": "Random Location",
+                                    "4": "Loop",
+                                    "5": "Menu Sound",
+                                    "6": "2D",
+                                    "7": "360 LFE"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 2
+                        },
+                        {
+                            "name": "Static Attenuation (db)",
+                            "type": "uint16",
+                            "format": {
+                                "type": "divide",
+                                "value": 100
+                            }
+                        },
+                        {
+                            "name": "Stop time",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Start time",
+                            "type": "uint8"
+                        }
+                    ]
+                },
+                {
+                    "signature": "SNDD",
+                    "name": "Sound Data",
+                    "type": "struct",
+                    "required": true,
+                    "elements": [
+                        {
+                            "name": "Minimum attenuation distance",
+                            "type": "uint8",
+                            "format": {
+                                "type": "multiply",
+                                "value": 5
+                            }
+                        },
+                        {
+                            "name": "Maximum attenuation distance",
+                            "type": "uint8",
+                            "format": {
+                                "type": "multiply",
+                                "value": 100
+                            }
+                        },
+                        {
+                            "name": "Frequency adjustment %",
+                            "type": "int8"
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 1
+                        },
+                        {
+                            "name": "Flags",
+                            "type": "uint16",
+                            "format": {
+                                "type": "flags",
+                                "flags": {
+                                    "0": "Random Frequency Shift",
+                                    "1": "Play At Random",
+                                    "2": "Environment Ignored",
+                                    "3": "Random Location",
+                                    "4": "Loop",
+                                    "5": "Menu Sound",
+                                    "6": "2D",
+                                    "7": "360 LFE"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 2
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "empty"
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "empty"
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "empty"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

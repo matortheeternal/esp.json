@@ -1,0 +1,31 @@
+{
+    "signature": "EYES",
+    "type": "record",
+    "name": "Eyes",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "signature": "ICON",
+            "name": "Texture",
+            "type": "string",
+            "required": true
+        },
+        {
+            "signature": "DATA",
+            "name": "Flags",
+            "type": "uint8",
+            "required": true,
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Playable"
+                }
+            }
+        }
+    ]
+}

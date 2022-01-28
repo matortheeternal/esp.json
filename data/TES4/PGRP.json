@@ -1,0 +1,33 @@
+{
+    "signature": "PGRP",
+    "name": "Points",
+    "type": "array",
+    "required": true,
+    "element": {
+        "name": "Point",
+        "type": "struct",
+        "elements": [
+            {
+                "name": "X",
+                "type": "float"
+            },
+            {
+                "name": "Y",
+                "type": "float"
+            },
+            {
+                "name": "Z (Even = Red/Orange, Odd = Blue)",
+                "type": "float"
+            },
+            {
+                "name": "Connections",
+                "type": "uint8"
+            },
+            {
+                "name": "Unused",
+                "type": "bytes",
+                "size": 3
+            }
+        ]
+    }
+}

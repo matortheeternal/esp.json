@@ -1,0 +1,93 @@
+{
+    "signature": "INGR",
+    "type": "record",
+    "name": "Ingredient",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "OBME",
+            "name": "Oblivion Magic Extender",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Record Version",
+                    "type": "uint8"
+                },
+                {
+                    "name": "OBME Version",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Beta",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Minor",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Major",
+                            "type": "uint8"
+                        }
+                    ]
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 28
+                }
+            ]
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "SCRI"
+        },
+        {
+            "signature": "DATA",
+            "name": "Weight",
+            "type": "float",
+            "required": true
+        },
+        {
+            "signature": "ENIT",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Value",
+                    "type": "int32"
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "No auto-calculation",
+                            "1": "Food item"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3
+                }
+            ]
+        },
+        {
+            "id": "Effects"
+        }
+    ]
+}

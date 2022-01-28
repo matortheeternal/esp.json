@@ -1,0 +1,76 @@
+{
+    "signature": "MISC",
+    "type": "record",
+    "name": "Misc. Item",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "SCRI"
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "",
+                    "type": "union",
+                    "decider": "MISCActorValueDecider",
+                    "elements": [
+                        {
+                            "name": "Value",
+                            "type": "int32"
+                        },
+                        {
+                            "name": "Actor Value",
+                            "type": "formId",
+                            "signatures": [
+                                "ACVA"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "",
+                    "type": "union",
+                    "decider": "MISCActorValueDecider",
+                    "elements": [
+                        {
+                            "name": "Weight",
+                            "type": "float"
+                        },
+                        {
+                            "name": "Group",
+                            "type": "uint32",
+                            "format": {
+                                "type": "enum",
+                                "options": {
+                                    "0": "Attribute",
+                                    "1065353216": "Stat",
+                                    "1073741824": "Skill",
+                                    "1077936128": "AI",
+                                    "1082130432": "Social",
+                                    "1084227584": "Misc",
+                                    "1086324736": "Combat",
+                                    "1088421888": " [NONE]"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,94 @@
+{
+    "signature": "ENCH",
+    "type": "record",
+    "name": "Enchantment",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "OBME",
+            "name": "Oblivion Magic Extender",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Record Version",
+                    "type": "uint8"
+                },
+                {
+                    "name": "OBME Version",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Beta",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Minor",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Major",
+                            "type": "uint8"
+                        }
+                    ]
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 28
+                }
+            ]
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "signature": "ENIT",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Type",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Scroll",
+                            "1": "Staff",
+                            "2": "Weapon",
+                            "3": "Apparel"
+                        }
+                    }
+                },
+                {
+                    "name": "Charge Amount",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Enchant Cost",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Manual Enchant Cost (Autocalc Off)"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3
+                }
+            ]
+        },
+        {
+            "id": "Effects"
+        }
+    ]
+}

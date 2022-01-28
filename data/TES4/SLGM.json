@@ -1,0 +1,56 @@
+{
+    "signature": "SLGM",
+    "type": "record",
+    "name": "Soul Gem",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "SCRI"
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Value",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "SOUL",
+            "name": "Contained Soul",
+            "type": "uint8",
+            "required": true,
+            "format": {
+                "id": "SoulGemEnum"
+            }
+        },
+        {
+            "signature": "SLCP",
+            "name": "Maximum Capacity",
+            "type": "uint8",
+            "required": true,
+            "format": {
+                "id": "SoulGemEnum"
+            }
+        }
+    ]
+}

@@ -1,0 +1,359 @@
+{
+    "signature": "CREA",
+    "type": "record",
+    "name": "Creature",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "CNTOs"
+        },
+        {
+            "id": "SPLOs"
+        },
+        {
+            "signature": "NIFZ",
+            "name": "Models",
+            "type": "array",
+            "sorted": true,
+            "element": {
+                "name": "Model",
+                "type": "string",
+                "transform": "lowercase"
+            }
+        },
+        {
+            "signature": "NIFT",
+            "name": "Texture Files Hashes",
+            "type": "bytes",
+            "size": 0,
+            "conflictType": "Ignore"
+        },
+        {
+            "signature": "ACBS",
+            "name": "Configuration",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Biped",
+                            "1": "Essential",
+                            "2": "Weapon & Shield",
+                            "3": "Respawn",
+                            "4": "Swims",
+                            "5": "Flies",
+                            "6": "Walks",
+                            "7": "PC Level Offset",
+                            "8": "Unused",
+                            "9": "No Low Level Processing",
+                            "10": "Unused",
+                            "11": "No Blood Spray",
+                            "12": "No Blood Decal",
+                            "13": "",
+                            "14": "",
+                            "15": "No Head",
+                            "16": "No Right Arm",
+                            "17": "No Left Arm",
+                            "18": "No Combat in Water",
+                            "19": "No Shadow",
+                            "20": "No Corpse Check"
+                        }
+                    }
+                },
+                {
+                    "name": "Base spell points",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Fatigue",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Barter gold",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Level (offset)",
+                    "type": "int16"
+                },
+                {
+                    "name": "Calc min",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Calc max",
+                    "type": "uint16"
+                }
+            ]
+        },
+        {
+            "name": "Factions",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "signature": "SNAM",
+                "name": "Faction",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Faction",
+                        "type": "formId",
+                        "signatures": [
+                            "FACT"
+                        ]
+                    },
+                    {
+                        "name": "Rank",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "Unused",
+                        "type": "bytes",
+                        "size": 3
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        },
+        {
+            "signature": "INAM",
+            "name": "Death item",
+            "type": "formId",
+            "signatures": [
+                "LVLI"
+            ]
+        },
+        {
+            "id": "SCRI"
+        },
+        {
+            "signature": "AIDT",
+            "name": "AI Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Aggression",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Confidence",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Energy Level",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Responsibility",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Buys/Sells and Services",
+                    "type": "uint32",
+                    "format": {
+                        "id": "ServiceFlags"
+                    }
+                },
+                {
+                    "name": "Teaches",
+                    "type": "int8",
+                    "format": {
+                        "id": "SkillEnum"
+                    }
+                },
+                {
+                    "name": "Maximum training level",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 2
+                }
+            ]
+        },
+        {
+            "name": "AI Packages",
+            "type": "memberArray",
+            "member": {
+                "signature": "PKID",
+                "name": "AI Package",
+                "type": "formId",
+                "signatures": [
+                    "PACK"
+                ]
+            }
+        },
+        {
+            "signature": "KFFZ",
+            "name": "Animations",
+            "type": "array",
+            "sorted": true,
+            "element": {
+                "name": "Animation",
+                "type": "string",
+                "transform": "lowercase"
+            }
+        },
+        {
+            "signature": "DATA",
+            "name": "Creature Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Type",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Creature",
+                            "1": "Daedra",
+                            "2": "Undead",
+                            "3": "Humanoid",
+                            "4": "Horse",
+                            "5": "Giant"
+                        }
+                    }
+                },
+                {
+                    "name": "Combat Skill",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Magic Skill",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Stealth Skill",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Soul",
+                    "type": "uint8",
+                    "format": {
+                        "id": "SoulGemEnum"
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 1
+                },
+                {
+                    "name": "Health",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 2
+                },
+                {
+                    "name": "Attack Damage",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Strength",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Intelligence",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Willpower",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Agility",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Speed",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Endurance",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Personality",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Luck",
+                    "type": "uint8"
+                }
+            ]
+        },
+        {
+            "signature": "RNAM",
+            "name": "Attack reach",
+            "type": "uint8",
+            "required": true
+        },
+        {
+            "signature": "ZNAM",
+            "name": "Combat Style",
+            "type": "formId",
+            "signatures": [
+                "CSTY"
+            ]
+        },
+        {
+            "signature": "TNAM",
+            "name": "Turning Speed",
+            "type": "float",
+            "required": true
+        },
+        {
+            "signature": "BNAM",
+            "name": "Base Scale",
+            "type": "float",
+            "required": true
+        },
+        {
+            "signature": "WNAM",
+            "name": "Foot Weight",
+            "type": "float",
+            "required": true
+        },
+        {
+            "signature": "NAM0",
+            "name": "Blood Spray",
+            "type": "string"
+        },
+        {
+            "signature": "NAM1",
+            "name": "Blood Decal",
+            "type": "string"
+        },
+        {
+            "signature": "CSCR",
+            "name": "Inherits Sounds from",
+            "type": "formId",
+            "signatures": [
+                "CREA"
+            ]
+        },
+        {
+            "id": "CSDTs"
+        }
+    ]
+}

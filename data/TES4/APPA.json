@@ -1,0 +1,55 @@
+{
+    "signature": "APPA",
+    "type": "record",
+    "name": "Alchemical Apparatus",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "SCRI"
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Type",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Mortar and Pestle",
+                            "1": "Alembic",
+                            "2": "Calcinator",
+                            "3": "Retort"
+                        }
+                    }
+                },
+                {
+                    "name": "Value",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                },
+                {
+                    "name": "Quality",
+                    "type": "float"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,56 @@
+{
+    "signature": "SCPT",
+    "type": "record",
+    "name": "Script",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "SCHD",
+            "name": "Unknown (Script Header?)",
+            "type": "bytes"
+        },
+        {
+            "id": "SCHR"
+        },
+        {
+            "signature": "SCDA",
+            "name": "Compiled Script",
+            "type": "bytes"
+        },
+        {
+            "signature": "SCTX",
+            "name": "Script Source",
+            "type": "string",
+            "required": true,
+            "transform": "script"
+        },
+        {
+            "name": "Local Variables",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "name": "Local Variable",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "id": "SLSD"
+                    },
+                    {
+                        "signature": "SCVR",
+                        "name": "Name",
+                        "type": "string",
+                        "conflictType": "Critical"
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        },
+        {
+            "id": "SCROs"
+        }
+    ]
+}

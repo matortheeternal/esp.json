@@ -1,0 +1,67 @@
+{
+    "signature": "BOOK",
+    "type": "record",
+    "name": "Book",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "SCRI"
+        },
+        {
+            "id": "ENAM"
+        },
+        {
+            "signature": "ANAM",
+            "name": "Enchantment Points",
+            "type": "uint16"
+        },
+        {
+            "id": "DESC"
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Scroll",
+                            "1": "Can't be taken"
+                        }
+                    }
+                },
+                {
+                    "name": "Teaches",
+                    "type": "int8",
+                    "format": {
+                        "id": "SkillEnum"
+                    }
+                },
+                {
+                    "name": "Value",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                }
+            ]
+        }
+    ]
+}

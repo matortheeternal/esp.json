@@ -1,0 +1,34 @@
+{
+    "signature": "CNTO",
+    "name": "Item",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Item",
+            "type": "formId",
+            "signatures": [
+                "ARMO",
+                "AMMO",
+                "MISC",
+                "WEAP",
+                "INGR",
+                "SLGM",
+                "SGST",
+                "BOOK",
+                "LVLI",
+                "KEYM",
+                "CLOT",
+                "ALCH",
+                "APPA",
+                "LIGH"
+            ]
+        },
+        {
+            "name": "Count",
+            "type": "int32"
+        }
+    ],
+    "sortKey": [
+        0
+    ]
+}

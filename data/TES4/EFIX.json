@@ -1,0 +1,62 @@
+{
+    "signature": "EFIX",
+    "name": "",
+    "type": "struct",
+    "required": true,
+    "elements": [
+        {
+            "name": "Override Mask",
+            "type": "uint32",
+            "format": {
+                "type": "flags",
+                "flags": {}
+            }
+        },
+        {
+            "name": "Flags",
+            "type": "uint32",
+            "format": {
+                "type": "flags",
+                "flags": {}
+            }
+        },
+        {
+            "name": "Base Cost",
+            "type": "float"
+        },
+        {
+            "name": "Param #2",
+            "type": "union",
+            "decider": "EFIXParamDecider",
+            "elements": [
+                {
+                    "name": "Param #2 - Unknown Type",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Param #2 - FormID",
+                    "type": "formId"
+                },
+                {
+                    "name": "Param #2 - Magic Effect Code",
+                    "type": "mgefCode",
+                    "size": 4
+                },
+                {
+                    "name": "Param #2 - Actor Value",
+                    "type": "formId",
+                    "signatures": [
+                        "ACVA"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "bytes"
+        }
+    ],
+    "sortKey": [
+        3
+    ]
+}

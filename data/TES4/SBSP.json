@@ -1,0 +1,30 @@
+{
+    "signature": "SBSP",
+    "type": "record",
+    "name": "Subspace",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "DNAM",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "X",
+                    "type": "float"
+                },
+                {
+                    "name": "Y",
+                    "type": "float"
+                },
+                {
+                    "name": "Z",
+                    "type": "float"
+                }
+            ]
+        }
+    ]
+}

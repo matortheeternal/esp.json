@@ -1,0 +1,34 @@
+{
+    "signature": "ROAD",
+    "type": "record",
+    "name": "Road",
+    "members": [
+        {
+            "id": "PGRP"
+        },
+        {
+            "signature": "PGRR",
+            "name": "Point-to-Point Connections (complex structure can't be represented, see source)",
+            "type": "array",
+            "required": true,
+            "element": {
+                "name": "Point",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "X",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Z",
+                        "type": "float"
+                    }
+                ]
+            }
+        }
+    ]
+}

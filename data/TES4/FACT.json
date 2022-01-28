@@ -1,0 +1,71 @@
+{
+    "signature": "FACT",
+    "type": "record",
+    "name": "Faction",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "XNAMs"
+        },
+        {
+            "signature": "DATA",
+            "name": "Flags",
+            "type": "uint8",
+            "required": true,
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Hidden from Player",
+                    "1": "Evil",
+                    "2": "Special Combat"
+                }
+            }
+        },
+        {
+            "signature": "CNAM",
+            "name": "Crime Gold Multiplier",
+            "type": "float",
+            "required": true
+        },
+        {
+            "name": "Ranks",
+            "type": "memberArray",
+            "member": {
+                "name": "Rank",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "RNAM",
+                        "name": "Rank#",
+                        "type": "int32"
+                    },
+                    {
+                        "signature": "MNAM",
+                        "name": "Male",
+                        "type": "string",
+                        "conflictType": "Translate"
+                    },
+                    {
+                        "signature": "FNAM",
+                        "name": "Female",
+                        "type": "string",
+                        "conflictType": "Translate"
+                    },
+                    {
+                        "signature": "INAM",
+                        "name": "Insignia",
+                        "type": "string"
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        }
+    ]
+}

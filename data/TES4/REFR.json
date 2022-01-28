@@ -1,0 +1,326 @@
+{
+    "signature": "REFR",
+    "type": "record",
+    "name": "Placed Object",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "NAME",
+            "name": "Base",
+            "type": "formId",
+            "required": true,
+            "signatures": [
+                "TREE",
+                "SBSP",
+                "LVLC",
+                "SOUN",
+                "ACTI",
+                "DOOR",
+                "FLOR",
+                "STAT",
+                "FURN",
+                "CONT",
+                "ARMO",
+                "AMMO",
+                "MISC",
+                "WEAP",
+                "INGR",
+                "SLGM",
+                "SGST",
+                "BOOK",
+                "KEYM",
+                "CLOT",
+                "ALCH",
+                "APPA",
+                "LIGH",
+                "GRAS"
+            ]
+        },
+        {
+            "signature": "XTEL",
+            "name": "Teleport Destination",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Door",
+                    "type": "formId",
+                    "persistent": true,
+                    "signatures": [
+                        "REFR"
+                    ]
+                },
+                {
+                    "id": "PosRot"
+                }
+            ]
+        },
+        {
+            "signature": "XLOC",
+            "name": "Lock information",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Lock Level",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3
+                },
+                {
+                    "name": "Key",
+                    "type": "formId",
+                    "signatures": [
+                        "KEYM",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Unused",
+                    "type": "union",
+                    "decider": "XLOCFillerDecider",
+                    "elements": [
+                        {
+                            "name": "Unused",
+                            "type": "empty"
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 4
+                        }
+                    ]
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "",
+                            "1": "",
+                            "2": "Leveled Lock"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3
+                }
+            ]
+        },
+        {
+            "name": "Ownership",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "id": "XOWN"
+                },
+                {
+                    "signature": "XRNK",
+                    "name": "Faction rank",
+                    "type": "int32"
+                },
+                {
+                    "id": "XGLB"
+                }
+            ]
+        },
+        {
+            "id": "XESP"
+        },
+        {
+            "signature": "XTRG",
+            "name": "Target",
+            "type": "formId",
+            "persistent": true,
+            "signatures": [
+                "REFR",
+                "ACHR",
+                "ACRE"
+            ]
+        },
+        {
+            "signature": "XSED",
+            "name": "SpeedTree",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Seed",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unused",
+                    "type": "union",
+                    "decider": "REFRXSEDDecider",
+                    "elements": [
+                        {
+                            "name": "Unused",
+                            "type": "empty",
+                            "conflictType": "Ignore"
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 3,
+                            "conflictType": "Ignore"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "XLOD"
+        },
+        {
+            "signature": "XCHG",
+            "name": "Charge",
+            "type": "float"
+        },
+        {
+            "signature": "XHLT",
+            "name": "Health",
+            "type": "int32"
+        },
+        {
+            "name": "Unused",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "XPCI",
+                    "name": "Unused",
+                    "type": "formId",
+                    "signatures": [
+                        "CELL"
+                    ]
+                },
+                {
+                    "signature": "FULL",
+                    "name": "Unused",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "signature": "XLCM",
+            "name": "Level Modifier",
+            "type": "int32"
+        },
+        {
+            "signature": "XRTM",
+            "name": "Unknown",
+            "type": "formId",
+            "signatures": [
+                "REFR"
+            ]
+        },
+        {
+            "signature": "XACT",
+            "name": "Action Flag",
+            "type": "uint32",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Use Default",
+                    "1": "Activate",
+                    "2": "Open",
+                    "3": "Open by Default"
+                }
+            }
+        },
+        {
+            "signature": "XCNT",
+            "name": "Count",
+            "type": "int32"
+        },
+        {
+            "name": "Map Marker",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "XMRK",
+                    "name": "Map Marker Data",
+                    "type": "empty"
+                },
+                {
+                    "signature": "FNAM",
+                    "name": "Map Flags",
+                    "type": "uint8",
+                    "required": true,
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Visible",
+                            "1": "Can Travel To"
+                        }
+                    }
+                },
+                {
+                    "id": "FULL",
+                    "required": true
+                },
+                {
+                    "signature": "TNAM",
+                    "name": "",
+                    "type": "struct",
+                    "required": true,
+                    "elements": [
+                        {
+                            "name": "Type",
+                            "type": "uint8",
+                            "format": {
+                                "type": "enum",
+                                "options": {
+                                    "0": "None",
+                                    "1": "Camp",
+                                    "2": "Cave",
+                                    "3": "City",
+                                    "4": "Elven Ruin",
+                                    "5": "Fort Ruin",
+                                    "6": "Mine",
+                                    "7": "Landmark",
+                                    "8": "Tavern",
+                                    "9": "Settlement",
+                                    "10": "Daedric Shrine",
+                                    "11": "Oblivion Gate",
+                                    "12": "Unknown? (door icon)"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "ONAM",
+            "name": "Open by Default",
+            "type": "empty"
+        },
+        {
+            "id": "XRGD"
+        },
+        {
+            "id": "XSCL"
+        },
+        {
+            "signature": "XSOL",
+            "name": "Contained Soul",
+            "type": "uint8",
+            "format": {
+                "id": "SoulGemEnum"
+            }
+        },
+        {
+            "id": "DATAPosRot"
+        }
+    ]
+}

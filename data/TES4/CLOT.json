@@ -1,0 +1,201 @@
+{
+    "signature": "CLOT",
+    "type": "record",
+    "name": "Clothing",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "SCRI"
+        },
+        {
+            "id": "ENAM"
+        },
+        {
+            "signature": "ANAM",
+            "name": "Enchantment Points",
+            "type": "uint16"
+        },
+        {
+            "signature": "BMDT",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Biped Flags",
+                    "type": "uint16",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Head",
+                            "1": "Hair",
+                            "2": "Upper Body",
+                            "3": "Lower Body",
+                            "4": "Hand",
+                            "5": "Foot",
+                            "6": "Right Ring",
+                            "7": "Left Ring",
+                            "8": "Amulet",
+                            "9": "Weapon",
+                            "10": "Back Weapon",
+                            "11": "Side Weapon",
+                            "12": "Quiver",
+                            "13": "Shield",
+                            "14": "Torch",
+                            "15": "Tail"
+                        }
+                    }
+                },
+                {
+                    "name": "General Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Hide Rings",
+                            "1": "Hide Amulets",
+                            "2": "",
+                            "3": "",
+                            "4": "",
+                            "5": "",
+                            "6": "Non-Playable",
+                            "7": ""
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 1
+                }
+            ]
+        },
+        {
+            "name": "Male biped model",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "MODL",
+                    "name": "Model FileName",
+                    "type": "string"
+                },
+                {
+                    "signature": "MODB",
+                    "name": "Bound Radius",
+                    "type": "float",
+                    "conflictType": "Benign"
+                },
+                {
+                    "signature": "MODT",
+                    "name": "Texture Files Hashes",
+                    "type": "bytes",
+                    "size": 0,
+                    "conflictType": "Ignore"
+                }
+            ]
+        },
+        {
+            "name": "Male world model",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "MOD2",
+                    "name": "Model FileName",
+                    "type": "string"
+                },
+                {
+                    "signature": "MO2B",
+                    "name": "Bound Radius",
+                    "type": "float",
+                    "conflictType": "Benign"
+                },
+                {
+                    "signature": "MO2T",
+                    "name": "Texture Files Hashes",
+                    "type": "bytes",
+                    "size": 0,
+                    "conflictType": "Ignore"
+                }
+            ]
+        },
+        {
+            "signature": "ICON",
+            "name": "Male icon FileName",
+            "type": "string"
+        },
+        {
+            "name": "Female biped model",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "MOD3",
+                    "name": "Model FileName",
+                    "type": "string"
+                },
+                {
+                    "signature": "MO3B",
+                    "name": "Bound Radius",
+                    "type": "float",
+                    "conflictType": "Benign"
+                },
+                {
+                    "signature": "MO3T",
+                    "name": "Texture Files Hashes",
+                    "type": "bytes",
+                    "size": 0,
+                    "conflictType": "Ignore"
+                }
+            ]
+        },
+        {
+            "name": "Female world model",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "MOD4",
+                    "name": "Model FileName",
+                    "type": "string"
+                },
+                {
+                    "signature": "MO4B",
+                    "name": "Bound Radius",
+                    "type": "float",
+                    "conflictType": "Benign"
+                },
+                {
+                    "signature": "MO4T",
+                    "name": "Texture Files Hashes",
+                    "type": "bytes",
+                    "size": 0,
+                    "conflictType": "Ignore"
+                }
+            ]
+        },
+        {
+            "signature": "ICO2",
+            "name": "Female icon FileName",
+            "type": "string"
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Value",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                }
+            ]
+        }
+    ]
+}

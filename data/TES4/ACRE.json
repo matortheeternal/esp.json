@@ -1,0 +1,48 @@
+{
+    "signature": "ACRE",
+    "type": "record",
+    "name": "Placed Creature",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "NAME",
+            "name": "Base",
+            "type": "formId",
+            "required": true,
+            "signatures": [
+                "CREA"
+            ]
+        },
+        {
+            "name": "Ownership",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "id": "XOWN"
+                },
+                {
+                    "signature": "XRNK",
+                    "name": "Faction rank",
+                    "type": "int32"
+                },
+                {
+                    "id": "XGLB"
+                }
+            ]
+        },
+        {
+            "id": "XESP"
+        },
+        {
+            "id": "XRGD"
+        },
+        {
+            "id": "XSCL"
+        },
+        {
+            "id": "DATAPosRot"
+        }
+    ]
+}

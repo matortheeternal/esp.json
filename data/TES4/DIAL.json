@@ -1,0 +1,67 @@
+{
+    "signature": "DIAL",
+    "type": "record",
+    "name": "Dialog Topic",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "name": "Quests",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "signature": "QSTI",
+                "name": "Quest",
+                "type": "formId",
+                "conflictType": "Benign",
+                "signatures": [
+                    "QUST"
+                ]
+            }
+        },
+        {
+            "name": "Quests?",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "signature": "QSTR",
+                "name": "Quest?",
+                "type": "formId",
+                "conflictType": "Benign",
+                "signatures": [
+                    "QUST"
+                ]
+            }
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "signature": "DATA",
+            "name": "Type",
+            "type": "uint8",
+            "required": true,
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "Topic",
+                    "1": "Conversation",
+                    "2": "Combat",
+                    "3": "Persuasion",
+                    "4": "Detection",
+                    "5": "Service",
+                    "6": "Miscellaneous"
+                }
+            }
+        }
+    ],
+    "containedInElement": {
+        "name": "Topic",
+        "type": "formId",
+        "required": true,
+        "signatures": [
+            "DIAL"
+        ]
+    }
+}

@@ -1,0 +1,90 @@
+{
+    "signature": "LVLI",
+    "type": "record",
+    "name": "Leveled Item",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "LVLD",
+            "name": "Chance none",
+            "type": "uint8",
+            "required": true
+        },
+        {
+            "signature": "LVLF",
+            "name": "Flags",
+            "type": "uint8",
+            "required": true,
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Calculate from all levels <= player's level",
+                    "1": "Calculate for each item in count"
+                }
+            }
+        },
+        {
+            "name": "Leveled List Entries",
+            "type": "memberArray",
+            "sorted": true,
+            "required": true,
+            "member": {
+                "signature": "LVLO",
+                "name": "Leveled List Entry",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Level",
+                        "type": "int16"
+                    },
+                    {
+                        "name": "Unused",
+                        "type": "bytes",
+                        "size": 2
+                    },
+                    {
+                        "name": "Reference",
+                        "type": "formId",
+                        "signatures": [
+                            "ARMO",
+                            "AMMO",
+                            "MISC",
+                            "WEAP",
+                            "INGR",
+                            "SLGM",
+                            "SGST",
+                            "BOOK",
+                            "LVLI",
+                            "KEYM",
+                            "CLOT",
+                            "ALCH",
+                            "APPA",
+                            "LIGH"
+                        ]
+                    },
+                    {
+                        "name": "Count",
+                        "type": "int16"
+                    },
+                    {
+                        "name": "Unused",
+                        "type": "bytes",
+                        "size": 2
+                    }
+                ],
+                "sortKey": [
+                    0,
+                    2
+                ]
+            }
+        },
+        {
+            "signature": "DATA",
+            "name": "Unused",
+            "type": "bytes",
+            "size": 1
+        }
+    ]
+}

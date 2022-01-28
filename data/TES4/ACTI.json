@@ -1,0 +1,27 @@
+{
+    "signature": "ACTI",
+    "type": "record",
+    "name": "Activator",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "SCRI"
+        },
+        {
+            "signature": "SNAM",
+            "name": "Sound",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        }
+    ]
+}

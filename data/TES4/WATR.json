@@ -1,0 +1,254 @@
+{
+    "signature": "WATR",
+    "type": "record",
+    "name": "Water",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "TNAM",
+            "name": "Texture",
+            "type": "string",
+            "required": true
+        },
+        {
+            "signature": "ANAM",
+            "name": "Opacity",
+            "type": "uint8",
+            "required": true
+        },
+        {
+            "signature": "FNAM",
+            "name": "Flags",
+            "type": "uint8",
+            "required": true,
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Causes Damage",
+                    "1": "Reflective"
+                }
+            }
+        },
+        {
+            "signature": "MNAM",
+            "name": "Material ID",
+            "type": "string",
+            "required": true
+        },
+        {
+            "signature": "SNAM",
+            "name": "Sound",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Wind Velocity",
+                    "type": "float"
+                },
+                {
+                    "name": "Wind Direction",
+                    "type": "float"
+                },
+                {
+                    "name": "Wave Amplitude",
+                    "type": "float"
+                },
+                {
+                    "name": "Wave Frequency",
+                    "type": "float"
+                },
+                {
+                    "name": "Sun Power",
+                    "type": "float"
+                },
+                {
+                    "name": "Reflectivity Amount",
+                    "type": "float"
+                },
+                {
+                    "name": "Fresnel Amount",
+                    "type": "float"
+                },
+                {
+                    "name": "Scroll X Speed",
+                    "type": "float"
+                },
+                {
+                    "name": "Scroll Y Speed",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog Distance - Near Plane",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog Distance - Far Plane",
+                    "type": "float"
+                },
+                {
+                    "name": "Shallow Color",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Red",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Green",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Blue",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "Deep Color",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Red",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Green",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Blue",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "Reflection Color",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Red",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Green",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Blue",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "Texture Blend",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3
+                },
+                {
+                    "name": "Rain Simulator - Force",
+                    "type": "float"
+                },
+                {
+                    "name": "Rain Simulator - Velocity",
+                    "type": "float"
+                },
+                {
+                    "name": "Rain Simulator - Falloff",
+                    "type": "float"
+                },
+                {
+                    "name": "Rain Simulator - Dampner",
+                    "type": "float"
+                },
+                {
+                    "name": "Rain Simulator - Starting Size",
+                    "type": "float"
+                },
+                {
+                    "name": "Displacement Simulator - Force",
+                    "type": "float"
+                },
+                {
+                    "name": "Displacement Simulator - Velocity",
+                    "type": "float"
+                },
+                {
+                    "name": "Displacement Simulator - Falloff",
+                    "type": "float"
+                },
+                {
+                    "name": "Displacement Simulator - Dampner",
+                    "type": "float"
+                },
+                {
+                    "name": "Displacement Simulator - Starting Size",
+                    "type": "float"
+                },
+                {
+                    "name": "Damage",
+                    "type": "uint16"
+                }
+            ]
+        },
+        {
+            "signature": "GNAM",
+            "name": "Related Waters",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Daytime",
+                    "type": "formId",
+                    "signatures": [
+                        "WATR",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Nighttime",
+                    "type": "formId",
+                    "signatures": [
+                        "WATR",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Underwater",
+                    "type": "formId",
+                    "signatures": [
+                        "WATR",
+                        "NULL"
+                    ]
+                }
+            ]
+        }
+    ]
+}

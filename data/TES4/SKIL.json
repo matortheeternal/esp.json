@@ -1,0 +1,91 @@
+{
+    "signature": "SKIL",
+    "type": "record",
+    "name": "Skill",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "INDX",
+            "name": "Skill",
+            "type": "int32",
+            "required": true,
+            "format": {
+                "id": "ActorValueEnum"
+            }
+        },
+        {
+            "id": "DESC"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "signature": "DATA",
+            "name": "Skill Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Action",
+                    "type": "int32",
+                    "format": {
+                        "id": "ActorValueEnum"
+                    }
+                },
+                {
+                    "name": "Attribute",
+                    "type": "int32",
+                    "format": {
+                        "id": "ActorValueEnum"
+                    }
+                },
+                {
+                    "name": "Specialization",
+                    "type": "uint32",
+                    "format": {
+                        "id": "SpecializationEnum"
+                    }
+                },
+                {
+                    "name": "Use Values",
+                    "type": "array",
+                    "count": 2,
+                    "element": {
+                        "name": "Use Value",
+                        "type": "float"
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "ANAM",
+            "name": "Apprentice Text",
+            "type": "string",
+            "conflictType": "Translate",
+            "required": true
+        },
+        {
+            "signature": "JNAM",
+            "name": "Journeyman Text",
+            "type": "string",
+            "conflictType": "Translate",
+            "required": true
+        },
+        {
+            "signature": "ENAM",
+            "name": "Expert Text",
+            "type": "string",
+            "conflictType": "Translate",
+            "required": true
+        },
+        {
+            "signature": "MNAM",
+            "name": "Master Text",
+            "type": "string",
+            "conflictType": "Translate",
+            "required": true
+        }
+    ]
+}

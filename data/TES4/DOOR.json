@@ -1,0 +1,72 @@
+{
+    "signature": "DOOR",
+    "type": "record",
+    "name": "Door",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "SCRI"
+        },
+        {
+            "signature": "SNAM",
+            "name": "Open sound",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        },
+        {
+            "signature": "ANAM",
+            "name": "Close sound",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        },
+        {
+            "signature": "BNAM",
+            "name": "Loop sound",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        },
+        {
+            "signature": "FNAM",
+            "name": "Flags",
+            "type": "uint8",
+            "required": true,
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Oblivion gate",
+                    "1": "Automatic door",
+                    "2": "Hidden",
+                    "3": "Minimal use"
+                }
+            }
+        },
+        {
+            "name": "Random teleport destinations",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "signature": "TNAM",
+                "name": "Destination",
+                "type": "formId",
+                "signatures": [
+                    "CELL",
+                    "WRLD"
+                ]
+            }
+        }
+    ]
+}

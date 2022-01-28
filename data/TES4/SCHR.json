@@ -1,0 +1,82 @@
+{
+    "name": "Basic Script Data",
+    "type": "memberUnion",
+    "members": [
+        {
+            "signature": "SCHR",
+            "name": "Basic Script Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "RefCount",
+                    "type": "uint32"
+                },
+                {
+                    "name": "CompiledSize",
+                    "type": "uint32"
+                },
+                {
+                    "name": "VariableCount",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Type",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Object",
+                            "1": "Quest",
+                            "256": "Magic Effect"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "SCHD",
+            "name": "Basic Script Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "RefCount",
+                    "type": "uint32"
+                },
+                {
+                    "name": "CompiledSize",
+                    "type": "uint32"
+                },
+                {
+                    "name": "VariableCount",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Type",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Object",
+                            "1": "Quest",
+                            "256": "Magic Effect"
+                        }
+                    }
+                },
+                {
+                    "name": "Unknown",
+                    "type": "bytes"
+                }
+            ]
+        }
+    ]
+}

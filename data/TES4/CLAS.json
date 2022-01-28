@@ -1,0 +1,93 @@
+{
+    "signature": "CLAS",
+    "type": "record",
+    "name": "Class",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "DESC"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Primary Attributes",
+                    "type": "array",
+                    "sorted": true,
+                    "count": 2,
+                    "element": {
+                        "name": "Primary Attribute",
+                        "type": "int32",
+                        "format": {
+                            "id": "ActorValueEnum"
+                        }
+                    }
+                },
+                {
+                    "name": "Specialization",
+                    "type": "uint32",
+                    "format": {
+                        "id": "SpecializationEnum"
+                    }
+                },
+                {
+                    "name": "Major Skills",
+                    "type": "array",
+                    "sorted": true,
+                    "count": 7,
+                    "element": {
+                        "name": "Major Skill",
+                        "type": "int32",
+                        "format": {
+                            "id": "ActorValueEnum"
+                        }
+                    }
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Playable",
+                            "1": "Guard"
+                        }
+                    }
+                },
+                {
+                    "name": "Buys/Sells and Services",
+                    "type": "uint32",
+                    "format": {
+                        "id": "ServiceFlags"
+                    }
+                },
+                {
+                    "name": "Teaches",
+                    "type": "int8",
+                    "format": {
+                        "id": "SkillEnum"
+                    }
+                },
+                {
+                    "name": "Maximum training level",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unused",
+                    "type": "uint16"
+                }
+            ]
+        }
+    ]
+}

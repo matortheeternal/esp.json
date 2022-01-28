@@ -1,0 +1,153 @@
+{
+    "signature": "QUST",
+    "type": "record",
+    "name": "Quest",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "SCRI"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "signature": "DATA",
+            "name": "General",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Start game enabled",
+                            "1": "",
+                            "2": "Allow repeated conversation topics",
+                            "3": "Allow repeated stages"
+                        }
+                    }
+                },
+                {
+                    "name": "Priority",
+                    "type": "uint8"
+                }
+            ]
+        },
+        {
+            "id": "CTDAs"
+        },
+        {
+            "name": "Stages",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "name": "Stage",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "INDX",
+                        "name": "Stage index",
+                        "type": "int16"
+                    },
+                    {
+                        "name": "Log Entries",
+                        "type": "memberArray",
+                        "member": {
+                            "name": "Log Entry",
+                            "type": "memberStruct",
+                            "members": [
+                                {
+                                    "signature": "QSDT",
+                                    "name": "Stage Flags",
+                                    "type": "uint8",
+                                    "format": {
+                                        "type": "flags",
+                                        "flags": {
+                                            "0": "Complete quest"
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": "CTDAs"
+                                },
+                                {
+                                    "signature": "CNAM",
+                                    "name": "Log Entry",
+                                    "type": "string",
+                                    "conflictType": "Translate",
+                                    "transform": "keepcase"
+                                },
+                                {
+                                    "id": "ResultScript"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        },
+        {
+            "name": "Targets",
+            "type": "memberArray",
+            "member": {
+                "name": "Target",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "QSTA",
+                        "name": "Target",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Target",
+                                "type": "formId",
+                                "persistent": true,
+                                "signatures": [
+                                    "REFR",
+                                    "ACRE",
+                                    "ACHR"
+                                ]
+                            },
+                            {
+                                "name": "Flags",
+                                "type": "uint8",
+                                "format": {
+                                    "type": "flags",
+                                    "flags": {
+                                        "0": "Compass marker ignores locks"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Unused",
+                                "type": "bytes",
+                                "size": 3
+                            }
+                        ]
+                    },
+                    {
+                        "id": "CTDAs"
+                    }
+                ]
+            }
+        }
+    ],
+    "containedInElement": {
+        "name": "Quest",
+        "type": "formId",
+        "required": true,
+        "signatures": [
+            "QUST"
+        ]
+    }
+}

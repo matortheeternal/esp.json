@@ -1,0 +1,108 @@
+{
+    "signature": "PGRD",
+    "type": "record",
+    "name": "Path Grid",
+    "members": [
+        {
+            "signature": "DATA",
+            "name": "Point Count",
+            "type": "uint16",
+            "required": true
+        },
+        {
+            "id": "PGRP"
+        },
+        {
+            "signature": "PGAG",
+            "name": "Unknown",
+            "type": "bytes"
+        },
+        {
+            "signature": "PGRR",
+            "name": "Point-to-Point Connections",
+            "type": "array",
+            "element": {
+                "name": "Point",
+                "type": "array",
+                "sorted": true,
+                "counter": {
+                    "type": "CalcPGRRSize"
+                },
+                "element": {
+                    "name": "Point",
+                    "type": "int16"
+                }
+            }
+        },
+        {
+            "signature": "PGRI",
+            "name": "Inter-Cell Connections",
+            "type": "array",
+            "sorted": true,
+            "element": {
+                "name": "Inter-Cell Connection",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Point",
+                        "type": "uint16"
+                    },
+                    {
+                        "name": "Unused",
+                        "type": "bytes",
+                        "size": 2
+                    },
+                    {
+                        "name": "X",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Y",
+                        "type": "float"
+                    },
+                    {
+                        "name": "Z",
+                        "type": "float"
+                    }
+                ],
+                "sortKey": [
+                    0,
+                    2,
+                    3,
+                    4
+                ]
+            }
+        },
+        {
+            "name": "Point-to-Reference Mappings",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "signature": "PGRL",
+                "name": "Point-to-Reference Mapping",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Reference",
+                        "type": "formId",
+                        "signatures": [
+                            "REFR"
+                        ]
+                    },
+                    {
+                        "name": "Points",
+                        "type": "array",
+                        "sorted": true,
+                        "element": {
+                            "name": "Point",
+                            "type": "uint32"
+                        }
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        }
+    ]
+}

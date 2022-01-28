@@ -1,0 +1,49 @@
+{
+    "signature": "IDLE",
+    "type": "record",
+    "name": "Idle Animation",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "CTDAs"
+        },
+        {
+            "signature": "ANAM",
+            "name": "Animation Group Section",
+            "type": "uint8",
+            "required": true,
+            "format": {
+                "type": "IdleAnamFormat"
+            }
+        },
+        {
+            "signature": "DATA",
+            "name": "Related Idle Animations",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Parent",
+                    "type": "formId",
+                    "signatures": [
+                        "IDLE",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Previous Sibling",
+                    "type": "formId",
+                    "signatures": [
+                        "IDLE",
+                        "NULL"
+                    ]
+                }
+            ]
+        }
+    ]
+}

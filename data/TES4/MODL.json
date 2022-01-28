@@ -1,0 +1,27 @@
+{
+    "name": "Model",
+    "type": "memberStruct",
+    "members": [
+        {
+            "signature": "MODL",
+            "name": "Model FileName",
+            "type": "string"
+        },
+        {
+            "signature": "MODB",
+            "name": "Bound Radius",
+            "type": "float",
+            "conflictType": "Benign"
+        },
+        {
+            "signature": "MODT",
+            "name": "Texture Files Hashes",
+            "type": "bytes",
+            "size": 0,
+            "conflictType": "Ignore"
+        }
+    ],
+    "sortKey": [
+        0
+    ]
+}

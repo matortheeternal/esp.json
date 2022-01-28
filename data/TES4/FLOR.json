@@ -1,0 +1,51 @@
+{
+    "signature": "FLOR",
+    "type": "record",
+    "name": "Flora",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "SCRI"
+        },
+        {
+            "signature": "PFIG",
+            "name": "Ingredient",
+            "type": "formId",
+            "signatures": [
+                "INGR"
+            ]
+        },
+        {
+            "signature": "PFPC",
+            "name": "Seasonal ingredient production",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Spring",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Summer ",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Fall",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Winter",
+                    "type": "uint8"
+                }
+            ]
+        }
+    ]
+}

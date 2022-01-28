@@ -1,0 +1,22 @@
+{
+    "signature": "XNAM",
+    "name": "Relation",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Faction",
+            "type": "formId",
+            "signatures": [
+                "FACT",
+                "RACE"
+            ]
+        },
+        {
+            "name": "Modifier",
+            "type": "int32"
+        }
+    ],
+    "sortKey": [
+        0
+    ]
+}

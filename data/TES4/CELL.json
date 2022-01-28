@@ -1,0 +1,215 @@
+{
+    "signature": "CELL",
+    "type": "record",
+    "name": "Cell",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "signature": "DATA",
+            "name": "Flags",
+            "type": "uint8",
+            "required": true,
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Is Interior Cell",
+                    "1": "Has water",
+                    "2": "Invert Fast Travel behavior",
+                    "3": "Force hide land (exterior cell) / Oblivion interior (interior cell)",
+                    "4": "",
+                    "5": "Public place",
+                    "6": "Hand changed",
+                    "7": "Behave like exterior"
+                }
+            }
+        },
+        {
+            "signature": "XCLC",
+            "name": "Grid",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "X",
+                    "type": "int32"
+                },
+                {
+                    "name": "Y",
+                    "type": "int32"
+                }
+            ]
+        },
+        {
+            "signature": "XCLL",
+            "name": "Lighting",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Ambient Color",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Red",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Green",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Blue",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "Directional Color",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Red",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Green",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Blue",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "Fog Color",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Red",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Green",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Blue",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "Fog Near",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog Far",
+                    "type": "float"
+                },
+                {
+                    "name": "Directional Rotation XY",
+                    "type": "int32"
+                },
+                {
+                    "name": "Directional Rotation Z",
+                    "type": "int32"
+                },
+                {
+                    "name": "Directional Fade",
+                    "type": "float"
+                },
+                {
+                    "name": "Fog Clip Dist",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "XCLR",
+            "name": "Regions",
+            "type": "array",
+            "sorted": true,
+            "element": {
+                "name": "Region",
+                "type": "formId",
+                "signatures": [
+                    "REGN"
+                ]
+            }
+        },
+        {
+            "signature": "XCMT",
+            "name": "Music",
+            "type": "uint8",
+            "format": {
+                "id": "MusicEnum"
+            }
+        },
+        {
+            "signature": "XCLW",
+            "name": "Water Height",
+            "type": "float",
+            "conflictType": "Benign"
+        },
+        {
+            "signature": "XCCM",
+            "name": "Climate",
+            "type": "formId",
+            "signatures": [
+                "CLMT"
+            ]
+        },
+        {
+            "signature": "XCWT",
+            "name": "Water",
+            "type": "formId",
+            "signatures": [
+                "WATR"
+            ]
+        },
+        {
+            "name": "Ownership",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "id": "XOWN"
+                },
+                {
+                    "signature": "XRNK",
+                    "name": "Faction rank",
+                    "type": "int32"
+                },
+                {
+                    "id": "XGLB"
+                }
+            ]
+        }
+    ],
+    "containedInElement": {
+        "name": "Cell",
+        "type": "formId",
+        "required": true,
+        "signatures": [
+            "CELL"
+        ]
+    }
+}

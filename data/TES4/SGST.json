@@ -1,0 +1,79 @@
+{
+    "signature": "SGST",
+    "type": "record",
+    "name": "Sigil Stone",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "OBME",
+            "name": "Oblivion Magic Extender",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Record Version",
+                    "type": "uint8"
+                },
+                {
+                    "name": "OBME Version",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Beta",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Minor",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Major",
+                            "type": "uint8"
+                        }
+                    ]
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 28
+                }
+            ]
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "SCRI"
+        },
+        {
+            "id": "Effects"
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Uses ",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Value",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                }
+            ]
+        }
+    ]
+}

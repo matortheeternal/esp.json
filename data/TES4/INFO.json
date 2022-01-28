@@ -1,0 +1,191 @@
+{
+    "signature": "INFO",
+    "type": "record",
+    "name": "Dialog response",
+    "members": [
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Type",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Topic",
+                            "1": "Conversation",
+                            "2": "Combat",
+                            "3": "Persuasion",
+                            "4": "Detection",
+                            "5": "Service",
+                            "6": "Miscellaneous"
+                        }
+                    }
+                },
+                {
+                    "name": "Next Speaker",
+                    "type": "uint8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Target",
+                            "1": "Self",
+                            "2": "Either"
+                        }
+                    }
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Goodbye",
+                            "1": "Random",
+                            "2": "Say Once",
+                            "3": "Run Immediately",
+                            "4": "Info Refusal",
+                            "5": "Random End",
+                            "6": "Run for Rumors"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "QSTI",
+            "name": "Quest",
+            "type": "formId",
+            "required": true,
+            "signatures": [
+                "QUST"
+            ]
+        },
+        {
+            "signature": "TPIC",
+            "name": "Topic",
+            "type": "formId",
+            "signatures": [
+                "DIAL"
+            ]
+        },
+        {
+            "signature": "PNAM",
+            "name": "Previous INFO",
+            "type": "formId",
+            "signatures": [
+                "INFO",
+                "NULL"
+            ]
+        },
+        {
+            "name": "Add topics",
+            "type": "memberArray",
+            "member": {
+                "signature": "NAME",
+                "name": "Topic",
+                "type": "formId",
+                "signatures": [
+                    "DIAL"
+                ]
+            }
+        },
+        {
+            "name": "Responses",
+            "type": "memberArray",
+            "member": {
+                "name": "Response",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "signature": "TRDT",
+                        "name": "Response Data",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Emotion Type",
+                                "type": "uint32",
+                                "format": {
+                                    "type": "enum",
+                                    "options": {
+                                        "0": "Neutral",
+                                        "1": "Anger",
+                                        "2": "Disgust",
+                                        "3": "Fear",
+                                        "4": "Sad",
+                                        "5": "Happy",
+                                        "6": "Surprise"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Emotion Value",
+                                "type": "int32"
+                            },
+                            {
+                                "name": "Unused",
+                                "type": "bytes",
+                                "size": 4
+                            },
+                            {
+                                "name": "Response number",
+                                "type": "uint8"
+                            },
+                            {
+                                "name": "Unused",
+                                "type": "bytes",
+                                "size": 3
+                            }
+                        ]
+                    },
+                    {
+                        "signature": "NAM1",
+                        "name": "Response Text",
+                        "type": "string",
+                        "conflictType": "Translate",
+                        "transform": "keepcase"
+                    },
+                    {
+                        "signature": "NAM2",
+                        "name": "Actor notes",
+                        "type": "string",
+                        "conflictType": "Translate"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "CTDAs"
+        },
+        {
+            "name": "Choices",
+            "type": "memberArray",
+            "member": {
+                "signature": "TCLT",
+                "name": "Choice",
+                "type": "formId",
+                "signatures": [
+                    "DIAL"
+                ]
+            }
+        },
+        {
+            "name": "Link From",
+            "type": "memberArray",
+            "member": {
+                "signature": "TCLF",
+                "name": "Topic",
+                "type": "formId",
+                "signatures": [
+                    "DIAL"
+                ]
+            }
+        },
+        {
+            "id": "ResultScript"
+        }
+    ]
+}

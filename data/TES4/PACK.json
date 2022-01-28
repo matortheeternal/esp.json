@@ -1,0 +1,285 @@
+{
+    "signature": "PACK",
+    "type": "record",
+    "name": "AI Package",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "PKDT",
+            "name": "General",
+            "type": "union",
+            "decider": "PACKPKDTDecider",
+            "elements": [
+                {
+                    "name": "General",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Flags",
+                            "type": "uint16",
+                            "format": {
+                                "id": "PKDTFlags"
+                            }
+                        },
+                        {
+                            "name": "Type",
+                            "type": "uint8",
+                            "format": {
+                                "id": "PKDTType"
+                            }
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "General",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Flags",
+                            "type": "uint32",
+                            "format": {
+                                "id": "PKDTFlags"
+                            }
+                        },
+                        {
+                            "name": "Type",
+                            "type": "uint8",
+                            "format": {
+                                "id": "PKDTType"
+                            }
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "bytes",
+                            "size": 3
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "PLDT",
+            "name": "Location",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Type",
+                    "type": "int32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Near reference",
+                            "1": "In cell",
+                            "2": "Near current location",
+                            "3": "Near editor location",
+                            "4": "Object ID",
+                            "5": "Object type"
+                        }
+                    }
+                },
+                {
+                    "name": "Location",
+                    "type": "union",
+                    "decider": "PxDTLocationDecider",
+                    "elements": [
+                        {
+                            "name": "Reference",
+                            "type": "formId",
+                            "persistent": true,
+                            "signatures": [
+                                "REFR",
+                                "ACHR",
+                                "ACRE",
+                                "PLYR"
+                            ]
+                        },
+                        {
+                            "name": "Cell",
+                            "type": "formId",
+                            "signatures": [
+                                "CELL"
+                            ]
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "formId",
+                            "signatures": [
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Unused",
+                            "type": "formId",
+                            "signatures": [
+                                "NULL"
+                            ]
+                        },
+                        {
+                            "name": "Object ID",
+                            "type": "formId",
+                            "signatures": [
+                                "ACTI",
+                                "DOOR",
+                                "FLOR",
+                                "STAT",
+                                "FURN",
+                                "CREA",
+                                "SPEL",
+                                "NPC_",
+                                "CONT",
+                                "ARMO",
+                                "AMMO",
+                                "MISC",
+                                "WEAP",
+                                "INGR",
+                                "SLGM",
+                                "SGST",
+                                "BOOK",
+                                "KEYM",
+                                "CLOT",
+                                "ALCH",
+                                "APPA",
+                                "LIGH"
+                            ]
+                        },
+                        {
+                            "name": "Object type",
+                            "type": "uint32"
+                        }
+                    ]
+                },
+                {
+                    "name": "Radius",
+                    "type": "int32"
+                }
+            ]
+        },
+        {
+            "signature": "PSDT",
+            "name": "Schedule",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Month",
+                    "type": "int8"
+                },
+                {
+                    "name": "Day of week",
+                    "type": "int8",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Sundas",
+                            "1": "Morndas",
+                            "2": "Tirdas",
+                            "3": "Middas",
+                            "4": "Turdas",
+                            "5": "Fredas",
+                            "6": "Loredas",
+                            "7": "Morndas to Fredas",
+                            "8": "Loredas, Sundas",
+                            "9": "Morndas, Middas, Fredas",
+                            "10": "Tirdas, Turdas",
+                            "-1": "Any"
+                        }
+                    }
+                },
+                {
+                    "name": "Date",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Time",
+                    "type": "int8"
+                },
+                {
+                    "name": "Duration",
+                    "type": "int32"
+                }
+            ]
+        },
+        {
+            "signature": "PTDT",
+            "name": "Target",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Type",
+                    "type": "int32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Specific reference",
+                            "1": "Object ID",
+                            "2": "Object type"
+                        }
+                    }
+                },
+                {
+                    "name": "Target",
+                    "type": "union",
+                    "decider": "PxDTLocationDecider",
+                    "elements": [
+                        {
+                            "name": "Reference",
+                            "type": "formId",
+                            "persistent": true,
+                            "signatures": [
+                                "ACHR",
+                                "ACRE",
+                                "REFR",
+                                "PLYR"
+                            ]
+                        },
+                        {
+                            "name": "Object ID",
+                            "type": "formId",
+                            "signatures": [
+                                "ACTI",
+                                "DOOR",
+                                "FLOR",
+                                "STAT",
+                                "FURN",
+                                "CREA",
+                                "SPEL",
+                                "NPC_",
+                                "CONT",
+                                "ARMO",
+                                "AMMO",
+                                "MISC",
+                                "WEAP",
+                                "INGR",
+                                "SLGM",
+                                "SGST",
+                                "BOOK",
+                                "KEYM",
+                                "CLOT",
+                                "ALCH",
+                                "APPA",
+                                "LIGH"
+                            ]
+                        },
+                        {
+                            "name": "Object type",
+                            "type": "uint32"
+                        }
+                    ]
+                },
+                {
+                    "name": "Count",
+                    "type": "int32"
+                }
+            ]
+        },
+        {
+            "id": "CTDAs"
+        }
+    ]
+}

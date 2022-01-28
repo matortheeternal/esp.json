@@ -1,0 +1,15 @@
+{
+    "signature": "INDX",
+    "name": "Index",
+    "type": "uint32",
+    "format": {
+        "type": "enum",
+        "options": {
+            "0": "Upper Body",
+            "1": "Lower Body",
+            "2": "Hand",
+            "3": "Foot",
+            "4": "Tail"
+        }
+    }
+}

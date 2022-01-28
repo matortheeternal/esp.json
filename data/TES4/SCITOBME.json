@@ -1,0 +1,59 @@
+{
+    "name": "Script effect",
+    "type": "memberStruct",
+    "members": [
+        {
+            "signature": "SCIT",
+            "name": "Script effect data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Script effect",
+                    "type": "formId",
+                    "signatures": [
+                        "NULL",
+                        "SCPT"
+                    ]
+                },
+                {
+                    "name": "Magic school",
+                    "type": "uint32",
+                    "format": {
+                        "id": "MagicSchoolEnum"
+                    }
+                },
+                {
+                    "name": "Visual Effect Code",
+                    "type": "mgefCode",
+                    "size": 4
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Hostile"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3
+                }
+            ],
+            "sortKey": [
+                0
+            ]
+        },
+        {
+            "id": "FULL",
+            "required": true
+        }
+    ],
+    "sortKey": [
+        0
+    ]
+}

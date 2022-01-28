@@ -1,0 +1,116 @@
+{
+    "name": "Effects",
+    "type": "memberArray",
+    "member": {
+        "name": "Effects",
+        "type": "memberUnion",
+        "members": [
+            {
+                "name": "Effect",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "id": "EFID"
+                    },
+                    {
+                        "id": "EFIT"
+                    },
+                    {
+                        "id": "SCIT"
+                    }
+                ]
+            },
+            {
+                "name": "Effects",
+                "type": "memberStruct",
+                "members": [
+                    {
+                        "name": "Effects",
+                        "type": "memberArray",
+                        "member": {
+                            "name": "Effect",
+                            "type": "memberStruct",
+                            "members": [
+                                {
+                                    "signature": "EFME",
+                                    "name": "Oblivion Magic Extender",
+                                    "type": "struct",
+                                    "elements": [
+                                        {
+                                            "name": "Record Version",
+                                            "type": "uint8"
+                                        },
+                                        {
+                                            "name": "OBME Version",
+                                            "type": "struct",
+                                            "elements": [
+                                                {
+                                                    "name": "Beta",
+                                                    "type": "uint8"
+                                                },
+                                                {
+                                                    "name": "Minor",
+                                                    "type": "uint8"
+                                                },
+                                                {
+                                                    "name": "Major",
+                                                    "type": "uint8"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "EFIT Param Info",
+                                            "type": "uint8",
+                                            "format": {
+                                                "id": "OBMEResolutionInfo"
+                                            }
+                                        },
+                                        {
+                                            "name": "EFIX Param Info",
+                                            "type": "uint8",
+                                            "format": {
+                                                "id": "OBMEResolutionInfo"
+                                            }
+                                        },
+                                        {
+                                            "name": "Unused",
+                                            "type": "bytes",
+                                            "size": 10
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "EFIDOBME"
+                                },
+                                {
+                                    "id": "EFITOBME"
+                                },
+                                {
+                                    "id": "SCITOBME"
+                                },
+                                {
+                                    "signature": "EFII",
+                                    "name": "Icon",
+                                    "type": "string"
+                                },
+                                {
+                                    "id": "EFIX"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "signature": "EFXX",
+                        "name": "Effects End Marker",
+                        "type": "empty",
+                        "required": true
+                    },
+                    {
+                        "id": "FULL",
+                        "required": true
+                    }
+                ]
+            }
+        ]
+    }
+}

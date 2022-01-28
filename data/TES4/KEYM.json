@@ -1,0 +1,38 @@
+{
+    "signature": "KEYM",
+    "type": "record",
+    "name": "Key",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "SCRI"
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Value",
+                    "type": "int32"
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                }
+            ]
+        }
+    ]
+}

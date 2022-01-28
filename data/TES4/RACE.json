@@ -1,0 +1,397 @@
+{
+    "signature": "RACE",
+    "type": "record",
+    "name": "Race",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "DESC"
+        },
+        {
+            "id": "SPLOs"
+        },
+        {
+            "id": "XNAMs"
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Skill Boosts",
+                    "type": "array",
+                    "sorted": true,
+                    "count": 7,
+                    "element": {
+                        "name": "Skill Boost",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "Skill",
+                                "type": "int8",
+                                "format": {
+                                    "id": "ActorValueEnum"
+                                }
+                            },
+                            {
+                                "name": "Boost",
+                                "type": "int8"
+                            }
+                        ],
+                        "sortKey": [
+                            0
+                        ]
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 2
+                },
+                {
+                    "name": "Male Height",
+                    "type": "float"
+                },
+                {
+                    "name": "Female Height",
+                    "type": "float"
+                },
+                {
+                    "name": "Male Weight",
+                    "type": "float"
+                },
+                {
+                    "name": "Female Weight",
+                    "type": "float"
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Playable"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "VNAM",
+            "name": "Voice",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Male",
+                    "type": "formId",
+                    "signatures": [
+                        "RACE",
+                        "NULL"
+                    ]
+                },
+                {
+                    "name": "Female",
+                    "type": "formId",
+                    "signatures": [
+                        "RACE",
+                        "NULL"
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "DNAM",
+            "name": "Default Hair",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Male",
+                    "type": "formId",
+                    "signatures": [
+                        "HAIR"
+                    ]
+                },
+                {
+                    "name": "Female",
+                    "type": "formId",
+                    "signatures": [
+                        "HAIR"
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "CNAM",
+            "name": "Default Hair Color",
+            "type": "uint8",
+            "required": true
+        },
+        {
+            "signature": "PNAM",
+            "name": "FaceGen - Main clamp",
+            "type": "float",
+            "required": true
+        },
+        {
+            "signature": "UNAM",
+            "name": "FaceGen - Face clamp",
+            "type": "float",
+            "required": true
+        },
+        {
+            "signature": "ATTR",
+            "name": "Base Attributes",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Male",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Strength",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Intelligence",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Willpower",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Agility",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Speed",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Endurance",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Personality",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Luck",
+                            "type": "uint8"
+                        }
+                    ]
+                },
+                {
+                    "name": "Female",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Strength",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Intelligence",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Willpower",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Agility",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Speed",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Endurance",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Personality",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Luck",
+                            "type": "uint8"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Face Data",
+            "type": "memberStruct",
+            "required": true,
+            "members": [
+                {
+                    "signature": "NAM0",
+                    "name": "Face Data Marker",
+                    "type": "empty"
+                },
+                {
+                    "name": "Parts",
+                    "type": "memberArray",
+                    "sorted": true,
+                    "member": {
+                        "name": "Part",
+                        "type": "memberStruct",
+                        "members": [
+                            {
+                                "signature": "INDX",
+                                "name": "Index",
+                                "type": "uint32",
+                                "format": {
+                                    "type": "enum",
+                                    "options": {
+                                        "0": "Head",
+                                        "1": "Ear (Male)",
+                                        "2": "Ear (Female)",
+                                        "3": "Mouth",
+                                        "4": "Teeth (Lower)",
+                                        "5": "Teeth (Upper)",
+                                        "6": "Tongue",
+                                        "7": "Eye (Left)",
+                                        "8": "Eye (Right)"
+                                    }
+                                }
+                            },
+                            {
+                                "id": "MODL"
+                            },
+                            {
+                                "id": "ICON"
+                            }
+                        ],
+                        "sortKey": [
+                            0
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "NAM1",
+            "name": "Body Data Marker",
+            "type": "empty",
+            "required": true
+        },
+        {
+            "name": "Male Body Data",
+            "type": "memberStruct",
+            "required": true,
+            "members": [
+                {
+                    "signature": "MNAM",
+                    "name": "Male Body Data Marker",
+                    "type": "empty"
+                },
+                {
+                    "id": "MODL"
+                },
+                {
+                    "name": "Parts",
+                    "type": "memberArray",
+                    "sorted": true,
+                    "member": {
+                        "name": "Part",
+                        "type": "memberStruct",
+                        "members": [
+                            {
+                                "id": "BodyDataIndex"
+                            },
+                            {
+                                "id": "ICON"
+                            }
+                        ],
+                        "sortKey": [
+                            0
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Female Body Data",
+            "type": "memberStruct",
+            "required": true,
+            "members": [
+                {
+                    "signature": "FNAM",
+                    "name": "Female Body Data Marker",
+                    "type": "empty"
+                },
+                {
+                    "id": "MODL"
+                },
+                {
+                    "name": "Parts",
+                    "type": "memberArray",
+                    "sorted": true,
+                    "member": {
+                        "name": "Part",
+                        "type": "memberStruct",
+                        "members": [
+                            {
+                                "id": "BodyDataIndex"
+                            },
+                            {
+                                "id": "ICON"
+                            }
+                        ],
+                        "sortKey": [
+                            0
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "HNAM",
+            "name": "Hairs",
+            "type": "array",
+            "sorted": true,
+            "required": true,
+            "element": {
+                "name": "Hair",
+                "type": "formId",
+                "signatures": [
+                    "HAIR"
+                ]
+            }
+        },
+        {
+            "signature": "ENAM",
+            "name": "Eyes",
+            "type": "array",
+            "sorted": true,
+            "required": true,
+            "element": {
+                "name": "Eye",
+                "type": "formId",
+                "signatures": [
+                    "EYES"
+                ]
+            }
+        },
+        {
+            "id": "FaceGen"
+        },
+        {
+            "signature": "SNAM",
+            "name": "Unknown",
+            "type": "bytes",
+            "size": 2,
+            "required": true
+        }
+    ]
+}

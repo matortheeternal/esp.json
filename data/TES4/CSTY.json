@@ -1,0 +1,306 @@
+{
+    "signature": "CSTY",
+    "type": "record",
+    "name": "Combat Style",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "CSTD",
+            "name": "Standard",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Dodge % Chance",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Left/Right % Chance",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 2
+                },
+                {
+                    "name": "Dodge L/R Timer (min)",
+                    "type": "float"
+                },
+                {
+                    "name": "Dodge L/R Timer (max)",
+                    "type": "float"
+                },
+                {
+                    "name": "Dodge Forward Timer (min)",
+                    "type": "float"
+                },
+                {
+                    "name": "Dodge Forward Timer (max)",
+                    "type": "float"
+                },
+                {
+                    "name": "Dodge Back Timer Min",
+                    "type": "float"
+                },
+                {
+                    "name": "Dodge Back Timer Max",
+                    "type": "float"
+                },
+                {
+                    "name": "Idle Timer min",
+                    "type": "float"
+                },
+                {
+                    "name": "Idle Timer max",
+                    "type": "float"
+                },
+                {
+                    "name": "Block % Chance",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Attack % Chance",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 2
+                },
+                {
+                    "name": "Recoil/Stagger Bonus to Attack",
+                    "type": "float"
+                },
+                {
+                    "name": "Unconscious Bonus to Attack",
+                    "type": "float"
+                },
+                {
+                    "name": "Hand-To-Hand Bonus to Attack",
+                    "type": "float"
+                },
+                {
+                    "name": "Power Attack % Chance",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3
+                },
+                {
+                    "name": "Recoil/Stagger Bonus to Power",
+                    "type": "float"
+                },
+                {
+                    "name": "Unconscious Bonus to Power Attack",
+                    "type": "float"
+                },
+                {
+                    "name": "Power Attack - Normal",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Power Attack - Forward",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Power Attack - Back",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Power Attack - Left",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Power Attack - Right",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3
+                },
+                {
+                    "name": "Hold Timer (min)",
+                    "type": "float"
+                },
+                {
+                    "name": "Hold Timer (max)",
+                    "type": "float"
+                },
+                {
+                    "name": "Flags 1",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Advanced",
+                            "1": "Choose Attack using % Chance",
+                            "2": "Ignore Allies in Area",
+                            "3": "Will Yield",
+                            "4": "Rejects Yields",
+                            "5": "Fleeing Disabled",
+                            "6": "Prefers Ranged",
+                            "7": "Melee Alert OK"
+                        }
+                    }
+                },
+                {
+                    "name": "Acrobatic Dodge % Chance",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 2
+                },
+                {
+                    "name": "Range Mult (Optimal)",
+                    "type": "float"
+                },
+                {
+                    "name": "Range Mult (Max)",
+                    "type": "float"
+                },
+                {
+                    "name": "Switch Distance (Melee)",
+                    "type": "float"
+                },
+                {
+                    "name": "Switch Distance (Ranged)",
+                    "type": "float"
+                },
+                {
+                    "name": "Buff standoff Distance",
+                    "type": "float"
+                },
+                {
+                    "name": "Ranged standoff Distance",
+                    "type": "float"
+                },
+                {
+                    "name": "Group standoff Distance",
+                    "type": "float"
+                },
+                {
+                    "name": "Rushing Attack % Chance",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3
+                },
+                {
+                    "name": "Rushing Attack Distance Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Flags 2",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Do Not Acquire"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "signature": "CSAD",
+            "name": "Advanced",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Dodge Fatigue Mod Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Dodge Fatigue Mod Base",
+                    "type": "float"
+                },
+                {
+                    "name": "Encumb. Speed Mod Base",
+                    "type": "float"
+                },
+                {
+                    "name": "Encumb. Speed Mod Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Dodge While Under Attack Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Dodge Not Under Attack Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Dodge Back While Under Attack Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Dodge Back Not Under Attack Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Dodge Forward While Attacking Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Dodge Forward Not Attacking Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Block Skill Modifier Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Block Skill Modifier Base",
+                    "type": "float"
+                },
+                {
+                    "name": "Block While Under Attack Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Block Not Under Attack Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Attack Skill Modifier Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Attack Skill Modifier Base",
+                    "type": "float"
+                },
+                {
+                    "name": "Attack While Under Attack Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Attack Not Under Attack Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Attack During Block Mult",
+                    "type": "float"
+                },
+                {
+                    "name": "Power Att. Fatigue Mod Base",
+                    "type": "float"
+                },
+                {
+                    "name": "Power Att. Fatigue Mod Mult",
+                    "type": "float"
+                }
+            ]
+        }
+    ]
+}

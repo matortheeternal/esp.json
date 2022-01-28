@@ -1,0 +1,23 @@
+{
+    "name": "Result Script",
+    "type": "memberStruct",
+    "members": [
+        {
+            "id": "SCHR"
+        },
+        {
+            "signature": "SCDA",
+            "name": "Compiled result script",
+            "type": "bytes"
+        },
+        {
+            "signature": "SCTX",
+            "name": "Result script source",
+            "type": "string",
+            "transform": "script"
+        },
+        {
+            "id": "SCROs"
+        }
+    ]
+}

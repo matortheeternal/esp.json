@@ -1,0 +1,50 @@
+{
+    "signature": "EFIT",
+    "name": "",
+    "type": "struct",
+    "required": true,
+    "elements": [
+        {
+            "name": "Magic effect name",
+            "type": "uint32",
+            "format": {
+                "type": "Char4Format"
+            }
+        },
+        {
+            "name": "Magnitude",
+            "type": "uint32"
+        },
+        {
+            "name": "Area",
+            "type": "uint32"
+        },
+        {
+            "name": "Duration",
+            "type": "uint32"
+        },
+        {
+            "name": "Type",
+            "type": "uint32",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "Self",
+                    "1": "Touch",
+                    "2": "Target"
+                }
+            }
+        },
+        {
+            "name": "Actor Value",
+            "type": "int32",
+            "format": {
+                "id": "ActorValueEnum"
+            }
+        }
+    ],
+    "sortKey": [
+        4,
+        5
+    ]
+}

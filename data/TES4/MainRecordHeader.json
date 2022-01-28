@@ -1,0 +1,31 @@
+{
+    "name": "Record Header",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Signature",
+            "type": "string",
+            "size": 4,
+            "conflictType": "Critical"
+        },
+        {
+            "name": "Data Size",
+            "type": "uint32",
+            "conflictType": "Ignore"
+        },
+        {
+            "id": "RecordFlags"
+        },
+        {
+            "name": "FormID",
+            "type": "formId",
+            "conflictType": "FormID"
+        },
+        {
+            "name": "Version Control Info",
+            "type": "bytes",
+            "size": 4,
+            "conflictType": "Ignore"
+        }
+    ]
+}

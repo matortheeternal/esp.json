@@ -1,0 +1,69 @@
+{
+    "signature": "EFIT",
+    "name": "",
+    "type": "struct",
+    "required": true,
+    "elements": [
+        {
+            "name": "Magic Effect Code",
+            "type": "mgefCode",
+            "size": 4
+        },
+        {
+            "name": "Magnitude",
+            "type": "uint32"
+        },
+        {
+            "name": "Area",
+            "type": "uint32"
+        },
+        {
+            "name": "Duration",
+            "type": "uint32"
+        },
+        {
+            "name": "Type",
+            "type": "uint32",
+            "format": {
+                "type": "enum",
+                "options": {
+                    "0": "Self",
+                    "1": "Touch",
+                    "2": "Target"
+                }
+            }
+        },
+        {
+            "name": "Param #1",
+            "type": "union",
+            "decider": "EFITOBMEParamDecider",
+            "elements": [
+                {
+                    "name": "Param #1 - Unknown Type",
+                    "type": "bytes",
+                    "size": 4
+                },
+                {
+                    "name": "Param #1 - FormID",
+                    "type": "formId"
+                },
+                {
+                    "name": "Param #1 - Magic Effect Code",
+                    "type": "mgefCode",
+                    "size": 4
+                },
+                {
+                    "name": "Param #1 - Actor Value",
+                    "type": "formId",
+                    "signatures": [
+                        "ACVA"
+                    ]
+                }
+            ]
+        }
+    ],
+    "sortKey": [
+        4,
+        5
+    ]
+}

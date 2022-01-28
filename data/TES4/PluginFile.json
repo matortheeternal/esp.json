@@ -1,0 +1,305 @@
+{
+    "type": "pluginFile",
+    "children": [
+        {
+            "id": "TES4"
+        },
+        {
+            "type": "group",
+            "signature": "GMST"
+        },
+        {
+            "type": "group",
+            "signature": "GLOB"
+        },
+        {
+            "type": "group",
+            "signature": "CLAS"
+        },
+        {
+            "type": "group",
+            "signature": "FACT"
+        },
+        {
+            "type": "group",
+            "signature": "HAIR"
+        },
+        {
+            "type": "group",
+            "signature": "EYES"
+        },
+        {
+            "type": "group",
+            "signature": "RACE"
+        },
+        {
+            "type": "group",
+            "signature": "SOUN"
+        },
+        {
+            "type": "group",
+            "signature": "SKIL"
+        },
+        {
+            "type": "group",
+            "signature": "MGEF"
+        },
+        {
+            "type": "group",
+            "signature": "SCPT"
+        },
+        {
+            "type": "group",
+            "signature": "LTEX"
+        },
+        {
+            "type": "group",
+            "signature": "ENCH"
+        },
+        {
+            "type": "group",
+            "signature": "SPEL"
+        },
+        {
+            "type": "group",
+            "signature": "BSGN"
+        },
+        {
+            "type": "group",
+            "signature": "ACTI"
+        },
+        {
+            "type": "group",
+            "signature": "APPA"
+        },
+        {
+            "type": "group",
+            "signature": "ARMO"
+        },
+        {
+            "type": "group",
+            "signature": "BOOK"
+        },
+        {
+            "type": "group",
+            "signature": "CLOT"
+        },
+        {
+            "type": "group",
+            "signature": "CONT"
+        },
+        {
+            "type": "group",
+            "signature": "DOOR"
+        },
+        {
+            "type": "group",
+            "signature": "INGR"
+        },
+        {
+            "type": "group",
+            "signature": "LIGH"
+        },
+        {
+            "type": "group",
+            "signature": "MISC"
+        },
+        {
+            "type": "group",
+            "signature": "STAT"
+        },
+        {
+            "type": "group",
+            "signature": "GRAS"
+        },
+        {
+            "type": "group",
+            "signature": "TREE"
+        },
+        {
+            "type": "group",
+            "signature": "FLOR"
+        },
+        {
+            "type": "group",
+            "signature": "FURN"
+        },
+        {
+            "type": "group",
+            "signature": "WEAP"
+        },
+        {
+            "type": "group",
+            "signature": "AMMO"
+        },
+        {
+            "type": "group",
+            "signature": "NPC_"
+        },
+        {
+            "type": "group",
+            "signature": "PLYR"
+        },
+        {
+            "type": "group",
+            "signature": "CREA"
+        },
+        {
+            "type": "group",
+            "signature": "LVLC"
+        },
+        {
+            "type": "group",
+            "signature": "SLGM"
+        },
+        {
+            "type": "group",
+            "signature": "KEYM"
+        },
+        {
+            "type": "group",
+            "signature": "ALCH"
+        },
+        {
+            "type": "group",
+            "signature": "SBSP"
+        },
+        {
+            "type": "group",
+            "signature": "SGST"
+        },
+        {
+            "type": "group",
+            "signature": "LVLI"
+        },
+        {
+            "type": "group",
+            "signature": "WTHR"
+        },
+        {
+            "type": "group",
+            "signature": "CLMT"
+        },
+        {
+            "type": "group",
+            "signature": "REGN"
+        },
+        {
+            "type": "group",
+            "signature": "CELL",
+            "children": [
+                {
+                    "type": "group",
+                    "groupType": 2,
+                    "children": [
+                        {
+                            "type": "group",
+                            "groupType": 3,
+                            "children": [
+                                {
+                                    "id": "CELL"
+                                },
+                                {
+                                    "id": "cellChildGroup"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "signature": "WRLD",
+            "children": [
+                {
+                    "id": "WRLD"
+                },
+                {
+                    "type": "group",
+                    "groupType": 1,
+                    "children": [
+                        {
+                            "id": "CELL"
+                        },
+                        {
+                            "id": "cellChildGroup"
+                        },
+                        {
+                            "type": "group",
+                            "groupType": 4,
+                            "children": [
+                                {
+                                    "type": "group",
+                                    "groupType": 5,
+                                    "children": [
+                                        {
+                                            "id": "CELL"
+                                        },
+                                        {
+                                            "id": "cellChildGroup"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "signature": "DIAL",
+            "children": [
+                {
+                    "id": "DIAL"
+                },
+                {
+                    "type": "group",
+                    "groupType": 7,
+                    "children": [
+                        {
+                            "id": "INFO"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "signature": "QUST"
+        },
+        {
+            "type": "group",
+            "signature": "IDLE"
+        },
+        {
+            "type": "group",
+            "signature": "PACK"
+        },
+        {
+            "type": "group",
+            "signature": "CSTY"
+        },
+        {
+            "type": "group",
+            "signature": "LSCR"
+        },
+        {
+            "type": "group",
+            "signature": "LVSP"
+        },
+        {
+            "type": "group",
+            "signature": "ANIO"
+        },
+        {
+            "type": "group",
+            "signature": "WATR"
+        },
+        {
+            "type": "group",
+            "signature": "EFSH"
+        }
+    ]
+}

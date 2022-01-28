@@ -1,0 +1,205 @@
+{
+    "signature": "WRLD",
+    "type": "record",
+    "name": "Worldspace",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "name": "Parent",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "WNAM",
+                    "name": "Worldspace",
+                    "type": "formId",
+                    "signatures": [
+                        "WRLD"
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "CNAM",
+            "name": "Climate",
+            "type": "formId",
+            "signatures": [
+                "CLMT"
+            ]
+        },
+        {
+            "signature": "NAM2",
+            "name": "Water",
+            "type": "formId",
+            "signatures": [
+                "WATR"
+            ]
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "signature": "MNAM",
+            "name": "Map Data",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Usable Dimensions",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "X",
+                            "type": "int32"
+                        },
+                        {
+                            "name": "Y",
+                            "type": "int32"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cell Coordinates",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "NW Cell",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "X",
+                                    "type": "int16"
+                                },
+                                {
+                                    "name": "Y",
+                                    "type": "int16"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "SE Cell",
+                            "type": "struct",
+                            "elements": [
+                                {
+                                    "name": "X",
+                                    "type": "int16"
+                                },
+                                {
+                                    "name": "Y",
+                                    "type": "int16"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "DATA",
+            "name": "Flags",
+            "type": "uint8",
+            "required": true,
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Small world",
+                    "1": "Can't fast travel",
+                    "2": "Oblivion worldspace",
+                    "3": "",
+                    "4": "No LOD water"
+                }
+            }
+        },
+        {
+            "name": "Object Bounds",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "NAM0",
+                    "name": "Min",
+                    "type": "struct",
+                    "conflictType": "Ignore",
+                    "required": true,
+                    "elements": [
+                        {
+                            "name": "X",
+                            "type": "float",
+                            "format": {
+                                "type": "divide",
+                                "value": 4096
+                            }
+                        },
+                        {
+                            "name": "Y",
+                            "type": "float",
+                            "format": {
+                                "type": "divide",
+                                "value": 4096
+                            }
+                        }
+                    ]
+                },
+                {
+                    "signature": "NAM9",
+                    "name": "Max",
+                    "type": "struct",
+                    "conflictType": "Ignore",
+                    "required": true,
+                    "elements": [
+                        {
+                            "name": "X",
+                            "type": "float",
+                            "format": {
+                                "type": "divide",
+                                "value": 4096
+                            }
+                        },
+                        {
+                            "name": "Y",
+                            "type": "float",
+                            "format": {
+                                "type": "divide",
+                                "value": 4096
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "signature": "SNAM",
+            "name": "Music",
+            "type": "uint32",
+            "format": {
+                "id": "MusicEnum"
+            }
+        },
+        {
+            "signature": "OFST",
+            "name": "Offset Data",
+            "type": "array",
+            "element": {
+                "name": "Rows",
+                "type": "array",
+                "counter": {
+                    "type": "OffsetDataColsCounter"
+                },
+                "element": {
+                    "name": "Offset",
+                    "type": "uint32"
+                }
+            }
+        }
+    ],
+    "containedInElement": {
+        "name": "Worldspace",
+        "type": "formId",
+        "required": true,
+        "signatures": [
+            "WRLD"
+        ]
+    }
+}

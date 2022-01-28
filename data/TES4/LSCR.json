@@ -1,0 +1,77 @@
+{
+    "signature": "LSCR",
+    "type": "record",
+    "name": "Load Screen",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "DESC"
+        },
+        {
+            "name": "Locations",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "signature": "LNAM",
+                "name": "Location",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Direct",
+                        "type": "formId",
+                        "signatures": [
+                            "CELL",
+                            "WRLD",
+                            "NULL"
+                        ]
+                    },
+                    {
+                        "name": "Indirect",
+                        "type": "struct",
+                        "elements": [
+                            {
+                                "name": "World",
+                                "type": "formId",
+                                "signatures": [
+                                    "NULL",
+                                    "WRLD"
+                                ]
+                            },
+                            {
+                                "name": "Grid",
+                                "type": "struct",
+                                "elements": [
+                                    {
+                                        "name": "Y",
+                                        "type": "int16"
+                                    },
+                                    {
+                                        "name": "X",
+                                        "type": "int16"
+                                    }
+                                ],
+                                "sortKey": [
+                                    0,
+                                    1
+                                ]
+                            }
+                        ],
+                        "sortKey": [
+                            0,
+                            1
+                        ]
+                    }
+                ],
+                "sortKey": [
+                    0,
+                    1
+                ]
+            }
+        }
+    ]
+}

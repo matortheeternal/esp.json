@@ -1,0 +1,71 @@
+{
+    "signature": "ACHR",
+    "type": "record",
+    "name": "Placed NPC",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "NAME",
+            "name": "Base",
+            "type": "formId",
+            "required": true,
+            "signatures": [
+                "NPC_"
+            ]
+        },
+        {
+            "name": "Unused",
+            "type": "memberStruct",
+            "members": [
+                {
+                    "signature": "XPCI",
+                    "name": "Unused",
+                    "type": "formId",
+                    "signatures": [
+                        "CELL"
+                    ]
+                },
+                {
+                    "signature": "FULL",
+                    "name": "Unused",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "id": "XLOD"
+        },
+        {
+            "id": "XESP"
+        },
+        {
+            "signature": "XMRC",
+            "name": "Merchant container",
+            "type": "formId",
+            "persistent": true,
+            "signatures": [
+                "REFR"
+            ]
+        },
+        {
+            "signature": "XHRS",
+            "name": "Horse",
+            "type": "formId",
+            "persistent": true,
+            "signatures": [
+                "ACRE"
+            ]
+        },
+        {
+            "id": "XRGD"
+        },
+        {
+            "id": "XSCL"
+        },
+        {
+            "id": "DATAPosRot"
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "signature": "EFID",
+    "name": "Magic effect name",
+    "type": "uint32",
+    "required": true,
+    "format": {
+        "type": "Char4Format"
+    }
+}

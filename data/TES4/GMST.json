@@ -1,0 +1,32 @@
+{
+    "signature": "GMST",
+    "type": "record",
+    "name": "Game Setting",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "DATA",
+            "name": "Value",
+            "type": "union",
+            "decider": "GMSTUnionDecider",
+            "required": true,
+            "elements": [
+                {
+                    "name": "",
+                    "type": "string",
+                    "conflictType": "Translate"
+                },
+                {
+                    "name": "",
+                    "type": "int32"
+                },
+                {
+                    "name": "",
+                    "type": "float"
+                }
+            ]
+        }
+    ]
+}

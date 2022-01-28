@@ -1,0 +1,32 @@
+{
+    "signature": "XESP",
+    "name": "Enable Parent",
+    "type": "struct",
+    "elements": [
+        {
+            "name": "Reference",
+            "type": "formId",
+            "signatures": [
+                "PLYR",
+                "REFR",
+                "ACRE",
+                "ACHR"
+            ]
+        },
+        {
+            "name": "Flags",
+            "type": "uint8",
+            "format": {
+                "type": "flags",
+                "flags": {
+                    "0": "Set Enable State to Opposite of Parent"
+                }
+            }
+        },
+        {
+            "name": "Unused",
+            "type": "bytes",
+            "size": 3
+        }
+    ]
+}

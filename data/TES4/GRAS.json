@@ -1,0 +1,97 @@
+{
+    "signature": "GRAS",
+    "type": "record",
+    "name": "Grass",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Density",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Min Slope",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Max Slope",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 1
+                },
+                {
+                    "name": "Unit from water amount",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 2
+                },
+                {
+                    "name": "Unit from water type",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Above - At Least",
+                            "1": "Above - At Most",
+                            "2": "Below - At Least",
+                            "3": "Below - At Most",
+                            "4": "Either - At Least",
+                            "5": "Either - At Most",
+                            "6": "Either - At Most Above",
+                            "7": "Either - At Most Below"
+                        }
+                    }
+                },
+                {
+                    "name": "Position Range",
+                    "type": "float"
+                },
+                {
+                    "name": "Height Range",
+                    "type": "float"
+                },
+                {
+                    "name": "Color Range",
+                    "type": "float"
+                },
+                {
+                    "name": "Wave Period",
+                    "type": "float"
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Vertex Lighting",
+                            "1": "Uniform Scaling",
+                            "2": "Fit to Slope"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3
+                }
+            ]
+        }
+    ]
+}

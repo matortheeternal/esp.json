@@ -1,0 +1,71 @@
+{
+    "signature": "AMMO",
+    "type": "record",
+    "name": "Ammunition",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "signature": "ENAM",
+            "name": "Enchantment",
+            "type": "formId",
+            "signatures": [
+                "ENCH"
+            ]
+        },
+        {
+            "signature": "ANAM",
+            "name": "Enchantment Points",
+            "type": "uint16"
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Speed",
+                    "type": "float"
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Ignores Normal Weapon Resistance"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3
+                },
+                {
+                    "name": "Value",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                },
+                {
+                    "name": "Damage",
+                    "type": "uint16"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "signature": "ANIO",
+    "type": "record",
+    "name": "Animated Object",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "signature": "DATA",
+            "name": "IDLE animation",
+            "type": "formId",
+            "required": true,
+            "signatures": [
+                "IDLE"
+            ]
+        }
+    ]
+}

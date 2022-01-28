@@ -1,0 +1,17 @@
+{
+    "signature": "PLYR",
+    "type": "record",
+    "name": "Player Reference",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "PLYR",
+            "name": "Player",
+            "type": "formId",
+            "required": true,
+            "defaultNativeValue": 7
+        }
+    ]
+}

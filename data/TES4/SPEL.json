@@ -1,0 +1,113 @@
+{
+    "signature": "SPEL",
+    "type": "record",
+    "name": "Spell",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "signature": "OBME",
+            "name": "Oblivion Magic Extender",
+            "type": "struct",
+            "elements": [
+                {
+                    "name": "Record Version",
+                    "type": "uint8"
+                },
+                {
+                    "name": "OBME Version",
+                    "type": "struct",
+                    "elements": [
+                        {
+                            "name": "Beta",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Minor",
+                            "type": "uint8"
+                        },
+                        {
+                            "name": "Major",
+                            "type": "uint8"
+                        }
+                    ]
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 28
+                }
+            ]
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "signature": "SPIT",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Type",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Spell",
+                            "1": "Disease",
+                            "2": "Power",
+                            "3": "Lesser Power",
+                            "4": "Ability",
+                            "5": "Poison"
+                        }
+                    }
+                },
+                {
+                    "name": "Cost",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Level",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Novice",
+                            "1": "Apprentice",
+                            "2": "Journeyman",
+                            "3": "Expert",
+                            "4": "Master"
+                        }
+                    }
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Manual Spell Cost",
+                            "1": "Immune to Silence 1",
+                            "2": "Player Start Spell",
+                            "3": "Immune to Silence 2",
+                            "4": "Area Effect Ignores LOS",
+                            "5": "Script Effect Always Applies",
+                            "6": "Disallow Spell Absorb/Reflect",
+                            "7": "Touch Spell Explodes w/ no Target"
+                        }
+                    }
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 3
+                }
+            ]
+        },
+        {
+            "id": "Effects"
+        }
+    ]
+}

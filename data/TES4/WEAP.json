@@ -1,0 +1,87 @@
+{
+    "signature": "WEAP",
+    "type": "record",
+    "name": "Weapon",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "ICON"
+        },
+        {
+            "id": "SCRI"
+        },
+        {
+            "id": "ENAM"
+        },
+        {
+            "signature": "ANAM",
+            "name": "Enchantment Points",
+            "type": "uint16"
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Type",
+                    "type": "uint32",
+                    "format": {
+                        "type": "enum",
+                        "options": {
+                            "0": "Blade One Hand",
+                            "1": "Blade Two Hand",
+                            "2": "Blunt One Hand",
+                            "3": "Blunt Two Hand",
+                            "4": "Staff",
+                            "5": "Bow"
+                        }
+                    }
+                },
+                {
+                    "name": "Speed",
+                    "type": "float"
+                },
+                {
+                    "name": "Reach",
+                    "type": "float"
+                },
+                {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Ignores Normal Weapon Resistance"
+                        }
+                    }
+                },
+                {
+                    "name": "Value",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Health",
+                    "type": "uint32"
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                },
+                {
+                    "name": "Damage",
+                    "type": "uint16"
+                }
+            ]
+        }
+    ]
+}

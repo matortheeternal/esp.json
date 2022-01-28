@@ -1,0 +1,414 @@
+{
+    "signature": "NPC_",
+    "type": "record",
+    "name": "Non-Player Character",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "signature": "ACBS",
+            "name": "Configuration",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Flags",
+                    "type": "uint32",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "Female",
+                            "1": "Essential",
+                            "2": "",
+                            "3": "Respawn",
+                            "4": "Auto-calc stats",
+                            "5": "",
+                            "6": "",
+                            "7": "PC Level Offset",
+                            "8": "",
+                            "9": "No Low Level Processing",
+                            "10": "",
+                            "11": "",
+                            "12": "",
+                            "13": "No Rumors",
+                            "14": "Summonable",
+                            "15": "No Persuasion",
+                            "16": "",
+                            "17": "",
+                            "18": "",
+                            "19": "",
+                            "20": "Can Corpse Check"
+                        }
+                    }
+                },
+                {
+                    "name": "Base spell points",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Fatigue",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Barter gold",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Level (offset)",
+                    "type": "int16"
+                },
+                {
+                    "name": "Calc min",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Calc max",
+                    "type": "uint16"
+                }
+            ]
+        },
+        {
+            "name": "Factions",
+            "type": "memberArray",
+            "sorted": true,
+            "member": {
+                "signature": "SNAM",
+                "name": "Faction",
+                "type": "struct",
+                "elements": [
+                    {
+                        "name": "Faction",
+                        "type": "formId",
+                        "signatures": [
+                            "FACT"
+                        ]
+                    },
+                    {
+                        "name": "Rank",
+                        "type": "uint8"
+                    },
+                    {
+                        "name": "Unused",
+                        "type": "bytes",
+                        "size": 3
+                    }
+                ],
+                "sortKey": [
+                    0
+                ]
+            }
+        },
+        {
+            "signature": "INAM",
+            "name": "Death item",
+            "type": "formId",
+            "signatures": [
+                "LVLI"
+            ]
+        },
+        {
+            "signature": "RNAM",
+            "name": "Race",
+            "type": "formId",
+            "required": true,
+            "signatures": [
+                "RACE"
+            ]
+        },
+        {
+            "id": "CNTOs"
+        },
+        {
+            "id": "SPLOs"
+        },
+        {
+            "id": "SCRI"
+        },
+        {
+            "signature": "AIDT",
+            "name": "AI Data",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Aggression",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Confidence",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Energy Level",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Responsibility",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Buys/Sells and Services",
+                    "type": "uint32",
+                    "format": {
+                        "id": "ServiceFlags"
+                    }
+                },
+                {
+                    "name": "Teaches",
+                    "type": "int8",
+                    "format": {
+                        "id": "SkillEnum"
+                    }
+                },
+                {
+                    "name": "Maximum training level",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 2
+                }
+            ]
+        },
+        {
+            "name": "AI Packages",
+            "type": "memberArray",
+            "member": {
+                "signature": "PKID",
+                "name": "AI Package",
+                "type": "formId",
+                "signatures": [
+                    "PACK"
+                ]
+            }
+        },
+        {
+            "signature": "KFFZ",
+            "name": "Animations",
+            "type": "array",
+            "sorted": true,
+            "element": {
+                "name": "Animation",
+                "type": "string"
+            }
+        },
+        {
+            "signature": "CNAM",
+            "name": "Class",
+            "type": "formId",
+            "required": true,
+            "signatures": [
+                "CLAS"
+            ]
+        },
+        {
+            "signature": "DATA",
+            "name": "Stats",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Armorer",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Athletics",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Blade",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Block",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Blunt",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Hand to Hand",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Heavy Armor",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Alchemy",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Alteration",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Conjuration",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Destruction",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Illusion",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Mysticism",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Restoration",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Acrobatics",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Light Armor",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Marksman",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Mercantile",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Security",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Sneak",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Speechcraft",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Health",
+                    "type": "uint16"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 2
+                },
+                {
+                    "name": "Strength",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Intelligence",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Willpower",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Agility",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Speed",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Endurance",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Personality",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Luck",
+                    "type": "uint8"
+                }
+            ]
+        },
+        {
+            "signature": "HNAM",
+            "name": "Hair",
+            "type": "formId",
+            "signatures": [
+                "HAIR"
+            ]
+        },
+        {
+            "signature": "LNAM",
+            "name": "Hair length",
+            "type": "float"
+        },
+        {
+            "signature": "ENAM",
+            "name": "Eyes",
+            "type": "array",
+            "element": {
+                "name": "Eyes",
+                "type": "formId",
+                "signatures": [
+                    "EYES"
+                ]
+            }
+        },
+        {
+            "signature": "HCLR",
+            "name": "Hair color",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Red",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Green",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Blue",
+                    "type": "uint8"
+                },
+                {
+                    "name": "Unused",
+                    "type": "bytes",
+                    "size": 1
+                }
+            ]
+        },
+        {
+            "signature": "ZNAM",
+            "name": "Combat Style",
+            "type": "formId",
+            "signatures": [
+                "CSTY"
+            ]
+        },
+        {
+            "id": "FaceGen"
+        },
+        {
+            "signature": "FNAM",
+            "name": "Unknown",
+            "type": "bytes",
+            "size": 0,
+            "conflictType": "Benign"
+        }
+    ]
+}

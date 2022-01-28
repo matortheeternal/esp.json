@@ -1,0 +1,61 @@
+{
+    "signature": "CONT",
+    "type": "record",
+    "name": "Container",
+    "members": [
+        {
+            "id": "EDID"
+        },
+        {
+            "id": "FULL"
+        },
+        {
+            "id": "MODL"
+        },
+        {
+            "id": "SCRI"
+        },
+        {
+            "id": "CNTOs"
+        },
+        {
+            "signature": "DATA",
+            "name": "",
+            "type": "struct",
+            "required": true,
+            "elements": [
+                {
+                    "name": "Flags",
+                    "type": "uint8",
+                    "format": {
+                        "type": "flags",
+                        "flags": {
+                            "0": "",
+                            "1": "Respawns"
+                        }
+                    }
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "signature": "SNAM",
+            "name": "Open sound",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        },
+        {
+            "signature": "QNAM",
+            "name": "Close sound",
+            "type": "formId",
+            "signatures": [
+                "SOUN"
+            ]
+        }
+    ]
+}
