@@ -15,5 +15,5 @@ functionConverter('wbStructs', [
 ], (args, converter) => {
     converter.addRequires('subrecord', 'array', 'struct');
     let structArg = `struct(${args.elementName}, ${args.members})`;
-    return `subrecord(${args.sig}, array(${args.name}, ${newLine(structArg)}))`;
+    return `subrecord('${args.sig}', array(${args.name}, ${newLine(structArg)}))`;
 });

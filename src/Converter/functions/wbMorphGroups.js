@@ -6,7 +6,6 @@ functionConverter('wbMorphGroups', [
     args.string
 ], (args, converter) => {
     converter.addRequires('def');
-    let [name] = args.values,
-        gender = name.startsWith('Male') ? 'Male' : 'Female';
-    return `def('${gender}MorphGroups')`
+    let [name] = args.values;
+    return `def('MorphGroups', { name: ${name} })`;
 });

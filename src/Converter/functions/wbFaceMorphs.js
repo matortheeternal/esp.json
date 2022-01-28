@@ -6,7 +6,6 @@ functionConverter('wbFaceMorphs', [
     args.string
 ], (args, converter) => {
     converter.addRequires('def');
-    let [name] = args.values,
-        gender = name.startsWith('Male') ? 'Male' : 'Female';
-    return `def('${gender}FaceMorphs')`
+    let [name] = args.values;
+    return `def('FaceMorphs', { name: ${name} })`;
 });
