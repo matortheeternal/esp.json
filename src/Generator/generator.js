@@ -1,7 +1,7 @@
 let fs = require('fs'),
     path = require('path'),
     {loadFilesFromFolder} = require('../loader'),
-    {clearDefs, getDefs, getMetaDefs, getGroupOrder} = require('./helpers');
+    {clearDefs, getDefs} = require('./helpers');
 
 let buildDefs = function(defGame, folderName) {
     loadFilesFromFolder(`Generator/${folderName}`, (filename, file) => {

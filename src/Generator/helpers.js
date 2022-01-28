@@ -92,6 +92,8 @@ let array = (name, element) =>
     ({ name, type: 'array', element });
 let union = (name, decider, elements) =>
     ({ name, type: 'union', decider, elements });
+let recursive = (name, levelsUp) =>
+    ({ name, type: 'recursive', levelsUp });
 
 // base types
 let string = (name) => ({ name, type: 'string' });
@@ -125,7 +127,7 @@ module.exports = {
     format, div, mul, scale, flags, showUnknown, enumeration, formatUnion,
     record, subrecord,
     memberArray, memberStruct, memberUnion,
-    struct, array, union,
+    struct, array, union, recursive,
     bytes, string, float,
     int0, int8, uint8, int16, uint16, int32, uint32,
     formId, ckFormId, mgefCode, unknown, empty, ctdaFunctions, ctdaFunction
