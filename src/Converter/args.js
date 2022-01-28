@@ -3,9 +3,9 @@ let {loadFilesToDictionary} = require('../loader');
 let extTypes = loadFilesToDictionary('Converter/args');
 
 // TODO: implement these
-let exSk = { type: 'array of number', name: 'exSk' };
-let defaultNumber = { type: 'number', name: 'default' };
-let digits = { type: 'mathExpr', name: 'digits' };
+let exSk = {type: 'array of number', name: 'exSk'};
+let defaultNumber = {type: 'number', name: 'default'};
+let digits = {type: 'mathExpr', name: 'digits'};
 let afterLoad = {type: 'identifier', name: 'afterLoad'};
 let dontShow = {type: 'identifier', name: 'dontShow'};
 let dontShowCallbacks = {type: 'array of identifier', name: 'dontShowCallbacks'};
@@ -16,7 +16,7 @@ let getCP = {type: 'identifier', name: 'getCP'};
 let isReference = {type: 'boolean', name: 'isReference'};
 let matchSize = {type: 'boolean', name: 'matchSize'};
 let optionalFromElement = {type: 'number', name: 'optionalFromElement'};
-let labels = { type: 'array of string', name: 'labels' };
+let labels = {type: 'array of string', name: 'labels'};
 
 module.exports = {
     // primitives
@@ -35,7 +35,7 @@ module.exports = {
     member: { type: 'member', name: 'member' },
     fields: { type: 'array of field', name: 'fields' },
     members: { type: 'array of member', name: 'members' },
-    signatures: { type: 'array of signature', name: 'signatures' },
+    signatures: { type: 'signatures', name: 'signatures' },
     arrayOfFlags: { type: 'array of flags', name: 'flags' },
     path: { type: 'string', name: 'path' },
     arrayPath: { type: 'string', name: 'arrayPath' },
@@ -48,6 +48,7 @@ module.exports = {
     enum: { type: 'enum', name: 'options' },
     flagsToIgnore: { type: 'array of number', name: 'flagsToIgnore' },
     ctdaFunctions: { type: 'array of ctdaFunction', name: 'ctdaFunctions' },
+    levelsUp: {type: 'number', name: 'levelsUp'},
     // extension types
     ...extTypes,
     // unimplemented extension types
