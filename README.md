@@ -1,6 +1,9 @@
 # esp.json
 JSON definitions for parsing Bethesda Plugin Files.
 
+## schema
+The definition schema is described in `schema.json` with a [JSON Schema](https://json-schema.org/).
+
 ## usage
 
 Clone the repo and its submodules, e.g.
