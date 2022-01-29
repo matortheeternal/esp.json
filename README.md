@@ -13,7 +13,6 @@ You can download built definition files from the `data` folder, the compiled def
 
 - Unimplemented argument handlers can be found in `src/Converter/args.js`.  I would like certain less-used options to be toggleable by generation flags.
 - Distribute definitions in a compressed format.  Either zip or gzip.  This allows for ~80% space savings, which seems worth it.
-- Add some generation metadata to definition files.  I mainly want something that can serve as versioning, maybe some combination of build author and build date.  A conventional semver could also be used but feels a fair bit more arbitrary.
 - Update to latest xEdit version.  I don't know how many breaking changes they've made to their definition files in the last 2 years, hopefully not much.
 - Add a function to "freeze" generator files.  At some point this project just needs to break off from the xEdit codebase entirely.  Now that we have the starting point future 'conversions' are much less necessary.
 - Add some kind of metadata to distinguish between definitions that use UInt32 Form IDs and definitions that use String Form IDs (Morrowind).
