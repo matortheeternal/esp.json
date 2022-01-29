@@ -7,7 +7,9 @@
     "convert": "node ./tasks/convert.js",
     "build": "node ./tasks/build.js",
     "buildSchema": "node ./tasks/buildSchema.js",
-    "updateAll": "node ./tasks/convert.js TES5 && node ./tasks/convert.js SSE TES5 && node ./tasks/build.js TES5 && node ./tasks/build.js SSE"
+    "convertAll": "node ./tasks/convertAll.js",
+    "buildAll": "node ./tasks/buildAll.js",
+    "updateAll": "node ./tasks/convertAll.js && node ./tasks/buildAll.js"
   },
   "repository": {
     "type": "git",
