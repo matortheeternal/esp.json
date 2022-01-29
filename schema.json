@@ -29,13 +29,16 @@
                     "$ref": "#/definitions/record"
                 },
                 {
-                    "$ref": "#/definitions/field"
-                },
-                {
-                    "$ref": "#/definitions/member"
-                },
-                {
                     "$ref": "#/definitions/format"
+                },
+                {
+                    "$ref": "#/definitions/memberOrField"
+                },
+                {
+                    "$ref": "#/definitions/ctdaFunctions"
+                },
+                {
+                    "$ref": "#/definitions/pluginFile"
                 }
             ]
         },
@@ -99,7 +102,6 @@
                         "name",
                         "id"
                     ],
-                    "additionalProperties": false,
                     "properties": {
                         "signature": {
                             "$ref": "#/definitions/signature"
@@ -123,7 +125,6 @@
                         "name",
                         "members"
                     ],
-                    "additionalProperties": false,
                     "properties": {
                         "signature": {
                             "$ref": "#/definitions/signature"
@@ -160,7 +161,6 @@
                         "type",
                         "members"
                     ],
-                    "additionalProperties": false,
                     "properties": {
                         "type": {
                             "const": "record"
@@ -216,7 +216,7 @@
         "signature": {
             "description": "A Bethesda record or subrecord signature.",
             "type": "string",
-            "pattern": "^[A-Z]{1}[A-Z0-9_]{3}$"
+            "pattern": "^(.{4}|\\\\u[0-9A-Fa-f]{4}.{3})$"
         },
         "flags": {
             "description": "A representation of an esp.json flags definition.",
@@ -250,8 +250,7 @@
             "title": "Format Union",
             "type": "object",
             "required": [
-                "type",
-                "entry"
+                "type"
             ],
             "properties": {
                 "type": {
@@ -277,18 +276,6 @@
         "member": {
             "title": "Member",
             "description": "A representation of an esp.json member.  Members are subrecords or structures which contain one or more subrecords.",
-            "additionalProperties": false,
-            "properties": {
-                "conflictType": {
-                    "$ref": "#/definitions/conflictType"
-                },
-                "required": {
-                    "$ref": "#/definitions/required"
-                },
-                "defFlags": {
-                    "$ref": "#/definitions/defFlags"
-                }
-            },
             "oneOf": [
                 {
                     "title": "Reference",
@@ -308,6 +295,9 @@
                         "signature": {
                             "$ref": "#/definitions/signature",
                             "description": "Overrides the signature of the referenced definition."
+                        },
+                        "required": {
+                            "$ref": "#/definitions/required"
                         }
                     }
                 },
@@ -325,39 +315,9 @@
                 }
             ]
         },
-        "conflictType": {
-            "title": "Conflict Type",
-            "description": "A string which identifies the conflict type to use when computing conflicts.",
-            "enum": [
-                "Ignore",
-                "BenignIfAdded",
-                "Benign",
-                "Override",
-                "Translate",
-                "NormalIgnoreEmpty",
-                "Critical"
-            ]
-        },
         "required": {
             "description": "If set to true, the entity should be created when creating a new instance of its parent object, and removing the entity should not be allowed.",
             "type": "boolean"
-        },
-        "defFlags": {
-            "title": "Definition flags",
-            "description": "Flags that indicate how certain implementation-specific behaviors should operate.",
-            "type": "array",
-            "items": {
-                "enum": [
-                    "notAlignable",
-                    "zeroSortKey",
-                    "protected",
-                    "collapsed",
-                    "noReport",
-                    "translatable",
-                    "allowAnyMember"
-                ]
-            },
-            "uniqueItems": true
         },
         "memberStruct": {
             "title": "Member Struct",
@@ -386,6 +346,15 @@
                 },
                 "sortKey": {
                     "$ref": "#/definitions/sortKey"
+                },
+                "conflictType": {
+                    "$ref": "#/definitions/conflictType"
+                },
+                "required": {
+                    "$ref": "#/definitions/required"
+                },
+                "defFlags": {
+                    "$ref": "#/definitions/defFlags"
                 }
             }
         },
@@ -399,6 +368,36 @@
                 "type": "integer",
                 "minimum": 0
             }
+        },
+        "conflictType": {
+            "title": "Conflict Type",
+            "description": "A string which identifies the conflict type to use when computing conflicts.",
+            "enum": [
+                "Ignore",
+                "BenignIfAdded",
+                "Benign",
+                "Override",
+                "Translate",
+                "NormalIgnoreEmpty",
+                "Critical"
+            ]
+        },
+        "defFlags": {
+            "title": "Definition flags",
+            "description": "Flags that indicate how certain implementation-specific behaviors should operate.",
+            "type": "array",
+            "items": {
+                "enum": [
+                    "notAlignable",
+                    "zeroSortKey",
+                    "protected",
+                    "collapsed",
+                    "noReport",
+                    "translatable",
+                    "allowAnyMember"
+                ]
+            },
+            "uniqueItems": true
         },
         "memberArray": {
             "title": "Member Array",
@@ -429,6 +428,18 @@
                 },
                 "member": {
                     "$ref": "#/definitions/member"
+                },
+                "conflictType": {
+                    "$ref": "#/definitions/conflictType"
+                },
+                "required": {
+                    "$ref": "#/definitions/required"
+                },
+                "defFlags": {
+                    "$ref": "#/definitions/defFlags"
+                },
+                "afterSet": {
+                    "$ref": "#/definitions/callback"
                 }
             }
         },
@@ -456,7 +467,7 @@
             "title": "Size",
             "description": "The fixed size of the data.",
             "type": "integer",
-            "minimum": 1
+            "minimum": 0
         },
         "prefix": {
             "title": "Prefix",
@@ -493,25 +504,34 @@
                     "items": {
                         "$ref": "#/definitions/member"
                     }
+                },
+                "conflictType": {
+                    "$ref": "#/definitions/conflictType"
+                },
+                "required": {
+                    "$ref": "#/definitions/required"
+                },
+                "defFlags": {
+                    "$ref": "#/definitions/defFlags"
                 }
             }
         },
         "subrecord": {
             "title": "Subrecord",
             "type": "object",
+            "additionalProperties": false,
             "required": [
                 "signature"
             ],
-            "additionalProperties": false,
             "properties": {
                 "signature": {
                     "$ref": "#/definitions/signature"
                 },
-                "required": {
-                    "$ref": "#/definitions/required"
-                },
                 "conflictType": {
                     "$ref": "#/definitions/conflictType"
+                },
+                "required": {
+                    "$ref": "#/definitions/required"
                 },
                 "defFlags": {
                     "$ref": "#/definitions/defFlags"
@@ -550,7 +570,6 @@
                     "required": [
                         "id"
                     ],
-                    "additionalProperties": false,
                     "properties": {
                         "id": {
                             "$ref": "#/definitions/id"
@@ -585,6 +604,15 @@
                 },
                 "sortKey": {
                     "$ref": "#/definitions/sortKey"
+                },
+                "elementMap": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "afterSet": {
+                    "$ref": "#/definitions/callback"
                 }
             }
         },
@@ -611,6 +639,9 @@
                 },
                 {
                     "$ref": "#/definitions/union"
+                },
+                {
+                    "$ref": "#/definitions/recursive"
                 },
                 {
                     "$ref": "#/definitions/formId"
@@ -671,11 +702,19 @@
                 "size": {
                     "$ref": "#/definitions/size"
                 },
+                "count": {
+                    "type": "integer",
+                    "description": "Fixed array element count.",
+                    "minimum": 0
+                },
                 "prefix": {
                     "$ref": "#/definitions/prefix"
                 },
                 "element": {
                     "$ref": "#/definitions/field"
+                },
+                "afterSet": {
+                    "$ref": "#/definitions/callback"
                 }
             }
         },
@@ -699,11 +738,33 @@
                     "$ref": "#/definitions/callback",
                     "description": "Invoked to determine which field to use."
                 },
+                "afterSet": {
+                    "$ref": "#/definitions/callback"
+                },
                 "elements": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/field"
                     }
+                }
+            }
+        },
+        "recursive": {
+            "title": "Recursive",
+            "type": "object",
+            "required": [
+                "type"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "const": "recursive"
+                },
+                "name": {
+                    "$ref": "#/definitions/name"
+                },
+                "levelsUp": {
+                    "type": "integer"
                 }
             }
         },
@@ -743,6 +804,17 @@
                     "type": "integer",
                     "minimum": 0,
                     "description": "Default data to use when initializing the field."
+                },
+                "persistent": {
+                    "description": "Indicates the form ID should only reference records flagged as persistent.",
+                    "const": true
+                },
+                "validateFlstRefs": {
+                    "type": "boolean",
+                    "description": "Indicates references to FLST records should verify the FLST contain valid references."
+                },
+                "overlayCallback": {
+                    "$ref": "#/definitions/callback"
                 }
             }
         },
@@ -763,6 +835,99 @@
                 "scale": {
                     "type": "number",
                     "description": "If provided, the floating point value is multiplied by the scale before it is presented to the user."
+                },
+                "format": {
+                    "$ref": "#/definitions/format"
+                }
+            }
+        },
+        "format": {
+            "title": "Integer Format",
+            "additionalProperties": false,
+            "oneOf": [
+                {
+                    "title": "Reference",
+                    "description": "A reference to a flags or enum esp.json definition.",
+                    "type": "object",
+                    "required": [
+                        "id"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "id": {
+                            "$ref": "#/definitions/id"
+                        }
+                    }
+                },
+                {
+                    "$ref": "#/definitions/divide"
+                },
+                {
+                    "$ref": "#/definitions/flags"
+                },
+                {
+                    "$ref": "#/definitions/enum"
+                },
+                {
+                    "title": "Custom Format",
+                    "type": "object",
+                    "required": [
+                        "type"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        }
+                    }
+                }
+            ]
+        },
+        "divide": {
+            "title": "Divide",
+            "type": "object",
+            "required": [
+                "type"
+            ],
+            "properties": {
+                "type": {
+                    "const": "divide"
+                },
+                "value": {
+                    "type": "integer",
+                    "description": "Number to divide by.",
+                    "minimum": 1
+                }
+            }
+        },
+        "enum": {
+            "title": "Enum",
+            "type": "object",
+            "required": [
+                "type",
+                "options"
+            ],
+            "properties": {
+                "type": {
+                    "const": "enum"
+                },
+                "unknownOption": {
+                    "type": "string",
+                    "description": "Value to use when there isn't an enumeration option for the data."
+                },
+                "options": {
+                    "type": "object",
+                    "description": "Associates positive integer keys to option labels.",
+                    "patternProperties": {
+                        "^(0|-?[1-9][0-9]*)$": {
+                            "type": "string"
+                        },
+                        "^.{4}$": {
+                            "type": "string",
+                            "description": "A signature string."
+                        }
+                    },
+                    "additionalProperties": false
                 }
             }
         },
@@ -819,79 +984,12 @@
                 "defaultValue": {
                     "type": "string",
                     "description": "Default value to use when initializing an element. This value gets parsed by the formatter."
-                }
-            }
-        },
-        "format": {
-            "title": "Integer Format",
-            "additionalProperties": false,
-            "oneOf": [
-                {
-                    "title": "Reference",
-                    "description": "A reference to a flags or enum esp.json definition.",
-                    "type": "object",
-                    "required": [
-                        "id"
-                    ],
-                    "additionalProperties": false,
-                    "properties": {
-                        "id": {
-                            "$ref": "#/definitions/id"
-                        }
-                    }
                 },
-                {
-                    "$ref": "#/definitions/divide"
+                "afterSet": {
+                    "$ref": "#/definitions/callback"
                 },
-                {
-                    "$ref": "#/definitions/flags"
-                },
-                {
-                    "$ref": "#/definitions/enum"
-                }
-            ]
-        },
-        "divide": {
-            "title": "Divide",
-            "type": "object",
-            "required": [
-                "type"
-            ],
-            "properties": {
-                "type": {
-                    "const": "divide"
-                },
-                "value": {
-                    "type": "integer",
-                    "description": "Number to divide by.",
-                    "minimum": 1
-                }
-            }
-        },
-        "enum": {
-            "title": "Enum",
-            "type": "object",
-            "required": [
-                "type",
-                "options"
-            ],
-            "properties": {
-                "type": {
-                    "const": "enum"
-                },
-                "options": {
-                    "type": "object",
-                    "description": "Associates positive integer keys to option labels.",
-                    "patternProperties": {
-                        "^(0|-?[1-9][0-9]*)$": {
-                            "type": "string"
-                        },
-                        "^[A-Z]{1}[A-Z0-9_]{3}$": {
-                            "type": "string",
-                            "description": "A signature string."
-                        }
-                    },
-                    "additionalProperties": false
+                "linksToCallback": {
+                    "$ref": "#/definitions/callback"
                 }
             }
         },
@@ -926,6 +1024,13 @@
                         "lowercase",
                         "script"
                     ]
+                },
+                "encoding": {
+                    "type": "string",
+                    "description": "Custom encoding to use."
+                },
+                "afterSet": {
+                    "$ref": "#/definitions/callback"
                 }
             }
         },
@@ -968,6 +1073,176 @@
             "properties": {
                 "type": {
                     "const": "empty"
+                },
+                "name": {
+                    "$ref": "#/definitions/name"
+                }
+            }
+        },
+        "memberOrField": {
+            "title": "Member or Field",
+            "description": "Either a member or field.",
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/memberStruct"
+                },
+                {
+                    "$ref": "#/definitions/memberArray"
+                },
+                {
+                    "$ref": "#/definitions/memberUnion"
+                },
+                {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "signature": {
+                            "$ref": "#/definitions/signature"
+                        },
+                        "conflictType": {
+                            "$ref": "#/definitions/conflictType"
+                        },
+                        "required": {
+                            "$ref": "#/definitions/required"
+                        },
+                        "defFlags": {
+                            "$ref": "#/definitions/defFlags"
+                        }
+                    },
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/struct"
+                        },
+                        {
+                            "$ref": "#/definitions/array"
+                        },
+                        {
+                            "$ref": "#/definitions/union"
+                        },
+                        {
+                            "$ref": "#/definitions/recursive"
+                        },
+                        {
+                            "$ref": "#/definitions/formId"
+                        },
+                        {
+                            "$ref": "#/definitions/float"
+                        },
+                        {
+                            "$ref": "#/definitions/integer"
+                        },
+                        {
+                            "$ref": "#/definitions/string"
+                        },
+                        {
+                            "$ref": "#/definitions/bytes"
+                        },
+                        {
+                            "$ref": "#/definitions/empty"
+                        }
+                    ]
+                }
+            ]
+        },
+        "ctdaFunctions": {
+            "title": "CTDA Functions",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "const": "ctdaFunctions"
+                },
+                "ctdaFunctions": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "type": {
+                                "const": "ctdaFunction"
+                            },
+                            "index": {
+                                "type": "integer",
+                                "minimum": 0
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "paramType1": {
+                                "type": "string"
+                            },
+                            "paramType2": {
+                                "type": "string"
+                            },
+                            "paramType3": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "pluginFile": {
+            "title": "Plugin File",
+            "description": "Plugin file definition.",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "const": "pluginFile"
+                },
+                "children": {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "id": {
+                                        "$ref": "#/definitions/id"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "required": [
+                                    "type",
+                                    "signature"
+                                ],
+                                "properties": {
+                                    "type": {
+                                        "const": "group"
+                                    },
+                                    "signature": {
+                                        "$ref": "#/definitions/signature"
+                                    },
+                                    "children": {
+                                        "type": "array",
+                                        "items": {
+                                            "oneOf": [
+                                                {
+                                                    "$ref": "#/definitions/group"
+                                                },
+                                                {
+                                                    "type": "object",
+                                                    "additionalProperties": false,
+                                                    "required": [
+                                                        "id"
+                                                    ],
+                                                    "properties": {
+                                                        "id": {
+                                                            "$ref": "#/definitions/id"
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
                 }
             }
         }

@@ -25,6 +25,13 @@
     "transform": {
       "description": "Transform method to use.",
       "enum": ["keepcase", "lowercase", "script"]
+    },
+    "encoding": {
+      "type": "string",
+      "description": "Custom encoding to use."
+    },
+    "afterSet": {
+      "$ref": "../shared/callback.schema.json"
     }
   }
 }

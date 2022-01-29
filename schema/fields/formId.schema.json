@@ -34,6 +34,17 @@
       "type": "integer",
       "minimum": 0,
       "description": "Default data to use when initializing the field."
+    },
+    "persistent": {
+      "description": "Indicates the form ID should only reference records flagged as persistent.",
+      "const": true
+    },
+    "validateFlstRefs": {
+      "type": "boolean",
+      "description": "Indicates references to FLST records should verify the FLST contain valid references."
+    },
+    "overlayCallback": {
+      "$ref": "../shared/callback.schema.json"
     }
   }
 }

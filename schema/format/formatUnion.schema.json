@@ -3,7 +3,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Format Union",
   "type": "object",
-  "required": ["type", "entry"],
+  "required": ["type"],
   "properties": {
     "type": {
       "const": "formatUnion"

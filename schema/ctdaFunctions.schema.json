@@ -1,0 +1,39 @@
+{
+  "$id": "esp.json/ctdaFunctions.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CTDA Functions",
+  "additionalProperties": false,
+  "properties": {
+    "type": {
+      "const": "ctdaFunctions"
+    },
+    "ctdaFunctions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "const": "ctdaFunction"
+          },
+          "index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "name": {
+            "type": "string"
+          },
+          "paramType1": {
+            "type": "string"
+          },
+          "paramType2": {
+            "type": "string"
+          },
+          "paramType3": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

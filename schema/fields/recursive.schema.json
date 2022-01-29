@@ -1,16 +1,19 @@
 {
-  "$id": "esp.json/fields/empty.schema.json",
+  "$id": "esp.json/fields/recursive.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Empty",
+  "title": "Recursive",
   "type": "object",
   "required": ["type"],
   "additionalProperties": false,
   "properties": {
     "type": {
-      "const": "empty"
+      "const": "recursive"
     },
     "name": {
       "$ref": "../shared/name.schema.json"
+    },
+    "levelsUp": {
+      "type": "integer"
     }
   }
 }

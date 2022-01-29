@@ -8,6 +8,10 @@
     "type": {
       "const": "enum"
     },
+    "unknownOption": {
+      "type": "string",
+      "description": "Value to use when there isn't an enumeration option for the data."
+    },
     "options": {
       "type": "object",
       "description": "Associates positive integer keys to option labels.",
@@ -15,7 +19,7 @@
         "^(0|-?[1-9][0-9]*)$": {
           "type": "string"
         },
-        "^[A-Z]{1}[A-Z0-9_]{3}$": {
+        "^.{4}$": {
           "type": "string",
           "description": "A signature string."
         }

@@ -15,6 +15,9 @@
     "scale": {
       "type": "number",
       "description": "If provided, the floating point value is multiplied by the scale before it is presented to the user."
+    },
+    "format": {
+      "$ref": "../format.schema.json"
     }
   }
 }

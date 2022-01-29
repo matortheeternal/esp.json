@@ -3,18 +3,6 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Member",
   "description": "A representation of an esp.json member.  Members are subrecords or structures which contain one or more subrecords.",
-  "additionalProperties": false,
-  "properties": {
-    "conflictType": {
-      "$ref": "shared/conflictType.schema.json"
-    },
-    "required": {
-      "$ref": "shared/required.schema.json"
-    },
-    "defFlags": {
-      "$ref": "shared/defFlags.schema.json"
-    }
-  },
   "oneOf": [
     {
       "title": "Reference",
@@ -32,6 +20,9 @@
         "signature": {
           "$ref": "shared/signature.schema.json",
           "description": "Overrides the signature of the referenced definition."
+        },
+        "required": {
+          "$ref": "shared/required.schema.json"
         }
       }
     },

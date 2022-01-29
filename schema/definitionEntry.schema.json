@@ -10,13 +10,16 @@
       "$ref": "record.schema.json"
     },
     {
-      "$ref": "field.schema.json"
-    },
-    {
-      "$ref": "member.schema.json"
-    },
-    {
       "$ref": "format.schema.json"
+    },
+    {
+      "$ref": "memberOrField.schema.json"
+    },
+    {
+      "$ref": "ctdaFunctions.schema.json"
+    },
+    {
+      "$ref": "pluginFile.schema.json"
     }
   ]
 }

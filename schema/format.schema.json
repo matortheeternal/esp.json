@@ -24,6 +24,17 @@
     },
     {
       "$ref": "format/enum.schema.json"
+    },
+    {
+      "title": "Custom Format",
+      "type": "object",
+      "required": ["type"],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string"
+        }
+      }
     }
   ]
 }

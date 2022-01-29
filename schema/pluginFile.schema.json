@@ -1,0 +1,62 @@
+{
+  "$id": "esp.json/pluginFile.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Plugin File",
+  "description": "Plugin file definition.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "type": {
+      "const": "pluginFile"
+    },
+    "children": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "$ref": "shared/id.schema.json"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["type", "signature"],
+            "properties": {
+              "type": {
+                "const": "group"
+              },
+              "signature": {
+                "$ref": "shared/signature.schema.json"
+              },
+              "children": {
+                "type": "array",
+                "items": {
+                  "oneOf": [
+                    {
+                      "$ref": "group.schema.json"
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": ["id"],
+                      "properties": {
+                        "id": {
+                          "$ref": "shared/id.schema.json"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

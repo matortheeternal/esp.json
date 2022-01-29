@@ -20,6 +20,15 @@
     },
     "sortKey": {
       "$ref": "../shared/sortKey.schema.json"
+    },
+    "elementMap": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "afterSet": {
+      "$ref": "../shared/callback.schema.json"
     }
   }
 }

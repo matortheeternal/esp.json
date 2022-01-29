@@ -16,6 +16,9 @@
       "$ref": "../shared/callback.schema.json",
       "description": "Invoked to determine which field to use."
     },
+    "afterSet": {
+      "$ref": "../shared/callback.schema.json"
+    },
     "elements": {
       "type": "array",
       "items": {

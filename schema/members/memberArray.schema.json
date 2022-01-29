@@ -26,6 +26,18 @@
     },
     "member": {
       "$ref": "../member.schema.json"
+    },
+    "conflictType": {
+      "$ref": "../shared/conflictType.schema.json"
+    },
+    "required": {
+      "$ref": "../shared/required.schema.json"
+    },
+    "defFlags": {
+      "$ref": "../shared/defFlags.schema.json"
+    },
+    "afterSet": {
+      "$ref": "../shared/callback.schema.json"
     }
   }
 }

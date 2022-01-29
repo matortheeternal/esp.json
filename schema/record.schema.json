@@ -12,7 +12,6 @@
     {
       "type": "object",
       "required": ["signature", "type", "name", "id"],
-      "additionalProperties": false,
       "properties": {
         "signature": {
           "$ref": "shared/signature.schema.json"
@@ -31,7 +30,6 @@
     {
       "type": "object",
       "required": ["signature", "type", "name", "members"],
-      "additionalProperties": false,
       "properties": {
         "signature": {
           "$ref": "shared/signature.schema.json"
@@ -65,7 +63,6 @@
       "description": "This is a record definition that is used as a base for other record definitions.  It does not actually define a specific record to parse - hence the signature and name properties being ommitted.",
       "type": "object",
       "required": ["type", "members"],
-      "additionalProperties": false,
       "properties": {
         "type": {
           "const": "record"

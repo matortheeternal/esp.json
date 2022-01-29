@@ -25,6 +25,9 @@
       "$ref": "fields/union.schema.json"
     },
     {
+      "$ref": "fields/recursive.schema.json"
+    },
+    {
       "$ref": "fields/formId.schema.json"
     },
     {

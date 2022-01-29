@@ -21,11 +21,19 @@
     "size": {
       "$ref": "../shared/size.schema.json"
     },
+    "count": {
+      "type": "integer",
+      "description": "Fixed array element count.",
+      "minimum": 0
+    },
     "prefix": {
       "$ref": "../shared/prefix.schema.json"
     },
     "element": {
       "$ref": "../field.schema.json"
+    },
+    "afterSet": {
+      "$ref": "../shared/callback.schema.json"
     }
   }
 }

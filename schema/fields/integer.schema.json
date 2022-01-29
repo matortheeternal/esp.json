@@ -51,6 +51,12 @@
     "defaultValue": {
       "type": "string",
       "description": "Default value to use when initializing an element. This value gets parsed by the formatter."
+    },
+    "afterSet": {
+      "$ref": "../shared/callback.schema.json"
+    },
+    "linksToCallback": {
+      "$ref": "../shared/callback.schema.json"
     }
   }
 }

@@ -3,17 +3,17 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Subrecord",
   "type": "object",
-  "required": ["signature"],
   "additionalProperties": false,
+  "required": ["signature"],
   "properties": {
     "signature": {
       "$ref": "../shared/signature.schema.json"
     },
-    "required": {
-      "$ref": "../shared/required.schema.json"
-    },
     "conflictType": {
       "$ref": "../shared/conflictType.schema.json"
+    },
+    "required": {
+      "$ref": "../shared/required.schema.json"
     },
     "defFlags": {
       "$ref": "../shared/defFlags.schema.json"
@@ -50,7 +50,6 @@
     {
       "type": "object",
       "required": ["id"],
-      "additionalProperties": false,
       "properties": {
         "id": {
           "$ref": "../shared/id.schema.json"
