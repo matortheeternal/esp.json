@@ -8,8 +8,7 @@
     "build": "node ./tasks/build.js",
     "buildSchema": "node ./tasks/buildSchema.js",
     "convertAll": "node ./tasks/convertAll.js",
-    "buildAll": "node ./tasks/buildAll.js",
-    "updateAll": "node ./tasks/convertAll.js && node ./tasks/buildAll.js"
+    "buildAll": "node ./tasks/buildAll.js"
   },
   "repository": {
     "type": "git",

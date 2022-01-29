@@ -31,7 +31,7 @@ git clone --recursive https://github.com/matortheeternal/esp.json
 
 ```bash
 # To convert and build all definitions run:
-npm run updateAll
+npm run convertAll && npm run buildAll
 
 # To convert the xEdit definitions for a specific game run: 
 npm run convert -- {game} {source?}
