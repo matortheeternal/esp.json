@@ -17,6 +17,7 @@ You can download built definition files from the `data` folder, the compiled def
 - Update to latest xEdit version.  I don't know how many breaking changes they've made to their definition files in the last 2 years, hopefully not much.
 - Add a function to "freeze" generator files.  At some point this project just needs to break off from the xEdit codebase entirely.  Now that we have the starting point future 'conversions' are much less necessary.
 - Add some kind of metadata to distinguish between definitions that use UInt32 Form IDs and definitions that use String Form IDs (Morrowind).
+- Add commands for converting and generating definitions for all games
 - Convert Morrowind definitions
 - Convert FO76 definitions
 
