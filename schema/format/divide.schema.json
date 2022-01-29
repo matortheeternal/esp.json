@@ -3,13 +3,13 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Divide",
   "type": "object",
-  "required": ["type", "options"],
+  "required": ["type"],
   "properties": {
     "type": {
-      "constant": "divide"
+      "const": "divide"
     },
     "value": {
-      "type": "number",
+      "type": "integer",
       "description": "Number to divide by.",
       "minimum": 1
     }

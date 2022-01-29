@@ -4,9 +4,10 @@
   "title": "Union Field",
   "type": "object",
   "required": ["type", "decider", "elements"],
+  "additionalProperties": false,
   "properties": {
     "type": {
-      "constant": "union"
+      "const": "union"
     },
     "name": {
       "$ref": "../shared/name.schema.json"

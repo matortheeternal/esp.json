@@ -4,9 +4,10 @@
   "title": "Struct",
   "type": "object",
   "required": ["type", "elements"],
+  "additionalProperties": false,
   "properties": {
     "type": {
-      "constant": "struct"
+      "const": "struct"
     },
     "name": {
       "$ref": "../shared/name.schema.json"

@@ -4,17 +4,61 @@
   "title": "Subrecord",
   "type": "object",
   "required": ["signature"],
-  "allOf": [
-    {
-      "$ref": "../field.schema.json"
-    }
-  ],
+  "additionalProperties": false,
   "properties": {
     "signature": {
       "$ref": "../shared/signature.schema.json"
     },
     "required": {
       "$ref": "../shared/required.schema.json"
+    },
+    "conflictType": {
+      "$ref": "../shared/conflictType.schema.json"
+    },
+    "defFlags": {
+      "$ref": "../shared/defFlags.schema.json"
     }
-  }
+  },
+  "oneOf": [
+    {
+      "$ref": "../fields/struct.schema.json"
+    },
+    {
+      "$ref": "../fields/array.schema.json"
+    },
+    {
+      "$ref": "../fields/union.schema.json"
+    },
+    {
+      "$ref": "../fields/formId.schema.json"
+    },
+    {
+      "$ref": "../fields/float.schema.json"
+    },
+    {
+      "$ref": "../fields/integer.schema.json"
+    },
+    {
+      "$ref": "../fields/string.schema.json"
+    },
+    {
+      "$ref": "../fields/bytes.schema.json"
+    },
+    {
+      "$ref": "../fields/empty.schema.json"
+    },
+    {
+      "type": "object",
+      "required": ["id"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "../shared/id.schema.json"
+        },
+        "name": {
+          "$ref": "../shared/name.schema.json"
+        }
+      }
+    }
+  ]
 }

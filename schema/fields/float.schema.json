@@ -4,9 +4,10 @@
   "title": "Float",
   "type": "object",
   "required": ["type"],
+  "additionalProperties": false,
   "properties": {
     "type": {
-      "constant": "float"
+      "const": "float"
     },
     "name": {
       "$ref": "../shared/name.schema.json"

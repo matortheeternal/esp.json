@@ -6,7 +6,7 @@
   "required": ["type", "entry"],
   "properties": {
     "type": {
-      "constant": "formatUnion"
+      "const": "formatUnion"
     },
     "decider": {
       "$ref": "../shared/callback.schema.json",

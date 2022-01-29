@@ -2,6 +2,7 @@
   "$id": "esp.json/field.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Data",
+  "additionalProperties": false,
   "properties": {
     "conflictType": {
       "$ref": "shared/conflictType.schema.json"
@@ -19,6 +20,9 @@
     },
     {
       "$ref": "fields/array.schema.json"
+    },
+    {
+      "$ref": "fields/union.schema.json"
     },
     {
       "$ref": "fields/formId.schema.json"
@@ -41,6 +45,7 @@
     {
       "type": "object",
       "required": ["id"],
+      "additionalProperties": false,
       "properties": {
         "id": {
           "$ref": "shared/id.schema.json"

@@ -4,12 +4,13 @@
   "title": "Array",
   "type": "object",
   "required": ["type", "element"],
+  "additionalProperties": false,
   "properties": {
     "name": {
       "$ref": "../shared/name.schema.json"
     },
     "type": {
-      "constant": "array"
+      "const": "array"
     },
     "counter": {
       "$ref": "../shared/counter.schema.json"

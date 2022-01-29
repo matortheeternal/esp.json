@@ -4,9 +4,10 @@
   "description": "A representation of an esp.json flags definition.",
   "type": "object",
   "required": ["type", "flags"],
+  "additionalProperties": false,
   "properties": {
     "type": {
-      "constant": "flags"
+      "const": "flags"
     },
     "flags": {
       "type": "object",

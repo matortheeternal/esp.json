@@ -4,12 +4,13 @@
   "title": "Member Array",
   "type": "object",
   "required": ["type", "member"],
+  "additionalProperties": false,
   "properties": {
     "name": {
       "$ref": "../shared/name.schema.json"
     },
     "type": {
-      "constant": "memberArray"
+      "const": "memberArray"
     },
     "counter": {
       "$ref": "../shared/counter.schema.json"

@@ -13,7 +13,7 @@
       "additionalProperties": false,
       "patternProperties": {
         "\\w+": {
-          "$ref": "definitionFile.schema.json"
+          "$ref": "definitionEntry.schema.json"
         }
       }
     }

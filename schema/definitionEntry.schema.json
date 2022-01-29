@@ -1,0 +1,22 @@
+{
+  "$id": "esp.json/definitionEntry.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Definition Entry",
+  "oneOf": [
+    {
+      "$ref": "group.schema.json"
+    },
+    {
+      "$ref": "record.schema.json"
+    },
+    {
+      "$ref": "field.schema.json"
+    },
+    {
+      "$ref": "member.schema.json"
+    },
+    {
+      "$ref": "format.schema.json"
+    }
+  ]
+}

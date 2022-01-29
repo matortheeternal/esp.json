@@ -3,10 +3,11 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Bytes",
   "type": "object",
-  "required": ["type", "size"],
+  "required": ["type"],
+  "additionalProperties": false,
   "properties": {
     "type": {
-      "constant": "bytes"
+      "const": "bytes"
     },
     "size": {
       "$ref": "../shared/size.schema.json"

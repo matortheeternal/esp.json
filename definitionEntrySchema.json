@@ -1,44 +1,25 @@
 {
-    "$id": "esp.json/gameDefinitionFile.schema.json",
+    "$id": "esp.json/definitionEntry.schema.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "Game Definition File",
-    "additionalProperties": false,
-    "properties": {
-        "game": {
-            "type": "string",
-            "description": "An identifier for the game the definitions are associated with."
+    "title": "Definition Entry",
+    "oneOf": [
+        {
+            "$ref": "#/definitions/group"
         },
-        "defs": {
-            "type": "object",
-            "additionalProperties": false,
-            "patternProperties": {
-                "\\w+": {
-                    "$ref": "#/definitions/definitionEntry"
-                }
-            }
+        {
+            "$ref": "#/definitions/record"
+        },
+        {
+            "$ref": "#/definitions/field"
+        },
+        {
+            "$ref": "#/definitions/member"
+        },
+        {
+            "$ref": "#/definitions/format"
         }
-    },
+    ],
     "definitions": {
-        "definitionEntry": {
-            "title": "Definition Entry",
-            "oneOf": [
-                {
-                    "$ref": "#/definitions/group"
-                },
-                {
-                    "$ref": "#/definitions/record"
-                },
-                {
-                    "$ref": "#/definitions/field"
-                },
-                {
-                    "$ref": "#/definitions/member"
-                },
-                {
-                    "$ref": "#/definitions/format"
-                }
-            ]
-        },
         "group": {
             "description": "A representation of an esp.json group definition.",
             "additionalProperties": false,

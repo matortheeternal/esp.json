@@ -3,17 +3,14 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Member Union",
   "type": "object",
-  "required": ["type", "decider", "members"],
+  "required": ["type", "members"],
+  "additionalProperties": false,
   "properties": {
     "type": {
-      "constant": "memberUnion"
+      "const": "memberUnion"
     },
     "name": {
       "$ref": "../shared/name.schema.json"
-    },
-    "decider": {
-      "$ref": "../shared/callback.schema.json",
-      "description": "Invoked to determine which member to use."
     },
     "members": {
       "type": "array",

@@ -5,13 +5,13 @@
   "description": "The number of prefix bytes used to indicate the size of the data.",
   "oneOf": [
     {
-      "constant": 1
+      "const": 1
     },
     {
-      "constant": 2
+      "const": 2
     },
     {
-      "constant": 4
+      "const": 4
     }
   ]
 }

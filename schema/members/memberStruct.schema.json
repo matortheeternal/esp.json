@@ -4,12 +4,13 @@
   "title": "Member Struct",
   "type": "object",
   "required": ["type", "members"],
+  "additionalProperties": false,
   "properties": {
     "name": {
       "$ref": "../shared/name.schema.json"
     },
     "type": {
-      "constant": "memberStruct"
+      "const": "memberStruct"
     },
     "unordered": {
       "type": "boolean",

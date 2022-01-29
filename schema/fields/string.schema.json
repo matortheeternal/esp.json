@@ -4,9 +4,10 @@
   "title": "String",
   "type": "object",
   "required": ["type"],
+  "additionalProperties": false,
   "properties": {
     "type": {
-      "constant": "string"
+      "const": "string"
     },
     "size": {
       "$ref": "../shared/size.schema.json"

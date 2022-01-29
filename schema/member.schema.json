@@ -3,6 +3,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Member",
   "description": "A representation of an esp.json member.  Members are subrecords or structures which contain one or more subrecords.",
+  "additionalProperties": false,
   "properties": {
     "conflictType": {
       "$ref": "shared/conflictType.schema.json"
@@ -39,6 +40,9 @@
     },
     {
       "$ref": "members/memberArray.schema.json"
+    },
+    {
+      "$ref": "members/memberUnion.schema.json"
     },
     {
       "$ref": "members/subrecord.schema.json"

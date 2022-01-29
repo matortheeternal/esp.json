@@ -2,6 +2,12 @@
   "$id": "esp.json/record.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "A representation of an esp.json record definition.",
+  "additionalProperties": false,
+  "properties": {
+    "containedInElement": {
+      "$ref": "shared/containedInElement.schema.json"
+    }
+  },
   "oneOf": [
     {
       "type": "object",

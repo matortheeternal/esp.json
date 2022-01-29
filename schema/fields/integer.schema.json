@@ -4,35 +4,36 @@
   "title": "Integer",
   "type": "object",
   "required": ["type"],
+  "additionalProperties": false,
   "properties": {
     "type": {
       "oneOf": [
         {
-          "constant": "int0",
+          "const": "int0",
           "description": "0-bit integer"
         },
         {
-          "constant": "int8",
+          "const": "int8",
           "description": "8-bit signed integer"
         },
         {
-          "constant": "int16",
+          "const": "int16",
           "description": "16-bit signed integer"
         },
         {
-          "constant": "int32",
+          "const": "int32",
           "description": "32-bit signed integer"
         },
         {
-          "constant": "uint8",
+          "const": "uint8",
           "description": "8-bit unsigned integer"
         },
         {
-          "constant": "uint16",
+          "const": "uint16",
           "description": "16-bit unsigned integer"
         },
         {
-          "constant": "uint32",
+          "const": "uint32",
           "description": "32-bit unsigned integer"
         }
       ]

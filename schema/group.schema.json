@@ -1,0 +1,35 @@
+{
+  "$id": "esp.json/group.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "A representation of an esp.json group definition.",
+  "additionalProperties": false,
+  "required": ["type", "groupType", "children"],
+  "properties": {
+    "type": {
+      "const": "group"
+    },
+    "groupType": {
+      "type": "integer"
+    },
+    "children": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "group.schema.json"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id"],
+            "properties": {
+              "id": {
+                "$ref": "shared/id.schema.json"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -6,7 +6,7 @@
   "required": ["type", "options"],
   "properties": {
     "type": {
-      "constant": "enum"
+      "const": "enum"
     },
     "options": {
       "type": "object",
