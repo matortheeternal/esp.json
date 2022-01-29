@@ -1,5 +1,6 @@
 let fs = require('fs'),
     path = require('path'),
+    {exec} = require('child_process'),
     {loadFilesFromFolder} = require('../loader'),
     {clearDefs, getDefs} = require('./helpers');
 
@@ -9,10 +10,38 @@ let buildDefs = function(defGame, folderName) {
     });
 };
 
-let saveDefs = function(game) {
+let getSubmoduleStatus = function() {
+    return new Promise((resolve, reject) => {
+        exec('git submodule status', (error, stdout) => {
+            if (error) return reject(error);
+            resolve(stdout);
+        });
+    });
+};
+
+let getXEditInfo = async () => {
+    let status = await getSubmoduleStatus();
+    let [commit, repo, tag] = status.trim().split(' ');
+    return { commit: commit.slice(0, 8), repo, tag };
+};
+
+let getBuildId = function() {
+    let user = process.env.BUILD_AUTHOR || process.env.USER,
+        timestamp = Math.floor(new Date() / 1000).toString(16);
+    return `${user}-${timestamp}`;
+};
+
+let getBuildInfo = async (flags) => ({
+    id: getBuildId(),
+    xedit: await getXEditInfo(),
+    flags
+});
+
+let saveDefs = async function(game, flags) {
     let outputPath = path.resolve('data', `${game}.json`);
     let gameDefs = {
         game: game,
+        build: await getBuildInfo(flags),
         defs: getDefs()
     };
     fs.writeFileSync(outputPath, JSON.stringify(gameDefs));
@@ -34,7 +63,7 @@ let generate = function(game, options = {}) {
     buildDefs(game, defsFolder);
     buildDefs(game, path.join(defsFolder, 'extra'));
     buildDefs(game, path.join(defsFolder, 'adjustments'));
-    saveDefs(game);
+    saveDefs(game, options.buildFlags || []);
     if (options.saveIndividualDefs) saveIndividualDefs(game);
 };
 

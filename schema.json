@@ -8,6 +8,34 @@
             "type": "string",
             "description": "An identifier for the game the definitions are associated with."
         },
+        "build": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Build identifier.  Build author followed by hexadecimal unix second."
+                },
+                "xedit": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "commit": {
+                            "type": "string",
+                            "description": "The xEdit commit sha used to convert definitions."
+                        },
+                        "repo": {
+                            "type": "string",
+                            "description": "The name of the repository xEdit definitions were sourced from."
+                        },
+                        "tag": {
+                            "type": "string",
+                            "description": "The tag associated with the xEdit commit, if present."
+                        }
+                    }
+                }
+            }
+        },
         "defs": {
             "type": "object",
             "additionalProperties": false,
