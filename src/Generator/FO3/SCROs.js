@@ -11,7 +11,9 @@ module.exports = () => {
                 subrecord('SCRV', uint32('Local Variable'))
             ])
         ), {
-            "notAlignable": 1
+            "defFlags": [
+                "notAlignable"
+            ]
         })
     );
 };

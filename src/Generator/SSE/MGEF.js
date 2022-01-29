@@ -33,7 +33,7 @@ module.exports = () => {
                 ])
             )),
             opts(subrecord('DNAM', conflictType('Translate', localized(string('Magic Item Description')))), {
-                "keepCase": true
+                "transform": "keepcase"
             }),
             def('CTDAs')
         ]

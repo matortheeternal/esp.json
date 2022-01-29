@@ -56,7 +56,6 @@
         {
             "name": "Master Files",
             "type": "memberArray",
-            "protected": 1,
             "member": {
                 "name": "Master File",
                 "type": "memberStruct",
@@ -76,7 +75,10 @@
                         "required": true
                     }
                 ]
-            }
+            },
+            "defFlags": [
+                "protected"
+            ]
         }
     ]
 }

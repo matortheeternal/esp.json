@@ -8,10 +8,12 @@ module.exports = () => {
         members: [
             def('EDID'),
             opts(req(subrecord('PLYR', formId('Player'))), {
-                "defaultNativeValue": 7
+                "defaultData": 7
             })
         ]
     }), {
-        "protected": 1
+        "defFlags": [
+            "protected"
+        ]
     })
 };

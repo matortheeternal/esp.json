@@ -3,5 +3,5 @@
     "name": "Editor ID",
     "type": "string",
     "conflictType": "Override",
-    "keepCase": true
+    "transform": "keepcase"
 }

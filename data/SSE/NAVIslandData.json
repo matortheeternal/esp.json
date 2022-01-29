@@ -30,7 +30,6 @@
             "name": "Triangles",
             "type": "array",
             "prefix": 4,
-            "notAlignable": 1,
             "element": {
                 "name": "Triangle",
                 "type": "struct",
@@ -39,20 +38,24 @@
                         "name": "Vertices",
                         "type": "array",
                         "count": 3,
-                        "notAlignable": 1,
                         "element": {
                             "name": "Vertex",
                             "type": "int16"
-                        }
+                        },
+                        "defFlags": [
+                            "notAlignable"
+                        ]
                     }
                 ]
-            }
+            },
+            "defFlags": [
+                "notAlignable"
+            ]
         },
         {
             "name": "Vertices",
             "type": "array",
             "prefix": 4,
-            "notAlignable": 1,
             "element": {
                 "name": "Vertex",
                 "type": "struct",
@@ -70,7 +73,10 @@
                         "type": "float"
                     }
                 ]
-            }
+            },
+            "defFlags": [
+                "notAlignable"
+            ]
         }
     ]
 }

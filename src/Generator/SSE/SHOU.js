@@ -21,7 +21,9 @@ module.exports = () => {
                     float('Recovery Time')
                 ]))
             ), {
-                "notAlignable": 1
+                "defFlags": [
+                    "notAlignable"
+                ]
             })
         ]
     })

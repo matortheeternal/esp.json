@@ -23,7 +23,9 @@ module.exports = () => {
                     req(subrecord('DATA', conflictType('Ignore', size(8, bytes('Unused')))))
                 ])
             ), {
-                "protected": 1
+                "defFlags": [
+                    "protected"
+                ]
             }),
             subrecord('ONAM', array('Overriden Forms', 
                 ckFormId('Form', [

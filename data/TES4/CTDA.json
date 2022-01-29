@@ -65,7 +65,9 @@
                             "type": "bytes",
                             "size": 4,
                             "conflictType": "Ignore",
-                            "zeroSortKey": 1
+                            "defFlags": [
+                                "zeroSortKey"
+                            ]
                         },
                         {
                             "name": "Integer",
@@ -74,7 +76,9 @@
                         {
                             "name": "Variable Name (INVALID)",
                             "type": "int32",
-                            "zeroSortKey": 1
+                            "defFlags": [
+                                "zeroSortKey"
+                            ]
                         },
                         {
                             "name": "Sex",
@@ -114,7 +118,9 @@
                         {
                             "name": "Quest Stage (INVALID)",
                             "type": "int32",
-                            "zeroSortKey": 1
+                            "defFlags": [
+                                "zeroSortKey"
+                            ]
                         },
                         {
                             "name": "Object Reference",
@@ -313,7 +319,9 @@
                             "type": "bytes",
                             "size": 4,
                             "conflictType": "Ignore",
-                            "zeroSortKey": 1
+                            "defFlags": [
+                                "zeroSortKey"
+                            ]
                         },
                         {
                             "name": "Integer",

@@ -17,11 +17,15 @@ module.exports = () => {
                     opts(count(3, array('Vertices', 
                         int16('Vertex')
                     )), {
-                        "notAlignable": 1
+                        "defFlags": [
+                            "notAlignable"
+                        ]
                     })
                 ])
             )), {
-                "notAlignable": 1
+                "defFlags": [
+                    "notAlignable"
+                ]
             }),
             opts(prefix(4, array('Vertices', 
                 struct('Vertex', [
@@ -30,7 +34,9 @@ module.exports = () => {
                     float('Z')
                 ])
             )), {
-                "notAlignable": 1
+                "defFlags": [
+                    "notAlignable"
+                ]
             })
         ])
     );

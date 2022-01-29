@@ -25,11 +25,15 @@ module.exports = game => {
                             conflictType('Ignore', int16('X'))
                         ])
                     )), {
-                        "notAlignable": 1
+                        "defFlags": [
+                            "notAlignable"
+                        ]
                     })
                 ]))
             )), {
-                "notAlignable": 1
+                "defFlags": [
+                    "notAlignable"
+                ]
             }),
             def('MaxHeightDataWRLD'),
             def('FULL'),

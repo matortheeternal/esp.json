@@ -626,12 +626,14 @@
         {
             "name": "Biped Object Names",
             "type": "memberArray",
-            "notAlignable": 1,
             "member": {
                 "signature": "NAME",
                 "name": "Name",
                 "type": "string"
-            }
+            },
+            "defFlags": [
+                "notAlignable"
+            ]
         },
         {
             "name": "Movement Types",

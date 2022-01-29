@@ -11,7 +11,7 @@
             "name": "Type",
             "type": "uint8",
             "required": true,
-            "defaultEditValue": "Float",
+            "defaultValue": "Float",
             "format": {
                 "type": "enum",
                 "options": {

@@ -20,7 +20,9 @@ module.exports = () => {
             opts(subrecord('FNAM', array('Cue Points', 
                 float('Point')
             )), {
-                "notAlignable": 1
+                "defFlags": [
+                    "notAlignable"
+                ]
             }),
             subrecord('LNAM', struct('Loop Data', [
                 float('Loop Begins'),

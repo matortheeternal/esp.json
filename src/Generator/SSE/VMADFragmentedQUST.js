@@ -8,10 +8,10 @@ module.exports = () => {
     addDef('VMADFragmentedQUST', 
         subrecord('VMAD', struct('Virtual Machine Adapter', [
             opts(conflictType('Ignore', int16('Version')), {
-                "defaultNativeValue": 5
+                "defaultData": 5
             }),
             opts(conflictType('Ignore', int16('Object Format')), {
-                "defaultNativeValue": 2
+                "defaultData": 2
             }),
             prefix(2, sorted(array('Scripts', 
                 def('ScriptEntry')
@@ -21,10 +21,10 @@ module.exports = () => {
                 sortKey([0], struct('Alias', [
                     def('ScriptPropertyObject'),
                     opts(conflictType('Ignore', int16('Version')), {
-                        "defaultNativeValue": 5
+                        "defaultData": 5
                     }),
                     opts(conflictType('Ignore', int16('Object Format')), {
-                        "defaultNativeValue": 2
+                        "defaultData": 2
                     }),
                     prefix(2, sorted(array('Alias Scripts', 
                         def('ScriptEntry')

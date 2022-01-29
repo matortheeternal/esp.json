@@ -20,11 +20,15 @@ module.exports = () => {
                 union('Parameter #1', 'CTDAParam1Decider', [
                     size(4, bytes('Unknown')),
                     opts(conflictType('Ignore', size(4, bytes('None'))), {
-                        "zeroSortKey": 1
+                        "defFlags": [
+                            "zeroSortKey"
+                        ]
                     }),
                     int32('Integer'),
                     opts(int32('Variable Name (INVALID)'), {
-                        "zeroSortKey": 1
+                        "defFlags": [
+                            "zeroSortKey"
+                        ]
                     }),
                     format(uint32('Sex'), def('SexEnum')),
                     ckFormId('Actor Value', ['ACVA']),
@@ -32,7 +36,9 @@ module.exports = () => {
                     format(uint32('Axis'), def('AxisEnum')),
                     format(uint32('Form Type'), def('FormTypeEnum')),
                     opts(int32('Quest Stage (INVALID)'), {
-                        "zeroSortKey": 1
+                        "defFlags": [
+                            "zeroSortKey"
+                        ]
                     }),
                     ckFormId('Object Reference', [
                         'PLYR', 'REFR', 'ACHR', 'ACRE', 'TRGT'
@@ -74,7 +80,9 @@ module.exports = () => {
                 union('Parameter #2', 'CTDAParam2Decider', [
                     size(4, bytes('Unknown')),
                     opts(conflictType('Ignore', size(4, bytes('None'))), {
-                        "zeroSortKey": 1
+                        "defFlags": [
+                            "zeroSortKey"
+                        ]
                     }),
                     int32('Integer'),
                     format(int32('Variable Name'), def('CTDAParam2VariableNameToStr')),

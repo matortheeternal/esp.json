@@ -17,7 +17,6 @@
             "name": "Large References",
             "type": "memberArray",
             "conflictType": "Ignore",
-            "notAlignable": 1,
             "member": {
                 "signature": "RNAM",
                 "name": "Grid",
@@ -37,7 +36,6 @@
                         "name": "References",
                         "type": "array",
                         "prefix": 4,
-                        "notAlignable": 1,
                         "element": {
                             "name": "Reference",
                             "type": "struct",
@@ -61,10 +59,16 @@
                                     "conflictType": "Ignore"
                                 }
                             ]
-                        }
+                        },
+                        "defFlags": [
+                            "notAlignable"
+                        ]
                     }
                 ]
-            }
+            },
+            "defFlags": [
+                "notAlignable"
+            ]
         },
         {
             "id": "MaxHeightDataWRLD"

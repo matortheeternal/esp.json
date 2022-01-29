@@ -1,7 +1,6 @@
 {
     "name": "References",
     "type": "memberArray",
-    "notAlignable": 1,
     "member": {
         "name": "",
         "type": "memberUnion",
@@ -17,5 +16,8 @@
                 "type": "uint32"
             }
         ]
-    }
+    },
+    "defFlags": [
+        "notAlignable"
+    ]
 }

@@ -62,7 +62,9 @@
                     "type": "bytes",
                     "size": 4,
                     "conflictType": "Ignore",
-                    "zeroSortKey": 1
+                    "defFlags": [
+                        "zeroSortKey"
+                    ]
                 },
                 {
                     "name": "Integer",
@@ -71,7 +73,9 @@
                 {
                     "name": "Variable Name (INVALID)",
                     "type": "int32",
-                    "zeroSortKey": 1
+                    "defFlags": [
+                        "zeroSortKey"
+                    ]
                 },
                 {
                     "name": "Sex",
@@ -104,7 +108,9 @@
                 {
                     "name": "Quest Stage (INVALID)",
                     "type": "int32",
-                    "zeroSortKey": 1
+                    "defFlags": [
+                        "zeroSortKey"
+                    ]
                 },
                 {
                     "name": "Misc Stat",
@@ -351,7 +357,9 @@
                 {
                     "name": "VATS Value Param (INVALID)",
                     "type": "uint32",
-                    "zeroSortKey": 1
+                    "defFlags": [
+                        "zeroSortKey"
+                    ]
                 },
                 {
                     "name": "Creature Type",
@@ -426,7 +434,9 @@
                 {
                     "name": "Quest Objective (INVALID)",
                     "type": "int32",
-                    "zeroSortKey": 1
+                    "defFlags": [
+                        "zeroSortKey"
+                    ]
                 },
                 {
                     "name": "Reputation",
@@ -846,14 +856,18 @@
                             "type": "bytes",
                             "size": 4,
                             "conflictType": "Ignore",
-                            "zeroSortKey": 1
+                            "defFlags": [
+                                "zeroSortKey"
+                            ]
                         },
                         {
                             "name": "Unused",
                             "type": "bytes",
                             "size": 4,
                             "conflictType": "Ignore",
-                            "zeroSortKey": 1
+                            "defFlags": [
+                                "zeroSortKey"
+                            ]
                         },
                         {
                             "name": "Critical Effect",
@@ -875,28 +889,36 @@
                             "type": "bytes",
                             "size": 4,
                             "conflictType": "Ignore",
-                            "zeroSortKey": 1
+                            "defFlags": [
+                                "zeroSortKey"
+                            ]
                         },
                         {
                             "name": "Unused",
                             "type": "bytes",
                             "size": 4,
                             "conflictType": "Ignore",
-                            "zeroSortKey": 1
+                            "defFlags": [
+                                "zeroSortKey"
+                            ]
                         },
                         {
                             "name": "Unused",
                             "type": "bytes",
                             "size": 4,
                             "conflictType": "Ignore",
-                            "zeroSortKey": 1
+                            "defFlags": [
+                                "zeroSortKey"
+                            ]
                         },
                         {
                             "name": "Unused",
                             "type": "bytes",
                             "size": 4,
                             "conflictType": "Ignore",
-                            "zeroSortKey": 1
+                            "defFlags": [
+                                "zeroSortKey"
+                            ]
                         },
                         {
                             "name": "Weapon Type",
@@ -910,14 +932,18 @@
                             "type": "bytes",
                             "size": 4,
                             "conflictType": "Ignore",
-                            "zeroSortKey": 1
+                            "defFlags": [
+                                "zeroSortKey"
+                            ]
                         },
                         {
                             "name": "Unused",
                             "type": "bytes",
                             "size": 4,
                             "conflictType": "Ignore",
-                            "zeroSortKey": 1
+                            "defFlags": [
+                                "zeroSortKey"
+                            ]
                         }
                     ]
                 },

@@ -25,7 +25,9 @@ module.exports = () => {
                     float('Z')
                 ])
             )), {
-                "notAlignable": 1
+                "defFlags": [
+                    "notAlignable"
+                ]
             }),
             opts(subrecord('NVTR', array('Triangles', 
                 struct('Triangle', [
@@ -75,7 +77,9 @@ module.exports = () => {
                     }))
                 ])
             )), {
-                "notAlignable": 1
+                "defFlags": [
+                    "notAlignable"
+                ]
             }),
             subrecord('NVCA', array('Cover Triangles', 
                 int16('Cover Triangle')
@@ -87,7 +91,9 @@ module.exports = () => {
                     size(2, bytes('Unused'))
                 ])
             )), {
-                "notAlignable": 1
+                "defFlags": [
+                    "notAlignable"
+                ]
             }),
             subrecord('NVGD', struct('NavMesh Grid', [
                 uint32('NavMeshGrid Divisor'),
@@ -102,11 +108,15 @@ module.exports = () => {
                 opts(array('Cells', 
                     prefix(2, array('Cell', 
                         opts(int16('Triangle'), {
-                            "notAlignable": 1
+                            "defFlags": [
+                                "notAlignable"
+                            ]
                         })
                     ))
                 ), {
-                    "notAlignable": 1
+                    "defFlags": [
+                        "notAlignable"
+                    ]
                 })
             ])),
             opts(subrecord('NVEX', array('External Connections', 
@@ -116,7 +126,9 @@ module.exports = () => {
                     uint16('Triangle')
                 ])
             )), {
-                "notAlignable": 1
+                "defFlags": [
+                    "notAlignable"
+                ]
             })
         ]
     })

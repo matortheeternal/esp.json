@@ -16,7 +16,7 @@ module.exports = () => {
                 108: 'Long',
                 115: 'Short'
             })))), {
-                "defaultEditValue": "Float"
+                "defaultValue": "Float"
             }),
             req(subrecord('FLTV', float('Value')))
         ]
