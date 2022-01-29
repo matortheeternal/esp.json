@@ -372,7 +372,8 @@
                 "Override",
                 "Translate",
                 "NormalIgnoreEmpty",
-                "Critical"
+                "Critical",
+                "FormID"
             ]
         },
         "defFlags": {
@@ -553,6 +554,9 @@
                     "$ref": "#/definitions/string"
                 },
                 {
+                    "$ref": "#/definitions/mgefCode"
+                },
+                {
                     "$ref": "#/definitions/bytes"
                 },
                 {
@@ -647,6 +651,9 @@
                 },
                 {
                     "$ref": "#/definitions/string"
+                },
+                {
+                    "$ref": "#/definitions/mgefCode"
                 },
                 {
                     "$ref": "#/definitions/bytes"
@@ -1027,6 +1034,25 @@
                 }
             }
         },
+        "mgefCode": {
+            "title": "MGEF Code",
+            "type": "object",
+            "required": [
+                "type"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "const": "mgefCode"
+                },
+                "size": {
+                    "$ref": "#/definitions/size"
+                },
+                "name": {
+                    "$ref": "#/definitions/name"
+                }
+            }
+        },
         "bytes": {
             "title": "Bytes",
             "type": "object",
@@ -1126,6 +1152,9 @@
                         },
                         {
                             "$ref": "#/definitions/string"
+                        },
+                        {
+                            "$ref": "#/definitions/mgefCode"
                         },
                         {
                             "$ref": "#/definitions/bytes"

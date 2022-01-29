@@ -1,0 +1,19 @@
+{
+  "$id": "esp.json/fields/mgefCode.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MGEF Code",
+  "type": "object",
+  "required": ["type"],
+  "additionalProperties": false,
+  "properties": {
+    "type": {
+      "const": "mgefCode"
+    },
+    "size": {
+      "$ref": "../shared/size.schema.json"
+    },
+    "name": {
+      "$ref": "../shared/name.schema.json"
+    }
+  }
+}

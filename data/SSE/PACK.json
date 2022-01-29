@@ -338,10 +338,6 @@
                     "member": {
                         "name": "Branch",
                         "type": "memberStruct",
-                        "counter": {
-                            "type": "elementCounter",
-                            "path": "CITC - Condition Count"
-                        },
                         "members": [
                             {
                                 "signature": "ANAM",

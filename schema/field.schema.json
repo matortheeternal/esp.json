@@ -40,6 +40,9 @@
       "$ref": "fields/string.schema.json"
     },
     {
+      "$ref": "fields/mgefCode.schema.json"
+    },
+    {
       "$ref": "fields/bytes.schema.json"
     },
     {
