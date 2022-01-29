@@ -64,7 +64,7 @@ module.exports = () => {
                             }))),
                             def('CTDAs'),
                             opts(subrecord('CNAM', conflictType('Translate', localized(string('Log Entry')))), {
-                                "keepCase": true
+                                "transform": "keepcase"
                             }),
                             subrecord('NAM0', ckFormId('Next Quest', ['QUST'])),
                             subrecord('SCHR', conflictType('Ignore', size(0, bytes('Unused')))),
@@ -81,7 +81,7 @@ module.exports = () => {
                         0: 'ORed With Previous'
                     }))),
                     opts(req(subrecord('NNAM', conflictType('Translate', localized(string('Display Text'))))), {
-                        "keepCase": true
+                        "transform": "keepcase"
                     }),
                     memberArray('Targets', 
                         memberStruct('Target', [

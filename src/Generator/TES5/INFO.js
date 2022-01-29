@@ -66,7 +66,7 @@ module.exports = () => {
                         size(3, bytes('Unused'))
                     ])),
                     opts(subrecord('NAM1', conflictType('Translate', localized(string('Response Text')))), {
-                        "keepCase": true
+                        "transform": "keepcase"
                     }),
                     subrecord('NAM2', string('Script Notes')),
                     subrecord('NAM3', string('Edits')),

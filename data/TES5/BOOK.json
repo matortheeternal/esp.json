@@ -29,7 +29,7 @@
             "localized": true,
             "conflictType": "Translate",
             "required": true,
-            "keepCase": true
+            "transform": "keepcase"
         },
         {
             "id": "DEST"

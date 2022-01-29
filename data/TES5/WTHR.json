@@ -217,27 +217,31 @@
                     "signature": "RNAM",
                     "name": "Y Speed",
                     "type": "array",
-                    "notAlignable": 1,
                     "element": {
                         "name": "Layer",
                         "type": "uint8",
                         "format": {
                             "type": "CloudSpeedFormat"
                         }
-                    }
+                    },
+                    "defFlags": [
+                        "notAlignable"
+                    ]
                 },
                 {
                     "signature": "QNAM",
                     "name": "X Speed",
                     "type": "array",
-                    "notAlignable": 1,
                     "element": {
                         "name": "Layer",
                         "type": "uint8",
                         "format": {
                             "type": "CloudSpeedFormat"
                         }
-                    }
+                    },
+                    "defFlags": [
+                        "notAlignable"
+                    ]
                 }
             ]
         },
@@ -245,17 +249,18 @@
             "signature": "PNAM",
             "name": "Cloud Colors",
             "type": "array",
-            "notAlignable": 1,
             "element": {
                 "id": "WeatherColors",
                 "name": "Layer"
-            }
+            },
+            "defFlags": [
+                "notAlignable"
+            ]
         },
         {
             "signature": "JNAM",
             "name": "Cloud Alphas",
             "type": "array",
-            "notAlignable": 1,
             "element": {
                 "name": "Layer",
                 "type": "struct",
@@ -277,7 +282,10 @@
                         "type": "float"
                     }
                 ]
-            }
+            },
+            "defFlags": [
+                "notAlignable"
+            ]
         },
         {
             "signature": "NAM0",

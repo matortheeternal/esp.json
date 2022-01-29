@@ -7,7 +7,8 @@ let getCode = function(match) {
     let code = match[1],
         len = code.length;
     if (len === 1) return `0${code}`;
-    if (match[2] === '0TX' && code[1] === '0' && len === 2) return '30';
+    if (match[2] === '0TX' && code[1] === '0' && len === 2)
+        return `3${code[0]}`;
     return code.slice(0, 2);
 };
 

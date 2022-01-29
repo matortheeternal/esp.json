@@ -44,11 +44,13 @@
             "signature": "FNAM",
             "name": "Cue Points",
             "type": "array",
-            "notAlignable": 1,
             "element": {
                 "name": "Point",
                 "type": "float"
-            }
+            },
+            "defFlags": [
+                "notAlignable"
+            ]
         },
         {
             "signature": "LNAM",

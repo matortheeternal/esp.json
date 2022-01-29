@@ -25,7 +25,6 @@
         {
             "name": "Words of Power",
             "type": "memberArray",
-            "notAlignable": 1,
             "member": {
                 "signature": "SNAM",
                 "name": "",
@@ -52,7 +51,10 @@
                         "type": "float"
                     }
                 ]
-            }
+            },
+            "defFlags": [
+                "notAlignable"
+            ]
         }
     ]
 }

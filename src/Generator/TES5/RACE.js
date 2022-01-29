@@ -156,7 +156,9 @@ module.exports = () => {
             opts(memberArray('Biped Object Names', 
                 subrecord('NAME', string('Name'))
             ), {
-                "notAlignable": 1
+                "defFlags": [
+                    "notAlignable"
+                ]
             }),
             sorted(memberArray('Movement Types', 
                 sortKey([0], memberStruct('Movement Types', [

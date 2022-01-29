@@ -15,7 +15,7 @@ module.exports = () => {
             def('MODL'),
             def('ICON'),
             opts(req(subrecord('DESC', conflictType('Translate', localized(string('Book Text'))))), {
-                "keepCase": true
+                "transform": "keepcase"
             }),
             def('DEST'),
             def('YNAM'),

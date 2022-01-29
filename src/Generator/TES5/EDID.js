@@ -5,7 +5,7 @@ let {
 module.exports = () => {
     addDef('EDID', 
         opts(subrecord('EDID', conflictType('Override', string('Editor ID'))), {
-            "keepCase": true
+            "transform": "keepcase"
         })
     );
 };
