@@ -4,7 +4,12 @@ JSON definitions for parsing Bethesda Plugin Files.
 ## schema
 The definition schema is described in `schema.json` with a [JSON Schema](https://json-schema.org/).
 
+You can use WebStorm or another tool which supports draft-07 JSON schema to validate definition file schema.
+
 ## usage
+You can download built definition files from the `data` folder, the compiled definitions are the `<game>.json` files.  The subfolders with individual definition entries are present for human viewing, and should not be consumed by applications.
+
+## building
 
 Clone the repo and its submodules, e.g.
  
