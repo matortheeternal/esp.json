@@ -16,6 +16,13 @@
                     "type": "string",
                     "description": "Build identifier.  Build author followed by hexadecimal unix second."
                 },
+                "flags": {
+                    "type": "array",
+                    "description": "Build flags used.",
+                    "items": {
+                        "type": "string"
+                    }
+                },
                 "xedit": {
                     "type": "object",
                     "additionalProperties": false,

@@ -33,18 +33,24 @@ let getBuildId = function() {
 
 let getBuildInfo = async (flags) => ({
     id: getBuildId(),
-    xedit: await getXEditInfo(),
-    flags
+    flags,
+    xedit: await getXEditInfo()
 });
 
-let saveDefs = async function(game, flags) {
+let saveFormattedDefs = function(game, gameDefs) {
+    let outputPath = path.resolve('data', `${game}.formatted.json`);
+    fs.writeFileSync(outputPath, JSON.stringify(gameDefs, null, 4));
+};
+
+let saveDefs = async function(game, options) {
     let outputPath = path.resolve('data', `${game}.json`);
     let gameDefs = {
         game: game,
-        build: await getBuildInfo(flags),
+        build: await getBuildInfo(options.buildFlags || []),
         defs: getDefs()
     };
     fs.writeFileSync(outputPath, JSON.stringify(gameDefs));
+    if (options.saveFormattedDefs) saveFormattedDefs(game, gameDefs);
 };
 
 let saveIndividualDefs = function(game) {
@@ -63,7 +69,7 @@ let generate = function(game, options = {}) {
     buildDefs(game, defsFolder);
     buildDefs(game, path.join(defsFolder, 'extra'));
     buildDefs(game, path.join(defsFolder, 'adjustments'));
-    saveDefs(game, options.buildFlags || []);
+    saveDefs(game, options);
     if (options.saveIndividualDefs) saveIndividualDefs(game);
 };
 
