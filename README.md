@@ -17,7 +17,6 @@ You can download built definition files from the `data` folder, the compiled def
 - Update to latest xEdit version.  I don't know how many breaking changes they've made to their definition files in the last 2 years, hopefully not much.
 - Add a function to "freeze" generator files.  At some point this project just needs to break off from the xEdit codebase entirely.  Now that we have the starting point future 'conversions' are much less necessary.
 - Add some kind of metadata to distinguish between definitions that use UInt32 Form IDs and definitions that use String Form IDs (Morrowind).
-- Add commands for converting and generating definitions for all games
 - Convert Morrowind definitions
 - Convert FO76 definitions
 
@@ -31,28 +30,17 @@ git clone --recursive https://github.com/matortheeternal/esp.json
 
 ### Commands
 
-To convert the xEdit definitions to `src/Generator/{game}` run: 
+```bash
+# To convert and build all definitions run:
+npm run updateAll
 
-```
+# To convert the xEdit definitions for a specific game run: 
 npm run convert -- {game} {source?}
-```
 
-To build definition data files run:
-
-```
+# To build definition data files for a specific game run:
 npm run build -- {game}
 ```
 
-Examples:
-- `npm run convert -- FO4`
-- `npm run build -- FO4`
-- `npm run convert -- SSE TES5`
-- `npm run build -- SSE`
-- `npm run convert -- TES5`
-- `npm run build -- TES5`
-- `npm run convert -- TES4`
-- `npm run build -- TES4`
-- `npm run convert -- FO3`
-- `npm run build -- FO3`
-- `npm run convert -- FNV`
-- `npm run build -- FNV`
+Game argument options: SSE, TES5, TES4, FO4, FNV, FO3
+
+Source argument: provide TES5 for SSE, otherwise omit.
