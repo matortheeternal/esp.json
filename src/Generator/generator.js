@@ -63,13 +63,13 @@ let saveIndividualDefs = function(game) {
     });
 };
 
-let generate = function(game, options = {}) {
+let generate = async function(game, options = {}) {
     clearDefs();
     let defsFolder = options.buildFrom || game;
     buildDefs(game, defsFolder);
     buildDefs(game, path.join(defsFolder, 'extra'));
     buildDefs(game, path.join(defsFolder, 'adjustments'));
-    saveDefs(game, options);
+    await saveDefs(game, options);
     if (options.saveIndividualDefs) saveIndividualDefs(game);
 };
 
