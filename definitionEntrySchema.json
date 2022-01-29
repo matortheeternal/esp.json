@@ -196,8 +196,7 @@
         },
         "signature": {
             "description": "A Bethesda record or subrecord signature.",
-            "type": "string",
-            "pattern": "^(.{4}|\\\\u[0-9A-Fa-f]{4}.{3})$"
+            "type": "string"
         },
         "flags": {
             "description": "A representation of an esp.json flags definition.",
@@ -259,7 +258,6 @@
             "description": "A representation of an esp.json member.  Members are subrecords or structures which contain one or more subrecords.",
             "oneOf": [
                 {
-                    "title": "Reference",
                     "type": "object",
                     "required": [
                         "id"
@@ -269,16 +267,11 @@
                         "id": {
                             "$ref": "#/definitions/id"
                         },
-                        "name": {
-                            "type": "string",
-                            "description": "Overrides the name of the referenced definition."
-                        },
-                        "signature": {
-                            "$ref": "#/definitions/signature",
-                            "description": "Overrides the signature of the referenced definition."
-                        },
                         "required": {
                             "$ref": "#/definitions/required"
+                        },
+                        "name": {
+                            "$ref": "#/definitions/name"
                         }
                     }
                 },

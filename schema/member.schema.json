@@ -5,7 +5,6 @@
   "description": "A representation of an esp.json member.  Members are subrecords or structures which contain one or more subrecords.",
   "oneOf": [
     {
-      "title": "Reference",
       "type": "object",
       "required": ["id"],
       "additionalProperties": false,
@@ -13,16 +12,11 @@
         "id": {
           "$ref": "shared/id.schema.json"
         },
-        "name": {
-          "type": "string",
-          "description": "Overrides the name of the referenced definition."
-        },
-        "signature": {
-          "$ref": "shared/signature.schema.json",
-          "description": "Overrides the signature of the referenced definition."
-        },
         "required": {
           "$ref": "shared/required.schema.json"
+        },
+        "name": {
+          "$ref": "shared/name.schema.json"
         }
       }
     },
