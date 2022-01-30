@@ -25,15 +25,16 @@ let getXEditInfo = async () => {
     return { commit: commit.slice(0, 8), repo, tag };
 };
 
-let getBuildId = function() {
+let getBuildId = function(options) {
     let user = process.env.BUILD_AUTHOR || process.env.USER,
-        timestamp = Math.floor(new Date() / 1000).toString(16);
+        buildTime = options.timestamp || new Date(),
+        timestamp = Math.floor(buildTime / 1000).toString(16);
     return `${user}-${timestamp}`;
 };
 
-let getBuildInfo = async (flags) => ({
-    id: getBuildId(),
-    flags,
+let getBuildInfo = async (options) => ({
+    id: getBuildId(options),
+    flags: options.buildFlags || [],
     xedit: await getXEditInfo()
 });
 
@@ -46,7 +47,7 @@ let saveDefs = async function(game, options) {
     let outputPath = path.resolve('data', `${game}.json`);
     let gameDefs = {
         game: game,
-        build: await getBuildInfo(options.buildFlags || []),
+        build: await getBuildInfo(options),
         defs: getDefs()
     };
     fs.writeFileSync(outputPath, JSON.stringify(gameDefs));
