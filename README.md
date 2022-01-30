@@ -20,10 +20,16 @@ You can download built definition files from the `data` folder, the compiled def
 
 ## building
 
-Clone the repo and its submodules, e.g.
- 
-```
+```bash
+# Clone the repo and its submodules, e.g.
 git clone --recursive https://github.com/matortheeternal/esp.json
+```
+
+Building definitions embeds them with a build ID which is generated using the `BUILD_AUTHOR` environment variable (or `USER` if it is not present) and a hexadecimal unix second timestamp.
+
+```bash
+# On windows you can set your build author environment variable with:
+setx BUILD_AUTHOR {author}
 ```
 
 ### Commands
