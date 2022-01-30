@@ -7,6 +7,8 @@ The definition schema is described in `schema.json` with a [JSON Schema](https:/
 You can use WebStorm or another tool which supports draft-07 JSON schema to validate definition file schema.  The schema was verified using WebStorm, so it is the recommended option.  The individual definition files use the `definitionEntrySchema.json` JSON schema file.
 
 ## usage
+Releases package definition files in a ZIP archive named `definitions.zip`.  It is recommended to parse the definitions from this archive directly to avoid distributing uncompressed JSON text files.
+
 You can download built definition files from the `data` folder, the compiled definitions are the `<game>.json` files.  The subfolders with individual definition entries are present for human viewing, and should not be consumed by applications.
 
 ## plans
