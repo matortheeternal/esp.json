@@ -385,18 +385,7 @@
         {
             "signature": "OFST",
             "name": "Offset Data",
-            "type": "array",
-            "element": {
-                "name": "Rows",
-                "type": "array",
-                "counter": {
-                    "type": "OffsetDataColsCounter"
-                },
-                "element": {
-                    "name": "Offset",
-                    "type": "uint32"
-                }
-            }
+            "type": "bytes"
         }
     ],
     "containedInElement": {
