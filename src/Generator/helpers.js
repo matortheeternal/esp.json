@@ -111,6 +111,7 @@ let uint32 = name => ({ name, type: 'uint32' });
 let formId = name => ({ name, type: 'formId' });
 let ckFormId = (name, signatures) => ({ name, type: 'formId', signatures });
 let mgefCode = name => ({ name, type: 'mgefCode' });
+let signatures = signatures => ({ type: 'signatures', signatures });
 let unknown = () => ({ type: 'bytes' });
 let empty = name => ({ name, type: 'empty' });
 let ctdaFunctions = ctdaFunctions => addDef('CTDAFunctions', {
@@ -130,5 +131,5 @@ module.exports = {
     struct, array, union, recursive,
     bytes, string, float,
     int0, int8, uint8, int16, uint16, int32, uint32,
-    formId, ckFormId, mgefCode, unknown, empty, ctdaFunctions, ctdaFunction
+    formId, ckFormId, mgefCode, signatures, unknown, empty, ctdaFunctions, ctdaFunction
 };

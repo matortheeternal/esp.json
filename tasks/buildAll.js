@@ -1,6 +1,6 @@
 const {generate} = require("../src/Generator/generator");
 
-const games = ['FO4', 'SSE', 'TES5', 'TES4', 'FO3', 'FNV'];
+const games = ['FO4', 'SSE', 'TES5', 'TES4', 'FO3', 'FNV', 'SF'];
 
 let timestamp = new Date(),
     options = { saveIndividualDefs: true, saveFormattedDefs: true, timestamp };

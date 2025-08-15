@@ -6,6 +6,7 @@ module.exports = () => {
         if (member.name !== "Version Control Info 1") return;
         member.type = "bytes";
         member.size = 4;
+        member.conflictType = "Ignore";
         delete member.decider;
         delete member.elements;
     });
